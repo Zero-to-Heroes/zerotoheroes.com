@@ -356,6 +356,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_003_ATTACK_02.ogg",
+			"Death_03": "VO_AT_003_DEATH_03.ogg",
+			"Play_01": "VO_AT_003_PLAY_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "AT_003.png",
 		"collectible": true,
@@ -397,6 +402,11 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Sass",
+		"audio": {
+			"Attack_02": "VO_AT_005t_ATTACK_02.ogg",
+			"Death_03": "VO_AT_005t_DEATH_03.ogg",
+			"Play_01": "VO_AT_005t_PLAY_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "AT_005.png",
 		"collectible": true,
@@ -437,6 +447,12 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_006_ATTACK_02.ogg",
+			"Death_03": "VO_AT_006_DEATH_03.ogg",
+			"Play_01": "VO_AT_006_PLAY_01.ogg",
+			"Trigger_04": "VO_AT_006_TRIGGER_04.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "AT_006.png",
 		"collectible": true,
@@ -473,6 +489,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_007_ATTACK_02.ogg",
+			"Death_03": "VO_AT_007_DEATH_03.ogg",
+			"Play_01": "VO_AT_007_PLAY_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "AT_007.png",
 		"collectible": true,
@@ -515,6 +536,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_AT_009_ATTACK_02.ogg",
+			"Death_03": "VO_AT_009_DEATH_03.ogg",
+			"Play_01": "VO_AT_009_PLAY_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "AT_009.png",
 		"collectible": true,
@@ -538,6 +564,11 @@ var parseCardsText = {
 	{
 		"artist": "Brandon Kitkouski",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_010_ATTACK_02.ogg",
+			"Death_03": "VO_AT_010_DEATH_03.ogg",
+			"Play_01": "VO_AT_010_PLAY_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "AT_010.png",
 		"collectible": true,
@@ -560,6 +591,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Garner",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_011_ATTACK_02.ogg",
+			"Death_03": "VO_AT_011_DEATH_03.ogg",
+			"Play_01": "VO_AT_011_PLAY_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "AT_011.png",
 		"collectible": true,
@@ -593,6 +629,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_012_ATTACK_02.ogg",
+			"Death_03": "VO_AT_012_DEATH_03.ogg",
+			"Play_01": "VO_AT_012_PLAY_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "AT_012.png",
 		"collectible": true,
@@ -755,6 +796,11 @@ var parseCardsText = {
 	{
 		"artist": "Chris Rahn",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_018_ATTACK_02.ogg",
+			"Death_03": "VO_AT_018_DEATH_03.ogg",
+			"Play_01": "VO_AT_018_PLAY_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "AT_018.png",
 		"collectible": true,
@@ -812,6 +858,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_AT_020_ATTACK_02.ogg",
+			"Death_03": "VO_AT_020_DEATH_03.ogg",
+			"Play_01": "VO_AT_020_PLAY_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "AT_020.png",
 		"collectible": true,
@@ -831,6 +882,11 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_021_ATTACK_02.ogg",
+			"Death_05": "VO_AT_021_DEATH_05.ogg",
+			"Play_01": "VO_AT_021_PLAY_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "AT_021.png",
 		"collectible": true,
@@ -882,6 +938,11 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_023_ATTACK_02.ogg",
+			"Death_03": "VO_AT_023_DEATH_03.ogg",
+			"Play_01": "VO_AT_023_PLAY_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "AT_023.png",
 		"collectible": true,
@@ -950,6 +1011,11 @@ var parseCardsText = {
 	{
 		"artist": "Sojin Hwang",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_026_ATTACK_02.ogg",
+			"Death_03": "VO_AT_026_DEATH_03.ogg",
+			"Play_01": "VO_AT_026_PLAY_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "AT_026.png",
 		"collectible": true,
@@ -970,6 +1036,12 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_027_ATTACK_02.ogg",
+			"Death_04": "VO_AT_027_DEATH_04.ogg",
+			"Jaraxxus_03": "VO_AT_027_JARAXXUS_03.ogg",
+			"Play_01": "VO_AT_027_PLAY_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "AT_027.png",
 		"collectible": true,
@@ -1001,6 +1073,11 @@ var parseCardsText = {
 	{
 		"artist": "Ryan Metcalf",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_028_ATTACK_02.ogg",
+			"Death_03": "VO_AT_028_DEATH_03.ogg",
+			"Play_01": "VO_AT_028_PLAY_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "AT_028.png",
 		"collectible": true,
@@ -1034,6 +1111,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_029_ATTACK_02.ogg",
+			"Death_03": "VO_AT_029_DEATH_03.ogg",
+			"Play_01": "VO_AT_029_PLAY_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "AT_029.png",
 		"collectible": true,
@@ -1065,6 +1147,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_030_ATTACK_02.ogg",
+			"Death_03": "VO_AT_030_DEATH_03.ogg",
+			"Play_01": "VO_AT_030_PLAY_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "AT_030.png",
 		"collectible": true,
@@ -1087,6 +1174,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_031_ATTACK_02.ogg",
+			"Death_03": "VO_AT_031_DEATH_03.ogg",
+			"Play_01": "VO_AT_031_PLAY_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "AT_031.png",
 		"collectible": true,
@@ -1106,6 +1198,11 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_032_ATTACK_02.ogg",
+			"Death_03": "VO_AT_032_DEATH_03.ogg",
+			"Play_01": "VO_AT_032_PLAY_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "AT_032.png",
 		"collectible": true,
@@ -1219,6 +1316,12 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 8,
+		"audio": {
+			"01_Alt": "VO_AT_036_PLAY_01_ALT.ogg",
+			"Alt1_05": "VO_AT_036_ATTACK_ALT1_05.ogg",
+			"Alt1_08": "VO_AT_036_TRIGGER_ALT1_08.ogg",
+			"Death_06": "VO_AT_036_DEATH_06.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "AT_036.png",
 		"collectible": true,
@@ -1316,6 +1419,11 @@ var parseCardsText = {
 	{
 		"artist": "Laurel Austin",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_038_ATTACK_02.ogg",
+			"Death_04": "VO_AT_038_DEATH_04.ogg",
+			"Play_01": "VO_AT_038_PLAY_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "AT_038.png",
 		"collectible": true,
@@ -1339,6 +1447,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Pascenko",
 		"attack": 5,
+		"audio": {
+			"Attack_03": "VO_AT_039_ATTACK_03.ogg",
+			"Death_05": "VO_AT_039_DEATH_05.ogg",
+			"Play_01": "VO_AT_039_PLAY_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "AT_039.png",
 		"collectible": true,
@@ -1376,6 +1489,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_040_ATTACK_02.ogg",
+			"Death_05": "VO_AT_040_DEATH_05.ogg",
+			"Play_01": "VO_AT_040_PLAY_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "AT_040.png",
 		"collectible": true,
@@ -1409,6 +1527,11 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_AT_041_ATTACK_02.ogg",
+			"Death_03": "VO_AT_041_DEATH_03.ogg",
+			"Play_01": "VO_AT_041_PLAY_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "AT_041.png",
 		"collectible": true,
@@ -1439,6 +1562,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 2,
+		"audio": {
+			"03_Alt": "VO_AT_042_DEATH_03_ALT.ogg",
+			"Attack_01": "VO_AT_042_ATTACK_01.ogg",
+			"Play_01": "VO_AT_042_PLAY_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "AT_042.png",
 		"collectible": true,
@@ -1565,6 +1693,11 @@ var parseCardsText = {
 	{
 		"artist": "Velvet Engine",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_045_ATTACK_02.ogg",
+			"Death_03": "VO_AT_045_DEATH_03.ogg",
+			"Play_01": "VO_AT_045_PLAY_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "AT_045.png",
 		"collectible": true,
@@ -1609,6 +1742,11 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_046_ATTACK_02.ogg",
+			"Death_03": "VO_AT_046_DEATH_03.ogg",
+			"Play_01": "VO_AT_046_PLAY_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "AT_046.png",
 		"collectible": true,
@@ -1631,6 +1769,11 @@ var parseCardsText = {
 	{
 		"artist": "RK Post",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_047_ATTACK_02.ogg",
+			"Death_03": "VO_AT_047_DEATH_03.ogg",
+			"Play_01": "VO_AT_047_PLAY_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "AT_047.png",
 		"collectible": true,
@@ -1681,6 +1824,11 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_049_ATTACK_02.ogg",
+			"Death_03": "VO_AT_049_DEATH_03.ogg",
+			"Play_01": "VO_AT_049_PLAY_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "AT_049.png",
 		"collectible": true,
@@ -1815,6 +1963,11 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_054_ATTACK_02.ogg",
+			"Death_03": "VO_AT_054_DEATH_03.ogg",
+			"Play_01": "VO_AT_054_PLAY_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "AT_054.png",
 		"collectible": true,
@@ -1872,6 +2025,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 4,
+		"audio": {
+			"Attack_03": "VO_AT_057_ATTACK_03.ogg",
+			"Death_04": "VO_AT_057_DEATH_04.ogg",
+			"Play_01": "VO_AT_057_PLAY_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "AT_057.png",
 		"collectible": true,
@@ -1934,6 +2092,11 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"attack": 2,
+		"audio": {
+			"Attack_03": "VO_AT_059_ATTACK_03.ogg",
+			"Death_05": "VO_AT_059_DEATH_05.ogg",
+			"Play_01": "VO_AT_059_PLAY_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "AT_059.png",
 		"collectible": true,
@@ -2121,6 +2284,11 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_066_ATTACK_02.ogg",
+			"Death_03": "VO_AT_066_DEATH_03.ogg",
+			"Play_01": "VO_AT_066_PLAY_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "AT_066.png",
 		"collectible": true,
@@ -2204,6 +2372,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_069_ATTACK_02.ogg",
+			"Death_03": "VO_AT_069_DEATH_03.ogg",
+			"Play_01": "VO_AT_069_PLAY_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "AT_069.png",
 		"collectible": true,
@@ -2238,6 +2411,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_070_ATTACK_02.ogg",
+			"Death_03": "VO_AT_070_DEATH_03.ogg",
+			"Play_01": "VO_AT_070_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_070.png",
 		"collectible": true,
@@ -2262,6 +2440,11 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Zagumennyy",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_071_ATTACK_02.ogg",
+			"Death_03": "VO_AT_071_DEATH_03.ogg",
+			"Play_01": "VO_AT_071_PLAY_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "AT_071.png",
 		"collectible": true,
@@ -2298,6 +2481,12 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 7,
+		"audio": {
+			"Alt3_01": "VO_AT_072_ANDUIN_ALT3_01.ogg",
+			"Attack_03": "VO_AT_072_ATTACK_03.ogg",
+			"Death_04": "VO_AT_072_DEATH_04.ogg",
+			"Play_01": "VO_AT_072_PLAY_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "AT_072.png",
 		"collectible": true,
@@ -2383,6 +2572,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_075_ATTACK_02.ogg",
+			"Death_03": "VO_AT_075_DEATH_03.ogg",
+			"Play_01": "VO_AT_075_PLAY_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "AT_075.png",
 		"collectible": true,
@@ -2489,6 +2683,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_AT_079_ATTACK_02.ogg",
+			"Death_03": "VO_AT_079_DEATH_03.ogg",
+			"Play_01": "VO_AT_079_PLAY_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "AT_079.png",
 		"collectible": true,
@@ -2514,6 +2713,11 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_080_ATTACK_02.ogg",
+			"Death_03": "VO_AT_080_DEATH_03.ogg",
+			"Play_01": "VO_AT_080_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_080.png",
 		"collectible": true,
@@ -2533,6 +2737,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 3,
+		"audio": {
+			"Alt1_02": "VO_AT_081_PLAY_ALT1_02.ogg",
+			"Attack_03": "VO_AT_081_ATTACK_03.ogg",
+			"Death_04": "VO_AT_081_DEATH_04.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "AT_081.png",
 		"collectible": true,
@@ -2567,6 +2776,11 @@ var parseCardsText = {
 	{
 		"artist": "Ron Spears",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_AT_082_ATTACK_02.ogg",
+			"Death_03": "VO_AT_082_DEATH_03.ogg",
+			"Play_01": "VO_AT_082_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_082.png",
 		"collectible": true,
@@ -2600,6 +2814,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_083_ATTACK_02.ogg",
+			"Death_03": "VO_AT_083_DEATH_03.ogg",
+			"Play_01": "VO_AT_083_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_083.png",
 		"collectible": true,
@@ -2639,6 +2858,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_AT_084_ATTACK_02.ogg",
+			"Death_03": "VO_AT_084_DEATH_03.ogg",
+			"Play_01": "VO_AT_084_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_084.png",
 		"collectible": true,
@@ -2672,6 +2896,11 @@ var parseCardsText = {
 	{
 		"artist": "Froilan Gardner",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_085_ATTACK_02.ogg",
+			"Death_03": "VO_AT_085_DEATH_03.ogg",
+			"Play_01": "VO_AT_085_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_085.png",
 		"collectible": true,
@@ -2694,6 +2923,11 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_086_ATTACK_02.ogg",
+			"Death_03": "VO_AT_086_DEATH_03.ogg",
+			"Play_01": "VO_AT_086_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_086.png",
 		"collectible": true,
@@ -2727,6 +2961,11 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Zagumennyy",
 		"attack": 2,
+		"audio": {
+			"Alt1_02": "VO_AT_087_PLAY_ALT1_02.ogg",
+			"Attack_04": "VO_AT_087_ATTACK_04.ogg",
+			"Death_06": "VO_AT_087_DEATH_06.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_087.png",
 		"collectible": true,
@@ -2750,6 +2989,12 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 8,
+		"audio": {
+			"Attack_03": "VO_AT_088_ATTACK_03.ogg",
+			"Death_05": "VO_AT_088_DEATH_05.ogg",
+			"Play_01": "VO_AT_088_PLAY_01.ogg",
+			"Trigger_01": "VO_AT_088_TRIGGER_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_088.png",
 		"collectible": true,
@@ -2772,6 +3017,11 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_AT_089_ATTACK_02.ogg",
+			"Death_03": "VO_AT_089_DEATH_03.ogg",
+			"Play_01": "VO_AT_089_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_089.png",
 		"collectible": true,
@@ -2805,6 +3055,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_090_ATTACK_02.ogg",
+			"Death_03": "VO_AT_090_DEATH_03.ogg",
+			"Play_01": "VO_AT_090_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_090.png",
 		"collectible": true,
@@ -2839,6 +3094,11 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_AT_091_ATTACK_02.ogg",
+			"Death_03": "VO_AT_091_DEATH_03.ogg",
+			"Play_01": "VO_AT_091_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_091.png",
 		"collectible": true,
@@ -2880,6 +3140,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Alt1_04": "VO_AT_093_ATTACK_ALT1_04.ogg",
+			"Death_05": "VO_AT_093_DEATH_05.ogg",
+			"Play_01": "VO_AT_093_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_093.png",
 		"collectible": true,
@@ -2903,6 +3168,11 @@ var parseCardsText = {
 	{
 		"artist": "James Zhang",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_094_ATTACK_02.ogg",
+			"Death_03": "VO_AT_094_DEATH_03.ogg",
+			"Play_01": "VO_AT_094_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_094.png",
 		"collectible": true,
@@ -2925,6 +3195,11 @@ var parseCardsText = {
 	{
 		"artist": "Esad Ribic",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_095_ATTACK_02.ogg",
+			"Death_03": "VO_AT_095_DEATH_03.ogg",
+			"Play_01": "VO_AT_095_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_095.png",
 		"collectible": true,
@@ -2948,6 +3223,11 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_096_ATTACK_02.ogg",
+			"Death_03": "VO_AT_096_DEATH_03.ogg",
+			"Play_01": "VO_AT_096_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_096.png",
 		"collectible": true,
@@ -2982,6 +3262,11 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 2,
+		"audio": {
+			"Attack_03": "VO_AT_097_ATTACK_03.ogg",
+			"Death_04": "VO_AT_097_DEATH_04.ogg",
+			"Play_01": "VO_AT_097_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_097.png",
 		"collectible": true,
@@ -3004,6 +3289,11 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 6,
+		"audio": {
+			"Alt1_02": "VO_AT_098_PLAY_ALT1_02.ogg",
+			"Attack_03": "VO_AT_098_ATTACK_03.ogg",
+			"Death_04": "VO_AT_098_DEATH_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_098.png",
 		"collectible": true,
@@ -3026,6 +3316,11 @@ var parseCardsText = {
 	{
 		"artist": "Ben Wootten",
 		"attack": 3,
+		"audio": {
+			"Attack_04": "VO_AT_099_ATTACK_04.ogg",
+			"Death_05": "VO_AT_099_DEATH_05.ogg",
+			"Play_01": "VO_AT_099_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_099.png",
 		"collectible": true,
@@ -3063,6 +3358,11 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 3,
+		"audio": {
+			"Alt1_04": "VO_AT_100_ATTACK_ALT1_04.ogg",
+			"Death_05": "VO_AT_100_DEATH_05.ogg",
+			"Play_01": "VO_AT_100_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_100.png",
 		"collectible": true,
@@ -3085,6 +3385,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_101_ATTACK_02.ogg",
+			"Death_03": "VO_AT_101_DEATH_03.ogg",
+			"Play_01": "VO_AT_101_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_101.png",
 		"collectible": true,
@@ -3144,6 +3449,11 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_104_ATTACK_02.ogg",
+			"Death_03": "VO_AT_104_DEATH_03.ogg",
+			"Play_01": "VO_AT_104_PLAY_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "AT_104.png",
 		"collectible": true,
@@ -3166,6 +3476,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
+		"audio": {
+			"01_Alt": "VO_AT_105_PLAY_01_ALT.ogg",
+			"Attack_02": "VO_AT_105_ATTACK_02.ogg",
+			"Death_03": "VO_AT_105_DEATH_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_105.png",
 		"collectible": true,
@@ -3188,6 +3503,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrea Uderzo",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_106_ATTACK_02.ogg",
+			"Death_03": "VO_AT_106_DEATH_03.ogg",
+			"Play_01": "VO_AT_106_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_106.png",
 		"collectible": true,
@@ -3239,6 +3559,11 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_109_ATTACK_02.ogg",
+			"Death_03": "VO_AT_109_DEATH_03.ogg",
+			"Play_01": "VO_AT_109_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_109.png",
 		"collectible": true,
@@ -3276,6 +3601,12 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
+		"audio": {
+			"Alt1_04": "VO_AT_110_ATTACK_ALT1_04.ogg",
+			"Death_05": "VO_AT_110_DEATH_05.ogg",
+			"Play_01": "VO_AT_110_PLAY_01.ogg",
+			"Trigger_06": "VO_AT_110_TRIGGER_06.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_110.png",
 		"collectible": true,
@@ -3298,6 +3629,11 @@ var parseCardsText = {
 	{
 		"artist": "Ron Spears",
 		"attack": 3,
+		"audio": {
+			"Alt1_02": "VO_AT_111_PLAY_ALT1_02.ogg",
+			"Attack_03": "VO_AT_111_ATTACK_03.ogg",
+			"Death_04": "VO_AT_111_DEATH_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_111.png",
 		"collectible": true,
@@ -3320,6 +3656,11 @@ var parseCardsText = {
 	{
 		"artist": "Penny Arcade",
 		"attack": 5,
+		"audio": {
+			"Attack_03": "VO_AT_112_ATTACK_03.ogg",
+			"Death_04": "VO_AT_112_DEATH_04.ogg",
+			"Play_01": "VO_AT_112_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_112.png",
 		"collectible": true,
@@ -3346,6 +3687,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_113_ATTACK_02.ogg",
+			"Death_03": "VO_AT_113_DEATH_03.ogg",
+			"Play_01": "VO_AT_113_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_113.png",
 		"collectible": true,
@@ -3368,6 +3714,12 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
+		"audio": {
+			"Alt1_02": "VO_AT_114_PLAY_ALT1_02.ogg",
+			"Attack_03": "VO_AT_114_ATTACK_03.ogg",
+			"Death_05": "VO_AT_114_DEATH_05.ogg",
+			"Play_01": "VO_AT_114_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_114.png",
 		"collectible": true,
@@ -3390,6 +3742,11 @@ var parseCardsText = {
 	{
 		"artist": "Howard Lyon",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_AT_115_ATTACK_02.ogg",
+			"Death_03": "VO_AT_115_DEATH_03.ogg",
+			"Play_01": "VO_AT_115_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_115.png",
 		"collectible": true,
@@ -3423,6 +3780,11 @@ var parseCardsText = {
 	{
 		"artist": "Jeff Easley",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_AT_116_ATTACK_02.ogg",
+			"Death_03": "VO_AT_116_DEATH_03.ogg",
+			"Play_01": "VO_AT_116_PLAY_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "AT_116.png",
 		"collectible": true,
@@ -3459,6 +3821,11 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_117_ATTACK_02.ogg",
+			"Death_03": "VO_AT_117_DEATH_03.ogg",
+			"Play_01": "VO_AT_117_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_117.png",
 		"collectible": true,
@@ -3492,6 +3859,11 @@ var parseCardsText = {
 	{
 		"artist": "Todd Lockwood",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_AT_118_ATTACK_02.ogg",
+			"Death_03": "VO_AT_118_DEATH_03.ogg",
+			"Play_01": "VO_AT_118_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_118.png",
 		"collectible": true,
@@ -3514,6 +3886,11 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 4,
+		"audio": {
+			"Attack_03": "VO_AT_119_ATTACK_03.ogg",
+			"Death_04": "VO_AT_119_DEATH_04.ogg",
+			"Play_01": "VO_AT_119_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_119.png",
 		"collectible": true,
@@ -3566,6 +3943,11 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 4,
+		"audio": {
+			"03_Alt": "VO_AT_121_DEATH_03_ALT.ogg",
+			"Attack_02": "VO_AT_121_ATTACK_02.ogg",
+			"Play_01": "VO_AT_121_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_121.png",
 		"collectible": true,
@@ -3647,6 +4029,11 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 3,
+		"audio": {
+			"Alt2_03": "VO_AT_124_PLAY_ALT2_03.ogg",
+			"Attack_04": "VO_AT_124_ATTACK_04.ogg",
+			"Death_05": "VO_AT_124_DEATH_05.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_124.png",
 		"collectible": true,
@@ -3690,6 +4077,12 @@ var parseCardsText = {
 	{
 		"artist": "Marcleo Vignali",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_AT_127_ATTACK_02.ogg",
+			"Death_04": "VO_AT_127_DEATH_04.ogg",
+			"Play_01": "VO_AT_127_PLAY_01.ogg",
+			"Trigger_05": "VO_AT_127_TRIGGER_05.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_127.png",
 		"collectible": true,
@@ -3713,6 +4106,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_AT_128_ATTACK_02.ogg",
+			"Death_03": "VO_AT_128_DEATH_03.ogg",
+			"Play_01": "VO_AT_128_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_128.png",
 		"collectible": true,
@@ -3736,6 +4134,11 @@ var parseCardsText = {
 	{
 		"artist": "Mark Zug",
 		"attack": 3,
+		"audio": {
+			"Attack_03": "VO_AT_129_ATTACK_03.ogg",
+			"Death_04": "VO_AT_129_DEATH_04.ogg",
+			"Play_01": "VO_AT_129_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_129.png",
 		"collectible": true,
@@ -3759,6 +4162,12 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_AT_130_ATTACK_02.ogg",
+			"Death_03": "VO_AT_130_DEATH_03.ogg",
+			"Play_01": "VO_AT_130_PLAY_01.ogg",
+			"Trigger_04": "VO_AT_130_TRIGGER_04.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "AT_130.png",
 		"collectible": true,
@@ -3781,6 +4190,11 @@ var parseCardsText = {
 	{
 		"artist": "Ben Thompson",
 		"attack": 3,
+		"audio": {
+			"Alt1_02": "VO_AT_131_PLAY_ALT1_02.ogg",
+			"Attack_03": "VO_AT_131_ATTACK_03.ogg",
+			"Death_04": "VO_AT_131_DEATH_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_131.png",
 		"collectible": true,
@@ -3801,6 +4215,11 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_AT_132_ATTACK_02.ogg",
+			"Death_03": "VO_AT_132_DEATH_03.ogg",
+			"Play_01": "VO_AT_132_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_132.png",
 		"collectible": true,
@@ -3831,6 +4250,17 @@ var parseCardsText = {
 		"name": "Dire Shapeshift",
 		"playerClass": "Druid",
 		"set": "Tgt",
+		"text": "<b>Hero Power</b>\nGain 2 Armor and +2 Attack this turn.",
+		"type": "Hero_power"
+	},
+	{
+		"cardClass": "DRUID",
+		"cost": 2,
+		"dbfId": 51465,
+		"id": "AT_132_DRUIDa",
+		"name": "Dire Shapeshift",
+		"playerClass": "Druid",
+		"set": "Hero_skins",
 		"text": "<b>Hero Power</b>\nGain 2 Armor and +2 Attack this turn.",
 		"type": "Hero_power"
 	},
@@ -4040,6 +4470,17 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
+		"cardClass": "WARLOCK",
+		"cost": 2,
+		"dbfId": 51468,
+		"id": "AT_132_WARLOCKa",
+		"name": "Soul Tap",
+		"playerClass": "Warlock",
+		"set": "Hero_skins",
+		"text": "<b>Hero Power</b>\nDraw a card.",
+		"type": "Hero_power"
+	},
+	{
 		"cardClass": "WARRIOR",
 		"cardImage": "AT_132_WARRIOR.png",
 		"cost": 2,
@@ -4055,6 +4496,11 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 1,
+		"audio": {
+			"Alt1_03": "VO_AT_133_ATTACK_ALT1_03.ogg",
+			"Death_04": "VO_AT_133_DEATH_04.ogg",
+			"Play_01": "VO_AT_133_PLAY_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "AT_133.png",
 		"collectible": true,
@@ -4227,21 +4673,6 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
-		"attack": 2,
-		"cardClass": "WARRIOR",
-		"cardImage": "BCON_026.png",
-		"cost": 3,
-		"dbfId": 49251,
-		"durability": 3,
-		"id": "BCON_026",
-		"name": "Blazing Longsword",
-		"playerClass": "Warrior",
-		"rarity": "Free",
-		"set": "Core",
-		"text": "Also damages minions next to whomever your hero attacks.",
-		"type": "Weapon"
-	},
-	{
 		"artist": "Jaime Jones",
 		"cardClass": "PALADIN",
 		"cardImage": "BRM_001.png",
@@ -4275,6 +4706,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_BRM_002_Attack_02.ogg",
+			"Death_03": "VO_BRM_002_Death_03.ogg",
+			"Play_01": "VO_BRM_002_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "BRM_002.png",
 		"collectible": true,
@@ -4390,6 +4826,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_BRM_006_Attack_02.ogg",
+			"Death_03": "VO_BRM_006_Death_03.ogg",
+			"Play_01": "VO_BRM_006_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "BRM_006.png",
 		"collectible": true,
@@ -4442,6 +4883,11 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_BRM_008_Attack_02.ogg",
+			"Death_03": "VO_BRM_008_Death_03.ogg",
+			"Play_01": "VO_BRM_008_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "BRM_008.png",
 		"collectible": true,
@@ -4486,6 +4932,11 @@ var parseCardsText = {
 	{
 		"artist": "Stanley Lau",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_BRM_010_Attack_02.ogg",
+			"Death_03": "VO_BRM_010_Death_03.ogg",
+			"Play_01": "VO_BRM_010_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "BRM_010.png",
 		"collectible": true,
@@ -4602,6 +5053,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_BRM_012_Attack_02.ogg",
+			"Death_03": "VO_BRM_012_Death_03.ogg",
+			"Play_01": "VO_BRM_012_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "BRM_012.png",
 		"collectible": true,
@@ -4706,6 +5162,11 @@ var parseCardsText = {
 	{
 		"artist": "Efrem Palacios",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_BRM_016_Attack_02.ogg",
+			"Death_03": "VO_BRM_016_Death_03.ogg",
+			"Play_01": "VO_BRM_016_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "BRM_016.png",
 		"collectible": true,
@@ -4776,6 +5237,12 @@ var parseCardsText = {
 	{
 		"artist": "Bobby Chiu",
 		"attack": 3,
+		"audio": {
+			"04_Alt2": "VO_BRM_019_Death_04_ALT2.ogg",
+			"Attack_02": "VO_BRM_019_Attack_02.ogg",
+			"Play_01": "VO_BRM_019_Play_01.ogg",
+			"Trigger_03": "VO_BRM_019_Trigger_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_019.png",
 		"collectible": true,
@@ -4795,6 +5262,11 @@ var parseCardsText = {
 	{
 		"artist": "Edouard Guiton & Stuido HIVE",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_BRM_020_Attack_02.ogg",
+			"Death_03": "VO_BRM_020_Death_03.ogg",
+			"Play_01": "VO_BRM_020_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_020.png",
 		"collectible": true,
@@ -4862,6 +5334,11 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_BRM_024_Attack_02.ogg",
+			"Death_03": "VO_BRM_024_Death_03.ogg",
+			"Play_01": "VO_BRM_024_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_024.png",
 		"collectible": true,
@@ -4939,6 +5416,47 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 9,
+		"audio": {
+			"Attack_15": "VO_BRM_027h_Attack_15.ogg",
+			"Celebrate_24": "VO_BRM_027h_CELEBRATE_24.ogg",
+			"Concede_11": "VO_BRM_027h_Concede_11.ogg",
+			"Day_45": "VO_BRM_027h_PIRATE_DAY_45.ogg",
+			"Death_63": "VO_BRM_027h_Death_63.ogg",
+			"Error01_51": "VO_BRM_027h_ERROR01_51.ogg",
+			"Error02_52": "VO_BRM_027h_ERROR02_52.ogg",
+			"Error03_53": "VO_BRM_027h_ERROR03_53.ogg",
+			"Error04_54": "VO_BRM_027h_ERROR04_54.ogg",
+			"Error05_55": "VO_BRM_027h_ERROR05_55.ogg",
+			"Error06_56": "VO_BRM_027h_ERROR06_56.ogg",
+			"Error07_57": "VO_BRM_027h_ERROR07_57.ogg",
+			"Error08_58": "VO_BRM_027h_ERROR08_58.ogg",
+			"Error09_59": "VO_BRM_027h_ERROR09_59.ogg",
+			"Error10_60": "VO_BRM_027h_ERROR10_60.ogg",
+			"Error11_61": "VO_BRM_027h_ERROR11_61.ogg",
+			"Error12_62": "VO_BRM_027h_ERROR12_62.ogg",
+			"Event_41": "VO_BRM_027h_HAPPY_EVENT_41.ogg",
+			"Festival_44": "VO_BRM_027h_FIRE_FESTIVAL_44.ogg",
+			"Greetings_04": "VO_BRM_027h_Greetings_04.ogg",
+			"Greetings_05": "VO_BRM_027h_MIRROR_GREETINGS_05.ogg",
+			"Halloween_36": "VO_BRM_027h_HAPPY_HALLOWEEN_36.ogg",
+			"Holidays_37": "VO_BRM_027h_HAPPY_HOLIDAYS_37.ogg",
+			"Lowcards_49": "VO_BRM_027h_LowCards_49.ogg",
+			"Lunar_16": "VO_BRM_027h_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Noblegarden_39": "VO_BRM_027h_HAPPY_NOBLEGARDEN_39.ogg",
+			"Nocards_50": "VO_BRM_027h_NoCards_50.ogg",
+			"Oops_07": "VO_BRM_027h_Oops_07.ogg",
+			"Party_22": "VO_BRM_027h_PARTY_22.ogg",
+			"Played_06": "VO_BRM_027h_Well_Played_06.ogg",
+			"Sorry_10": "VO_BRM_027h_Sorry_10.ogg",
+			"Thanks_09": "VO_BRM_027h_Thanks_09.ogg",
+			"Thinking1_12": "VO_BRM_027h_Thinking1_12.ogg",
+			"Thinking2_13": "VO_BRM_027h_Thinking2_13.ogg",
+			"Thinking3_14": "VO_BRM_027h_Thinking3_14.ogg",
+			"Threaten_08": "VO_BRM_027h_Threaten_08.ogg",
+			"Time_48": "VO_BRM_027h_Time_48.ogg",
+			"Wow_20": "VO_BRM_027h_WOW_20.ogg",
+			"Year_38": "VO_BRM_027h_HAPPY_NEW_YEAR_38.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_027.png",
 		"collectible": true,
@@ -5000,6 +5518,9 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 5,
+		"audio": {
+			"Death_08": "VO_BRM_028_Death_08.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_028.png",
 		"collectible": true,
@@ -5031,6 +5552,9 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 8,
+		"audio": {
+			"Death_10": "VO_BRM_029_Death_10.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_029.png",
 		"collectible": true,
@@ -5054,6 +5578,10 @@ var parseCardsText = {
 	{
 		"artist": "Ruan Jia",
 		"attack": 8,
+		"audio": {
+			"Attack_20": "VO_BRM_030_Attack_20.ogg",
+			"Death_21": "VO_BRM_030_Death_21.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_030.png",
 		"collectible": true,
@@ -5112,6 +5640,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_03": "VO_BRM_033_Attack_03.ogg",
+			"Death_04": "VO_BRM_033_Death_04.ogg",
+			"Play_01": "VO_BRM_033_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_033.png",
 		"collectible": true,
@@ -5145,6 +5678,11 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_BRM_034_Attack_02.ogg",
+			"Death_03": "VO_BRM_034_Death_03.ogg",
+			"Play_01": "VO_BRM_034_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRM_034.png",
 		"collectible": true,
@@ -5165,6 +5703,17 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_05": "VO_BRMA01_1_CARD_05.ogg",
+			"Death_09": "VO_BRMA01_1_DEATH_09.ogg",
+			"Etc_06": "VO_BRMA01_1_ETC_06.ogg",
+			"Power_04": "VO_BRMA01_1_HERO_POWER_04.ogg",
+			"Response_03": "VO_BRMA01_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA01_1_START_01.ogg",
+			"Succubus_08": "VO_BRMA01_1_SUCCUBUS_08.ogg",
+			"Turn1_02": "VO_BRMA01_1_TURN1_02.ogg",
+			"Wargolem_07": "VO_BRMA01_1_WARGOLEM_07.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA01_1.png",
 		"dbfId": 2313,
@@ -5254,6 +5803,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_BRMA01_3_Attack_02.ogg",
+			"Death_03": "VO_BRMA01_3_Death_03.ogg",
+			"Play_01": "VO_BRMA01_3_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA01_3.png",
 		"cost": 6,
@@ -5268,6 +5822,14 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Attack_05": "VO_BRMA01_4t_Attack_05.ogg",
+			"Death_06": "VO_BRMA01_4t_Death_06.ogg",
+			"Play1_01": "VO_BRMA01_4t_Play1_01.ogg",
+			"Play2_02": "VO_BRMA01_4t_Play2_02.ogg",
+			"Play3_03": "VO_BRMA01_4t_Play3_03.ogg",
+			"Play4_04": "VO_BRMA01_4t_Play4_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA01_4.png",
 		"cost": 3,
@@ -5302,6 +5864,46 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Alakir_34": "VO_BRMA02_1_ALAKIR_34.ogg",
+			"Alexstraza_32": "VO_BRMA02_1_ALEXSTRAZA_32.ogg",
+			"Beast_22": "VO_BRMA02_1_BEAST_22.ogg",
+			"Boom_28": "VO_BRMA02_1_BOOM_28.ogg",
+			"Cairne_20": "VO_BRMA02_1_CAIRNE_20.ogg",
+			"Cho_07": "VO_BRMA02_1_CHO_07.ogg",
+			"Death_38": "VO_BRMA02_1_DEATH_38.ogg",
+			"Deathwing_35": "VO_BRMA02_1_DEATHWING_35.ogg",
+			"Etc_18": "VO_BRMA02_1_ETC_18.ogg",
+			"Feugen_15": "VO_BRMA02_1_FEUGEN_15.ogg",
+			"Foereaper_29": "VO_BRMA02_1_FOEREAPER_29.ogg",
+			"Geddon_13": "VO_BRMA02_1_GEDDON_13.ogg",
+			"Gelbin_21": "VO_BRMA02_1_GELBIN_21.ogg",
+			"Gruul_31": "VO_BRMA02_1_GRUUL_31.ogg",
+			"Hogger_27": "VO_BRMA02_1_HOGGER_27.ogg",
+			"Illidan_23": "VO_BRMA02_1_ILLIDAN_23.ogg",
+			"Leviathan_12": "VO_BRMA02_1_LEVIATHAN_12.ogg",
+			"Loatheb_16": "VO_BRMA02_1_LOATHEB_16.ogg",
+			"Maexxna_24": "VO_BRMA02_1_MAEXXNA_24.ogg",
+			"Millhouse_09": "VO_BRMA02_1_MILLHOUSE_09.ogg",
+			"Mogor_25": "VO_BRMA02_1_MOGOR_25.ogg",
+			"Mukla_10": "VO_BRMA02_1_MUKLA_10.ogg",
+			"Nozdormu_36": "VO_BRMA02_1_NOZDORMU_36.ogg",
+			"Onyxia_33": "VO_BRMA02_1_ONYXIA_33.ogg",
+			"Pagle_08": "VO_BRMA02_1_PAGLE_08.ogg",
+			"Power_05": "VO_BRMA02_1_HERO_POWER_05.ogg",
+			"Pt2_03": "VO_BRMA02_1_TURN1_PT2_03.ogg",
+			"Response_04": "VO_BRMA02_1_RESPONSE_04.ogg",
+			"Sneed_30": "VO_BRMA02_1_SNEED_30.ogg",
+			"Stalagg_14": "VO_BRMA02_1_STALAGG_14.ogg",
+			"Start_01": "VO_BRMA02_1_START_01.ogg",
+			"Sylvanas_19": "VO_BRMA02_1_SYLVANAS_19.ogg",
+			"Thalnos_06": "VO_BRMA02_1_THALNOS_06.ogg",
+			"Thaurissan_37": "VO_BRMA02_1_THAURISSAN_37.ogg",
+			"Tinkmaster_11": "VO_BRMA02_1_TINKMASTER_11.ogg",
+			"Toshley_26": "VO_BRMA02_1_TOSHLEY_26.ogg",
+			"Turn1_02": "VO_BRMA02_1_TURN1_02.ogg",
+			"Voljin_17": "VO_BRMA02_1_VOLJIN_17.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA02_1.png",
 		"dbfId": 2316,
@@ -5326,6 +5928,11 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"Attack_02": "VO_BRMA02_2t_Attack_02.ogg",
+			"Death_03": "VO_BRMA02_2t_Death_03.ogg",
+			"Play_01": "VO_BRMA02_2t_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA02_2.png",
 		"cost": 1,
@@ -5399,6 +6006,16 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_04": "VO_BRMA03_1_CARD_04.ogg",
+			"Death_05": "VO_BRMA03_1_MOIRA_DEATH_05.ogg",
+			"Death_09": "VO_BRMA03_1_DEATH_09.ogg",
+			"Power_06": "VO_BRMA03_1_HERO_POWER_06.ogg",
+			"Rag_07": "VO_BRMA03_1_VS_RAG_07.ogg",
+			"Response_03": "VO_BRMA03_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA03_1_START_01.ogg",
+			"Turn1_02": "VO_BRMA03_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA03_1.png",
 		"dbfId": 2320,
@@ -5437,6 +6054,10 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_BRMA03_3_Attack_01.ogg",
+			"Death_02": "VO_BRMA03_3_Death_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA03_3.png",
 		"cost": 2,
@@ -5480,6 +6101,14 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_04": "VO_BRMA04_1_CARD_04.ogg",
+			"Death_06": "VO_BRMA04_1_DEATH_06.ogg",
+			"Power_05": "VO_BRMA04_1_HERO_POWER_05.ogg",
+			"Response_03": "VO_BRMA04_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA04_1_START_01.ogg",
+			"Turn1_02": "VO_BRMA04_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA04_1.png",
 		"dbfId": 2324,
@@ -5590,6 +6219,14 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Card_05": "VO_BRMA05_1_CARD_05.ogg",
+			"Death_04": "VO_BRMA05_1_DEATH_04.ogg",
+			"Power_06": "VO_BRMA05_1_HERO_POWER_06.ogg",
+			"Response_03": "VO_BRMA05_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA05_1_START_01.ogg",
+			"Turn1_02": "VO_BRMA05_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA05_1.png",
 		"dbfId": 2328,
@@ -5688,6 +6325,13 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"audio": {
+			"02_Alt": "VO_BRMA06_1_TURN1_02_ALT.ogg",
+			"Death_04": "VO_BRMA06_1_DEATH_04.ogg",
+			"Rag_05": "VO_BRMA06_1_SUMMON_RAG_05.ogg",
+			"Response_03": "VO_BRMA06_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA06_1_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA06_1.png",
 		"dbfId": 2334,
@@ -5751,6 +6395,11 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
+		"audio": {
+			"Intro_01": "VO_BRMA06_3_INTRO_01.ogg",
+			"Response_03": "VO_BRMA06_3_RESPONSE_03.ogg",
+			"Turn1_02": "VO_BRMA06_3_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA06_3.png",
 		"dbfId": 2336,
@@ -5776,6 +6425,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_BRMA06_4_Attack_02.ogg",
+			"Death_03": "VO_BRMA06_4_Death_03.ogg",
+			"Play_01": "VO_BRMA06_4_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA06_4.png",
 		"cost": 2,
@@ -5803,6 +6457,14 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_04": "VO_BRMA07_1_CARD_04.ogg",
+			"Death_06": "VO_BRMA07_1_DEATH_06.ogg",
+			"Power_05": "VO_BRMA07_1_HERO_POWER_05.ogg",
+			"Response_03": "VO_BRMA07_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA07_1_START_01.ogg",
+			"Turn1_02": "VO_BRMA07_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA07_1.png",
 		"dbfId": 2337,
@@ -5895,6 +6557,14 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Alt_02": "VO_BRMA08_1_TURN1_ALT_02.ogg",
+			"Card_05": "VO_BRMA08_1_CARD_05.ogg",
+			"Death_06": "VO_BRMA08_1_DEATH_06.ogg",
+			"Response_04": "VO_BRMA08_1_RESPONSE_04.ogg",
+			"Start_01": "VO_BRMA08_1_START_01.ogg",
+			"Turn1_03": "VO_BRMA08_1_TURN1_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA08_1.png",
 		"dbfId": 2340,
@@ -5960,6 +6630,18 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Alt_02": "VO_BRMA09_1_TURN1_ALT_02.ogg",
+			"Card_05": "VO_BRMA09_1_CARD_05.ogg",
+			"Death_11": "VO_BRMA09_1_DEATH_11.ogg",
+			"Power1_06": "VO_BRMA09_1_HERO_POWER1_06.ogg",
+			"Power2_07": "VO_BRMA09_1_HERO_POWER2_07.ogg",
+			"Power3_08": "VO_BRMA09_1_HERO_POWER3_08.ogg",
+			"Power4_09": "VO_BRMA09_1_HERO_POWER4_09.ogg",
+			"Response_04": "VO_BRMA09_1_RESPONSE_04.ogg",
+			"Start_01": "VO_BRMA09_1_START_01.ogg",
+			"Turn1_03": "VO_BRMA09_1_TURN1_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA09_1.png",
 		"dbfId": 2344,
@@ -6061,6 +6743,11 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Attack_02": "VO_BRMA09_3t_Attack_02.ogg",
+			"Death_03": "VO_BRMA09_3t_Death_03.ogg",
+			"Play_01": "VO_BRMA09_3t_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA09_3.png",
 		"cost": 2,
@@ -6280,6 +6967,16 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"1_05": "VO_BRMA10_1_EGG_DEATH_1_05.ogg",
+			"2_06": "VO_BRMA10_1_EGG_DEATH_2_06.ogg",
+			"3_07": "VO_BRMA10_1_EGG_DEATH_3_07.ogg",
+			"Death_08": "VO_BRMA10_1_DEATH_08.ogg",
+			"Power_04": "VO_BRMA10_1_HERO_POWER_04.ogg",
+			"Response_03": "VO_BRMA10_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA10_1_START_01.ogg",
+			"Turn1_02": "VO_BRMA10_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA10_1.png",
 		"dbfId": 2354,
@@ -6439,6 +7136,17 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"audio": {
+			"Alexstraza_07": "VO_BRMA11_1_ALEXSTRAZA_07.ogg",
+			"Alt_08": "VO_BRMA11_1_DEATH_ALT_08.ogg",
+			"Card_04": "VO_BRMA11_1_CARD_04.ogg",
+			"Death_09": "VO_BRMA11_1_DEATH_09.ogg",
+			"Player_06": "VO_BRMA11_1_KILL_PLAYER_06.ogg",
+			"Power_05": "VO_BRMA11_1_HERO_POWER_05.ogg",
+			"Response_03": "VO_BRMA11_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA11_1_START_01.ogg",
+			"Turn1_02": "VO_BRMA11_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA11_1.png",
 		"dbfId": 2357,
@@ -6818,6 +7526,26 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"02_Laugh": "VO_BRMA13_1_TURN1_PT1_02_Laugh.ogg",
+			"04_Laugh": "VO_BRMA13_1_TURN1_PT3_04_Laugh.ogg",
+			"Alt_23": "VO_BRMA13_1_DEATH_ALT_23.ogg",
+			"Deathwing_19": "VO_BRMA13_1_DEATHWING_19.ogg",
+			"Druid_14": "VO_BRMA13_1_HP_DRUID_14.ogg",
+			"Generic_18": "VO_BRMA13_1_HP_GENERIC_18.ogg",
+			"Hunter_12": "VO_BRMA13_1_HP_HUNTER_12.ogg",
+			"Mage_11": "VO_BRMA13_1_HP_MAGE_11.ogg",
+			"Paladin_07": "VO_BRMA13_1_HP_PALADIN_07.ogg",
+			"Priest_08": "VO_BRMA13_1_HP_PRIEST_08.ogg",
+			"Pt1_02": "VO_BRMA13_1_TURN1_PT1_02.ogg",
+			"Pt2_03": "VO_BRMA13_1_TURN1_PT2_03.ogg",
+			"Response_05": "VO_BRMA13_1_RESPONSE_05.ogg",
+			"Rogue_15": "VO_BRMA13_1_HP_ROGUE_15.ogg",
+			"Shaman_13": "VO_BRMA13_1_HP_SHAMAN_13.ogg",
+			"Start_01": "VO_BRMA13_1_START_01.ogg",
+			"Warlock_10": "VO_BRMA13_1_HP_WARLOCK_10.ogg",
+			"Warrior_09": "VO_BRMA13_1_HP_WARRIOR_09.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA13_1.png",
 		"dbfId": 2378,
@@ -7034,6 +7762,22 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Card_09": "VO_BRMA14_1_CARD_09.ogg",
+			"Death_08": "VO_BRMA14_1_DEATH_08.ogg",
+			"Hp1_03": "VO_BRMA14_1_HP1_03.ogg",
+			"Hp2_04": "VO_BRMA14_1_HP2_04.ogg",
+			"Hp3_05": "VO_BRMA14_1_HP3_05.ogg",
+			"Hp4_06": "VO_BRMA14_1_HP4_06.ogg",
+			"Hp5_07": "VO_BRMA14_1_HP5_07.ogg",
+			"Response1_10": "VO_BRMA14_1_RESPONSE1_10.ogg",
+			"Response2_11": "VO_BRMA14_1_RESPONSE2_11.ogg",
+			"Response3_12": "VO_BRMA14_1_RESPONSE3_12.ogg",
+			"Response4_13": "VO_BRMA14_1_RESPONSE4_13.ogg",
+			"Response5_14": "VO_BRMA14_1_RESPONSE5_14.ogg",
+			"Start_01": "VO_BRMA14_1_START_01.ogg",
+			"Turn1_02": "VO_BRMA14_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA14_1.png",
 		"dbfId": 2385,
@@ -7180,6 +7924,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_BRMA14_3_Attack_02.ogg",
+			"Death_03": "VO_BRMA14_3_Death_03.ogg",
+			"Play_01": "VO_BRMA14_3_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA14_3.png",
 		"cost": 0,
@@ -7233,6 +7982,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_BRMA14_5_Attack_02.ogg",
+			"Death_03": "VO_BRMA14_5_Death_03.ogg",
+			"Play_01": "VO_BRMA14_5_Play_01.ogg",
+			"Trigger_01": "VO_BRMA14_5_Trigger_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA14_5.png",
 		"cost": 1,
@@ -7299,6 +8054,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_BRMA14_7_Attack_02.ogg",
+			"Death_03": "VO_BRMA14_7_Death_03.ogg",
+			"Play_01": "VO_BRMA14_7_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA14_7.png",
 		"cost": 3,
@@ -7368,6 +8128,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_BRMA14_9_Attack_02.ogg",
+			"Death_03": "VO_BRMA14_9_Death_03.ogg",
+			"Play_01": "VO_BRMA14_9_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA14_9.png",
 		"cost": 5,
@@ -7404,6 +8169,14 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_05": "VO_BRMA15_1_CARD_05.ogg",
+			"Death_04": "VO_BRMA15_1_DEATH_04.ogg",
+			"Power_06": "VO_BRMA15_1_HERO_POWER_06.ogg",
+			"Response_03": "VO_BRMA15_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA15_1_START_01.ogg",
+			"Turn1_02": "VO_BRMA15_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA15_1.png",
 		"dbfId": 2396,
@@ -7496,6 +8269,21 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_04": "VO_BRMA16_1_CARD_04.ogg",
+			"Death_06": "VO_BRMA16_1_DEATH_06.ogg",
+			"Death_06s": "VO_BRMA16_1_DEATH_06s.ogg",
+			"Gong1_10": "VO_BRMA16_1_GONG1_10.ogg",
+			"Gong2_11": "VO_BRMA16_1_GONG2_11.ogg",
+			"Gong3_12": "VO_BRMA16_1_GONG3_12.ogg",
+			"Power_05": "VO_BRMA16_1_HERO_POWER_05.ogg",
+			"Response_03": "VO_BRMA16_1_RESPONSE_03.ogg",
+			"Start_01": "VO_BRMA16_1_START_01.ogg",
+			"Trigger1_07": "VO_BRMA16_1_TRIGGER1_07.ogg",
+			"Trigger2_08": "VO_BRMA16_1_TRIGGER2_08.ogg",
+			"Trigger3_09": "VO_BRMA16_1_TRIGGER3_09.ogg",
+			"Turn1_02": "VO_BRMA16_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "BRMA16_1.png",
 		"dbfId": 2400,
@@ -8219,6 +9007,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_020_Male_Ethereal_Attack_01.ogg",
+			"Death_01": "VO_CFM_020_Male_Ethereal_Death_01.ogg",
+			"Play_01": "VO_CFM_020_Male_Ethereal_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "CFM_020.png",
 		"collectible": true,
@@ -8274,6 +9067,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_025_Male_Mech_Attack_01.ogg",
+			"Death_01": "VO_CFM_025_Male_Mech_Death_01.ogg",
+			"Play_01": "VO_CFM_025_Male_Mech_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_025.png",
 		"collectible": true,
@@ -8326,6 +9124,11 @@ var parseCardsText = {
 	{
 		"artist": "Daria Tuzova",
 		"attack": 0,
+		"audio": {
+			"Attack_01": "VO_CFM_039_Male_Imp_Attack_01.ogg",
+			"Death_01": "VO_CFM_039_Male_Imp_Death_01.ogg",
+			"Play_01": "VO_CFM_039_Male_Imp_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_039.png",
 		"collectible": true,
@@ -8381,6 +9184,11 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_061_Male_Jinyu_Attack_01.ogg",
+			"Death_01": "VO_CFM_061_Male_Jinyu_Death_01.ogg",
+			"Play_01": "VO_CFM_061_Male_Jinyu_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "CFM_061.png",
 		"collectible": true,
@@ -8405,6 +9213,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_CFM_062_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_CFM_062_Male_Human_Death_01.ogg",
+			"Play_01": "VO_CFM_062_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "CFM_062.png",
 		"collectible": true,
@@ -8431,6 +9244,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_063_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_CFM_063_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_CFM_063_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_063.png",
 		"collectible": true,
@@ -8465,6 +9283,11 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_CFM_064_Male_Tuskarr_Attack_01.ogg",
+			"Death_01": "VO_CFM_064_Male_Tuskarr_Death_01.ogg",
+			"Play_01": "VO_CFM_064_Male_Tuskarr_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_064.png",
 		"collectible": true,
@@ -8516,6 +9339,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_066_Male_Goren_Attack_01.ogg",
+			"Death_01": "VO_CFM_066_Male_Goren_Death_01.ogg",
+			"Play_01": "VO_CFM_066_Male_Goren_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "CFM_066.png",
 		"collectible": true,
@@ -8541,6 +9369,11 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielsen",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_067_Male_Hozen_Attack_01.ogg",
+			"Death_01": "VO_CFM_067_Male_Hozen_Death_01.ogg",
+			"Play_03": "VO_CFM_067_Male_Hozen_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_067.png",
 		"collectible": true,
@@ -8580,6 +9413,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 1,
+		"audio": {
+			"Weasel_Attack": "VO_CFM_095_Male_Weasel_Attack.ogg",
+			"Weasel_Death": "VO_CFM_095_Male_Weasel_Death.ogg",
+			"Weasel_Play": "VO_CFM_095_Male_Weasel_Play.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_095.png",
 		"collectible": true,
@@ -8603,6 +9441,11 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_120_Female_Undead_Attack_01.ogg",
+			"Death_02": "VO_CFM_120_Female_Undead_Death_02.ogg",
+			"Play_01": "VO_CFM_120_Female_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_120.png",
 		"collectible": true,
@@ -8625,6 +9468,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Alexandrov",
 		"attack": 0,
+		"audio": {
+			"Attack_03": "VO_CFM_300_Male_Tauren_Attack_03.ogg",
+			"Death_01": "VO_CFM_300_Male_Tauren_Death_01.ogg",
+			"Play_01": "VO_CFM_300_Male_Tauren_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "CFM_300.png",
 		"collectible": true,
@@ -8676,6 +9524,11 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_CFM_308_Male_Mogu_Attack_01.ogg",
+			"Death_01": "VO_CFM_308_Male_Mogu_Death_01.ogg",
+			"Play_01": "VO_CFM_308_Male_Mogu_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "CFM_308.png",
 		"collectible": true,
@@ -8726,6 +9579,11 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Saas",
+		"audio": {
+			"Murloc_Attack": "VO_CFM_310t_Male_Murloc_Attack.ogg",
+			"Murloc_Death": "VO_CFM_310t_Male_Murloc_Death.ogg",
+			"Murloc_Play": "VO_CFM_310t_Male_Murloc_Play.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "CFM_310.png",
 		"collectible": true,
@@ -8760,6 +9618,11 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_312_Male_Mogu_Attack_01.ogg",
+			"Death_01": "VO_CFM_312_Male_Mogu_Death_01.ogg",
+			"Play_01": "VO_CFM_312_Male_Mogu_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "CFM_312.png",
 		"collectible": true,
@@ -8849,6 +9712,11 @@ var parseCardsText = {
 	{
 		"artist": "Ozhill Studio",
 		"attack": 2,
+		"audio": {
+			"Rat_Attack": "VO_CFM_316_Male_Rat_Attack.ogg",
+			"Rat_Death": "VO_CFM_316_Male_Rat_Death.ogg",
+			"Rat_Play": "VO_CFM_316_Male_Rat_Play.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "CFM_316.png",
 		"collectible": true,
@@ -8888,6 +9756,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_CFM_321_Male_OrcAdolescent_Attack_02.ogg",
+			"Death_02": "VO_CFM_321_Male_OrcAdolescent_Death_02.ogg",
+			"Play_02": "VO_CFM_321_Male_OrcAdolescent_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_321.png",
 		"classes": [
@@ -8919,6 +9792,12 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_324_Male_Pandaren_Attack_01.ogg",
+			"Attack_02": "VO_CFM_324t_Male_Pandaren_Attack_02.ogg",
+			"Death_01": "VO_CFM_324_Male_Pandaren_Death_01.ogg",
+			"Play_01": "VO_CFM_324_Male_Pandaren_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "CFM_324.png",
 		"collectible": true,
@@ -8963,6 +9842,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_CFM_325_Male_Gnome_Attack_02.ogg",
+			"Death_01": "VO_CFM_325_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_CFM_325_Male_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_325.png",
 		"collectible": true,
@@ -8994,6 +9878,11 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_328_Female_Orc_Attack_01.ogg",
+			"Death_01": "VO_CFM_328_Female_Orc_Death_01.ogg",
+			"Play_03": "VO_CFM_328_Female_Orc_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_328.png",
 		"collectible": true,
@@ -9089,6 +9978,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_336_Male_Gnoll_Attack_01.ogg",
+			"Death_01": "VO_CFM_336_Male_Gnoll_Death_01.ogg",
+			"Play_01": "VO_CFM_336_Male_Gnoll_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "CFM_336.png",
 		"collectible": true,
@@ -9158,6 +10052,11 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_338_Male_Trogg_Attack_01.ogg",
+			"Death_01": "VO_CFM_338_Male_Trogg_Death_01.ogg",
+			"Play_01": "VO_CFM_338_Male_Trogg_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "CFM_338.png",
 		"collectible": true,
@@ -9192,6 +10091,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_CFM_341_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_CFM_341_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_CFM_341_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_341.png",
 		"collectible": true,
@@ -9276,6 +10180,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_344_Male_Murloc_Attack_01.ogg",
+			"Death_02": "VO_CFM_344_Male_Murloc_Death_02.ogg",
+			"Play_01": "VO_CFM_344_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_344.png",
 		"collectible": true,
@@ -9400,6 +10309,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_605_Male_Drakanoid_Attack_01.ogg",
+			"Death_01": "VO_CFM_605_Male_Drakanoid_Death_01.ogg",
+			"Play_02": "VO_CFM_605_Male_Drakanoid_Play_02.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "CFM_605.png",
 		"collectible": true,
@@ -9479,6 +10393,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_609_Male_FelOrc_Attack_01.ogg",
+			"Death_01": "VO_CFM_609_Male_FelOrc_Death_01.ogg",
+			"Play_01": "VO_CFM_609_Male_FelOrc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_609.png",
 		"collectible": true,
@@ -9498,6 +10417,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_610_Male_Dranei_Attack_01.ogg",
+			"Death_01": "VO_CFM_610_Male_Dranei_Death_01.ogg",
+			"Play_01": "VO_CFM_610_Male_Dranei_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "CFM_610.png",
 		"collectible": true,
@@ -9619,6 +10543,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Garner",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_617_Female_NightElf_Attack_01.ogg",
+			"Death_01": "VO_CFM_617_Female_NightElf_Death_01.ogg",
+			"Play_01": "VO_CFM_617_Female_NightElf_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "CFM_617.png",
 		"collectible": true,
@@ -9653,6 +10582,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_619_Female_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_CFM_619_Female_BloodElf_Death_01.ogg",
+			"Play_02": "VO_CFM_619_Female_BloodElf_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_619.png",
 		"classes": [
@@ -9713,6 +10647,11 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_621_Male_ShadowTroll_Attack_01.ogg",
+			"Death_01": "VO_CFM_621_Male_ShadowTroll_Death_01.ogg",
+			"Play_01": "VO_CFM_621_Male_ShadowTroll_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_621.png",
 		"classes": [
@@ -10360,6 +11299,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_626_Male_Arakkoa_Attack_01.ogg",
+			"Death_01": "VO_CFM_626_Male_Arakkoa_Death_01.ogg",
+			"Play_01": "VO_CFM_626_Male_Arakkoa_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "CFM_626.png",
 		"collectible": true,
@@ -10442,6 +11386,11 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_634_Male_Pandaren_Attack_01.ogg",
+			"Death_01": "VO_CFM_634_Male_Pandaren_Death_01.ogg",
+			"Play_01": "VO_CFM_634_Male_Pandaren_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "CFM_634.png",
 		"collectible": true,
@@ -10486,6 +11435,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_CFM_637_Male_Beholder_Attack_01.ogg",
+			"Attack_02": "VO_CFM_637_Male_Beholder_Attack_02.ogg",
+			"Death_01": "VO_CFM_637_Male_Beholder_Death_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_637.png",
 		"collectible": true,
@@ -10507,6 +11461,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_639_Male_Dwarf_Attack_01.ogg",
+			"Death_01": "VO_CFM_639_Male_Dwarf_Death_01.ogg",
+			"Play_01": "VO_CFM_639_Male_Dwarf_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "CFM_639.png",
 		"collectible": true,
@@ -10538,6 +11497,11 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_643_Male_Goblin_Attack_01.ogg",
+			"Death_01": "VO_CFM_643_Male_Goblin_Death_01.ogg",
+			"Play_01": "VO_CFM_643_Male_Goblin_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "CFM_643.png",
 		"collectible": true,
@@ -10584,6 +11548,11 @@ var parseCardsText = {
 	{
 		"artist": "Yewon Park",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_CFM_646_Male_Gnome_Attack_02.ogg",
+			"Death_01": "VO_CFM_646_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_CFM_646_Male_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_646.png",
 		"collectible": true,
@@ -10606,6 +11575,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studios",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_647_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_CFM_647_Male_Murloc_Death_01.ogg",
+			"Play_01": "VO_CFM_647_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_647.png",
 		"collectible": true,
@@ -10629,6 +11603,11 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_CFM_648_Male_Goblin_Attack_01.ogg",
+			"Death_01": "VO_CFM_648_Male_Goblin_Death_01.ogg",
+			"Play_02": "VO_CFM_648_Male_Goblin_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_648.png",
 		"collectible": true,
@@ -10666,6 +11645,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_649_Female_Harpy_Attack_01.ogg",
+			"Death_01": "VO_CFM_649_Female_Harpy_Death_01.ogg",
+			"Play_01": "VO_CFM_649_Female_Harpy_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_649.png",
 		"classes": [
@@ -10697,6 +11681,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_650_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_CFM_650_Male_Murloc_Death_01.ogg",
+			"Play_04": "VO_CFM_650_Male_Murloc_Play_04.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "CFM_650.png",
 		"collectible": true,
@@ -10732,6 +11721,11 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_651_Female_Naga_Attack_01.ogg",
+			"Death_01": "VO_CFM_651_Female_Naga_Death_01.ogg",
+			"Play_01": "VO_CFM_651_Female_Naga_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_651.png",
 		"collectible": true,
@@ -10767,6 +11761,11 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_652_Male_Ogre_Attack_01.ogg",
+			"Death_01": "VO_CFM_652_Male_Ogre_Death_01.ogg",
+			"Play_02": "VO_CFM_652_Male_Ogre_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_652.png",
 		"collectible": true,
@@ -10789,6 +11788,11 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_653_Male_Orc_Attack_01.ogg",
+			"Death_01": "VO_CFM_653_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_CFM_653_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_653.png",
 		"collectible": true,
@@ -10811,6 +11815,11 @@ var parseCardsText = {
 	{
 		"artist": "Jerry Mascho",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_654_Male_Tauren_Attack_01.ogg",
+			"Death_01": "VO_CFM_654_Male_Tauren_Death_01.ogg",
+			"Play_01": "VO_CFM_654_Male_Tauren_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_654.png",
 		"collectible": true,
@@ -10852,6 +11861,11 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_656_Male_NightElf_Attack_01.ogg",
+			"Death_01": "VO_CFM_656_Male_NightElf_Death_01.ogg",
+			"Play_01": "VO_CFM_656_Male_NightElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_656.png",
 		"collectible": true,
@@ -10877,6 +11891,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Alexandrov",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_657_Male_Arakkoa_Attack_01.ogg",
+			"Death_01": "VO_CFM_657_Male_Arakkoa_Death_01.ogg",
+			"Play_01": "VO_CFM_657_Male_Arakkoa_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "CFM_657.png",
 		"collectible": true,
@@ -10902,6 +11921,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_CFM_658_Male_Tauren_Attack_02.ogg",
+			"Death_06": "VO_CFM_658_Male_Tauren_Death_06.ogg",
+			"Play_03": "VO_CFM_658_Male_Tauren_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_658.png",
 		"collectible": true,
@@ -10933,6 +11957,11 @@ var parseCardsText = {
 	{
 		"artist": "Eva Wildermann",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_659_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_CFM_659_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_CFM_659_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_659.png",
 		"collectible": true,
@@ -10955,6 +11984,11 @@ var parseCardsText = {
 	{
 		"artist": "J. Ejsing & E. Amundsen",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_660_Female_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_CFM_660_Female_BloodElf_Death_01.ogg",
+			"Play_01": "VO_CFM_660_Female_BloodElf_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "CFM_660.png",
 		"collectible": true,
@@ -11026,6 +12060,11 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_CFM_663_Female_Undead_Attack_01.ogg",
+			"Death_01": "VO_CFM_663_Female_Undead_Death_01.ogg",
+			"Play_01": "VO_CFM_663_Female_Undead_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "CFM_663.png",
 		"collectible": true,
@@ -11045,6 +12084,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Alexandrov",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_CFM_665_Male_Worgen_Attack_01.ogg",
+			"Death_01": "VO_CFM_665_Male_Worgen_Death_01.ogg",
+			"Play_01": "VO_CFM_665_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_665.png",
 		"collectible": true,
@@ -11063,6 +12107,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_CFM_666_Male_Hozen_Attack_02.ogg",
+			"Death_01": "VO_CFM_666_Male_Hozen_Death_01.ogg",
+			"Play_01": "VO_CFM_666_Male_Hozen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_666.png",
 		"collectible": true,
@@ -11085,6 +12134,11 @@ var parseCardsText = {
 	{
 		"artist": "Mauricio Herrera",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_667_Female_Goblin_Attack_01.ogg",
+			"Death_01": "VO_CFM_667_Female_Goblin_Death_01.ogg",
+			"Play_01": "VO_CFM_667_Female_Goblin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_667.png",
 		"collectible": true,
@@ -11108,6 +12162,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_668t_Male_Faceless_Attack_01.ogg",
+			"Attack_02": "VO_CFM_668_Male_Dwarf_Attack_02.ogg",
+			"Death_01": "VO_CFM_668_Male_Dwarf_Death_01.ogg",
+			"Play_02": "VO_CFM_668_Male_Dwarf_Play_02.ogg",
+			"Play_05": "VO_CFM_668t_Male_Faceless_Play_05.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_668.png",
 		"collectible": true,
@@ -11170,6 +12231,11 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_669_Male_Trogg_Attack_01.ogg",
+			"Attack_02": "VO_CFM_669_Male_Trogg_Attack_02.ogg",
+			"Death_01": "VO_CFM_669_Male_Trogg_Death_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_669.png",
 		"collectible": true,
@@ -11189,6 +12255,11 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_670_Male_Goblin_Attack_01.ogg",
+			"Death_01": "VO_CFM_670_Male_Goblin_Death_01.ogg",
+			"Play_01": "VO_CFM_670_Male_Goblin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_670.png",
 		"collectible": true,
@@ -11209,6 +12280,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studios",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_671_Female_Wretched_Attack_01.ogg",
+			"Death_01": "VO_CFM_671_Female_Wretched_Death_01.ogg",
+			"Play_03": "VO_CFM_671_Female_Wretched_Play_03.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "CFM_671.png",
 		"collectible": true,
@@ -11246,6 +12322,11 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_672_Female_Pandaren_Attack_01.ogg",
+			"Death_01": "VO_CFM_672_Female_Pandaren_Death_01.ogg",
+			"Play_01": "VO_CFM_672_Female_Pandaren_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_672.png",
 		"collectible": true,
@@ -11269,6 +12350,9 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 5,
+		"audio": {
+			"01_Hon": "VO_CFM_685_Male_Ogre_Play_01_Hon.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_685.png",
 		"classes": [
@@ -11310,6 +12394,11 @@ var parseCardsText = {
 	{
 		"artist": "J. Ejsing & E. Amundsen",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_687_Female_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_CFM_687_Female_BloodElf_Death_01.ogg",
+			"Play_02": "VO_CFM_687_Female_BloodElf_Play_02.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "CFM_687.png",
 		"collectible": true,
@@ -11348,6 +12437,13 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_688_Male_Quilboar_Attack_01.ogg",
+			"Attack_02": "VO_CFM_688_Male_Quilboar_Attack_02.ogg",
+			"Attack_03": "VO_CFM_688_Male_Quilboar_Attack_03.ogg",
+			"Death_01": "VO_CFM_688_Male_Quilboar_Death_01.ogg",
+			"Play_01": "VO_CFM_688_Male_Quilboar_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_688.png",
 		"collectible": true,
@@ -11398,6 +12494,11 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_CFM_691_Male_Mantid_Attack_01.ogg",
+			"Death_01": "VO_CFM_691_Male_Mantid_Death_01.ogg",
+			"Play_01": "VO_CFM_691_Male_Mantid_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "CFM_691.png",
 		"collectible": true,
@@ -11424,6 +12525,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_693_Female_Jinyu_Attack_01.ogg",
+			"Death_01": "VO_CFM_693_Female_Jinyu_Death_01.ogg",
+			"Play_01": "VO_CFM_693_Female_Jinyu_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "CFM_693.png",
 		"collectible": true,
@@ -11446,6 +12552,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_694_Male_Mantid_Attack_01.ogg",
+			"Death_01": "VO_CFM_694_Male_Mantid_Death_01.ogg",
+			"Play_01": "VO_CFM_694_Male_Mantid_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "CFM_694.png",
 		"collectible": true,
@@ -11500,6 +12611,11 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_697_Female_NightElf_Attack_01.ogg",
+			"Death_01": "VO_CFM_697_Female_NightElf_Death_01.ogg",
+			"Play_01": "VO_CFM_697_Female_NightElf_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "CFM_697.png",
 		"collectible": true,
@@ -11519,6 +12635,11 @@ var parseCardsText = {
 	{
 		"artist": "Yewon Park",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_699_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_CFM_699_Male_Murloc_Death_01.ogg",
+			"Play_01": "VO_CFM_699_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "CFM_699.png",
 		"collectible": true,
@@ -12210,6 +13331,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_CFM_750_Male_VoidWalker_Attack_01.ogg",
+			"Death_01": "VO_CFM_750_Male_VoidWalker_Death_01.ogg",
+			"Play_01": "VO_CFM_750_Male_VoidWalker_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "CFM_750.png",
 		"collectible": true,
@@ -12289,6 +13415,11 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_CFM_753_Male_Goblin_Attack_01.ogg",
+			"Death_01": "VO_CFM_753_Male_Goblin_Death_01.ogg",
+			"Play_01": "VO_CFM_753_Male_Goblin_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "CFM_753.png",
 		"collectible": true,
@@ -12323,6 +13454,11 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 4,
+		"audio": {
+			"Attack_03": "VO_CFM_754_Male_Goblin_Attack_03.ogg",
+			"Death_02": "VO_CFM_754_Male_Goblin_Death_02.ogg",
+			"Play_01": "VO_CFM_754_Male_Goblin_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "CFM_754.png",
 		"collectible": true,
@@ -12354,6 +13490,11 @@ var parseCardsText = {
 	{
 		"artist": "Mauricio Herrera",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_755_Female_Goblin_Attack_01.ogg",
+			"Death_01": "VO_CFM_755_Female_Goblin_Death_01.ogg",
+			"Play_01": "VO_CFM_755_Female_Goblin_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "CFM_755.png",
 		"collectible": true,
@@ -12388,6 +13529,11 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_756_Female_Orc_Attack_01.ogg",
+			"Death_01": "VO_CFM_756_Female_Orc_Death_01.ogg",
+			"Play_01": "VO_CFM_756_Female_Orc_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "CFM_756.png",
 		"collectible": true,
@@ -12410,6 +13556,11 @@ var parseCardsText = {
 	{
 		"artist": "Richie Marella",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_CFM_759_Male_Tuskarr_Attack_01.ogg",
+			"Death_01": "VO_CFM_759_Male_Tuskarr_Death_01.ogg",
+			"Play_01": "VO_CFM_759_Male_Tuskarr_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "CFM_759.png",
 		"collectible": true,
@@ -12432,6 +13583,11 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_760_Female_Dranei_Attack_01.ogg",
+			"Death_01": "VO_CFM_760_Female_Dranei_Death_01.ogg",
+			"Play_01": "VO_CFM_760_Female_Dranei_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "CFM_760.png",
 		"collectible": true,
@@ -12454,6 +13610,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_781_Male_Sha_Attack_01.ogg",
+			"Death_01": "VO_CFM_781_Male_Sha_Death_01.ogg",
+			"Play_01": "VO_CFM_781_Male_Sha_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "CFM_781.png",
 		"collectible": true,
@@ -12477,6 +13638,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_790_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_CFM_790_Male_Kobold_Death_01.ogg",
+			"Play_03": "VO_CFM_790_Male_Kobold_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_790.png",
 		"collectible": true,
@@ -12520,6 +13686,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_806_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_CFM_806_Male_Human_Death_01.ogg",
+			"Play_02": "VO_CFM_806_Male_Human_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_806.png",
 		"collectible": true,
@@ -12544,6 +13715,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_807_Male_Goblin_Attack_01.ogg",
+			"Death_01": "VO_CFM_807_Male_Goblin_Death_01.ogg",
+			"Play_01": "VO_CFM_807_Male_Goblin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_807.png",
 		"collectible": true,
@@ -12564,6 +13740,11 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_808_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_CFM_808_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_CFM_808_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_808.png",
 		"collectible": true,
@@ -12584,6 +13765,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_809_Male_Quilboar_Attack_01.ogg",
+			"Death_01": "VO_CFM_809_Male_Quilboar_Death_01.ogg",
+			"Play_01": "VO_CFM_809_Male_Quilboar_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_809.png",
 		"collectible": true,
@@ -12609,6 +13795,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_CFM_810_Female_Quilboar_Attack_01.ogg",
+			"Attack_02": "VO_CFM_810_Female_Quilboar_Attack_02.ogg",
+			"Play_01": "VO_CFM_810_Female_Quilboar_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_810.png",
 		"collectible": true,
@@ -12651,6 +13842,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_815_Male_Dwarf_Attack_01.ogg",
+			"Death_01": "VO_CFM_815_Male_Dwarf_Death_01.ogg",
+			"Play_02": "VO_CFM_815_Male_Dwarf_Play_02.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "CFM_815.png",
 		"collectible": true,
@@ -12676,6 +13872,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_CFM_816_Male_Vermin_Attack_01.ogg",
+			"Death_01": "VO_CFM_816_Male_Vermin_Death_01.ogg",
+			"Play_01": "VO_CFM_816_Male_Vermin_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "CFM_816.png",
 		"collectible": true,
@@ -12710,6 +13911,11 @@ var parseCardsText = {
 	{
 		"artist": "Sojin Hwang",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_CFM_851_Female_NightElf_Attack_01.ogg",
+			"Death_01": "VO_CFM_851_Female_NightElf_Death_01.ogg",
+			"Play_01": "VO_CFM_851_Female_NightElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_851.png",
 		"collectible": true,
@@ -12741,6 +13947,11 @@ var parseCardsText = {
 	{
 		"artist": "Grace Liu",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_852_Female_Pandaren_Attack_01.ogg",
+			"Death_01": "VO_CFM_852_Female_Pandaren_Death_01.ogg",
+			"Play_01": "VO_CFM_852_Female_Pandaren_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_852.png",
 		"classes": [
@@ -12772,6 +13983,11 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_CFM_853_Female_Tauren_Attack_01.ogg",
+			"Death_02": "VO_CFM_853_Female_Tauren_Death_02.ogg",
+			"Play_01": "VO_CFM_853_Female_Tauren_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_853.png",
 		"classes": [
@@ -12834,6 +14050,11 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_855_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_CFM_855_Male_Human_Death_01.ogg",
+			"Play_01": "VO_CFM_855_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_855.png",
 		"collectible": true,
@@ -12860,6 +14081,11 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_900_Male_Imp_Attack_01.ogg",
+			"Death_01": "VO_CFM_900_Male_Imp_Death_01.ogg",
+			"Play_01": "VO_CFM_900_Male_Imp_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "CFM_900.png",
 		"collectible": true,
@@ -12880,6 +14106,11 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_CFM_902_Female_Pandaren_Attack_01.ogg",
+			"Death_01": "VO_CFM_902_Female_Pandaren_Death_01.ogg",
+			"Play_02": "VO_CFM_902_Female_Pandaren_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CFM_902.png",
 		"classes": [
@@ -14431,6 +15662,11 @@ var parseCardsText = {
 	{
 		"artist": "Donato Giancola",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_CS1_042_Attack_02.ogg",
+			"Death_03": "VO_CS1_042_Death_03.ogg",
+			"Play_01": "VO_CS1_042_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS1_042.png",
 		"collectible": true,
@@ -14829,8 +16065,10 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "DRUID",
+		"cardImage": "CS2_017_HS1.png",
 		"cost": 2,
 		"dbfId": 50485,
+		"goldenImage": "CS2_017_HS1.gif",
 		"id": "CS2_017_HS1",
 		"name": "Shapeshift",
 		"playerClass": "Druid",
@@ -15520,6 +16758,11 @@ var parseCardsText = {
 	{
 		"artist": "Bernie Kang",
 		"attack": 0,
+		"audio": {
+			"Attack_02": "VO_CS2_059_Attack_02.ogg",
+			"Death_03": "VO_CS2_059_Death_03.ogg",
+			"Play_01": "VO_CS2_059_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "CS2_059.png",
 		"collectible": true,
@@ -15592,7 +16835,7 @@ var parseCardsText = {
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 982,
-		"flavor": "It starts with stealing a pen from work, and before you know it, BOOM!  Corrupted!",
+		"flavor": "It starts with stealing a pen from work, and before you know it, BOOOM!  Corrupted!",
 		"goldenImage": "CS2_063.gif",
 		"id": "CS2_063",
 		"name": "Corruption",
@@ -15639,6 +16882,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_CS2_065_Attack_02.ogg",
+			"Death_03": "VO_CS2_065_Death_03.ogg",
+			"Play_01": "VO_CS2_065_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "CS2_065.png",
 		"collectible": true,
@@ -15946,6 +17194,11 @@ var parseCardsText = {
 	{
 		"artist": "E.M. Gist",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_CS2_088_Attack_02.ogg",
+			"Death_03": "VO_CS2_088_Death_03.ogg",
+			"Play_01": "VO_CS2_088_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "CS2_088.png",
 		"collectible": true,
@@ -16082,6 +17335,11 @@ var parseCardsText = {
 		"type": "Weapon"
 	},
 	{
+		"audio": {
+			"Attack_02": "VO_CS2_101t_Attack_02.ogg",
+			"Death_03": "VO_CS2_101t_Death_03.ogg",
+			"Play_01": "VO_CS2_101t_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "CS2_101.png",
 		"cost": 2,
@@ -16370,6 +17628,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_CS2_117_Attack_02.ogg",
+			"Death_03": "VO_CS2_117_Death_03.ogg",
+			"Play_01": "VO_CS2_117_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_117.png",
 		"collectible": true,
@@ -16449,6 +17712,11 @@ var parseCardsText = {
 	{
 		"artist": "Richie Marella",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_121_Attack_02.ogg",
+			"Death_03": "VO_CS2_121_Death_03.ogg",
+			"Play_01": "VO_CS2_121_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_121.png",
 		"collectible": true,
@@ -16471,6 +17739,11 @@ var parseCardsText = {
 	{
 		"artist": "Phill Gonzales",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_122_Male_Orc_Attack_02.ogg",
+			"Death_03": "VO_CS2_122_Male_Orc_Death_03.ogg",
+			"Play_01": "VO_CS2_122_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_122.png",
 		"collectible": true,
@@ -16504,6 +17777,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_CS2_124_Attack_02.ogg",
+			"Death_03": "VO_CS2_124_Death_03.ogg",
+			"Play_01": "VO_CS2_124_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_124.png",
 		"collectible": true,
@@ -16574,6 +17852,11 @@ var parseCardsText = {
 	{
 		"artist": "Ladronn",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_131_Attack_02.ogg",
+			"Death_03": "VO_CS2_131_Death_03.ogg",
+			"Play_01": "VO_CS2_131_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_131.png",
 		"collectible": true,
@@ -16597,6 +17880,11 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_141_Attack_02.ogg",
+			"Death_03": "VO_CS2_141_Death_03.ogg",
+			"Play_01": "VO_CS2_141_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_141.png",
 		"collectible": true,
@@ -16620,6 +17908,11 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_142_Attack_02.ogg",
+			"Death_03": "VO_CS2_142_Death_03.ogg",
+			"Play_01": "VO_CS2_142_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_142.png",
 		"collectible": true,
@@ -16644,6 +17937,11 @@ var parseCardsText = {
 	{
 		"artist": "Dan Brereton",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_146_Attack_02.ogg",
+			"Death_03": "VO_CS2_146_Death_03.ogg",
+			"Play_01": "VO_CS2_146_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_146.png",
 		"collectible": true,
@@ -16668,6 +17966,11 @@ var parseCardsText = {
 	{
 		"artist": "Court Jones",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_147_Attack_02.ogg",
+			"Death_03": "VO_CS2_147_Death_03.ogg",
+			"Play_01": "VO_CS2_147_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_147.png",
 		"collectible": true,
@@ -16691,6 +17994,11 @@ var parseCardsText = {
 	{
 		"artist": "Kev Walker",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_CS2_150_Attack_02.ogg",
+			"Death_03": "VO_CS2_150_Death_03.ogg",
+			"Play_01": "VO_CS2_150_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_150.png",
 		"collectible": true,
@@ -16714,6 +18022,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Starbuck",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_CS2_151_Attack_02.ogg",
+			"Death_03": "VO_CS2_151_Death_03.ogg",
+			"Play_01": "VO_CS2_151_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_151.png",
 		"collectible": true,
@@ -16736,6 +18049,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_152_Attack_02.ogg",
+			"Death_03": "VO_CS2_152_Death_03.ogg",
+			"Play_01": "VO_CS2_152_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_152.png",
 		"cost": 1,
@@ -16753,6 +18071,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Ellis",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_CS2_155_Attack_02.ogg",
+			"Death_03": "VO_CS2_155_Death_03.ogg",
+			"Play_01": "VO_CS2_155_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_155.png",
 		"collectible": true,
@@ -16777,6 +18100,11 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_CS2_161_Attack_02.ogg",
+			"Death_03": "VO_CS2_161_Death_03.ogg",
+			"Play_01": "VO_CS2_161_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_161.png",
 		"collectible": true,
@@ -16800,6 +18128,11 @@ var parseCardsText = {
 	{
 		"artist": "E.M. Gist",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_CS2_162_Attack_02.ogg",
+			"Death_03": "VO_CS2_162_Death_03.ogg",
+			"Play_01": "VO_CS2_162_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_162.png",
 		"collectible": true,
@@ -16933,6 +18266,11 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_CS2_179_Attack_02.ogg",
+			"Death_03": "VO_CS2_179_Death_03.ogg",
+			"Play_01": "VO_CS2_179_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_179.png",
 		"collectible": true,
@@ -16956,6 +18294,11 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_CS2_181_Attack_02.ogg",
+			"Death_03": "VO_CS2_181_Death_03.ogg",
+			"Play_01": "VO_CS2_181_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_181.png",
 		"collectible": true,
@@ -17026,6 +18369,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Cavotta",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_CS2_187_Attack_02.ogg",
+			"Death_03": "VO_CS2_187_Death_03.ogg",
+			"Play_01": "VO_CS2_187_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_187.png",
 		"collectible": true,
@@ -17049,6 +18397,11 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_CS2_188_Attack_02.ogg",
+			"Death_03": "VO_CS2_188_Death_03.ogg",
+			"Play_01": "VO_CS2_188_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_188.png",
 		"collectible": true,
@@ -17086,6 +18439,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_CS2_189_Attack_02.ogg",
+			"Death_03": "VO_CS2_189_Death_03.ogg",
+			"Play_01": "VO_CS2_189_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_189.png",
 		"collectible": true,
@@ -17109,6 +18467,11 @@ var parseCardsText = {
 	{
 		"artist": "Clint Langley",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_CS2_196_Attack_02.ogg",
+			"Death_03": "VO_CS2_196_Death_03.ogg",
+			"Play_01": "VO_CS2_196_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_196.png",
 		"collectible": true,
@@ -17132,6 +18495,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
+		"audio": {
+			"01_Mix": "VO_CS2_197_Play_01_MIX.ogg",
+			"02_Mix": "VO_CS2_197_Attack_02_MIX.ogg",
+			"03_Mix": "VO_CS2_197_Death_03_MIX.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_197.png",
 		"collectible": true,
@@ -17155,6 +18523,11 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_CS2_200_Attack_02.ogg",
+			"Death_03": "VO_CS2_200_Death_03.ogg",
+			"Play_01": "VO_CS2_200_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_200.png",
 		"collectible": true,
@@ -17219,6 +18592,11 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_CS2_213_Attack_02.ogg",
+			"Death_03": "VO_CS2_213_Death_03.ogg",
+			"Play_01": "VO_CS2_213_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_213.png",
 		"collectible": true,
@@ -17242,6 +18620,11 @@ var parseCardsText = {
 	{
 		"artist": "Justin Sweet",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_CS2_221_Attack_02.ogg",
+			"Death_03": "VO_CS2_221_Death_03.ogg",
+			"Play_01": "VO_CS2_221_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_221.png",
 		"collectible": true,
@@ -17276,6 +18659,11 @@ var parseCardsText = {
 	{
 		"artist": "Doug Alexander",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_CS2_222_Attack_02.ogg",
+			"Death_03": "VO_CS2_222_Death_03.ogg",
+			"Play_01": "VO_CS2_222_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_222.png",
 		"collectible": true,
@@ -17310,6 +18698,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_CS2_226_Attack_02.ogg",
+			"Death_03": "VO_CS2_226_Death_03.ogg",
+			"Play_01": "VO_CS2_226_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_226.png",
 		"collectible": true,
@@ -17344,6 +18737,11 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_CS2_227_Attack_02.ogg",
+			"Death_03": "VO_CS2_227_Death_03.ogg",
+			"Play_01": "VO_CS2_227_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "CS2_227.png",
 		"collectible": true,
@@ -17441,6 +18839,11 @@ var parseCardsText = {
 	{
 		"artist": "Terese Nielsen",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_CS2_235_Attack_02.ogg",
+			"Death_03": "VO_CS2_235_Death_03.ogg",
+			"Play_01": "VO_CS2_235_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "CS2_235.png",
 		"collectible": true,
@@ -17558,6 +18961,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_DREAM_01_Attack_02.ogg",
+			"Death_03": "VO_DREAM_01_Death_03.ogg",
+			"Play_01": "VO_DREAM_01_Play_01.ogg"
+		},
 		"cardClass": "DREAM",
 		"cardImage": "DREAM_01.png",
 		"cost": 3,
@@ -17643,6 +19051,11 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_DS1_055_Attack_02.ogg",
+			"Death_03": "VO_DS1_055_Death_03.ogg",
+			"Play_01": "VO_DS1_055_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "DS1_055.png",
 		"collectible": true,
@@ -17665,6 +19078,11 @@ var parseCardsText = {
 	{
 		"artist": "Dan Brereton",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_DS1_070_Attack_02.ogg",
+			"Death_03": "VO_DS1_070_Death_03.ogg",
+			"Play_01": "VO_DS1_070_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "DS1_070.png",
 		"collectible": true,
@@ -17928,6 +19346,11 @@ var parseCardsText = {
 	{
 		"artist": "Erik Ko",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_001_Attack_02.ogg",
+			"Death_03": "VO_EX1_001_Death_03.ogg",
+			"Play_01": "VO_EX1_001_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_001.png",
 		"collectible": true,
@@ -17958,6 +19381,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_002_Attack_02.ogg",
+			"Death_03": "VO_EX1_002_Death_03.ogg",
+			"Play_01": "VO_EX1_002_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_002.png",
 		"collectible": true,
@@ -17984,6 +19412,11 @@ var parseCardsText = {
 	{
 		"artist": "Vance Kovacs",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_004_Attack_02.ogg",
+			"Death_03": "VO_EX1_004_Death_03.ogg",
+			"Play_01": "VO_EX1_004_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_004.png",
 		"collectible": true,
@@ -18014,6 +19447,11 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_005_Attack_02.ogg",
+			"Death_03": "VO_EX1_005_Death_03.ogg",
+			"Play_01": "VO_EX1_005_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_005.png",
 		"collectible": true,
@@ -18056,6 +19494,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Kendall",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_007_Attack_02.ogg",
+			"Death_03": "VO_EX1_007_Death_03.ogg",
+			"Play_01": "VO_EX1_007_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_007.png",
 		"collectible": true,
@@ -18075,6 +19518,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_008_Attack_02.ogg",
+			"Death_03": "VO_EX1_008_Death_03.ogg",
+			"Play_01": "VO_EX1_008_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_008.png",
 		"collectible": true,
@@ -18135,6 +19583,11 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_010_Attack_02.ogg",
+			"Death_03": "VO_EX1_010_Death_03.ogg",
+			"Play_01": "VO_EX1_010_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_010.png",
 		"collectible": true,
@@ -18158,6 +19611,11 @@ var parseCardsText = {
 	{
 		"artist": "Karl Richardson",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_011_Attack_02.ogg",
+			"Death_03": "VO_EX1_011_Death_03.ogg",
+			"Play_01": "VO_EX1_011_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_011.png",
 		"collectible": true,
@@ -18181,6 +19639,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_012_Attack_02.ogg",
+			"Death_03": "VO_EX1_012_Death_03.ogg",
+			"Play_01": "VO_EX1_012_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_012.png",
 		"collectible": true,
@@ -18254,6 +19717,11 @@ var parseCardsText = {
 	{
 		"artist": "Karl Richardson",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_015_Attack_02.ogg",
+			"Death_03": "VO_EX1_015_Death_03.ogg",
+			"Play_01": "VO_EX1_015_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_015.png",
 		"collectible": true,
@@ -18324,6 +19792,11 @@ var parseCardsText = {
 	{
 		"artist": "Doug Alexander",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_019_Attack_02.ogg",
+			"Death_03": "VO_EX1_019_Death_03.ogg",
+			"Play_01": "VO_EX1_019_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_019.png",
 		"collectible": true,
@@ -18357,6 +19830,11 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_020_Attack_02.ogg",
+			"Death_03": "VO_EX1_020_Death_03.ogg",
+			"Play_01": "VO_EX1_020_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_020.png",
 		"collectible": true,
@@ -18380,6 +19858,11 @@ var parseCardsText = {
 	{
 		"artist": "Efrem Palacios",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_021_Attack_02.ogg",
+			"Death_03": "VO_EX1_021_Death_03.ogg",
+			"Play_01": "VO_EX1_021_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_021.png",
 		"collectible": true,
@@ -18403,6 +19886,11 @@ var parseCardsText = {
 	{
 		"artist": "Phroilan Gardner",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_023_Attack_02.ogg",
+			"Death_03": "VO_EX1_023_Death_03.ogg",
+			"Play_01": "VO_EX1_023_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_023.png",
 		"collectible": true,
@@ -18426,6 +19914,11 @@ var parseCardsText = {
 	{
 		"artist": "Warren Mahy",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_025_Attack_02.ogg",
+			"Death_03": "VO_EX1_025_Death_03.ogg",
+			"Play_01": "VO_EX1_025_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_025.png",
 		"collectible": true,
@@ -18489,6 +19982,11 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_029_Attack_02.ogg",
+			"Death_03": "VO_EX1_029_Death_03.ogg",
+			"Play_01": "VO_EX1_029_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_029.png",
 		"collectible": true,
@@ -18511,6 +20009,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrea Uderzo",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_032_Attack_02.ogg",
+			"Death_03": "VO_EX1_032_Death_03.ogg",
+			"Play_01": "VO_EX1_032_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_032.png",
 		"collectible": true,
@@ -18592,6 +20095,11 @@ var parseCardsText = {
 	{
 		"artist": "Attila Adorjany",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_044_Attack_02.ogg",
+			"Death_03": "VO_EX1_044_Death_03.ogg",
+			"Play_01": "VO_EX1_044_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_044.png",
 		"collectible": true,
@@ -18646,6 +20154,11 @@ var parseCardsText = {
 	{
 		"artist": "Scott Hampton",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_046_Attack_02.ogg",
+			"Death_03": "VO_EX1_046_Death_03.ogg",
+			"Play_01": "VO_EX1_046_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_046.png",
 		"collectible": true,
@@ -18683,6 +20196,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Cavotta",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_048_Attack_02.ogg",
+			"Death_03": "VO_EX1_048_Death_03.ogg",
+			"Play_01": "VO_EX1_048_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_048.png",
 		"collectible": true,
@@ -18709,6 +20227,11 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_049_Attack_02.ogg",
+			"Death_03": "VO_EX1_049_Death_03.ogg",
+			"Play_01": "VO_EX1_049_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_049.png",
 		"collectible": true,
@@ -18748,12 +20271,18 @@ var parseCardsText = {
 		"playerClass": "Neutral",
 		"race": "MURLOC",
 		"rarity": "Rare",
+		"set": "Hof",
 		"text": "<b>Battlecry:</b> Each player draws 2 cards.",
 		"type": "Minion"
 	},
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_055_Attack_02.ogg",
+			"Death_03": "VO_EX1_055_Death_03.ogg",
+			"Play_01": "VO_EX1_055_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_055.png",
 		"collectible": true,
@@ -18788,6 +20317,11 @@ var parseCardsText = {
 	{
 		"artist": "Bernie Kang",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_EX1_057_Attack_02.ogg",
+			"Death_03": "VO_EX1_057_Death_03.ogg",
+			"Play_01": "VO_EX1_057_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_057.png",
 		"collectible": true,
@@ -18811,6 +20345,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_058_Attack_02.ogg",
+			"Death_03": "VO_EX1_058_Death_03.ogg",
+			"Play_01": "VO_EX1_058_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_058.png",
 		"collectible": true,
@@ -18837,6 +20376,11 @@ var parseCardsText = {
 	{
 		"artist": "Tom Fleming",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_059_Attack_02.ogg",
+			"Death_03": "VO_EX1_059_Death_03.ogg",
+			"Play_01": "VO_EX1_059_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_059.png",
 		"collectible": true,
@@ -18917,6 +20461,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_067_Attack_02.ogg",
+			"Death_03": "VO_EX1_067_Death_03.ogg",
+			"Play_01": "VO_EX1_067_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_067.png",
 		"collectible": true,
@@ -18940,6 +20489,11 @@ var parseCardsText = {
 	{
 		"artist": "Ron Spears",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_076_Attack_02.ogg",
+			"Death_03": "VO_EX1_076_Death_03.ogg",
+			"Play_01": "VO_EX1_076_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_076.png",
 		"collectible": true,
@@ -18963,6 +20517,11 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_080_Attack_02.ogg",
+			"Death_03": "VO_EX1_080_Death_03.ogg",
+			"Play_01": "VO_EX1_080_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_080.png",
 		"collectible": true,
@@ -18997,6 +20556,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_082_Attack_02.ogg",
+			"Death_03": "VO_EX1_082_Death_03.ogg",
+			"Play_01": "VO_EX1_082_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_082.png",
 		"collectible": true,
@@ -19020,6 +20584,11 @@ var parseCardsText = {
 	{
 		"artist": "Tom Baxa",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_083_Attack_02.ogg",
+			"Death_03": "VO_EX1_083_Death_03.ogg",
+			"Play_01": "VO_EX1_083_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_083.png",
 		"collectible": true,
@@ -19044,6 +20613,11 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_084_Attack_02.ogg",
+			"Death_03": "VO_EX1_084_Death_03.ogg",
+			"Play_01": "VO_EX1_084_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "EX1_084.png",
 		"collectible": true,
@@ -19080,6 +20654,11 @@ var parseCardsText = {
 	{
 		"artist": "Leo Che",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_085_Attack_02.ogg",
+			"Death_03": "VO_EX1_085_Death_03.ogg",
+			"Play_01": "VO_EX1_085_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_085.png",
 		"collectible": true,
@@ -19125,6 +20704,11 @@ var parseCardsText = {
 	{
 		"artist": "Chippy",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_091_Attack_02.ogg",
+			"Death_03": "VO_EX1_091_Death_03.ogg",
+			"Play_01": "VO_EX1_091_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "EX1_091.png",
 		"collectible": true,
@@ -19147,6 +20731,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_093_Attack_02.ogg",
+			"Death_03": "VO_EX1_093_Death_03.ogg",
+			"Play_01": "VO_EX1_093_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_093.png",
 		"collectible": true,
@@ -19184,6 +20773,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_095_Attack_02.ogg",
+			"Death_03": "VO_EX1_095_Death_03.ogg",
+			"Play_01": "VO_EX1_095_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_095.png",
 		"collectible": true,
@@ -19203,6 +20797,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_096_Attack_02.ogg",
+			"Death_03": "VO_EX1_096_Death_03.ogg",
+			"Play_01": "VO_EX1_096_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_096.png",
 		"collectible": true,
@@ -19225,6 +20824,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_097_Attack_02.ogg",
+			"Death_03": "VO_EX1_097_Death_03.ogg",
+			"Play_01": "VO_EX1_097_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_097.png",
 		"collectible": true,
@@ -19341,6 +20945,12 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 4,
+		"audio": {
+			"Alternate_04": "VO_EX1_110_Alternate_04.ogg",
+			"Attack_02": "VO_EX1_110_Attack_02.ogg",
+			"Death_03": "VO_EX1_110_Death_03.ogg",
+			"Play_01": "VO_EX1_110_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_110.png",
 		"collectible": true,
@@ -19380,6 +20990,11 @@ var parseCardsText = {
 	{
 		"artist": "Ludo Lullabi",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_EX1_112_Attack_02.ogg",
+			"Death_03": "VO_EX1_112_Death_03.ogg",
+			"Play_01": "VO_EX1_112_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_112.png",
 		"collectible": true,
@@ -19410,6 +21025,11 @@ var parseCardsText = {
 	{
 		"artist": "Gabe from Penny Arcade",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_EX1_116_Attack_02.ogg",
+			"Death_03": "VO_EX1_116_Death_03.ogg",
+			"Play_01": "VO_EX1_116_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_116.png",
 		"collectible": true,
@@ -19534,6 +21154,11 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan & Gabor",
+		"audio": {
+			"Attack_02": "VO_EX1_130a_Attack_02.ogg",
+			"Death_03": "VO_EX1_130a_Death_03.ogg",
+			"Play_01": "VO_EX1_130a_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "EX1_130.png",
 		"collectible": true,
@@ -19570,6 +21195,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_131_Attack_02.ogg",
+			"Death_03": "VO_EX1_131_Death_03.ogg",
+			"Play_01": "VO_EX1_131_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "EX1_131.png",
 		"collectible": true,
@@ -19649,6 +21279,11 @@ var parseCardsText = {
 	{
 		"artist": "Chris Moeller",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_134_Attack_02.ogg",
+			"Death_03": "VO_EX1_134_Death_03.ogg",
+			"Play_01": "VO_EX1_134_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "EX1_134.png",
 		"collectible": true,
@@ -20092,6 +21727,11 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_165_Attack_02.ogg",
+			"Death_03": "VO_EX1_165_Death_03.ogg",
+			"Play_01": "VO_EX1_165_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "EX1_165.png",
 		"collectible": true,
@@ -20184,6 +21824,11 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_166_Attack_02.ogg",
+			"Death_03": "VO_EX1_166_Death_03.ogg",
+			"Play_01": "VO_EX1_166_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "EX1_166.png",
 		"collectible": true,
@@ -20921,6 +22566,7 @@ var parseCardsText = {
 		"referencedTags": [
 			"IMMUNE"
 		],
+		"set": "Hof",
 		"text": "<b>Secret:</b> When your hero takes fatal damage, prevent it and become <b>Immune</b> this turn.",
 		"type": "Spell"
 	},
@@ -20941,6 +22587,12 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 8,
+		"audio": {
+			"Attack_02": "VO_EX1_298_Attack_02.ogg",
+			"Death_04": "VO_EX1_298_Death_04.ogg",
+			"Play_01": "VO_EX1_298_Play_01.ogg",
+			"Trigger_03": "VO_EX1_298_Trigger_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_298.png",
 		"collectible": true,
@@ -20965,6 +22617,11 @@ var parseCardsText = {
 	{
 		"artist": "John Polidora",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_301_Attack_02.ogg",
+			"Death_03": "VO_EX1_301_Death_03.ogg",
+			"Play_01": "VO_EX1_301_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "EX1_301.png",
 		"collectible": true,
@@ -21057,6 +22714,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_306_Attack_02.ogg",
+			"Death_03": "VO_EX1_306_Death_03.ogg",
+			"Play_01": "VO_EX1_306_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "EX1_306.png",
 		"collectible": true,
@@ -21114,6 +22776,11 @@ var parseCardsText = {
 	{
 		"artist": "Lucas Graciano",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_EX1_310_Attack_02.ogg",
+			"Death_03": "VO_EX1_310_Death_03.ogg",
+			"Play_01": "VO_EX1_310_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "EX1_310.png",
 		"collectible": true,
@@ -21155,6 +22822,11 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_EX1_313_Attack_02.ogg",
+			"Death_03": "VO_EX1_313_Death_03.ogg",
+			"Play_01": "VO_EX1_313_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "EX1_313.png",
 		"collectible": true,
@@ -21262,6 +22934,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_319_Attack_02.ogg",
+			"Death_03": "VO_EX1_319_Death_03.ogg",
+			"Play_01": "VO_EX1_319_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "EX1_319.png",
 		"collectible": true,
@@ -21302,6 +22979,44 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_323_Attack_02.ogg",
+			"Concede_11": "VO_EX1_323h_Concede_11.ogg",
+			"Concedealt_12": "VO_EX1_323h_ConcedeALT_12.ogg",
+			"Day_30": "VO_EX1_323h_PIRATE_DAY_30.ogg",
+			"Death_03": "VO_EX1_323_Death_03.ogg",
+			"Error01_21": "VO_EX1_323h_ERROR01_21.ogg",
+			"Error02_22": "VO_EX1_323h_ERROR02_22.ogg",
+			"Error03_23": "VO_EX1_323h_ERROR03_23.ogg",
+			"Error04_24": "VO_EX1_323h_ERROR04_24.ogg",
+			"Error05_25": "VO_EX1_323h_ERROR05_25.ogg",
+			"Error06_26": "VO_EX1_323h_ERROR06_26.ogg",
+			"Error07_27": "VO_EX1_323h_ERROR07_27.ogg",
+			"Error08_28": "VO_EX1_323h_ERROR08_28.ogg",
+			"Error09_29": "VO_EX1_323h_ERROR09_29.ogg",
+			"Error10_30": "VO_EX1_323h_ERROR10_30.ogg",
+			"Error11_31": "VO_EX1_323h_ERROR11_31.ogg",
+			"Error12_32": "VO_EX1_323h_ERROR12_32.ogg",
+			"Festival_29": "VO_EX1_323h_FIRE_FESTIVAL_29.ogg",
+			"Fizzlebang_01": "VO_EX1_323_FIZZLEBANG_01.ogg",
+			"Halloween_11": "VO_EX1_323h_HAPPY_HALLOWEEN_11.ogg",
+			"Holidays_12": "VO_EX1_323h_HAPPY_HOLIDAYS_12.ogg",
+			"Lowcards_19": "VO_EX1_323h_LowCards_19.ogg",
+			"Noblegarden_15": "VO_EX1_323h_HAPPY_NOBLEGARDEN_15.ogg",
+			"Nocards_20": "VO_EX1_323h_NoCards_20.ogg",
+			"Oops_07": "VO_EX1_323h_Oops_07.ogg",
+			"Sorry_10": "VO_EX1_323h_Sorry_10.ogg",
+			"Thanks_09": "VO_EX1_323h_Thanks_09.ogg",
+			"Thinking1_15": "VO_EX1_323h_Thinking1_15.ogg",
+			"Thinking2_16": "VO_EX1_323h_Thinking2_16.ogg",
+			"Thinking3_17": "VO_EX1_323h_Thinking3_17.ogg",
+			"Threaten_08": "VO_EX1_323h_Threaten_08.ogg",
+			"Time_14": "VO_EX1_323h_Time_14.ogg",
+			"Weapon_13": "VO_EX1_323h_Weapon_13.ogg",
+			"Well played_06": "VO_EX1_323h_Well Played_06.ogg",
+			"Wow_04": "VO_EX1_323h_WOW_04.ogg",
+			"Year_13": "VO_EX1_323h_HAPPY_NEW_YEAR_13.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "EX1_323.png",
 		"collectible": true,
@@ -21509,6 +23224,11 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_EX1_350_Attack_02.ogg",
+			"Death_03": "VO_EX1_350_Death_03.ogg",
+			"Play_01": "VO_EX1_350_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "EX1_350.png",
 		"collectible": true,
@@ -21602,6 +23322,11 @@ var parseCardsText = {
 	{
 		"artist": "Doug Alexander",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_362_Attack_02.ogg",
+			"Death_03": "VO_EX1_362_Death_03.ogg",
+			"Play_01": "VO_EX1_362_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "EX1_362.png",
 		"collectible": true,
@@ -21764,6 +23489,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_382_Attack_02.ogg",
+			"Death_03-01": "VO_EX1_382_Death_03-01.ogg",
+			"Play_01": "VO_EX1_382_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "EX1_382.png",
 		"collectible": true,
@@ -21797,6 +23527,11 @@ var parseCardsText = {
 	{
 		"artist": "Brom",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_EX1_383_Attack_02.ogg",
+			"Death_03": "VO_EX1_383_Death_03.ogg",
+			"Play_01": "VO_EX1_383_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "EX1_383.png",
 		"collectible": true,
@@ -21857,6 +23592,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Warzecha",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_390_Attack_02.ogg",
+			"Death_03": "VO_EX1_390_Death_03.ogg",
+			"Play_01": "VO_EX1_390_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_390.png",
 		"collectible": true,
@@ -21928,6 +23668,11 @@ var parseCardsText = {
 	{
 		"artist": "Chippy",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_393_Attack_02.ogg",
+			"Death_03": "VO_EX1_393_Death_03.ogg",
+			"Play_01": "VO_EX1_393_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_393.png",
 		"collectible": true,
@@ -21964,6 +23709,11 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_396_Attack_02.ogg",
+			"Death_03": "VO_EX1_396_Death_03.ogg",
+			"Play_01": "VO_EX1_396_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_396.png",
 		"collectible": true,
@@ -21986,6 +23736,11 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_398_Attack_02.ogg",
+			"Death_03": "VO_EX1_398_Death_03.ogg",
+			"Play_01": "VO_EX1_398_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "EX1_398.png",
 		"collectible": true,
@@ -22069,6 +23824,11 @@ var parseCardsText = {
 	{
 		"artist": "Greg Hildebrandt",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_402_Attack_02.ogg",
+			"Death_03": "VO_EX1_402_Death_03.ogg",
+			"Play_01": "VO_EX1_402_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "EX1_402.png",
 		"collectible": true,
@@ -22088,6 +23848,11 @@ var parseCardsText = {
 	{
 		"artist": "Carl Critchlow",
 		"attack": 0,
+		"audio": {
+			"Attack_02": "VO_EX1_405_Attack_02.ogg",
+			"Death_03": "VO_EX1_405_Death_03.ogg",
+			"Play_01": "VO_EX1_405_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_405.png",
 		"collectible": true,
@@ -22283,6 +24048,11 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_414_Attack_02.ogg",
+			"Death_03": "VO_EX1_414_Death_03.ogg",
+			"Play_01": "VO_EX1_414_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "EX1_414.png",
 		"collectible": true,
@@ -22453,6 +24223,11 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_522_Attack_02.ogg",
+			"Death_03": "VO_EX1_522_Death_03.ogg",
+			"Play_01": "VO_EX1_522_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "EX1_522.png",
 		"collectible": true,
@@ -22811,6 +24586,12 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 0,
+		"audio": {
+			"Attack_03": "VO_EX1_557_Attack_03.ogg",
+			"Death_04": "VO_EX1_557_Death_04.ogg",
+			"Play_01": "VO_EX1_557_Play_01.ogg",
+			"Trigger_02": "VO_EX1_557_Trigger_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_557.png",
 		"collectible": true,
@@ -22831,6 +24612,10 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 5,
+		"audio": {
+			"Death_02": "VO_EX1_558_Death_02.ogg",
+			"Play_01": "VO_EX1_558_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_558.png",
 		"collectible": true,
@@ -22854,6 +24639,12 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 5,
+		"audio": {
+			"Attack_03": "VO_EX1_559_Attack_03.ogg",
+			"Death_04": "VO_EX1_559_Death_04.ogg",
+			"Play_01": "VO_EX1_559_Play_01.ogg",
+			"Trigger_02": "VO_EX1_559_Trigger_02.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "EX1_559.png",
 		"collectible": true,
@@ -22874,6 +24665,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 8,
+		"audio": {
+			"Attack_02": "VO_EX1_560_Attack_02.ogg",
+			"Death_03": "VO_EX1_560_Death_03.ogg",
+			"Play_01": "VO_EX1_560_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_560.png",
 		"collectible": true,
@@ -22895,6 +24691,11 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 8,
+		"audio": {
+			"Attack_02": "VO_EX1_561_Attack_02.ogg",
+			"Death_03": "VO_EX1_561_Death_03.ogg",
+			"Play_01": "VO_EX1_561_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_561.png",
 		"collectible": true,
@@ -22930,6 +24731,12 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 8,
+		"audio": {
+			"Attack_03": "VO_EX1_562_Attack_03.ogg",
+			"Death_04": "VO_EX1_562_Death_04.ogg",
+			"Play_01": "VO_EX1_562_Play_01.ogg",
+			"Trigger_02": "VO_EX1_562_Trigger_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_562.png",
 		"collectible": true,
@@ -22954,6 +24761,11 @@ var parseCardsText = {
 	{
 		"artist": "Michael Komarck",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_563_Attack_02.ogg",
+			"Death_03": "VO_EX1_563_Death_03.ogg",
+			"Play_01": "VO_EX1_563_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_563.png",
 		"collectible": true,
@@ -23108,6 +24920,11 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_572_Attack_02.ogg",
+			"Death_03": "VO_EX1_572_Death_03.ogg",
+			"Play_01": "VO_EX1_572_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_572.png",
 		"collectible": true,
@@ -23136,6 +24953,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_EX1_573_Attack_02.ogg",
+			"Death_03": "VO_EX1_573_Death_03.ogg",
+			"Play_01": "VO_EX1_573_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "EX1_573.png",
 		"collectible": true,
@@ -23295,6 +25117,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_582_Attack_02.ogg",
+			"Death_03": "VO_EX1_582_Death_03.ogg",
+			"Play_01": "VO_EX1_582_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_582.png",
 		"collectible": true,
@@ -23318,6 +25145,11 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_EX1_583_Attack_02.ogg",
+			"Death_03": "VO_EX1_583_Death_03.ogg",
+			"Play_01": "VO_EX1_583_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_583.png",
 		"collectible": true,
@@ -23340,6 +25172,11 @@ var parseCardsText = {
 	{
 		"artist": "Howard Lyon",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_584_Attack_02.ogg",
+			"Death_03": "VO_EX1_584_Death_03.ogg",
+			"Play_01": "VO_EX1_584_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_584.png",
 		"collectible": true,
@@ -23395,6 +25232,11 @@ var parseCardsText = {
 	{
 		"artist": "Vance Kovacs",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_587_Attack_02.ogg",
+			"Death_03": "VO_EX1_587_Death_03.ogg",
+			"Play_01": "VO_EX1_587_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "EX1_587.png",
 		"collectible": true,
@@ -23420,6 +25262,11 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_590_Attack_02.ogg",
+			"Death_03": "VO_EX1_590_Death_03.ogg",
+			"Play_01": "VO_EX1_590_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_590.png",
 		"collectible": true,
@@ -23457,6 +25304,11 @@ var parseCardsText = {
 	{
 		"artist": "Doug Alexander",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_591_Attack_02.ogg",
+			"Death_03": "VO_EX1_591_Death_03.ogg",
+			"Play_01": "VO_EX1_591_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "EX1_591.png",
 		"collectible": true,
@@ -23479,6 +25331,11 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_593_Attack_02.ogg",
+			"Death_03": "VO_EX1_593_Death_03.ogg",
+			"Play_01": "VO_EX1_593_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_593.png",
 		"collectible": true,
@@ -23521,6 +25378,11 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_595_Attack_02.ogg",
+			"Death_03": "VO_EX1_595_Death_03.ogg",
+			"Play_01": "VO_EX1_595_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_595.png",
 		"collectible": true,
@@ -23569,6 +25431,11 @@ var parseCardsText = {
 	{
 		"artist": "Mark Gibbons",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_EX1_597_Attack_02.ogg",
+			"Death_03": "VO_EX1_597_Death_03.ogg",
+			"Play_01": "VO_EX1_597_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_597.png",
 		"collectible": true,
@@ -23603,6 +25470,11 @@ var parseCardsText = {
 	{
 		"artist": "Phroilan Gardner",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_603_Attack_02.ogg",
+			"Death_03": "VO_EX1_603_Death_03.ogg",
+			"Play_01": "VO_EX1_603_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "EX1_603.png",
 		"collectible": true,
@@ -23636,6 +25508,11 @@ var parseCardsText = {
 	{
 		"artist": "Simon Bisley",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_604_Attack_02.ogg",
+			"Death_03": "VO_EX1_604_Death_03.ogg",
+			"Play_01": "VO_EX1_604_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "EX1_604.png",
 		"collectible": true,
@@ -23711,6 +25588,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_608_Attack_02.ogg",
+			"Death_03": "VO_EX1_608_Death_03.ogg",
+			"Play_01": "VO_EX1_608_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "EX1_608.png",
 		"collectible": true,
@@ -23804,6 +25686,11 @@ var parseCardsText = {
 	{
 		"artist": "Popo Wei",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_EX1_612_Attack_02.ogg",
+			"Death_03": "VO_EX1_612_Death_03.ogg",
+			"Play_01": "VO_EX1_612_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "EX1_612.png",
 		"collectible": true,
@@ -23843,6 +25730,11 @@ var parseCardsText = {
 	{
 		"artist": "Efrem Palacios",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_EX1_613_Attack_02.ogg",
+			"Death_03": "VO_EX1_613_Death_03.ogg",
+			"Play_01": "VO_EX1_613_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "EX1_613.png",
 		"collectible": true,
@@ -23877,6 +25769,10 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 7,
+		"audio": {
+			"Alternate_15-01": "VO_EX1_614_Alternate_15-01.ogg",
+			"Death_01": "VO_EX1_614_Death_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_614.png",
 		"collectible": true,
@@ -23992,6 +25888,7 @@ var parseCardsText = {
 		"name": "Molten Giant",
 		"playerClass": "Neutral",
 		"rarity": "Epic",
+		"set": "Hof",
 		"text": "Costs (1) less for each damage your hero has taken.",
 		"type": "Minion"
 	},
@@ -24144,6 +26041,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_EX1_finkle_Attack_02.ogg",
+			"Death_03": "VO_EX1_finkle_Death_03.ogg",
+			"Play_01": "VO_EX1_finkle_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "EX1_finkle.png",
 		"cost": 3,
@@ -24217,6 +26119,9 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"audio": {
+			"Heropower_04": "VO_EX1_tk33_HeroPower_04.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "EX1_tk33.png",
 		"cost": 2,
@@ -24865,7 +26770,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 48857,
-		"goldenImage": "FB_Champs_FP1_028e.gif",
 		"id": "FB_Champs_FP1_028e",
 		"name": "Darkness Calls",
 		"playerClass": "Neutral",
@@ -24978,7 +26882,6 @@ var parseCardsText = {
 		"cardImage": "FB_Champs_Reset.png",
 		"cost": 0,
 		"dbfId": 49069,
-		"goldenImage": "FB_Champs_Reset.gif",
 		"hideStats": true,
 		"id": "FB_Champs_Reset",
 		"name": "Reset the Brawl",
@@ -24990,7 +26893,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 48888,
-		"goldenImage": "FB_Champs_SetEvent.gif",
 		"id": "FB_Champs_SetEvent",
 		"name": "Set Mission Event",
 		"playerClass": "Neutral",
@@ -25001,7 +26903,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 49040,
-		"goldenImage": "FB_Champs_SetEvent_copy.gif",
 		"id": "FB_Champs_SetEvent_copy",
 		"name": "Add FSG Score Screen",
 		"playerClass": "Neutral",
@@ -25011,7 +26912,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 49072,
-		"goldenImage": "FB_Champs_SetUp_Ench.gif",
 		"id": "FB_Champs_SetUp_Ench",
 		"name": "Champs Setup",
 		"playerClass": "Neutral",
@@ -26204,6 +28104,11 @@ var parseCardsText = {
 	{
 		"artist": "E. M. Gist",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_FP1_001_Attack_02.ogg",
+			"Death_03": "VO_FP1_001_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_001_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_001.png",
 		"collectible": true,
@@ -26285,6 +28190,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_FP1_004_Attack_02.ogg",
+			"Death_03": "VO_FP1_004_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_004_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_004.png",
 		"collectible": true,
@@ -26310,6 +28220,11 @@ var parseCardsText = {
 	{
 		"artist": "Ittoku",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_FP1_005_Attack_02.ogg",
+			"Death_03": "VO_FP1_005_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_005_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_005.png",
 		"collectible": true,
@@ -26362,6 +28277,11 @@ var parseCardsText = {
 	{
 		"artist": "Justin Thavirat",
 		"attack": 0,
+		"audio": {
+			"Attack_02": "VO_FP1_007t_Attack_02.ogg",
+			"Death_03": "VO_FP1_007t_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_007t_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_007.png",
 		"collectible": true,
@@ -26398,6 +28318,11 @@ var parseCardsText = {
 	{
 		"artist": "Chris Rahn",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_FP1_008_Attack_02.ogg",
+			"Death_03": "VO_FP1_008_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_008_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_008.png",
 		"collectible": true,
@@ -26421,6 +28346,11 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_FP1_009_Attack_02.ogg",
+			"Death_03": "VO_FP1_009_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_009_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_009.png",
 		"collectible": true,
@@ -26491,6 +28421,11 @@ var parseCardsText = {
 	{
 		"artist": "Nate Bowden",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_FP1_012_Attack_02.ogg",
+			"Death_03": "VO_FP1_012_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_012_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_012.png",
 		"collectible": true,
@@ -26532,6 +28467,12 @@ var parseCardsText = {
 	{
 		"artist": "Chris Robinson",
 		"attack": 6,
+		"audio": {
+			"Alt_01": "VO_FP1_013_Play_alt_01.ogg",
+			"Attack_03": "VO_FP1_013_Attack_03.ogg",
+			"Death_04": "VO_FP1_013_Death_04.ogg",
+			"Play_02": "VO_FP1_013_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_013.png",
 		"collectible": true,
@@ -26552,6 +28493,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_FP1_014_Attack_02.ogg",
+			"Death_03": "VO_FP1_014_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_014_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_014.png",
 		"collectible": true,
@@ -26590,6 +28536,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_FP1_015_Attack_02.ogg",
+			"Death_03": "VO_FP1_015_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_015_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_015.png",
 		"collectible": true,
@@ -26638,6 +28589,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_FP1_017_Attack_02.ogg",
+			"Death_03": "VO_FP1_017_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_017_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_017.png",
 		"collectible": true,
@@ -26767,6 +28723,11 @@ var parseCardsText = {
 	{
 		"artist": "Robb Shoberg",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_FP1_022_Attack_02.ogg",
+			"Death_03": "VO_FP1_022_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_022_EnterPlay_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "FP1_022.png",
 		"collectible": true,
@@ -26790,6 +28751,11 @@ var parseCardsText = {
 	{
 		"artist": "Phroilan Gardner",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_FP1_023_Attack_02.ogg",
+			"Death_03": "VO_FP1_023_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_023_EnterPlay_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "FP1_023.png",
 		"collectible": true,
@@ -26904,6 +28870,11 @@ var parseCardsText = {
 	{
 		"artist": "Jonboy Meyers",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_FP1_028_Attack_02.ogg",
+			"Death_03": "VO_FP1_028_Death_03.ogg",
+			"Enterplay_01": "VO_FP1_028_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_028.png",
 		"collectible": true,
@@ -26993,6 +28964,10 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 1,
+		"audio": {
+			"Attack_07": "VO_FP1_031_Attack_07.ogg",
+			"Enterplay_06": "VO_FP1_031_EnterPlay_06.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "FP1_031.png",
 		"collectible": true,
@@ -27126,11 +29101,19 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_113_Female_Worgen_Attack_01.ogg",
+			"Attack_03": "VO_GIL_113_Female_Worgen_Attack_03.ogg",
+			"Death_01": "VO_GIL_113_Female_Worgen_Death_01.ogg",
+			"Play_02": "VO_GIL_113_Female_Worgen_Play_02.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_113.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46650,
 		"flavor": "\"I'm sorry, son.  We had to send Old Howler off…to a farm…to play…\"",
+		"goldenImage": "GIL_113.gif",
 		"health": 3,
 		"id": "GIL_113",
 		"name": "Rabid Worgen",
@@ -27143,11 +29126,18 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GIL_116_Female_Worgen_Attack_02.ogg",
+			"Death_01": "VO_GIL_116_Female_Worgen_Death_01.ogg",
+			"Play_02": "VO_GIL_116_Female_Worgen_Play_02.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GIL_116.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 46654,
 		"flavor": "She sells all manner of keys: from A flat to G sharp.",
+		"goldenImage": "GIL_116.gif",
 		"health": 2,
 		"id": "GIL_116",
 		"mechanics": [
@@ -27167,11 +29157,18 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 6,
+		"audio": {
+			"Attack_04": "VO_GIL_117_Male_WorgenAbomination_Attack_04.ogg",
+			"Death_02": "VO_GIL_117_Male_WorgenAbomination_Death_02.ogg",
+			"Play_04": "VO_GIL_117_Male_WorgenAbomination_Play_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_117.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 46655,
 		"flavor": "Does anyone want to play dead!?",
+		"goldenImage": "GIL_117.gif",
 		"health": 6,
 		"id": "GIL_117",
 		"name": "Worgen Abomination",
@@ -27184,11 +29181,18 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 8,
+		"audio": {
+			"Attack_01": "VO_GIL_118_Male_Worgen_Attack_01.ogg",
+			"Death_01": "VO_GIL_118_Male_Worgen_Death_01.ogg",
+			"Play_03": "VO_GIL_118_Male_Worgen_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_118.png",
 		"collectible": true,
 		"cost": 8,
 		"dbfId": 46656,
 		"flavor": "Unfortunately, his doctorate is in Murloc Literature.",
+		"goldenImage": "GIL_118.gif",
 		"health": 8,
 		"id": "GIL_118",
 		"mechanics": [
@@ -27204,11 +29208,18 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_GIL_119_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_GIL_119_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_GIL_119_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_119.png",
 		"collectible": true,
 		"cost": 8,
 		"dbfId": 46658,
 		"flavor": "Decorating tip: Unused cauldrons can make a lovely elemental display.",
+		"goldenImage": "GIL_119.gif",
 		"health": 7,
 		"id": "GIL_119",
 		"mechanics": [
@@ -27235,11 +29246,18 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_GIL_120_Male_Ettin_Attack_01.ogg",
+			"Death_01": "VO_GIL_120_Male_Ettin_Death_01.ogg",
+			"Play_01": "VO_GIL_120_Male_Ettin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_120.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 46659,
 		"flavor": "One head is a morning person. The other head hates morning people.",
+		"goldenImage": "GIL_120.gif",
 		"health": 9,
 		"id": "GIL_120",
 		"mechanics": [
@@ -27256,10 +29274,12 @@ var parseCardsText = {
 		"artist": "Grace Liu",
 		"attack": 2,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_121.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 46660,
 		"flavor": "Birds of a feather Moonfire together.",
+		"goldenImage": "GIL_121.gif",
 		"health": 8,
 		"id": "GIL_121",
 		"mechanics": [
@@ -27276,11 +29296,18 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GIL_124_Male_Giant_Attack_02.ogg",
+			"Death_01": "VO_GIL_124_Male_Giant_Death_01.ogg",
+			"Play_03": "VO_GIL_124_Male_Giant_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_124.png",
 		"collectible": true,
 		"cost": 6,
 		"dbfId": 46667,
 		"flavor": "The hills have eyes. And teeth. Pretty bad breath, too.",
+		"goldenImage": "GIL_124.gif",
 		"health": 7,
 		"id": "GIL_124",
 		"mechanics": [
@@ -27296,11 +29323,18 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_125_Male_Goblin_Attack_01.ogg",
+			"Death_01": "VO_GIL_125_Male_Goblin_Death_01.ogg",
+			"Play_01": "VO_GIL_125_Male_Goblin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_125.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 46674,
 		"flavor": "He's entirely bonkers. All the best goblins are.",
+		"goldenImage": "GIL_125.gif",
 		"health": 2,
 		"id": "GIL_125",
 		"mechanics": [
@@ -27326,12 +29360,19 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 8,
+		"audio": {
+			"Attack_01": "VO_GIL_128_Female_Dragon_Attack_01.ogg",
+			"Death_01": "VO_GIL_128_Female_Dragon_Death_01.ogg",
+			"Play_01": "VO_GIL_128_Female_Dragon_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_128.png",
 		"collectible": true,
 		"cost": 10,
 		"dbfId": 46678,
 		"elite": true,
 		"flavor": "Taste your world's corruption! It tastes like chicken.",
+		"goldenImage": "GIL_128.gif",
 		"health": 8,
 		"id": "GIL_128",
 		"mechanics": [
@@ -27359,10 +29400,12 @@ var parseCardsText = {
 		"artist": "Jerry Mascho",
 		"attack": 2,
 		"cardClass": "DRUID",
+		"cardImage": "GIL_130.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 46680,
 		"flavor": "Majestic. Ethereal. Still pretty down in the dumps, though.",
+		"goldenImage": "GIL_130.gif",
 		"health": 6,
 		"id": "GIL_130",
 		"mechanics": [
@@ -27390,10 +29433,12 @@ var parseCardsText = {
 	{
 		"artist": "Vladimir Kafanov",
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_134.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 46694,
 		"flavor": "For a healthier option, try Holy Water: Zero.",
+		"goldenImage": "GIL_134.gif",
 		"id": "GIL_134",
 		"name": "Holy Water",
 		"playerClass": "Priest",
@@ -27406,11 +29451,13 @@ var parseCardsText = {
 		"artist": "Arthur Bozonnet",
 		"attack": 1,
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_142.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 46706,
 		"elite": true,
 		"flavor": "He's everyone you want to be.",
+		"goldenImage": "GIL_142.gif",
 		"health": 1,
 		"id": "GIL_142",
 		"name": "Chameleos",
@@ -27435,10 +29482,12 @@ var parseCardsText = {
 		"artist": "Steve Prescott",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_143.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 46710,
 		"flavor": "They make wonderful pets if you're not allergic to blood loss.",
+		"goldenImage": "GIL_143.gif",
 		"health": 3,
 		"id": "GIL_143",
 		"mechanics": [
@@ -27455,10 +29504,12 @@ var parseCardsText = {
 	{
 		"artist": "Milvoj Ceran",
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_145.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 46713,
 		"flavor": "Weirdly, the bells stop ringing after 5.",
+		"goldenImage": "GIL_145.gif",
 		"id": "GIL_145",
 		"name": "Sound the Bells!",
 		"playerClass": "Paladin",
@@ -27480,10 +29531,12 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"cardClass": "MAGE",
+		"cardImage": "GIL_147.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46715,
 		"flavor": "Forecast: \"Cloudy with a chance of fireballs.\"",
+		"goldenImage": "GIL_147.gif",
 		"id": "GIL_147",
 		"mechanics": [
 			"ImmuneToSpellpower"
@@ -27499,11 +29552,13 @@ var parseCardsText = {
 		"artist": "Jason Kang",
 		"attack": 3,
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_152.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 46721,
 		"elite": true,
 		"flavor": "The upper windows used to be for aiming. Then we thought: \"Hey! MORE cannons!\"",
+		"goldenImage": "GIL_152.gif",
 		"health": 8,
 		"id": "GIL_152",
 		"mechanics": [
@@ -27520,10 +29575,12 @@ var parseCardsText = {
 		"artist": "Dave Allsop",
 		"attack": 1,
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_155.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 46725,
 		"flavor": "Also comes in other colors, but red's in fashion this season.",
+		"goldenImage": "GIL_155.gif",
 		"health": 3,
 		"id": "GIL_155",
 		"mechanics": [
@@ -27553,11 +29610,18 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GIL_156_Male_Elemental_Attack_02.ogg",
+			"Death_01": "VO_GIL_156_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_GIL_156_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_156.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 46737,
 		"flavor": "These elementals, along with feldspar and mica, are often taken for granite.",
+		"goldenImage": "GIL_156.gif",
 		"health": 8,
 		"id": "GIL_156",
 		"name": "Quartz Elemental",
@@ -27571,11 +29635,18 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_188_Female_NightElf_Attack_01.ogg",
+			"Death_01": "VO_GIL_188_Female_NightElf_Death_01.ogg",
+			"Play_01": "VO_GIL_188_Female_NightElf_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GIL_188.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46859,
 		"flavor": "She's a scythe for sore eyes.",
+		"goldenImage": "GIL_188.gif",
 		"health": 2,
 		"id": "GIL_188",
 		"mechanics": [
@@ -27594,8 +29665,10 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"cardClass": "DRUID",
+		"cardImage": "GIL_188a.png",
 		"cost": 0,
 		"dbfId": 47048,
+		"goldenImage": "GIL_188a.gif",
 		"id": "GIL_188a",
 		"name": "Dire Panther Form",
 		"playerClass": "Druid",
@@ -27606,8 +29679,10 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"cardClass": "DRUID",
+		"cardImage": "GIL_188b.png",
 		"cost": 0,
 		"dbfId": 47049,
+		"goldenImage": "GIL_188b.gif",
 		"id": "GIL_188b",
 		"name": "Dire Wolf Form",
 		"playerClass": "Druid",
@@ -27619,8 +29694,10 @@ var parseCardsText = {
 		"artist": "L. Lullabi & K. Turovec",
 		"attack": 4,
 		"cardClass": "DRUID",
+		"cardImage": "GIL_188t.png",
 		"cost": 3,
 		"dbfId": 48305,
+		"goldenImage": "GIL_188t.gif",
 		"health": 2,
 		"id": "GIL_188t",
 		"name": "Druid of the Scythe",
@@ -27635,8 +29712,10 @@ var parseCardsText = {
 		"artist": "L. Lullabi & K. Turovec",
 		"attack": 2,
 		"cardClass": "DRUID",
+		"cardImage": "GIL_188t2.png",
 		"cost": 3,
 		"dbfId": 48306,
+		"goldenImage": "GIL_188t2.gif",
 		"health": 4,
 		"id": "GIL_188t2",
 		"mechanics": [
@@ -27654,8 +29733,10 @@ var parseCardsText = {
 		"artist": "L. Lullabi & K. Turovec",
 		"attack": 4,
 		"cardClass": "DRUID",
+		"cardImage": "GIL_188t3.png",
 		"cost": 3,
 		"dbfId": 48307,
+		"goldenImage": "GIL_188t3.gif",
 		"health": 4,
 		"id": "GIL_188t3",
 		"mechanics": [
@@ -27672,11 +29753,18 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GIL_190_Female_Dragon_Attack_01.ogg",
+			"Death_01": "VO_GIL_190_Female_Dragon_Death_01.ogg",
+			"Play_01": "VO_GIL_190_Female_Dragon_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_190.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 46862,
 		"flavor": "Everywhelp, get in here!",
+		"goldenImage": "GIL_190.gif",
 		"health": 9,
 		"id": "GIL_190",
 		"name": "Nightscale Matriarch",
@@ -27691,8 +29779,10 @@ var parseCardsText = {
 		"artist": "Slawomir Maniak",
 		"attack": 3,
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_190t.png",
 		"cost": 3,
 		"dbfId": 48663,
+		"goldenImage": "GIL_190t.gif",
 		"health": 3,
 		"id": "GIL_190t",
 		"name": "Nightscale Whelp",
@@ -27704,10 +29794,12 @@ var parseCardsText = {
 	{
 		"artist": "Ivan Fomin",
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_191.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 46864,
 		"flavor": "Like a knitting circle, but less evil.",
+		"goldenImage": "GIL_191.gif",
 		"id": "GIL_191",
 		"name": "Fiendish Circle",
 		"playerClass": "Warlock",
@@ -27720,8 +29812,10 @@ var parseCardsText = {
 		"artist": "Jaemin Kim",
 		"attack": 1,
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_191t.png",
 		"cost": 1,
 		"dbfId": 47502,
+		"goldenImage": "GIL_191t.gif",
 		"health": 1,
 		"id": "GIL_191t",
 		"name": "Imp",
@@ -27733,12 +29827,19 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_198_Female_NightElf_Attack_01.ogg",
+			"Death_01": "VO_GIL_198_Female_NightElf_Death_01.ogg",
+			"Play_01": "VO_GIL_198_Female_NightElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_198.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 46874,
 		"elite": true,
 		"flavor": "The cards are always golden on the other side.",
+		"goldenImage": "GIL_198.gif",
 		"health": 3,
 		"id": "GIL_198",
 		"mechanics": [
@@ -27754,11 +29855,18 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_200_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_GIL_200_Female_Human_Death_01.ogg",
+			"Play_02": "VO_GIL_200_Female_Human_Play_02.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_200.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46596,
 		"flavor": "After a short paws, she's back to herself again.",
+		"goldenImage": "GIL_200.gif",
 		"health": 5,
 		"id": "GIL_200",
 		"mechanics": [
@@ -27783,8 +29891,10 @@ var parseCardsText = {
 	{
 		"attack": 5,
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_200t.png",
 		"cost": 3,
 		"dbfId": 46597,
+		"goldenImage": "GIL_200t.gif",
 		"health": 2,
 		"id": "GIL_200t",
 		"mechanics": [
@@ -27800,11 +29910,20 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_201t_Male_Worgen_Attack_01.ogg",
+			"Attack_02": "VO_GIL_201_Male_Human_Attack_02.ogg",
+			"Death_01": "VO_GIL_201t_Male_Worgen_Death_01.ogg",
+			"Death_02": "VO_GIL_201_Male_Human_Death_02.ogg",
+			"Play_02": "VO_GIL_201_Male_Human_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_201.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46598,
 		"flavor": "Time to squash your opponent.",
+		"goldenImage": "GIL_201.gif",
 		"health": 4,
 		"id": "GIL_201",
 		"mechanics": [
@@ -27821,8 +29940,10 @@ var parseCardsText = {
 		"artist": "Mike Azevedo",
 		"attack": 4,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_201t.png",
 		"cost": 3,
 		"dbfId": 46600,
+		"goldenImage": "GIL_201t.gif",
 		"health": 2,
 		"id": "GIL_201t",
 		"mechanics": [
@@ -27838,11 +29959,18 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_202_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_GIL_202_Female_Human_Death_01.ogg",
+			"Play_01": "VO_GIL_202_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_202.png",
 		"collectible": true,
 		"cost": 8,
 		"dbfId": 46601,
 		"flavor": "Admittedly, they kind of dropped the ball with Prince Liam.",
+		"goldenImage": "GIL_202.gif",
 		"health": 8,
 		"id": "GIL_202",
 		"mechanics": [
@@ -27859,8 +29987,10 @@ var parseCardsText = {
 		"artist": "Slawomir Maniak",
 		"attack": 8,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_202t.png",
 		"cost": 8,
 		"dbfId": 46602,
+		"goldenImage": "GIL_202t.gif",
 		"health": 3,
 		"id": "GIL_202t",
 		"mechanics": [
@@ -27876,10 +30006,12 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studio",
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_203.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 46621,
 		"flavor": "When one buke just isn’t enough.",
+		"goldenImage": "GIL_203.gif",
 		"id": "GIL_203",
 		"name": "Rebuke",
 		"playerClass": "Paladin",
@@ -27901,11 +30033,18 @@ var parseCardsText = {
 	{
 		"artist": "Dai Yang",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GIL_207_Male_Ghost_Attack_02.ogg",
+			"Death_01": "VO_GIL_207_Male_Ghost_Death_01.ogg",
+			"Play_04": "VO_GIL_207_Male_Ghost_Play_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_207.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46634,
 		"flavor": "Recruited from the Gilnean opera house.",
+		"goldenImage": "GIL_207.gif",
 		"health": 4,
 		"id": "GIL_207",
 		"mechanics": [
@@ -27921,11 +30060,18 @@ var parseCardsText = {
 	{
 		"artist": "Ben Zhang",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_212_Male_Goblin_Attack_01.ogg",
+			"Death_01": "VO_GIL_212_Male_Goblin_Death_01.ogg",
+			"Play_01": "VO_GIL_212_Male_Goblin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_212.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46661,
 		"flavor": "That Friends and Familiars Plan is really paying off!",
+		"goldenImage": "GIL_212.gif",
 		"health": 1,
 		"id": "GIL_212",
 		"mechanics": [
@@ -27941,11 +30087,18 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_213_Female_Gnoll_Attack_01.ogg",
+			"Death_01": "VO_GIL_213_Female_Gnoll_Death_01.ogg",
+			"Play_01": "VO_GIL_213_Female_Gnoll_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_213.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46665,
 		"flavor": "Doom!  Only doom for you!  But pay good tip, maybe less doom.",
+		"goldenImage": "GIL_213.gif",
 		"health": 4,
 		"id": "GIL_213",
 		"mechanics": [
@@ -27961,12 +30114,72 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "Alex Horley Orlandelli",
+		"audio": {
+			"Attack_01": "VO_GIL_504_Female_Orc_Attack_01.ogg",
+			"Azlina_02": "VO_GIL_504_Female_Orc_UI_Monster_Azlina_02.ogg",
+			"Baran_01": "VO_GIL_504_Female_Orc_UI_Monster_Baran_01.ogg",
+			"Cent_01": "VO_GIL_504_Female_Orc_UI_Monster_Brushwood_Cent_01.ogg",
+			"Chupacabran_01": "VO_GIL_504_Female_Orc_UI_Monster_Chupacabran_01.ogg",
+			"Collector_01": "VO_GIL_504_Female_Orc_UI_Monster_Face_Collector_01.ogg",
+			"Concede_01": "VO_GIL_504_Female_Orc_Concede_01.ogg",
+			"Cragtorr_01": "VO_GIL_504_Female_Orc_UI_Monster_Cragtorr_01.ogg",
+			"Crowskin_01": "VO_GIL_504_Female_Orc_UI_Monster_Crowskin_01.ogg",
+			"Death_01": "VO_GIL_504_Female_Orc_Death_01.ogg",
+			"Drsezavo_01": "VO_GIL_504_Female_Orc_UI_Monster_DrSezavo_01.ogg",
+			"Experiment3c_01": "VO_GIL_504_Female_Orc_UI_Monster_Experiment3C_01.ogg",
+			"Generic_01": "VO_GIL_504_Female_Orc_TUT_Victory_Generic_01.ogg",
+			"Gnarlroot_01": "VO_GIL_504_Female_Orc_UI_Monster_Gnarlroot_01.ogg",
+			"Godfrey_01": "VO_GIL_504_Female_Orc_UI_Monster_Lord_Godfrey_01.ogg",
+			"Greetings_02": "VO_GIL_504_Female_Orc_MIRROR_GREETINGS_02.ogg",
+			"Griselda_01": "VO_GIL_504_Female_Orc_UI_Monster_Griselda_01.ogg",
+			"Groddo_01": "VO_GIL_504_Female_Orc_UI_Monster_Groddo_01.ogg",
+			"Grubb_01": "VO_GIL_504_Female_Orc_UI_Monster_Grubb_01.ogg",
+			"Grum_01": "VO_GIL_504_Female_Orc_UI_Monster_Grum_01.ogg",
+			"Gustave_01": "VO_GIL_504_Female_Orc_UI_Monster_Gustave_01.ogg",
+			"Hannigul_01": "VO_GIL_504_Female_Orc_UI_Monster_Hannigul_01.ogg",
+			"Havnixx_01": "VO_GIL_504_Female_Orc_UI_Monster_Havnixx_01.ogg",
+			"Ivan_01": "VO_GIL_504_Female_Orc_UI_Monster_Ivan_01.ogg",
+			"Laugh_01": "VO_GIL_504_Female_Orc_LAUGH_01.ogg",
+			"Lootselect2_01": "VO_GIL_504_Female_Orc_TUT_LootSelect2_01.ogg",
+			"Lovers_01": "VO_GIL_504_Female_Orc_UI_Monster_Lovers_01.ogg",
+			"Lowcards_01": "VO_GIL_504_Female_Orc_LowCards_01.ogg",
+			"Mistwraith_01": "VO_GIL_504_Female_Orc_UI_Monster_Mistwraith_01.ogg",
+			"Mute_01": "VO_GIL_504_Female_Orc_UI_Monster_Mute_01.ogg",
+			"Niira_01": "VO_GIL_504_Female_Orc_UI_Monster_Niira_01.ogg",
+			"Nocards_01": "VO_GIL_504_Female_Orc_NoCards_01.ogg",
+			"Oops_01": "VO_GIL_504_Female_Orc_Oops_01.ogg",
+			"Play_02": "VO_GIL_504_Female_Orc_Play_02.ogg",
+			"Played_01": "VO_GIL_504_Female_Orc_Well_Played_01.ogg",
+			"Raeth_01": "VO_GIL_504_Female_Orc_UI_Monster_Raeth_01.ogg",
+			"Rancel_01": "VO_GIL_504_Female_Orc_UI_Monster_Rancel_01.ogg",
+			"Sazzmi_01": "VO_GIL_504_Female_Orc_UI_Monster_Sazzmi_01.ogg",
+			"Sephira_01": "VO_GIL_504_Female_Orc_UI_Monster_Sephira_01.ogg",
+			"Shivers_01": "VO_GIL_504_Female_Orc_UI_Monster_Shivers_01.ogg",
+			"Splintergraft_01": "VO_GIL_504_Female_Orc_UI_Monster_Splintergraft_01.ogg",
+			"Sthara_01": "VO_GIL_504_Female_Orc_UI_Monster_Sthara_01.ogg",
+			"Thanks_01": "VO_GIL_504_Female_Orc_Thanks_01.ogg",
+			"Thinking_01": "VO_GIL_504_Female_Orc_Thinking_01.ogg",
+			"Thinking_02": "VO_GIL_504_Female_Orc_Thinking_02.ogg",
+			"Thinking_03": "VO_GIL_504_Female_Orc_Thinking_03.ogg",
+			"Threaten_02": "VO_GIL_504_Female_Orc_Threaten_02.ogg",
+			"Time_01": "VO_GIL_504_Female_Orc_Time_01.ogg",
+			"Toki_01": "VO_GIL_504_Female_Orc_UI_Monster_Infinite_Toki_01.ogg",
+			"Victory1_01": "VO_GIL_504_Female_Orc_TUT_Victory1_01.ogg",
+			"Victory2_01": "VO_GIL_504_Female_Orc_TUT_Victory2_01.ogg",
+			"Victory3_01": "VO_GIL_504_Female_Orc_TUT_Victory3_01.ogg",
+			"Victory4_01": "VO_GIL_504_Female_Orc_TUT_Victory4_01.ogg",
+			"Vitus_01": "VO_GIL_504_Female_Orc_UI_Monster_Vitus_01.ogg",
+			"Wharrgarbl_01": "VO_GIL_504_Female_Orc_UI_Monster_Wharrgarbl_01.ogg",
+			"Wow_01": "VO_GIL_504_Female_Orc_Wow_01.ogg"
+		},
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_504.png",
 		"collectible": true,
 		"cost": 8,
 		"dbfId": 46887,
 		"elite": true,
 		"flavor": "Curse-bringer, tree-twister, mother of wretched things…Hanzo main.",
+		"goldenImage": "GIL_504.gif",
 		"health": 30,
 		"id": "GIL_504",
 		"mechanics": [
@@ -27982,8 +30195,10 @@ var parseCardsText = {
 	{
 		"artist": "Grace Liu",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_504h.png",
 		"cost": 0,
 		"dbfId": 47631,
+		"goldenImage": "GIL_504h.gif",
 		"id": "GIL_504h",
 		"name": "Bewitch",
 		"playerClass": "Neutral",
@@ -27994,10 +30209,12 @@ var parseCardsText = {
 	{
 		"artist": "Rock Niu",
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_506.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 46897,
 		"flavor": "50% off. Every shot must go!",
+		"goldenImage": "GIL_506.gif",
 		"id": "GIL_506",
 		"name": "Cheap Shot",
 		"playerClass": "Rogue",
@@ -28009,11 +30226,18 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GIL_507_Male_NightElf_Attack_01.ogg",
+			"Death_01": "VO_GIL_507_Male_NightElf_Death_01.ogg",
+			"Play_01": "VO_GIL_507_Male_NightElf_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GIL_507.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 46903,
 		"flavor": "Amwitched. Beingwitched. Beenwitched.",
+		"goldenImage": "GIL_507.gif",
 		"health": 1,
 		"id": "GIL_507",
 		"mechanics": [
@@ -28041,10 +30265,12 @@ var parseCardsText = {
 		"artist": "Jiajun Tian",
 		"attack": 2,
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_508.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46904,
 		"flavor": "Happily married with two kids. It was love at first bite.",
+		"goldenImage": "GIL_508.gif",
 		"health": 4,
 		"id": "GIL_508",
 		"mechanics": [
@@ -28062,8 +30288,10 @@ var parseCardsText = {
 		"artist": "Zero",
 		"attack": 1,
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_508t.png",
 		"cost": 1,
 		"dbfId": 48805,
+		"goldenImage": "GIL_508t.gif",
 		"health": 1,
 		"id": "GIL_508t",
 		"name": "Bat",
@@ -28075,11 +30303,18 @@ var parseCardsText = {
 	{
 		"artist": "Phil Saunders",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_510_Male_Spirit_Attack_01.ogg",
+			"Death_01": "VO_GIL_510_Male_Spirit_Death_01.ogg",
+			"Play_01": "VO_GIL_510_Male_Spirit_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_510.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 46908,
 		"flavor": "One little Mistwraith sitting in a tree. M-I-S-T-I-N-G.",
+		"goldenImage": "GIL_510.gif",
 		"health": 5,
 		"id": "GIL_510",
 		"name": "Mistwraith",
@@ -28102,11 +30337,18 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studio",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GIL_513_Female_HumanGhost_Attack_02.ogg",
+			"Death_01": "VO_GIL_513_Female_HumanGhost_Death_01.ogg",
+			"Play_02": "VO_GIL_513_Female_HumanGhost_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_513.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 46950,
 		"flavor": "She simply refuses to ask for directions.",
+		"goldenImage": "GIL_513.gif",
 		"health": 1,
 		"id": "GIL_513",
 		"mechanics": [
@@ -28132,11 +30374,18 @@ var parseCardsText = {
 	{
 		"artist": "J. Axer",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GIL_515_Male_Undead_Attack_02.ogg",
+			"Death_01": "VO_GIL_515_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_GIL_515_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_515.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 46936,
 		"flavor": "He's on the hunt for Togwaggle's missing rat.",
+		"goldenImage": "GIL_515.gif",
 		"health": 2,
 		"id": "GIL_515",
 		"mechanics": [
@@ -28162,10 +30411,12 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_518.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 46940,
 		"flavor": "Emeriss uses Wing Blast.  It's super effective!",
+		"goldenImage": "GIL_518.gif",
 		"id": "GIL_518",
 		"name": "Wing Blast",
 		"playerClass": "Hunter",
@@ -28177,11 +30428,18 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studio",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GIL_526_Male_Skeleton_Attack_02.ogg",
+			"Death_01": "VO_GIL_526_Male_Skeleton_Death_01.ogg",
+			"Play_01": "VO_GIL_526_Male_Skeleton_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_526.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 46988,
 		"flavor": "They think they're trusted guardians. Dragons think they're convenient snacks.",
+		"goldenImage": "GIL_526.gif",
 		"health": 11,
 		"id": "GIL_526",
 		"mechanics": [
@@ -28210,11 +30468,18 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GIL_527_Male_Demon_Attack_02.ogg",
+			"Death_01": "VO_GIL_527_Male_Demon_Death_01.ogg",
+			"Play_01": "VO_GIL_527_Male_Demon_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_527.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 46991,
 		"flavor": "Everyone expects an inquisition reference.",
+		"goldenImage": "GIL_527.gif",
 		"health": 6,
 		"id": "GIL_527",
 		"mechanics": [
@@ -28232,11 +30497,18 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_528_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_GIL_528_Female_Human_Death_01.ogg",
+			"Play_03": "VO_GIL_528_Female_Human_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_528.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 46992,
 		"flavor": "Same turn delivery - guaranteed!",
+		"goldenImage": "GIL_528.gif",
 		"health": 6,
 		"id": "GIL_528",
 		"name": "Swift Messenger",
@@ -28250,8 +30522,10 @@ var parseCardsText = {
 		"artist": "Zoltan Boros",
 		"attack": 6,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_528t.png",
 		"cost": 4,
 		"dbfId": 46993,
+		"goldenImage": "GIL_528t.gif",
 		"health": 2,
 		"id": "GIL_528t",
 		"name": "Swift Messenger",
@@ -28264,11 +30538,19 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_GIL_529_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_GIL_529t_Male_Worgen_Death_01.ogg",
+			"Death_02": "VO_GIL_529_Male_Human_Death_02.ogg",
+			"Play_03": "VO_GIL_529_Male_Human_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_529.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 46994,
 		"flavor": "He also goes by \"worg-lock.\"",
+		"goldenImage": "GIL_529.gif",
 		"health": 4,
 		"id": "GIL_529",
 		"mechanics": [
@@ -28286,8 +30568,10 @@ var parseCardsText = {
 		"artist": "Arthur Gimaldinov",
 		"attack": 4,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_529t.png",
 		"cost": 2,
 		"dbfId": 46995,
+		"goldenImage": "GIL_529t.gif",
 		"health": 1,
 		"id": "GIL_529t",
 		"mechanics": [
@@ -28305,10 +30589,12 @@ var parseCardsText = {
 		"artist": "Luca Zontini",
 		"attack": 2,
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_530.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 46996,
 		"flavor": "Makes shockingly good unagi.",
+		"goldenImage": "GIL_530.gif",
 		"health": 3,
 		"id": "GIL_530",
 		"mechanics": [
@@ -28325,11 +30611,18 @@ var parseCardsText = {
 	{
 		"artist": "Sam Hogg",
 		"attack": 0,
+		"audio": {
+			"Attack_02": "VO_GIL_531_Female_Human_Attack_02.ogg",
+			"Death_01": "VO_GIL_531_Female_Human_Death_01.ogg",
+			"Play_03": "VO_GIL_531_Female_Human_Play_03.ogg"
+		},
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_531.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 46998,
 		"flavor": "Is she a frog that became a witch, or a witch that became a frog?",
+		"goldenImage": "GIL_531.gif",
 		"health": 1,
 		"id": "GIL_531",
 		"mechanics": [
@@ -28347,11 +30640,18 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GIL_534_Male_Worgen_Attack_02.ogg",
+			"Death_01": "VO_GIL_534_Male_Worgen_Death_01.ogg",
+			"Play_01": "VO_GIL_534_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_534.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47014,
 		"flavor": "Hard time making ends meet? Hate the League of Explorers? Get a job henching!",
+		"goldenImage": "GIL_534.gif",
 		"health": 3,
 		"id": "GIL_534",
 		"name": "Hench-Clan Thug",
@@ -28374,10 +30674,12 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_537.png",
 		"collectible": true,
 		"cost": 6,
 		"dbfId": 47016,
 		"flavor": "Oh look. A Gorehowl.",
+		"goldenImage": "GIL_537.gif",
 		"id": "GIL_537",
 		"name": "Deadly Arsenal",
 		"playerClass": "Warrior",
@@ -28389,10 +30691,12 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_543.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 47033,
 		"flavor": "Wanted on three counts of gnomish possession.",
+		"goldenImage": "GIL_543.gif",
 		"id": "GIL_543",
 		"name": "Dark Possession",
 		"playerClass": "Warlock",
@@ -28408,10 +30712,12 @@ var parseCardsText = {
 		"artist": "Zoltan Boros",
 		"attack": 3,
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_545.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47051,
 		"flavor": "Maybe we should have called him Ghostly Rusher.",
+		"goldenImage": "GIL_545.gif",
 		"health": 4,
 		"id": "GIL_545",
 		"mechanics": [
@@ -28428,12 +30734,19 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GIL_547_Male_Worgen_Attack_01.ogg",
+			"Death_01": "VO_GIL_547_Male_Worgen_Death_01.ogg",
+			"Play_01": "VO_GIL_547_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_547.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47053,
 		"elite": true,
 		"flavor": "You either die a villain, or live long enough to see yourself become the hero.",
+		"goldenImage": "GIL_547.gif",
 		"health": 4,
 		"id": "GIL_547",
 		"name": "Darius Crowley",
@@ -28456,10 +30769,12 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"cardClass": "MAGE",
+		"cardImage": "GIL_548.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47054,
 		"flavor": "Known throughout the land as the Spooky-nomicon.",
+		"goldenImage": "GIL_548.gif",
 		"id": "GIL_548",
 		"name": "Book of Specters",
 		"playerClass": "Mage",
@@ -28471,12 +30786,19 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_GIL_549_Female_Gnome_Attack_01.ogg",
+			"Death_03": "VO_GIL_549_Female_Gnome_Death_03.ogg",
+			"Play_01": "VO_GIL_549_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GIL_549.png",
 		"collectible": true,
 		"cost": 6,
 		"dbfId": 47055,
 		"elite": true,
 		"flavor": "Just a twist to the left, one quarter turn to the right and … oops! Well, we didn’t need that timeline anyway.",
+		"goldenImage": "GIL_549.gif",
 		"health": 5,
 		"id": "GIL_549",
 		"mechanics": [
@@ -28490,12 +30812,14 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"artist": "Max Greck",
+		"artist": "Max Grecke",
 		"cardClass": "DRUID",
+		"cardImage": "GIL_553.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47063,
 		"flavor": "We didn't actually fire the guy who named Dark Wispers.",
+		"goldenImage": "GIL_553.gif",
 		"id": "GIL_553",
 		"name": "Wispering Woods",
 		"playerClass": "Druid",
@@ -28508,8 +30832,10 @@ var parseCardsText = {
 		"artist": "Jiajun Tian",
 		"attack": 1,
 		"cardClass": "DRUID",
+		"cardImage": "GIL_553t.png",
 		"cost": 0,
 		"dbfId": 49149,
+		"goldenImage": "GIL_553t.gif",
 		"health": 1,
 		"id": "GIL_553t",
 		"name": "Wisp",
@@ -28520,11 +30846,18 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studio",
 		"attack": 5,
+		"audio": {
+			"Attack_03": "VO_GIL_557_Female_HumanGhost_Attack_03.ogg",
+			"Death_02": "VO_GIL_557_Female_HumanGhost_Death_02.ogg",
+			"Play_05": "VO_GIL_557_Female_HumanGhost_Play_05.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_557.png",
 		"collectible": true,
 		"cost": 6,
 		"dbfId": 47071,
 		"flavor": "She was an ordinary castaway... until she found that cursed volleyball.",
+		"goldenImage": "GIL_557.gif",
 		"health": 3,
 		"id": "GIL_557",
 		"mechanics": [
@@ -28545,10 +30878,12 @@ var parseCardsText = {
 		"artist": "Luca Zontini",
 		"attack": 2,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_558.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 47072,
 		"flavor": "A face only a druid could love.",
+		"goldenImage": "GIL_558.gif",
 		"health": 1,
 		"id": "GIL_558",
 		"mechanics": [
@@ -28565,11 +30900,18 @@ var parseCardsText = {
 	{
 		"artist": "Ivan Fomin",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_561_Male_Sprite_Attack_01.ogg",
+			"Death_01": "VO_GIL_561_Male_Sprite_Death_01.ogg",
+			"Play_01": "VO_GIL_561_Male_Sprite_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_561.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47077,
 		"flavor": "\"Oh hi bark.\"",
+		"goldenImage": "GIL_561.gif",
 		"health": 4,
 		"id": "GIL_561",
 		"mechanics": [
@@ -28586,10 +30928,12 @@ var parseCardsText = {
 		"artist": "Tyler West Studio",
 		"attack": 1,
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_562.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47078,
 		"flavor": "It aspires to be a Vilebrood Dancer, but it has eight left feet.",
+		"goldenImage": "GIL_562.gif",
 		"health": 3,
 		"id": "GIL_562",
 		"mechanics": [
@@ -28607,10 +30951,12 @@ var parseCardsText = {
 		"artist": "Konstantin Turovec",
 		"attack": 4,
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_565.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47085,
 		"flavor": "The itsy bitsy spiders climbed up the village wall. Then came the witch and the spiders ate them all.",
+		"goldenImage": "GIL_565.gif",
 		"health": 6,
 		"id": "GIL_565",
 		"mechanics": [
@@ -28630,10 +30976,12 @@ var parseCardsText = {
 	{
 		"artist": "Mauricio Herrera",
 		"cardClass": "DRUID",
+		"cardImage": "GIL_571.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47117,
 		"flavor": "The gates to the Gilnean pet cemetary MUST remain locked at all times.",
+		"goldenImage": "GIL_571.gif",
 		"id": "GIL_571",
 		"name": "Witching Hour",
 		"playerClass": "Druid",
@@ -28645,10 +30993,12 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_577.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47128,
 		"flavor": "MISSING: One giant rat. Please return to King Togwaggle.",
+		"goldenImage": "GIL_577.gif",
 		"id": "GIL_577",
 		"mechanics": [
 			"SECRET"
@@ -28663,8 +31013,10 @@ var parseCardsText = {
 	{
 		"attack": 6,
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_577t.png",
 		"cost": 6,
 		"dbfId": 49457,
+		"goldenImage": "GIL_577t.gif",
 		"health": 6,
 		"id": "GIL_577t",
 		"name": "Doom Rat",
@@ -28676,12 +31028,19 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GIL_578_Female_BloodElf_Attack_02.ogg",
+			"Death_02": "VO_GIL_578_Female_BloodElf_Death_02.ogg",
+			"Play_01": "VO_GIL_578_Female_BloodElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_578.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 47131,
 		"elite": true,
 		"flavor": "\"1 minion… ah, ah, ah! 2 minions… ah, ah, ah! 3 minions… ah, ah, ah!\"",
+		"goldenImage": "GIL_578.gif",
 		"health": 6,
 		"id": "GIL_578",
 		"mechanics": [
@@ -28701,11 +31060,18 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_GIL_580_Male_Worgen_Attack_01.ogg",
+			"Death_01": "VO_GIL_580_Male_Worgen_Death_01.ogg",
+			"Play_01": "VO_GIL_580_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_580.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 47133,
 		"flavor": "When he was younger, he was the town crybaby.",
+		"goldenImage": "GIL_580.gif",
 		"health": 2,
 		"id": "GIL_580",
 		"mechanics": [
@@ -28721,11 +31087,18 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_581_Male_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_GIL_581_Male_BloodElf_Death_01.ogg",
+			"Play_03": "VO_GIL_581_Male_BloodElf_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_581.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47134,
 		"flavor": "The secret is glue.",
+		"goldenImage": "GIL_581.gif",
 		"health": 4,
 		"id": "GIL_581",
 		"mechanics": [
@@ -28741,11 +31114,18 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_583_Female_Beast_Attack_01.ogg",
+			"Death_01": "VO_GIL_583_Female_Beast_Death_01.ogg",
+			"Play_01": "VO_GIL_583_Female_Beast_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_583.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47138,
 		"flavor": "When regular totem hours won't cut it.",
+		"goldenImage": "GIL_583.gif",
 		"health": 3,
 		"id": "GIL_583",
 		"mechanics": [
@@ -28773,11 +31153,18 @@ var parseCardsText = {
 	{
 		"artist": "Ursula Dorada",
 		"attack": 3,
+		"audio": {
+			"Attack_04": "VO_GIL_584_Female_Satyr_Attack_04.ogg",
+			"Death_01": "VO_GIL_584_Female_Satyr_Death_01.ogg",
+			"Play_01": "VO_GIL_584_Female_Satyr_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_584.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47142,
 		"flavor": "She rids villages of annoying pests, like rats and children.",
+		"goldenImage": "GIL_584.gif",
 		"health": 3,
 		"id": "GIL_584",
 		"mechanics": [
@@ -28793,10 +31180,12 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_586.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47152,
 		"flavor": "Or it might not.",
+		"goldenImage": "GIL_586.gif",
 		"id": "GIL_586",
 		"name": "Earthen Might",
 		"playerClass": "Shaman",
@@ -28819,11 +31208,13 @@ var parseCardsText = {
 		"artist": "Nutchapol Thitinunthakorn",
 		"attack": 3,
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_596.png",
 		"collectible": true,
 		"cost": 8,
 		"dbfId": 47201,
 		"durability": 4,
 		"flavor": "Silver’s malleability limits its utility as an edged weapon. On the other hand... SHINY!",
+		"goldenImage": "GIL_596.gif",
 		"id": "GIL_596",
 		"name": "Silver Sword",
 		"playerClass": "Paladin",
@@ -28845,12 +31236,21 @@ var parseCardsText = {
 	{
 		"artist": "J. Axer",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_GIL_598_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_GIL_598_Female_Human_Death_01.ogg",
+			"Play_01": "VO_GIL_598_Female_Human_Play_01.ogg",
+			"Specialgenn_01": "VO_GIL_598_Female_Human_SpecialGenn_01.ogg",
+			"Specialsylvanas_01": "VO_GIL_598_Female_Human_SpecialSylvanas_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_598.png",
 		"collectible": true,
 		"cost": 8,
 		"dbfId": 47211,
 		"elite": true,
 		"flavor": "Those who cannot remember their card history are doomed to repeat it.",
+		"goldenImage": "GIL_598.gif",
 		"health": 6,
 		"id": "GIL_598",
 		"mechanics": [
@@ -28866,10 +31266,12 @@ var parseCardsText = {
 	{
 		"artist": "Jason Kang",
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_600.png",
 		"collectible": true,
 		"cost": 0,
 		"dbfId": 47222,
 		"flavor": "The material components for this spell are wool socks and a rug.",
+		"goldenImage": "GIL_600.gif",
 		"id": "GIL_600",
 		"mechanics": [
 			"OVERLOAD"
@@ -28886,10 +31288,12 @@ var parseCardsText = {
 		"artist": "Arthur Bozonnet",
 		"attack": 4,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_601.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47241,
 		"flavor": "A popular local alternative to bananas.",
+		"goldenImage": "GIL_601.gif",
 		"health": 4,
 		"id": "GIL_601",
 		"mechanics": [
@@ -28916,11 +31320,18 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studio",
 		"attack": 2,
+		"audio": {
+			"Attack_03": "VO_GIL_607_Male_Worgen_Attack_03.ogg",
+			"Death_02": "VO_GIL_607_Male_Worgen_Death_02.ogg",
+			"Play_02": "VO_GIL_607_Male_Worgen_Play_02.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_607.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47256,
 		"flavor": "Not all spiders are born poisonous. That's where he comes in.",
+		"goldenImage": "GIL_607.gif",
 		"health": 4,
 		"id": "GIL_607",
 		"name": "Toxmonger",
@@ -28947,10 +31358,12 @@ var parseCardsText = {
 		"artist": "Konstantin Turovec",
 		"attack": 2,
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_607t.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47930,
 		"flavor": "\"Shh! You're going to start a howl!\"",
+		"goldenImage": "GIL_607t.gif",
 		"health": 1,
 		"id": "GIL_607t",
 		"name": "Hunting Mastiff",
@@ -28964,11 +31377,18 @@ var parseCardsText = {
 	{
 		"artist": "Kerem Beyit",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_GIL_608_Male_Demon_Attack_01.ogg",
+			"Death_01": "VO_GIL_608_Male_Demon_Death_01.ogg",
+			"Play_01": "VO_GIL_608_Male_Demon_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_608.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 47262,
 		"flavor": "<i>This</i> wood imp. Stop asking!",
+		"goldenImage": "GIL_608.gif",
 		"health": 1,
 		"id": "GIL_608",
 		"mechanics": [
@@ -28997,10 +31417,12 @@ var parseCardsText = {
 		"artist": "Charlene Le Scanff",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_614.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47287,
 		"flavor": "\"Aww, I love it! It even kinda looks like me.\"",
+		"goldenImage": "GIL_614.gif",
 		"health": 1,
 		"id": "GIL_614",
 		"mechanics": [
@@ -29039,11 +31461,20 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GIL_616t_Female_Ancient_Attack_01.ogg",
+			"Attack_02": "VO_GIL_616_Female_Ancient_Attack_02.ogg",
+			"Death_01": "VO_GIL_616_Female_Ancient_Death_01.ogg",
+			"Play_01": "VO_GIL_616_Female_Ancient_Play_01.ogg",
+			"Play_02": "VO_GIL_616t2_Female_Ancient_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_616.png",
 		"collectible": true,
 		"cost": 8,
 		"dbfId": 47292,
 		"flavor": "No use crying over split Festeroot,",
+		"goldenImage": "GIL_616.gif",
 		"health": 4,
 		"id": "GIL_616",
 		"mechanics": [
@@ -29060,8 +31491,10 @@ var parseCardsText = {
 		"artist": "Jim Nelson",
 		"attack": 2,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_616t.png",
 		"cost": 3,
 		"dbfId": 47291,
+		"goldenImage": "GIL_616t.gif",
 		"health": 2,
 		"id": "GIL_616t",
 		"mechanics": [
@@ -29077,8 +31510,10 @@ var parseCardsText = {
 		"artist": "Jim Nelson",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_616t2.png",
 		"cost": 1,
 		"dbfId": 47290,
+		"goldenImage": "GIL_616t2.gif",
 		"health": 1,
 		"id": "GIL_616t2",
 		"name": "Woodchip",
@@ -29089,12 +31524,19 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_618_Female_Undead_Attack_01.ogg",
+			"Death_01": "VO_GIL_618_Female_Undead_Death_01.ogg",
+			"Play_01": "VO_GIL_618_Female_Undead_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_618.png",
 		"collectible": true,
 		"cost": 6,
 		"dbfId": 47295,
 		"elite": true,
 		"flavor": "Summon an unlimited* number of minions!**\n*Six\n**Wisps",
+		"goldenImage": "GIL_618.gif",
 		"health": 7,
 		"id": "GIL_618",
 		"mechanics": [
@@ -29110,12 +31552,19 @@ var parseCardsText = {
 	{
 		"artist": "J. Axer",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_620_Male_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_GIL_620_Male_BloodElf_Death_01.ogg",
+			"Play_01": "VO_GIL_620_Male_BloodElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_620.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47298,
 		"elite": true,
 		"flavor": "The children were puzzled by the scratches covering the insides of their toy-boxes.",
+		"goldenImage": "GIL_620.gif",
 		"health": 6,
 		"id": "GIL_620",
 		"name": "Dollmaster Dorian",
@@ -29139,10 +31588,12 @@ var parseCardsText = {
 		"artist": "Slawomir Maniak",
 		"attack": 3,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_622.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47343,
 		"flavor": "In a pinch, he'll also settle for Holy Water: Zero.",
+		"goldenImage": "GIL_622.gif",
 		"health": 3,
 		"id": "GIL_622",
 		"mechanics": [
@@ -29160,10 +31611,12 @@ var parseCardsText = {
 		"artist": "Alex Alexandrov",
 		"attack": 3,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_623.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47346,
 		"flavor": "You know what they say about people with big hands? Small bears.",
+		"goldenImage": "GIL_623.gif",
 		"health": 12,
 		"id": "GIL_623",
 		"mechanics": [
@@ -29192,10 +31645,12 @@ var parseCardsText = {
 		"artist": "Anton Zemskov",
 		"attack": 3,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_624.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47348,
 		"flavor": "Listen to the mew-sic of the night.",
+		"goldenImage": "GIL_624.gif",
 		"health": 3,
 		"id": "GIL_624",
 		"mechanics": [
@@ -29222,11 +31677,18 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GIL_634_Male_Worgen_Attack_02.ogg",
+			"Death_01": "VO_GIL_634_Male_Worgen_Death_01.ogg",
+			"Play_03": "VO_GIL_634_Male_Worgen_Play_03.ogg"
+		},
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_634.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47405,
 		"flavor": "\"Who are you? Eh, none of my business.\"",
+		"goldenImage": "GIL_634.gif",
 		"health": 4,
 		"id": "GIL_634",
 		"mechanics": [
@@ -29247,10 +31709,12 @@ var parseCardsText = {
 		"artist": "Jakub Kasper",
 		"attack": 2,
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_635.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47416,
 		"flavor": "Fly like an eagle, drop like a rock.",
+		"goldenImage": "GIL_635.gif",
 		"health": 2,
 		"id": "GIL_635",
 		"mechanics": [
@@ -29270,10 +31734,12 @@ var parseCardsText = {
 	{
 		"artist": "Mauricio Herrera",
 		"cardClass": "DRUID",
+		"cardImage": "GIL_637.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47423,
 		"flavor": "Have you ever heard the wolf cry to the blue corn moon?",
+		"goldenImage": "GIL_637.gif",
 		"id": "GIL_637",
 		"name": "Ferocious Howl",
 		"playerClass": "Druid",
@@ -29285,11 +31751,18 @@ var parseCardsText = {
 	{
 		"artist": "Alex Konstad",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GIL_640_Male_Troll_Attack_02.ogg",
+			"Death_01": "VO_GIL_640_Male_Troll_Death_01.ogg",
+			"Play_01": "VO_GIL_640_Male_Troll_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GIL_640.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47429,
 		"flavor": "Experts worry that curios are a gateway to face-collecting.",
+		"goldenImage": "GIL_640.gif",
 		"health": 4,
 		"id": "GIL_640",
 		"name": "Curio Collector",
@@ -29312,11 +31785,18 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 5,
+		"audio": {
+			"Attack_03": "VO_GIL_645_Male_Elemental_Attack_03.ogg",
+			"Death_01": "VO_GIL_645_Male_Elemental_Death_01.ogg",
+			"Play_02": "VO_GIL_645_Male_Elemental_Play_02.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GIL_645.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47438,
 		"flavor": "Next step: Marshmallow elementals.",
+		"goldenImage": "GIL_645.gif",
 		"health": 5,
 		"id": "GIL_645",
 		"mechanics": [
@@ -29333,11 +31813,18 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GIL_646_Male_Mech_Attack_01.ogg",
+			"Death_01": "VO_GIL_646_Male_Mech_Death_01.ogg",
+			"Play_04": "VO_GIL_646_Male_Mech_Play_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_646.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47439,
 		"flavor": "Most mechs are pretty chill, but this one is all wound up.",
+		"goldenImage": "GIL_646.gif",
 		"health": 4,
 		"id": "GIL_646",
 		"name": "Clockwork Automaton",
@@ -29351,11 +31838,18 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GIL_648_Female_Worgen_Attack_01.ogg",
+			"Death_01": "VO_GIL_648_Female_Worgen_Death_01.ogg",
+			"Play_01": "VO_GIL_648_Female_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_648.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47458,
 		"flavor": "Empty your pockets, I know you’ve got a Wandering Monster in there!",
+		"goldenImage": "GIL_648.gif",
 		"health": 6,
 		"id": "GIL_648",
 		"mechanics": [
@@ -29374,12 +31868,19 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_650_Male_Human_Attack_01.ogg",
+			"Death_02": "VO_GIL_650_Male_Human_Death_02.ogg",
+			"Play_03": "VO_GIL_650_Male_Human_Play_03.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_650.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47488,
 		"elite": true,
 		"flavor": "They’re good dogs, Tess.",
+		"goldenImage": "GIL_650.gif",
 		"health": 6,
 		"id": "GIL_650",
 		"mechanics": [
@@ -29406,11 +31907,13 @@ var parseCardsText = {
 		"artist": "Izzy Hoover",
 		"attack": 2,
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_653.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47511,
 		"durability": 2,
 		"flavor": "It's a lumberjack's axe and that's ok.",
+		"goldenImage": "GIL_653.gif",
 		"id": "GIL_653",
 		"mechanics": [
 			"DEATHRATTLE"
@@ -29435,10 +31938,12 @@ var parseCardsText = {
 	{
 		"artist": "Phil Saunders",
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_654.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47515,
 		"flavor": "\"Left, right, left, right, there's none of the enemy left… Right?\"",
+		"goldenImage": "GIL_654.gif",
 		"id": "GIL_654",
 		"name": "Warpath",
 		"playerClass": "Warrior",
@@ -29450,11 +31955,18 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Dlinnov",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GIL_655_Male_Ancient_Attack_02.ogg",
+			"Death_01": "VO_GIL_655_Male_Ancient_Death_01.ogg",
+			"Play_01": "VO_GIL_655_Male_Ancient_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_655.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47516,
 		"flavor": "Tree puns arboring.",
+		"goldenImage": "GIL_655.gif",
 		"health": 7,
 		"id": "GIL_655",
 		"name": "Festeroot Hulk",
@@ -29477,12 +31989,19 @@ var parseCardsText = {
 	{
 		"artist": "Craig Elliott",
 		"attack": 8,
+		"audio": {
+			"Attack_02": "VO_GIL_658_Female_Ancient_Attack_02.ogg",
+			"Death_01": "VO_GIL_658_Female_Ancient_Death_01.ogg",
+			"Play_01": "VO_GIL_658_Female_Ancient_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GIL_658.png",
 		"collectible": true,
 		"cost": 8,
 		"dbfId": 47520,
 		"elite": true,
 		"flavor": "We're going to need some bigger tweezers.",
+		"goldenImage": "GIL_658.gif",
 		"health": 8,
 		"id": "GIL_658",
 		"mechanics": [
@@ -29508,10 +32027,12 @@ var parseCardsText = {
 	{
 		"artist": "Tom Baxa",
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_661.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47549,
 		"flavor": "Taken up an octave, it's highly effective against stained glass golems.",
+		"goldenImage": "GIL_661.gif",
 		"id": "GIL_661",
 		"name": "Divine Hymn",
 		"playerClass": "Priest",
@@ -29523,10 +32044,12 @@ var parseCardsText = {
 	{
 		"artist": "Vlad Botos",
 		"cardClass": "DRUID",
+		"cardImage": "GIL_663.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47553,
 		"flavor": "An apple a day keeps the worgen at bay.",
+		"goldenImage": "GIL_663.gif",
 		"id": "GIL_663",
 		"name": "Witchwood Apple",
 		"playerClass": "Druid",
@@ -29539,8 +32062,10 @@ var parseCardsText = {
 		"artist": "Steve Prescott",
 		"attack": 2,
 		"cardClass": "DRUID",
+		"cardImage": "GIL_663t.png",
 		"cost": 2,
 		"dbfId": 48911,
+		"goldenImage": "GIL_663t.gif",
 		"health": 2,
 		"id": "GIL_663t",
 		"name": "Treant",
@@ -29551,11 +32076,19 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GIL_664_Female_Beast_Attack_02.ogg",
+			"Death_01": "VO_GIL_664_Female_Beast_Death_01.ogg",
+			"Play_01": "VO_GIL_664_Female_Beast_Play_01.ogg",
+			"Trigger_01": "VO_GIL_664_Female_Beast_Trigger_01.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GIL_664.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47554,
 		"flavor": "As birds of ill omen, these crows often summon Doomsayers.",
+		"goldenImage": "GIL_664.gif",
 		"health": 3,
 		"id": "GIL_664",
 		"name": "Vex Crow",
@@ -29569,10 +32102,12 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_665.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47555,
 		"flavor": "Warlocks refer to this as a \"balance change.\"",
+		"goldenImage": "GIL_665.gif",
 		"id": "GIL_665",
 		"name": "Curse of Weakness",
 		"playerClass": "Warlock",
@@ -29594,11 +32129,18 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GIL_667_Female_Ancient_Attack_01.ogg",
+			"Death_01": "VO_GIL_667_Female_Ancient_Death_01.ogg",
+			"Play_05": "VO_GIL_667_Female_Ancient_Play_05.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_667.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47557,
 		"flavor": "Key ingredient in Gilnean applesauce.",
+		"goldenImage": "GIL_667.gif",
 		"health": 5,
 		"id": "GIL_667",
 		"mechanics": [
@@ -29616,11 +32158,13 @@ var parseCardsText = {
 		"artist": "Nutchapol Thitinunthakorn",
 		"attack": 2,
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_672.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47594,
 		"durability": 2,
 		"flavor": "So sharp it can cut through a spectral tomato!",
+		"goldenImage": "GIL_672.gif",
 		"id": "GIL_672",
 		"mechanics": [
 			"LIFESTEAL"
@@ -29645,12 +32189,19 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_03": "VO_GIL_677_Male_Monster_Attack_03.ogg",
+			"Death_01": "VO_GIL_677_Male_Monster_Death_01.ogg",
+			"Play_01": "VO_GIL_677_Male_Monster_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_677.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47599,
 		"elite": true,
 		"flavor": "“I’ll trade you a Malfurion for an Anduin.”",
+		"goldenImage": "GIL_677.gif",
 		"health": 2,
 		"id": "GIL_677",
 		"mechanics": [
@@ -29666,11 +32217,18 @@ var parseCardsText = {
 	{
 		"artist": "Jason Kang",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_678_Male_MurlocGhost_Attack_01.ogg",
+			"Death_01": "VO_GIL_678_Male_MurlocGhost_Death_01.ogg",
+			"Play_01": "VO_GIL_678_Male_MurlocGhost_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_678.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47600,
 		"flavor": "BoOooOogrglgrlgrlooOoOoo!",
+		"goldenImage": "GIL_678.gif",
 		"health": 2,
 		"id": "GIL_678",
 		"name": "Ghost Light Angler",
@@ -29684,11 +32242,18 @@ var parseCardsText = {
 	{
 		"artist": "Ivan Fomin",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_680_Male_Sprite_Attack_01.ogg",
+			"Death_01": "VO_GIL_680_Male_Sprite_Death_01.ogg",
+			"Play_01": "VO_GIL_680_Male_Sprite_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_680.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47602,
 		"flavor": "How do you make a walnut laugh? Crack it up!",
+		"goldenImage": "GIL_680.gif",
 		"health": 3,
 		"id": "GIL_680",
 		"name": "Walnut Sprite",
@@ -29702,10 +32267,12 @@ var parseCardsText = {
 		"artist": "Andrew Hou",
 		"attack": 3,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_681.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 49502,
 		"flavor": "Be all that you can be.",
+		"goldenImage": "GIL_681.gif",
 		"health": 4,
 		"id": "GIL_681",
 		"name": "Nightmare Amalgam",
@@ -29719,11 +32286,19 @@ var parseCardsText = {
 	{
 		"artist": "Pior Oberson",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_GIL_682t_Male_Critter_Attack_01.ogg",
+			"Attack_02": "VO_GIL_682_Female_Worgen_Attack_02.ogg",
+			"Death_01": "VO_GIL_682_Female_Worgen_Death_01.ogg",
+			"Play_01": "VO_GIL_682_Female_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_682.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47606,
 		"flavor": "You think your job mucks.",
+		"goldenImage": "GIL_682.gif",
 		"health": 8,
 		"id": "GIL_682",
 		"mechanics": [
@@ -29740,8 +32315,10 @@ var parseCardsText = {
 		"artist": "Matt Dixon",
 		"attack": 2,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_682t.png",
 		"cost": 1,
 		"dbfId": 47605,
+		"goldenImage": "GIL_682t.gif",
 		"health": 1,
 		"id": "GIL_682t",
 		"name": "Muckling",
@@ -29752,11 +32329,18 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Wu",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_GIL_683_Female_Dragon_Attack_01.ogg",
+			"Death_01": "VO_GIL_683_Female_Dragon_Death_01.ogg",
+			"Play_01": "VO_GIL_683_Female_Dragon_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_683.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47607,
 		"flavor": "She would have gotten away with it, if it weren't for that meddling Drakeslayer.",
+		"goldenImage": "GIL_683.gif",
 		"health": 4,
 		"id": "GIL_683",
 		"mechanics": [
@@ -29777,8 +32361,10 @@ var parseCardsText = {
 		"artist": "Ware Lee",
 		"attack": 2,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_683t.png",
 		"cost": 1,
 		"dbfId": 47603,
+		"goldenImage": "GIL_683t.gif",
 		"health": 1,
 		"id": "GIL_683t",
 		"mechanics": [
@@ -29793,11 +32379,18 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GIL_685_Female_Human_Attack_02.ogg",
+			"Death_01": "VO_GIL_685_Female_Human_Death_01.ogg",
+			"Play_01": "VO_GIL_685_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_685.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 47614,
 		"flavor": "She’s all fun and games until someone rings that stupid bell.",
+		"goldenImage": "GIL_685.gif",
 		"health": 5,
 		"id": "GIL_685",
 		"name": "Paragon of Light",
@@ -29814,10 +32407,12 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_687.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47625,
 		"flavor": "Wanted: Dead or Undead.",
+		"goldenImage": "GIL_687.gif",
 		"id": "GIL_687",
 		"name": "WANTED!",
 		"playerClass": "Rogue",
@@ -29829,12 +32424,19 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_691_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_GIL_691_Male_Human_Death_01.ogg",
+			"Play_01": "VO_GIL_691_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GIL_691.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47692,
 		"elite": true,
 		"flavor": "His worgen children call him Archmage AROO-OO-OO-OO-gal.",
+		"goldenImage": "GIL_691.gif",
 		"health": 2,
 		"id": "GIL_691",
 		"name": "Archmage Arugal",
@@ -29847,12 +32449,37 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 6,
+		"audio": {
+			"Adventureselect_01": "VO_GIL_692_Male_Worgen_TUT_AdventureSelect_01.ogg",
+			"Attack_02": "VO_GIL_692_Male_Worgen_Attack_02.ogg",
+			"Bossreveal1_01": "VO_GIL_692_Male_Worgen_TUT_BossReveal1_01.ogg",
+			"Bossreveal2_01": "VO_GIL_692_Male_Worgen_TUT_BossReveal2_01.ogg",
+			"Bossreveal3_01": "VO_GIL_692_Male_Worgen_TUT_BossReveal3_01.ogg",
+			"Characterselect_01": "VO_GIL_692_Male_Worgen_TUT_CharacterSelect_01.ogg",
+			"Death_01": "VO_GIL_692_Male_Worgen_Death_01.ogg",
+			"Defeat1_01": "VO_GIL_692_Male_Worgen_TUT_Defeat1_01.ogg",
+			"Fightbegin1crowley_01": "VO_GIL_692_Male_Worgen_TUT_FightBegin1Crowley_01.ogg",
+			"Fightbegin1shaw_01": "VO_GIL_692_Male_Worgen_TUT_FightBegin1Shaw_01.ogg",
+			"Fightbegin1tess_01": "VO_GIL_692_Male_Worgen_TUT_FightBegin1Tess_01.ogg",
+			"Fightbegin1tess_02": "VO_GIL_692_Male_Worgen_TUT_FightBegin1Tess_02.ogg",
+			"Fightbegin1toki_01": "VO_GIL_692_Male_Worgen_TUT_FightBegin1Toki_01.ogg",
+			"Fightbegin2_01": "VO_GIL_692_Male_Worgen_TUT_FightBegin2_01.ogg",
+			"Final_01": "VO_GIL_692_Male_Worgen_TUT_Victory_Final_01.ogg",
+			"Lootselect1_01": "VO_GIL_692_Male_Worgen_TUT_LootSelect1_01.ogg",
+			"Lootselect2_02": "VO_GIL_692_Male_Worgen_TUT_LootSelect2_02.ogg",
+			"Play_03": "VO_GIL_692_Male_Worgen_Play_03.ogg",
+			"Play_06": "VO_GIL_692_Male_Worgen_Play_06.ogg",
+			"Specialtess_01": "VO_GIL_692_Male_Worgen_SpecialTess_01.ogg",
+			"Treasureselect1_01": "VO_GIL_692_Male_Worgen_TUT_TreasureSelect1_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_692.png",
 		"collectible": true,
 		"cost": 6,
 		"dbfId": 47693,
 		"elite": true,
 		"flavor": "Ever since Sylvanas killed his son, he's dreamed of getting… even.",
+		"goldenImage": "GIL_692.gif",
 		"health": 5,
 		"id": "GIL_692",
 		"name": "Genn Greymane",
@@ -29875,11 +32502,19 @@ var parseCardsText = {
 	{
 		"artist": "Qinghao Wu",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_693_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_GIL_693_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_GIL_693_Female_Gnome_Play_01.ogg",
+			"Trigger_01": "VO_GIL_693_Female_Gnome_Trigger_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_693.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47694,
 		"flavor": "Like a sloppy joe for vampires.",
+		"goldenImage": "GIL_693.gif",
 		"health": 6,
 		"id": "GIL_693",
 		"name": "Blood Witch",
@@ -29892,12 +32527,19 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_GIL_694_Male_Ghost_Attack_01.ogg",
+			"Death_02": "VO_GIL_694_Male_Ghost_Death_02.ogg",
+			"Play_01": "VO_GIL_694_Male_Ghost_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_694.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47696,
 		"elite": true,
 		"flavor": "\"I have a very particular set of skills. Skills that make me a nightmare for witches like you.\"",
+		"goldenImage": "GIL_694.gif",
 		"health": 5,
 		"id": "GIL_694",
 		"mechanics": [
@@ -29913,10 +32555,12 @@ var parseCardsText = {
 	{
 		"artist": "Mauricio Herrera",
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_696.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47799,
 		"flavor": "He'll pick anyone's pocket, except a gnome's. He'd never stoop so low.",
+		"goldenImage": "GIL_696.gif",
 		"id": "GIL_696",
 		"name": "Pick Pocket",
 		"playerClass": "Rogue",
@@ -29928,12 +32572,19 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_800_Female_Harpy_Attack_01.ogg",
+			"Death_01": "VO_GIL_800_Female_Harpy_Death_01.ogg",
+			"Play_02": "VO_GIL_800_Female_Harpy_Play_02.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GIL_800.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 47819,
 		"elite": true,
 		"flavor": "Someone called her \"Tweety\". She didn't take it well.",
+		"goldenImage": "GIL_800.gif",
 		"health": 7,
 		"id": "GIL_800",
 		"mechanics": [
@@ -29959,10 +32610,12 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"cardClass": "MAGE",
+		"cardImage": "GIL_801.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 47821,
 		"flavor": "Lick the ice block. I triple-double-dog-dare-you.",
+		"goldenImage": "GIL_801.gif",
 		"id": "GIL_801",
 		"name": "Snap Freeze",
 		"playerClass": "Mage",
@@ -29977,11 +32630,18 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studio",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GIL_803_Female_Human_Attack_02.ogg",
+			"Death_01": "VO_GIL_803_Female_Human_Death_01.ogg",
+			"Play_01": "VO_GIL_803_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GIL_803.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47825,
 		"flavor": "She only needs two commands: \"Heel\" and \"Sic 'em!\"",
+		"goldenImage": "GIL_803.gif",
 		"health": 5,
 		"id": "GIL_803",
 		"mechanics": [
@@ -30010,11 +32670,18 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GIL_805_Male_Undead_Attack_02.ogg",
+			"Death_02": "VO_GIL_805_Male_Undead_Death_02.ogg",
+			"Play_01": "VO_GIL_805_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_805.png",
 		"collectible": true,
 		"cost": 6,
 		"dbfId": 47836,
 		"flavor": "Also does weddings.",
+		"goldenImage": "GIL_805.gif",
 		"health": 5,
 		"id": "GIL_805",
 		"mechanics": [
@@ -30031,10 +32698,12 @@ var parseCardsText = {
 		"artist": "Jim Nelson",
 		"attack": 4,
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_807.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 47873,
 		"flavor": "The tricky part is getting them to HOLD their shape.",
+		"goldenImage": "GIL_807.gif",
 		"health": 8,
 		"id": "GIL_807",
 		"name": "Bogshaper",
@@ -30048,11 +32717,18 @@ var parseCardsText = {
 	{
 		"artist": "Phil Saunders",
 		"attack": 0,
+		"audio": {
+			"Attack_01": "VO_GIL_809_Male_Mech_Attack_01.ogg",
+			"Death_01": "VO_GIL_809_Male_Mech_Death_01.ogg",
+			"Play_02": "VO_GIL_809_Male_Mech_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_809.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 47895,
 		"flavor": "Overpowered Steambot got nerfed.",
+		"goldenImage": "GIL_809.gif",
 		"health": 9,
 		"id": "GIL_809",
 		"mechanics": [
@@ -30069,10 +32745,12 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_813.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 48002,
 		"flavor": "\"I… I dreamed I accidentally crafted a golden Millhouse! It was so REAL!\"",
+		"goldenImage": "GIL_813.gif",
 		"id": "GIL_813",
 		"name": "Vivid Nightmare",
 		"playerClass": "Priest",
@@ -30084,11 +32762,18 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_GIL_815_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_GIL_815_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_GIL_815_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_815.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 48039,
 		"flavor": "He's gotten big into crypt-o-currency.",
+		"goldenImage": "GIL_815.gif",
 		"health": 2,
 		"id": "GIL_815",
 		"mechanics": [
@@ -30098,17 +32783,19 @@ var parseCardsText = {
 		"playerClass": "Neutral",
 		"rarity": "Epic",
 		"set": "Gilneas",
-		"text": "<b>Battlecry:</b> Choose a friendly minion. Shuffle a copy of it into your deck.",
+		"text": "<b>Battlecry:</b> Choose a friendly minion. Shuffle a copy into your deck.",
 		"type": "Minion"
 	},
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 0,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_816.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 48106,
 		"flavor": "Would you eat them in a ditch? Would you eat them with a witch?",
+		"goldenImage": "GIL_816.gif",
 		"health": 3,
 		"id": "GIL_816",
 		"mechanics": [
@@ -30125,11 +32812,13 @@ var parseCardsText = {
 		"artist": "Matt Dixon",
 		"attack": 4,
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_817.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 48107,
 		"elite": true,
 		"flavor": "She seems scary, but she's got a glass jaw.",
+		"goldenImage": "GIL_817.gif",
 		"health": 3,
 		"id": "GIL_817",
 		"mechanics": [
@@ -30146,10 +32835,12 @@ var parseCardsText = {
 		"artist": "Anton Zemskov",
 		"attack": 0,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_819.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 48110,
 		"flavor": "Eye of murloc, ear of bat, foot of Fordring, fur of cat…",
+		"goldenImage": "GIL_819.gif",
 		"health": 4,
 		"id": "GIL_819",
 		"name": "Witch's Cauldron",
@@ -30162,12 +32853,19 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GIL_820_Male_Monster_Attack_02.ogg",
+			"Death_02": "VO_GIL_820_Male_Monster_Death_02.ogg",
+			"Play_03": "VO_GIL_820_Male_Monster_Play_03.ogg"
+		},
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_820.png",
 		"collectible": true,
 		"cost": 9,
 		"dbfId": 48111,
 		"elite": true,
 		"flavor": "Beware the Shudderwock, my son. We're fresh out of vorpal daggers.",
+		"goldenImage": "GIL_820.gif",
 		"health": 6,
 		"id": "GIL_820",
 		"mechanics": [
@@ -30183,12 +32881,19 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GIL_825_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_GIL_825_Male_Undead_Death_01.ogg",
+			"Play_02": "VO_GIL_825_Male_Undead_Play_02.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GIL_825.png",
 		"collectible": true,
 		"cost": 7,
 		"dbfId": 48156,
 		"elite": true,
 		"flavor": "Betrayed the Alliance. Betrayed the Horde. All for 200 achievement points and a sweet, sweet hat.",
+		"goldenImage": "GIL_825.gif",
 		"health": 4,
 		"id": "GIL_825",
 		"mechanics": [
@@ -30204,12 +32909,20 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_GIL_826_Female_GiantSnake_Attack_01.ogg",
+			"Attack_02": "VO_GIL_826_Female_GiantSnake_Attack_02.ogg",
+			"Death_01": "VO_GIL_826_Female_GiantSnake_Death_01.ogg",
+			"Play_01": "VO_GIL_826_Female_GiantSnake_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GIL_826.png",
 		"collectible": true,
 		"cost": 9,
 		"dbfId": 48158,
 		"elite": true,
 		"flavor": "In her defense, it did look like a cookie.",
+		"goldenImage": "GIL_826.gif",
 		"health": 8,
 		"id": "GIL_826",
 		"name": "Baku the Mooneater",
@@ -30223,11 +32936,18 @@ var parseCardsText = {
 	{
 		"artist": "Eva Wildermann",
 		"attack": 3,
+		"audio": {
+			"Attack_05": "VO_GIL_827_Male_Beast_Attack_05.ogg",
+			"Death_01": "VO_GIL_827_Male_Beast_Death_01.ogg",
+			"Play_07": "VO_GIL_827_Male_Beast_Play_07.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_827.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 48199,
 		"flavor": "It's like, SUPER bad at staring contests.",
+		"goldenImage": "GIL_827.gif",
 		"health": 3,
 		"id": "GIL_827",
 		"mechanics": [
@@ -30284,10 +33004,12 @@ var parseCardsText = {
 	{
 		"artist": "Efrem Palacios",
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_828.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 48201,
 		"flavor": "It's always Huffer. And Huffer. And Huffer. And Huffer.",
+		"goldenImage": "GIL_828.gif",
 		"id": "GIL_828",
 		"name": "Dire Frenzy",
 		"playerClass": "Hunter",
@@ -30309,11 +33031,18 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_GIL_833_Female_Humanoid_Attack_01.ogg",
+			"Death_01": "VO_GIL_833_Female_Humanoid_Death_01.ogg",
+			"Play_01": "VO_GIL_833_Female_Humanoid_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GIL_833.png",
 		"collectible": true,
 		"cost": 4,
 		"dbfId": 48286,
 		"flavor": "\"Just sign this waiver, and we'll be on our way.\"",
+		"goldenImage": "GIL_833.gif",
 		"health": 6,
 		"id": "GIL_833",
 		"name": "Forest Guide",
@@ -30327,10 +33056,12 @@ var parseCardsText = {
 		"artist": "Tyler Walpole",
 		"attack": 2,
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_835.png",
 		"collectible": true,
 		"cost": 2,
 		"dbfId": 48360,
 		"flavor": "Everyone hail to the squashling song!",
+		"goldenImage": "GIL_835.gif",
 		"health": 1,
 		"id": "GIL_835",
 		"mechanics": [
@@ -30346,10 +33077,12 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"cardClass": "SHAMAN",
+		"cardImage": "GIL_836.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 48393,
 		"flavor": "A lot of shaman have started vaping their invocations.",
+		"goldenImage": "GIL_836.gif",
 		"id": "GIL_836",
 		"name": "Blazing Invocation",
 		"playerClass": "Shaman",
@@ -30366,10 +33099,12 @@ var parseCardsText = {
 		"artist": "Bill Ruan",
 		"attack": 4,
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_837.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 48444,
 		"flavor": "Some moths are attracted to flame. This one's attracted to disco.",
+		"goldenImage": "GIL_837.gif",
 		"health": 4,
 		"id": "GIL_837",
 		"mechanics": [
@@ -30397,10 +33132,12 @@ var parseCardsText = {
 		"artist": "Jakub Kasber",
 		"attack": 3,
 		"cardClass": "MAGE",
+		"cardImage": "GIL_838.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 48445,
 		"flavor": "She's so odd, you can't even.",
+		"goldenImage": "GIL_838.gif",
 		"health": 3,
 		"id": "GIL_838",
 		"mechanics": [
@@ -30419,12 +33156,19 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GIL_840_Female_HumanGhost_Attack_02.ogg",
+			"Death_01": "VO_GIL_840_Female_HumanGhost_Death_01.ogg",
+			"Play_01": "VO_GIL_840_Female_HumanGhost_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GIL_840.png",
 		"collectible": true,
 		"cost": 6,
 		"dbfId": 48560,
 		"elite": true,
 		"flavor": "She was a lady in polka dots until the gnomish laundromat incident.",
+		"goldenImage": "GIL_840.gif",
 		"health": 5,
 		"id": "GIL_840",
 		"mechanics": [
@@ -30450,11 +33194,18 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GIL_902_Male_Undead_Attack_02.ogg",
+			"Death_01": "VO_GIL_902_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_GIL_902_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GIL_902.png",
 		"collectible": true,
 		"cost": 3,
 		"dbfId": 48585,
 		"flavor": "In life he worked as a sword swallower.",
+		"goldenImage": "GIL_902.gif",
 		"health": 4,
 		"id": "GIL_902",
 		"mechanics": [
@@ -30481,10 +33232,12 @@ var parseCardsText = {
 	{
 		"artist": "Daria Tuzova",
 		"cardClass": "PALADIN",
+		"cardImage": "GIL_903.png",
 		"collectible": true,
 		"cost": 1,
 		"dbfId": 48832,
 		"flavor": "Find your own wisdom. Perhaps behind the couch.",
+		"goldenImage": "GIL_903.gif",
 		"id": "GIL_903",
 		"mechanics": [
 			"SECRET"
@@ -30499,11 +33252,18 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GIL_905_Female_Dragon_Attack_01.ogg",
+			"Death_01": "VO_GIL_905_Female_Dragon_Death_01.ogg",
+			"Play_01": "VO_GIL_905_Female_Dragon_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GIL_905.png",
 		"collectible": true,
 		"cost": 5,
 		"dbfId": 48902,
 		"flavor": "Fits easily into overhead luggage bins.",
+		"goldenImage": "GIL_905.gif",
 		"health": 7,
 		"id": "GIL_905",
 		"mechanics": [
@@ -30532,7 +33292,43 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Zoltan Boros",
+		"audio": {
+			"Almostdead_02": "VO_GILA_400h_Male_Human_EVENT_HAGATHA_ALMOSTDEAD_02.ogg",
+			"Attack_01": "VO_GILA_400h_Male_Human_Attack_01.ogg",
+			"Attacked_01": "VO_GILA_400h_Male_Human_ERROR_MINION_ATTACKED_01.ogg",
+			"Concede_01": "VO_GILA_400h_Male_Human_Concede_01.ogg",
+			"Death_02": "VO_GILA_400h_Male_Human_Death_02.ogg",
+			"Full_01": "VO_GILA_400h_Male_Human_ERROR_HAND_FULL_01.ogg",
+			"Generic_01": "VO_GILA_400h_Male_Human_ERROR_GENERIC_01.ogg",
+			"Generic_04": "VO_GILA_400h_Male_Human_ERROR_GENERIC_04.ogg",
+			"Greetings_01": "VO_GILA_400h_Male_Human_MIRROR_GREETINGS_01.ogg",
+			"Intro_01": "VO_GILA_400h_Male_Human_EVENT_NEMESIS_INTRO_01.ogg",
+			"Lowcards_01": "VO_GILA_400h_Male_Human_LowCards_01.ogg",
+			"Lowhealth_01": "VO_GILA_400h_Male_Human_EVENT_HAGATHA_LOWHEALTH_01.ogg",
+			"Mana_02": "VO_GILA_400h_Male_Human_ERROR_NEED_MANA_02.ogg",
+			"Minions_01": "VO_GILA_400h_Male_Human_ERROR_FULL_MINIONS_01.ogg",
+			"Nocards_01": "VO_GILA_400h_Male_Human_NoCards_01.ogg",
+			"Oops_01": "VO_GILA_400h_Male_Human_Oops_01.ogg",
+			"Played_01": "VO_GILA_400h_Male_Human_Well_Played_01.ogg",
+			"Sickness_01": "VO_GILA_400h_Male_Human_ERROR_SUMMON_SICKNESS_01.ogg",
+			"Sorry_01": "VO_GILA_400h_Male_Human_Sorry_01.ogg",
+			"Start_01": "VO_GILA_400h_Male_Human_Start_01.ogg",
+			"Stealth_01": "VO_GILA_400h_Male_Human_ERROR_STEALTH_01.ogg",
+			"Target_01": "VO_GILA_400h_Male_Human_ERROR_TARGET_01.ogg",
+			"Taunt_01": "VO_GILA_400h_Male_Human_ERROR_TAUNT_01.ogg",
+			"Thanks_01": "VO_GILA_400h_Male_Human_Thanks_01.ogg",
+			"Thinking_01": "VO_GILA_400h_Male_Human_Thinking_01.ogg",
+			"Thinking_03": "VO_GILA_400h_Male_Human_Thinking_03.ogg",
+			"Thinking_04": "VO_GILA_400h_Male_Human_Thinking_04.ogg",
+			"Threaten_04": "VO_GILA_400h_Male_Human_Threaten_04.ogg",
+			"Time_01": "VO_GILA_400h_Male_Human_Time_01.ogg",
+			"Turn2_01": "VO_GILA_400h_Male_Human_EVENT_NEMESIS_TURN2_01.ogg",
+			"Turn4_01": "VO_GILA_400h_Male_Human_EVENT_HAGATHA_TURN4_01.ogg",
+			"Weapon_02": "VO_GILA_400h_Male_Human_ERROR_NEED_WEAPON_02.ogg",
+			"Wow_01": "VO_GILA_400h_Male_Human_WOW_01.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GILA_400h.png",
 		"dbfId": 48420,
 		"entourage": [
 			"GILA_414",
@@ -30548,6 +33344,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_400p.png",
 		"cost": 2,
 		"dbfId": 48419,
 		"id": "GILA_400p",
@@ -30560,7 +33357,13 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_GILA_400t_Male_Dog_Attack_01.ogg",
+			"Death_01": "VO_GILA_400t_Male_Dog_Death_01.ogg",
+			"Play_03": "VO_GILA_400t_Male_Dog_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_400t.png",
 		"cost": 1,
 		"dbfId": 48418,
 		"health": 1,
@@ -30575,6 +33378,7 @@ var parseCardsText = {
 	{
 		"artist": "Hidekaki Takamura",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_401.png",
 		"cost": 6,
 		"dbfId": 48421,
 		"id": "GILA_401",
@@ -30588,6 +33392,7 @@ var parseCardsText = {
 		"artist": "Zoltan Boros",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_403.png",
 		"cost": 4,
 		"dbfId": 48424,
 		"elite": true,
@@ -30604,6 +33409,7 @@ var parseCardsText = {
 		"artist": "Max Greck",
 		"attack": 9,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_410.png",
 		"cost": 7,
 		"dbfId": 48497,
 		"elite": true,
@@ -30623,6 +33429,7 @@ var parseCardsText = {
 		"artist": "Max Greck",
 		"attack": 5,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_411.png",
 		"cost": 5,
 		"dbfId": 48500,
 		"elite": true,
@@ -30653,6 +33460,7 @@ var parseCardsText = {
 	{
 		"artist": "Mauricio Herrera",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_412.png",
 		"cost": 2,
 		"dbfId": 48761,
 		"id": "GILA_412",
@@ -30680,6 +33488,7 @@ var parseCardsText = {
 		"artist": "L Chanchai",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_413.png",
 		"cost": 3,
 		"dbfId": 49157,
 		"durability": 5,
@@ -30693,6 +33502,7 @@ var parseCardsText = {
 	{
 		"artist": "Peet Cooper",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_414.png",
 		"cost": 0,
 		"dbfId": 49315,
 		"hideStats": true,
@@ -30731,6 +33541,7 @@ var parseCardsText = {
 	{
 		"artist": "Massive Black",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_415.png",
 		"cost": 0,
 		"dbfId": 49317,
 		"hideStats": true,
@@ -31020,7 +33831,44 @@ var parseCardsText = {
 	},
 	{
 		"artist": "J. Axer",
+		"audio": {
+			"Attack_01": "VO_GILA_500h3_Female_Human_Attack_01.ogg",
+			"Attacked_01": "VO_GILA_500h3_Female_Human_ERROR_MINION_ATTACKED_01.ogg",
+			"Attacked_02": "VO_GILA_500h3_Female_Human_ERROR_I_ATTACKED_02.ogg",
+			"Concede_01": "VO_GILA_500h3_Female_Human_Concede_01.ogg",
+			"Death_01": "VO_GILA_500h3_Female_Human_Death_01.ogg",
+			"Full_02": "VO_GILA_500h3_Female_Human_ERROR_HAND_FULL_02.ogg",
+			"Generic_04": "VO_GILA_500h3_Female_Human_ERROR_GENERIC_04.ogg",
+			"Greetings_01": "VO_GILA_500h3_Female_Human_MIRROR_GREETINGS_01.ogg",
+			"In_01": "VO_GILA_500h3_Female_Human_EVENT_HAGATHA_SUB_IN_01.ogg",
+			"Intro_01": "VO_GILA_500h3_Female_Human_EVENT_NEMESIS_INTRO_01.ogg",
+			"Lowcards_01": "VO_GILA_500h3_Female_Human_LowCards_01.ogg",
+			"Mana_02": "VO_GILA_500h3_Female_Human_ERROR_NEED_MANA_02.ogg",
+			"Minions_01": "VO_GILA_500h3_Female_Human_ERROR_FULL_MINIONS_01.ogg",
+			"Nocards_01": "VO_GILA_500h3_Female_Human_NoCards_01.ogg",
+			"Oops_02": "VO_GILA_500h3_Female_Human_Oops_02.ogg",
+			"Play_01": "VO_GILA_500h3_Female_Human_ERROR_PLAY_01.ogg",
+			"Played_01": "VO_GILA_500h3_Female_Human_Well_Played_01.ogg",
+			"Sickness_01": "VO_GILA_500h3_Female_Human_ERROR_SUMMON_SICKNESS_01.ogg",
+			"Sorry_01": "VO_GILA_500h3_Female_Human_Sorry_01.ogg",
+			"Start_01": "VO_GILA_500h3_Female_Human_Start_01.ogg",
+			"Stealth_01": "VO_GILA_500h3_Female_Human_ERROR_STEALTH_01.ogg",
+			"Target_01": "VO_GILA_500h3_Female_Human_ERROR_TARGET_01.ogg",
+			"Taunt_01": "VO_GILA_500h3_Female_Human_ERROR_TAUNT_01.ogg",
+			"Thanks_01": "VO_GILA_500h3_Female_Human_Thanks_01.ogg",
+			"Thinking_02": "VO_GILA_500h3_Female_Human_Thinking_02.ogg",
+			"Thinking_03": "VO_GILA_500h3_Female_Human_Thinking_03.ogg",
+			"Thinking_05": "VO_GILA_500h3_Female_Human_Thinking_05.ogg",
+			"Threaten_03": "VO_GILA_500h3_Female_Human_Threaten_03.ogg",
+			"Time_01": "VO_GILA_500h3_Female_Human_Time_01.ogg",
+			"Turn2_01": "VO_GILA_500h3_Female_Human_EVENT_NEMESIS_TURN2_01.ogg",
+			"Turn4_01": "VO_GILA_500h3_Female_Human_EVENT_HAGATHA_TURN4_01.ogg",
+			"Weapon_02": "VO_GILA_500h3_Female_Human_ERROR_NEED_WEAPON_02.ogg",
+			"Wounded_01": "VO_GILA_500h3_Female_Human_EVENT_HAGATHA_WOUNDED_01.ogg",
+			"Wow_01": "VO_GILA_500h3_Female_Human_WOW_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_500h3.png",
 		"dbfId": 48486,
 		"entourage": [
 			"GILA_513",
@@ -31038,6 +33886,7 @@ var parseCardsText = {
 		"armor": 5,
 		"artist": "J. Axer",
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_500h4.png",
 		"cost": 8,
 		"dbfId": 49566,
 		"elite": true,
@@ -31060,6 +33909,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_500p2.png",
 		"cost": 2,
 		"dbfId": 48590,
 		"id": "GILA_500p2",
@@ -31071,6 +33921,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_500p2t.png",
 		"cost": 0,
 		"dbfId": 49268,
 		"id": "GILA_500p2t",
@@ -31084,6 +33935,7 @@ var parseCardsText = {
 		"artist": "Efrem Palacios",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_500t.png",
 		"cost": 1,
 		"dbfId": 48454,
 		"durability": 8,
@@ -31101,6 +33953,7 @@ var parseCardsText = {
 		"artist": "L Chanchai",
 		"attack": 4,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_500t2.png",
 		"cost": 1,
 		"dbfId": 48453,
 		"durability": 2,
@@ -31114,6 +33967,7 @@ var parseCardsText = {
 		"artist": "Anton Kagoukin",
 		"attack": 2,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_500t3.png",
 		"cost": 1,
 		"dbfId": 48452,
 		"durability": 2,
@@ -31127,6 +33981,7 @@ var parseCardsText = {
 	{
 		"artist": "J. Axer",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_501.png",
 		"cost": 3,
 		"dbfId": 48457,
 		"id": "GILA_501",
@@ -31139,6 +33994,7 @@ var parseCardsText = {
 	{
 		"artist": "Gino Whitehall",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_503.png",
 		"cost": 3,
 		"dbfId": 48462,
 		"id": "GILA_503",
@@ -31162,6 +34018,7 @@ var parseCardsText = {
 	{
 		"artist": "L Chanchai",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_506.png",
 		"cost": 0,
 		"dbfId": 48495,
 		"hideStats": true,
@@ -31184,6 +34041,7 @@ var parseCardsText = {
 	{
 		"artist": "Akkapoj T.",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_506t.png",
 		"cost": 2,
 		"dbfId": 48494,
 		"id": "GILA_506t",
@@ -31196,7 +34054,13 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GILA_507_Male_Human_Attack_02.ogg",
+			"Death_01": "VO_GILA_507_Male_Human_Death_01.ogg",
+			"Play_02": "VO_GILA_507_Male_Human_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_507.png",
 		"cost": 3,
 		"dbfId": 48511,
 		"health": 6,
@@ -31222,6 +34086,7 @@ var parseCardsText = {
 		"artist": "Anton Kogoukin",
 		"attack": 4,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_508.png",
 		"cost": 3,
 		"dbfId": 48510,
 		"durability": 4,
@@ -31238,7 +34103,13 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 5,
+		"audio": {
+			"Attack_03": "VO_GILA_509_Male_Worgen_Attack_03.ogg",
+			"Death_01": "VO_GILA_509_Male_Worgen_Death_01.ogg",
+			"Play_02": "VO_GILA_509_Male_Worgen_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_509.png",
 		"cost": 5,
 		"dbfId": 48512,
 		"health": 5,
@@ -31254,6 +34125,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_510.png",
 		"cost": 2,
 		"dbfId": 49155,
 		"id": "GILA_510",
@@ -31269,6 +34141,7 @@ var parseCardsText = {
 	{
 		"artist": "Rutherford Gong",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_511.png",
 		"cost": 0,
 		"dbfId": 49308,
 		"hideStats": true,
@@ -31294,6 +34167,7 @@ var parseCardsText = {
 	{
 		"artist": "James Paick",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_513.png",
 		"cost": 0,
 		"dbfId": 49313,
 		"hideStats": true,
@@ -31602,7 +34476,44 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
+		"audio": {
+			"Attack_01": "VO_GILA_600h_Male_Worgen_Attack_01.ogg",
+			"Attacked_01": "VO_GILA_600h_Male_Worgen_ERROR_MINION_ATTACKED_01.ogg",
+			"Concede_01": "VO_GILA_600h_Male_Worgen_Concede_01.ogg",
+			"Death_02": "VO_GILA_600h_Male_Worgen_Death_02.ogg",
+			"Full_01": "VO_GILA_600h_Male_Worgen_ERROR_HAND_FULL_01.ogg",
+			"Generic_01": "VO_GILA_600h_Male_Worgen_ERROR_GENERIC_01.ogg",
+			"Generic_02": "VO_GILA_600h_Male_Worgen_ERROR_GENERIC_02.ogg",
+			"Greetings_01": "VO_GILA_600h_Male_Worgen_MIRROR_GREETINGS_01.ogg",
+			"In_01": "VO_GILA_600h_Male_Worgen_EVENT_HAGATHA_SUB_IN_01.ogg",
+			"Intro_01": "VO_GILA_600h_Male_Worgen_EVENT_NEMESIS_INTRO_01.ogg",
+			"Lowcards_01": "VO_GILA_600h_Male_Worgen_LowCards_01.ogg",
+			"Mana_01": "VO_GILA_600h_Male_Worgen_ERROR_NEED_MANA_01.ogg",
+			"Minions_02": "VO_GILA_600h_Male_Worgen_ERROR_FULL_MINIONS_02.ogg",
+			"Nocards_01": "VO_GILA_600h_Male_Worgen_NoCards_01.ogg",
+			"Oops_01": "VO_GILA_600h_Male_Worgen_Oops_01.ogg",
+			"Played_01": "VO_GILA_600h_Male_Worgen_Well_Played_01.ogg",
+			"Sickness_01": "VO_GILA_600h_Male_Worgen_ERROR_SUMMON_SICKNESS_01.ogg",
+			"Sorry_01": "VO_GILA_600h_Male_Worgen_Sorry_01.ogg",
+			"Start_01": "VO_GILA_600h_Male_Worgen_Start_01.ogg",
+			"Stealth_01": "VO_GILA_600h_Male_Worgen_ERROR_STEALTH_01.ogg",
+			"Target_01": "VO_GILA_600h_Male_Worgen_ERROR_TARGET_01.ogg",
+			"Taunt_01": "VO_GILA_600h_Male_Worgen_ERROR_TAUNT_01.ogg",
+			"Thanks_01": "VO_GILA_600h_Male_Worgen_Thanks_01.ogg",
+			"Thinking_01": "VO_GILA_600h_Male_Worgen_Thinking_01.ogg",
+			"Thinking_02": "VO_GILA_600h_Male_Worgen_Thinking_02.ogg",
+			"Thinking_04": "VO_GILA_600h_Male_Worgen_Thinking_04.ogg",
+			"Threaten_01": "VO_GILA_600h_Male_Worgen_Threaten_01.ogg",
+			"Time_01": "VO_GILA_600h_Male_Worgen_Time_01.ogg",
+			"Turn02_01": "VO_GILA_600h_Male_Worgen_EVENT_NEMESIS_TURN02_01.ogg",
+			"Turn2_01": "VO_GILA_600h_Male_Worgen_EVENT_HAGATHA_TURN2_01.ogg",
+			"Turn4_01": "VO_GILA_600h_Male_Worgen_EVENT_HAGATHA_TURN4_01.ogg",
+			"Weapon_02": "VO_GILA_600h_Male_Worgen_ERROR_NEED_WEAPON_02.ogg",
+			"Wounded_01": "VO_GILA_600h_Male_Worgen_EVENT_HAGATHA_WOUNDED_01.ogg",
+			"Wow_01": "VO_GILA_600h_Male_Worgen_WOW_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GILA_600h.png",
 		"dbfId": 47787,
 		"entourage": [
 			"GILA_604",
@@ -31620,6 +34531,7 @@ var parseCardsText = {
 		"armor": 5,
 		"artist": "Arthur Bozonnet",
 		"cardClass": "WARRIOR",
+		"cardImage": "GILA_600h2.png",
 		"cost": 5,
 		"dbfId": 49563,
 		"elite": true,
@@ -31642,6 +34554,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_600p.png",
 		"cost": 2,
 		"dbfId": 47847,
 		"id": "GILA_600p",
@@ -31655,6 +34568,7 @@ var parseCardsText = {
 		"artist": "Arthur Bozonnet",
 		"attack": 0,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_601.png",
 		"cost": 0,
 		"dbfId": 47639,
 		"health": 3,
@@ -31672,6 +34586,7 @@ var parseCardsText = {
 	{
 		"artist": "Gino Whitehall",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_602.png",
 		"cost": 0,
 		"dbfId": 47952,
 		"hideStats": true,
@@ -31701,12 +34616,13 @@ var parseCardsText = {
 		"name": "Strategic Initiative",
 		"playerClass": "Neutral",
 		"set": "Gilneas",
-		"text": "+1 Attack this turn.",
+		"text": "Increased Attack this turn.",
 		"type": "Enchantment"
 	},
 	{
 		"artist": "Luca Zontini",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_603.png",
 		"cost": 0,
 		"dbfId": 47959,
 		"hideStats": true,
@@ -31740,6 +34656,7 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_604.png",
 		"cost": 1,
 		"dbfId": 47966,
 		"id": "GILA_604",
@@ -31761,6 +34678,7 @@ var parseCardsText = {
 	{
 		"artist": "Ron Lemen",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_605.png",
 		"cost": 0,
 		"dbfId": 50750,
 		"hideStats": true,
@@ -31783,6 +34701,7 @@ var parseCardsText = {
 	{
 		"artist": "Daria Tuzova",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_607.png",
 		"cost": 0,
 		"dbfId": 47983,
 		"hideStats": true,
@@ -31805,6 +34724,7 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_608.png",
 		"cost": 2,
 		"dbfId": 47987,
 		"id": "GILA_608",
@@ -31817,7 +34737,13 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_GILA_610_Female_Worgen_Attack_01.ogg",
+			"Death_01": "VO_GILA_610_Female_Worgen_Death_01.ogg",
+			"Play_01": "VO_GILA_610_Female_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_610.png",
 		"cost": 3,
 		"dbfId": 49187,
 		"health": 3,
@@ -31834,7 +34760,13 @@ var parseCardsText = {
 	{
 		"artist": "Mark Gibbons",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GILA_611_Male_Tuskarr_Attack_01.ogg",
+			"Death_01": "VO_GILA_611_Male_Tuskarr_Death_01.ogg",
+			"Play_02": "VO_GILA_611_Male_Tuskarr_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_611.png",
 		"cost": 4,
 		"dbfId": 49488,
 		"health": 9,
@@ -31849,7 +34781,13 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 15,
+		"audio": {
+			"Attack_02": "VO_GILA_612_Male_Giant_Attack_02.ogg",
+			"Death_01": "VO_GILA_612_Male_Giant_Death_01.ogg",
+			"Play_01": "VO_GILA_612_Male_Giant_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_612.png",
 		"cost": 10,
 		"dbfId": 49491,
 		"health": 15,
@@ -31876,7 +34814,13 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_GILA_801_Male_Gnome_Attack_01.ogg",
+			"Death_01": "VO_GILA_801_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_GILA_801_Male_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_801.png",
 		"cost": 4,
 		"dbfId": 48351,
 		"health": 3,
@@ -31890,7 +34834,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GILA_802_Female_BloodElf_Attack_02.ogg",
+			"Death_01": "VO_GILA_802_Female_BloodElf_Death_01.ogg",
+			"Play_01": "VO_GILA_802_Female_BloodElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_802.png",
 		"cost": 2,
 		"dbfId": 48352,
 		"entourage": [
@@ -31923,13 +34873,22 @@ var parseCardsText = {
 		],
 		"name": "Cartographer",
 		"playerClass": "Neutral",
+		"referencedTags": [
+			"DISCOVER"
+		],
 		"set": "Gilneas",
 		"text": "<b>Battlecry:</b> <b>Discover</b> a Treasure.",
 		"type": "Minion"
 	},
 	{
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GILA_803_Male_Worgen_Attack_02.ogg",
+			"Death_01": "VO_GILA_803_Male_Worgen_Death_01.ogg",
+			"Play_02": "VO_GILA_803_Male_Worgen_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_803.png",
 		"cost": 4,
 		"dbfId": 48353,
 		"health": 3,
@@ -31946,6 +34905,7 @@ var parseCardsText = {
 	{
 		"artist": "Anton Kagoukin",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_804.png",
 		"cost": 6,
 		"dbfId": 48354,
 		"id": "GILA_804",
@@ -31971,6 +34931,7 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_805.png",
 		"cost": 0,
 		"dbfId": 48357,
 		"hideStats": true,
@@ -32007,6 +34968,7 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Dlinnov",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_806.png",
 		"cost": 1,
 		"dbfId": 48359,
 		"id": "GILA_806",
@@ -32022,6 +34984,7 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_810.png",
 		"cost": 3,
 		"dbfId": 48368,
 		"id": "GILA_810",
@@ -32048,6 +35011,7 @@ var parseCardsText = {
 	{
 		"artist": "Grace Liu",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_811.png",
 		"cost": 2,
 		"dbfId": 48369,
 		"id": "GILA_811",
@@ -32060,6 +35024,7 @@ var parseCardsText = {
 	{
 		"artist": "Milivoj Ceran",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_812.png",
 		"cost": 8,
 		"dbfId": 48370,
 		"id": "GILA_812",
@@ -32072,6 +35037,7 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_813.png",
 		"cost": 0,
 		"dbfId": 48372,
 		"hideStats": true,
@@ -32096,6 +35062,7 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_814.png",
 		"cost": 0,
 		"dbfId": 48375,
 		"hideStats": true,
@@ -32118,6 +35085,7 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_816a.png",
 		"cost": 2,
 		"dbfId": 48403,
 		"id": "GILA_816a",
@@ -32130,6 +35098,7 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_816b.png",
 		"cost": 2,
 		"dbfId": 48404,
 		"id": "GILA_816b",
@@ -32142,6 +35111,7 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_816c.png",
 		"cost": 3,
 		"dbfId": 48405,
 		"id": "GILA_816c",
@@ -32152,7 +35122,13 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Attack_01": "VO_GILA_817t_Female_Ghost_Attack_01.ogg",
+			"Death_01": "VO_GILA_817t_Female_Ghost_Death_01.ogg",
+			"Play_01": "VO_GILA_817t_Female_Ghost_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_817.png",
 		"cost": 1,
 		"dbfId": 48387,
 		"id": "GILA_817",
@@ -32166,6 +35142,7 @@ var parseCardsText = {
 		"artist": "Alex Konstad",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_817t.png",
 		"cost": 1,
 		"dbfId": 48386,
 		"health": 1,
@@ -32176,7 +35153,13 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Attack_01": "VO_GILA_818t_Female_Ghost_Attack_01.ogg",
+			"Death_01": "VO_GILA_818t_Female_Ghost_Death_01.ogg",
+			"Play_01": "VO_GILA_818t_Female_Ghost_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_818.png",
 		"cost": 1,
 		"dbfId": 48389,
 		"id": "GILA_818",
@@ -32190,6 +35173,7 @@ var parseCardsText = {
 		"artist": "Alex Konstad",
 		"attack": 2,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_818t.png",
 		"cost": 1,
 		"dbfId": 48388,
 		"health": 2,
@@ -32200,7 +35184,13 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Attack_01": "VO_GILA_819t_Female_Ghost_Attack_01.ogg",
+			"Death_01": "VO_GILA_819t_Female_Ghost_Death_01.ogg",
+			"Play_01": "VO_GILA_819_Female_Ghost_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_819.png",
 		"cost": 1,
 		"dbfId": 48391,
 		"id": "GILA_819",
@@ -32217,6 +35207,7 @@ var parseCardsText = {
 		"artist": "Alex Konstad",
 		"attack": 3,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_819t.png",
 		"cost": 1,
 		"dbfId": 48390,
 		"health": 3,
@@ -32233,6 +35224,7 @@ var parseCardsText = {
 	{
 		"artist": "Danny Beck",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_820.png",
 		"cost": 5,
 		"dbfId": 48399,
 		"id": "GILA_820",
@@ -32245,6 +35237,7 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_821a.png",
 		"cost": 2,
 		"dbfId": 48400,
 		"id": "GILA_821a",
@@ -32257,6 +35250,7 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_821b.png",
 		"cost": 2,
 		"dbfId": 48401,
 		"id": "GILA_821b",
@@ -32269,6 +35263,7 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_821c.png",
 		"cost": 2,
 		"dbfId": 48402,
 		"id": "GILA_821c",
@@ -32284,6 +35279,7 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_824.png",
 		"cost": 4,
 		"dbfId": 48816,
 		"id": "GILA_824",
@@ -32307,6 +35303,7 @@ var parseCardsText = {
 	{
 		"artist": "Joe Wilson",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_825.png",
 		"cost": 1,
 		"dbfId": 48818,
 		"id": "GILA_825",
@@ -32344,7 +35341,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 9,
+		"audio": {
+			"Attack_01": "VO_GILA_826_Female_Draenei_Attack_01.ogg",
+			"Death_01": "VO_GILA_826_Female_Draenei_Death_01.ogg",
+			"Play_01": "VO_GILA_826_Female_Draenei_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_826.png",
 		"cost": 6,
 		"dbfId": 48994,
 		"elite": true,
@@ -32363,7 +35366,14 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GILA_827_Male_Murloc_Attack_02.ogg",
+			"Death_01": "VO_GILA_827_Male_Murloc_Death_01.ogg",
+			"Eventwharrgarbl_01": "VO_GILA_827_Male_Murloc_EventWharrgarbl_01.ogg",
+			"Play_01": "VO_GILA_827_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_827.png",
 		"cost": 2,
 		"dbfId": 49343,
 		"elite": true,
@@ -32379,6 +35389,7 @@ var parseCardsText = {
 	{
 		"artist": "Vladimir Kafanov",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_850b.png",
 		"cost": 7,
 		"dbfId": 48378,
 		"id": "GILA_850b",
@@ -32391,7 +35402,13 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_GILA_851a_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_GILA_851a_Male_Human_Death_01.ogg",
+			"Play_01": "VO_GILA_851a_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_851a.png",
 		"cost": 3,
 		"dbfId": 48380,
 		"health": 3,
@@ -32405,7 +35422,13 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_GILA_851b_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_GILA_851b_Male_Human_Death_01.ogg",
+			"Play_01": "VO_GILA_851b_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_851b.png",
 		"cost": 3,
 		"dbfId": 48382,
 		"health": 5,
@@ -32422,7 +35445,13 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_GILA_851c_Male_Worgen_Attack_02.ogg",
+			"Death_01": "VO_GILA_851c_Male_Worgen_Death_01.ogg",
+			"Play_01": "VO_GILA_851c_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_851c.png",
 		"cost": 3,
 		"dbfId": 48381,
 		"health": 7,
@@ -32439,6 +35468,7 @@ var parseCardsText = {
 	{
 		"artist": "Jason Kang",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_852a.png",
 		"cost": 2,
 		"dbfId": 48384,
 		"id": "GILA_852a",
@@ -32465,6 +35495,7 @@ var parseCardsText = {
 	{
 		"artist": "Jason Kang",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_852b.png",
 		"cost": 2,
 		"dbfId": 48383,
 		"id": "GILA_852b",
@@ -32491,6 +35522,7 @@ var parseCardsText = {
 	{
 		"artist": "Jason Kang",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_852c.png",
 		"cost": 2,
 		"dbfId": 48385,
 		"id": "GILA_852c",
@@ -32518,6 +35550,7 @@ var parseCardsText = {
 	{
 		"artist": "Vladimir Kafanov",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_853b.png",
 		"cost": 3,
 		"dbfId": 48398,
 		"id": "GILA_853b",
@@ -32531,6 +35564,7 @@ var parseCardsText = {
 		"artist": "Anton Zemskov",
 		"attack": 2,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_854.png",
 		"cost": 2,
 		"dbfId": 50535,
 		"health": 5,
@@ -32545,6 +35579,7 @@ var parseCardsText = {
 		"artist": "Anton Zemskov",
 		"attack": 8,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_854t.png",
 		"cost": 2,
 		"dbfId": 50536,
 		"health": 8,
@@ -32556,7 +35591,62 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Adam Byrne",
+		"audio": {
+			"Arena_04": "VO_GILA_900h_Female_Gnome_ToT_Event_Arena_04.ogg",
+			"Arena_05": "VO_GILA_900h_Female_Gnome_ToT_Event_Arena_05.ogg",
+			"Arena_06": "VO_GILA_900h_Female_Gnome_ToT_Event_Arena_06.ogg",
+			"Arena_07": "VO_GILA_900h_Female_Gnome_ToT_Event_Arena_07.ogg",
+			"Arena_09": "VO_GILA_900h_Female_Gnome_ToT_Event_Arena_09.ogg",
+			"Arena_10": "VO_GILA_900h_Female_Gnome_ToT_Event_Arena_10.ogg",
+			"Attack_02": "VO_GILA_900h_Female_Gnome_Attack_02.ogg",
+			"Attacked_01": "VO_GILA_900h_Female_Gnome_ERROR_MINION_ATTACKED_01.ogg",
+			"Attacked_02": "VO_GILA_900h_Female_Gnome_ERROR_I_ATTACKED_02.ogg",
+			"B_01": "VO_GILA_900h_Female_Gnome_EVENT_NEMESIS_INTRO_B_01.ogg",
+			"Concede_01": "VO_GILA_900h_Female_Gnome_Concede_01.ogg",
+			"Dead_01": "VO_GILA_900h_Female_Gnome_EVENT_HAGATHA_ALMOST_DEAD_01.ogg",
+			"Death_01": "VO_GILA_900h_Female_Gnome_Death_01.ogg",
+			"Event_03": "VO_GILA_900h_Female_Gnome_ToT_Event_03.ogg",
+			"Event_04": "VO_GILA_900h_Female_Gnome_ToT_Event_04.ogg",
+			"Event_07": "VO_GILA_900h_Female_Gnome_ToT_Event_07.ogg",
+			"Event_10": "VO_GILA_900h_Female_Gnome_ToT_Event_10.ogg",
+			"Eventtb_01": "VO_GILA_900h_Female_Gnome_ToT_EventTB_01.ogg",
+			"Eventtb_04": "VO_GILA_900h_Female_Gnome_ToT_EventTB_04.ogg",
+			"Eventtb_05": "VO_GILA_900h_Female_Gnome_ToT_EventTB_05.ogg",
+			"Full_01": "VO_GILA_900h_Female_Gnome_ERROR_HAND_FULL_01.ogg",
+			"Generic_01": "VO_GILA_900h_Female_Gnome_ERROR_GENERIC_01.ogg",
+			"Greetings_01": "VO_GILA_900h_Female_Gnome_MIRROR_GREETINGS_01.ogg",
+			"In_01": "VO_GILA_900h_Female_Gnome_EVENT_HAGATHA_SUB_IN_01.ogg",
+			"Intro_01": "VO_GILA_900h_Female_Gnome_EVENT_IVAN_INTRO_01.ogg",
+			"Lowcards_01": "VO_GILA_900h_Female_Gnome_LowCards_01.ogg",
+			"Mana_01": "VO_GILA_900h_Female_Gnome_ERROR_NEED_MANA_01.ogg",
+			"Minions_02": "VO_GILA_900h_Female_Gnome_ERROR_FULL_MINIONS_02.ogg",
+			"Nocards_01": "VO_GILA_900h_Female_Gnome_NoCards_01.ogg",
+			"Oops_02": "VO_GILA_900h_Female_Gnome_Oops_02.ogg",
+			"Play_01": "VO_GILA_900h_Female_Gnome_ERROR_PLAY_01.ogg",
+			"Played_01": "VO_GILA_900h_Female_Gnome_Well_Played_01.ogg",
+			"Quest_01": "VO_GILA_900h_Female_Gnome_ToT_Event_Quest_01.ogg",
+			"Reward_04": "VO_GILA_900h_Female_Gnome_ToT_Event_Reward_04.ogg",
+			"Sickness_01": "VO_GILA_900h_Female_Gnome_ERROR_SUMMON_SICKNESS_01.ogg",
+			"Sorry_01": "VO_GILA_900h_Female_Gnome_Sorry_01.ogg",
+			"Start_01": "VO_GILA_900h_Female_Gnome_Start_01.ogg",
+			"Stealth_01": "VO_GILA_900h_Female_Gnome_ERROR_STEALTH_01.ogg",
+			"Target_01": "VO_GILA_900h_Female_Gnome_ERROR_TARGET_01.ogg",
+			"Taunt_01": "VO_GILA_900h_Female_Gnome_ERROR_TAUNT_01.ogg",
+			"Thanks_01": "VO_GILA_900h_Female_Gnome_Thanks_01.ogg",
+			"Thinking_02": "VO_GILA_900h_Female_Gnome_Thinking_02.ogg",
+			"Thinking_03": "VO_GILA_900h_Female_Gnome_Thinking_03.ogg",
+			"Thinking_05": "VO_GILA_900h_Female_Gnome_Thinking_05.ogg",
+			"Threaten_01": "VO_GILA_900h_Female_Gnome_Threaten_01.ogg",
+			"Time_01": "VO_GILA_900h_Female_Gnome_Time_01.ogg",
+			"Turn2_01": "VO_GILA_900h_Female_Gnome_EVENT_HAGATHA_TURN2_01.ogg",
+			"Turn2_02": "VO_GILA_900h_Female_Gnome_EVENT_NEMESIS_TURN2_02.ogg",
+			"Turn6_01": "VO_GILA_900h_Female_Gnome_EVENT_NEMESIS_TURN6_01.ogg",
+			"Weapon_01": "VO_GILA_900h_Female_Gnome_ERROR_NEED_WEAPON_01.ogg",
+			"Wounded_01": "VO_GILA_900h_Female_Gnome_EVENT_HAGATHA_WOUNDED_01.ogg",
+			"Wow_02": "VO_GILA_900h_Female_Gnome_WOW_02.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GILA_900h.png",
 		"dbfId": 48554,
 		"entourage": [
 			"GILA_913",
@@ -32574,6 +35664,7 @@ var parseCardsText = {
 		"armor": 5,
 		"artist": "Adam Byrne",
 		"cardClass": "MAGE",
+		"cardImage": "GILA_900h2.png",
 		"cost": 3,
 		"dbfId": 49564,
 		"elite": true,
@@ -32596,6 +35687,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_900p.png",
 		"cost": 0,
 		"dbfId": 48553,
 		"id": "GILA_900p",
@@ -32608,6 +35700,7 @@ var parseCardsText = {
 	{
 		"artist": "Anton Kogoukin",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_901.png",
 		"cost": 2,
 		"dbfId": 48613,
 		"id": "GILA_901",
@@ -32620,6 +35713,7 @@ var parseCardsText = {
 	{
 		"artist": "Matthew O'Connor",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_903.png",
 		"cost": 1,
 		"dbfId": 48615,
 		"id": "GILA_903",
@@ -32632,6 +35726,7 @@ var parseCardsText = {
 	{
 		"artist": "James Paick",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_904.png",
 		"cost": 2,
 		"dbfId": 48617,
 		"id": "GILA_904",
@@ -32644,7 +35739,13 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_GILA_906_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_GILA_906_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_GILA_906_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_906.png",
 		"cost": 3,
 		"dbfId": 48619,
 		"health": 5,
@@ -32661,7 +35762,13 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasber",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_GILA_907_Female_Mech_Attack_01.ogg",
+			"Death_01": "VO_GILA_907_Female_Mech_Death_01.ogg",
+			"Play_01": "VO_GILA_907_Female_Mech_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_907.png",
 		"cost": 1,
 		"dbfId": 48620,
 		"health": 1,
@@ -32676,6 +35783,7 @@ var parseCardsText = {
 	{
 		"artist": "Raven Mimura",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_910.png",
 		"cost": 1,
 		"dbfId": 49318,
 		"id": "GILA_910",
@@ -32688,6 +35796,7 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_911.png",
 		"cost": 0,
 		"dbfId": 49320,
 		"hideStats": true,
@@ -32710,6 +35819,7 @@ var parseCardsText = {
 	{
 		"artist": "Polygon Pictures, Inc.",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_913.png",
 		"cost": 0,
 		"dbfId": 49322,
 		"hideStats": true,
@@ -32741,7 +35851,14 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Hidekaki Takamura",
+		"audio": {
+			"Mangywolf_Death": "VO_GILA_BOSS_20h_MangyWolf_Death.ogg",
+			"Mangywolf_Defeatplayer": "VO_GILA_BOSS_20h_MangyWolf_DefeatPlayer.ogg",
+			"Mangywolf_Emote": "VO_GILA_BOSS_20h_MangyWolf_Emote.ogg",
+			"Mangywolf_Intro": "VO_GILA_BOSS_20h_MangyWolf_Intro.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GILA_BOSS_20h.png",
 		"dbfId": 47903,
 		"health": 15,
 		"id": "GILA_BOSS_20h",
@@ -32753,6 +35870,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_20p.png",
 		"cost": 1,
 		"dbfId": 47902,
 		"id": "GILA_BOSS_20p",
@@ -32777,7 +35895,14 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Alexandrov",
+		"audio": {
+			"Rottooth_Death": "VO_GILA_BOSS_21h_Rottooth_Death.ogg",
+			"Rottooth_Emote": "VO_GILA_BOSS_21h_Rottooth_Emote.ogg",
+			"Rottooth_Intro": "VO_GILA_BOSS_21h_Rottooth_Intro.ogg",
+			"Rottooth_Playerdefeat": "VO_GILA_BOSS_21h_Rottooth_PlayerDefeat.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GILA_BOSS_21h.png",
 		"dbfId": 48046,
 		"health": 15,
 		"id": "GILA_BOSS_21h",
@@ -32789,6 +35914,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_21p.png",
 		"cost": 2,
 		"dbfId": 48057,
 		"id": "GILA_BOSS_21p",
@@ -32800,7 +35926,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_22h_Male_Undead_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_22h_Male_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_22h_Male_Undead_EmoteResponse_01.ogg",
+			"Emoteresponsetess_01": "VO_GILA_BOSS_22h_Male_Undead_EmoteResponseTess_01.ogg",
+			"Eventplayscoin_01": "VO_GILA_BOSS_22h_Male_Undead_EventPlaysCoin_01.ogg",
+			"Eventplaysshiv_01": "VO_GILA_BOSS_22h_Male_Undead_EventPlaysShiv_01.ogg",
+			"Intro_01": "VO_GILA_BOSS_22h_Male_Undead_Intro_01.ogg",
+			"Introcrowley_01": "VO_GILA_BOSS_22h_Male_Undead_IntroCrowley_01.ogg",
+			"Introtess_01": "VO_GILA_BOSS_22h_Male_Undead_IntroTess_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_BOSS_22h.png",
 		"dbfId": 48070,
 		"health": 25,
 		"id": "GILA_BOSS_22h",
@@ -32812,6 +35950,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_22p.png",
 		"cost": 2,
 		"dbfId": 48071,
 		"id": "GILA_BOSS_22p",
@@ -32823,7 +35962,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Chris Seaman",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_23h_Male_Ettin_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_23h_Male_Ettin_DefeatPlayer_01.ogg",
+			"Emoteresponse_02": "VO_GILA_BOSS_23h_Male_Ettin_EmoteResponse_02.ogg",
+			"Heropower_01": "VO_GILA_BOSS_23h_Male_Ettin_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_23h_Male_Ettin_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_23h_Male_Ettin_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_23h_Male_Ettin_HeroPower_04.ogg",
+			"Heropower_05": "VO_GILA_BOSS_23h_Male_Ettin_HeroPower_05.ogg",
+			"Intro_01": "VO_GILA_BOSS_23h_Male_Ettin_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GILA_BOSS_23h.png",
 		"dbfId": 48144,
 		"entourage": [
 			"GILA_BOSS_23t"
@@ -32838,6 +35989,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_23p.png",
 		"cost": 1,
 		"dbfId": 48143,
 		"id": "GILA_BOSS_23p",
@@ -32850,6 +36002,7 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_23t.png",
 		"cost": 6,
 		"dbfId": 48589,
 		"id": "GILA_BOSS_23t",
@@ -32861,7 +36014,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jim Nelson",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_24h_Male_Bogbeast_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_24h_Male_Bogbeast_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_24h_Male_Bogbeast_EmoteResponse_01.ogg",
+			"Eventplayssmallminion_01": "VO_GILA_BOSS_24h_Male_Bogbeast_EventPlaysSmallMinion_01.ogg",
+			"Eventplayssmallminion_02": "VO_GILA_BOSS_24h_Male_Bogbeast_EventPlaysSmallMinion_02.ogg",
+			"Eventplayssmallminion_03": "VO_GILA_BOSS_24h_Male_Bogbeast_EventPlaysSmallMinion_03.ogg",
+			"Eventplayssmallminion_04": "VO_GILA_BOSS_24h_Male_Bogbeast_EventPlaysSmallMinion_04.ogg",
+			"Heropower_01": "VO_GILA_BOSS_24h_Male_Bogbeast_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_24h_Male_Bogbeast_HeroPower_02.ogg",
+			"Heropower_04": "VO_GILA_BOSS_24h_Male_Bogbeast_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_24h_Male_Bogbeast_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_24h.png",
 		"dbfId": 48151,
 		"health": 30,
 		"id": "GILA_BOSS_24h",
@@ -32873,6 +36040,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_24p.png",
 		"cost": 0,
 		"dbfId": 48150,
 		"id": "GILA_BOSS_24p",
@@ -32885,7 +36053,13 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 1,
+		"audio": {
+			"Attack_03": "VO_GILA_BOSS_24t_Male_Undead_Attack_03.ogg",
+			"Death_02": "VO_GILA_BOSS_24t_Male_Undead_Death_02.ogg",
+			"Play_01": "VO_GILA_BOSS_24t_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_24t.png",
 		"cost": 1,
 		"dbfId": 48149,
 		"health": 3,
@@ -32901,7 +36075,29 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Paul Mafayon",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_25h_Male_Dwarf_Death_01.ogg",
+			"Defeatplayeralt_01": "VO_GILA_BOSS_25h_Male_Dwarf_DefeatPlayerALT_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_25h_Male_Dwarf_EmoteResponse_01.ogg",
+			"Eventplaycompass_01": "VO_GILA_BOSS_25h_Male_Dwarf_EventPlayCompass_01.ogg",
+			"Eventplayssecret_01": "VO_GILA_BOSS_25h_Male_Dwarf_EventPlaysSecret_01.ogg",
+			"Eventplayssecret_02": "VO_GILA_BOSS_25h_Male_Dwarf_EventPlaysSecret_02.ogg",
+			"Eventplayssecret_03": "VO_GILA_BOSS_25h_Male_Dwarf_EventPlaysSecret_03.ogg",
+			"Eventplaytoolsofthetrade_01": "VO_GILA_BOSS_25h_Male_Dwarf_EventPlayToolsOfTheTrade_01.ogg",
+			"Eventplaytrapper_01": "VO_GILA_BOSS_25h_Male_Dwarf_EventPlayTrapper_01.ogg",
+			"Eventtokiability_01": "VO_GILA_BOSS_25h_Male_Dwarf_EventTokiAbility_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_25h_Male_Dwarf_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_25h_Male_Dwarf_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_25h_Male_Dwarf_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_25h_Male_Dwarf_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_25h_Male_Dwarf_Intro_01.ogg",
+			"Introdarius_01": "VO_GILA_BOSS_25h_Male_Dwarf_IntroDarius_01.ogg",
+			"Introshaw_01": "VO_GILA_BOSS_25h_Male_Dwarf_IntroShaw_01.ogg",
+			"Introtess_02": "VO_GILA_BOSS_25h_Male_Dwarf_IntroTess_02.ogg",
+			"Introtoki_01": "VO_GILA_BOSS_25h_Male_Dwarf_IntroToki_01.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GILA_BOSS_25h.png",
 		"dbfId": 48182,
 		"health": 25,
 		"id": "GILA_BOSS_25h",
@@ -32913,6 +36109,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_25p.png",
 		"cost": 2,
 		"dbfId": 48180,
 		"id": "GILA_BOSS_25p",
@@ -32924,7 +36121,34 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Paul Mafayon",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_26h_Male_Tauren_Death_01.ogg",
+			"Death_02": "VO_GILA_BOSS_26h_Male_Tauren_Death_02.ogg",
+			"Deathtoki_01": "VO_GILA_BOSS_26h_Male_Tauren_DeathToki_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_26h_Male_Tauren_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_26h_Male_Tauren_EmoteResponse_01.ogg",
+			"Emoteresponsetoki_01": "VO_GILA_BOSS_26h_Male_Tauren_EmoteResponseToki_01.ogg",
+			"Eventburgle_01": "VO_GILA_BOSS_26h_Male_Tauren_EventBurgle_01.ogg",
+			"Eventplayclockworkassistant_01": "VO_GILA_BOSS_26h_Male_Tauren_EventPlayClockworkAssistant_01.ogg",
+			"Eventplaygattlinggunner_01": "VO_GILA_BOSS_26h_Male_Tauren_EventPlayGattlingGunner_01.ogg",
+			"Eventplaysclockwork_02": "VO_GILA_BOSS_26h_Male_Tauren_EventPlaysClockwork_02.ogg",
+			"Eventplaysgnome_01": "VO_GILA_BOSS_26h_Male_Tauren_EventPlaysGnome_01.ogg",
+			"Eventplaysgnome_02": "VO_GILA_BOSS_26h_Male_Tauren_EventPlaysGnome_02.ogg",
+			"Eventplaysgnome_05": "VO_GILA_BOSS_26h_Male_Tauren_EventPlaysGnome_05.ogg",
+			"Eventplaysgnome_06": "VO_GILA_BOSS_26h_Male_Tauren_EventPlaysGnome_06.ogg",
+			"Eventplaysleper_01": "VO_GILA_BOSS_26h_Male_Tauren_EventPlaysLeper_01.ogg",
+			"Eventplaysmillhouse_02": "VO_GILA_BOSS_26h_Male_Tauren_EventPlaysMillhouse_02.ogg",
+			"Eventplaysthermaplugg_02": "VO_GILA_BOSS_26h_Male_Tauren_EventPlaysThermaplugg_02.ogg",
+			"Eventsackofgnomes_01": "VO_GILA_BOSS_26h_Male_Tauren_EventSackOfGnomes_01.ogg",
+			"Eventsackofgnomes_03": "VO_GILA_BOSS_26h_Male_Tauren_EventSackOfGnomes_03.ogg",
+			"Eventsackofgnomes_04": "VO_GILA_BOSS_26h_Male_Tauren_EventSackOfGnomes_04.ogg",
+			"Eventsackofgnomes_05": "VO_GILA_BOSS_26h_Male_Tauren_EventSackOfGnomes_05.ogg",
+			"Eventsilence_03": "VO_GILA_BOSS_26h_Male_Tauren_EventSilence_03.ogg",
+			"Intro_02": "VO_GILA_BOSS_26h_Male_Tauren_Intro_02.ogg",
+			"Introtoki_02": "VO_GILA_BOSS_26h_Male_Tauren_IntroToki_02.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_BOSS_26h.png",
 		"dbfId": 48196,
 		"entourage": [
 			"GILA_BOSS_26t2"
@@ -32939,6 +36163,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_26p.png",
 		"cost": 2,
 		"dbfId": 48194,
 		"id": "GILA_BOSS_26p",
@@ -32951,7 +36176,13 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Dlinnov",
 		"attack": 0,
+		"audio": {
+			"Attack_02": "VO_GILA_BOSS_26t_Male_Gnome_Attack_02.ogg",
+			"Death_01": "VO_GILA_BOSS_26t_Male_Gnome_Death_01.ogg",
+			"Play_04": "VO_GILA_BOSS_26t_Male_Gnome_Play_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_26t.png",
 		"cost": 1,
 		"dbfId": 48188,
 		"health": 3,
@@ -32968,6 +36199,7 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Dlinnov",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_26t2.png",
 		"cost": 4,
 		"dbfId": 48264,
 		"entourage": [
@@ -33023,7 +36255,24 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Andrew Hou",
+		"audio": {
+			"Death_02": "VO_GILA_BOSS_27h_Male_Construct_Death_02.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_27h_Male_Construct_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_27h_Male_Construct_EmoteResponse_01.ogg",
+			"Eventplaydrboom_02": "VO_GILA_BOSS_27h_Male_Construct_EventPlayDrBoom_02.ogg",
+			"Eventplaysparepart_01": "VO_GILA_BOSS_27h_Male_Construct_EventPlaySparePart_01.ogg",
+			"Eventplayunstableportal_01": "VO_GILA_BOSS_27h_Male_Construct_EventPlayUnstablePortal_01.ogg",
+			"Heropowerbeast_02": "VO_GILA_BOSS_27h_Male_Construct_HeroPowerBeast_02.ogg",
+			"Heropowerdemon_01": "VO_GILA_BOSS_27h_Male_Construct_HeroPowerDemon_01.ogg",
+			"Heropowerdragon_01": "VO_GILA_BOSS_27h_Male_Construct_HeroPowerDragon_01.ogg",
+			"Heropowergeneric_01": "VO_GILA_BOSS_27h_Male_Construct_HeroPowerGeneric_01.ogg",
+			"Heropowermech_02": "VO_GILA_BOSS_27h_Male_Construct_HeroPowerMech_02.ogg",
+			"Heropowermurloc_01": "VO_GILA_BOSS_27h_Male_Construct_HeroPowerMurloc_01.ogg",
+			"Heropowerpirate_01": "VO_GILA_BOSS_27h_Male_Construct_HeroPowerPirate_01.ogg",
+			"Intro_01": "VO_GILA_BOSS_27h_Male_Construct_Intro_01.ogg"
+		},
 		"cardClass": "SHAMAN",
+		"cardImage": "GILA_BOSS_27h.png",
 		"dbfId": 48266,
 		"entourage": [
 			"GILA_BOSS_27t"
@@ -33038,18 +36287,25 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_27p.png",
 		"cost": 1,
 		"dbfId": 48270,
 		"id": "GILA_BOSS_27p",
 		"name": "Consume",
 		"playerClass": "Neutral",
 		"set": "Gilneas",
-		"text": "<b>Hero Power:</b>\nDestroy a friendly minion, then draw 3 cards.",
+		"text": "<b>Hero Power</b>\nDestroy a friendly minion, then draw 3 cards.",
 		"type": "Hero_power"
 	},
 	{
 		"artist": "Matt Dixon",
+		"audio": {
+			"Attack_01": "VO_GILA_BOSS_27t2_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_GILA_BOSS_27t2_Male_Murloc_Death_01.ogg",
+			"Play_01": "VO_GILA_BOSS_27t2_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_27t.png",
 		"cost": 8,
 		"dbfId": 48269,
 		"id": "GILA_BOSS_27t",
@@ -33063,6 +36319,7 @@ var parseCardsText = {
 		"artist": "Matt Dixon",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_27t2.png",
 		"cost": 1,
 		"dbfId": 48268,
 		"health": 1,
@@ -33087,7 +36344,26 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ursula Dorada",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_29h_Female_Satyr_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_29h_Female_Satyr_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_29h_Female_Satyr_EmoteResponse_01.ogg",
+			"Eventplaysenchantingtune_01": "VO_GILA_BOSS_29h_Female_Satyr_EventPlaysEnchantingTune_01.ogg",
+			"Eventplaysenchantingtune_02": "VO_GILA_BOSS_29h_Female_Satyr_EventPlaysEnchantingTune_02.ogg",
+			"Eventplaysenchantingtune_03": "VO_GILA_BOSS_29h_Female_Satyr_EventPlaysEnchantingTune_03.ogg",
+			"Eventplaysoldmilitiahorn_01": "VO_GILA_BOSS_29h_Female_Satyr_EventPlaysOldMilitiaHorn_01.ogg",
+			"Eventplayssmallminion_01": "VO_GILA_BOSS_29h_Female_Satyr_EventPlaysSmallMinion_01.ogg",
+			"Eventplayssmallminion_02": "VO_GILA_BOSS_29h_Female_Satyr_EventPlaysSmallMinion_02.ogg",
+			"Eventplayssmallminion_03": "VO_GILA_BOSS_29h_Female_Satyr_EventPlaysSmallMinion_03.ogg",
+			"Heropower_01": "VO_GILA_BOSS_29h_Female_Satyr_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_29h_Female_Satyr_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_29h_Female_Satyr_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_29h_Female_Satyr_HeroPower_04.ogg",
+			"Heropower_05": "VO_GILA_BOSS_29h_Female_Satyr_HeroPower_05.ogg",
+			"Intro_01": "VO_GILA_BOSS_29h_Female_Satyr_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GILA_BOSS_29h.png",
 		"dbfId": 48299,
 		"entourage": [
 			"GILA_BOSS_29t"
@@ -33102,6 +36378,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_29p.png",
 		"cost": 1,
 		"dbfId": 48297,
 		"id": "GILA_BOSS_29p",
@@ -33114,6 +36391,7 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_29t.png",
 		"cost": 4,
 		"dbfId": 48296,
 		"id": "GILA_BOSS_29t",
@@ -33125,7 +36403,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Qinghao Wu",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_30h_Female_Gnome_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_30h_Female_Gnome_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_30h_Female_Gnome_EmoteResponse_01.ogg",
+			"Eventbloodmagic_01": "VO_GILA_BOSS_30h_Female_Gnome_EventBloodMagic_01.ogg",
+			"Eventbloodmagic_02": "VO_GILA_BOSS_30h_Female_Gnome_EventBloodMagic_02.ogg",
+			"Eventbloodmagic_04": "VO_GILA_BOSS_30h_Female_Gnome_EventBloodMagic_04.ogg",
+			"Eventbloodmagic_05": "VO_GILA_BOSS_30h_Female_Gnome_EventBloodMagic_05.ogg",
+			"Eventbloodmagic_06": "VO_GILA_BOSS_30h_Female_Gnome_EventBloodMagic_06.ogg",
+			"Intro_01": "VO_GILA_BOSS_30h_Female_Gnome_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_30h.png",
 		"dbfId": 48301,
 		"health": 30,
 		"id": "GILA_BOSS_30h",
@@ -33137,6 +36427,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_30p.png",
 		"cost": 0,
 		"dbfId": 48302,
 		"hideStats": true,
@@ -33149,7 +36440,18 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Prescott",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_31h_Male_Treant_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_31h_Male_Treant_DefeatPlayer_01.ogg",
+			"Emote response_01": "VO_GILA_BOSS_31h_Male_Treant_Emote Response_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_31h_Male_Treant_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_31h_Male_Treant_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_31h_Male_Treant_HeroPower_03.ogg",
+			"Heropower_05": "VO_GILA_BOSS_31h_Male_Treant_HeroPower_05.ogg",
+			"Intro_01": "VO_GILA_BOSS_31h_Male_Treant_Intro_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GILA_BOSS_31h.png",
 		"dbfId": 48311,
 		"health": 30,
 		"id": "GILA_BOSS_31h",
@@ -33161,6 +36463,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_31p.png",
 		"cost": 1,
 		"dbfId": 48310,
 		"id": "GILA_BOSS_31p",
@@ -33182,7 +36485,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ivan Fomin",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_32h_Female_Sprite_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_32h_Female_Sprite_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_32h_Female_Sprite_EmoteResponse_01.ogg",
+			"Eventplaysaoebuff_01": "VO_GILA_BOSS_32h_Female_Sprite_EventPlaysAoEBuff_01.ogg",
+			"Eventplaysaoebuff_02": "VO_GILA_BOSS_32h_Female_Sprite_EventPlaysAoEBuff_02.ogg",
+			"Eventplaysbigminion_01": "VO_GILA_BOSS_32h_Female_Sprite_EventPlaysBigMinion_01.ogg",
+			"Eventplaysbigminion_02": "VO_GILA_BOSS_32h_Female_Sprite_EventPlaysBigMinion_02.ogg",
+			"Heropower_01": "VO_GILA_BOSS_32h_Female_Sprite_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_32h_Female_Sprite_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_32h_Female_Sprite_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_32h_Female_Sprite_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_32h_Female_Sprite_Intro_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GILA_BOSS_32h.png",
 		"dbfId": 48314,
 		"health": 25,
 		"id": "GILA_BOSS_32h",
@@ -33194,6 +36512,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_32p.png",
 		"cost": 1,
 		"dbfId": 48313,
 		"id": "GILA_BOSS_32p",
@@ -33227,7 +36546,23 @@ var parseCardsText = {
 	},
 	{
 		"artist": "A.J. Nazzaro",
+		"audio": {
+			"Attack_01": "VO_GILA_BOSS_33h_Male_Mech_Attack_01.ogg",
+			"Death_01": "VO_GILA_BOSS_33h_Male_Mech_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_33h_Male_Mech_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_33h_Male_Mech_EmoteResponse_01.ogg",
+			"Eventplayharvestgolem_01": "VO_GILA_BOSS_33h_Male_Mech_EventPlayHarvestGolem_01.ogg",
+			"Eventweaponkill_01": "VO_GILA_BOSS_33h_Male_Mech_EventWeaponKill_01.ogg",
+			"Eventweaponkill_02": "VO_GILA_BOSS_33h_Male_Mech_EventWeaponKill_02.ogg",
+			"Eventweaponkill_03": "VO_GILA_BOSS_33h_Male_Mech_EventWeaponKill_03.ogg",
+			"Heropower_01": "VO_GILA_BOSS_33h_Male_Mech_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_33h_Male_Mech_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_33h_Male_Mech_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_33h_Male_Mech_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_33h_Male_Mech_Intro_01.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GILA_BOSS_33h.png",
 		"dbfId": 48315,
 		"entourage": [
 			"GILA_BOSS_33t"
@@ -33242,6 +36577,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_33p.png",
 		"cost": 1,
 		"dbfId": 48316,
 		"id": "GILA_BOSS_33p",
@@ -33255,6 +36591,7 @@ var parseCardsText = {
 		"artist": "Dave Allsop",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_33t.png",
 		"cost": 3,
 		"dbfId": 48318,
 		"durability": 1,
@@ -33270,7 +36607,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Slawomir Maniak",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_34h_Male_Demon_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_34h_Male_Demon_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_34h_Male_Demon_EmoteResponse_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_34h_Male_Demon_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_34h_Male_Demon_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_34h_Male_Demon_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_34h_Male_Demon_HeroPower_04.ogg",
+			"Heropower_05": "VO_GILA_BOSS_34h_Male_Demon_HeroPower_05.ogg",
+			"Intro_01": "VO_GILA_BOSS_34h_Male_Demon_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GILA_BOSS_34h.png",
 		"dbfId": 48324,
 		"health": 40,
 		"id": "GILA_BOSS_34h",
@@ -33282,6 +36631,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_34p.png",
 		"cost": 4,
 		"dbfId": 48323,
 		"id": "GILA_BOSS_34p",
@@ -33303,7 +36653,14 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Prescott",
+		"audio": {
+			"Beast_Death": "VO_GILA_BOSS_35h_Male_Beast_Death.ogg",
+			"Beast_Defeatplayer": "VO_GILA_BOSS_35h_Male_Beast_DefeatPlayer.ogg",
+			"Beast_Emoteresponse": "VO_GILA_BOSS_35h_Male_Beast_EmoteResponse.ogg",
+			"Beast_Intro": "VO_GILA_BOSS_35h_Male_Beast_Intro.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GILA_BOSS_35h.png",
 		"dbfId": 48328,
 		"entourage": [
 			"GILA_BOSS_35t"
@@ -33318,6 +36675,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_35p.png",
 		"cost": 1,
 		"dbfId": 48327,
 		"id": "GILA_BOSS_35p",
@@ -33330,6 +36688,7 @@ var parseCardsText = {
 	{
 		"artist": "Ivan Fomin",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_35t.png",
 		"cost": 3,
 		"dbfId": 48329,
 		"id": "GILA_BOSS_35t",
@@ -33341,7 +36700,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Sam Hogg",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_36h_Female_Human_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_36h_Female_Human_DefeatPlayer_01.ogg",
+			"Emote response_01": "VO_GILA_BOSS_36h_Female_Human_Emote Response_01.ogg",
+			"Eventhex_01": "VO_GILA_BOSS_36h_Female_Human_EventHex_01.ogg",
+			"Eventhex_02": "VO_GILA_BOSS_36h_Female_Human_EventHex_02.ogg",
+			"Heropower_01": "VO_GILA_BOSS_36h_Female_Human_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_36h_Female_Human_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_36h_Female_Human_HeroPower_03.ogg",
+			"Intro_01": "VO_GILA_BOSS_36h_Female_Human_Intro_01.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GILA_BOSS_36h.png",
 		"dbfId": 48337,
 		"health": 30,
 		"id": "GILA_BOSS_36h",
@@ -33353,13 +36724,14 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_36p.png",
 		"cost": 2,
 		"dbfId": 48336,
 		"id": "GILA_BOSS_36p",
 		"name": "Witch's Kiss",
 		"playerClass": "Neutral",
 		"set": "Gilneas",
-		"text": "<b>Hero Power</b>\nTranform a random minion into a 0/1 Frog with <b>Taunt</b>.",
+		"text": "<b>Hero Power</b>\nTransform a random minion into a 0/1 Frog with <b>Taunt</b>.",
 		"type": "Hero_power"
 	},
 	{
@@ -33375,7 +36747,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Peter Stapleton",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_37h_Male_Murloc_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_37h_Male_Murloc_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_37h_Male_Murloc_EmoteResponse_01.ogg",
+			"Eventplaymurlocholmes_02": "VO_GILA_BOSS_37h_Male_Murloc_EventPlayMurlocHolmes_02.ogg",
+			"Eventplayplague_01": "VO_GILA_BOSS_37h_Male_Murloc_EventPlayPlague_01.ogg",
+			"Eventplayplague_02": "VO_GILA_BOSS_37h_Male_Murloc_EventPlayPlague_02.ogg",
+			"Eventplayplague_07": "VO_GILA_BOSS_37h_Male_Murloc_EventPlayPlague_07.ogg",
+			"Heropower_01": "VO_GILA_BOSS_37h_Male_Murloc_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_37h_Male_Murloc_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_37h_Male_Murloc_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_37h_Male_Murloc_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_37h_Male_Murloc_Intro_01.ogg"
+		},
 		"cardClass": "SHAMAN",
+		"cardImage": "GILA_BOSS_37h.png",
 		"dbfId": 48332,
 		"entourage": [
 			"GILA_BOSS_37t"
@@ -33390,6 +36777,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_37p.png",
 		"cost": 2,
 		"dbfId": 48331,
 		"id": "GILA_BOSS_37p",
@@ -33402,6 +36790,7 @@ var parseCardsText = {
 	{
 		"artist": "Vladimir Kafanov",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_37t.png",
 		"cost": 3,
 		"dbfId": 48330,
 		"id": "GILA_BOSS_37t",
@@ -33413,7 +36802,28 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ben Zhang",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_38h_Male_Goblin_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_38h_Male_Goblin_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_38h_Male_Goblin_EmoteResponse_01.ogg",
+			"Eventbirddead_01": "VO_GILA_BOSS_38h_Male_Goblin_EventBirdDead_01.ogg",
+			"Eventbirddead_02": "VO_GILA_BOSS_38h_Male_Goblin_EventBirdDead_02.ogg",
+			"Eventbirddead_03": "VO_GILA_BOSS_38h_Male_Goblin_EventBirdDead_03.ogg",
+			"Eventplaybird_01": "VO_GILA_BOSS_38h_Male_Goblin_EventPlayBird_01.ogg",
+			"Eventplaybird_02": "VO_GILA_BOSS_38h_Male_Goblin_EventPlayBird_02.ogg",
+			"Eventplaybird_03": "VO_GILA_BOSS_38h_Male_Goblin_EventPlayBird_03.ogg",
+			"Eventplaybird_04": "VO_GILA_BOSS_38h_Male_Goblin_EventPlayBird_04.ogg",
+			"Eventplayerplaybird_01": "VO_GILA_BOSS_38h_Male_Goblin_EventPlayerPlayBird_01.ogg",
+			"Eventplayerplaybird_02": "VO_GILA_BOSS_38h_Male_Goblin_EventPlayerPlayBird_02.ogg",
+			"Eventplaynestingroc_01": "VO_GILA_BOSS_38h_Male_Goblin_EventPlayNestingRoc_01.ogg",
+			"Eventplaynestingroc_02": "VO_GILA_BOSS_38h_Male_Goblin_EventPlayNestingRoc_02.ogg",
+			"Heropower_01": "VO_GILA_BOSS_38h_Male_Goblin_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_38h_Male_Goblin_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_38h_Male_Goblin_HeroPower_03.ogg",
+			"Intro_01": "VO_GILA_BOSS_38h_Male_Goblin_Intro_01.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GILA_BOSS_38h.png",
 		"dbfId": 48580,
 		"health": 15,
 		"id": "GILA_BOSS_38h",
@@ -33425,6 +36835,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_38p.png",
 		"cost": 1,
 		"dbfId": 48579,
 		"id": "GILA_BOSS_38p",
@@ -33437,6 +36848,7 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"cardClass": "PRIEST",
+		"cardImage": "GILA_BOSS_39h.png",
 		"dbfId": 48593,
 		"health": 70,
 		"id": "GILA_BOSS_39h",
@@ -33448,6 +36860,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_39p.png",
 		"cost": 0,
 		"dbfId": 48591,
 		"id": "GILA_BOSS_39p",
@@ -33469,7 +36882,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Craig Elliott",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_40h_Female_Treant_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_40h_Female_Treant_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_40h_Female_Treant_EmoteResponse_01.ogg",
+			"Eventplaysaxe_01": "VO_GILA_BOSS_40h_Female_Treant_EventPlaysAxe_01.ogg",
+			"Eventplaysaxe_02": "VO_GILA_BOSS_40h_Female_Treant_EventPlaysAxe_02.ogg",
+			"Eventplayswoodsmansaxe_01": "VO_GILA_BOSS_40h_Female_Treant_EventPlaysWoodsmansAxe_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_40h_Female_Treant_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_40h_Female_Treant_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_40h_Female_Treant_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_40h_Female_Treant_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_40h_Female_Treant_Intro_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GILA_BOSS_40h.png",
 		"dbfId": 48596,
 		"health": 40,
 		"id": "GILA_BOSS_40h",
@@ -33481,6 +36908,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_40p.png",
 		"cost": 2,
 		"dbfId": 48595,
 		"id": "GILA_BOSS_40p",
@@ -33492,7 +36920,29 @@ var parseCardsText = {
 	},
 	{
 		"artist": "L. Lullabi & K. Turovec",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_41h_Male_NightElf_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_41h_Male_NightElf_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_41h_Female_HumanGhost_EmoteResponse_01.ogg",
+			"Emoteresponse_02": "VO_GILA_BOSS_41h_Male_NightElf_EmoteResponse_02.ogg",
+			"Eventfatigue_01": "VO_GILA_BOSS_41h_Female_HumanGhost_EventFatigue_01.ogg",
+			"Eventfatigue_02": "VO_GILA_BOSS_41h_Female_HumanGhost_EventFatigue_02.ogg",
+			"Eventfatiguedeath_01": "VO_GILA_BOSS_41h_Female_HumanGhost_EventFatigueDeath_01.ogg",
+			"Eventhack_01": "VO_GILA_BOSS_41h_Male_NightElf_EventHack_01.ogg",
+			"Eventhack_02": "VO_GILA_BOSS_41h_Male_NightElf_EventHack_02.ogg",
+			"Eventhack_03": "VO_GILA_BOSS_41h_Male_NightElf_EventHack_03.ogg",
+			"Eventplayrin_01": "VO_GILA_BOSS_41h_Female_HumanGhost_EventPlayRin_01.ogg",
+			"Eventshuffle_01": "VO_GILA_BOSS_41h_Female_HumanGhost_EventShuffle_01.ogg",
+			"Eventshuffle_02": "VO_GILA_BOSS_41h_Female_HumanGhost_EventShuffle_02.ogg",
+			"Eventshuffle_03": "VO_GILA_BOSS_41h_Female_HumanGhost_EventShuffle_03.ogg",
+			"Heropower_01": "VO_GILA_BOSS_41h_Male_NightElf_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_41h_Male_NightElf_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_41h_Male_NightElf_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_41h_Male_NightElf_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_41h_Male_NightElf_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GILA_BOSS_41h.png",
 		"dbfId": 48600,
 		"health": 60,
 		"id": "GILA_BOSS_41h",
@@ -33504,6 +36954,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_41p.png",
 		"cost": 3,
 		"dbfId": 48597,
 		"id": "GILA_BOSS_41p",
@@ -33516,6 +36967,7 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_41t.png",
 		"cost": 3,
 		"dbfId": 48598,
 		"id": "GILA_BOSS_41t",
@@ -33527,7 +36979,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Dixon",
+		"audio": {
+			"Death_02": "VO_GILA_BOSS_42h_Male_Ogre_Death_02.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_42h_Male_Ogre_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_42h_Male_Ogre_EmoteResponse_01.ogg",
+			"Eventheropowerenemy_01": "VO_GILA_BOSS_42h_Male_Ogre_EventHeroPowerEnemy_01.ogg",
+			"Eventheropowerenemy_02": "VO_GILA_BOSS_42h_Male_Ogre_EventHeroPowerEnemy_02.ogg",
+			"Eventheropowerenemy_03": "VO_GILA_BOSS_42h_Male_Ogre_EventHeroPowerEnemy_03.ogg",
+			"Eventheropowerfriendly_01": "VO_GILA_BOSS_42h_Male_Ogre_EventHeroPowerFriendly_01.ogg",
+			"Eventheropowerfriendly_02": "VO_GILA_BOSS_42h_Male_Ogre_EventHeroPowerFriendly_02.ogg",
+			"Intro_01": "VO_GILA_BOSS_42h_Male_Ogre_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GILA_BOSS_42h.png",
 		"dbfId": 48601,
 		"health": 30,
 		"id": "GILA_BOSS_42h",
@@ -33539,6 +37003,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_42p.png",
 		"cost": 1,
 		"dbfId": 48603,
 		"id": "GILA_BOSS_42p",
@@ -33550,7 +37015,20 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler West Studio",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_43h_Male_HumanGhost_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_43h_Male_HumanGhost_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_43h_Male_HumanGhost_EmoteResponse_01.ogg",
+			"Eventplaysdeathrattle_01": "VO_GILA_BOSS_43h_Male_HumanGhost_EventPlaysDeathrattle_01.ogg",
+			"Eventplaysdeathrattle_02": "VO_GILA_BOSS_43h_Male_HumanGhost_EventPlaysDeathrattle_02.ogg",
+			"Eventplaysdeathrattle_03": "VO_GILA_BOSS_43h_Male_HumanGhost_EventPlaysDeathrattle_03.ogg",
+			"Eventplaysdeathrattle_04": "VO_GILA_BOSS_43h_Male_HumanGhost_EventPlaysDeathrattle_04.ogg",
+			"Eventplaysdeathrattle_05": "VO_GILA_BOSS_43h_Male_HumanGhost_EventPlaysDeathrattle_05.ogg",
+			"Eventplaystrokeofmidnight_01": "VO_GILA_BOSS_43h_Male_HumanGhost_EventPlayStrokeOfMidnight_01.ogg",
+			"Intro_01": "VO_GILA_BOSS_43h_Male_HumanGhost_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GILA_BOSS_43h.png",
 		"dbfId": 48611,
 		"entourage": [
 			"GILA_BOSS_43t"
@@ -33565,6 +37043,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_43p.png",
 		"cost": 3,
 		"dbfId": 48610,
 		"id": "GILA_BOSS_43p",
@@ -33577,6 +37056,7 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_43t.png",
 		"cost": 0,
 		"dbfId": 48810,
 		"id": "GILA_BOSS_43t",
@@ -33588,7 +37068,26 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Azevedo",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_44h_Male_Troll_Death_01.ogg",
+			"Defeatplayer_02": "VO_GILA_BOSS_44h_Male_Troll_DefeatPlayer_02.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_44h_Male_Troll_EmoteResponse_01.ogg",
+			"Eventheals_01": "VO_GILA_BOSS_44h_Male_Troll_EventHeals_01.ogg",
+			"Eventheals_02": "VO_GILA_BOSS_44h_Male_Troll_EventHeals_02.ogg",
+			"Eventheals_04": "VO_GILA_BOSS_44h_Male_Troll_EventHeals_04.ogg",
+			"Eventplayerheals_03": "VO_GILA_BOSS_44h_Male_Troll_EventPlayerHeals_03.ogg",
+			"Eventplayerheals_04": "VO_GILA_BOSS_44h_Male_Troll_EventPlayerHeals_04.ogg",
+			"Eventplaysbandages_01": "VO_GILA_BOSS_44h_Male_Troll_EventPlaysBandages_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_44h_Male_Troll_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_44h_Male_Troll_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_44h_Male_Troll_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_44h_Male_Troll_HeroPower_04.ogg",
+			"Heropower_05": "VO_GILA_BOSS_44h_Male_Troll_HeroPower_05.ogg",
+			"Heropower_06": "VO_GILA_BOSS_44h_Male_Troll_HeroPower_06.ogg",
+			"Intro_01": "VO_GILA_BOSS_44h_Male_Troll_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_44h.png",
 		"dbfId": 48624,
 		"health": 20,
 		"id": "GILA_BOSS_44h",
@@ -33600,6 +37099,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_44p.png",
 		"cost": 2,
 		"dbfId": 48623,
 		"id": "GILA_BOSS_44p",
@@ -33611,7 +37111,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauricio Herrera",
+		"audio": {
+			"Death_02": "VO_GILA_BOSS_45h_Female_Human_Death_02.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_45h_Female_Human_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_45h_Female_Human_EmoteResponse_01.ogg",
+			"Eventdrawsextracards_01": "VO_GILA_BOSS_45h_Female_Human_EventDrawsExtraCards_01.ogg",
+			"Eventdrawsextracards_02": "VO_GILA_BOSS_45h_Female_Human_EventDrawsExtraCards_02.ogg",
+			"Eventdrawsextracards_03": "VO_GILA_BOSS_45h_Female_Human_EventDrawsExtraCards_03.ogg",
+			"Eventfirstdamage_01": "VO_GILA_BOSS_45h_Female_Human_EventFirstDamage_01.ogg",
+			"Eventplayhallowedwater_01": "VO_GILA_BOSS_45h_Female_Human_EventPlayHallowedWater_01.ogg",
+			"Eventplaysacolyte_01": "VO_GILA_BOSS_45h_Female_Human_EventPlaysAcolyte_01.ogg",
+			"Eventplayshoarder_01": "VO_GILA_BOSS_45h_Female_Human_EventPlaysHoarder_01.ogg",
+			"Eventplaysnovice_01": "VO_GILA_BOSS_45h_Female_Human_EventPlaysNovice_01.ogg",
+			"Intro_01": "VO_GILA_BOSS_45h_Female_Human_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_45h.png",
 		"dbfId": 48635,
 		"health": 40,
 		"id": "GILA_BOSS_45h",
@@ -33623,6 +37138,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_45p.png",
 		"cost": 0,
 		"dbfId": 48633,
 		"id": "GILA_BOSS_45p",
@@ -33644,7 +37160,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Wayne Reynolds",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_46h_Male_Worgen_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_46h_Male_Worgen_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_46h_Male_Worgen_EmoteResponse_01.ogg",
+			"Eventplaybloodmoon_01": "VO_GILA_BOSS_46h_Male_Worgen_EventPlayBloodMoon_01.ogg",
+			"Eventplaysworgen_01": "VO_GILA_BOSS_46h_Male_Worgen_EventPlaysWorgen_01.ogg",
+			"Eventplaysworgen_03": "VO_GILA_BOSS_46h_Male_Worgen_EventPlaysWorgen_03.ogg",
+			"Eventplaysworgen_06": "VO_GILA_BOSS_46h_Male_Worgen_EventPlaysWorgen_06.ogg",
+			"Eventplaytrapper_02": "VO_GILA_BOSS_46h_Male_Worgen_EventPlayTrapper_02.ogg",
+			"Intro_01": "VO_GILA_BOSS_46h_Male_Worgen_Intro_01.ogg"
+		},
 		"cardClass": "PALADIN",
+		"cardImage": "GILA_BOSS_46h.png",
 		"dbfId": 48730,
 		"health": 40,
 		"id": "GILA_BOSS_46h",
@@ -33656,6 +37184,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_46p.png",
 		"cost": 0,
 		"dbfId": 48729,
 		"hideStats": true,
@@ -33671,7 +37200,17 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Dixon",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_47h_Male_Monster_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_47h_Male_Monster_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_47h_Male_Monster_EmoteResponse_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_47h_Male_Monster_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_47h_Male_Monster_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_47h_Male_Monster_HeroPower_03.ogg",
+			"Introalt_01": "VO_GILA_BOSS_47h_Male_Monster_IntroALT_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_47h.png",
 		"dbfId": 48738,
 		"health": 50,
 		"id": "GILA_BOSS_47h",
@@ -33683,6 +37222,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_47p.png",
 		"cost": 0,
 		"dbfId": 48736,
 		"hideStats": true,
@@ -33715,7 +37255,39 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Adam Byrne",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_48h_Female_Gnome_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_48h_Female_Gnome_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_48h_Female_Gnome_EmoteResponse_01.ogg",
+			"Eventalt_01": "VO_GILA_BOSS_48h_Female_Gnome_EventAlt_01.ogg",
+			"Eventalt_02": "VO_GILA_BOSS_48h_Female_Gnome_EventAlt_02.ogg",
+			"Eventalt_03": "VO_GILA_BOSS_48h_Female_Gnome_EventAlt_03.ogg",
+			"Eventplayeralttime_01": "VO_GILA_BOSS_48h_Female_Gnome_EventPlayerAltTime_01.ogg",
+			"Eventplayeralttime_02": "VO_GILA_BOSS_48h_Female_Gnome_EventPlayerAltTime_02.ogg",
+			"Eventplayertimewarp_01": "VO_GILA_BOSS_48h_Female_Gnome_EventPlayerTimeWarp_01.ogg",
+			"Eventplayertimewarp_02": "VO_GILA_BOSS_48h_Female_Gnome_EventPlayerTimeWarp_02.ogg",
+			"Eventplayertimewarptoki_01": "VO_GILA_BOSS_48h_Female_Gnome_EventPlayerTimeWarpToki_01.ogg",
+			"Eventplayertimewarptoki_02": "VO_GILA_BOSS_48h_Female_Gnome_EventPlayerTimeWarpToki_02.ogg",
+			"Eventtimewarp_01": "VO_GILA_BOSS_48h_Female_Gnome_EventTimeWarp_01.ogg",
+			"Eventtimewarp_02": "VO_GILA_BOSS_48h_Female_Gnome_EventTimeWarp_02.ogg",
+			"Eventturn2_01": "VO_GILA_BOSS_48h_Female_Gnome_EventTurn2_01.ogg",
+			"Eventturn4_01": "VO_GILA_BOSS_48h_Female_Gnome_EventTurn4_01.ogg",
+			"Eventturn6_01": "VO_GILA_BOSS_48h_Female_Gnome_EventTurn6_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_48h_Female_Gnome_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_48h_Female_Gnome_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_48h_Female_Gnome_HeroPower_03.ogg",
+			"Intro_01": "VO_GILA_BOSS_48h_Female_Gnome_Intro_01.ogg",
+			"Intro_02": "VO_GILA_BOSS_48h_Female_Gnome_Intro_02.ogg",
+			"Intro_03": "VO_GILA_BOSS_48h_Female_Gnome_Intro_03.ogg",
+			"Intro_04": "VO_GILA_BOSS_48h_Female_Gnome_Intro_04.ogg",
+			"Intro_05": "VO_GILA_BOSS_48h_Female_Gnome_Intro_05.ogg",
+			"Playerheropower_01": "VO_GILA_BOSS_48h_Female_Gnome_PlayerHeroPower_01.ogg",
+			"Playerheropower_02": "VO_GILA_BOSS_48h_Female_Gnome_PlayerHeroPower_02.ogg",
+			"Playerheropower_03": "VO_GILA_BOSS_48h_Female_Gnome_PlayerHeroPower_03.ogg",
+			"Playerheropower_04": "VO_GILA_BOSS_48h_Female_Gnome_PlayerHeroPower_04.ogg"
+		},
 		"cardClass": "MAGE",
+		"cardImage": "GILA_BOSS_48h.png",
 		"dbfId": 48766,
 		"health": 60,
 		"id": "GILA_BOSS_48h",
@@ -33727,6 +37299,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_48p.png",
 		"cost": 2,
 		"dbfId": 48763,
 		"id": "GILA_BOSS_48p",
@@ -33739,6 +37312,7 @@ var parseCardsText = {
 	{
 		"artist": "James Paick",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_48t.png",
 		"cost": 10,
 		"dbfId": 48767,
 		"id": "GILA_BOSS_48t",
@@ -33750,7 +37324,33 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Jomaro Kindred",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_49h_Female_Undead_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_49h_Female_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_49h_Female_Undead_EmoteResponse_01.ogg",
+			"Eventfaithfuldies_01": "VO_GILA_BOSS_49h_Female_Undead_EventFaithfulDies_01.ogg",
+			"Eventfaithfuldies_02": "VO_GILA_BOSS_49h_Female_Undead_EventFaithfulDies_02.ogg",
+			"Eventfaithfuldies_03": "VO_GILA_BOSS_49h_Female_Undead_EventFaithfulDies_03.ogg",
+			"Eventpact_01": "VO_GILA_BOSS_49h_Female_Undead_EventPact_01.ogg",
+			"Eventpact_02": "VO_GILA_BOSS_49h_Female_Undead_EventPact_02.ogg",
+			"Eventpact_03": "VO_GILA_BOSS_49h_Female_Undead_EventPact_03.ogg",
+			"Eventpact_05": "VO_GILA_BOSS_49h_Female_Undead_EventPact_05.ogg",
+			"Eventplaybird_01": "VO_GILA_BOSS_49h_Female_Undead_EventPlayBird_01.ogg",
+			"Eventplaycauldron_01": "VO_GILA_BOSS_49h_Female_Undead_EventPlayCauldron_01.ogg",
+			"Eventplaydragon_01": "VO_GILA_BOSS_49h_Female_Undead_EventPlayDragon_01.ogg",
+			"Eventplayfaithful_01": "VO_GILA_BOSS_49h_Female_Undead_EventPlayFaithful_01.ogg",
+			"Eventplayfaithful_02": "VO_GILA_BOSS_49h_Female_Undead_EventPlayFaithful_02.ogg",
+			"Eventplayfaithful_03": "VO_GILA_BOSS_49h_Female_Undead_EventPlayFaithful_03.ogg",
+			"Eventplayfaithful_04": "VO_GILA_BOSS_49h_Female_Undead_EventPlayFaithful_04.ogg",
+			"Eventplayfaithful_05": "VO_GILA_BOSS_49h_Female_Undead_EventPlayFaithful_05.ogg",
+			"Eventplayhex_01": "VO_GILA_BOSS_49h_Female_Undead_EventPlayHex_01.ogg",
+			"Eventplaysnake_01": "VO_GILA_BOSS_49h_Female_Undead_EventPlaySnake_01.ogg",
+			"Eventplaytreant_01": "VO_GILA_BOSS_49h_Female_Undead_EventPlayTreant_01.ogg",
+			"Eventturn02_01": "VO_GILA_BOSS_49h_Female_Undead_EventTurn02_01.ogg",
+			"Intro_02": "VO_GILA_BOSS_49h_Female_Undead_Intro_02.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_49h.png",
 		"dbfId": 48785,
 		"health": 50,
 		"id": "GILA_BOSS_49h",
@@ -33762,6 +37362,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_49p.png",
 		"cost": 0,
 		"dbfId": 48791,
 		"hideStats": true,
@@ -33775,7 +37376,13 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_GILA_BOSS_49t_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_GILA_BOSS_49t_Male_Undead_Death_01.ogg",
+			"Play_06": "VO_GILA_BOSS_49t_Male_Undead_Play_06.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_49t.png",
 		"cost": 3,
 		"dbfId": 48790,
 		"health": 3,
@@ -33792,6 +37399,7 @@ var parseCardsText = {
 	{
 		"artist": "James Paick",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_49t2.png",
 		"cost": 5,
 		"dbfId": 48792,
 		"id": "GILA_BOSS_49t2",
@@ -33806,7 +37414,18 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Phil Saunders",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_50h_Male_Spirit_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_50h_Male_Spirit_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_50h_Male_Spirit_EmoteResponse_01.ogg",
+			"Eventplaysecho_01": "VO_GILA_BOSS_50h_Male_Spirit_EventPlaysEcho_01.ogg",
+			"Eventplaysecho_02": "VO_GILA_BOSS_50h_Male_Spirit_EventPlaysEcho_02.ogg",
+			"Eventplaysecho_03": "VO_GILA_BOSS_50h_Male_Spirit_EventPlaysEcho_03.ogg",
+			"Eventplaysecho_04": "VO_GILA_BOSS_50h_Male_Spirit_EventPlaysEcho_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_50h_Male_Spirit_Intro_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_BOSS_50h.png",
 		"dbfId": 48814,
 		"health": 25,
 		"id": "GILA_BOSS_50h",
@@ -33818,6 +37437,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_50p.png",
 		"cost": 0,
 		"dbfId": 48813,
 		"hideStats": true,
@@ -33830,7 +37450,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Vladimir Kafanov",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_51h_Male_Undead_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_51h_Male_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_51h_Male_Undead_EmoteResponse_01.ogg",
+			"Eventplaycoinpouch_01": "VO_GILA_BOSS_51h_Male_Undead_EventPlayCoinPouch_01.ogg",
+			"Eventplayminion_01": "VO_GILA_BOSS_51h_Male_Undead_EventPlayMinion_01.ogg",
+			"Eventplayminion_03": "VO_GILA_BOSS_51h_Male_Undead_EventPlayMinion_03.ogg",
+			"Eventplayminion_04": "VO_GILA_BOSS_51h_Male_Undead_EventPlayMinion_04.ogg",
+			"Heropower_01": "VO_GILA_BOSS_51h_Male_Undead_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_51h_Male_Undead_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_51h_Male_Undead_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_51h_Male_Undead_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_51h_Male_Undead_Intro_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_BOSS_51h.png",
 		"dbfId": 48868,
 		"health": 40,
 		"id": "GILA_BOSS_51h",
@@ -33842,6 +37477,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_51p.png",
 		"cost": 1,
 		"dbfId": 48869,
 		"id": "GILA_BOSS_51p",
@@ -33873,7 +37509,23 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Garrett Hanna",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_52h_Male_Human_Death_01.ogg",
+			"Defeatplayeralt_02": "VO_GILA_BOSS_52h_Male_Human_DefeatPlayerALT_02.ogg",
+			"Emoteresponse_02": "VO_GILA_BOSS_52h_Male_Human_EmoteResponse_02.ogg",
+			"Eventplayroyalgift_02": "VO_GILA_BOSS_52h_Male_Human_EventPlayRoyalGift_02.ogg",
+			"Eventplaystealth_02": "VO_GILA_BOSS_52h_Male_Human_EventPlayStealth_02.ogg",
+			"Eventplaystealth_03": "VO_GILA_BOSS_52h_Male_Human_EventPlayStealth_03.ogg",
+			"Eventtransform_01": "VO_GILA_BOSS_52h_Male_Human_EventTransform_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_52h_Male_Human_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_52h_Male_Human_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_52h_Male_Human_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_52h_Male_Human_HeroPower_04.ogg",
+			"Heropower_05": "VO_GILA_BOSS_52h_Male_Human_HeroPower_05.ogg",
+			"Introalt_02": "VO_GILA_BOSS_52h_Male_Human_IntroALT_02.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GILA_BOSS_52h.png",
 		"dbfId": 48875,
 		"health": 40,
 		"id": "GILA_BOSS_52h",
@@ -33886,6 +37538,7 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_BOSS_52h2.png",
 		"dbfId": 48874,
 		"health": 50,
 		"id": "GILA_BOSS_52h2",
@@ -33896,6 +37549,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_52p.png",
 		"cost": 1,
 		"dbfId": 48873,
 		"id": "GILA_BOSS_52p",
@@ -33907,6 +37561,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_52p2.png",
 		"cost": 1,
 		"dbfId": 48872,
 		"id": "GILA_BOSS_52p2",
@@ -33928,7 +37583,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Azevedo",
+		"audio": {
+			"Death_02": "VO_GILA_BOSS_54h_Male_Golem_Death_02.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_54h_Male_Golem_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_54h_Male_Golem_EmoteResponse_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_54h_Male_Golem_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_54h_Male_Golem_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_54h_Male_Golem_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_54h_Male_Golem_HeroPower_04.ogg",
+			"Heropower_05": "VO_GILA_BOSS_54h_Male_Golem_HeroPower_05.ogg",
+			"Intro_01": "VO_GILA_BOSS_54h_Male_Golem_Intro_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GILA_BOSS_54h.png",
 		"dbfId": 48934,
 		"health": 40,
 		"id": "GILA_BOSS_54h",
@@ -33940,6 +37607,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_54p.png",
 		"cost": 2,
 		"dbfId": 48935,
 		"id": "GILA_BOSS_54p",
@@ -33951,7 +37619,25 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Hideaki Takamura",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_55h_Female_NightElf_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_55h_Female_NightElf_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_55h_Female_NightElf_EmoteResponse_01.ogg",
+			"Eventassimilation_01": "VO_GILA_BOSS_55h_Female_NightElf_EventAssimilation_01.ogg",
+			"Eventassimilation_02": "VO_GILA_BOSS_55h_Female_NightElf_EventAssimilation_02.ogg",
+			"Eventassimilation_03": "VO_GILA_BOSS_55h_Female_NightElf_EventAssimilation_03.ogg",
+			"Eventkillswisp_02": "VO_GILA_BOSS_55h_Female_NightElf_EventKillsWisp_02.ogg",
+			"Eventkillswisp_03": "VO_GILA_BOSS_55h_Female_NightElf_EventKillsWisp_03.ogg",
+			"Eventkillswisp_04": "VO_GILA_BOSS_55h_Female_NightElf_EventKillsWisp_04.ogg",
+			"Eventplaycartographer_01": "VO_GILA_BOSS_55h_Female_NightElf_EventPlayCartographer_01.ogg",
+			"Eventplaycompass_01": "VO_GILA_BOSS_55h_Female_NightElf_EventPlayCompass_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_55h_Female_NightElf_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_55h_Female_NightElf_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_55h_Female_NightElf_HeroPower_03.ogg",
+			"Intro_01": "VO_GILA_BOSS_55h_Female_NightElf_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_55h.png",
 		"dbfId": 48936,
 		"health": 50,
 		"id": "GILA_BOSS_55h",
@@ -33963,6 +37649,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_55p.png",
 		"cost": 2,
 		"dbfId": 48939,
 		"id": "GILA_BOSS_55p",
@@ -33976,6 +37663,7 @@ var parseCardsText = {
 		"artist": "Jiajun Tian",
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_55t.png",
 		"cost": 0,
 		"dbfId": 48937,
 		"health": 1,
@@ -33988,6 +37676,7 @@ var parseCardsText = {
 	{
 		"artist": "Jiajun Tian",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_55t2.png",
 		"cost": 4,
 		"dbfId": 48938,
 		"id": "GILA_BOSS_55t2",
@@ -33999,7 +37688,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Ryman",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_56h_Male_Elemental_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_56h_Male_Elemental_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_56h_Male_Elemental_EmoteResponse_01.ogg",
+			"Eventtransformface_02": "VO_GILA_BOSS_56h_Male_Elemental_EventTransformFace_02.ogg",
+			"Heropower_01": "VO_GILA_BOSS_56h_Male_Elemental_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_56h_Male_Elemental_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_56h_Male_Elemental_HeroPower_03.ogg",
+			"Heropower_05": "VO_GILA_BOSS_56h_Male_Elemental_HeroPower_05.ogg",
+			"Heropower_07": "VO_GILA_BOSS_56h_Male_Elemental_HeroPower_07.ogg",
+			"Heropower_09": "VO_GILA_BOSS_56h_Male_Elemental_HeroPower_09.ogg",
+			"Heropower_10": "VO_GILA_BOSS_56h_Male_Elemental_HeroPower_10.ogg",
+			"Introalt_02": "VO_GILA_BOSS_56h_Male_Elemental_IntroALT_02.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_BOSS_56h.png",
 		"dbfId": 48940,
 		"health": 60,
 		"id": "GILA_BOSS_56h",
@@ -34011,6 +37715,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_56p.png",
 		"cost": 0,
 		"dbfId": 48941,
 		"id": "GILA_BOSS_56p",
@@ -34022,7 +37727,26 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Gimaldinov",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_57h_Male_Undead_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_57h_Male_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_57h_Male_Undead_EmoteResponse_01.ogg",
+			"Eventdesecrate_01": "VO_GILA_BOSS_57h_Male_Undead_EventDesecrate_01.ogg",
+			"Eventdesecrate_02": "VO_GILA_BOSS_57h_Male_Undead_EventDesecrate_02.ogg",
+			"Eventdesecrate_03": "VO_GILA_BOSS_57h_Male_Undead_EventDesecrate_03.ogg",
+			"Eventdesecrate_04": "VO_GILA_BOSS_57h_Male_Undead_EventDesecrate_04.ogg",
+			"Eventplayholybook_01": "VO_GILA_BOSS_57h_Male_Undead_EventPlayHolyBook_01.ogg",
+			"Eventshallowgraves_01": "VO_GILA_BOSS_57h_Male_Undead_EventShallowGraves_01.ogg",
+			"Eventshallowgraves_02": "VO_GILA_BOSS_57h_Male_Undead_EventShallowGraves_02.ogg",
+			"Eventshallowgraves_03": "VO_GILA_BOSS_57h_Male_Undead_EventShallowGraves_03.ogg",
+			"Heropower_01": "VO_GILA_BOSS_57h_Male_Undead_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_57h_Male_Undead_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_57h_Male_Undead_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_57h_Male_Undead_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_57h_Male_Undead_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GILA_BOSS_57h.png",
 		"dbfId": 48942,
 		"entourage": [
 			"GILA_BOSS_57t"
@@ -34037,6 +37761,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_57p.png",
 		"cost": 1,
 		"dbfId": 48943,
 		"id": "GILA_BOSS_57p",
@@ -34049,6 +37774,7 @@ var parseCardsText = {
 	{
 		"artist": "Gino Whitehall",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_57t.png",
 		"cost": 9,
 		"dbfId": 48944,
 		"id": "GILA_BOSS_57t",
@@ -34069,7 +37795,23 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_58h_Male_Giant_Death_01.ogg",
+			"Defeatplayer_02": "VO_GILA_BOSS_58h_Male_Giant_DefeatPlayer_02.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_58h_Male_Giant_EmoteResponse_01.ogg",
+			"Eventbigweapon_01": "VO_GILA_BOSS_58h_Male_Giant_EventBigWeapon_01.ogg",
+			"Eventminionreturn_01": "VO_GILA_BOSS_58h_Male_Giant_EventMinionReturn_01.ogg",
+			"Eventminionreturn_02": "VO_GILA_BOSS_58h_Male_Giant_EventMinionReturn_02.ogg",
+			"Eventminionreturn_03": "VO_GILA_BOSS_58h_Male_Giant_EventMinionReturn_03.ogg",
+			"Heropower_01": "VO_GILA_BOSS_58h_Male_Giant_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_58h_Male_Giant_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_58h_Male_Giant_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_58h_Male_Giant_HeroPower_04.ogg",
+			"Heropower_05": "VO_GILA_BOSS_58h_Male_Giant_HeroPower_05.ogg",
+			"Intro_01": "VO_GILA_BOSS_58h_Male_Giant_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
+		"cardImage": "GILA_BOSS_58h.png",
 		"dbfId": 48945,
 		"health": 40,
 		"id": "GILA_BOSS_58h",
@@ -34081,6 +37823,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_58p.png",
 		"cost": 4,
 		"dbfId": 48946,
 		"id": "GILA_BOSS_58p",
@@ -34092,7 +37835,24 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
+		"audio": {
+			"Death_02": "VO_GILA_BOSS_59h_Male_Undead_Death_02.ogg",
+			"Defeatplayer_02": "VO_GILA_BOSS_59h_Male_Undead_DefeatPlayer_02.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_59h_Male_Undead_EmoteResponse_01.ogg",
+			"Eventdeadlyshot_01": "VO_GILA_BOSS_59h_Male_Undead_EventDeadlyShot_01.ogg",
+			"Eventdeadlyshot_02": "VO_GILA_BOSS_59h_Male_Undead_EventDeadlyShot_02.ogg",
+			"Eventquickshot_01": "VO_GILA_BOSS_59h_Male_Undead_EventQuickShot_01.ogg",
+			"Eventquickshot_02": "VO_GILA_BOSS_59h_Male_Undead_EventQuickShot_02.ogg",
+			"Eventturn02_01": "VO_GILA_BOSS_59h_Male_Undead_EventTurn02_01.ogg",
+			"Heropowerkills_01": "VO_GILA_BOSS_59h_Male_Undead_HeroPowerKills_01.ogg",
+			"Heropowerkills_02": "VO_GILA_BOSS_59h_Male_Undead_HeroPowerKills_02.ogg",
+			"Heropowerkills_03": "VO_GILA_BOSS_59h_Male_Undead_HeroPowerKills_03.ogg",
+			"Heropowerkills_04": "VO_GILA_BOSS_59h_Male_Undead_HeroPowerKills_04.ogg",
+			"Heropowerkills_05": "VO_GILA_BOSS_59h_Male_Undead_HeroPowerKills_05.ogg",
+			"Introcrowley_01": "VO_GILA_BOSS_59h_Male_Undead_IntroCrowley_01.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GILA_BOSS_59h.png",
 		"dbfId": 48947,
 		"health": 60,
 		"id": "GILA_BOSS_59h",
@@ -34105,6 +37865,7 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_59p.png",
 		"cost": 1,
 		"dbfId": 48948,
 		"id": "GILA_BOSS_59p",
@@ -34116,7 +37877,26 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Ryman",
+		"audio": {
+			"Death_02": "VO_GILA_BOSS_60h_Male_HumanGhost_Death_02.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_60h_Male_HumanGhost_DefeatPlayer_01.ogg",
+			"Emoteresponsetess_01": "VO_GILA_BOSS_60h_Male_HumanGhost_EmoteResponseTess_01.ogg",
+			"Eventbigweapon_01": "VO_GILA_BOSS_60h_Male_HumanGhost_EventBigWeapon_01.ogg",
+			"Eventbigweapon_02": "VO_GILA_BOSS_60h_Male_HumanGhost_EventBigWeapon_02.ogg",
+			"Eventbigweapon_03": "VO_GILA_BOSS_60h_Male_HumanGhost_EventBigWeapon_03.ogg",
+			"Eventplayerkingsblade_01": "VO_GILA_BOSS_60h_Male_HumanGhost_EventPlayerKingsblade_01.ogg",
+			"Eventplaykingsblade_01": "VO_GILA_BOSS_60h_Male_HumanGhost_EventPlayKingsblade_01.ogg",
+			"Eventplaykingsblade_02": "VO_GILA_BOSS_60h_Male_HumanGhost_EventPlayKingsblade_02.ogg",
+			"Eventplaykragg_02": "VO_GILA_BOSS_60h_Male_HumanGhost_EventPlayKragg_02.ogg",
+			"Eventplaypatches_02": "VO_GILA_BOSS_60h_Male_HumanGhost_EventPlayPatches_02.ogg",
+			"Eventplaytuskarrraider_01": "VO_GILA_BOSS_60h_Male_HumanGhost_EventPlayTuskarrRaider_01.ogg",
+			"Eventturn2_01": "VO_GILA_BOSS_60h_Male_HumanGhost_EventTurn2_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_60h_Male_HumanGhost_HeroPower_01.ogg",
+			"Heropower_07": "VO_GILA_BOSS_60h_Male_HumanGhost_HeroPower_07.ogg",
+			"Introtess_01": "VO_GILA_BOSS_60h_Male_HumanGhost_IntroTess_01.ogg"
+		},
 		"cardClass": "ROGUE",
+		"cardImage": "GILA_BOSS_60h.png",
 		"dbfId": 48951,
 		"health": 75,
 		"id": "GILA_BOSS_60h",
@@ -34128,6 +37908,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_60p.png",
 		"cost": 0,
 		"dbfId": 48952,
 		"id": "GILA_BOSS_60p",
@@ -34143,7 +37924,13 @@ var parseCardsText = {
 	{
 		"artist": "Craig Elliott",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GILA_BOSS_60t_Female_Undead_Attack_02.ogg",
+			"Death_01": "VO_GILA_BOSS_60t_Female_Undead_Death_01.ogg",
+			"Play_03": "VO_GILA_BOSS_60t_Female_Undead_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_60t.png",
 		"cost": 2,
 		"dbfId": 48953,
 		"health": 1,
@@ -34160,7 +37947,54 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Alex Horley Orlandelli",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_61h_Female_Orc_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_61h_Female_Orc_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_61h_Female_Orc_EmoteResponse_01.ogg",
+			"Emoteresponsecrowley_01": "VO_GILA_BOSS_61h_Female_Orc_EmoteResponseCrowley_01.ogg",
+			"Emoteresponseshaw_01": "VO_GILA_BOSS_61h_Female_Orc_EmoteResponseShaw_01.ogg",
+			"Emoteresponsetess_01": "VO_GILA_BOSS_61h_Female_Orc_EmoteResponseTess_01.ogg",
+			"Emoteresponsetoki_01": "VO_GILA_BOSS_61h_Female_Orc_EmoteResponseToki_01.ogg",
+			"Eventcannonkill_01": "VO_GILA_BOSS_61h_Female_Orc_EventCannonKill_01.ogg",
+			"Eventcannonkill_02": "VO_GILA_BOSS_61h_Female_Orc_EventCannonKill_02.ogg",
+			"Eventcannonkill_03": "VO_GILA_BOSS_61h_Female_Orc_EventCannonKill_03.ogg",
+			"Eventcannonkill_04": "VO_GILA_BOSS_61h_Female_Orc_EventCannonKill_04.ogg",
+			"Eventcrowleyhagathalow_01": "VO_GILA_BOSS_61h_Female_Orc_EventCrowleyHagathaLow_01.ogg",
+			"Eventcrowleylow_01": "VO_GILA_BOSS_61h_Female_Orc_EventCrowleyLow_01.ogg",
+			"Eventcrowleyturn2_01": "VO_GILA_BOSS_61h_Female_Orc_EventCrowleyTurn2_01.ogg",
+			"Eventcrowleyturn4_01": "VO_GILA_BOSS_61h_Female_Orc_EventCrowleyTurn4_01.ogg",
+			"Eventshawhoundkill_01": "VO_GILA_BOSS_61h_Female_Orc_EventShawHoundKill_01.ogg",
+			"Eventshawhoundkill_02": "VO_GILA_BOSS_61h_Female_Orc_EventShawHoundKill_02.ogg",
+			"Eventshawlow_01": "VO_GILA_BOSS_61h_Female_Orc_EventShawLow_01.ogg",
+			"Eventshawturn2_01": "VO_GILA_BOSS_61h_Female_Orc_EventShawTurn2_01.ogg",
+			"Eventshawturn2_02": "VO_GILA_BOSS_61h_Female_Orc_EventShawTurn2_02.ogg",
+			"Eventshawturn4_01": "VO_GILA_BOSS_61h_Female_Orc_EventShawTurn4_01.ogg",
+			"Eventsummoncrowskin_01": "VO_GILA_BOSS_61h_Female_Orc_EventSummonCrowskin_01.ogg",
+			"Eventsummongodfrey_01": "VO_GILA_BOSS_61h_Female_Orc_EventSummonGodfrey_01.ogg",
+			"Eventtesshagathalow_01": "VO_GILA_BOSS_61h_Female_Orc_EventTessHagathaLow_01.ogg",
+			"Eventtesslow_01": "VO_GILA_BOSS_61h_Female_Orc_EventTessLow_01.ogg",
+			"Eventtessscavenges_01": "VO_GILA_BOSS_61h_Female_Orc_EventTessScavenges_01.ogg",
+			"Eventtessscavenges_02": "VO_GILA_BOSS_61h_Female_Orc_EventTessScavenges_02.ogg",
+			"Eventtessscavenges_03": "VO_GILA_BOSS_61h_Female_Orc_EventTessScavenges_03.ogg",
+			"Eventtessscavenges_04": "VO_GILA_BOSS_61h_Female_Orc_EventTessScavenges_04.ogg",
+			"Eventtessturn2_01": "VO_GILA_BOSS_61h_Female_Orc_EventTessTurn2_01.ogg",
+			"Eventtessturn4_01": "VO_GILA_BOSS_61h_Female_Orc_EventTessTurn4_01.ogg",
+			"Eventtokihagathalow_01": "VO_GILA_BOSS_61h_Female_Orc_EventTokiHagathaLow_01.ogg",
+			"Eventtokiheropower_01": "VO_GILA_BOSS_61h_Female_Orc_EventTokiHeroPower_01.ogg",
+			"Eventtokiheropower_03": "VO_GILA_BOSS_61h_Female_Orc_EventTokiHeroPower_03.ogg",
+			"Eventtokiheropower_04": "VO_GILA_BOSS_61h_Female_Orc_EventTokiHeroPower_04.ogg",
+			"Eventtokiheropower_05": "VO_GILA_BOSS_61h_Female_Orc_EventTokiHeroPower_05.ogg",
+			"Eventtokilow_01": "VO_GILA_BOSS_61h_Female_Orc_EventTokiLow_01.ogg",
+			"Eventtokiturn2_01": "VO_GILA_BOSS_61h_Female_Orc_EventTokiTurn2_01.ogg",
+			"Eventtokiturn4_01": "VO_GILA_BOSS_61h_Female_Orc_EventTokiTurn4_01.ogg",
+			"Intro_01": "VO_GILA_BOSS_61h_Female_Orc_Intro_01.ogg",
+			"Introcrowley_01": "VO_GILA_BOSS_61h_Female_Orc_IntroCrowley_01.ogg",
+			"Introshaw_01": "VO_GILA_BOSS_61h_Female_Orc_IntroShaw_01.ogg",
+			"Introtess_01": "VO_GILA_BOSS_61h_Female_Orc_IntroTess_01.ogg",
+			"Introtoki_01": "VO_GILA_BOSS_61h_Female_Orc_IntroToki_01.ogg"
+		},
 		"cardClass": "SHAMAN",
+		"cardImage": "GILA_BOSS_61h.png",
 		"dbfId": 48954,
 		"elite": true,
 		"health": 100,
@@ -34174,6 +38008,7 @@ var parseCardsText = {
 		"artist": "L Chanchai",
 		"attack": 3,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_61t.png",
 		"cost": 2,
 		"dbfId": 48958,
 		"durability": 4,
@@ -34190,6 +38025,7 @@ var parseCardsText = {
 	{
 		"artist": "Daria Tuzova",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_61t3.png",
 		"cost": 2,
 		"dbfId": 48957,
 		"id": "GILA_BOSS_61t3",
@@ -34211,7 +38047,14 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daren Bader",
+		"audio": {
+			"Gustavethegutripper_Death": "VO_GILA_BOSS_62h_GustaveTheGutRipper_Death.ogg",
+			"Gustavethegutripper_Emote": "VO_GILA_BOSS_62h_GustaveTheGutRipper_Emote.ogg",
+			"Gustavethegutripper_Intro": "VO_GILA_BOSS_62h_GustaveTheGutRipper_Intro.ogg",
+			"Gustavethegutripper_Playerdefeat": "VO_GILA_BOSS_62h_GustaveTheGutRipper_PlayerDefeat.ogg"
+		},
 		"cardClass": "HUNTER",
+		"cardImage": "GILA_BOSS_62h.png",
 		"dbfId": 48995,
 		"health": 50,
 		"id": "GILA_BOSS_62h",
@@ -34223,6 +38066,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_62p.png",
 		"cost": 1,
 		"dbfId": 48999,
 		"id": "GILA_BOSS_62p",
@@ -34237,7 +38081,17 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ursula Dorada",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_63h_Female_Harpy_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_63h_Female_Harpy_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_63h_Female_Harpy_EmoteResponse_01.ogg",
+			"Heropower_01": "VO_GILA_BOSS_63h_Female_Harpy_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_63h_Female_Harpy_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_63h_Female_Harpy_HeroPower_03.ogg",
+			"Intro_01": "VO_GILA_BOSS_63h_Female_Harpy_Intro_01.ogg"
+		},
 		"cardClass": "DRUID",
+		"cardImage": "GILA_BOSS_63h.png",
 		"dbfId": 48996,
 		"health": 40,
 		"id": "GILA_BOSS_63h",
@@ -34249,6 +38103,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_63p.png",
 		"cost": 2,
 		"dbfId": 49000,
 		"id": "GILA_BOSS_63p",
@@ -34260,7 +38115,25 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Anton Zemskov",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_64h_Male_Goblin_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_64h_Male_Goblin_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_64h_Male_Goblin_EmoteResponse_01.ogg",
+			"Evenplaycursedcurio_01": "VO_GILA_BOSS_64h_Male_Goblin_EvenPlayCursedCurio_01.ogg",
+			"Eventmctech_01": "VO_GILA_BOSS_64h_Male_Goblin_EventMCTech_01.ogg",
+			"Eventmindcontrol_01": "VO_GILA_BOSS_64h_Male_Goblin_EventMindControl_01.ogg",
+			"Heropowerhandbig_01": "VO_GILA_BOSS_64h_Male_Goblin_HeroPowerHandBig_01.ogg",
+			"Heropowerhandbig_03": "VO_GILA_BOSS_64h_Male_Goblin_HeroPowerHandBig_03.ogg",
+			"Heropowerhandempty_01": "VO_GILA_BOSS_64h_Male_Goblin_HeroPowerHandEmpty_01.ogg",
+			"Heropowerhandmedium_01": "VO_GILA_BOSS_64h_Male_Goblin_HeroPowerHandMedium_01.ogg",
+			"Heropowerhandmedium_02": "VO_GILA_BOSS_64h_Male_Goblin_HeroPowerHandMedium_02.ogg",
+			"Heropowerhandmedium_03": "VO_GILA_BOSS_64h_Male_Goblin_HeroPowerHandMedium_03.ogg",
+			"Heropowerhandsmall_01": "VO_GILA_BOSS_64h_Male_Goblin_HeroPowerHandSmall_01.ogg",
+			"Heropowerhandsmall_02": "VO_GILA_BOSS_64h_Male_Goblin_HeroPowerHandSmall_02.ogg",
+			"Intro_01": "VO_GILA_BOSS_64h_Male_Goblin_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GILA_BOSS_64h.png",
 		"dbfId": 48997,
 		"health": 40,
 		"id": "GILA_BOSS_64h",
@@ -34272,6 +38145,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_64p.png",
 		"cost": 2,
 		"dbfId": 49001,
 		"id": "GILA_BOSS_64p",
@@ -34284,6 +38158,7 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasber",
 		"cardClass": "HUNTER",
+		"cardImage": "GILA_BOSS_65h.png",
 		"dbfId": 48998,
 		"health": 10,
 		"id": "GILA_BOSS_65h",
@@ -34295,6 +38170,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_65p.png",
 		"cost": 0,
 		"dbfId": 49002,
 		"id": "GILA_BOSS_65p",
@@ -34306,7 +38182,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Peter Stapleton",
+		"audio": {
+			"Death_02": "VO_GILA_BOSS_66h_Female_Undead_Death_02.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_66h_Female_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_02": "VO_GILA_BOSS_66h_Female_Undead_EmoteResponse_02.ogg",
+			"Eventplayhorn_02": "VO_GILA_BOSS_66h_Female_Undead_EventPlayHorn_02.ogg",
+			"Heropower_01": "VO_GILA_BOSS_66h_Female_Undead_HeroPower_01.ogg",
+			"Heropower_02": "VO_GILA_BOSS_66h_Female_Undead_HeroPower_02.ogg",
+			"Heropower_03": "VO_GILA_BOSS_66h_Female_Undead_HeroPower_03.ogg",
+			"Heropower_04": "VO_GILA_BOSS_66h_Female_Undead_HeroPower_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_66h_Female_Undead_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
+		"cardImage": "GILA_BOSS_66h.png",
 		"dbfId": 49210,
 		"health": 25,
 		"id": "GILA_BOSS_66h",
@@ -34318,6 +38206,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_66p.png",
 		"cost": 1,
 		"dbfId": 49209,
 		"id": "GILA_BOSS_66p",
@@ -34339,7 +38228,18 @@ var parseCardsText = {
 	},
 	{
 		"artist": "J. Axer",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_67h_Male_Undead_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_67h_Male_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_67h_Male_Undead_EmoteResponse_01.ogg",
+			"Eventplayrat_01": "VO_GILA_BOSS_67h_Male_Undead_EventPlayRat_01.ogg",
+			"Eventplayrat_02": "VO_GILA_BOSS_67h_Male_Undead_EventPlayRat_02.ogg",
+			"Eventplayrat_03": "VO_GILA_BOSS_67h_Male_Undead_EventPlayRat_03.ogg",
+			"Eventplayrattrap_01": "VO_GILA_BOSS_67h_Male_Undead_EventPlayRatTrap_01.ogg",
+			"Intro_01": "VO_GILA_BOSS_67h_Male_Undead_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_67h.png",
 		"dbfId": 49353,
 		"health": 40,
 		"id": "GILA_BOSS_67h",
@@ -34351,6 +38251,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_67p.png",
 		"cost": 0,
 		"dbfId": 49352,
 		"id": "GILA_BOSS_67p",
@@ -34372,7 +38273,18 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Azevedo",
+		"audio": {
+			"Death_01": "VO_GILA_BOSS_68h_Male_Undead_Death_01.ogg",
+			"Defeatplayer_01": "VO_GILA_BOSS_68h_Male_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_GILA_BOSS_68h_Male_Undead_EmoteResponse_01.ogg",
+			"Eventplaypoison_01": "VO_GILA_BOSS_68h_Male_Undead_EventPlayPoison_01.ogg",
+			"Eventplaypoison_02": "VO_GILA_BOSS_68h_Male_Undead_EventPlayPoison_02.ogg",
+			"Eventplaypoison_03": "VO_GILA_BOSS_68h_Male_Undead_EventPlayPoison_03.ogg",
+			"Eventplaypoison_04": "VO_GILA_BOSS_68h_Male_Undead_EventPlayPoison_04.ogg",
+			"Intro_01": "VO_GILA_BOSS_68h_Male_Undead_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
+		"cardImage": "GILA_BOSS_68h.png",
 		"dbfId": 49682,
 		"entourage": [
 			"GILA_BOSS_68t"
@@ -34387,6 +38299,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_68p.png",
 		"cost": 2,
 		"dbfId": 49683,
 		"id": "GILA_BOSS_68p",
@@ -34400,6 +38313,7 @@ var parseCardsText = {
 		"artist": "Andrew Hou",
 		"attack": 3,
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_68t.png",
 		"cost": 4,
 		"dbfId": 49686,
 		"health": 7,
@@ -34414,6 +38328,7 @@ var parseCardsText = {
 	{
 		"artist": "Vlad Botos",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_99t.png",
 		"cost": 2,
 		"dbfId": 48819,
 		"id": "GILA_BOSS_99t",
@@ -34426,6 +38341,7 @@ var parseCardsText = {
 	{
 		"artist": "Vlad Botos",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_99t2.png",
 		"cost": 2,
 		"dbfId": 48820,
 		"id": "GILA_BOSS_99t2",
@@ -34438,6 +38354,7 @@ var parseCardsText = {
 	{
 		"artist": "Vlad Botos",
 		"cardClass": "NEUTRAL",
+		"cardImage": "GILA_BOSS_99t3.png",
 		"cost": 2,
 		"dbfId": 48821,
 		"id": "GILA_BOSS_99t3",
@@ -35010,6 +38927,11 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_002_Attack_02.ogg",
+			"Death_03": "VO_GVG_002_Death_03.ogg",
+			"Play_01": "VO_GVG_002_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "GVG_002.png",
 		"collectible": true,
@@ -35050,6 +38972,11 @@ var parseCardsText = {
 	{
 		"artist": "Glenn Rane",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GVG_004_Attack_02.ogg",
+			"Death_03": "VO_GVG_004_Death_03.ogg",
+			"Play_01": "VO_GVG_004_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "GVG_004.png",
 		"collectible": true,
@@ -35089,6 +39016,11 @@ var parseCardsText = {
 	{
 		"artist": "Phil Saunders",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_006_Attack_02.ogg",
+			"Death_03": "VO_GVG_006_Death_03.ogg",
+			"Play_01": "VO_GVG_006_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_006.png",
 		"collectible": true,
@@ -35112,6 +39044,12 @@ var parseCardsText = {
 	{
 		"artist": "Aleksi Briclot",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_GVG_007_Attack_02.ogg",
+			"Death_03": "VO_GVG_007_Death_03.ogg",
+			"Play_01": "VO_GVG_007_Play_01.ogg",
+			"Trigger_04": "VO_GVG_007_Trigger_04.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "GVG_007.png",
 		"collectible": true,
@@ -35153,6 +39091,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"01_Alt": "VO_GVG_009_Play_01_ALT.ogg",
+			"Attack_02": "VO_GVG_009_Attack_02.ogg",
+			"Death_03": "VO_GVG_009_Death_03.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "GVG_009.png",
 		"collectible": true,
@@ -35206,6 +39149,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
+		"audio": {
+			"Alt_03": "VO_GVG_011_Attack_Alt_03.ogg",
+			"Death_04": "VO_GVG_011_Death_04.ogg",
+			"Play_01": "VO_GVG_011_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "GVG_011.png",
 		"collectible": true,
@@ -35281,6 +39229,12 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GVG_014_Attack_02.ogg",
+			"Death_04": "VO_GVG_014_Death_04.ogg",
+			"Play_01": "VO_GVG_014_Play_01.ogg",
+			"Special_03": "VO_GVG_014_Play_Special_03.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "GVG_014.png",
 		"collectible": true,
@@ -35369,6 +39323,11 @@ var parseCardsText = {
 	{
 		"artist": "Carl Critchlow",
 		"attack": 1,
+		"audio": {
+			"02_Alt": "VO_GVG_018_Attack_02_Alt.ogg",
+			"Death_03": "VO_GVG_018_Death_03.ogg",
+			"Play_01": "VO_GVG_018_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "GVG_018.png",
 		"collectible": true,
@@ -35440,6 +39399,11 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 9,
+		"audio": {
+			"Attack_02": "VO_GVG_021_Attack_02.ogg",
+			"Death_04": "VO_GVG_021_Death_04.ogg",
+			"Play_01": "VO_GVG_021_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "GVG_021.png",
 		"collectible": true,
@@ -35576,6 +39540,11 @@ var parseCardsText = {
 	{
 		"artist": "Danny Beck",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GVG_025_Attack_02.ogg",
+			"Death_03": "VO_GVG_025_Death_03.ogg",
+			"Play_01": "VO_GVG_025_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "GVG_025.png",
 		"collectible": true,
@@ -35619,6 +39588,11 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 2,
+		"audio": {
+			"01_Alt": "VO_GVG_027_Play_01_ALT.ogg",
+			"Attack_02": "VO_GVG_027_Attack_02.ogg",
+			"Death_03": "VO_GVG_027_Death_03.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "GVG_027.png",
 		"collectible": true,
@@ -35650,6 +39624,12 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GVG_028_Attack_02.ogg",
+			"Death_04": "VO_GVG_028_Death_04.ogg",
+			"Play_01": "VO_GVG_028_Play_01.ogg",
+			"Trigger_03": "VO_GVG_028_Trigger_03.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "GVG_028.png",
 		"collectible": true,
@@ -35789,6 +39769,11 @@ var parseCardsText = {
 	{
 		"artist": "Chris Rahn",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_032_Attack_02.ogg",
+			"Death_03": "VO_GVG_032_Death_03.ogg",
+			"Play_01": "VO_GVG_032_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "GVG_032.png",
 		"collectible": true,
@@ -35883,6 +39868,12 @@ var parseCardsText = {
 	{
 		"artist": "Oliver Chipping",
 		"attack": 9,
+		"audio": {
+			"Attack_02": "VO_GVG_035_Attack_02.ogg",
+			"Death_04": "VO_GVG_035_Death_04.ogg",
+			"Play_01": "VO_GVG_035_Play_01.ogg",
+			"Trigger_03": "VO_GVG_035_Trigger_03.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "GVG_035.png",
 		"collectible": true,
@@ -35940,6 +39931,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_037_Attack_02.ogg",
+			"Death_03": "VO_GVG_037_Death_03.ogg",
+			"Play_01": "VO_GVG_037_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "GVG_037.png",
 		"collectible": true,
@@ -36088,6 +40084,11 @@ var parseCardsText = {
 	{
 		"artist": "Ruan Jia",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_GVG_042_Attack_02.ogg",
+			"Death_03": "VO_GVG_042_Death_03.ogg",
+			"Play_01": "VO_GVG_042_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "GVG_042.png",
 		"collectible": true,
@@ -36336,6 +40337,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyler Walpole",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GVG_051_Attack_02.ogg",
+			"Death_03": "VO_GVG_051_Death_03.ogg",
+			"Play_01": "VO_GVG_051_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "GVG_051.png",
 		"collectible": true,
@@ -36387,6 +40393,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GVG_053_Attack_02.ogg",
+			"Death_03": "VO_GVG_053_Death_03.ogg",
+			"Play_01": "VO_GVG_053_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "GVG_053.png",
 		"collectible": true,
@@ -36428,6 +40439,11 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_055_Attack_02.ogg",
+			"Death_03": "VO_GVG_055_Death_03.ogg",
+			"Play_01": "VO_GVG_055_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "GVG_055.png",
 		"collectible": true,
@@ -36535,6 +40551,11 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_058_Attack_02.ogg",
+			"Death_03": "VO_GVG_058_Death_03.ogg",
+			"Play_01": "VO_GVG_058_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "GVG_058.png",
 		"collectible": true,
@@ -36584,6 +40605,11 @@ var parseCardsText = {
 	{
 		"artist": "Phroilan Gardner",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_060_Attack_02.ogg",
+			"Death_03": "VO_GVG_060_Death_03.ogg",
+			"Play_01": "VO_GVG_060_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "GVG_060.png",
 		"collectible": true,
@@ -36634,6 +40660,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GVG_062_Attack_02.ogg",
+			"Death_03": "VO_GVG_062_Death_03.ogg",
+			"Play_01": "VO_GVG_062_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "GVG_062.png",
 		"collectible": true,
@@ -36657,6 +40688,12 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GVG_063_Attack_02.ogg",
+			"Death_04": "VO_GVG_063_Death_04.ogg",
+			"Play_01": "VO_GVG_063_Play_01.ogg",
+			"Special_03": "VO_GVG_063_Play_Special_03.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "GVG_063.png",
 		"collectible": true,
@@ -36707,6 +40744,12 @@ var parseCardsText = {
 	{
 		"artist": "Vinod Rams",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GVG_065_Attack_02.ogg",
+			"Death_04": "VO_GVG_065_Death_04.ogg",
+			"Play_01": "VO_GVG_065_Play_01.ogg",
+			"Trigger_03": "VO_GVG_065_Trigger_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_065.png",
 		"collectible": true,
@@ -36729,6 +40772,12 @@ var parseCardsText = {
 	{
 		"artist": "José Ladrönn",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GVG_066_Attack_02.ogg",
+			"Death_04": "VO_GVG_066_Death_04.ogg",
+			"Play_01": "VO_GVG_066_Play_01.ogg",
+			"Trigger_03": "VO_GVG_066_Trigger_03.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "GVG_066.png",
 		"collectible": true,
@@ -36754,6 +40803,11 @@ var parseCardsText = {
 	{
 		"artist": "Peet Cooper",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_067_Attack_02.ogg",
+			"Death_03": "VO_GVG_067_Death_03.ogg",
+			"Play_01": "VO_GVG_067_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_067.png",
 		"collectible": true,
@@ -36787,6 +40841,11 @@ var parseCardsText = {
 	{
 		"artist": "Aleksi Briclot",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_068_Attack_02.ogg",
+			"Death_03": "VO_GVG_068_Death_03.ogg",
+			"Play_01": "VO_GVG_068_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_068.png",
 		"collectible": true,
@@ -36820,6 +40879,11 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_069_Attack_02.ogg",
+			"Death_03": "VO_GVG_069_Death_03.ogg",
+			"Play_01": "VO_GVG_069_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_069.png",
 		"collectible": true,
@@ -36854,6 +40918,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_GVG_070_Attack_02.ogg",
+			"Death_03": "VO_GVG_070_Death_03.ogg",
+			"Play_01": "VO_GVG_070_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_070.png",
 		"collectible": true,
@@ -36892,6 +40961,11 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_072_Attack_02.ogg",
+			"Death_04": "VO_GVG_072_Death_04.ogg",
+			"Play_01": "VO_GVG_072_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "GVG_072.png",
 		"collectible": true,
@@ -36929,6 +41003,11 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GVG_074_Attack_02.ogg",
+			"Death_03": "VO_GVG_074_Death_03.ogg",
+			"Play_01": "VO_GVG_074_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_074.png",
 		"collectible": true,
@@ -37082,6 +41161,11 @@ var parseCardsText = {
 	{
 		"artist": "Brandon Kitkouski",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GVG_080_Attack_02.ogg",
+			"Death_03": "VO_GVG_080_Death_03.ogg",
+			"Play_01": "VO_GVG_080_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "GVG_080.png",
 		"collectible": true,
@@ -37120,6 +41204,11 @@ var parseCardsText = {
 	{
 		"artist": "Seamus Gallagher",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_081_Attack_02.ogg",
+			"Death_03": "VO_GVG_081_Death_03.ogg",
+			"Play_01": "VO_GVG_081_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_081.png",
 		"collectible": true,
@@ -37142,6 +41231,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_082_Attack_02.ogg",
+			"Death_03": "VO_GVG_082_Death_03.ogg",
+			"Play_01": "VO_GVG_082_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_082.png",
 		"collectible": true,
@@ -37174,6 +41268,11 @@ var parseCardsText = {
 	{
 		"artist": "Nutchapol Thitinunthakorn",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GVG_083_Attack_02.ogg",
+			"Death_03": "VO_GVG_083_Death_03.ogg",
+			"Play_01": "VO_GVG_083_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "GVG_083.png",
 		"collectible": true,
@@ -37197,6 +41296,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GVG_084_Attack_02.ogg",
+			"Death_03": "VO_GVG_084_Death_03.ogg",
+			"Play_01": "VO_GVG_084_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_084.png",
 		"collectible": true,
@@ -37220,6 +41324,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"02_Alt": "VO_GVG_085_Attack_02_ALT.ogg",
+			"Death_03": "VO_GVG_085_Death_03.ogg",
+			"Play_01": "VO_GVG_085_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_085.png",
 		"collectible": true,
@@ -37275,6 +41384,11 @@ var parseCardsText = {
 	{
 		"artist": "Jun Kang",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_087_Attack_02.ogg",
+			"Death_03": "VO_GVG_087_Death_03.ogg",
+			"Play_01": "VO_GVG_087_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "GVG_087.png",
 		"collectible": true,
@@ -37294,6 +41408,12 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GVG_088_Attack_02.ogg",
+			"Death_03": "VO_GVG_088_Death_03.ogg",
+			"Play_01": "VO_GVG_088_Play_01.ogg",
+			"Trigger_01": "VO_GVG_088_Trigger_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "GVG_088.png",
 		"collectible": true,
@@ -37317,6 +41437,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_089_Attack_02.ogg",
+			"Death_03": "VO_GVG_089_Death_03.ogg",
+			"Play_01": "VO_GVG_089_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_089.png",
 		"collectible": true,
@@ -37339,6 +41464,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GVG_090_Attack_02.ogg",
+			"Death_03": "VO_GVG_090_Death_03.ogg",
+			"Play_01": "VO_GVG_090_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_090.png",
 		"collectible": true,
@@ -37361,6 +41491,11 @@ var parseCardsText = {
 	{
 		"artist": "Zero Yue",
 		"attack": 2,
+		"audio": {
+			"02_Alt": "VO_GVG_091_Attack_02_ALT.ogg",
+			"Death_03": "VO_GVG_091_Death_03.ogg",
+			"Play_01": "VO_GVG_091_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_091.png",
 		"collectible": true,
@@ -37386,6 +41521,12 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_092_Attack_02.ogg",
+			"Death_04": "VO_GVG_092_Death_04.ogg",
+			"Play_01": "VO_GVG_092_Play_01.ogg",
+			"Trigger_03": "VO_GVG_092_Trigger_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_092.png",
 		"collectible": true,
@@ -37446,6 +41587,12 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GVG_094_Attack_02.ogg",
+			"Death_04": "VO_GVG_094_Death_04.ogg",
+			"Play_01": "VO_GVG_094_Play_01.ogg",
+			"Trigger_03": "VO_GVG_094_Trigger_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_094.png",
 		"collectible": true,
@@ -37466,6 +41613,11 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_095_Attack_02.ogg",
+			"Death_03": "VO_GVG_095_Death_03.ogg",
+			"Play_01": "VO_GVG_095_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_095.png",
 		"collectible": true,
@@ -37511,6 +41663,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_097_Attack_02.ogg",
+			"Death_03": "VO_GVG_097_Death_03.ogg",
+			"Play_01": "VO_GVG_097_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_097.png",
 		"collectible": true,
@@ -37537,6 +41694,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GVG_098_Attack_02.ogg",
+			"Death_03": "VO_GVG_098_Death_03.ogg",
+			"Play_01": "VO_GVG_098_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_098.png",
 		"collectible": true,
@@ -37560,6 +41722,11 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_099_Attack_02.ogg",
+			"Death_03": "VO_GVG_099_Death_03.ogg",
+			"Play_01": "VO_GVG_099_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_099.png",
 		"collectible": true,
@@ -37582,6 +41749,12 @@ var parseCardsText = {
 	{
 		"artist": "Todd Lockwood",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GVG_100_Attack_02.ogg",
+			"Death_04": "VO_GVG_100_Death_04.ogg",
+			"Play_01": "VO_GVG_100_Play_01.ogg",
+			"Trigger_03": "VO_GVG_100_Trigger_03.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "GVG_100.png",
 		"collectible": true,
@@ -37613,6 +41786,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GVG_101_Attack_02.ogg",
+			"Death_03": "VO_GVG_101_Death_03.ogg",
+			"Play_01": "VO_GVG_101_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "GVG_101.png",
 		"collectible": true,
@@ -37649,6 +41827,11 @@ var parseCardsText = {
 	{
 		"artist": "Gabor Szikszai",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_102_Attack_02.ogg",
+			"Death_03": "VO_GVG_102_Death_03.ogg",
+			"Play_01": "VO_GVG_102_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_102.png",
 		"collectible": true,
@@ -37691,6 +41874,11 @@ var parseCardsText = {
 	{
 		"artist": "Skan Srisuwan",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GVG_103_Attack_02.ogg",
+			"Death_03": "VO_GVG_103_Death_03.ogg",
+			"Play_01": "VO_GVG_103_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_103.png",
 		"collectible": true,
@@ -37711,6 +41899,11 @@ var parseCardsText = {
 	{
 		"artist": "Laurel D. Austin",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_104_Attack_02.ogg",
+			"Death_03": "VO_GVG_104_Death_03.ogg",
+			"Play_01": "VO_GVG_104_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_104.png",
 		"collectible": true,
@@ -37764,6 +41957,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_GVG_106_Attack_02.ogg",
+			"Death_03": "VO_GVG_106_Death_03.ogg",
+			"Play_01": "VO_GVG_106_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_106.png",
 		"collectible": true,
@@ -37795,6 +41993,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_107_Attack_02.ogg",
+			"Death_03": "VO_GVG_107_Death_03.ogg",
+			"Play_01": "VO_GVG_107_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_107.png",
 		"collectible": true,
@@ -37823,6 +42026,11 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_108_Attack_02.ogg",
+			"Death_03": "VO_GVG_108_Death_03.ogg",
+			"Play_01": "VO_GVG_108_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_108.png",
 		"collectible": true,
@@ -37845,6 +42053,11 @@ var parseCardsText = {
 	{
 		"artist": "Ben Olson",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GVG_109_Attack_02.ogg",
+			"Death_03": "VO_GVG_109_Death_03.ogg",
+			"Play_01": "VO_GVG_109_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_109.png",
 		"collectible": true,
@@ -37911,6 +42124,15 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_GVG_111_Attack_02.ogg",
+			"Attack_06": "VO_GVG_111t_Attack_06.ogg",
+			"Death_03": "VO_GVG_111_Death_03.ogg",
+			"Death_07": "VO_GVG_111t_Death_07.ogg",
+			"Play_01": "VO_GVG_111_Play_01.ogg",
+			"Play_05": "VO_GVG_111t_Play_05.ogg",
+			"Trigger_04": "VO_GVG_111_Trigger_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_111.png",
 		"collectible": true,
@@ -37953,6 +42175,12 @@ var parseCardsText = {
 	{
 		"artist": "Michal Ivan",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_GVG_112_Attack_02.ogg",
+			"Death_04": "VO_GVG_112_Death_04.ogg",
+			"Play_01": "VO_GVG_112_Play_01.ogg",
+			"Trigger_03": "VO_GVG_112_Trigger_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_112.png",
 		"collectible": true,
@@ -37973,6 +42201,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GVG_113_Attack_02.ogg",
+			"Death_03": "VO_GVG_113_Death_03.ogg",
+			"Play_01": "VO_GVG_113_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_113.png",
 		"collectible": true,
@@ -38018,6 +42251,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan & Gabor",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_GVG_115_Attack_02.ogg",
+			"Death_03": "VO_GVG_115_Death_03.ogg",
+			"Play_01": "VO_GVG_115_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_115.png",
 		"collectible": true,
@@ -38051,6 +42289,11 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 9,
+		"audio": {
+			"Attack_02": "VO_GVG_116_Attack_02.ogg",
+			"Death_03": "VO_GVG_116_Death_03.ogg",
+			"Play_01": "VO_GVG_116_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_116.png",
 		"collectible": true,
@@ -38072,6 +42315,11 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_GVG_117_Attack_02.ogg",
+			"Death_03": "VO_GVG_117_Death_03.ogg",
+			"Play_01": "VO_GVG_117_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_117.png",
 		"collectible": true,
@@ -38092,6 +42340,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GVG_118_Attack_02.ogg",
+			"Death_03": "VO_GVG_118_Death_03.ogg",
+			"Play_01": "VO_GVG_118_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_118.png",
 		"collectible": true,
@@ -38112,6 +42365,11 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 3,
+		"audio": {
+			"01_Alt": "VO_GVG_119_Play_01_ALT.ogg",
+			"Attack_02": "VO_GVG_119_Attack_02.ogg",
+			"Death_03": "VO_GVG_119_Death_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_119.png",
 		"collectible": true,
@@ -38136,6 +42394,11 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_GVG_120_Attack_02.ogg",
+			"Death_03": "VO_GVG_120_Death_03.ogg",
+			"Play_01": "VO_GVG_120_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "GVG_120.png",
 		"collectible": true,
@@ -38179,6 +42442,11 @@ var parseCardsText = {
 	{
 		"artist": "Jonboy Meyers",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_GVG_122_Attack_02.ogg",
+			"Death_03": "VO_GVG_122_Death_03.ogg",
+			"Play_01": "VO_GVG_122_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "GVG_122.png",
 		"collectible": true,
@@ -38238,6 +42506,49 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"audio": {
+			"05_Alt": "VO_HERO_01_Thanks_05_ALT.ogg",
+			"06_Alt": "VO_HERO_01_Sorry_06_ALT.ogg",
+			"Attack_16": "VO_HERO_01_Attack_16.ogg",
+			"Concede_07": "VO_HERO_01_Concede_07.ogg",
+			"Day_33": "VO_HERO_01_PIRATE_DAY_33.ogg",
+			"Death_17": "VO_HERO_01_Death_17.ogg",
+			"Error01_20": "VO_HERO_01_ERROR01_20.ogg",
+			"Error02_21": "VO_HERO_01_ERROR02_21.ogg",
+			"Error03_22": "VO_HERO_01_ERROR03_22.ogg",
+			"Error04_23": "VO_HERO_01_ERROR04_23.ogg",
+			"Error05_24": "VO_HERO_01_ERROR05_24.ogg",
+			"Error06_25": "VO_HERO_01_ERROR06_25.ogg",
+			"Error07_26": "VO_HERO_01_ERROR07_26.ogg",
+			"Error08_27": "VO_HERO_01_ERROR08_27.ogg",
+			"Error09_28": "VO_HERO_01_ERROR09_28.ogg",
+			"Error10_29": "VO_HERO_01_ERROR10_29.ogg",
+			"Error11_20": "VO_HERO_01_ERROR11_20.ogg",
+			"Error12_31": "VO_HERO_01_ERROR12_31.ogg",
+			"Festival_32": "VO_HERO_01_FIRE_FESTIVAL_32.ogg",
+			"Greetings_01": "VO_HERO_01_MIRROR_GREETINGS_01.ogg",
+			"Halloween_04": "VO_HERO_01_HAPPY_HALLOWEEN_04.ogg",
+			"Holidays_05": "VO_HERO_01_HAPPY_HOLIDAYS_05.ogg",
+			"Lowcards_18": "VO_HERO_01_LowCards_18.ogg",
+			"Lunar_16": "VO_HERO_01_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Noblegarden_17": "VO_HERO_01_HAPPY_NOBLEGARDEN_17.ogg",
+			"Nocards_19": "VO_HERO_01_NoCards_19.ogg",
+			"Oops_03": "VO_HERO_01_Oops_03.ogg",
+			"Picked_08": "VO_HERO_01_Picked_08.ogg",
+			"Sorry_06": "VO_HERO_01_Sorry_06.ogg",
+			"Start_02": "VO_HERO_01_MIRROR_START_02.ogg",
+			"Start_09": "VO_HERO_01_Start_09.ogg",
+			"Thanks_05": "VO_HERO_01_Thanks_05.ogg",
+			"Thinking1_12": "VO_HERO_01_Thinking1_12.ogg",
+			"Thinking2_13": "VO_HERO_01_Thinking2_13.ogg",
+			"Thinking3_14": "VO_HERO_01_Thinking3_14.ogg",
+			"Threaten_04": "VO_HERO_01_Threaten_04.ogg",
+			"Time_11": "VO_HERO_01_Time_11.ogg",
+			"Weapon_10": "VO_HERO_01_Weapon_10.ogg",
+			"Well played_02": "VO_HERO_01_Well Played_02.ogg",
+			"Wow_11": "VO_HERO_01_WOW_11.ogg",
+			"Year_06": "VO_HERO_01_HAPPY_NEW_YEAR_06.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "HERO_01.png",
 		"collectible": true,
@@ -38266,6 +42577,19 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"12_Alt": "VO_HERO_02_WOW_12_ALT.ogg",
+			"Alt_03": "VO_HERO_02_MIRROR_START_ALT_03.ogg",
+			"Day_34": "VO_HERO_02_PIRATE_DAY_34.ogg",
+			"Error11_21": "VO_HERO_02_ERROR11_21.ogg",
+			"Festival_33": "VO_HERO_02_FIRE_FESTIVAL_33.ogg",
+			"Greetings_01": "VO_HERO_02_MIRROR_GREETINGS_01.ogg",
+			"Halloween_05": "VO_HERO_02_HAPPY_HALLOWEEN_05.ogg",
+			"Holidays_06": "VO_HERO_02_HAPPY_HOLIDAYS_06.ogg",
+			"Lunar_16": "VO_HERO_02_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Noblegarden_18": "VO_HERO_02_HAPPY_NOBLEGARDEN_18.ogg",
+			"Year_07": "VO_HERO_02_HAPPY_NEW_YEAR_07.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "HERO_02.png",
 		"collectible": true,
@@ -38294,6 +42618,84 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"Attack_15": "VO_HERO_03a_Attack_15.ogg",
+			"Attack_16": "VO_HERO_03_Attack_16.ogg",
+			"Attacked_21": "VO_HERO_03a_ERROR_MINION_ATTACKED_21.ogg",
+			"Attacked_22": "VO_HERO_03a_ERROR_I_ATTACKED_22.ogg",
+			"Cards_17": "VO_HERO_03a_LOW_CARDS_17.ogg",
+			"Cards_18": "VO_HERO_03a_NO_CARDS_18.ogg",
+			"Concede_06": "VO_HERO_03a_CONCEDE_06.ogg",
+			"Concede_07": "VO_HERO_03_Concede_07.ogg",
+			"Day_33": "VO_HERO_03_PIRATE_DAY_33.ogg",
+			"Day_60": "VO_HERO_03a_PIRATE_DAY_60.ogg",
+			"Death_17": "VO_HERO_03_Death_17.ogg",
+			"Death_63": "VO_HERO_03a_DEATH_63.ogg",
+			"Error01_20": "VO_HERO_03_ERROR01_20.ogg",
+			"Error02_21": "VO_HERO_03_ERROR02_21.ogg",
+			"Error03_22": "VO_HERO_03_ERROR03_22.ogg",
+			"Error04_23": "VO_HERO_03_ERROR04_23.ogg",
+			"Error05_24": "VO_HERO_03_ERROR05_24.ogg",
+			"Error06_25": "VO_HERO_03_ERROR06_25.ogg",
+			"Error07_26": "VO_HERO_03_ERROR07_26.ogg",
+			"Error08_27": "VO_HERO_03_ERROR08_27.ogg",
+			"Error09_28": "VO_HERO_03_ERROR09_28.ogg",
+			"Error10_29": "VO_HERO_03_ERROR10_29.ogg",
+			"Error11_20": "VO_HERO_03_ERROR11_20.ogg",
+			"Error12_31": "VO_HERO_03_ERROR12_31.ogg",
+			"Festival_32": "VO_HERO_03_FIRE_FESTIVAL_32.ogg",
+			"Festival_59": "VO_HERO_03a_FIRE_FESTIVAL_59.ogg",
+			"Full_24": "VO_HERO_03a_ERROR_HAND_FULL_24.ogg",
+			"Generic_30": "VO_HERO_03a_ERROR_GENERIC_30.ogg",
+			"Greetings_01": "VO_HERO_03_MIRROR_GREETINGS_01.ogg",
+			"Greetings_03": "VO_HERO_03a_GREETINGS_03.ogg",
+			"Greetings_04": "VO_HERO_03a_MIRROR_GREETINGS_04.ogg",
+			"Halloween_04": "VO_HERO_03_HAPPY_HALLOWEEN_04.ogg",
+			"Halloween_51": "VO_HERO_03a_HAPPY_HALLOWEEN_51.ogg",
+			"Holidays_05": "VO_HERO_03_HAPPY_HOLIDAYS_05.ogg",
+			"Holidays_52": "VO_HERO_03a_HAPPY_HOLIDAYS_52.ogg",
+			"Lowcards_18": "VO_HERO_03_LowCards_18.ogg",
+			"Lunar_16": "VO_HERO_03_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Mana_20": "VO_HERO_03a_ERROR_NEED_MANA_20.ogg",
+			"Minions_25": "VO_HERO_03a_ERROR_FULL_MINIONS_25.ogg",
+			"Noblegarden_17": "VO_HERO_03_HAPPY_NOBLEGARDEN_17.ogg",
+			"Noblegarden_54": "VO_HERO_03a_HAPPY_NOBLEGARDEN_54.ogg",
+			"Nocards_19": "VO_HERO_03_NoCards_19.ogg",
+			"Oops_03": "VO_HERO_03_Oops_03.ogg",
+			"Oops_08": "VO_HERO_03a_OOPS_08.ogg",
+			"Picked_08": "VO_HERO_03_Picked_08.ogg",
+			"Picked_11": "VO_HERO_03a_PICKED_11.ogg",
+			"Play_27": "VO_HERO_03a_ERROR_PLAY_27.ogg",
+			"Played_07": "VO_HERO_03a_WELL_PLAYED_07.ogg",
+			"Played_23": "VO_HERO_03a_ERROR_JUST_PLAYED_23.ogg",
+			"Sorry_06": "VO_HERO_03_Sorry_06.ogg",
+			"Sorry_10": "VO_HERO_03a_SORRY_10.ogg",
+			"Start_01": "VO_HERO_03a_START_01.ogg",
+			"Start_02": "VO_HERO_03_MIRROR_START_02.ogg",
+			"Start_09": "VO_HERO_03_Start_09.ogg",
+			"Stealth_26": "VO_HERO_03a_ERROR_STEALTH_26.ogg",
+			"Target_28": "VO_HERO_03a_ERROR_TARGET_28.ogg",
+			"Taunt_29": "VO_HERO_03a_ERROR_TAUNT_29.ogg",
+			"Thanks_05": "VO_HERO_03_Thanks_05.ogg",
+			"Thanks_09": "VO_HERO_03a_THANKS_09.ogg",
+			"Think1_12": "VO_HERO_03a_THINK1_12.ogg",
+			"Think2_13": "VO_HERO_03a_THINK2_13.ogg",
+			"Think3_14": "VO_HERO_03a_THINK3_14.ogg",
+			"Thinking1_12": "VO_HERO_03_Thinking1_12.ogg",
+			"Thinking2_13": "VO_HERO_03_Thinking2_13.ogg",
+			"Thinking3_14": "VO_HERO_03_Thinking3_14.ogg",
+			"Threaten_04": "VO_HERO_03_Threaten_04.ogg",
+			"Threaten_05": "VO_HERO_03a_THREATEN_05.ogg",
+			"Time_11": "VO_HERO_03_Time_11.ogg",
+			"Timer_16": "VO_HERO_03a_TIMER_16.ogg",
+			"Weapon_10": "VO_HERO_03_Weapon_10.ogg",
+			"Weapon_19": "VO_HERO_03a_ERROR_NEED_WEAPON_19.ogg",
+			"Well played_02": "VO_HERO_03_Well Played_02.ogg",
+			"Wow_11": "VO_HERO_03_WOW_11.ogg",
+			"Wow_35": "VO_HERO_03a_WOW_35.ogg",
+			"Year_06": "VO_HERO_03_HAPPY_NEW_YEAR_06.ogg",
+			"Year_53": "VO_HERO_03a_HAPPY_NEW_YEAR_53.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "HERO_03.png",
 		"collectible": true,
@@ -38322,6 +42724,48 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"Attack_16": "VO_HERO_04_Attack_16.ogg",
+			"Concede_07": "VO_HERO_04_Concede_07.ogg",
+			"Day_33": "VO_HERO_04_PIRATE_DAY_33.ogg",
+			"Death_17": "VO_HERO_04_Death_17.ogg",
+			"Error01_20": "VO_HERO_04_ERROR01_20.ogg",
+			"Error02_21": "VO_HERO_04_ERROR02_21.ogg",
+			"Error03_22": "VO_HERO_04_ERROR03_22.ogg",
+			"Error04_23": "VO_HERO_04_ERROR04_23.ogg",
+			"Error05_24": "VO_HERO_04_ERROR05_24.ogg",
+			"Error06_25": "VO_HERO_04_ERROR06_25.ogg",
+			"Error07_26": "VO_HERO_04_ERROR07_26.ogg",
+			"Error08_27": "VO_HERO_04_ERROR08_27.ogg",
+			"Error09_28": "VO_HERO_04_ERROR09_28.ogg",
+			"Error10_29": "VO_HERO_04_ERROR10_29.ogg",
+			"Error11_20": "VO_HERO_04_ERROR11_20.ogg",
+			"Error12_31": "VO_HERO_04_ERROR12_31.ogg",
+			"Festival_32": "VO_HERO_04_FIRE_FESTIVAL_32.ogg",
+			"Greetings_01": "VO_HERO_04_Greetings_01.ogg",
+			"Greetings_02": "VO_HERO_04_MIRROR_GREETINGS_02.ogg",
+			"Halloween_13": "VO_HERO_04_HAPPY_HALLOWEEN_13.ogg",
+			"Holidays_14": "VO_HERO_04_HAPPY_HOLIDAYS_14.ogg",
+			"Lowcards_18": "VO_HERO_04_LowCards_18.ogg",
+			"Lunar_16": "VO_HERO_04_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Noblegarden_17": "VO_HERO_04_HAPPY_NOBLEGARDEN_17.ogg",
+			"Nocards_19": "VO_HERO_04_NoCards_19.ogg",
+			"Oops_03": "VO_HERO_04_Oops_03.ogg",
+			"Picked_08": "VO_HERO_04_Picked_08.ogg",
+			"Sorry_06": "VO_HERO_04_Sorry_06.ogg",
+			"Start_01": "VO_HERO_04_MIRROR_START_01.ogg",
+			"Start_09": "VO_HERO_04_Start_09.ogg",
+			"Thanks_05": "VO_HERO_04_Thanks_05.ogg",
+			"Thinking1_12": "VO_HERO_04_Thinking1_12.ogg",
+			"Thinking2_13": "VO_HERO_04_Thinking2_13.ogg",
+			"Thinking3_14": "VO_HERO_04_Thinking3_14.ogg",
+			"Threaten_04": "VO_HERO_04_Threaten_04.ogg",
+			"Time_11": "VO_HERO_04_Time_11.ogg",
+			"Weapon_10": "VO_HERO_04_Weapon_10.ogg",
+			"Wellplayed_02": "VO_HERO_04_WellPlayed_02.ogg",
+			"Wow_06": "VO_HERO_04_WOW_06.ogg",
+			"Year_15": "VO_HERO_04_HAPPY_NEW_YEAR_15.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "HERO_04.png",
 		"collectible": true,
@@ -38364,6 +42808,48 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"Attack_16": "VO_HERO_05_Attack_16.ogg",
+			"Concede_07": "VO_HERO_05_Concede_07.ogg",
+			"Day_33": "VO_HERO_05_PIRATE_DAY_33.ogg",
+			"Death_17": "VO_HERO_05_Death_17.ogg",
+			"Error01_21": "VO_HERO_05_ERROR01_21.ogg",
+			"Error02_22": "VO_HERO_05_ERROR02_22.ogg",
+			"Error03_23": "VO_HERO_05_ERROR03_23.ogg",
+			"Error04_24": "VO_HERO_05_ERROR04_24.ogg",
+			"Error05_25": "VO_HERO_05_ERROR05_25.ogg",
+			"Error06_26": "VO_HERO_05_ERROR06_26.ogg",
+			"Error07_27": "VO_HERO_05_ERROR07_27.ogg",
+			"Error08_28": "VO_HERO_05_ERROR08_28.ogg",
+			"Error09_29": "VO_HERO_05_ERROR09_29.ogg",
+			"Error10_30": "VO_HERO_05_ERROR10_30.ogg",
+			"Error11_20": "VO_HERO_05_ERROR11_20.ogg",
+			"Error12_32": "VO_HERO_05_ERROR12_32.ogg",
+			"Festival_32": "VO_HERO_05_FIRE_FESTIVAL_32.ogg",
+			"Greetings_01": "VO_HERO_05_Greetings_01.ogg",
+			"Greetings_02": "VO_HERO_05_MIRROR_GREETINGS_02.ogg",
+			"Halloween_13": "VO_HERO_05_HAPPY_HALLOWEEN_13.ogg",
+			"Holidays_14": "VO_HERO_05_HAPPY_HOLIDAYS_14.ogg",
+			"Lowcards_19": "VO_HERO_05_LowCards_19.ogg",
+			"Lunar_16": "VO_HERO_05_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Noblegarden_17": "VO_HERO_05_HAPPY_NOBLEGARDEN_17.ogg",
+			"Nocards_20": "VO_HERO_05_NoCards_20.ogg",
+			"Oops_03": "VO_HERO_05_Oops_03.ogg",
+			"Picked_08": "VO_HERO_05_Picked_08.ogg",
+			"Sorry_06": "VO_HERO_05_Sorry_06.ogg",
+			"Start_01": "VO_HERO_05_MIRROR_START_01.ogg",
+			"Start_09": "VO_HERO_05_Start_09.ogg",
+			"Thanks_05": "VO_HERO_05_Thanks_05.ogg",
+			"Thinking1_12": "VO_HERO_05_Thinking1_12.ogg",
+			"Thinking2_13": "VO_HERO_05_Thinking2_13.ogg",
+			"Thinking3_14": "VO_HERO_05_Thinking3_14.ogg",
+			"Threaten_04": "VO_HERO_05_Threaten_04.ogg",
+			"Time_11": "VO_HERO_05_Time_11.ogg",
+			"Weapon_10": "VO_HERO_05_Weapon_10.ogg",
+			"Well played_02": "VO_HERO_05_Well Played_02.ogg",
+			"Wow_06": "VO_HERO_05_WOW_06.ogg",
+			"Year_15": "VO_HERO_05_HAPPY_NEW_YEAR_15.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "HERO_05.png",
 		"collectible": true,
@@ -38392,6 +42878,49 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"Attack_16": "VO_HERO_06_Attack_16.ogg",
+			"Concede_07": "VO_HERO_06_Concede_07.ogg",
+			"Day_33": "VO_HERO_06_PIRATE_DAY_33.ogg",
+			"Death_17": "VO_HERO_06_Death_17.ogg",
+			"Error01_20": "VO_HERO_06_ERROR01_20.ogg",
+			"Error02_21": "VO_HERO_06_ERROR02_21.ogg",
+			"Error03_22": "VO_HERO_06_ERROR03_22.ogg",
+			"Error04_23": "VO_HERO_06_ERROR04_23.ogg",
+			"Error05_24": "VO_HERO_06_ERROR05_24.ogg",
+			"Error06_25": "VO_HERO_06_ERROR06_25.ogg",
+			"Error07_26": "VO_HERO_06_ERROR07_26.ogg",
+			"Error08_27": "VO_HERO_06_ERROR08_27.ogg",
+			"Error09_28": "VO_HERO_06_ERROR09_28.ogg",
+			"Error10_29": "VO_HERO_06_ERROR10_29.ogg",
+			"Error11_20": "VO_HERO_06_ERROR11_20.ogg",
+			"Error12_31": "VO_HERO_06_ERROR12_31.ogg",
+			"Festival_32": "VO_HERO_06_FIRE_FESTIVAL_32.ogg",
+			"Greetings_01": "VO_HERO_06_Greetings_01.ogg",
+			"Greetings_02": "VO_HERO_06_MIRROR_GREETINGS_02.ogg",
+			"Halloween_13": "VO_HERO_06_HAPPY_HALLOWEEN_13.ogg",
+			"Holidays_14": "VO_HERO_06_HAPPY_HOLIDAYS_14.ogg",
+			"Lowcards_18": "VO_HERO_06_LowCards_18.ogg",
+			"Lunar_16": "VO_HERO_06_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Noblegarden_17": "VO_HERO_06_HAPPY_NOBLEGARDEN_17.ogg",
+			"Nocards_19": "VO_HERO_06_NoCards_19.ogg",
+			"Oops_03": "VO_HERO_06_Oops_03.ogg",
+			"Picked_08": "VO_HERO_06_Picked_08.ogg",
+			"Sorry_06": "VO_HERO_06_Sorry_06.ogg",
+			"Start_01": "VO_HERO_06_MIRROR_START_01.ogg",
+			"Start_09": "VO_HERO_06_Start_09.ogg",
+			"Thanks_05": "VO_HERO_06_Thanks_05.ogg",
+			"Thinking1_12": "VO_HERO_06_Thinking1_12.ogg",
+			"Thinking2_13": "VO_HERO_06_Thinking2_13.ogg",
+			"Thinking3_14": "VO_HERO_06_Thinking3_14.ogg",
+			"Threaten_04": "VO_HERO_06_Threaten_04.ogg",
+			"Time_11": "VO_HERO_06_Time_11.ogg",
+			"Tyrande_36": "VO_HERO_06_TYRANDE_36.ogg",
+			"Weapon_10": "VO_HERO_06_Weapon_10.ogg",
+			"Well played_02": "VO_HERO_06_Well Played_02.ogg",
+			"Wow_06": "VO_HERO_06_WOW_06.ogg",
+			"Year_15": "VO_HERO_06_HAPPY_NEW_YEAR_15.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "HERO_06.png",
 		"collectible": true,
@@ -38407,8 +42936,10 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "DRUID",
+		"cardImage": "HERO_06a.png",
 		"collectible": true,
 		"dbfId": 50484,
+		"goldenImage": "HERO_06a.gif",
 		"health": 30,
 		"id": "HERO_06a",
 		"name": "Lunara",
@@ -38418,6 +42949,49 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"03_Alt": "VO_HERO_07_Oops_03_ALT.ogg",
+			"Attack_16": "VO_HERO_07_Attack_16.ogg",
+			"Concede_07": "VO_HERO_07_Concede_07.ogg",
+			"Day_33": "VO_HERO_07_PIRATE_DAY_33.ogg",
+			"Death_17": "VO_HERO_07_Death_17.ogg",
+			"Error01_20": "VO_HERO_07_ERROR01_20.ogg",
+			"Error02_21": "VO_HERO_07_ERROR02_21.ogg",
+			"Error03_22": "VO_HERO_07_ERROR03_22.ogg",
+			"Error04_23": "VO_HERO_07_ERROR04_23.ogg",
+			"Error05_24": "VO_HERO_07_ERROR05_24.ogg",
+			"Error06_25": "VO_HERO_07_ERROR06_25.ogg",
+			"Error07_26": "VO_HERO_07_ERROR07_26.ogg",
+			"Error08_27": "VO_HERO_07_ERROR08_27.ogg",
+			"Error09_28": "VO_HERO_07_ERROR09_28.ogg",
+			"Error10_29": "VO_HERO_07_ERROR10_29.ogg",
+			"Error11_20": "VO_HERO_07_ERROR11_20.ogg",
+			"Error12_31": "VO_HERO_07_ERROR12_31.ogg",
+			"Festival_32": "VO_HERO_07_FIRE_FESTIVAL_32.ogg",
+			"Greetings_01": "VO_HERO_07_Greetings_01.ogg",
+			"Greetings_02": "VO_HERO_07_MIRROR_GREETINGS_02.ogg",
+			"Halloween_13": "VO_HERO_07_HAPPY_HALLOWEEN_13.ogg",
+			"Holidays_14": "VO_HERO_07_HAPPY_HOLIDAYS_14.ogg",
+			"Lowcards_18": "VO_HERO_07_LowCards_18.ogg",
+			"Lunar_16": "VO_HERO_07_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Noblegarden_17": "VO_HERO_07_HAPPY_NOBLEGARDEN_17.ogg",
+			"Nocards_19": "VO_HERO_07_NoCards_19.ogg",
+			"Oops_03": "VO_HERO_07_Oops_03.ogg",
+			"Picked_08": "VO_HERO_07_Picked_08.ogg",
+			"Sorry_06": "VO_HERO_07_Sorry_06.ogg",
+			"Start_01": "VO_HERO_07_MIRROR_START_01.ogg",
+			"Start_09": "VO_HERO_07_Start_09.ogg",
+			"Thanks_05": "VO_HERO_07_Thanks_05.ogg",
+			"Thinking1_12": "VO_HERO_07_Thinking1_12.ogg",
+			"Thinking2_13": "VO_HERO_07_Thinking2_13.ogg",
+			"Thinking3_14": "VO_HERO_07_Thinking3_14.ogg",
+			"Threaten_04": "VO_HERO_07_Threaten_04.ogg",
+			"Time_11": "VO_HERO_07_Time_11.ogg",
+			"Weapon_10": "VO_HERO_07_Weapon_10.ogg",
+			"Well played_02": "VO_HERO_07_Well Played_02.ogg",
+			"Wow_06": "VO_HERO_07_WOW_06.ogg",
+			"Year_15": "VO_HERO_07_HAPPY_NEW_YEAR_15.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "HERO_07.png",
 		"collectible": true,
@@ -38446,6 +43020,85 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"63_Alt": "VO_HERO_08b_DEATH_63_ALT.ogg",
+			"Attack_15": "VO_HERO_08b_Attack_15.ogg",
+			"Attack_71": "VO_HERO_08_Attack_71.ogg",
+			"Attacked_21": "VO_HERO_08b_ERROR_MINION_ATTACKED_21.ogg",
+			"Attacked_22": "VO_HERO_08b_ERROR_I_ATTACKED_22.ogg",
+			"Cards_17": "VO_HERO_08b_LOW_CARDS_17.ogg",
+			"Cards_18": "VO_HERO_08b_NO_CARDS_18.ogg",
+			"Concede_06": "VO_HERO_08b_CONCEDE_06.ogg",
+			"Concede_62": "VO_HERO_08_Concede_62.ogg",
+			"Day_33": "VO_HERO_08_PIRATE_DAY_33.ogg",
+			"Day_60": "VO_HERO_08b_PIRATE_DAY_60.ogg",
+			"Death_72": "VO_HERO_08_Death_72.ogg",
+			"Error01_75": "VO_HERO_08_ERROR01_75.ogg",
+			"Error02_76": "VO_HERO_08_ERROR02_76.ogg",
+			"Error03_77": "VO_HERO_08_ERROR03_77.ogg",
+			"Error04_78": "VO_HERO_08_ERROR04_78.ogg",
+			"Error05_79": "VO_HERO_08_ERROR05_79.ogg",
+			"Error06_80": "VO_HERO_08_ERROR06_80.ogg",
+			"Error07_81": "VO_HERO_08_ERROR07_81.ogg",
+			"Error08_82": "VO_HERO_08_ERROR08_82.ogg",
+			"Error09_83": "VO_HERO_08_ERROR09_83.ogg",
+			"Error10_84": "VO_HERO_08_ERROR10_84.ogg",
+			"Error11_20": "VO_HERO_08_ERROR11_20.ogg",
+			"Error12_86": "VO_HERO_08_ERROR12_86.ogg",
+			"Festival_32": "VO_HERO_08_FIRE_FESTIVAL_32.ogg",
+			"Festival_59": "VO_HERO_08b_FIRE_FESTIVAL_59.ogg",
+			"Full_24": "VO_HERO_08b_ERROR_HAND_FULL_24.ogg",
+			"Generic_30": "VO_HERO_08b_ERROR_GENERIC_30.ogg",
+			"Greetings_02": "VO_HERO_08_MIRROR_GREETINGS_02.ogg",
+			"Greetings_03": "VO_HERO_08b_GREETINGS_03.ogg",
+			"Greetings_04": "VO_HERO_08b_MIRROR_GREETINGS_04.ogg",
+			"Greetings_56": "VO_HERO_08_Greetings_56.ogg",
+			"Halloween_13": "VO_HERO_08_HAPPY_HALLOWEEN_13.ogg",
+			"Halloween_51": "VO_HERO_08b_HAPPY_HALLOWEEN_51.ogg",
+			"Holidays_14": "VO_HERO_08_HAPPY_HOLIDAYS_14.ogg",
+			"Holidays_52": "VO_HERO_08b_HAPPY_HOLIDAYS_52.ogg",
+			"Lowcards_73": "VO_HERO_08_LowCards_73.ogg",
+			"Lunar_16": "VO_HERO_08_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Mana_20": "VO_HERO_08b_ERROR_NEED_MANA_20.ogg",
+			"Minions_25": "VO_HERO_08b_ERROR_FULL_MINIONS_25.ogg",
+			"Noblegarden_17": "VO_HERO_08_HAPPY_NOBLEGARDEN_17.ogg",
+			"Noblegarden_54": "VO_HERO_08b_HAPPY_NOBLEGARDEN_54.ogg",
+			"Nocards_74": "VO_HERO_08_NoCards_74.ogg",
+			"Oops_08": "VO_HERO_08b_OOPS_08.ogg",
+			"Oops_58": "VO_HERO_08_Oops_58.ogg",
+			"Picked_11": "VO_HERO_08b_PICKED_11.ogg",
+			"Picked_63": "VO_HERO_08_Picked_63.ogg",
+			"Play_27": "VO_HERO_08b_ERROR_PLAY_27.ogg",
+			"Played_07": "VO_HERO_08b_WELL_PLAYED_07.ogg",
+			"Played_23": "VO_HERO_08b_ERROR_JUST_PLAYED_23.ogg",
+			"Sorry_10": "VO_HERO_08b_SORRY_10.ogg",
+			"Sorry_61": "VO_HERO_08_Sorry_61.ogg",
+			"Start_01": "VO_HERO_08_MIRROR_START_01.ogg",
+			"Start_02": "VO_HERO_08b_MIRROR_START_02.ogg",
+			"Start_64": "VO_HERO_08_Start_64.ogg",
+			"Stealth_26": "VO_HERO_08b_ERROR_STEALTH_26.ogg",
+			"Target_28": "VO_HERO_08b_ERROR_TARGET_28.ogg",
+			"Taunt_29": "VO_HERO_08b_ERROR_TAUNT_29.ogg",
+			"Thanks_09": "VO_HERO_08b_THANKS_09.ogg",
+			"Thanks_60": "VO_HERO_08_Thanks_60.ogg",
+			"Think1_12": "VO_HERO_08b_THINK1_12.ogg",
+			"Think2_13": "VO_HERO_08b_THINK2_13.ogg",
+			"Think3_14": "VO_HERO_08b_THINK3_14.ogg",
+			"Thinking1_67": "VO_HERO_08_Thinking1_67.ogg",
+			"Thinking2_68": "VO_HERO_08_Thinking2_68.ogg",
+			"Thinking3_69": "VO_HERO_08_Thinking3_69.ogg",
+			"Threaten_05": "VO_HERO_08b_THREATEN_05.ogg",
+			"Threaten_59": "VO_HERO_08_Threaten_59.ogg",
+			"Time_66": "VO_HERO_08_Time_66.ogg",
+			"Timer_16": "VO_HERO_08b_TIMER_16.ogg",
+			"Weapon_19": "VO_HERO_08b_ERROR_NEED_WEAPON_19.ogg",
+			"Weapon_65": "VO_HERO_08_Weapon_65.ogg",
+			"Well played_57": "VO_HERO_08_Well Played_57.ogg",
+			"Wow_06": "VO_HERO_08_WOW_06.ogg",
+			"Wow_35": "VO_HERO_08b_WOW_35.ogg",
+			"Year_15": "VO_HERO_08_HAPPY_NEW_YEAR_15.ogg",
+			"Year_53": "VO_HERO_08b_HAPPY_NEW_YEAR_53.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "HERO_08.png",
 		"collectible": true,
@@ -38488,6 +43141,87 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"02_Alt": "VO_HERO_09_MIRROR_GREETINGS_02_ALT.ogg",
+			"Attack_15": "VO_HERO_09a_Attack_15.ogg",
+			"Attack_16": "VO_HERO_09_Attack_16.ogg",
+			"Attacked_21": "VO_HERO_09a_ERROR_MINION_ATTACKED_21.ogg",
+			"Attacked_22": "VO_HERO_09a_ERROR_I_ATTACKED_22.ogg",
+			"Cards_17": "VO_HERO_09a_LOW_CARDS_17.ogg",
+			"Cards_18": "VO_HERO_09a_NO_CARDS_18.ogg",
+			"Concede_06": "VO_HERO_09a_CONCEDE_06.ogg",
+			"Concede_07": "VO_HERO_09_Concede_07.ogg",
+			"Day_33": "VO_HERO_09_PIRATE_DAY_33.ogg",
+			"Day_60": "VO_HERO_09a_PIRATE_DAY_60.ogg",
+			"Death_17": "VO_HERO_09_Death_17.ogg",
+			"Death_63": "VO_HERO_09a_DEATH_63.ogg",
+			"Error01_20": "VO_HERO_09_ERROR01_20.ogg",
+			"Error02_21": "VO_HERO_09_ERROR02_21.ogg",
+			"Error03_22": "VO_HERO_09_ERROR03_22.ogg",
+			"Error04_23": "VO_HERO_09_ERROR04_23.ogg",
+			"Error05_24": "VO_HERO_09_ERROR05_24.ogg",
+			"Error06_25": "VO_HERO_09_ERROR06_25.ogg",
+			"Error07_26": "VO_HERO_09_ERROR07_26.ogg",
+			"Error08_27": "VO_HERO_09_ERROR08_27.ogg",
+			"Error09_28": "VO_HERO_09_ERROR09_28.ogg",
+			"Error10_29": "VO_HERO_09_ERROR10_29.ogg",
+			"Error11_20": "VO_HERO_09_ERROR11_20.ogg",
+			"Error12_31": "VO_HERO_09_ERROR12_31.ogg",
+			"Festival_32": "VO_HERO_09_FIRE_FESTIVAL_32.ogg",
+			"Festival_59": "VO_HERO_09a_FIRE_FESTIVAL_59.ogg",
+			"Full_24": "VO_HERO_09a_ERROR_HAND_FULL_24.ogg",
+			"Generic_30": "VO_HERO_09a_ERROR_GENERIC_30.ogg",
+			"Greetings_01": "VO_HERO_09_Greetings_01.ogg",
+			"Greetings_03": "VO_HERO_09a_GREETINGS_03.ogg",
+			"Greetings_04": "VO_HERO_09a_MIRROR_GREETINGS_04.ogg",
+			"Halloween_13": "VO_HERO_09_HAPPY_HALLOWEEN_13.ogg",
+			"Halloween_51": "VO_HERO_09a_HAPPY_HALLOWEEN_51.ogg",
+			"Holidays_14": "VO_HERO_09_HAPPY_HOLIDAYS_14.ogg",
+			"Holidays_52": "VO_HERO_09a_HAPPY_HOLIDAYS_52.ogg",
+			"Lowcards_18": "VO_HERO_09_LowCards_18.ogg",
+			"Lunar_16": "VO_HERO_09_HAPPY_NEW_YEAR_LUNAR_16.ogg",
+			"Lunar_53": "VO_HERO_09a_HAPPY_NEW_YEAR_LUNAR_53.ogg",
+			"Malfurion_64": "VO_HERO_09a_MALFURION_64.ogg",
+			"Mana_20": "VO_HERO_09a_ERROR_NEED_MANA_20.ogg",
+			"Minions_25": "VO_HERO_09a_ERROR_FULL_MINIONS_25.ogg",
+			"Noblegarden_17": "VO_HERO_09_HAPPY_NOBLEGARDEN_17.ogg",
+			"Noblegarden_54": "VO_HERO_09a_HAPPY_NOBLEGARDEN_54.ogg",
+			"Nocards_19": "VO_HERO_09_NoCards_19.ogg",
+			"Oops_03": "VO_HERO_09_Oops_03.ogg",
+			"Oops_08": "VO_HERO_09a_OOPS_08.ogg",
+			"Picked_08": "VO_HERO_09_Picked_08.ogg",
+			"Picked_11": "VO_HERO_09a_PICKED_11.ogg",
+			"Play_27": "VO_HERO_09a_ERROR_PLAY_27.ogg",
+			"Played_07": "VO_HERO_09a_WELL_PLAYED_07.ogg",
+			"Played_23": "VO_HERO_09a_ERROR_JUST_PLAYED_23.ogg",
+			"Sorry_06": "VO_HERO_09_Sorry_06.ogg",
+			"Sorry_10": "VO_HERO_09a_SORRY_10.ogg",
+			"Start_01": "VO_HERO_09_MIRROR_START_01.ogg",
+			"Start_02": "VO_HERO_09a_MIRROR_START_02.ogg",
+			"Start_09": "VO_HERO_09_Start_09.ogg",
+			"Stealth_26": "VO_HERO_09a_ERROR_STEALTH_26.ogg",
+			"Target_28": "VO_HERO_09a_ERROR_TARGET_28.ogg",
+			"Taunt_29": "VO_HERO_09a_ERROR_TAUNT_29.ogg",
+			"Thanks_05": "VO_HERO_09_Thanks_05.ogg",
+			"Thanks_09": "VO_HERO_09a_THANKS_09.ogg",
+			"Think1_12": "VO_HERO_09a_THINK1_12.ogg",
+			"Think2_13": "VO_HERO_09a_THINK2_13.ogg",
+			"Think3_14": "VO_HERO_09a_THINK3_14.ogg",
+			"Thinking1_12": "VO_HERO_09_Thinking1_12.ogg",
+			"Thinking2_13": "VO_HERO_09_Thinking2_13.ogg",
+			"Thinking3_14": "VO_HERO_09_Thinking3_14.ogg",
+			"Threaten_04": "VO_HERO_09_Threaten_04.ogg",
+			"Threaten_05": "VO_HERO_09a_THREATEN_05.ogg",
+			"Time_11": "VO_HERO_09_Time_11.ogg",
+			"Timer_16": "VO_HERO_09a_TIMER_16.ogg",
+			"Weapon_10": "VO_HERO_09_Weapon_10.ogg",
+			"Weapon_19": "VO_HERO_09a_ERROR_NEED_WEAPON_19.ogg",
+			"Well played_02": "VO_HERO_09_Well Played_02.ogg",
+			"Wow_06": "VO_HERO_09_WOW_06.ogg",
+			"Wow_35": "VO_HERO_09a_WOW_35.ogg",
+			"Year_01": "VO_HERO_09a_HAPPY_NEW_YEAR_01.ogg",
+			"Year_15": "VO_HERO_09_HAPPY_NEW_YEAR_15.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "HERO_09.png",
 		"collectible": true,
@@ -38636,6 +43370,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_ICC_019_Female_BloodElf_Attack_02.ogg",
+			"Death_01": "VO_ICC_019_Female_BloodElf_Death_01.ogg",
+			"Play_03": "VO_ICC_019_Female_BloodElf_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_019.png",
 		"collectible": true,
@@ -38696,6 +43435,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_023_Male_Worgen_Attack_01.ogg",
+			"Death_02": "VO_ICC_023_Male_Worgen_Death_02.ogg",
+			"Play_01": "VO_ICC_023_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_023.png",
 		"collectible": true,
@@ -38715,6 +43459,11 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_025_Male_Skeleton_Attack_01.ogg",
+			"Death_01": "VO_ICC_025_Male_Skeleton_Death_01.ogg",
+			"Play_01": "VO_ICC_025_Male_Skeleton_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_025.png",
 		"collectible": true,
@@ -38790,6 +43539,11 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_ICC_027_Male_Dragon_Attack_01.ogg",
+			"Death_01": "VO_ICC_027_Male_Dragon_Death_01.ogg",
+			"Play_01": "VO_ICC_027_Male_Dragon_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_027.png",
 		"collectible": true,
@@ -38813,6 +43567,11 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_ICC_028_Female_ValKyr_Attack_01.ogg",
+			"Death_01": "VO_ICC_028_Female_ValKyr_Death_01.ogg",
+			"Play_01": "VO_ICC_028_Female_ValKyr_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_028.png",
 		"collectible": true,
@@ -38846,6 +43605,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_ICC_029_Female_Troll_Attack_02.ogg",
+			"Death_01": "VO_ICC_029_Female_Troll_Death_01.ogg",
+			"Play_01": "VO_ICC_029_Female_Troll_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_029.png",
 		"collectible": true,
@@ -38907,6 +43671,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_032_Female_Nerubian_Attack_01.ogg",
+			"Death_01": "VO_ICC_032_Female_Nerubian_Death_01.ogg",
+			"Play_01": "VO_ICC_032_Female_Nerubian_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_032.png",
 		"collectible": true,
@@ -38929,6 +43698,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_ICC_034_Male_BloodElf_Attack_02.ogg",
+			"Death_01": "VO_ICC_034_Male_BloodElf_Death_01.ogg",
+			"Play_02": "VO_ICC_034_Male_BloodElf_Play_02.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "ICC_034.png",
 		"collectible": true,
@@ -39019,6 +43793,12 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_ICC_047_Female_Nerubian_Attack_02.ogg",
+			"Death_01": "VO_ICC_047_Female_Nerubian_Death_01.ogg",
+			"Play_01": "VO_ICC_047_Female_Nerubian_Play_01.ogg",
+			"Play_02": "VO_ICC_047_Female_Nerubian_Play_02.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "ICC_047.png",
 		"collectible": true,
@@ -39170,6 +43950,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_ICC_051_Female_NightElf_Attack_02.ogg",
+			"Death_01": "VO_ICC_051_Female_NightElf_Death_01.ogg",
+			"Play_02": "VO_ICC_051_Female_NightElf_Play_02.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "ICC_051.png",
 		"collectible": true,
@@ -39377,6 +44162,11 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_058_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_ICC_058_Male_Murloc_Death_01.ogg",
+			"Play_02": "VO_ICC_058_Male_Murloc_Play_02.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "ICC_058.png",
 		"collectible": true,
@@ -39403,6 +44193,11 @@ var parseCardsText = {
 	{
 		"artist": "Ian Ameling",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_062_Male_Spirit_Attack_01.ogg",
+			"Death_01": "VO_ICC_062_Male_Spirit_Death_01.ogg",
+			"Play_02": "VO_ICC_062_Male_Spirit_Play_02.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "ICC_062.png",
 		"collectible": true,
@@ -39448,6 +44243,11 @@ var parseCardsText = {
 	{
 		"artist": "Brian Despain",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_ICC_065_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_ICC_065_Male_Human_Death_01.ogg",
+			"Play_01": "VO_ICC_065_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "ICC_065.png",
 		"collectible": true,
@@ -39470,6 +44270,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICC_067_Male_Vargul_Attack_01.ogg",
+			"Death_01": "VO_ICC_067_Male_Vargul_Death_01.ogg",
+			"Play_01": "VO_ICC_067_Male_Vargul_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_067.png",
 		"collectible": true,
@@ -39492,6 +44297,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_068_Female_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_ICC_068_Female_BloodElf_Death_01.ogg",
+			"Play_02": "VO_ICC_068_Female_BloodElf_Play_02.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "ICC_068.png",
 		"collectible": true,
@@ -39570,6 +44380,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_ICC_075_Male_Dreadlord_Attack_02.ogg",
+			"Death_01": "VO_ICC_075_Male_Dreadlord_Death_01.ogg",
+			"Play_01": "VO_ICC_075_Male_Dreadlord_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "ICC_075.png",
 		"collectible": true,
@@ -39642,6 +44457,11 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_ICC_081_Male_Troll_Attack_02.ogg",
+			"Death_01": "VO_ICC_081_Male_Troll_Death_01.ogg",
+			"Play_02": "VO_ICC_081_Male_Troll_Play_02.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "ICC_081.png",
 		"collectible": true,
@@ -39686,6 +44506,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_ICC_083_Female_Gnome_Attack_02.ogg",
+			"Death_01": "VO_ICC_083_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_ICC_083_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "ICC_083.png",
 		"collectible": true,
@@ -39840,6 +44665,11 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_ICC_092_Female_BloodElf_Attack_02.ogg",
+			"Death_01": "VO_ICC_092_Female_BloodElf_Death_01.ogg",
+			"Play_01": "VO_ICC_092_Female_BloodElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_092.png",
 		"collectible": true,
@@ -39873,6 +44703,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_093_Male_Tuskar_Attack_01.ogg",
+			"Death_02": "VO_ICC_093_Male_Tuskar_Death_02.ogg",
+			"Play_01": "VO_ICC_093_Male_Tuskar_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_093.png",
 		"collectible": true,
@@ -39909,6 +44744,11 @@ var parseCardsText = {
 	{
 		"artist": "J. Axer",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_094_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_ICC_094_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_ICC_094_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_094.png",
 		"collectible": true,
@@ -39942,6 +44782,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_ICC_096_Male_Giant_Attack_01.ogg",
+			"Death_01": "VO_ICC_096_Male_Giant_Death_01.ogg",
+			"Play_02": "VO_ICC_096_Male_Giant_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_096.png",
 		"collectible": true,
@@ -40006,6 +44851,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_ICC_098_Female_Geist_Attack_01.ogg",
+			"Death_01": "VO_ICC_098_Female_Geist_Death_01.ogg",
+			"Play_01": "VO_ICC_098_Female_Geist_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_098.png",
 		"collectible": true,
@@ -40031,6 +44881,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_ICC_099_Male_Abomination_Attack_02.ogg",
+			"Death_02": "VO_ICC_099_Male_Abomination_Death_02.ogg",
+			"Play_02": "VO_ICC_099_Male_Abomination_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_099.png",
 		"collectible": true,
@@ -40096,6 +44951,12 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_ICC_204_Male_Undead_Attack_02.ogg",
+			"Death_01": "VO_ICC_204_Male_Undead_Death_01.ogg",
+			"Play_02": "VO_ICC_204_Male_Undead_Play_02.ogg",
+			"Trigger_01": "VO_ICC_204_Male_Undead_Trigger_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "ICC_204.png",
 		"collectible": true,
@@ -40153,6 +45014,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Kwon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_210_Female_Undead_Attack_01.ogg",
+			"Death_01": "VO_ICC_210_Female_Undead_Death_01.ogg",
+			"Play_01": "VO_ICC_210_Female_Undead_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "ICC_210.png",
 		"collectible": true,
@@ -40183,6 +45049,11 @@ var parseCardsText = {
 	{
 		"artist": "Brom",
 		"attack": 3,
+		"audio": {
+			"Attack_03": "VO_ICC_212_Male_Undead_Attack_03.ogg",
+			"Death_01": "VO_ICC_212_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_ICC_212_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "ICC_212.png",
 		"collectible": true,
@@ -40225,6 +45096,11 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_214_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_ICC_214_Female_Human_Death_01.ogg",
+			"Play_01": "VO_ICC_214_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "ICC_214.png",
 		"collectible": true,
@@ -40249,6 +45125,11 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Dlinnov",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_215_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_ICC_215_Male_Human_Death_01.ogg",
+			"Play_01": "VO_ICC_215_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "ICC_215.png",
 		"collectible": true,
@@ -40292,6 +45173,11 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_220_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_ICC_220_Male_Murloc_Death_01.ogg",
+			"Play_01": "VO_ICC_220_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_220.png",
 		"collectible": true,
@@ -40419,6 +45305,12 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_238_Male_Spirit_Attack_01.ogg",
+			"Death_01": "VO_ICC_238_Male_Spirit_Death_01.ogg",
+			"Play_02": "VO_ICC_238_Male_Spirit_Play_02.ogg",
+			"Trigger_01": "VO_ICC_238_Male_Spirit_Trigger_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "ICC_238.png",
 		"collectible": true,
@@ -40471,6 +45363,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_243_Male_Abomination_Attack_01.ogg",
+			"Death_01": "VO_ICC_243_Male_Abomination_Death_01.ogg",
+			"Play_01": "VO_ICC_243_Male_Abomination_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "ICC_243.png",
 		"collectible": true,
@@ -40528,6 +45425,13 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICC_245_Male_Draenei_Attack_01.ogg",
+			"Attack_02": "VO_ICC_245_Male_Draenei_Attack_02.ogg",
+			"Death_01": "VO_ICC_245_Male_Draenei_Death_01.ogg",
+			"Play_01": "VO_ICC_245_Male_Draenei_Play_01.ogg",
+			"Play_02": "VO_ICC_245_Male_Draenei_Play_02.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "ICC_245.png",
 		"collectible": true,
@@ -40547,6 +45451,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICC_252_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_ICC_252_Male_Undead_Death_01.ogg",
+			"Play_02": "VO_ICC_252_Male_Undead_Play_02.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "ICC_252.png",
 		"collectible": true,
@@ -40572,6 +45481,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICC_257_Male_Ymirjar_Attack_01.ogg",
+			"Death_02": "VO_ICC_257_Male_Ymirjar_Death_02.ogg",
+			"Play_01": "VO_ICC_257_Male_Ymirjar_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_257.png",
 		"collectible": true,
@@ -40626,6 +45540,12 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_289_Male_Troll_Attack_01.ogg",
+			"Death_01": "VO_ICC_289_Male_Troll_Death_01.ogg",
+			"Play_02": "VO_ICC_289_Male_Troll_Play_02.ogg",
+			"Trigger_02": "VO_ICC_289_Male_Troll_Trigger_02.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "ICC_289.png",
 		"collectible": true,
@@ -40833,6 +45753,12 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 4,
+		"audio": {
+			"Attack_03": "VO_ICC_405_Male_Abomination_Attack_03.ogg",
+			"Death_01": "VO_ICC_405_Male_Abomination_Death_01.ogg",
+			"Play_01": "VO_ICC_405_Male_Abomination_Play_01.ogg",
+			"Trigger_01": "VO_ICC_405_Male_Abomination_Trigger_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "ICC_405.png",
 		"collectible": true,
@@ -40853,6 +45779,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_ICC_407_Female_Gnome_Attack_02.ogg",
+			"Death_01": "VO_ICC_407_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_ICC_407_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "ICC_407.png",
 		"collectible": true,
@@ -40875,6 +45806,11 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_408_Female_ValKyr_Attack_01.ogg",
+			"Death_01": "VO_ICC_408_Female_ValKyr_Death_01.ogg",
+			"Play_01": "VO_ICC_408_Female_ValKyr_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "ICC_408.png",
 		"collectible": true,
@@ -40894,6 +45830,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_415_Male_Orc_Attack_01.ogg",
+			"Death_01": "VO_ICC_415_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_ICC_415_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "ICC_415.png",
 		"collectible": true,
@@ -40917,7 +45858,7 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"artist": "Grecke",
+		"artist": "Max Grecke",
 		"attack": 4,
 		"cardClass": "HUNTER",
 		"cardImage": "ICC_419.png",
@@ -40943,6 +45884,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICC_450_Male_Spirit_Attack_01.ogg",
+			"Death_01": "VO_ICC_450_Male_Spirit_Death_01.ogg",
+			"Play_01": "VO_ICC_450_Male_Spirit_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "ICC_450.png",
 		"collectible": true,
@@ -40976,6 +45922,11 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_466_Male_Draenei_Attack_01.ogg",
+			"Death_01": "VO_ICC_466_Male_Draenei_Death_01.ogg",
+			"Play_01": "VO_ICC_466_Male_Draenei_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_466.png",
 		"collectible": true,
@@ -40999,6 +45950,11 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_467_Female_Nerubian_Attack_01.ogg",
+			"Death_01": "VO_ICC_467_Female_Nerubian_Death_01.ogg",
+			"Play_01": "VO_ICC_467_Female_Nerubian_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_467.png",
 		"collectible": true,
@@ -41038,6 +45994,11 @@ var parseCardsText = {
 	{
 		"artist": "J. Axer",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_468_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_ICC_468_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_ICC_468_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_468.png",
 		"collectible": true,
@@ -41074,6 +46035,11 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "Jerry Mascho",
+		"audio": {
+			"Attack_02": "VO_ICC_481_Male_Orc_Attack_02.ogg",
+			"Death_01": "VO_ICC_481_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_ICC_481_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "ICC_481.png",
 		"collectible": true,
@@ -41139,6 +46105,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_701_Male_Geist_Attack_01.ogg",
+			"Death_01": "VO_ICC_701_Male_Geist_Death_01.ogg",
+			"Play_01": "VO_ICC_701_Male_Geist_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_701.png",
 		"collectible": true,
@@ -41161,6 +46132,11 @@ var parseCardsText = {
 	{
 		"artist": "Izzy Hoover",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_ICC_702_Female_Gnome_Attack_02.ogg",
+			"Death_01": "VO_ICC_702_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_ICC_702_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_702.png",
 		"collectible": true,
@@ -41219,6 +46195,11 @@ var parseCardsText = {
 	{
 		"artist": "Lars Grant-West",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_ICC_706_Male_Nerubian_Attack_02.ogg",
+			"Death_01": "VO_ICC_706_Male_Nerubian_Death_01.ogg",
+			"Play_01": "VO_ICC_706_Male_Nerubian_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_706.png",
 		"collectible": true,
@@ -41256,6 +46237,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_801_Female_Dwarf_Attack_01.ogg",
+			"Death_02": "VO_ICC_801_Female_Dwarf_Death_02.ogg",
+			"Play_01": "VO_ICC_801_Female_Dwarf_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "ICC_801.png",
 		"collectible": true,
@@ -41301,6 +46287,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_807_Male_GiantBeetle_Attack_01.ogg",
+			"Death_01": "VO_ICC_807_Male_GiantBeetle_Death_01.ogg",
+			"Play_02": "VO_ICC_807_Male_GiantBeetle_Play_02.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "ICC_807.png",
 		"collectible": true,
@@ -41337,6 +46328,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstanin Turovec",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_ICC_808_Male_Tauren_Attack_02.ogg",
+			"Death_01": "VO_ICC_808_Male_Tauren_Death_01.ogg",
+			"Play_01": "VO_ICC_808_Male_Tauren_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "ICC_808.png",
 		"collectible": true,
@@ -41370,6 +46366,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_ICC_809_Male_Gnome_Attack_02.ogg",
+			"Death_01": "VO_ICC_809_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_ICC_809_Male_Gnome_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "ICC_809.png",
 		"collectible": true,
@@ -41410,6 +46411,11 @@ var parseCardsText = {
 	{
 		"artist": "Luca Zontini",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_ICC_810_Male_Undead_Attack_02.ogg",
+			"Death_02": "VO_ICC_810_Male_Undead_Death_02.ogg",
+			"Play_01": "VO_ICC_810_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_810.png",
 		"collectible": true,
@@ -41446,6 +46452,11 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_811_Female_Undead_Attack_01.ogg",
+			"Death_02": "VO_ICC_811_Female_Undead_Death_02.ogg",
+			"Play_01": "VO_ICC_811_Female_Undead_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "ICC_811.png",
 		"collectible": true,
@@ -41492,6 +46503,11 @@ var parseCardsText = {
 	{
 		"artist": "Kevin Chen",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICC_820_Male_Gnome_Attack_01.ogg",
+			"Death_01": "VO_ICC_820_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_ICC_820_Male_Gnome_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "ICC_820.png",
 		"collectible": true,
@@ -41554,6 +46570,11 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "James Ryman",
+		"audio": {
+			"Attack_01": "VO_ICC_827_Female_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_ICC_827_Female_BloodElf_Death_01.ogg",
+			"Play_01": "VO_ICC_827_Female_BloodElf_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "ICC_827.png",
 		"collectible": true,
@@ -41630,6 +46651,11 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "Jomaro Kindred",
+		"audio": {
+			"Attack_02": "VO_ICC_828_Male_Orc_Attack_02.ogg",
+			"Death_02": "VO_ICC_828_Male_Orc_Death_02.ogg",
+			"Play_01": "VO_ICC_828_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "ICC_828.png",
 		"collectible": true,
@@ -41738,8 +46764,10 @@ var parseCardsText = {
 	{
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "ICC_828t4.png",
 		"cost": 3,
 		"dbfId": 50141,
+		"goldenImage": "ICC_828t4.gif",
 		"health": 1,
 		"id": "ICC_828t4",
 		"mechanics": [
@@ -41757,8 +46785,10 @@ var parseCardsText = {
 	{
 		"attack": 2,
 		"cardClass": "HUNTER",
+		"cardImage": "ICC_828t5.png",
 		"cost": 2,
 		"dbfId": 50142,
+		"goldenImage": "ICC_828t5.gif",
 		"health": 1,
 		"id": "ICC_828t5",
 		"name": "Hunting Mastiff",
@@ -41772,8 +46802,10 @@ var parseCardsText = {
 	{
 		"attack": 1,
 		"cardClass": "HUNTER",
+		"cardImage": "ICC_828t6.png",
 		"cost": 5,
 		"dbfId": 50143,
+		"goldenImage": "ICC_828t6.gif",
 		"health": 3,
 		"id": "ICC_828t6",
 		"mechanics": [
@@ -41790,8 +46822,10 @@ var parseCardsText = {
 	{
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "ICC_828t7.png",
 		"cost": 2,
 		"dbfId": 50144,
+		"goldenImage": "ICC_828t7.gif",
 		"health": 3,
 		"id": "ICC_828t7",
 		"mechanics": [
@@ -41808,6 +46842,13 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "James Ryman",
+		"audio": {
+			"Attack_01": "VO_ICC_829_Male_Human_Attack_01.ogg",
+			"Attack_02": "VO_ICC_829t5_Male_Human_Attack_02.ogg",
+			"Death_01": "VO_ICC_829_Male_Human_Death_01.ogg",
+			"Play_01": "VO_ICC_829t5_Male_Human_Play_01.ogg",
+			"Play_02": "VO_ICC_829_Male_Human_Play_02.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "ICC_829.png",
 		"collectible": true,
@@ -41936,6 +46977,11 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "Wayne Reynolds",
+		"audio": {
+			"Attack_01": "VO_ICC_830_Male_Human_Attack_01.ogg",
+			"Death_02": "VO_ICC_830_Male_Human_Death_02.ogg",
+			"Play_01": "VO_ICC_830_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "ICC_830.png",
 		"collectible": true,
@@ -41972,6 +47018,11 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "Alex Horley Orlandelli",
+		"audio": {
+			"Attack_01": "VO_ICC_831_Male_Orc_Attack_01.ogg",
+			"Death_01": "VO_ICC_831_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_ICC_831_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "ICC_831.png",
 		"collectible": true,
@@ -42011,6 +47062,11 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "Alex Horley Orlandelli",
+		"audio": {
+			"Attack_01": "VO_ICC_832_Male_NightElf_Attack_01.ogg",
+			"Death_01": "VO_ICC_832_Male_NightElf_Death_01.ogg",
+			"Play_03": "VO_ICC_832_Male_NightElf_Play_03.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "ICC_832.png",
 		"collectible": true,
@@ -42159,6 +47215,11 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "Glenn Rane",
+		"audio": {
+			"Attack_01": "VO_ICC_833_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_ICC_833_Female_Human_Death_01.ogg",
+			"Play_04": "VO_ICC_833_Female_Human_Play_04.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "ICC_833.png",
 		"collectible": true,
@@ -42246,6 +47307,11 @@ var parseCardsText = {
 	{
 		"armor": 5,
 		"artist": "Greg Staples",
+		"audio": {
+			"Attack_02": "VO_ICC_834_Male_Orc_Attack_02.ogg",
+			"Death_01": "VO_ICC_834_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_ICC_834_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "ICC_834.png",
 		"collectible": true,
@@ -42374,6 +47440,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 8,
+		"audio": {
+			"Attack_01": "VO_ICC_838_Female_Dragon_Attack_01.ogg",
+			"Death_02": "VO_ICC_838_Female_Dragon_Death_02.ogg",
+			"Play_03": "VO_ICC_838_Female_Dragon_Play_03.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "ICC_838.png",
 		"collectible": true,
@@ -42417,6 +47488,12 @@ var parseCardsText = {
 	{
 		"artist": "Greg Staples",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_841_Female_Sanlayn_Attack_01.ogg",
+			"Death_02": "VO_ICC_841_Female_Sanlayn_Death_02.ogg",
+			"Death_03": "VO_ICC_841_Female_Sanlayn_Death_03.ogg",
+			"Play_01": "VO_ICC_841_Female_Sanlayn_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "ICC_841.png",
 		"collectible": true,
@@ -42518,6 +47595,11 @@ var parseCardsText = {
 	{
 		"artist": "Vladimir Kafanov",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICC_851_Male_Vampire_Attack_01.ogg",
+			"Death_02": "VO_ICC_851_Male_Vampire_Death_02.ogg",
+			"Play_01": "VO_ICC_851_Male_Vampire_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_851.png",
 		"collectible": true,
@@ -42552,6 +47634,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_ICC_852_Male_Vampire_Attack_02.ogg",
+			"Death_01": "VO_ICC_852_Male_Vampire_Death_01.ogg",
+			"Play_01": "VO_ICC_852_Male_Vampire_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_852.png",
 		"collectible": true,
@@ -42586,6 +47673,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_853_Male_Vampire_Attack_01.ogg",
+			"Death_01": "VO_ICC_853_Male_Vampire_Death_01.ogg",
+			"Play_01": "VO_ICC_853_Male_Vampire_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_853.png",
 		"collectible": true,
@@ -42647,6 +47739,11 @@ var parseCardsText = {
 	{
 		"artist": "Marcelo Vignali",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_ICC_855_Female_Vrykul_Attack_01.ogg",
+			"Death_01": "VO_ICC_855_Female_Vrykul_Death_01.ogg",
+			"Play_01": "VO_ICC_855_Female_Vrykul_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_855.png",
 		"collectible": true,
@@ -42695,6 +47792,12 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_858_Male_Human_Attack_01.ogg",
+			"Death_02": "VO_ICC_858_Male_Human_Death_02.ogg",
+			"Play_02": "VO_ICC_858_Male_Human_Play_02.ogg",
+			"Trigger_03": "VO_ICC_858_Male_Human_Trigger_03.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "ICC_858.png",
 		"collectible": true,
@@ -42729,6 +47832,12 @@ var parseCardsText = {
 	{
 		"artist": "Ian Ameling",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_ICC_900_Male_Geist_Attack_01.ogg",
+			"Death_01": "VO_ICC_900_Male_Geist_Death_01.ogg",
+			"Play_01": "VO_ICC_900_Male_Geist_Play_01.ogg",
+			"Trigger_02": "VO_ICC_900_Male_Geist_Trigger_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_900.png",
 		"collectible": true,
@@ -42763,6 +47872,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_901_Male_Ghoul_Attack_01.ogg",
+			"Death_01": "VO_ICC_901_Male_Ghoul_Death_01.ogg",
+			"Play_01": "VO_ICC_901_Male_Ghoul_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_901.png",
 		"collectible": true,
@@ -42785,6 +47899,11 @@ var parseCardsText = {
 	{
 		"artist": "Chris Rahn",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_ICC_902_Male_Undead_Attack_02.ogg",
+			"Death_01": "VO_ICC_902_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_ICC_902_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_902.png",
 		"collectible": true,
@@ -42804,6 +47923,12 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_ICC_903_Male_Sanlayn_Attack_01.ogg",
+			"Death_01": "VO_ICC_903_Male_Sanlayn_Death_01.ogg",
+			"Play_01": "VO_ICC_903_Male_Sanlayn_Play_01.ogg",
+			"Play_02": "VO_ICC_903_Male_Sanlayn_Play_02.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "ICC_903.png",
 		"collectible": true,
@@ -42837,6 +47962,11 @@ var parseCardsText = {
 	{
 		"artist": "Nicola Saviori",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_ICC_904_Female_Skeleton_Attack_02.ogg",
+			"Death_01": "VO_ICC_904_Female_Skeleton_Death_01.ogg",
+			"Play_01": "VO_ICC_904_Female_Skeleton_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_904.png",
 		"collectible": true,
@@ -42893,6 +48023,11 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielsen",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_ICC_910_Female_Banshee_Attack_01.ogg",
+			"Death_01": "VO_ICC_910_Female_Banshee_Death_01.ogg",
+			"Play_03": "VO_ICC_910_Female_Banshee_Play_03.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "ICC_910.png",
 		"collectible": true,
@@ -42934,6 +48069,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICC_912_Female_Troll_Attack_01.ogg",
+			"Death_01": "VO_ICC_912_Female_Troll_Death_01.ogg",
+			"Play_01": "VO_ICC_912_Female_Troll_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICC_912.png",
 		"collectible": true,
@@ -43056,6 +48196,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
+		"audio": {
+			"Attack_03": "VO_ICCA01_007_Male_Gnome_Attack_03.ogg",
+			"Death_01": "VO_ICCA01_007_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_ICCA01_007_Male_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA01_007.png",
 		"cost": 1,
@@ -43071,6 +48216,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICCA01_008_Male_Orc_Attack_01.ogg",
+			"Death_01": "VO_ICCA01_008_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_ICCA01_008_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA01_008.png",
 		"cost": 2,
@@ -43085,6 +48235,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICCA01_009_Male_NightElf_Attack_01.ogg",
+			"Death_02": "VO_ICCA01_009_Male_NightElf_Death_02.ogg",
+			"Play_01": "VO_ICCA01_009_Male_NightElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA01_009.png",
 		"cost": 3,
@@ -43100,6 +48255,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_ICCA01_010_Female_Human_Attack_02.ogg",
+			"Death_01": "VO_ICCA01_010_Female_Human_Death_01.ogg",
+			"Play_01": "VO_ICCA01_010_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA01_010.png",
 		"cost": 4,
@@ -43119,6 +48279,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_ICCA01_011_Female_Troll_Attack_01.ogg",
+			"Death_01": "VO_ICCA01_011_Female_Troll_Death_01.ogg",
+			"Play_01": "VO_ICCA01_011_Female_Troll_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA01_011.png",
 		"cost": 5,
@@ -43293,6 +48458,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
+		"audio": {
+			"Attack_01": "VO_ICCA05_003_Female_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_ICCA05_003_Female_BloodElf_Death_01.ogg",
+			"Wakeup_01": "VO_ICCA05_003_Female_BloodElf_WakeUp_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA05_003.png",
 		"cost": 1,
@@ -43531,6 +48701,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_ICCA07_008_Male_Abomination_Attack_01.ogg",
+			"Death_01": "VO_ICCA07_008_Male_Abomination_Death_01.ogg",
+			"Play_01": "VO_ICCA07_008_Male_Abomination_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA07_008.png",
 		"cost": 4,
@@ -43601,6 +48776,12 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
+		"audio": {
+			"Attack_01": "VO_ICCA08_017_Female_ValKyr_Attack_01.ogg",
+			"Death_01": "VO_ICCA08_017_Female_ValKyr_Death_01.ogg",
+			"Play_02": "VO_ICCA08_017_Female_ValKyr_Play_02.ogg",
+			"Special_01": "VO_ICCA08_017_Female_ValKyr_Special_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA08_017.png",
 		"cost": 3,
@@ -43844,6 +49025,20 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICCA08_033_Male_HumanGhost_Attack_01.ogg",
+			"Death_01": "VO_ICCA08_033_Male_HumanGhost_Death_01.ogg",
+			"Death_02": "VO_ICCA08_033_Male_HumanGhost_Death_02.ogg",
+			"Death_03": "VO_ICCA08_033_Male_HumanGhost_Death_03.ogg",
+			"Death_04": "VO_ICCA08_033_Male_HumanGhost_Death_04.ogg",
+			"Death_05": "VO_ICCA08_033_Male_HumanGhost_Death_05.ogg",
+			"Death_06": "VO_ICCA08_033_Male_HumanGhost_Death_06.ogg",
+			"Flavor_01": "VO_ICCA08_033_Male_HumanGhost_Flavor_01.ogg",
+			"Flavor_02": "VO_ICCA08_033_Male_HumanGhost_Flavor_02.ogg",
+			"Flavor_03": "VO_ICCA08_033_Male_HumanGhost_Flavor_03.ogg",
+			"Flavor_04": "VO_ICCA08_033_Male_HumanGhost_Flavor_04.ogg",
+			"Flavor_05": "VO_ICCA08_033_Male_HumanGhost_Flavor_05.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA08_033.png",
 		"cost": 3,
@@ -43886,6 +49081,9 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Death_01": "VO_ICCA09_002_Male_Orc_Death_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA09_002.png",
 		"dbfId": 42386,
@@ -43899,6 +49097,13 @@ var parseCardsText = {
 	},
 	{
 		"attack": 30,
+		"audio": {
+			"Attack_02": "VO_ICCA10_001_Female_GreenDragon_Attack_02.ogg",
+			"Death_01": "VO_ICCA10_001_Female_GreenDragon_Death_01.ogg",
+			"Healed_01": "VO_ICCA10_001_Female_GreenDragon_Healed_01.ogg",
+			"Play_01": "VO_ICCA10_001_Female_GreenDragon_Play_01.ogg",
+			"Start_01": "VO_ICCA10_001_Female_GreenDragon_Start_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA10_001.png",
 		"cost": 5,
@@ -43947,6 +49152,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_ICCA11_001_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_ICCA11_001_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_ICCA11_001_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "ICCA11_001.png",
 		"cost": 1,
@@ -44010,6 +49220,13 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_KAR_005_Female_BigBadWolf_Attack_01.ogg",
+			"Attack_03": "VO_KAR_005a_Male_Worgen_Attack_03.ogg",
+			"Death_03": "VO_KAR_005_Female_BigBadWolf_Death_03.ogg",
+			"Death_04": "VO_KAR_005_Female_BigBadWolf_Death_04.ogg",
+			"Play_01": "VO_KAR_005_Female_BigBadWolf_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "KAR_005.png",
 		"collectible": true,
@@ -44049,6 +49266,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_006_Female_Human_Attack_01.ogg",
+			"Death_02": "VO_KAR_006_Female_Human_Death_02.ogg",
+			"Play_01": "VO_KAR_006_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "KAR_006.png",
 		"collectible": true,
@@ -44071,6 +49293,11 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_KAR_009_Male_Book_Attack_01.ogg",
+			"Death_01": "VO_KAR_009_Male_Book_Death_01.ogg",
+			"Play_01": "VO_KAR_009_Male_Book_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "KAR_009.png",
 		"collectible": true,
@@ -44093,6 +49320,11 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_KAR_010_Female_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_KAR_010_Female_BloodElf_Death_01.ogg",
+			"Play_02": "VO_KAR_010_Female_BloodElf_Play_02.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "KAR_010.png",
 		"collectible": true,
@@ -44131,6 +49363,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_011_Male_NightElf_Attack_01.ogg",
+			"Death_01": "VO_KAR_011_Male_NightElf_Death_01.ogg",
+			"Play_01": "VO_KAR_011_Male_NightElf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_011.png",
 		"collectible": true,
@@ -44173,6 +49410,12 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_021_Female_Troll_Attack_01.ogg",
+			"Death_02": "VO_KAR_021_Female_Troll_Death_02.ogg",
+			"Play_02": "VO_KAR_021_Female_Troll_Play_02.ogg",
+			"Trigger_01": "VO_KAR_021_Female_Troll_Trigger_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "KAR_021.png",
 		"collectible": true,
@@ -44372,6 +49615,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_033_Male_Dragon_Attack_01.ogg",
+			"Death_01": "VO_KAR_033_Male_Dragon_Death_01.ogg",
+			"Play_01": "VO_KAR_033_Male_Dragon_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_033.png",
 		"collectible": true,
@@ -44395,6 +49643,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_035_Male_Dwarf_Attack_01.ogg",
+			"Death_01": "VO_KAR_035_Male_Dwarf_Death_01.ogg",
+			"Play_01": "VO_KAR_035_Male_Dwarf_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "KAR_035.png",
 		"collectible": true,
@@ -44505,7 +49758,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 48363,
-		"goldenImage": "KAR_041e.gif",
 		"id": "KAR_041e",
 		"name": "Moat Lurker",
 		"playerClass": "Neutral",
@@ -44516,6 +49768,11 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_KAR_044_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_KAR_044_Male_Human_Death_01.ogg",
+			"Play_01": "VO_KAR_044_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_044.png",
 		"collectible": true,
@@ -44579,6 +49836,12 @@ var parseCardsText = {
 	{
 		"artist": "Wei Wang",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_KAR_061_Male_ArcaneGolem_Attack_01.ogg",
+			"Death_01": "VO_KAR_061i_Female_Ghost_Death_01.ogg",
+			"Death_02": "VO_KAR_061_Male_ArcaneGolem_Death_02.ogg",
+			"Play_01": "VO_KAR_061_Male_ArcaneGolem_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_061.png",
 		"collectible": true,
@@ -44604,6 +49867,11 @@ var parseCardsText = {
 	{
 		"artist": "Ralph Horsley",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_KAR_062_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_KAR_062_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_KAR_062_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_062.png",
 		"collectible": true,
@@ -44651,6 +49919,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_KAR_065_Female_NightElf_Attack_01.ogg",
+			"Death_01": "VO_KAR_065_Female_NightElf_Death_01.ogg",
+			"Play_01": "VO_KAR_065_Female_NightElf_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "KAR_065.png",
 		"collectible": true,
@@ -44696,6 +49969,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_KAR_070_Female_Ethereal_Attack_01.ogg",
+			"Death_01": "VO_KAR_070_Female_Ethereal_Death_01.ogg",
+			"Play_01": "VO_KAR_070_Female_Ethereal_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "KAR_070.png",
 		"collectible": true,
@@ -44797,6 +50075,11 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_KAR_089_Male_Imp_Attack_02.ogg",
+			"Death_01": "VO_KAR_089_Male_Imp_Death_01.ogg",
+			"Play_04": "VO_KAR_089_Male_Imp_Play_04.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "KAR_089.png",
 		"collectible": true,
@@ -44834,6 +50117,11 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_KAR_092_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_KAR_092_Male_Human_Death_01.ogg",
+			"Play_07": "VO_KAR_092_Male_Human_Play_07.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "KAR_092.png",
 		"collectible": true,
@@ -44859,6 +50147,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_KAR_094_Male_Fork_Attack_02.ogg",
+			"Death_01": "VO_KAR_094_Male_Fork_Death_01.ogg",
+			"Play_02": "VO_KAR_094_Male_Fork_Play_02.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "KAR_094.png",
 		"collectible": true,
@@ -44930,6 +50223,13 @@ var parseCardsText = {
 	{
 		"artist": "Joe Madureira & Grace Liu",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_KAR_096_Male_Demon_Attack_02.ogg",
+			"Death_02": "VO_KAR_096_Male_Demon_Death_02.ogg",
+			"Play_01": "VO_KAR_096_Male_Demon_Play_01.ogg",
+			"Trigger_01": "VO_KAR_096_Male_Demon_Trigger_01.ogg",
+			"Trigger_02": "VO_KAR_096_Male_Demon_Trigger_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_096.png",
 		"collectible": true,
@@ -44951,6 +50251,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_KAR_097_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_KAR_097_Male_Human_Death_01.ogg",
+			"Play_01": "VO_KAR_097_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_097.png",
 		"collectible": true,
@@ -44990,6 +50295,16 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_114_Male_Human_Attack_01.ogg",
+			"Death_02": "VO_KAR_114_Male_Human_Death_02.ogg",
+			"Play_02": "VO_KAR_114_Male_Human_Play_02.ogg",
+			"Play_03": "VO_KAR_114_Male_Human_Play_03.ogg",
+			"Play_04": "VO_KAR_114_Male_Human_Play_04.ogg",
+			"Play_05": "VO_KAR_114_Male_Human_Play_05.ogg",
+			"Play_06": "VO_KAR_114_Male_Human_Play_06.ogg",
+			"Play_07": "VO_KAR_114_Male_Human_Play_07.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_114.png",
 		"collectible": true,
@@ -45024,6 +50339,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_204_Male_ChessPiece_Attack_01.ogg",
+			"Death_02": "VO_KAR_204_Male_ChessPiece_Death_02.ogg",
+			"Play_01": "VO_KAR_204_Male_ChessPiece_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "KAR_204.png",
 		"collectible": true,
@@ -45046,6 +50366,10 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_205_Male_SilverwareGolem_Attack_01.ogg",
+			"Play_01": "VO_KAR_205_Male_SilverwareGolem_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "KAR_205.png",
 		"collectible": true,
@@ -45087,6 +50411,11 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_KAR_702_Male_Goblin_Attack_01.ogg",
+			"Death_01": "VO_KAR_702_Male_Goblin_Death_01.ogg",
+			"Play_01": "VO_KAR_702_Male_Goblin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_702.png",
 		"collectible": true,
@@ -45120,6 +50449,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_710_Male_Gnome_Attack_01.ogg",
+			"Death_01": "VO_KAR_710_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_KAR_710_Male_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_710.png",
 		"collectible": true,
@@ -45183,6 +50517,11 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_KAR_712_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_KAR_712_Female_Human_Death_01.ogg",
+			"Play_01": "VO_KAR_712_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_712.png",
 		"collectible": true,
@@ -45271,6 +50610,11 @@ var parseCardsText = {
 	{
 		"artist": "G.Tsai & K. Turovec",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_KAR_A02_01_Female_Plate_Attack_01.ogg",
+			"Death_01": "VO_KAR_A02_01_Female_Plate_Death_01.ogg",
+			"Play_01": "VO_KAR_A02_01_Female_Plate_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A02_01.png",
 		"cost": 1,
@@ -45329,6 +50673,11 @@ var parseCardsText = {
 	{
 		"artist": "G.Tsai & K. Turovec",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_A02_03_Male_Fork_Attack_01.ogg",
+			"Death_02": "VO_KAR_A02_03_Male_Fork_Death_02.ogg",
+			"Play_01": "VO_KAR_A02_03_Male_Fork_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A02_03.png",
 		"cost": 3,
@@ -45372,6 +50721,11 @@ var parseCardsText = {
 	{
 		"artist": "G.Tsai & K. Turovec",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_KAR_A02_04_Male_Knife_Attack_01.ogg",
+			"Death_02": "VO_KAR_A02_04_Male_Knife_Death_02.ogg",
+			"Play_01": "VO_KAR_A02_04_Male_Knife_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A02_04.png",
 		"cost": 3,
@@ -45415,6 +50769,11 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & C. Luechaiwattasopon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_KAR_A02_05_Female_Cup_Attack_01.ogg",
+			"Death_01": "VO_KAR_A02_05_Female_Cup_Death_01.ogg",
+			"Play_01": "VO_KAR_A02_05_Female_Cup_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A02_05.png",
 		"cost": 2,
@@ -45452,6 +50811,11 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & N. Thitinunthakorn",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KAR_A02_06_Female_Pitcher_Attack_01.ogg",
+			"Death_01": "VO_KAR_A02_06_Female_Pitcher_Death_01.ogg",
+			"Play_01": "VO_KAR_A02_06_Female_Pitcher_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A02_06.png",
 		"cost": 4,
@@ -45645,6 +51009,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_KAR_A10_01_Male_ChessPiece_Attack_01.ogg",
+			"Death_01": "VO_KAR_A10_01_Male_ChessPiece_Death_01.ogg",
+			"Play_02": "VO_KAR_A10_01_Male_ChessPiece_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A10_01.png",
 		"cost": 1,
@@ -45661,6 +51030,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_KAR_A10_02_Male_ChessPiece_Attack_01.ogg",
+			"Death_01": "VO_KAR_A10_02_Male_ChessPiece_Death_01.ogg",
+			"Play_02": "VO_KAR_A10_02_Male_ChessPiece_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A10_02.png",
 		"cost": 1,
@@ -45707,6 +51081,10 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
+		"audio": {
+			"Death_01": "VO_KAR_A10_05_Male_ChessPiece_Death_01.ogg",
+			"Play_01": "VO_KAR_A10_05_Male_ChessPiece_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A10_05.png",
 		"cost": 3,
@@ -45723,6 +51101,10 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 0,
+		"audio": {
+			"Death_01": "VO_KAR_A10_06_Male_ChessPiece_Death_01.ogg",
+			"Play_01": "VO_KAR_A10_06_Male_ChessPiece_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A10_06.png",
 		"cost": 3,
@@ -45776,6 +51158,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_KAR_A10_09_Female_ChessPiece_Attack_01.ogg",
+			"Death_01": "VO_KAR_A10_09_Female_ChessPiece_Death_01.ogg",
+			"Play_01": "VO_KAR_A10_09_Female_ChessPiece_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A10_09.png",
 		"cost": 7,
@@ -45791,6 +51178,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_KAR_A10_10_Female_ChessPiece_Attack_02.ogg",
+			"Death_01": "VO_KAR_A10_10_Female_ChessPiece_Death_01.ogg",
+			"Play_01": "VO_KAR_A10_10_Female_ChessPiece_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KAR_A10_10.png",
 		"cost": 7,
@@ -46147,6 +51539,11 @@ var parseCardsText = {
 	{
 		"artist": "Evgeniy Zaqumyenny",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_KARA_00_08_Male_Human_Attack_02.ogg",
+			"Death_01": "VO_KARA_00_08_Male_Human_Death_01.ogg",
+			"Play_01": "VO_KARA_00_08_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "KARA_00_08.png",
 		"cost": 2,
@@ -46208,6 +51605,15 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 0,
+		"audio": {
+			"Attack_01": "VO_KARA_04_01_Female_Human_Attack_01.ogg",
+			"Cronehuffer_01": "VO_KARA_04_01_Female_Human_CroneHuffer_01.ogg",
+			"Croneliontigerbear_02": "VO_KARA_04_01_Female_Human_CroneLionTigerBear_02.ogg",
+			"Croneturn1_01": "VO_KARA_04_01_Female_Human_CroneTurn1_01.ogg",
+			"Croneturn3_01": "VO_KARA_04_01_Female_Human_CroneTurn3_01.ogg",
+			"Death_01": "VO_KARA_04_01_Female_Human_Death_01.ogg",
+			"Play_01": "VO_KARA_04_01_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KARA_04_01.png",
 		"cost": 4,
@@ -46417,6 +51823,14 @@ var parseCardsText = {
 	{
 		"artist": "Max Grecke",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_KARA_06_01_Male_Human_Attack_01.ogg",
+			"Attack_02": "VO_KARA_06_01_Male_Human_Attack_02.ogg",
+			"Death_01": "VO_KARA_06_01_Male_Human_Death_01.ogg",
+			"Juliannedeadlypoison_02": "VO_KARA_06_01_Male_Human_JulianneDeadlyPoison_02.ogg",
+			"Julianneturn1_01": "VO_KARA_06_01_Male_Human_JulianneTurn1_01.ogg",
+			"Play_01": "VO_KARA_06_01_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KARA_06_01.png",
 		"cost": 4,
@@ -46988,6 +52402,15 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Andrew Hou",
+		"audio": {
+			"Attack_01": "VO_KARA_09_03a_Male_Imp_Attack_01.ogg",
+			"Death_02": "VO_KARA_09_03a_Male_Imp_Death_02.ogg",
+			"Death_03": "VO_KARA_09_03a_Male_Imp_Death_03.ogg",
+			"Death_12": "VO_KARA_09_03a_Male_Imp_Death_12.ogg",
+			"Death_13": "VO_KARA_09_03a_Male_Imp_Death_13.ogg",
+			"Death_15": "VO_KARA_09_03a_Male_Imp_Death_15.ogg",
+			"Play_01": "VO_KARA_09_03a_Male_Imp_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "KARA_09_03.png",
 		"cost": 2,
@@ -47150,6 +52573,11 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Ejsing",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_KARA_09_08_Male_Imp_Attack_01.ogg",
+			"Death_01": "VO_KARA_09_08_Male_Imp_Death_01.ogg",
+			"Play_01": "VO_KARA_09_08_Male_Imp_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "KARA_09_08.png",
 		"cost": 4,
@@ -47369,6 +52797,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_KARA_13_03_Female_Orc_Attack_01.ogg",
+			"Death_01": "VO_KARA_13_03_Female_Orc_Death_01.ogg",
+			"Play_01": "VO_KARA_13_03_Female_Orc_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "KARA_13_03.png",
 		"cost": 2,
@@ -47710,6 +53143,11 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_LOE_003_Attack_02.ogg",
+			"Death_03": "VO_LOE_003_Death_03.ogg",
+			"Play_01": "VO_LOE_003_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "LOE_003.png",
 		"collectible": true,
@@ -47735,6 +53173,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_LOE_006_Attack_02.ogg",
+			"Death_03": "VO_LOE_006_Death_03.ogg",
+			"Play3_05": "VO_LOE_006_Play3_05.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOE_006.png",
 		"collectible": true,
@@ -47899,6 +53342,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 4,
+		"audio": {
+			"Attack_10": "VO_LOE_011_Attack_10.ogg",
+			"Death_11": "VO_LOE_011_Death_11.ogg",
+			"Play_12": "VO_LOE_011_Play_12.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_011.png",
 		"collectible": true,
@@ -47922,6 +53370,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_LOE_012_Attack_02.ogg",
+			"Death_03": "VO_LOE_012_Death_03.ogg",
+			"Play_01": "VO_LOE_012_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOE_012.png",
 		"collectible": true,
@@ -47985,6 +53438,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_LOE_017_Attack_02.ogg",
+			"Death_03": "VO_LOE_017_Death_03.ogg",
+			"Play_01": "VO_LOE_017_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "LOE_017.png",
 		"collectible": true,
@@ -48018,6 +53476,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_LOE_018_Attack_02.ogg",
+			"Death_03": "VO_LOE_018_Death_03.ogg",
+			"Play_01": "VO_LOE_018_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "LOE_018.png",
 		"collectible": true,
@@ -48187,6 +53650,11 @@ var parseCardsText = {
 	{
 		"artist": "George Davis",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_LOE_023_Attack_02.ogg",
+			"Death_03": "VO_LOE_023_Death_03.ogg",
+			"Play_01": "VO_LOE_023_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOE_023.png",
 		"collectible": true,
@@ -48302,10 +53770,15 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_LOE_038_Attack_02.ogg",
+			"Death_03": "VO_LOE_038_Death_03.ogg",
+			"Play_01": "VO_LOE_038_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_038.png",
 		"collectible": true,
-		"cost": 5,
+		"cost": 8,
 		"dbfId": 2910,
 		"flavor": "If she had studied harder, she would have been a C+ witch.",
 		"goldenImage": "LOE_038.gif",
@@ -48446,6 +53919,11 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasper",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_LOE_053_Attack_02.ogg",
+			"Death_03": "VO_LOE_053_Death_03.ogg",
+			"Play_01": "VO_LOE_053_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_053.png",
 		"collectible": true,
@@ -48535,6 +54013,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Alt4_20": "VO_LOE_076_Play_alt4_20.ogg",
+			"Alt_15": "VO_LOE_076_Death_alt_15.ogg",
+			"Attack_13": "VO_LOE_076_Attack_13.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_076.png",
 		"collectible": true,
@@ -48562,6 +54045,12 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielson",
 		"attack": 2,
+		"audio": {
+			"Attack_12": "VO_LOE_077_Attack_12.ogg",
+			"Death_13": "VO_LOE_077_Death_13.ogg",
+			"Magni_14": "VO_LOE_077_MAGNI_14.ogg",
+			"Play_16": "VO_LOE_077_Play_16.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_077.png",
 		"collectible": true,
@@ -48588,6 +54077,11 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 3,
+		"audio": {
+			"Attack_13": "VO_LOE_079_Attack_13.ogg",
+			"Death_14": "VO_LOE_079_Death_14.ogg",
+			"Play_15": "VO_LOE_079_Play_15.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_079.png",
 		"collectible": true,
@@ -48630,6 +54124,18 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielson",
 		"attack": 2,
+		"audio": {
+			"05_Alt1": "VO_LOE_089_Death2_05_ALT1.ogg",
+			"Attack2_03": "VO_LOE_089_Attack2_03.ogg",
+			"Attack_02": "VO_LOE_089_3_Attack_02.ogg",
+			"Attack_Trio": "VO_LOE_089_Attack_Trio.ogg",
+			"Death2_05": "VO_LOE_089_3_Death2_05.ogg",
+			"Death_04": "VO_LOE_089_2_Death_04.ogg",
+			"Death_Trio": "VO_LOE_089_Death_Trio.ogg",
+			"Play2_06": "VO_LOE_089_Play2_06.ogg",
+			"Play_01": "VO_LOE_089_3_Play_01.ogg",
+			"Play_Trio": "VO_LOE_089_Play_Trio.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_089.png",
 		"collectible": true,
@@ -48697,6 +54203,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_LOE_092_Attack_02.ogg",
+			"Death_03": "VO_LOE_092_Death_03.ogg",
+			"Play_04": "VO_LOE_092_Play_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_092.png",
 		"collectible": true,
@@ -48790,6 +54301,11 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_LOE_110_Attack_02.ogg",
+			"Death_03": "VO_LOE_110_Death_03.ogg",
+			"Play_01": "VO_LOE_110_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOE_110.png",
 		"collectible": true,
@@ -48926,6 +54442,11 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_LOE_116_Attack_02.ogg",
+			"Death_03": "VO_LOE_116_Death_03.ogg",
+			"Play4_06": "VO_LOE_116_Play4_06.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOE_116.png",
 		"collectible": true,
@@ -49093,6 +54614,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_LOEA01_12_Attack_02.ogg",
+			"Death_04": "VO_LOEA01_12_Death_04.ogg",
+			"Play_01": "VO_LOEA01_12_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA01_12.png",
 		"cost": 3,
@@ -49413,6 +54939,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_LOEA04_13bt_Attack_02.ogg",
+			"Death_04": "VO_LOEA04_13bt_Death_04.ogg",
+			"Play_01": "VO_LOEA04_13bt_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA04_13bt.png",
 		"cost": 4,
@@ -49477,6 +55008,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
+		"audio": {
+			"Attack2_03": "VO_LOEA04_24_Attack2_03.ogg",
+			"Death_04": "VO_LOEA04_24_Death_04.ogg",
+			"Play_01": "VO_LOEA04_24_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA04_24.png",
 		"cost": 8,
@@ -50009,6 +55545,10 @@ var parseCardsText = {
 	},
 	{
 		"attack": 4,
+		"audio": {
+			"Death_02": "VO_LOEA07_12_Death_02.ogg",
+			"Play_01": "VO_LOEA07_12_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA07_12.png",
 		"cost": 5,
@@ -50173,6 +55713,10 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"1_Response": "VO_LOEA09_1_RESPONSE.ogg",
+			"1_Turn1": "VO_LOEA09_1_TURN1.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA09_1.png",
 		"dbfId": 24383,
@@ -50471,6 +56015,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_LOEA09_6_Attack_02.ogg",
+			"Death_05": "VO_LOEA09_6_Death_05.ogg",
+			"Play_01": "VO_LOEA09_6_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA09_6.png",
 		"cost": 2,
@@ -50616,6 +56165,9 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"1_Middlefin": "VO_LOEA10_1_MIDDLEFIN.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA10_1.png",
 		"dbfId": 10109,
@@ -50875,6 +56427,15 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
+		"audio": {
+			"Health_10": "VO_LOEA15_1_LOW_HEALTH_10.ogg",
+			"Loss_11": "VO_LOEA15_1_LOSS_11.ogg",
+			"Pregame_06": "VO_LOEA15_1_PREGAME_06.ogg",
+			"Rager_09": "VO_LOEA15_1_MAGMA_RAGER_09.ogg",
+			"Start_07": "VO_LOEA15_1_START_07.ogg",
+			"Turn1_08": "VO_LOEA15_1_TURN1_08.ogg",
+			"Win_12": "VO_LOEA15_1_WIN_12.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA15_1.png",
 		"dbfId": 19291,
@@ -50964,6 +56525,12 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_04": "VO_LOEA16_1_CARD_04.ogg",
+			"Response_03": "VO_LOEA16_1_RESPONSE_03.ogg",
+			"Start_01": "VO_LOEA16_1_START_01.ogg",
+			"Turn1_02": "VO_LOEA16_1_TURN1_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA16_1.png",
 		"dbfId": 19612,
@@ -51231,6 +56798,11 @@ var parseCardsText = {
 		"type": "Hero"
 	},
 	{
+		"audio": {
+			"Giantfin_Attack": "VO_LOEA16_24_Giantfin_Attack.ogg",
+			"Giantfin_Death": "VO_LOEA16_24_Giantfin_Death.ogg",
+			"Giantfin_Play": "VO_LOEA16_24_Giantfin_Play.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOEA16_2.png",
 		"cost": 0,
@@ -51707,7 +57279,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46457,
-		"goldenImage": "LOOT_010e.gif",
 		"id": "LOOT_010e",
 		"name": "Shadowy",
 		"playerClass": "Neutral",
@@ -51718,6 +57289,15 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_013_Male_Demon_Attack_01.ogg",
+			"Attack_02": "VO_LOOT_013_Male_Demon_Attack_02.ogg",
+			"Attack_03": "VO_LOOT_013_Male_Demon_Attack_03.ogg",
+			"Attack_04": "VO_LOOT_013_Male_Demon_Attack_04.ogg",
+			"Death_01": "VO_LOOT_013_Male_Demon_Death_01.ogg",
+			"Play_02": "VO_LOOT_013_Male_Demon_Play_02.ogg",
+			"Play_03": "VO_LOOT_013_Male_Demon_Play_03.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOT_013.png",
 		"collectible": true,
@@ -51742,6 +57322,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_014_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_014_Male_Kobold_Death_01.ogg",
+			"Play_03": "VO_LOOT_014_Male_Kobold_Play_03.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOT_014.png",
 		"collectible": true,
@@ -51776,12 +57361,17 @@ var parseCardsText = {
 		"playerClass": "Warlock",
 		"rarity": "Common",
 		"set": "Lootapalooza",
-		"text": "Destroy a friendly minion. Restore #8 Health to your hero.",
+		"text": "Destroy a friendly minion. Restore #4 Health to your hero.",
 		"type": "Spell"
 	},
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_018_Male_Demon_Attack_01.ogg",
+			"Death_01": "VO_LOOT_018_Male_Demon_Death_01.ogg",
+			"Play_01": "VO_LOOT_018_Male_Demon_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOT_018.png",
 		"collectible": true,
@@ -51809,7 +57399,6 @@ var parseCardsText = {
 		"artist": "A.J. Nazzaro",
 		"cardClass": "NEUTRAL",
 		"dbfId": 43132,
-		"goldenImage": "LOOT_018e.gif",
 		"id": "LOOT_018e",
 		"name": "Hooked Horror",
 		"playerClass": "Neutral",
@@ -51820,6 +57409,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studios",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_026_Male_Faldorei_Attack_01.ogg",
+			"Death_01": "VO_LOOT_026_Male_Faldorei_Death_01.ogg",
+			"Play_01": "VO_LOOT_026_Male_Faldorei_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOT_026.png",
 		"collectible": true,
@@ -51873,8 +57467,13 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
-		"artist": "Anton Magdalin",
+		"artist": "Max Grecke",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_LOOT_033_Female_Kobold_Attack_02.ogg",
+			"Death_01": "VO_LOOT_033_Female_Kobold_Death_01.ogg",
+			"Play_02": "VO_LOOT_033_Female_Kobold_Play_02.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOT_033.png",
 		"collectible": true,
@@ -51897,6 +57496,12 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_041_Male_Kobold_Attack_01.ogg",
+			"Attack_02": "VO_LOOT_041_Male_Kobold_Attack_02.ogg",
+			"Death_01": "VO_LOOT_041_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_041_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOT_041.png",
 		"collectible": true,
@@ -52009,7 +57614,6 @@ var parseCardsText = {
 		"artist": "Lucas Graciano",
 		"cardClass": "NEUTRAL",
 		"dbfId": 47223,
-		"goldenImage": "LOOT_047e.gif",
 		"id": "LOOT_047e",
 		"name": "Barkskin",
 		"playerClass": "Neutral",
@@ -52126,7 +57730,6 @@ var parseCardsText = {
 		"artist": "Matt Dixon",
 		"cardClass": "NEUTRAL",
 		"dbfId": 48221,
-		"goldenImage": "LOOT_054be.gif",
 		"id": "LOOT_054be",
 		"name": "Fearless",
 		"playerClass": "Neutral",
@@ -52208,6 +57811,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_LOOT_062_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_062_Male_Kobold_Death_01.ogg",
+			"Play_02": "VO_LOOT_062_Male_Kobold_Play_02.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "LOOT_062.png",
 		"collectible": true,
@@ -52289,6 +57897,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_LOOT_069_Male_Kobold_Attack_01.ogg",
+			"Death_02": "VO_LOOT_069_Male_Kobold_Death_02.ogg",
+			"Play_01": "VO_LOOT_069_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_069.png",
 		"collectible": true,
@@ -52489,6 +58102,11 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
+		"audio": {
+			"Attack_01": "VO_LOOT_091t_Female_Valkyre_Attack_01.ogg",
+			"Death_01": "VO_LOOT_091t_Female_Valkyre_Death_01.ogg",
+			"Play_01": "VO_LOOT_091t_Female_Valkyre_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "LOOT_091.png",
 		"collectible": true,
@@ -52605,7 +58223,7 @@ var parseCardsText = {
 		"cardClass": "PALADIN",
 		"cardImage": "LOOT_093.png",
 		"collectible": true,
-		"cost": 4,
+		"cost": 5,
 		"dbfId": 43384,
 		"flavor": "More personal than a text to arms.",
 		"goldenImage": "LOOT_093.gif",
@@ -52710,7 +58328,6 @@ var parseCardsText = {
 		"artist": "Arthur Bozonnet",
 		"cardClass": "MAGE",
 		"dbfId": 43418,
-		"goldenImage": "LOOT_104e.gif",
 		"id": "LOOT_104e",
 		"name": "Shifting",
 		"playerClass": "Mage",
@@ -52755,6 +58372,20 @@ var parseCardsText = {
 	{
 		"artist": "Izzy Hoover",
 		"attack": 0,
+		"audio": {
+			"Trigger_01": "VO_LOOT_108_Male_Weapon_Trigger_01.ogg",
+			"Trigger_02": "VO_LOOT_108_Male_Weapon_Trigger_02.ogg",
+			"Trigger_03": "VO_LOOT_108_Male_Weapon_Trigger_03.ogg",
+			"Trigger_23": "VO_LOOT_108_Male_Weapon_Trigger_23.ogg",
+			"Trigger_26": "VO_LOOT_108_Male_Weapon_Trigger_26.ogg",
+			"Trigger_27": "VO_LOOT_108_Male_Weapon_Trigger_27.ogg",
+			"Trigger_29": "VO_LOOT_108_Male_Weapon_Trigger_29.ogg",
+			"Trigger_30": "VO_LOOT_108_Male_Weapon_Trigger_30.ogg",
+			"Trigger_31": "VO_LOOT_108_Male_Weapon_Trigger_31.ogg",
+			"Trigger_39": "VO_LOOT_108_Male_Weapon_Trigger_39.ogg",
+			"Trigger_40": "VO_LOOT_108_Male_Weapon_Trigger_40.ogg",
+			"Trigger_43": "VO_LOOT_108_Male_Weapon_Trigger_43.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "LOOT_108.png",
 		"collectible": true,
@@ -52825,6 +58456,11 @@ var parseCardsText = {
 	{
 		"artist": "Nicola Saviori",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_118_Male_Dragon_Attack_01.ogg",
+			"Death_01": "VO_LOOT_118_Male_Dragon_Death_01.ogg",
+			"Play_01": "VO_LOOT_118_Male_Dragon_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_118.png",
 		"collectible": true,
@@ -52849,7 +58485,6 @@ var parseCardsText = {
 		"artist": "Nicola Saviori",
 		"cardClass": "NEUTRAL",
 		"dbfId": 43464,
-		"goldenImage": "LOOT_118e.gif",
 		"id": "LOOT_118e",
 		"name": "Smithing",
 		"playerClass": "Neutral",
@@ -52883,6 +58518,11 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_124_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_LOOT_124_Male_Human_Death_01.ogg",
+			"Play_01": "VO_LOOT_124_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_124.png",
 		"collectible": true,
@@ -52910,7 +58550,6 @@ var parseCardsText = {
 		"artist": "Jomaro Kindred",
 		"cardClass": "NEUTRAL",
 		"dbfId": 43472,
-		"goldenImage": "LOOT_124e.gif",
 		"id": "LOOT_124e",
 		"name": "Lonely",
 		"playerClass": "Neutral",
@@ -52945,6 +58584,11 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_130_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_LOOT_130_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_LOOT_130_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_130.png",
 		"collectible": true,
@@ -53006,6 +58650,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_132_Female_Dwarf_Attack_01.ogg",
+			"Death_01": "VO_LOOT_132_Female_Dwarf_Death_01.ogg",
+			"Play_01": "VO_LOOT_132_Female_Dwarf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_132.png",
 		"collectible": true,
@@ -53048,7 +58697,6 @@ var parseCardsText = {
 		"artist": "Jakub Kasber",
 		"cardClass": "NEUTRAL",
 		"dbfId": 47513,
-		"goldenImage": "LOOT_134e.gif",
 		"id": "LOOT_134e",
 		"name": "Toothy",
 		"playerClass": "Neutral",
@@ -53059,6 +58707,11 @@ var parseCardsText = {
 	{
 		"artist": "Ivan Fomin",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_136_Male_Demon_Attack_01.ogg",
+			"Death_01": "VO_LOOT_136_Male_Demon_Death_01.ogg",
+			"Play_01": "VO_LOOT_136_Male_Demon_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_136.png",
 		"collectible": true,
@@ -53084,7 +58737,6 @@ var parseCardsText = {
 		"artist": "Ivan Fomin",
 		"cardClass": "NEUTRAL",
 		"dbfId": 47892,
-		"goldenImage": "LOOT_136e.gif",
 		"id": "LOOT_136e",
 		"name": "Devilish Power",
 		"playerClass": "Neutral",
@@ -53095,6 +58747,11 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_137_Female_Dragon_Attack_01.ogg",
+			"Death_01": "VO_LOOT_137_Female_Dragon_Death_01.ogg",
+			"Play_01": "VO_LOOT_137_Female_Dragon_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_137.png",
 		"collectible": true,
@@ -53162,7 +58819,6 @@ var parseCardsText = {
 		"artist": "Nick Southham",
 		"cardClass": "NEUTRAL",
 		"dbfId": 43514,
-		"goldenImage": "LOOT_149e.gif",
 		"id": "LOOT_149e",
 		"name": "Creepier",
 		"playerClass": "Neutral",
@@ -53173,6 +58829,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_LOOT_150_Female_Furbolg_Attack_01.ogg",
+			"Death_01": "VO_LOOT_150_Female_Furbolg_Death_01.ogg",
+			"Play_01": "VO_LOOT_150_Female_Furbolg_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_150.png",
 		"collectible": true,
@@ -53212,6 +58873,11 @@ var parseCardsText = {
 	{
 		"artist": "Ursula Dorada",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_152_Female_Orc_Attack_01.ogg",
+			"Death_01": "VO_LOOT_152_Female_Orc_Death_01.ogg",
+			"Play_01": "VO_LOOT_152_Female_Orc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_152.png",
 		"collectible": true,
@@ -53236,7 +58902,6 @@ var parseCardsText = {
 		"artist": "Ursula Dorada",
 		"cardClass": "NEUTRAL",
 		"dbfId": 43520,
-		"goldenImage": "LOOT_152e.gif",
 		"id": "LOOT_152e",
 		"name": "Inspired",
 		"playerClass": "Neutral",
@@ -53286,6 +58951,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_154_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_154_Male_Kobold_Death_01.ogg",
+			"Play_02": "VO_LOOT_154_Male_Kobold_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_154.png",
 		"collectible": true,
@@ -53332,7 +59002,6 @@ var parseCardsText = {
 		"artist": "Jakub Kasper",
 		"cardClass": "NEUTRAL",
 		"dbfId": 48364,
-		"goldenImage": "LOOT_161e.gif",
 		"id": "LOOT_161e",
 		"name": "Carnivorous Cube",
 		"playerClass": "Neutral",
@@ -53343,6 +59012,12 @@ var parseCardsText = {
 	{
 		"artist": "J. Axer",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_165_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_LOOT_165_Female_Human_Death_01.ogg",
+			"Play_01": "VO_LOOT_165_Female_Human_Play_01.ogg",
+			"Trigger_02": "VO_LOOT_165_Female_Human_Trigger_02.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOT_165.png",
 		"collectible": true,
@@ -53364,7 +59039,6 @@ var parseCardsText = {
 		"artist": "J. Axer",
 		"cardClass": "NEUTRAL",
 		"dbfId": 47633,
-		"goldenImage": "LOOT_165e.gif",
 		"id": "LOOT_165e",
 		"name": "Sonya's Shadow",
 		"playerClass": "Neutral",
@@ -53375,6 +59049,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_167_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_167_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_167_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_167.png",
 		"collectible": true,
@@ -53398,7 +59077,6 @@ var parseCardsText = {
 		"artist": "Matt Dixon",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45875,
-		"goldenImage": "LOOT_167e.gif",
 		"id": "LOOT_167e",
 		"name": "Magic Mushroom",
 		"playerClass": "Neutral",
@@ -53449,6 +59127,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Garner",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_184_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_LOOT_184_Female_Human_Death_01.ogg",
+			"Play_01": "VO_LOOT_184_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_184.png",
 		"collectible": true,
@@ -53495,7 +59178,6 @@ var parseCardsText = {
 		"artist": "Mauricio Herrera",
 		"cardClass": "NEUTRAL",
 		"dbfId": 47457,
-		"goldenImage": "LOOT_187e.gif",
 		"id": "LOOT_187e",
 		"name": "Shadowy",
 		"playerClass": "Neutral",
@@ -53609,7 +59291,6 @@ var parseCardsText = {
 		"artist": "Mauricio Herrera",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45530,
-		"goldenImage": "LOOT_204e.gif",
 		"id": "LOOT_204e",
 		"name": "Close Call",
 		"playerClass": "Neutral",
@@ -53676,6 +59357,11 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Wu",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_211_Male_NightElf_Attack_01.ogg",
+			"Death_01": "VO_LOOT_211_Male_NightElf_Death_01.ogg",
+			"Play_01": "VO_LOOT_211_Male_NightElf_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOT_211.png",
 		"collectible": true,
@@ -53719,7 +59405,6 @@ var parseCardsText = {
 		"artist": "Mauricio Herrera",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45534,
-		"goldenImage": "LOOT_214e.gif",
 		"id": "LOOT_214e",
 		"mechanics": [
 			"TAG_ONE_TURN_EFFECT"
@@ -53733,6 +59418,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studios",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_LOOT_216_Female_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_LOOT_216_Female_BloodElf_Death_01.ogg",
+			"Play_02": "VO_LOOT_216_Female_BloodElf_Play_02.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "LOOT_216.png",
 		"collectible": true,
@@ -53757,7 +59447,6 @@ var parseCardsText = {
 		"artist": "Tyler West Studios",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45538,
-		"goldenImage": "LOOT_216e.gif",
 		"id": "LOOT_216e",
 		"name": "Light of the Exarch",
 		"playerClass": "Neutral",
@@ -53831,6 +59520,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_LOOT_231_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_LOOT_231_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_LOOT_231_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "LOOT_231.png",
 		"collectible": true,
@@ -53851,6 +59545,12 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_LOOT_233_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_233_Male_Kobold_Death_01.ogg",
+			"Death_02": "VO_LOOT_233_Male_Kobold_Death_02.ogg",
+			"Play_01": "VO_LOOT_233_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_233.png",
 		"collectible": true,
@@ -53930,7 +59630,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 49338,
-		"goldenImage": "LOOT_278e.gif",
 		"id": "LOOT_278e",
 		"name": "Tastes Like ????",
 		"playerClass": "Neutral",
@@ -53957,7 +59656,6 @@ var parseCardsText = {
 		"artist": "Evgeniy Dlinnov",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45750,
-		"goldenImage": "LOOT_278t1e.gif",
 		"id": "LOOT_278t1e",
 		"mechanics": [
 			"LIFESTEAL"
@@ -53987,7 +59685,6 @@ var parseCardsText = {
 		"artist": "Ivan Fomin",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45752,
-		"goldenImage": "LOOT_278t2e.gif",
 		"id": "LOOT_278t2e",
 		"name": "Pure",
 		"playerClass": "Neutral",
@@ -54014,7 +59711,6 @@ var parseCardsText = {
 		"artist": "Vladimir Kafanov",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45754,
-		"goldenImage": "LOOT_278t3e.gif",
 		"id": "LOOT_278t3e",
 		"name": "Shadowtouched",
 		"playerClass": "Neutral",
@@ -54026,7 +59722,6 @@ var parseCardsText = {
 		"artist": "Vladimir Kafanov",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45755,
-		"goldenImage": "LOOT_278t3e2.gif",
 		"id": "LOOT_278t3e2",
 		"name": "Shadowy",
 		"playerClass": "Neutral",
@@ -54053,7 +59748,6 @@ var parseCardsText = {
 		"artist": "Slawomir Maniak",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45758,
-		"goldenImage": "LOOT_278t4e.gif",
 		"id": "LOOT_278t4e",
 		"name": "Hopeful",
 		"playerClass": "Neutral",
@@ -54263,7 +59957,6 @@ var parseCardsText = {
 		"artist": "Konstantin Turovec",
 		"cardClass": "NEUTRAL",
 		"dbfId": 46072,
-		"goldenImage": "LOOT_286t3e.gif",
 		"id": "LOOT_286t3e",
 		"name": "Holy Blessings",
 		"playerClass": "Neutral",
@@ -54294,6 +59987,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_LOOT_291_Male_Kobold_Attack_02.ogg",
+			"Death_01": "VO_LOOT_291_Male_Kobold_Death_01.ogg",
+			"Play_02": "VO_LOOT_291_Male_Kobold_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_291.png",
 		"collectible": true,
@@ -54316,10 +60014,15 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_306a_Male_Gnome_Attack_01.ogg",
+			"Death_01": "VO_LOOT_306a_Male_Gnome_Death_01.ogg",
+			"Play_04": "VO_LOOT_306a_Male_Gnome_Play_04.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOT_306.png",
 		"collectible": true,
-		"cost": 5,
+		"cost": 6,
 		"dbfId": 45820,
 		"flavor": "If you don't keep up with your payments, it'll be a repossessed lackey.",
 		"goldenImage": "LOOT_306.gif",
@@ -54383,6 +60086,11 @@ var parseCardsText = {
 	{
 		"artist": "Alexey Aparin",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_314_Male_Tauren_Attack_01.ogg",
+			"Death_01": "VO_LOOT_314_Male_Tauren_Death_01.ogg",
+			"Play_01": "VO_LOOT_314_Male_Tauren_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "LOOT_314.png",
 		"collectible": true,
@@ -54410,6 +60118,11 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_LOOT_315_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_315_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_315_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_315.png",
 		"collectible": true,
@@ -54433,6 +60146,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_329_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_LOOT_329_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_LOOT_329_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "LOOT_329.png",
 		"collectible": true,
@@ -54475,7 +60193,6 @@ var parseCardsText = {
 		"artist": "Wayne Reynolds",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45876,
-		"goldenImage": "LOOT_333e.gif",
 		"id": "LOOT_333e",
 		"name": "+1 Level!",
 		"playerClass": "Neutral",
@@ -54507,7 +60224,6 @@ var parseCardsText = {
 		"artist": "Ivan Fomin",
 		"cardClass": "SHAMAN",
 		"dbfId": 49064,
-		"goldenImage": "LOOT_344e.gif",
 		"id": "LOOT_344e",
 		"name": "Primal Talisman",
 		"playerClass": "Shaman",
@@ -54518,6 +60234,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_347_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_347_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_347_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_347.png",
 		"collectible": true,
@@ -54540,6 +60261,11 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_351_Female_Sprite_Attack_01.ogg",
+			"Death_01": "VO_LOOT_351_Female_Sprite_Death_01.ogg",
+			"Play_01": "VO_LOOT_351_Female_Sprite_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "LOOT_351.png",
 		"collectible": true,
@@ -54579,6 +60305,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_LOOT_357_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_LOOT_357_Male_Human_Death_01.ogg",
+			"Play_01": "VO_LOOT_357_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_357.png",
 		"collectible": true,
@@ -54628,6 +60359,11 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_LOOT_358_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_LOOT_358_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_LOOT_358_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "LOOT_358.png",
 		"collectible": true,
@@ -54653,7 +60389,6 @@ var parseCardsText = {
 		"artist": "Hideaki Takamura",
 		"cardClass": "NEUTRAL",
 		"dbfId": 45994,
-		"goldenImage": "LOOT_358e.gif",
 		"id": "LOOT_358e",
 		"name": "Grumbly Tumbly",
 		"playerClass": "Neutral",
@@ -54664,6 +60399,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_LOOT_363_Male_Kobold_Attack_02.ogg",
+			"Death_01": "VO_LOOT_363_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_363_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "LOOT_363.png",
 		"collectible": true,
@@ -54725,6 +60465,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_LOOT_367_Male_Kobold_Attack_02.ogg",
+			"Death_01": "VO_LOOT_367_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_367_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOT_367.png",
 		"collectible": true,
@@ -54747,6 +60492,11 @@ var parseCardsText = {
 	{
 		"artist": "Jerry Mascho",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_368_Male_Demon_Attack_01.ogg",
+			"Death_01": "VO_LOOT_368_Male_Demon_Death_01.ogg",
+			"Play_01": "VO_LOOT_368_Male_Demon_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOT_368.png",
 		"collectible": true,
@@ -54811,6 +60561,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_375_Female_Draenei_Attack_01.ogg",
+			"Death_01": "VO_LOOT_375_Female_Draenei_Death_01.ogg",
+			"Play_01": "VO_LOOT_375_Female_Draenei_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_375.png",
 		"collectible": true,
@@ -54859,6 +60614,15 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielsen",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_382_Male_Kobold_Attack_01.ogg",
+			"Attack_02": "VO_LOOT_382_Male_Kobold_Attack_02.ogg",
+			"Death_01": "VO_LOOT_382_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_382_Male_Kobold_Play_01.ogg",
+			"Play_02": "VO_LOOT_382_Male_Kobold_Play_02.ogg",
+			"Play_03": "VO_LOOT_382_Male_Kobold_Play_03.ogg",
+			"Play_04": "VO_LOOT_382_Male_Kobold_Play_04.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_382.png",
 		"collectible": true,
@@ -54878,6 +60642,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_383_Male_Ettin_Attack_01.ogg",
+			"Death_03": "VO_LOOT_383_Male_Ettin_Death_03.ogg",
+			"Play_01": "VO_LOOT_383_Male_Ettin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_383.png",
 		"collectible": true,
@@ -54923,6 +60692,11 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga & James Martin",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_LOOT_389_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_389_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_389_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_389.png",
 		"collectible": true,
@@ -54987,6 +60761,11 @@ var parseCardsText = {
 	{
 		"artist": "Ware Lee",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_398_Female_Djinn_Attack_01.ogg",
+			"Death_01": "VO_LOOT_398_Female_Djinn_Death_01.ogg",
+			"Play_01": "VO_LOOT_398_Female_Djinn_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "LOOT_398.png",
 		"collectible": true,
@@ -55007,6 +60786,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_410_Male_Dragon_Attack_01.ogg",
+			"Death_01": "VO_LOOT_410_Male_Dragon_Death_01.ogg",
+			"Play_01": "VO_LOOT_410_Male_Dragon_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOT_410.png",
 		"collectible": true,
@@ -55030,6 +60814,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_412_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_412_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_412_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOT_412.png",
 		"collectible": true,
@@ -55054,7 +60843,6 @@ var parseCardsText = {
 		"artist": "Alex Horley Orlandelli",
 		"cardClass": "NEUTRAL",
 		"dbfId": 46395,
-		"goldenImage": "LOOT_412e.gif",
 		"id": "LOOT_412e",
 		"name": "Shadowy",
 		"playerClass": "Neutral",
@@ -55088,6 +60876,12 @@ var parseCardsText = {
 	{
 		"artist": "Ursula Dorada",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_414_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_414_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_414_Male_Kobold_Play_01.ogg",
+			"Trigger_03": "VO_LOOT_414_Male_Kobold_Trigger_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_414.png",
 		"collectible": true,
@@ -55107,6 +60901,11 @@ var parseCardsText = {
 	{
 		"artist": "A.J. Nazzaro",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_415_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_LOOT_415_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_LOOT_415_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOT_415.png",
 		"collectible": true,
@@ -55318,6 +61117,16 @@ var parseCardsText = {
 	{
 		"artist": "Matthew O'Connor",
 		"attack": 0,
+		"audio": {
+			"Trigger_46": "VO_LOOT_420_Male_Weapon_Trigger_46.ogg",
+			"Trigger_48": "VO_LOOT_420_Male_Weapon_Trigger_48.ogg",
+			"Trigger_49": "VO_LOOT_420_Male_Weapon_Trigger_49.ogg",
+			"Trigger_59": "VO_LOOT_420_Male_Weapon_Trigger_59.ogg",
+			"Trigger_60": "VO_LOOT_420_Male_Weapon_Trigger_60.ogg",
+			"Trigger_67": "VO_LOOT_420_Male_Weapon_Trigger_67.ogg",
+			"Trigger_68": "VO_LOOT_420_Male_Weapon_Trigger_68.ogg",
+			"Trigger_79": "VO_LOOT_420_Male_Weapon_Trigger_79.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOT_420.png",
 		"collectible": true,
@@ -55367,7 +61176,6 @@ var parseCardsText = {
 		"cost": 0,
 		"dbfId": 48373,
 		"durability": 0,
-		"goldenImage": "LOOT_500d.gif",
 		"id": "LOOT_500d",
 		"name": "Val'anyr Reequip Effect Dummy",
 		"playerClass": "Paladin",
@@ -55378,7 +61186,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46262,
-		"goldenImage": "LOOT_500e.gif",
 		"id": "LOOT_500e",
 		"name": "Wielding Val'anyr",
 		"playerClass": "Neutral",
@@ -55543,6 +61350,11 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 6,
+		"audio": {
+			"Attack_02": "VO_LOOT_511_Female_NightElf_Attack_02.ogg",
+			"Death_01": "VO_LOOT_511_Female_NightElf_Death_01.ogg",
+			"Play_01": "VO_LOOT_511_Female_NightElf_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "LOOT_511.png",
 		"collectible": true,
@@ -55570,6 +61382,11 @@ var parseCardsText = {
 	{
 		"artist": "Sean McNally",
 		"attack": 2,
+		"audio": {
+			"Attack_03": "VO_LOOT_516_Female_Medusa_Attack_03.ogg",
+			"Death_01": "VO_LOOT_516_Female_Medusa_Death_01.ogg",
+			"Play_02": "VO_LOOT_516_Female_Medusa_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_516.png",
 		"collectible": true,
@@ -55617,7 +61434,6 @@ var parseCardsText = {
 		"artist": "Hideaki Takamura",
 		"cardClass": "NEUTRAL",
 		"dbfId": 46431,
-		"goldenImage": "LOOT_517e.gif",
 		"id": "LOOT_517e",
 		"name": "Murmurs",
 		"playerClass": "Neutral",
@@ -55628,7 +61444,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 49219,
-		"goldenImage": "LOOT_517e2.gif",
 		"id": "LOOT_517e2",
 		"name": "Murmuring",
 		"playerClass": "Neutral",
@@ -55639,6 +61454,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_LOOT_518_Male_Kobold_Attack_02.ogg",
+			"Death_01": "VO_LOOT_518_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_518_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "LOOT_518.png",
 		"collectible": true,
@@ -55661,6 +61481,12 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_LOOT_519_Female_Kobold_Attack_02.ogg",
+			"Death_01": "VO_LOOT_519_Female_Kobold_Death_01.ogg",
+			"Play_02": "VO_LOOT_519_Female_Kobold_Play_02.ogg",
+			"Trigger_01": "VO_LOOT_519_Female_Kobold_Trigger_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOT_519.png",
 		"collectible": true,
@@ -55707,7 +61533,6 @@ var parseCardsText = {
 		"artist": "Anton Kagoukin",
 		"cardClass": "NEUTRAL",
 		"dbfId": 46444,
-		"goldenImage": "LOOT_520e.gif",
 		"id": "LOOT_520e",
 		"name": "Albino Chameleon",
 		"playerClass": "Neutral",
@@ -55716,8 +61541,13 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"artist": "Max Greck",
+		"artist": "Max Grecke",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_LOOT_521_Male_Dwarf_Attack_02.ogg",
+			"Death_01": "VO_LOOT_521_Male_Dwarf_Death_01.ogg",
+			"Play_01": "VO_LOOT_521_Male_Dwarf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_521.png",
 		"collectible": true,
@@ -55761,6 +61591,12 @@ var parseCardsText = {
 	{
 		"artist": "L. Lullabi & K. Turovec",
 		"attack": 20,
+		"audio": {
+			"Attack_01": "VO_LOOT_526_Male_Darkness_Attack_01.ogg",
+			"Death_01": "VO_LOOT_526_Male_Darkness_Death_01.ogg",
+			"Play_01": "VO_LOOT_526_Male_Darkness_Play_01.ogg",
+			"Trigger_01": "VO_LOOT_526_Male_Darkness_Trigger_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_526.png",
 		"collectible": true,
@@ -55806,7 +61642,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 48694,
-		"goldenImage": "LOOT_526et.gif",
 		"id": "LOOT_526et",
 		"name": "Darkness Candle Detect",
 		"playerClass": "Neutral",
@@ -55833,6 +61668,11 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_528_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_LOOT_528_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_LOOT_528_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOT_528.png",
 		"collectible": true,
@@ -55856,7 +61696,6 @@ var parseCardsText = {
 		"artist": "Tooth",
 		"cardClass": "WARRIOR",
 		"dbfId": 47891,
-		"goldenImage": "LOOT_528e.gif",
 		"id": "LOOT_528e",
 		"name": "Twilight Curse",
 		"playerClass": "Warrior",
@@ -55867,6 +61706,12 @@ var parseCardsText = {
 	{
 		"artist": "Slawomir Maniak",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_529_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_LOOT_529_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_LOOT_529_Male_Elemental_Play_01.ogg",
+			"Play_02": "VO_LOOT_529_Male_Elemental_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_529.png",
 		"collectible": true,
@@ -55891,7 +61736,6 @@ var parseCardsText = {
 		"artist": "Slawomir Maniak",
 		"cardClass": "NEUTRAL",
 		"dbfId": 47456,
-		"goldenImage": "LOOT_529e.gif",
 		"id": "LOOT_529e",
 		"name": "Void Shift",
 		"playerClass": "Neutral",
@@ -55924,6 +61768,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOT_535_Female_HighElf_Attack_01.ogg",
+			"Death_01": "VO_LOOT_535_Female_HighElf_Death_01.ogg",
+			"Play_01": "VO_LOOT_535_Female_HighElf_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "LOOT_535.png",
 		"collectible": true,
@@ -55963,6 +61812,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Bozonnet",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_537_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_LOOT_537_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_LOOT_537_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "LOOT_537.png",
 		"collectible": true,
@@ -55986,6 +61840,11 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_LOOT_538_Male_Dragon_Attack_01.ogg",
+			"Death_01": "VO_LOOT_538_Male_Dragon_Death_01.ogg",
+			"Play_02": "VO_LOOT_538_Male_Dragon_Play_02.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOT_538.png",
 		"collectible": true,
@@ -56010,10 +61869,15 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_LOOT_539_Female_Troll_Attack_01.ogg",
+			"Death_01": "VO_LOOT_539_Female_Troll_Death_01.ogg",
+			"Play_01": "VO_LOOT_539_Female_Troll_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_539.png",
 		"collectible": true,
-		"cost": 6,
+		"cost": 7,
 		"dbfId": 46551,
 		"flavor": "Sometimes she'll summon a Doomsayer. Out of spite.",
 		"goldenImage": "LOOT_539.gif",
@@ -56032,6 +61896,11 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_LOOT_540_Male_Orc_Attack_01.ogg",
+			"Death_01": "VO_LOOT_540_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_LOOT_540_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_540.png",
 		"collectible": true,
@@ -56054,6 +61923,77 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 5,
+		"audio": {
+			"Adventureselect_01": "VO_LOOT_541_Male_Kobold_TUT_AdventureSelect_01.ogg",
+			"Afkay_01": "VO_LOOT_541_Male_Kobold_BOSS_AFKay_01.ogg",
+			"Attack_01": "VO_LOOT_541_Male_Kobold_Attack_01.ogg",
+			"Azari_01": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Azari_01.ogg",
+			"Azari_02": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Azari_02.ogg",
+			"Backpacks_01": "VO_LOOT_541_Male_Kobold_LOOT_Backpacks_01.ogg",
+			"Blackseed_01": "VO_LOOT_541_Male_Kobold_BOSS_Blackseed_01.ogg",
+			"Boombox_01": "VO_LOOT_541_Male_Kobold_LOOT_Boombox_01.ogg",
+			"Bountyboard_01": "VO_LOOT_541_Male_Kobold_TUT_BountyBoard_01.ogg",
+			"Brimstone_01": "VO_LOOT_541_Male_Kobold_BOSS_Brimstone_01.ogg",
+			"Candle1_01": "VO_LOOT_541_Male_Kobold_LOOT_Candle1_01.ogg",
+			"Candle2_01": "VO_LOOT_541_Male_Kobold_LOOT_Candle2_01.ogg",
+			"Candlebeard_01": "VO_LOOT_541_Male_Kobold_BOSS_Candlebeard_01.ogg",
+			"Capturedflag_01": "VO_LOOT_541_Male_Kobold_LOOT_CapturedFlag_01.ogg",
+			"Characterselect_01": "VO_LOOT_541_Male_Kobold_TUT_CharacterSelect_01.ogg",
+			"Chronomancer_01": "VO_LOOT_541_Male_Kobold_BOSS_Chronomancer_01.ogg",
+			"Cube_01": "VO_LOOT_541_Male_Kobold_LOOT_Cube_01.ogg",
+			"Darkness_01": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Darkness_01.ogg",
+			"Darkness_02": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Darkness_02.ogg",
+			"Darkness_03": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Darkness_03.ogg",
+			"Death_01": "VO_LOOT_541_Male_Kobold_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOT_541_Male_Kobold_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOT_541_Male_Kobold_EmoteResponse_01.ogg",
+			"Everrot_01": "VO_LOOT_541_Male_Kobold_BOSS_Everrot_01.ogg",
+			"Flurgl_01": "VO_LOOT_541_Male_Kobold_BOSS_Flurgl_01.ogg",
+			"Game1begin1_01": "VO_LOOT_541_Male_Kobold_TUT_Game1Begin1_01.ogg",
+			"Game1defeat_01": "VO_LOOT_541_Male_Kobold_TUT_Game1Defeat_01.ogg",
+			"Game1victory_01": "VO_LOOT_541_Male_Kobold_TUT_Game1Victory_01.ogg",
+			"Game2begin1_01": "VO_LOOT_541_Male_Kobold_TUT_Game2Begin1_01.ogg",
+			"Game2begin2_01": "VO_LOOT_541_Male_Kobold_TUT_Game2Begin2_01.ogg",
+			"Generaldefeat1_01": "VO_LOOT_541_Male_Kobold_TUT_GeneralDefeat1_01.ogg",
+			"Generaldefeat2_01": "VO_LOOT_541_Male_Kobold_TUT_GeneralDefeat2_01.ogg",
+			"Georgekarl_01": "VO_LOOT_541_Male_Kobold_BOSS_GeorgeKarl_01.ogg",
+			"Gnosh_01": "VO_LOOT_541_Male_Kobold_BOSS_Gnosh_01.ogg",
+			"Gutmook_01": "VO_LOOT_541_Male_Kobold_BOSS_Gutmook_01.ogg",
+			"Hamm_01": "VO_LOOT_541_Male_Kobold_BOSS_Hamm_01.ogg",
+			"Invisibility_01": "VO_LOOT_541_Male_Kobold_LOOT_Invisibility_01.ogg",
+			"Jeeru_01": "VO_LOOT_541_Male_Kobold_BOSS_Jeeru_01.ogg",
+			"Koboldking_01": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_KoboldKing_01.ogg",
+			"Koboldking_02": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_KoboldKing_02.ogg",
+			"Koboldking_03": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_KoboldKing_03.ogg",
+			"Lyris_01": "VO_LOOT_541_Male_Kobold_BOSS_Lyris_01.ogg",
+			"Magmarager_01": "VO_LOOT_541_Male_Kobold_BOSS_MagmaRager_01.ogg",
+			"Mainboss1_01": "VO_LOOT_541_Male_Kobold_TUT_MainBoss1_01.ogg",
+			"Mainboss3_01": "VO_LOOT_541_Male_Kobold_TUT_MainBoss3_01.ogg",
+			"Mothergloop_01": "VO_LOOT_541_Male_Kobold_BOSS_Mothergloop_01.ogg",
+			"Mushhuckster_01": "VO_LOOT_541_Male_Kobold_BOSS_Mushhuckster_01.ogg",
+			"Play_01": "VO_LOOT_541_Male_Kobold_Play_01.ogg",
+			"Queldelar_01": "VO_LOOT_541_Male_Kobold_LOOT_QuelDelar_01.ogg",
+			"Queldelarforged_01": "VO_LOOT_541_Male_Kobold_LOOT_QuelDelarForged_01.ogg",
+			"Russell_01": "VO_LOOT_541_Male_Kobold_BOSS_Russell_01.ogg",
+			"Seriona_01": "VO_LOOT_541_Male_Kobold_BOSS_Seriona_01.ogg",
+			"Sturmi_01": "VO_LOOT_541_Male_Kobold_BOSS_Sturmi_01.ogg",
+			"Trappedroom_01": "VO_LOOT_541_Male_Kobold_BOSS_TrappedRoom_01.ogg",
+			"Treasureselect1_01": "VO_LOOT_541_Male_Kobold_TUT_TreasureSelect1_01.ogg",
+			"Treasureselect2_01": "VO_LOOT_541_Male_Kobold_TUT_TreasureSelect2_01.ogg",
+			"Treasureselect4_01": "VO_LOOT_541_Male_Kobold_TUT_TreasureSelect4_01.ogg",
+			"Treasurevault_01": "VO_LOOT_541_Male_Kobold_BOSS_TreasureVault_01.ogg",
+			"Troll_01": "VO_LOOT_541_Male_Kobold_BOSS_Troll_01.ogg",
+			"Victory1_01": "VO_LOOT_541_Male_Kobold_TUT_Victory1_01.ogg",
+			"Victorycomplete_01": "VO_LOOT_541_Male_Kobold_TUT_VictoryComplete_01.ogg",
+			"Victorycomplete_02": "VO_LOOT_541_Male_Kobold_TUT_VictoryComplete_02.ogg",
+			"Vustrasz_01": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Vustrasz_01.ogg",
+			"Vustrasz_02": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Vustrasz_02.ogg",
+			"Wand_01": "VO_LOOT_541_Male_Kobold_LOOT_Wand_01.ogg",
+			"Waxrager_01": "VO_LOOT_541_Male_Kobold_LOOT_WaxRager_01.ogg",
+			"Whopwhisker_01": "VO_LOOT_541_Male_Kobold_BOSS_Whopwhisker_01.ogg",
+			"Xol_01": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Xol_01.ogg",
+			"Xol_02": "VO_LOOT_541_Male_Kobold_TUT_Final_Boss_Xol_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOT_541.png",
 		"collectible": true,
@@ -56115,7 +62055,6 @@ var parseCardsText = {
 	{
 		"cardClass": "ROGUE",
 		"dbfId": 47070,
-		"goldenImage": "LOOT_542e.gif",
 		"id": "LOOT_542e",
 		"name": "Kingsbane Shuffle",
 		"playerClass": "Rogue",
@@ -56208,7 +62147,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_102.png",
 		"cost": 3,
 		"dbfId": 46252,
-		"goldenImage": "LOOTA_102.gif",
 		"health": 1,
 		"id": "LOOTA_102",
 		"name": "Starving Crab",
@@ -56225,7 +62163,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_103.png",
 		"cost": 0,
 		"dbfId": 46253,
-		"goldenImage": "LOOTA_103.gif",
 		"health": 1,
 		"id": "LOOTA_103",
 		"mechanics": [
@@ -56244,7 +62181,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_104.png",
 		"cost": 4,
 		"dbfId": 46348,
-		"goldenImage": "LOOTA_104.gif",
 		"health": 4,
 		"id": "LOOTA_104",
 		"name": "Reverberating Ooze",
@@ -56260,7 +62196,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_105.png",
 		"cost": 1,
 		"dbfId": 46362,
-		"goldenImage": "LOOTA_105.gif",
 		"health": 1,
 		"id": "LOOTA_105",
 		"mechanics": [
@@ -56275,11 +62210,15 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_LOOTA_107_Male_Kobold_Attack_01.ogg",
+			"Death_02": "VO_LOOTA_107_Male_Kobold_Death_02.ogg",
+			"Play1_01": "VO_LOOTA_107_Male_Kobold_Play1_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOTA_107.png",
 		"cost": 4,
 		"dbfId": 46375,
-		"goldenImage": "LOOTA_107.gif",
 		"health": 7,
 		"id": "LOOTA_107",
 		"name": "Shroomsayer",
@@ -56291,11 +62230,15 @@ var parseCardsText = {
 	{
 		"artist": "Zero Yue",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_LOOTA_109_Male_Trogg_Attack_01.ogg",
+			"Death_01": "VO_LOOTA_109_Male_Trogg_Death_01.ogg",
+			"Play1_01": "VO_LOOTA_109_Male_Trogg_Play1_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOTA_109.png",
 		"cost": 3,
 		"dbfId": 46918,
-		"goldenImage": "LOOTA_109.gif",
 		"health": 3,
 		"id": "LOOTA_109",
 		"name": "Gluttonous Trogg",
@@ -56307,7 +62250,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46917,
-		"goldenImage": "LOOTA_109e.gif",
 		"id": "LOOTA_109e",
 		"name": "Delicious Magic",
 		"playerClass": "Neutral",
@@ -56321,7 +62263,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_800.png",
 		"cost": 0,
 		"dbfId": 46405,
-		"goldenImage": "LOOTA_800.gif",
 		"hideStats": true,
 		"id": "LOOTA_800",
 		"name": "Potion of Vitality",
@@ -56336,7 +62277,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_801.png",
 		"cost": 0,
 		"dbfId": 46407,
-		"goldenImage": "LOOTA_801.gif",
 		"hideStats": true,
 		"id": "LOOTA_801",
 		"name": "Crystal Gem",
@@ -56351,7 +62291,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_802.png",
 		"cost": 0,
 		"dbfId": 46408,
-		"goldenImage": "LOOTA_802.gif",
 		"hideStats": true,
 		"id": "LOOTA_802",
 		"name": "Justicar's Ring",
@@ -56363,7 +62302,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 47443,
-		"goldenImage": "LOOTA_802e.gif",
 		"id": "LOOTA_802e",
 		"name": "Justicar's Ring Enchantment",
 		"playerClass": "Neutral",
@@ -56377,7 +62315,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_803.png",
 		"cost": 0,
 		"dbfId": 46410,
-		"goldenImage": "LOOTA_803.gif",
 		"hideStats": true,
 		"id": "LOOTA_803",
 		"name": "Scepter of Summoning",
@@ -56389,7 +62326,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46409,
-		"goldenImage": "LOOTA_803e.gif",
 		"id": "LOOTA_803e",
 		"name": "Scepter of Summoning Enchantment",
 		"playerClass": "Neutral",
@@ -56402,7 +62338,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_804.png",
 		"cost": 0,
 		"dbfId": 46411,
-		"goldenImage": "LOOTA_804.gif",
 		"hideStats": true,
 		"id": "LOOTA_804",
 		"name": "Small Backpacks",
@@ -56417,7 +62352,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_805.png",
 		"cost": 2,
 		"dbfId": 46412,
-		"goldenImage": "LOOTA_805.gif",
 		"id": "LOOTA_805",
 		"name": "Amulet of Domination",
 		"playerClass": "Neutral",
@@ -56431,7 +62365,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_806.png",
 		"cost": 3,
 		"dbfId": 46413,
-		"goldenImage": "LOOTA_806.gif",
 		"id": "LOOTA_806",
 		"mechanics": [
 			"SILENCE"
@@ -56448,7 +62381,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_811.png",
 		"cost": 3,
 		"dbfId": 46414,
-		"goldenImage": "LOOTA_811.gif",
 		"id": "LOOTA_811",
 		"name": "Orb of Destruction",
 		"playerClass": "Neutral",
@@ -56462,7 +62394,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_812.png",
 		"cost": 1,
 		"dbfId": 46416,
-		"goldenImage": "LOOTA_812.gif",
 		"id": "LOOTA_812",
 		"name": "Boots of Haste",
 		"playerClass": "Neutral",
@@ -56473,7 +62404,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46415,
-		"goldenImage": "LOOTA_812e.gif",
 		"id": "LOOTA_812e",
 		"mechanics": [
 			"TAG_ONE_TURN_EFFECT"
@@ -56490,7 +62420,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_813.png",
 		"cost": 1,
 		"dbfId": 46417,
-		"goldenImage": "LOOTA_813.gif",
 		"id": "LOOTA_813",
 		"name": "Magic Mirror",
 		"playerClass": "Neutral",
@@ -56504,7 +62433,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_814.png",
 		"cost": 10,
 		"dbfId": 46418,
-		"goldenImage": "LOOTA_814.gif",
 		"id": "LOOTA_814",
 		"name": "Wish",
 		"playerClass": "Neutral",
@@ -56519,7 +62447,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_816.png",
 		"cost": 1,
 		"dbfId": 46420,
-		"goldenImage": "LOOTA_816.gif",
 		"health": 10,
 		"id": "LOOTA_816",
 		"name": "Party Portal",
@@ -56534,7 +62461,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_817.png",
 		"cost": 4,
 		"dbfId": 46421,
-		"goldenImage": "LOOTA_817.gif",
 		"id": "LOOTA_817",
 		"name": "Primordial Wand",
 		"playerClass": "Neutral",
@@ -56551,7 +62477,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_818.png",
 		"cost": 0,
 		"dbfId": 46923,
-		"goldenImage": "LOOTA_818.gif",
 		"hideStats": true,
 		"id": "LOOTA_818",
 		"name": "Grommash's Armguards",
@@ -56563,7 +62488,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46924,
-		"goldenImage": "LOOTA_818e.gif",
 		"id": "LOOTA_818e",
 		"name": "Grom's Amguards Enchantment",
 		"playerClass": "Neutral",
@@ -56578,7 +62502,6 @@ var parseCardsText = {
 		"cost": 0,
 		"dbfId": 46422,
 		"durability": 3,
-		"goldenImage": "LOOTA_819.gif",
 		"id": "LOOTA_819",
 		"name": "Archmage Staff",
 		"playerClass": "Neutral",
@@ -56592,7 +62515,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_820.png",
 		"cost": 2,
 		"dbfId": 46423,
-		"goldenImage": "LOOTA_820.gif",
 		"id": "LOOTA_820",
 		"name": "Aleatoric Cube",
 		"playerClass": "Neutral",
@@ -56603,7 +62525,6 @@ var parseCardsText = {
 	{
 		"cardClass": "DRUID",
 		"dbfId": 46928,
-		"goldenImage": "LOOTA_820e.gif",
 		"id": "LOOTA_820e",
 		"name": "Mysterious Power",
 		"playerClass": "Druid",
@@ -56619,7 +62540,6 @@ var parseCardsText = {
 		"cost": 2,
 		"dbfId": 46424,
 		"durability": 4,
-		"goldenImage": "LOOTA_821.gif",
 		"id": "LOOTA_821",
 		"mechanics": [
 			"POISONOUS"
@@ -56636,7 +62556,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_822.png",
 		"cost": 10,
 		"dbfId": 46425,
-		"goldenImage": "LOOTA_822.gif",
 		"id": "LOOTA_822",
 		"name": "Rod of Roasting",
 		"playerClass": "Neutral",
@@ -56650,7 +62569,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_823.png",
 		"cost": 1,
 		"dbfId": 46426,
-		"goldenImage": "LOOTA_823.gif",
 		"id": "LOOTA_823",
 		"name": "Bag of Stuffing",
 		"playerClass": "Neutral",
@@ -56664,7 +62582,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_824.png",
 		"cost": 0,
 		"dbfId": 46428,
-		"goldenImage": "LOOTA_824.gif",
 		"hideStats": true,
 		"id": "LOOTA_824",
 		"name": "Khadgar's Scrying Orb",
@@ -56676,7 +62593,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46427,
-		"goldenImage": "LOOTA_824e.gif",
 		"id": "LOOTA_824e",
 		"name": "Khadgar's Scrying Orb Enchantment",
 		"playerClass": "Neutral",
@@ -56690,7 +62606,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_825.png",
 		"cost": 0,
 		"dbfId": 46430,
-		"goldenImage": "LOOTA_825.gif",
 		"hideStats": true,
 		"id": "LOOTA_825",
 		"name": "Robe of the Magi",
@@ -56705,7 +62620,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46429,
-		"goldenImage": "LOOTA_825e.gif",
 		"id": "LOOTA_825e",
 		"mechanics": [
 			"SPELLPOWER"
@@ -56724,7 +62638,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_826.png",
 		"cost": 1,
 		"dbfId": 46436,
-		"goldenImage": "LOOTA_826.gif",
 		"health": 15,
 		"id": "LOOTA_826",
 		"mechanics": [
@@ -56744,7 +62657,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_827.png",
 		"cost": 3,
 		"dbfId": 46437,
-		"goldenImage": "LOOTA_827.gif",
 		"id": "LOOTA_827",
 		"name": "Embers of Ragnaros",
 		"playerClass": "Neutral",
@@ -56758,7 +62670,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_828.png",
 		"cost": 0,
 		"dbfId": 46439,
-		"goldenImage": "LOOTA_828.gif",
 		"hideStats": true,
 		"id": "LOOTA_828",
 		"mechanics": [
@@ -56773,7 +62684,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46438,
-		"goldenImage": "LOOTA_828e.gif",
 		"id": "LOOTA_828e",
 		"name": "Banner of Inspiration",
 		"playerClass": "Neutral",
@@ -56784,7 +62694,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 47622,
-		"goldenImage": "LOOTA_828e2.gif",
 		"id": "LOOTA_828e2",
 		"mechanics": [
 			"AURA"
@@ -56798,7 +62707,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 49500,
-		"goldenImage": "LOOTA_828e3.gif",
 		"id": "LOOTA_828e3",
 		"mechanics": [
 			"AURA"
@@ -56812,11 +62720,24 @@ var parseCardsText = {
 	{
 		"artist": "J. Axer",
 		"attack": 2,
+		"audio": {
+			"Attack1_01": "VO_LOOTA_829_Male_Human_Attack1_01.ogg",
+			"Attack2_01": "VO_LOOTA_829_Male_Human_Attack2_01.ogg",
+			"Attack3_01": "VO_LOOTA_829_Male_Human_Attack3_01.ogg",
+			"Death1_01": "VO_LOOTA_829_Male_Human_Death1_01.ogg",
+			"Death2_01": "VO_LOOTA_829_Male_Human_Death2_01.ogg",
+			"Event_01": "VO_LOOTA_829_Male_Human_Event_01.ogg",
+			"Play1_01": "VO_LOOTA_829_Male_Human_Play1_01.ogg",
+			"Play2_01": "VO_LOOTA_829_Male_Human_Play2_01.ogg",
+			"Play3_01": "VO_LOOTA_829_Male_Human_Play3_01.ogg",
+			"Play4_01": "VO_LOOTA_829_Male_Human_Play4_01.ogg",
+			"Play5_01": "VO_LOOTA_829_Male_Human_Play5_01.ogg",
+			"Play6_02": "VO_LOOTA_829_Male_Human_Play6_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "LOOTA_829.png",
 		"cost": 1,
 		"dbfId": 46921,
-		"goldenImage": "LOOTA_829.gif",
 		"health": 2,
 		"id": "LOOTA_829",
 		"mechanics": [
@@ -56834,7 +62755,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_830.png",
 		"cost": 7,
 		"dbfId": 46922,
-		"goldenImage": "LOOTA_830.gif",
 		"id": "LOOTA_830",
 		"name": "Shifting Hourglass",
 		"playerClass": "Neutral",
@@ -56848,7 +62768,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_831.png",
 		"cost": 0,
 		"dbfId": 46925,
-		"goldenImage": "LOOTA_831.gif",
 		"hideStats": true,
 		"id": "LOOTA_831",
 		"name": "Glyph of Warding",
@@ -56860,7 +62779,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46926,
-		"goldenImage": "LOOTA_831e.gif",
 		"id": "LOOTA_831e",
 		"name": "Glyph of Warding Enchantment",
 		"playerClass": "Neutral",
@@ -56874,7 +62792,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_832.png",
 		"cost": 0,
 		"dbfId": 47020,
-		"goldenImage": "LOOTA_832.gif",
 		"hideStats": true,
 		"id": "LOOTA_832",
 		"name": "Cloak of Invisibility",
@@ -56889,7 +62806,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 47019,
-		"goldenImage": "LOOTA_832e.gif",
 		"id": "LOOTA_832e",
 		"name": "Invisible",
 		"playerClass": "Neutral",
@@ -56900,7 +62816,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 47623,
-		"goldenImage": "LOOTA_832e2.gif",
 		"id": "LOOTA_832e2",
 		"mechanics": [
 			"AURA"
@@ -56916,7 +62831,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_833.png",
 		"cost": 0,
 		"dbfId": 47021,
-		"goldenImage": "LOOTA_833.gif",
 		"hideStats": true,
 		"id": "LOOTA_833",
 		"name": "Mysterious Tome",
@@ -56934,7 +62848,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_834.png",
 		"cost": 1,
 		"dbfId": 47022,
-		"goldenImage": "LOOTA_834.gif",
 		"id": "LOOTA_834",
 		"name": "Gloves of Mugging",
 		"playerClass": "Neutral",
@@ -56950,7 +62863,6 @@ var parseCardsText = {
 		"cost": 2,
 		"dbfId": 47036,
 		"durability": 2,
-		"goldenImage": "LOOTA_835.gif",
 		"id": "LOOTA_835",
 		"name": "Greedy Pickaxe",
 		"playerClass": "Neutral",
@@ -56964,7 +62876,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_836.png",
 		"cost": 0,
 		"dbfId": 47037,
-		"goldenImage": "LOOTA_836.gif",
 		"id": "LOOTA_836",
 		"name": "Bag of Coins",
 		"playerClass": "Neutral",
@@ -56978,7 +62889,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_837.png",
 		"cost": 2,
 		"dbfId": 47038,
-		"goldenImage": "LOOTA_837.gif",
 		"id": "LOOTA_837",
 		"name": "Horn of Cenarius",
 		"playerClass": "Neutral",
@@ -56995,7 +62905,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_838.png",
 		"cost": 4,
 		"dbfId": 47039,
-		"goldenImage": "LOOTA_838.gif",
 		"id": "LOOTA_838",
 		"name": "Dr. Boom's Boombox",
 		"playerClass": "Neutral",
@@ -57009,7 +62918,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_839.png",
 		"cost": 0,
 		"dbfId": 47040,
-		"goldenImage": "LOOTA_839.gif",
 		"id": "LOOTA_839",
 		"name": "Scroll of Confusion",
 		"playerClass": "Neutral",
@@ -57024,7 +62932,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_840.png",
 		"cost": 3,
 		"dbfId": 47041,
-		"goldenImage": "LOOTA_840.gif",
 		"health": 1,
 		"id": "LOOTA_840",
 		"mechanics": [
@@ -57043,7 +62950,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_841.png",
 		"cost": 1,
 		"dbfId": 47042,
-		"goldenImage": "LOOTA_841.gif",
 		"id": "LOOTA_841",
 		"name": "Portable Forge",
 		"playerClass": "Neutral",
@@ -57059,7 +62965,6 @@ var parseCardsText = {
 		"cost": 1,
 		"dbfId": 47044,
 		"durability": 6,
-		"goldenImage": "LOOTA_842.gif",
 		"id": "LOOTA_842",
 		"name": "Quel'Delar",
 		"playerClass": "Neutral",
@@ -57075,7 +62980,6 @@ var parseCardsText = {
 		"cost": 1,
 		"dbfId": 47045,
 		"durability": 3,
-		"goldenImage": "LOOTA_842a.gif",
 		"id": "LOOTA_842a",
 		"name": "Blade of Quel'Delar",
 		"playerClass": "Neutral",
@@ -57088,7 +62992,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_842b.png",
 		"cost": 1,
 		"dbfId": 47046,
-		"goldenImage": "LOOTA_842b.gif",
 		"id": "LOOTA_842b",
 		"name": "Hilt of Quel'Delar",
 		"playerClass": "Neutral",
@@ -57102,7 +63005,6 @@ var parseCardsText = {
 		"cost": 1,
 		"dbfId": 47047,
 		"durability": 4,
-		"goldenImage": "LOOTA_842be.gif",
 		"id": "LOOTA_842be",
 		"name": "Armed?",
 		"playerClass": "Neutral",
@@ -57114,7 +63016,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL",
 		"cost": 0,
 		"dbfId": 49078,
-		"goldenImage": "LOOTA_842t.gif",
 		"id": "LOOTA_842t",
 		"name": "Forging Quel'Delar",
 		"playerClass": "Neutral",
@@ -57127,7 +63028,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_843.png",
 		"cost": 1,
 		"dbfId": 47251,
-		"goldenImage": "LOOTA_843.gif",
 		"id": "LOOTA_843",
 		"name": "THE CANDLE",
 		"playerClass": "Neutral",
@@ -57141,7 +63041,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_845.png",
 		"cost": 0,
 		"dbfId": 47299,
-		"goldenImage": "LOOTA_845.gif",
 		"hideStats": true,
 		"id": "LOOTA_845",
 		"name": "Totem of the Dead",
@@ -57159,7 +63058,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_846.png",
 		"cost": 0,
 		"dbfId": 47300,
-		"goldenImage": "LOOTA_846.gif",
 		"hideStats": true,
 		"id": "LOOTA_846",
 		"name": "Battle Totem",
@@ -57177,7 +63075,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_847.png",
 		"cost": 1,
 		"dbfId": 47893,
-		"goldenImage": "LOOTA_847.gif",
 		"id": "LOOTA_847",
 		"name": "Mask of Mimicry",
 		"playerClass": "Neutral",
@@ -57189,7 +63086,6 @@ var parseCardsText = {
 		"artist": "Eric Braddock",
 		"cardClass": "NEUTRAL",
 		"dbfId": 48839,
-		"goldenImage": "LOOTA_BOSS_04e.gif",
 		"id": "LOOTA_BOSS_04e",
 		"name": "Waxed",
 		"playerClass": "Neutral",
@@ -57199,10 +63095,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Eric Braddock",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_04h_Female_Kobold_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_04h_Female_Kobold_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_04h_Female_Kobold_EmoteResponse_01.ogg",
+			"Eventwaxoff_01": "VO_LOOTA_BOSS_04h_Female_Kobold_EventWaxOff_01.ogg",
+			"Eventwaxon_01": "VO_LOOTA_BOSS_04h_Female_Kobold_EventWaxOn_01.ogg",
+			"Eventwaxragerplay_01": "VO_LOOTA_BOSS_04h_Female_Kobold_EventWaxRagerPlay_01.ogg",
+			"Eventwaxragerrespawn_01": "VO_LOOTA_BOSS_04h_Female_Kobold_EventWaxRagerRespawn_01.ogg",
+			"Eventwaxragerrespawn_02": "VO_LOOTA_BOSS_04h_Female_Kobold_EventWaxRagerRespawn_02.ogg",
+			"Intro1_01": "VO_LOOTA_BOSS_04h_Female_Kobold_Intro1_01.ogg",
+			"Intro2_01": "VO_LOOTA_BOSS_04h_Female_Kobold_Intro2_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "LOOTA_BOSS_04h.png",
 		"dbfId": 46264,
-		"goldenImage": "LOOTA_BOSS_04h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_04h",
 		"name": "Waxmancer Sturmi",
@@ -57217,7 +63124,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_04p.png",
 		"cost": 1,
 		"dbfId": 46149,
-		"goldenImage": "LOOTA_BOSS_04p.gif",
 		"id": "LOOTA_BOSS_04p",
 		"name": "Sculpt Wax",
 		"playerClass": "Neutral",
@@ -57227,10 +63133,20 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tooth",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_05h_Male_Kobold_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_05h_Male_Kobold_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_05h_Male_Kobold_EmoteResponse_01.ogg",
+			"Eventboombots_01": "VO_LOOTA_BOSS_05h_Male_Kobold_EventBoomBots_01.ogg",
+			"Eventmadbomberdeath_01": "VO_LOOTA_BOSS_05h_Male_Kobold_EventMadBomberDeath_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_05h_Male_Kobold_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_05h_Male_Kobold_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_05h_Male_Kobold_HeroPower3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_05h_Male_Kobold_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_05h.png",
 		"dbfId": 46269,
-		"goldenImage": "LOOTA_BOSS_05h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_05h",
 		"name": "Pathmaker Hamm",
@@ -57245,7 +63161,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_05p.png",
 		"cost": 1,
 		"dbfId": 46151,
-		"goldenImage": "LOOTA_BOSS_05p.gif",
 		"id": "LOOTA_BOSS_05p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -57258,10 +63173,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Sass",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_EmoteResponse_01.ogg",
+			"Eventplayerevolves_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_EventPlayerEvolves_01.ogg",
+			"Eventplayerevolves_02": "VO_LOOTA_BOSS_06h_Male_Furbolg_EventPlayerEvolves_02.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_HeroPower4_01.ogg",
+			"Heropower5_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_HeroPower5_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_06h_Male_Furbolg_Intro_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "LOOTA_BOSS_06h.png",
 		"dbfId": 46279,
-		"goldenImage": "LOOTA_BOSS_06h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_06h",
 		"name": "Blackseed",
@@ -57276,7 +63203,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_06p.png",
 		"cost": 0,
 		"dbfId": 46153,
-		"goldenImage": "LOOTA_BOSS_06p.gif",
 		"id": "LOOTA_BOSS_06p",
 		"name": "Evolvomancy",
 		"playerClass": "Neutral",
@@ -57286,10 +63212,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Eric Braddock",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_EmoteResponse_01.ogg",
+			"Eventfrostmagic1_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_EventFrostMagic1_01.ogg",
+			"Eventfrostmagic2_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_EventFrostMagic2_01.ogg",
+			"Eventfrostmagic3_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_EventFrostMagic3_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_HeroPower3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_09h_Female_Furbolg_Intro_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "LOOTA_BOSS_09h.png",
 		"dbfId": 46915,
-		"goldenImage": "LOOTA_BOSS_09h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_09h",
 		"name": "Frostfur",
@@ -57303,7 +63240,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_09p.png",
 		"cost": 2,
 		"dbfId": 46159,
-		"goldenImage": "LOOTA_BOSS_09p.gif",
 		"id": "LOOTA_BOSS_09p",
 		"name": "Freeze",
 		"playerClass": "Neutral",
@@ -57313,10 +63249,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Eva Wildermann",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_10h_Male_Human_Death_01.ogg",
+			"Defeatplayer_02": "VO_LOOTA_BOSS_10h_Male_Human_DefeatPlayer_02.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_10h_Male_Human_EmoteResponse_01.ogg",
+			"Eventoverdraw_01": "VO_LOOTA_BOSS_10h_Male_Human_EventOverdraw_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_10h_Male_Human_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_10h_Male_Human_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_10h_Male_Human_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_10h_Male_Human_HeroPower4_01.ogg",
+			"Heropower5_01": "VO_LOOTA_BOSS_10h_Male_Human_HeroPower5_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_10h_Male_Human_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOTA_BOSS_10h.png",
 		"dbfId": 46310,
-		"goldenImage": "LOOTA_BOSS_10h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_10h",
 		"name": "Graves the Cleric",
@@ -57331,7 +63278,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_10p.png",
 		"cost": 0,
 		"dbfId": 46161,
-		"goldenImage": "LOOTA_BOSS_10p.gif",
 		"id": "LOOTA_BOSS_10p",
 		"name": "Light's Will",
 		"playerClass": "Neutral",
@@ -57345,7 +63291,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_110.png",
 		"cost": 0,
 		"dbfId": 47468,
-		"goldenImage": "LOOTA_BOSS_110.gif",
 		"health": 15,
 		"id": "LOOTA_BOSS_110",
 		"name": "Tag Team",
@@ -57357,7 +63302,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46316,
-		"goldenImage": "LOOTA_BOSS_11e.gif",
 		"id": "LOOTA_BOSS_11e",
 		"name": "Whipped Into Shape",
 		"playerClass": "Neutral",
@@ -57367,10 +63311,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Ryman",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_11h_Male_Trogg_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_11h_Male_Trogg_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_11h_Male_Trogg_EmoteResponse_01.ogg",
+			"Eventequality_01": "VO_LOOTA_BOSS_11h_Male_Trogg_EventEquality_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_11h_Male_Trogg_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_11h_Male_Trogg_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_11h_Male_Trogg_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_11h_Male_Trogg_HeroPower4_01.ogg",
+			"Heropower5_01": "VO_LOOTA_BOSS_11h_Male_Trogg_HeroPower5_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_11h_Male_Trogg_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_11h.png",
 		"dbfId": 46311,
-		"goldenImage": "LOOTA_BOSS_11h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_11h",
 		"name": "Overseer Mogark",
@@ -57385,7 +63340,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_11p.png",
 		"cost": 1,
 		"dbfId": 46163,
-		"goldenImage": "LOOTA_BOSS_11p.gif",
 		"id": "LOOTA_BOSS_11p",
 		"name": "Cruel Words",
 		"playerClass": "Neutral",
@@ -57396,7 +63350,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46470,
-		"goldenImage": "LOOTA_BOSS_12e.gif",
 		"id": "LOOTA_BOSS_12e",
 		"name": "Charge!",
 		"playerClass": "Neutral",
@@ -57406,10 +63359,39 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Anton Zemskov",
+		"audio": {
+			"Candleattack1_01": "VO_LOOTA_BOSS_12h_Male_Kobold_CandleAttack1_01.ogg",
+			"Candleattack2_01": "VO_LOOTA_BOSS_12h_Male_Kobold_CandleAttack2_01.ogg",
+			"Candleattack3_01": "VO_LOOTA_BOSS_12h_Male_Kobold_CandleAttack3_01.ogg",
+			"Candleattack4_01": "VO_LOOTA_BOSS_12h_Male_Kobold_CandleAttack4_01.ogg",
+			"Candleattack5_01": "VO_LOOTA_BOSS_12h_Male_Kobold_CandleAttack5_01.ogg",
+			"Death1_01": "VO_LOOTA_BOSS_12h_Male_Kobold_Death1_01.ogg",
+			"Death2_01": "VO_LOOTA_BOSS_12h_Male_Kobold_Death2_01.ogg",
+			"Death3_01": "VO_LOOTA_BOSS_12h_Male_Kobold_Death3_01.ogg",
+			"Death_01": "VO_LOOTA_BOSS_12h_Male_Kobold_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_12h_Male_Kobold_DefeatPlayer_01.ogg",
+			"Defeatplayer_02": "VO_LOOTA_BOSS_12h_Male_Kobold_DefeatPlayer_02.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_12h_Male_Kobold_EmoteResponse_01.ogg",
+			"Eventcandlestolen_01": "VO_LOOTA_BOSS_12h_Male_Kobold_EventCandleStolen_01.ogg",
+			"Eventchargebigminion_01": "VO_LOOTA_BOSS_12h_Male_Kobold_EventChargeBigMinion_01.ogg",
+			"Eventfindcandle_01": "VO_LOOTA_BOSS_12h_Male_Kobold_EventFindCandle_01.ogg",
+			"Eventplaycandle_01": "VO_LOOTA_BOSS_12h_Male_Kobold_EventPlayCandle_01.ogg",
+			"Eventplayerplayscrab_01": "VO_LOOTA_BOSS_12h_Male_Kobold_EventPlayerPlaysCrab_01.ogg",
+			"Eventplayerplayspatches_01": "VO_LOOTA_BOSS_12h_Male_Kobold_EventPlayerPlaysPatches_01.ogg",
+			"Eventplaykoboldking_01": "VO_LOOTA_BOSS_12h_Male_Kobold_EventPlayKoboldKing_01.ogg",
+			"Gettreasure1_01": "VO_LOOTA_BOSS_12h_Male_Kobold_GetTreasure1_01.ogg",
+			"Gettreasure2_01": "VO_LOOTA_BOSS_12h_Male_Kobold_GetTreasure2_01.ogg",
+			"Gettreasure3_01": "VO_LOOTA_BOSS_12h_Male_Kobold_GetTreasure3_01.ogg",
+			"Gettreasure4_01": "VO_LOOTA_BOSS_12h_Male_Kobold_GetTreasure4_01.ogg",
+			"Gettreasure5_01": "VO_LOOTA_BOSS_12h_Male_Kobold_GetTreasure5_01.ogg",
+			"Intro1_01": "VO_LOOTA_BOSS_12h_Male_Kobold_Intro1_01.ogg",
+			"Intro2_01": "VO_LOOTA_BOSS_12h_Male_Kobold_Intro2_01.ogg",
+			"Intro3_01": "VO_LOOTA_BOSS_12h_Male_Kobold_Intro3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_12h_Male_Kobold_Intro_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOTA_BOSS_12h.png",
 		"dbfId": 46317,
-		"goldenImage": "LOOTA_BOSS_12h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_12h",
 		"name": "Candlebeard",
@@ -57424,7 +63406,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_12p.png",
 		"cost": 1,
 		"dbfId": 46165,
-		"goldenImage": "LOOTA_BOSS_12p.gif",
 		"id": "LOOTA_BOSS_12p",
 		"name": "Charge!",
 		"playerClass": "Neutral",
@@ -57434,10 +63415,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dave Allsop",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_13h_Female_Undead_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_13h_Female_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_13h_Female_Undead_EmoteResponse_01.ogg",
+			"Eventbagofcoins_01": "VO_LOOTA_BOSS_13h_Female_Undead_EventBagOfCoins_01.ogg",
+			"Eventstealquest_01": "VO_LOOTA_BOSS_13h_Female_Undead_EventStealQuest_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_13h_Female_Undead_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_13h_Female_Undead_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_13h_Female_Undead_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_13h_Female_Undead_HeroPower4_01.ogg",
+			"Heropower_01": "VO_LOOTA_BOSS_13h_Female_Undead_HeroPower_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOTA_BOSS_13h.png",
 		"dbfId": 46321,
-		"goldenImage": "LOOTA_BOSS_13h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_13h",
 		"name": "Thaddock the Thief",
@@ -57452,7 +63444,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_13p.png",
 		"cost": 1,
 		"dbfId": 46167,
-		"goldenImage": "LOOTA_BOSS_13p.gif",
 		"id": "LOOTA_BOSS_13p",
 		"name": "Tactical Retreat",
 		"playerClass": "Neutral",
@@ -57463,7 +63454,6 @@ var parseCardsText = {
 	{
 		"cardClass": "PALADIN",
 		"dbfId": 47467,
-		"goldenImage": "LOOTA_BOSS_15e.gif",
 		"id": "LOOTA_BOSS_15e",
 		"name": "George and Karl Enchantment",
 		"playerClass": "Paladin",
@@ -57472,10 +63462,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "J. Axer",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_15h_Male_Human_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_15h_Male_Human_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_15h_Male_Human_EmoteResponse_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_15h_Male_Human_Intro_01.ogg",
+			"Partnerdeath_01": "VO_LOOTA_BOSS_15h_Male_Human_PartnerDeath_01.ogg",
+			"Taggedin1_01": "VO_LOOTA_BOSS_15h_Male_Human_TaggedIn1_01.ogg",
+			"Taggedin2_01": "VO_LOOTA_BOSS_15h_Male_Human_TaggedIn2_01.ogg",
+			"Taggedin3_01": "VO_LOOTA_BOSS_15h_Male_Human_TaggedIn3_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "LOOTA_BOSS_15h.png",
 		"dbfId": 46323,
-		"goldenImage": "LOOTA_BOSS_15h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_15h",
 		"name": "George and Karl",
@@ -57490,7 +63489,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_15p.png",
 		"cost": 2,
 		"dbfId": 46170,
-		"goldenImage": "LOOTA_BOSS_15p.gif",
 		"id": "LOOTA_BOSS_15p",
 		"name": "Divinity",
 		"playerClass": "Neutral",
@@ -57500,10 +63498,20 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauricio Herrera",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_16h_Male_Troll_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_16h_Male_Troll_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_16h_Male_Troll_EmoteResponse_01.ogg",
+			"Eventplayerdeathrattle1_01": "VO_LOOTA_BOSS_16h_Male_Troll_EventPlayerDeathrattle1_01.ogg",
+			"Eventplayerdeathrattle2_01": "VO_LOOTA_BOSS_16h_Male_Troll_EventPlayerDeathrattle2_01.ogg",
+			"Eventplayerdeathrattle3_01": "VO_LOOTA_BOSS_16h_Male_Troll_EventPlayerDeathrattle3_01.ogg",
+			"Eventplayerdeathrattle4_01": "VO_LOOTA_BOSS_16h_Male_Troll_EventPlayerDeathrattle4_01.ogg",
+			"Eventplayerdeathrattle5_01": "VO_LOOTA_BOSS_16h_Male_Troll_EventPlayerDeathrattle5_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_16h_Male_Troll_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOTA_BOSS_16h.png",
 		"dbfId": 46337,
-		"goldenImage": "LOOTA_BOSS_16h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_16h",
 		"name": "Spiritspeaker Azun",
@@ -57518,7 +63526,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_16p.png",
 		"cost": 0,
 		"dbfId": 46172,
-		"goldenImage": "LOOTA_BOSS_16p.gif",
 		"hideStats": true,
 		"id": "LOOTA_BOSS_16p",
 		"name": "Totem of the Dead",
@@ -57529,10 +63536,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Paul Mafayon",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_17h_Male_Troll_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_17h_Male_Troll_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_17h_Male_Troll_EmoteResponse_01.ogg",
+			"Eventplayerbattlecry1_01": "VO_LOOTA_BOSS_17h_Male_Troll_EventPlayerBattlecry1_01.ogg",
+			"Eventplayerbattlecry2_01": "VO_LOOTA_BOSS_17h_Male_Troll_EventPlayerBattlecry2_01.ogg",
+			"Eventplayerbattlecry3_01": "VO_LOOTA_BOSS_17h_Male_Troll_EventPlayerBattlecry3_01.ogg",
+			"Eventplayerbrann_01": "VO_LOOTA_BOSS_17h_Male_Troll_EventPlayerBrann_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_17h_Male_Troll_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_17h.png",
 		"dbfId": 46338,
-		"goldenImage": "LOOTA_BOSS_17h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_17h",
 		"name": "Battlecrier Jin'zo",
@@ -57547,7 +63563,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_17p.png",
 		"cost": 0,
 		"dbfId": 46174,
-		"goldenImage": "LOOTA_BOSS_17p.gif",
 		"hideStats": true,
 		"id": "LOOTA_BOSS_17p",
 		"name": "Battle Totem",
@@ -57561,7 +63576,6 @@ var parseCardsText = {
 		"cardClass": "HUNTER",
 		"cardImage": "LOOTA_BOSS_18h.png",
 		"dbfId": 47366,
-		"goldenImage": "LOOTA_BOSS_18h.gif",
 		"health": 10,
 		"id": "LOOTA_BOSS_18h",
 		"name": "Giant Rat",
@@ -57575,7 +63589,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_18p.png",
 		"cost": 2,
 		"dbfId": 45894,
-		"goldenImage": "LOOTA_BOSS_18p.gif",
 		"id": "LOOTA_BOSS_18p",
 		"name": "Rat Race",
 		"playerClass": "Neutral",
@@ -57590,7 +63603,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_18t.png",
 		"cost": 0,
 		"dbfId": 47621,
-		"goldenImage": "LOOTA_BOSS_18t.gif",
 		"health": 1,
 		"id": "LOOTA_BOSS_18t",
 		"name": "Rat",
@@ -57601,10 +63613,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "James Ryman",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_19h_Male_Trogg_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_19h_Male_Trogg_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_19h_Male_Trogg_EmoteResponse_01.ogg",
+			"Eventhandfull_01": "VO_LOOTA_BOSS_19h_Male_Trogg_EventHandFull_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_19h_Male_Trogg_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_19h_Male_Trogg_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_19h_Male_Trogg_HeroPower3_01.ogg",
+			"Heropowerhard1_01": "VO_LOOTA_BOSS_19h_Male_Trogg_HeroPowerHard1_01.ogg",
+			"Heropowerhard2_01": "VO_LOOTA_BOSS_19h_Male_Trogg_HeroPowerHard2_01.ogg",
+			"Heropowerhard3_01": "VO_LOOTA_BOSS_19h_Male_Trogg_HeroPowerHard3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_19h_Male_Trogg_Intro_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "LOOTA_BOSS_19h.png",
 		"dbfId": 46329,
-		"goldenImage": "LOOTA_BOSS_19h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_19h",
 		"name": "Gutmook",
@@ -57619,7 +63643,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_19p.png",
 		"cost": 0,
 		"dbfId": 46205,
-		"goldenImage": "LOOTA_BOSS_19p.gif",
 		"id": "LOOTA_BOSS_19p",
 		"name": "Digest Magic",
 		"playerClass": "Neutral",
@@ -57629,10 +63652,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mauricio Herrera",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_20h_Male_Earthen_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_20h_Male_Earthen_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_20h_Male_Earthen_EmoteResponse_01.ogg",
+			"Eventstatuedestroyed1_01": "VO_LOOTA_BOSS_20h_Male_Earthen_EventStatueDestroyed1_01.ogg",
+			"Eventstatuedestroyed2_01": "VO_LOOTA_BOSS_20h_Male_Earthen_EventStatueDestroyed2_01.ogg",
+			"Eventstatuedestroyed3_01": "VO_LOOTA_BOSS_20h_Male_Earthen_EventStatueDestroyed3_01.ogg",
+			"Eventstatuedestroyed4_01": "VO_LOOTA_BOSS_20h_Male_Earthen_EventStatueDestroyed4_01.ogg",
+			"Eventstatuedestroyed5_01": "VO_LOOTA_BOSS_20h_Male_Earthen_EventStatueDestroyed5_01.ogg",
+			"Heropower_01": "VO_LOOTA_BOSS_20h_Male_Earthen_HeroPower_01.ogg",
+			"Heropowernostatues_01": "VO_LOOTA_BOSS_20h_Male_Earthen_HeroPowerNoStatues_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_20h_Male_Earthen_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_20h.png",
 		"dbfId": 46339,
-		"goldenImage": "LOOTA_BOSS_20h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_20h",
 		"name": "Brimstone Warden",
@@ -57646,7 +63681,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_20p.png",
 		"cost": 5,
 		"dbfId": 46208,
-		"goldenImage": "LOOTA_BOSS_20p.gif",
 		"id": "LOOTA_BOSS_20p",
 		"name": "Dispel Ward",
 		"playerClass": "Neutral",
@@ -57661,7 +63695,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_20t.png",
 		"cost": 2,
 		"dbfId": 46209,
-		"goldenImage": "LOOTA_BOSS_20t.gif",
 		"health": 5,
 		"id": "LOOTA_BOSS_20t",
 		"mechanics": [
@@ -57679,7 +63712,6 @@ var parseCardsText = {
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_21h.png",
 		"dbfId": 46243,
-		"goldenImage": "LOOTA_BOSS_21h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_21h",
 		"name": "Gnosh the Greatworm",
@@ -57694,7 +63726,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_21p.png",
 		"cost": 2,
 		"dbfId": 46242,
-		"goldenImage": "LOOTA_BOSS_21p.gif",
 		"id": "LOOTA_BOSS_21p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -57707,10 +63738,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler West Studios",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_22h_Male_Murloc_Death_01.ogg",
+			"Deathspecial_01": "VO_LOOTA_BOSS_22h_Male_Murloc_DeathSpecial_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_22h_Male_Murloc_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_22h_Male_Murloc_EmoteResponse_01.ogg",
+			"Eventfishupchest_01": "VO_LOOTA_BOSS_22h_Male_Murloc_EventFishUpChest_01.ogg",
+			"Eventsummoncrab_01": "VO_LOOTA_BOSS_22h_Male_Murloc_EventSummonCrab_01.ogg",
+			"Fishlarge_02": "VO_LOOTA_BOSS_22h_Male_Murloc_FishLarge_02.ogg",
+			"Fishmedium_01": "VO_LOOTA_BOSS_22h_Male_Murloc_FishMedium_01.ogg",
+			"Fishsmall_01": "VO_LOOTA_BOSS_22h_Male_Murloc_FishSmall_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_22h_Male_Murloc_Intro_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "LOOTA_BOSS_22h.png",
 		"dbfId": 46340,
-		"goldenImage": "LOOTA_BOSS_22h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_22h",
 		"name": "Tad",
@@ -57725,7 +63767,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_22p.png",
 		"cost": 0,
 		"dbfId": 46250,
-		"goldenImage": "LOOTA_BOSS_22p.gif",
 		"id": "LOOTA_BOSS_22p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -57744,7 +63785,6 @@ var parseCardsText = {
 		"cost": 1,
 		"dbfId": 46251,
 		"durability": 1,
-		"goldenImage": "LOOTA_BOSS_22t.gif",
 		"id": "LOOTA_BOSS_22t",
 		"name": "Tad's Pole",
 		"playerClass": "Neutral",
@@ -57754,10 +63794,23 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Slawomir Maniak",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_EmoteResponse_01.ogg",
+			"Eventplaybigminion1_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_EventPlayBigMinion1_01.ogg",
+			"Eventplaybigminion2_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_EventPlayBigMinion2_01.ogg",
+			"Eventplaybigminion3_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_EventPlayBigMinion3_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_HeroPower4_01.ogg",
+			"Heropower5_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_HeroPower5_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_23h_Male_Furbolg_Intro_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "LOOTA_BOSS_23h.png",
 		"dbfId": 46341,
-		"goldenImage": "LOOTA_BOSS_23h.gif",
 		"health": 50,
 		"id": "LOOTA_BOSS_23h",
 		"name": "Bristlesnarl",
@@ -57772,7 +63825,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_23p.png",
 		"cost": 3,
 		"dbfId": 46342,
-		"goldenImage": "LOOTA_BOSS_23p.gif",
 		"id": "LOOTA_BOSS_23p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -57786,7 +63838,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46345,
-		"goldenImage": "LOOTA_BOSS_24e.gif",
 		"id": "LOOTA_BOSS_24e",
 		"name": "Glooped",
 		"playerClass": "Neutral",
@@ -57799,7 +63850,6 @@ var parseCardsText = {
 		"cardClass": "PALADIN",
 		"cardImage": "LOOTA_BOSS_24h.png",
 		"dbfId": 46344,
-		"goldenImage": "LOOTA_BOSS_24h.gif",
 		"health": 50,
 		"id": "LOOTA_BOSS_24h",
 		"name": "The Mothergloop",
@@ -57813,7 +63863,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_24p.png",
 		"cost": 2,
 		"dbfId": 46346,
-		"goldenImage": "LOOTA_BOSS_24p.gif",
 		"id": "LOOTA_BOSS_24p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -57826,10 +63875,26 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Sass",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_25h_Male_Dragon_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_25h_Male_Dragon_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_25h_Male_Dragon_EmoteResponse_01.ogg",
+			"Eventmarinthefox_01": "VO_LOOTA_BOSS_25h_Male_Dragon_EventMarinTheFox_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_25h_Male_Dragon_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_25h_Male_Dragon_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_25h_Male_Dragon_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_25h_Male_Dragon_HeroPower4_01.ogg",
+			"Heropower5_01": "VO_LOOTA_BOSS_25h_Male_Dragon_HeroPower5_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_25h_Male_Dragon_Intro_01.ogg",
+			"Treasuredestroy1_01": "VO_LOOTA_BOSS_25h_Male_Dragon_TreasureDestroy1_01.ogg",
+			"Treasuredestroy2_01": "VO_LOOTA_BOSS_25h_Male_Dragon_TreasureDestroy2_01.ogg",
+			"Treasuredestroy3_01": "VO_LOOTA_BOSS_25h_Male_Dragon_TreasureDestroy3_01.ogg",
+			"Treasuredestroy4_02": "VO_LOOTA_BOSS_25h_Male_Dragon_TreasureDestroy4_02.ogg",
+			"Treasuredestroy5_01": "VO_LOOTA_BOSS_25h_Male_Dragon_TreasureDestroy5_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOTA_BOSS_25h.png",
 		"dbfId": 46349,
-		"goldenImage": "LOOTA_BOSS_25h.gif",
 		"health": 70,
 		"id": "LOOTA_BOSS_25h",
 		"name": "Vustrasz the Ancient",
@@ -57843,7 +63908,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_25p.png",
 		"cost": 0,
 		"dbfId": 46350,
-		"goldenImage": "LOOTA_BOSS_25p.gif",
 		"id": "LOOTA_BOSS_25p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -57856,10 +63920,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "A.J. Nazzaro",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_26h_Female_Demon_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_26h_Female_Demon_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_26h_Female_Demon_EmoteResponse_01.ogg",
+			"Eyestalkconfuse_01": "VO_LOOTA_BOSS_26h_Female_Demon_EyeStalkConfuse_01.ogg",
+			"Eyestalkdeath_01": "VO_LOOTA_BOSS_26h_Female_Demon_EyeStalkDeath_01.ogg",
+			"Eyestalkdevitalize_01": "VO_LOOTA_BOSS_26h_Female_Demon_EyeStalkDevitalize_01.ogg",
+			"Eyestalkfear_01": "VO_LOOTA_BOSS_26h_Female_Demon_EyeStalkFear_01.ogg",
+			"Eyestalkfire_01": "VO_LOOTA_BOSS_26h_Female_Demon_EyeStalkFire_01.ogg",
+			"Eyestalkfrost_01": "VO_LOOTA_BOSS_26h_Female_Demon_EyeStalkFrost_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_26h_Female_Demon_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOTA_BOSS_26h.png",
 		"dbfId": 47410,
-		"goldenImage": "LOOTA_BOSS_26h.gif",
 		"health": 70,
 		"id": "LOOTA_BOSS_26h",
 		"name": "Xol the Unscathed",
@@ -57874,7 +63949,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_26p2.png",
 		"cost": 3,
 		"dbfId": 47409,
-		"goldenImage": "LOOTA_BOSS_26p2.gif",
 		"id": "LOOTA_BOSS_26p2",
 		"name": "Beam of Frost",
 		"playerClass": "Neutral",
@@ -57888,7 +63962,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_26p3.png",
 		"cost": 3,
 		"dbfId": 47411,
-		"goldenImage": "LOOTA_BOSS_26p3.gif",
 		"id": "LOOTA_BOSS_26p3",
 		"name": "Beam of Death",
 		"playerClass": "Neutral",
@@ -57902,7 +63975,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_26p4.png",
 		"cost": 3,
 		"dbfId": 47412,
-		"goldenImage": "LOOTA_BOSS_26p4.gif",
 		"id": "LOOTA_BOSS_26p4",
 		"name": "Beam of Confusion",
 		"playerClass": "Neutral",
@@ -57916,7 +63988,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_26p5.png",
 		"cost": 3,
 		"dbfId": 47413,
-		"goldenImage": "LOOTA_BOSS_26p5.gif",
 		"id": "LOOTA_BOSS_26p5",
 		"name": "Beam of Fear",
 		"playerClass": "Neutral",
@@ -57930,7 +64001,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_26p6.png",
 		"cost": 3,
 		"dbfId": 47414,
-		"goldenImage": "LOOTA_BOSS_26p6.gif",
 		"id": "LOOTA_BOSS_26p6",
 		"name": "Beam of Fire",
 		"playerClass": "Neutral",
@@ -57944,7 +64014,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_26p7.png",
 		"cost": 3,
 		"dbfId": 47415,
-		"goldenImage": "LOOTA_BOSS_26p7.gif",
 		"id": "LOOTA_BOSS_26p7",
 		"name": "Beam of Decay",
 		"playerClass": "Neutral",
@@ -57966,7 +64035,6 @@ var parseCardsText = {
 			"LOOTA_BOSS_26p6",
 			"LOOTA_BOSS_26p7"
 		],
-		"goldenImage": "LOOTA_BOSS_26p8.gif",
 		"id": "LOOTA_BOSS_26p8",
 		"name": "Beam Me Up!",
 		"playerClass": "Neutral",
@@ -57979,7 +64047,6 @@ var parseCardsText = {
 		"cardClass": "HUNTER",
 		"cardImage": "LOOTA_BOSS_27h.png",
 		"dbfId": 46266,
-		"goldenImage": "LOOTA_BOSS_27h.gif",
 		"health": 50,
 		"id": "LOOTA_BOSS_27h",
 		"name": "Waxmancer Sturmi",
@@ -57994,7 +64061,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_27p.png",
 		"cost": 3,
 		"dbfId": 46267,
-		"goldenImage": "LOOTA_BOSS_27p.gif",
 		"id": "LOOTA_BOSS_27p",
 		"name": "Harden Sculpture",
 		"playerClass": "Neutral",
@@ -58007,7 +64073,6 @@ var parseCardsText = {
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_28h.png",
 		"dbfId": 46270,
-		"goldenImage": "LOOTA_BOSS_28h.gif",
 		"health": 60,
 		"id": "LOOTA_BOSS_28h",
 		"name": "Pathmaker Hamm",
@@ -58022,7 +64087,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_28p.png",
 		"cost": 2,
 		"dbfId": 46271,
-		"goldenImage": "LOOTA_BOSS_28p.gif",
 		"id": "LOOTA_BOSS_28p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58038,7 +64102,6 @@ var parseCardsText = {
 		"cardClass": "DRUID",
 		"cardImage": "LOOTA_BOSS_29h.png",
 		"dbfId": 46281,
-		"goldenImage": "LOOTA_BOSS_29h.gif",
 		"health": 60,
 		"id": "LOOTA_BOSS_29h",
 		"name": "Blackseed",
@@ -58053,7 +64116,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_29p.png",
 		"cost": 1,
 		"dbfId": 46282,
-		"goldenImage": "LOOTA_BOSS_29p.gif",
 		"id": "LOOTA_BOSS_29p",
 		"name": "Greater Evolution",
 		"playerClass": "Neutral",
@@ -58064,7 +64126,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 46313,
-		"goldenImage": "LOOTA_BOSS_30e.gif",
 		"id": "LOOTA_BOSS_30e",
 		"name": "Whipped into Frenzy",
 		"playerClass": "Neutral",
@@ -58077,7 +64138,6 @@ var parseCardsText = {
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_30h.png",
 		"dbfId": 46312,
-		"goldenImage": "LOOTA_BOSS_30h.gif",
 		"health": 60,
 		"id": "LOOTA_BOSS_30h",
 		"name": "Overseer Mogark",
@@ -58092,7 +64152,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_30p.png",
 		"cost": 1,
 		"dbfId": 46314,
-		"goldenImage": "LOOTA_BOSS_30p.gif",
 		"id": "LOOTA_BOSS_30p",
 		"name": "Searing Lash",
 		"playerClass": "Neutral",
@@ -58105,7 +64164,6 @@ var parseCardsText = {
 		"cardClass": "ROGUE",
 		"cardImage": "LOOTA_BOSS_31h.png",
 		"dbfId": 46318,
-		"goldenImage": "LOOTA_BOSS_31h.gif",
 		"health": 60,
 		"id": "LOOTA_BOSS_31h",
 		"name": "Candlebeard",
@@ -58120,7 +64178,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_31p.png",
 		"cost": 0,
 		"dbfId": 46319,
-		"goldenImage": "LOOTA_BOSS_31p.gif",
 		"id": "LOOTA_BOSS_31p",
 		"name": "Charrrrrge!",
 		"playerClass": "Neutral",
@@ -58130,10 +64187,18 @@ var parseCardsText = {
 	},
 	{
 		"artist": "J. Axer",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_32h_Male_Human_Death_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_32h_Male_Human_EmoteResponse_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_32h_Male_Human_Intro_01.ogg",
+			"Partnerdeath_01": "VO_LOOTA_BOSS_32h_Male_Human_PartnerDeath_01.ogg",
+			"Taggedin1_01": "VO_LOOTA_BOSS_32h_Male_Human_TaggedIn1_01.ogg",
+			"Taggedin2_01": "VO_LOOTA_BOSS_32h_Male_Human_TaggedIn2_01.ogg",
+			"Taggedin3_01": "VO_LOOTA_BOSS_32h_Male_Human_TaggedIn3_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "LOOTA_BOSS_32h.png",
 		"dbfId": 46324,
-		"goldenImage": "LOOTA_BOSS_32h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_32h",
 		"name": "Karl and George",
@@ -58147,7 +64212,6 @@ var parseCardsText = {
 		"cardClass": "SHAMAN",
 		"cardImage": "LOOTA_BOSS_33h.png",
 		"dbfId": 46330,
-		"goldenImage": "LOOTA_BOSS_33h.gif",
 		"health": 50,
 		"id": "LOOTA_BOSS_33h",
 		"name": "Gutmook",
@@ -58162,7 +64226,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_33p.png",
 		"cost": 0,
 		"dbfId": 46331,
-		"goldenImage": "LOOTA_BOSS_33p.gif",
 		"id": "LOOTA_BOSS_33p",
 		"name": "Metabolized Magic",
 		"playerClass": "Neutral",
@@ -58172,10 +64235,20 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Nicola Saviori",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_34h_Male_Demon_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_34h_Male_Demon_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_34h_Male_Demon_EmoteResponse_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_34h_Male_Demon_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_34h_Male_Demon_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_34h_Male_Demon_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_34h_Male_Demon_HeroPower4_01.ogg",
+			"Heropower5_01": "VO_LOOTA_BOSS_34h_Male_Demon_HeroPower5_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_34h_Male_Demon_Intro_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "LOOTA_BOSS_34h.png",
 		"dbfId": 46352,
-		"goldenImage": "LOOTA_BOSS_34h.gif",
 		"health": 70,
 		"id": "LOOTA_BOSS_34h",
 		"name": "Azari, the Devourer",
@@ -58190,7 +64263,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_34p.png",
 		"cost": 0,
 		"dbfId": 46353,
-		"goldenImage": "LOOTA_BOSS_34p.gif",
 		"id": "LOOTA_BOSS_34p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58203,10 +64275,20 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Luke Mancini",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_EmoteResponse_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_Intro_01.ogg",
+			"Spellcountered1_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_SpellCountered1_01.ogg",
+			"Spellcountered2_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_SpellCountered2_01.ogg",
+			"Spellcountered3_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_SpellCountered3_01.ogg",
+			"Spellcountered4_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_SpellCountered4_01.ogg",
+			"Spellcountered5_01": "VO_LOOTA_BOSS_35h_Male_Furbolg_SpellCountered5_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "LOOTA_BOSS_35h.png",
 		"dbfId": 46357,
-		"goldenImage": "LOOTA_BOSS_35h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_35h",
 		"name": "Elder Brandlemar",
@@ -58221,7 +64303,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_35p.png",
 		"cost": 2,
 		"dbfId": 46358,
-		"goldenImage": "LOOTA_BOSS_35p.gif",
 		"id": "LOOTA_BOSS_35p",
 		"name": "Dampen Magic",
 		"playerClass": "Neutral",
@@ -58234,7 +64315,6 @@ var parseCardsText = {
 		"cardClass": "DRUID",
 		"cardImage": "LOOTA_BOSS_36h.png",
 		"dbfId": 46361,
-		"goldenImage": "LOOTA_BOSS_36h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_36h",
 		"name": "Ixlid",
@@ -58248,7 +64328,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_36p.png",
 		"cost": 2,
 		"dbfId": 46363,
-		"goldenImage": "LOOTA_BOSS_36p.gif",
 		"id": "LOOTA_BOSS_36p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58261,10 +64340,23 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Will Murai",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_EmoteResponse_01.ogg",
+			"Eventfireball_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_EventFireball_01.ogg",
+			"Eventpyroblast_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_EventPyroblast_01.ogg",
+			"Eventragnaros_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_EventRagnaros_01.ogg",
+			"Eventthecandle_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_EventTheCandle_01.ogg",
+			"Flamewakers_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_Flamewakers_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_HeroPower3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_37h_Female_BloodElf_Intro_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "LOOTA_BOSS_37h.png",
 		"dbfId": 46371,
-		"goldenImage": "LOOTA_BOSS_37h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_37h",
 		"name": "Lyris the Wild Mage",
@@ -58280,7 +64372,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_37p.png",
 		"cost": 1,
 		"dbfId": 46368,
-		"goldenImage": "LOOTA_BOSS_37p.gif",
 		"id": "LOOTA_BOSS_37p",
 		"name": "Arcane Infusion",
 		"playerClass": "Neutral",
@@ -58290,10 +64381,23 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Matt Dixon",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_38h_Male_Kobold_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_38h_Male_Kobold_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_38h_Male_Kobold_EmoteResponse_01.ogg",
+			"Eventbrann_01": "VO_LOOTA_BOSS_38h_Male_Kobold_EventBrann_01.ogg",
+			"Eventplayerbattlecries1_01": "VO_LOOTA_BOSS_38h_Male_Kobold_EventPlayerBattlecries1_01.ogg",
+			"Eventplayerbattlecries2_01": "VO_LOOTA_BOSS_38h_Male_Kobold_EventPlayerBattlecries2_01.ogg",
+			"Eventplayerbattlecries3_01": "VO_LOOTA_BOSS_38h_Male_Kobold_EventPlayerBattlecries3_01.ogg",
+			"Eventplayerdeathrattles1_01": "VO_LOOTA_BOSS_38h_Male_Kobold_EventPlayerDeathrattles1_01.ogg",
+			"Eventplayerdeathrattles3_01": "VO_LOOTA_BOSS_38h_Male_Kobold_EventPlayerDeathrattles3_01.ogg",
+			"Eventplayerdeathrattles3_02": "VO_LOOTA_BOSS_38h_Male_Kobold_EventPlayerDeathrattles3_02.ogg",
+			"Eventrivendare_01": "VO_LOOTA_BOSS_38h_Male_Kobold_EventRivendare_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_38h_Male_Kobold_Intro_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOTA_BOSS_38h.png",
 		"dbfId": 47001,
-		"goldenImage": "LOOTA_BOSS_38h.gif",
 		"health": 50,
 		"id": "LOOTA_BOSS_38h",
 		"name": "Voodoomaster Vex",
@@ -58308,7 +64412,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_38p.png",
 		"cost": 0,
 		"dbfId": 47000,
-		"goldenImage": "LOOTA_BOSS_38p.gif",
 		"hideStats": true,
 		"id": "LOOTA_BOSS_38p",
 		"name": "Totem of Chaos",
@@ -58319,10 +64422,20 @@ var parseCardsText = {
 	},
 	{
 		"artist": "A.J. Nazzaro",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_39h_Male_Golem_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_39h_Male_Golem_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_39h_Male_Golem_EmoteResponse_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_39h_Male_Golem_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_39h_Male_Golem_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_39h_Male_Golem_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_39h_Male_Golem_HeroPower4_01.ogg",
+			"Heropower5_01": "VO_LOOTA_BOSS_39h_Male_Golem_HeroPower5_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_39h_Male_Golem_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_39h.png",
 		"dbfId": 47258,
-		"goldenImage": "LOOTA_BOSS_39h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_39h",
 		"name": "Kraxx",
@@ -58336,7 +64449,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_39p.png",
 		"cost": 2,
 		"dbfId": 47257,
-		"goldenImage": "LOOTA_BOSS_39p.gif",
 		"id": "LOOTA_BOSS_39p",
 		"name": "Giant Stomp",
 		"playerClass": "Neutral",
@@ -58346,10 +64458,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Aaron Miller",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_40h_Female_Dragon_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_40h_Female_Dragon_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_40h_Female_Dragon_EmoteResponse_01.ogg",
+			"Eventplaytwilightdrake_01": "VO_LOOTA_BOSS_40h_Female_Dragon_EventPlayTwilightDrake_01.ogg",
+			"Eventplaytwilightwhelp_01": "VO_LOOTA_BOSS_40h_Female_Dragon_EventPlayTwilightWhelp_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_40h_Female_Dragon_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_40h_Female_Dragon_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_40h_Female_Dragon_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_40h_Female_Dragon_HeroPower4_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_40h_Female_Dragon_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOTA_BOSS_40h.png",
 		"dbfId": 47261,
-		"goldenImage": "LOOTA_BOSS_40h.gif",
 		"health": 20,
 		"id": "LOOTA_BOSS_40h",
 		"name": "Seriona",
@@ -58363,7 +64486,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_40p.png",
 		"cost": 2,
 		"dbfId": 47260,
-		"goldenImage": "LOOTA_BOSS_40p.gif",
 		"id": "LOOTA_BOSS_40p",
 		"name": "Fading Light",
 		"playerClass": "Neutral",
@@ -58374,7 +64496,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 47259,
-		"goldenImage": "LOOTA_BOSS_40pe.gif",
 		"id": "LOOTA_BOSS_40pe",
 		"name": "Fading",
 		"playerClass": "Neutral",
@@ -58384,10 +64505,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Mike Sass",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_41h_Male_Kobold_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_41h_Male_Kobold_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_41h_Male_Kobold_EmoteResponse_01.ogg",
+			"Eventhornofcenarius_01": "VO_LOOTA_BOSS_41h_Male_Kobold_EventHornOfCenarius_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_41h_Male_Kobold_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_41h_Male_Kobold_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_41h_Male_Kobold_HeroPower3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_41h_Male_Kobold_Intro_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "LOOTA_BOSS_41h.png",
 		"dbfId": 47303,
-		"goldenImage": "LOOTA_BOSS_41h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_41h",
 		"name": "Whompwhisker",
@@ -58401,7 +64531,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_41p.png",
 		"cost": 2,
 		"dbfId": 47302,
-		"goldenImage": "LOOTA_BOSS_41p.gif",
 		"id": "LOOTA_BOSS_41p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58417,10 +64546,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
+		"audio": {
+			"Armor10_01": "VO_LOOTA_BOSS_42h_Female_Furbolg_Armor10_01.ogg",
+			"Armor15_01": "VO_LOOTA_BOSS_42h_Female_Furbolg_Armor15_01.ogg",
+			"Armor20_01": "VO_LOOTA_BOSS_42h_Female_Furbolg_Armor20_01.ogg",
+			"Armor5_01": "VO_LOOTA_BOSS_42h_Female_Furbolg_Armor5_01.ogg",
+			"Death_01": "VO_LOOTA_BOSS_42h_Female_Furbolg_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_42h_Female_Furbolg_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_42h_Female_Furbolg_EmoteResponse_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_42h_Female_Furbolg_Intro_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "LOOTA_BOSS_42h.png",
 		"dbfId": 47305,
-		"goldenImage": "LOOTA_BOSS_42h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_42h",
 		"name": "Elder Jari",
@@ -58434,7 +64572,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_42p.png",
 		"cost": 1,
 		"dbfId": 47304,
-		"goldenImage": "LOOTA_BOSS_42p.gif",
 		"id": "LOOTA_BOSS_42p",
 		"name": "Mystic Barrier",
 		"playerClass": "Neutral",
@@ -58444,10 +64581,21 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Ivan Fomin",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_43h_Female_Djinn_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_43h_Female_Djinn_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_43h_Female_Djinn_EmoteResponse_01.ogg",
+			"Heroability1_01": "VO_LOOTA_BOSS_43h_Female_Djinn_HeroAbility1_01.ogg",
+			"Heroability2_01": "VO_LOOTA_BOSS_43h_Female_Djinn_HeroAbility2_01.ogg",
+			"Heroability3_01": "VO_LOOTA_BOSS_43h_Female_Djinn_HeroAbility3_01.ogg",
+			"Heroabilityhandfull1_01": "VO_LOOTA_BOSS_43h_Female_Djinn_HeroAbilityHandFull1_01.ogg",
+			"Heroabilityhandfull2_01": "VO_LOOTA_BOSS_43h_Female_Djinn_HeroAbilityHandFull2_01.ogg",
+			"Heroabilityhandfull3_01": "VO_LOOTA_BOSS_43h_Female_Djinn_HeroAbilityHandFull3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_43h_Female_Djinn_Intro_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "LOOTA_BOSS_43h.png",
 		"dbfId": 47307,
-		"goldenImage": "LOOTA_BOSS_43h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_43h",
 		"name": "Jeeru",
@@ -58461,7 +64609,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_43p.png",
 		"cost": 1,
 		"dbfId": 47306,
-		"goldenImage": "LOOTA_BOSS_43p.gif",
 		"id": "LOOTA_BOSS_43p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58474,10 +64621,15 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Ellis",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_44h_Female_Dragon_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_44h_Female_Dragon_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_44h_Female_Dragon_EmoteResponse_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_44h_Female_Dragon_Intro_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "LOOTA_BOSS_44h.png",
 		"dbfId": 47309,
-		"goldenImage": "LOOTA_BOSS_44h.gif",
 		"health": 10,
 		"id": "LOOTA_BOSS_44h",
 		"name": "Wee Whelp",
@@ -58491,7 +64643,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_44p.png",
 		"cost": 2,
 		"dbfId": 47308,
-		"goldenImage": "LOOTA_BOSS_44p.gif",
 		"id": "LOOTA_BOSS_44p",
 		"name": "Baby Breath",
 		"playerClass": "Neutral",
@@ -58501,10 +64652,19 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Dan Scott",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_45h_Male_Gnome_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_45h_Male_Gnome_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_45h_Male_Gnome_EmoteResponse_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_45h_Male_Gnome_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_45h_Male_Gnome_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_45h_Male_Gnome_HeroPower3_01.ogg",
+			"Heropower4_01": "VO_LOOTA_BOSS_45h_Male_Gnome_HeroPower4_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_45h_Male_Gnome_Intro_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOTA_BOSS_45h.png",
 		"dbfId": 47316,
-		"goldenImage": "LOOTA_BOSS_45h.gif",
 		"health": 10,
 		"id": "LOOTA_BOSS_45h",
 		"name": "Bink the Burglar",
@@ -58518,7 +64678,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_45p.png",
 		"cost": 0,
 		"dbfId": 47315,
-		"goldenImage": "LOOTA_BOSS_45p.gif",
 		"id": "LOOTA_BOSS_45p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58531,10 +64690,18 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Arthur Bozonnet",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_46h_Male_Murloc_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_46h_Male_Murloc_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_46h_Male_Murloc_EmoteResponse_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_46h_Male_Murloc_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_46h_Male_Murloc_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_46h_Male_Murloc_HeroPower3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_46h_Male_Murloc_Intro_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "LOOTA_BOSS_46h.png",
 		"dbfId": 47320,
-		"goldenImage": "LOOTA_BOSS_46h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_46h",
 		"name": "Fungalmancer Flurgl",
@@ -58548,7 +64715,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_46p.png",
 		"cost": 2,
 		"dbfId": 47319,
-		"goldenImage": "LOOTA_BOSS_46p.gif",
 		"id": "LOOTA_BOSS_46p",
 		"name": "Fungal Infection",
 		"playerClass": "Neutral",
@@ -58559,7 +64725,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 47317,
-		"goldenImage": "LOOTA_BOSS_46pe.gif",
 		"id": "LOOTA_BOSS_46pe",
 		"name": "Infected",
 		"playerClass": "Neutral",
@@ -58571,7 +64736,6 @@ var parseCardsText = {
 		"cardClass": "SHAMAN",
 		"cardImage": "LOOTA_BOSS_47h.png",
 		"dbfId": 47322,
-		"goldenImage": "LOOTA_BOSS_47h.gif",
 		"health": 50,
 		"id": "LOOTA_BOSS_47h",
 		"name": "Lava-Filled Chamber",
@@ -58585,7 +64749,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_47p.png",
 		"cost": 0,
 		"dbfId": 47321,
-		"goldenImage": "LOOTA_BOSS_47p.gif",
 		"id": "LOOTA_BOSS_47p",
 		"name": "The Floor is Lava",
 		"playerClass": "Neutral",
@@ -58598,7 +64761,6 @@ var parseCardsText = {
 		"cardClass": "HUNTER",
 		"cardImage": "LOOTA_BOSS_48h.png",
 		"dbfId": 47328,
-		"goldenImage": "LOOTA_BOSS_48h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_48h",
 		"name": "Trapped Room",
@@ -58613,7 +64775,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_48p.png",
 		"cost": 0,
 		"dbfId": 47327,
-		"goldenImage": "LOOTA_BOSS_48p.gif",
 		"id": "LOOTA_BOSS_48p",
 		"name": "Alarm",
 		"playerClass": "Neutral",
@@ -58628,7 +64789,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_48t.png",
 		"cost": 3,
 		"dbfId": 47326,
-		"goldenImage": "LOOTA_BOSS_48t.gif",
 		"health": 3,
 		"id": "LOOTA_BOSS_48t",
 		"name": "Sawblade",
@@ -58638,10 +64798,18 @@ var parseCardsText = {
 	},
 	{
 		"artist": "L. Lullabi & K. Turovec",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_49h_Male_Elemental_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_49h_Male_Elemental_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_49h_Male_Elemental_EmoteResponse_01.ogg",
+			"Heropower1_01": "VO_LOOTA_BOSS_49h_Male_Elemental_HeroPower1_01.ogg",
+			"Heropower2_01": "VO_LOOTA_BOSS_49h_Male_Elemental_HeroPower2_01.ogg",
+			"Heropower3_01": "VO_LOOTA_BOSS_49h_Male_Elemental_HeroPower3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_49h_Male_Elemental_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOTA_BOSS_49h.png",
 		"dbfId": 47333,
-		"goldenImage": "LOOTA_BOSS_49h.gif",
 		"health": 70,
 		"id": "LOOTA_BOSS_49h",
 		"name": "The Darkness",
@@ -58655,7 +64823,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_49p.png",
 		"cost": 0,
 		"dbfId": 47332,
-		"goldenImage": "LOOTA_BOSS_49p.gif",
 		"id": "LOOTA_BOSS_49p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58673,7 +64840,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_49t.png",
 		"cost": 5,
 		"dbfId": 47330,
-		"goldenImage": "LOOTA_BOSS_49t.gif",
 		"health": 5,
 		"id": "LOOTA_BOSS_49t",
 		"name": "Darkspawn",
@@ -58687,7 +64853,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_49t2.png",
 		"cost": 0,
 		"dbfId": 47331,
-		"goldenImage": "LOOTA_BOSS_49t2.gif",
 		"id": "LOOTA_BOSS_49t2",
 		"name": "Luminous Candle",
 		"playerClass": "Neutral",
@@ -58697,10 +64862,22 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Tyler West Studios",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_50h_Male_Kobold_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_50h_Male_Kobold_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_50h_Male_Kobold_EmoteResponse_01.ogg",
+			"Eventkazakus_01": "VO_LOOTA_BOSS_50h_Male_Kobold_EventKazakus_01.ogg",
+			"Eventmakepotion1_01": "VO_LOOTA_BOSS_50h_Male_Kobold_EventMakePotion1_01.ogg",
+			"Eventmakepotion2_01": "VO_LOOTA_BOSS_50h_Male_Kobold_EventMakePotion2_01.ogg",
+			"Eventmakepotion3_01": "VO_LOOTA_BOSS_50h_Male_Kobold_EventMakePotion3_01.ogg",
+			"Eventusepotion1_01": "VO_LOOTA_BOSS_50h_Male_Kobold_EventUsePotion1_01.ogg",
+			"Eventusepotion2_01": "VO_LOOTA_BOSS_50h_Male_Kobold_EventUsePotion2_01.ogg",
+			"Eventusepotion3_01": "VO_LOOTA_BOSS_50h_Male_Kobold_EventUsePotion3_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_50h_Male_Kobold_Intro_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "LOOTA_BOSS_50h.png",
 		"dbfId": 47361,
-		"goldenImage": "LOOTA_BOSS_50h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_50h",
 		"name": "Mushhuckster Max",
@@ -58717,7 +64894,6 @@ var parseCardsText = {
 		"entourage": [
 			"CFM_621t11"
 		],
-		"goldenImage": "LOOTA_BOSS_50p.gif",
 		"id": "LOOTA_BOSS_50p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58734,7 +64910,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_50t.png",
 		"cost": 1,
 		"dbfId": 47362,
-		"goldenImage": "LOOTA_BOSS_50t.gif",
 		"id": "LOOTA_BOSS_50t",
 		"name": "Mushroom Potion",
 		"playerClass": "Neutral",
@@ -58744,10 +64919,34 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Garrett Hanna",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Death_01.ogg",
+			"Defeatplayer_02": "VO_LOOTA_BOSS_51h_Male_Dwarf_DefeatPlayer_02.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_EmoteResponse_01.ogg",
+			"Eventboombox_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_EventBoombox_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Intro_01.ogg",
+			"Killingblowready_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_KillingBlowReady_01.ogg",
+			"Song1a_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song1A_01.ogg",
+			"Song1b_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song1B_01.ogg",
+			"Song1c_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song1C_01.ogg",
+			"Song1d_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song1D_01.ogg",
+			"Song2a_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song2A_01.ogg",
+			"Song2b_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song2B_01.ogg",
+			"Song2c_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song2C_01.ogg",
+			"Song2d_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song2D_01.ogg",
+			"Song3a_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song3A_01.ogg",
+			"Song3b_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song3B_01.ogg",
+			"Song3c_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song3C_01.ogg",
+			"Song3d_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Song3D_01.ogg",
+			"Steal_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_Steal_01.ogg",
+			"Steal_02": "VO_LOOTA_BOSS_51h_Male_Dwarf_Steal_02.ogg",
+			"Steal_03": "VO_LOOTA_BOSS_51h_Male_Dwarf_Steal_03.ogg",
+			"Stealdoomsayer_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_StealDoomsayer_01.ogg",
+			"Stealminstrel_01": "VO_LOOTA_BOSS_51h_Male_Dwarf_StealMinstrel_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "LOOTA_BOSS_51h.png",
 		"dbfId": 47365,
-		"goldenImage": "LOOTA_BOSS_51h.gif",
 		"health": 30,
 		"id": "LOOTA_BOSS_51h",
 		"name": "Russell the Bard",
@@ -58762,7 +64961,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_51p.png",
 		"cost": 2,
 		"dbfId": 47363,
-		"goldenImage": "LOOTA_BOSS_51p.gif",
 		"id": "LOOTA_BOSS_51p",
 		"name": "Alluring Tune",
 		"playerClass": "Neutral",
@@ -58775,7 +64973,6 @@ var parseCardsText = {
 		"cardClass": "ROGUE",
 		"cardImage": "LOOTA_BOSS_52h.png",
 		"dbfId": 47465,
-		"goldenImage": "LOOTA_BOSS_52h.gif",
 		"health": 60,
 		"hideStats": true,
 		"id": "LOOTA_BOSS_52h",
@@ -58793,7 +64990,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_52p.png",
 		"cost": 5,
 		"dbfId": 47464,
-		"goldenImage": "LOOTA_BOSS_52p.gif",
 		"id": "LOOTA_BOSS_52p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58811,7 +65007,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_52t.png",
 		"cost": 1,
 		"dbfId": 47466,
-		"goldenImage": "LOOTA_BOSS_52t.gif",
 		"health": 10,
 		"id": "LOOTA_BOSS_52t",
 		"mechanics": [
@@ -58825,10 +65020,29 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Adam Byrne",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_53h2_Female_Undead_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_53h2_Female_Undead_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_53h2_Female_Undead_EmoteResponse_01.ogg",
+			"Eventmanadestroyed_01": "VO_LOOTA_BOSS_53h2_Female_Undead_EventManaDestroyed_01.ogg",
+			"Eventplayertimewalk_01": "VO_LOOTA_BOSS_53h2_Female_Undead_EventPlayerTimeWalk_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_53h2_Female_Undead_Intro_01.ogg",
+			"Ritualprep1_01": "VO_LOOTA_BOSS_53h2_Female_Undead_RitualPrep1_01.ogg",
+			"Ritualprep2_01": "VO_LOOTA_BOSS_53h2_Female_Undead_RitualPrep2_01.ogg",
+			"Ritualprep3_01": "VO_LOOTA_BOSS_53h2_Female_Undead_RitualPrep3_01.ogg",
+			"Timerewindplaycard1_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindPlayCard1_01.ogg",
+			"Timerewindplaycard2_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindPlayCard2_01.ogg",
+			"Timerewindplaycard3_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindPlayCard3_01.ogg",
+			"Timerewindplaycard4_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindPlayCard4_01.ogg",
+			"Timerewindplaycard5_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindPlayCard5_01.ogg",
+			"Timerewindstart1_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindStart1_01.ogg",
+			"Timerewindstart2_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindStart2_01.ogg",
+			"Timerewindstart3_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindStart3_01.ogg",
+			"Timerewindstart4_01": "VO_LOOTA_BOSS_53h2_Female_Undead_TimeRewindStart4_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "LOOTA_BOSS_53h.png",
 		"dbfId": 47475,
-		"goldenImage": "LOOTA_BOSS_53h.gif",
 		"health": 50,
 		"id": "LOOTA_BOSS_53h",
 		"name": "Chronomancer Inara",
@@ -58842,7 +65056,6 @@ var parseCardsText = {
 		"cardClass": "MAGE",
 		"cardImage": "LOOTA_BOSS_53h2.png",
 		"dbfId": 47484,
-		"goldenImage": "LOOTA_BOSS_53h2.gif",
 		"health": 50,
 		"id": "LOOTA_BOSS_53h2",
 		"name": "Inara the Mage",
@@ -58856,7 +65069,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_53p.png",
 		"cost": 10,
 		"dbfId": 47474,
-		"goldenImage": "LOOTA_BOSS_53p.gif",
 		"id": "LOOTA_BOSS_53p",
 		"mechanics": [
 			"AI_MUST_PLAY"
@@ -58869,10 +65081,20 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Adam Byrne",
+		"audio": {
+			"Death_01": "VO_LOOTA_BOSS_54h_Female_Human_Death_01.ogg",
+			"Defeatplayer_01": "VO_LOOTA_BOSS_54h_Female_Human_DefeatPlayer_01.ogg",
+			"Emoteresponse_01": "VO_LOOTA_BOSS_54h_Female_Human_EmoteResponse_01.ogg",
+			"Intro_01": "VO_LOOTA_BOSS_54h_Female_Human_Intro_01.ogg",
+			"Intro_02": "VO_LOOTA_BOSS_54h_Female_Human_Intro_02.ogg",
+			"Intro_03": "VO_LOOTA_BOSS_54h_Female_Human_Intro_03.ogg",
+			"Intro_04": "VO_LOOTA_BOSS_54h_Female_Human_Intro_04.ogg",
+			"Intro_07": "VO_LOOTA_BOSS_54h_Female_Human_Intro_07.ogg",
+			"Wakeup_01": "VO_LOOTA_BOSS_54h_Female_Human_WakeUp_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "LOOTA_BOSS_54h.png",
 		"dbfId": 47495,
-		"goldenImage": "LOOTA_BOSS_54h.gif",
 		"health": 40,
 		"id": "LOOTA_BOSS_54h",
 		"name": "A. F. Kay",
@@ -58886,7 +65108,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_54p.png",
 		"cost": 2,
 		"dbfId": 47494,
-		"goldenImage": "LOOTA_BOSS_54p.gif",
 		"id": "LOOTA_BOSS_54p",
 		"name": "Idle",
 		"playerClass": "Neutral",
@@ -58899,7 +65120,6 @@ var parseCardsText = {
 		"cardClass": "ROGUE",
 		"cardImage": "LOOTA_BOSS_99h.png",
 		"dbfId": 47210,
-		"goldenImage": "LOOTA_BOSS_99h.gif",
 		"health": 70,
 		"id": "LOOTA_BOSS_99h",
 		"name": "King Togwaggle",
@@ -58932,7 +65152,6 @@ var parseCardsText = {
 			"LOOT_998k",
 			"LOOTA_838"
 		],
-		"goldenImage": "LOOTA_BOSS_99p.gif",
 		"id": "LOOTA_BOSS_99p",
 		"name": "Magic Candle",
 		"playerClass": "Neutral",
@@ -58946,7 +65165,6 @@ var parseCardsText = {
 		"cardImage": "LOOTA_BOSS_99t.png",
 		"cost": 0,
 		"dbfId": 48824,
-		"goldenImage": "LOOTA_BOSS_99t.gif",
 		"hideStats": true,
 		"id": "LOOTA_BOSS_99t",
 		"name": "Rakanishu",
@@ -58971,7 +65189,6 @@ var parseCardsText = {
 			"EX1_164",
 			"AT_043"
 		],
-		"goldenImage": "LOOTA_Druid_01.gif",
 		"id": "LOOTA_Druid_01",
 		"name": "Mana Growth",
 		"playerClass": "Druid",
@@ -58998,7 +65215,6 @@ var parseCardsText = {
 			"UNG_086",
 			"LOE_050"
 		],
-		"goldenImage": "LOOTA_Druid_02.gif",
 		"id": "LOOTA_Druid_02",
 		"name": "Jungle King",
 		"playerClass": "Druid",
@@ -59022,7 +65238,6 @@ var parseCardsText = {
 			"ICC_085",
 			"LOOT_413"
 		],
-		"goldenImage": "LOOTA_Druid_03.gif",
 		"id": "LOOTA_Druid_03",
 		"name": "Natural Defense",
 		"playerClass": "Druid",
@@ -59040,7 +65255,6 @@ var parseCardsText = {
 			"CFM_602",
 			"CFM_713"
 		],
-		"goldenImage": "LOOTA_Druid_04.gif",
 		"id": "LOOTA_Druid_04",
 		"name": "Jade Fangs",
 		"playerClass": "Druid",
@@ -59067,7 +65281,6 @@ var parseCardsText = {
 			"ICC_051",
 			"UNG_809"
 		],
-		"goldenImage": "LOOTA_Druid_05.gif",
 		"id": "LOOTA_Druid_05",
 		"name": "Stampede",
 		"playerClass": "Druid",
@@ -59091,7 +65304,6 @@ var parseCardsText = {
 			"CFM_308",
 			"UNG_852"
 		],
-		"goldenImage": "LOOTA_Druid_06.gif",
 		"id": "LOOTA_Druid_06",
 		"name": "Jungle Quest",
 		"playerClass": "Druid",
@@ -59114,7 +65326,6 @@ var parseCardsText = {
 			"OG_255",
 			"OG_188"
 		],
-		"goldenImage": "LOOTA_Druid_07.gif",
 		"id": "LOOTA_Druid_07",
 		"name": "Cult of C'thun",
 		"playerClass": "Druid",
@@ -59140,7 +65351,6 @@ var parseCardsText = {
 			"EX1_573",
 			"OG_044"
 		],
-		"goldenImage": "LOOTA_Druid_08.gif",
 		"id": "LOOTA_Druid_08",
 		"name": "Wise Decisions",
 		"playerClass": "Druid",
@@ -59162,7 +65372,6 @@ var parseCardsText = {
 			"EX1_563",
 			"CS2_012"
 		],
-		"goldenImage": "LOOTA_Druid_09.gif",
 		"id": "LOOTA_Druid_09",
 		"name": "Balance",
 		"playerClass": "Druid",
@@ -59185,7 +65394,6 @@ var parseCardsText = {
 			"AT_111",
 			"GVG_069"
 		],
-		"goldenImage": "LOOTA_Druid_10.gif",
 		"id": "LOOTA_Druid_10",
 		"name": "Restoration",
 		"playerClass": "Druid",
@@ -59211,7 +65419,6 @@ var parseCardsText = {
 			"KAR_061",
 			"UNG_848"
 		],
-		"goldenImage": "LOOTA_Druid_11.gif",
 		"id": "LOOTA_Druid_11",
 		"name": "Taunt",
 		"playerClass": "Druid",
@@ -59237,7 +65444,6 @@ var parseCardsText = {
 			"GVG_114",
 			"CFM_811"
 		],
-		"goldenImage": "LOOTA_Druid_12.gif",
 		"id": "LOOTA_Druid_12",
 		"name": "Stomp",
 		"playerClass": "Druid",
@@ -59263,7 +65469,6 @@ var parseCardsText = {
 			"LOOT_078",
 			"CFM_316"
 		],
-		"goldenImage": "LOOTA_Hunter_01.gif",
 		"id": "LOOTA_Hunter_01",
 		"name": "Wee Beasts",
 		"playerClass": "Hunter",
@@ -59287,7 +65492,6 @@ var parseCardsText = {
 			"ICC_905",
 			"LOOT_511"
 		],
-		"goldenImage": "LOOTA_Hunter_02.gif",
 		"id": "LOOTA_Hunter_02",
 		"name": "Big Beasts",
 		"playerClass": "Hunter",
@@ -59312,7 +65516,6 @@ var parseCardsText = {
 			"ICC_049",
 			"LOOT_077"
 		],
-		"goldenImage": "LOOTA_Hunter_03.gif",
 		"id": "LOOTA_Hunter_03",
 		"name": "Shots",
 		"playerClass": "Hunter",
@@ -59338,7 +65541,6 @@ var parseCardsText = {
 			"LOOT_149",
 			"LOOT_511"
 		],
-		"goldenImage": "LOOTA_Hunter_04.gif",
 		"id": "LOOTA_Hunter_04",
 		"name": "Summoner",
 		"playerClass": "Hunter",
@@ -59368,7 +65570,6 @@ var parseCardsText = {
 			"FP1_004",
 			"KAR_006"
 		],
-		"goldenImage": "LOOTA_Hunter_05.gif",
 		"id": "LOOTA_Hunter_05",
 		"name": "Secrets",
 		"playerClass": "Hunter",
@@ -59390,7 +65591,6 @@ var parseCardsText = {
 			"UNG_916",
 			"UNG_917"
 		],
-		"goldenImage": "LOOTA_Hunter_06.gif",
 		"id": "LOOTA_Hunter_06",
 		"name": "Beast Training",
 		"playerClass": "Hunter",
@@ -59414,7 +65614,6 @@ var parseCardsText = {
 			"LOOT_389",
 			"ICC_096"
 		],
-		"goldenImage": "LOOTA_Hunter_07.gif",
 		"id": "LOOTA_Hunter_07",
 		"name": "Weapons",
 		"playerClass": "Hunter",
@@ -59437,7 +65636,6 @@ var parseCardsText = {
 			"ICC_415",
 			"ICC_828"
 		],
-		"goldenImage": "LOOTA_Hunter_08.gif",
 		"id": "LOOTA_Hunter_08",
 		"name": "Tracker",
 		"playerClass": "Hunter",
@@ -59466,7 +65664,6 @@ var parseCardsText = {
 			"LOOT_161",
 			"LOOT_511"
 		],
-		"goldenImage": "LOOTA_Hunter_09.gif",
 		"id": "LOOTA_Hunter_09",
 		"name": "Deathrattle",
 		"playerClass": "Hunter",
@@ -59489,7 +65686,6 @@ var parseCardsText = {
 			"KAR_114",
 			"GVG_114"
 		],
-		"goldenImage": "LOOTA_Hunter_10.gif",
 		"id": "LOOTA_Hunter_10",
 		"name": "Legendary",
 		"playerClass": "Hunter",
@@ -59512,7 +65708,6 @@ var parseCardsText = {
 			"AT_060",
 			"LOOT_522"
 		],
-		"goldenImage": "LOOTA_Hunter_11.gif",
 		"id": "LOOTA_Hunter_11",
 		"name": "Defense",
 		"playerClass": "Hunter",
@@ -59533,7 +65728,6 @@ var parseCardsText = {
 			"CFM_685",
 			"BRM_028"
 		],
-		"goldenImage": "LOOTA_Hunter_12.gif",
 		"id": "LOOTA_Hunter_12",
 		"name": "Smugglers",
 		"playerClass": "Hunter",
@@ -59558,7 +65752,6 @@ var parseCardsText = {
 			"CFM_649",
 			"LOOT_537"
 		],
-		"goldenImage": "LOOTA_Mage_20.gif",
 		"id": "LOOTA_Mage_20",
 		"name": "Chaos",
 		"playerClass": "Mage",
@@ -59585,7 +65778,6 @@ var parseCardsText = {
 			"ICC_833",
 			"EX1_249"
 		],
-		"goldenImage": "LOOTA_Mage_21.gif",
 		"id": "LOOTA_Mage_21",
 		"name": "Elementals",
 		"playerClass": "Mage",
@@ -59609,7 +65801,6 @@ var parseCardsText = {
 			"EX1_559",
 			"EX1_608"
 		],
-		"goldenImage": "LOOTA_Mage_22.gif",
 		"id": "LOOTA_Mage_22",
 		"name": "Magical Friends",
 		"playerClass": "Mage",
@@ -59632,7 +65823,6 @@ var parseCardsText = {
 			"CS2_026",
 			"OG_081"
 		],
-		"goldenImage": "LOOTA_Mage_23.gif",
 		"id": "LOOTA_Mage_23",
 		"name": "Frost",
 		"playerClass": "Mage",
@@ -59654,7 +65844,6 @@ var parseCardsText = {
 			"LOE_002",
 			"EX1_298"
 		],
-		"goldenImage": "LOOTA_Mage_24.gif",
 		"id": "LOOTA_Mage_24",
 		"name": "Fire",
 		"playerClass": "Mage",
@@ -59676,7 +65865,6 @@ var parseCardsText = {
 			"CFM_807",
 			"AT_008"
 		],
-		"goldenImage": "LOOTA_Mage_25.gif",
 		"id": "LOOTA_Mage_25",
 		"name": "Heroic Power",
 		"playerClass": "Mage",
@@ -59701,7 +65889,6 @@ var parseCardsText = {
 			"LOOT_414",
 			"LOOT_106"
 		],
-		"goldenImage": "LOOTA_Mage_27.gif",
 		"id": "LOOTA_Mage_27",
 		"name": "Big Spells",
 		"playerClass": "Mage",
@@ -59723,7 +65910,6 @@ var parseCardsText = {
 			"CS2_023",
 			"LOOT_108"
 		],
-		"goldenImage": "LOOTA_Mage_28.gif",
 		"id": "LOOTA_Mage_28",
 		"name": "Arcane",
 		"playerClass": "Mage",
@@ -59746,7 +65932,6 @@ var parseCardsText = {
 			"CFM_760",
 			"FP1_004"
 		],
-		"goldenImage": "LOOTA_Mage_29.gif",
 		"id": "LOOTA_Mage_29",
 		"name": "Lost Secrets",
 		"playerClass": "Mage",
@@ -59768,7 +65953,6 @@ var parseCardsText = {
 			"BRM_028",
 			"LOOT_161"
 		],
-		"goldenImage": "LOOTA_Mage_30.gif",
 		"id": "LOOTA_Mage_30",
 		"name": "Giant Army",
 		"playerClass": "Mage",
@@ -59790,7 +65974,6 @@ var parseCardsText = {
 			"CS2_028",
 			"NEW1_021"
 		],
-		"goldenImage": "LOOTA_Mage_31.gif",
 		"id": "LOOTA_Mage_31",
 		"name": "Defense",
 		"playerClass": "Mage",
@@ -59806,7 +65989,6 @@ var parseCardsText = {
 			"CFM_621",
 			"CFM_687"
 		],
-		"goldenImage": "LOOTA_Mage_32.gif",
 		"id": "LOOTA_Mage_32",
 		"name": "Unique",
 		"playerClass": "Mage",
@@ -59829,7 +66011,6 @@ var parseCardsText = {
 			"CFM_800",
 			"UNG_011"
 		],
-		"goldenImage": "LOOTA_Paladin_01.gif",
 		"id": "LOOTA_Paladin_01",
 		"name": "Secrets",
 		"playerClass": "Paladin",
@@ -59853,7 +66034,6 @@ var parseCardsText = {
 			"ICC_829",
 			"CFM_815"
 		],
-		"goldenImage": "LOOTA_Paladin_04.gif",
 		"id": "LOOTA_Paladin_04",
 		"name": "Healing",
 		"playerClass": "Paladin",
@@ -59881,7 +66061,6 @@ var parseCardsText = {
 			"ICC_913",
 			"ICC_071"
 		],
-		"goldenImage": "LOOTA_Paladin_05.gif",
 		"id": "LOOTA_Paladin_05",
 		"name": "Divine Shield",
 		"playerClass": "Paladin",
@@ -59905,7 +66084,6 @@ var parseCardsText = {
 			"AT_078",
 			"ICC_039"
 		],
-		"goldenImage": "LOOTA_Paladin_09.gif",
 		"id": "LOOTA_Paladin_09",
 		"name": "Justice",
 		"playerClass": "Paladin",
@@ -59926,7 +66104,6 @@ var parseCardsText = {
 			"CFM_853",
 			"BRM_028"
 		],
-		"goldenImage": "LOOTA_Paladin_11.gif",
 		"id": "LOOTA_Paladin_11",
 		"name": "Helping Hand",
 		"playerClass": "Paladin",
@@ -59959,7 +66136,6 @@ var parseCardsText = {
 			"LOOT_540",
 			"LOOT_137"
 		],
-		"goldenImage": "LOOTA_Paladin_12.gif",
 		"id": "LOOTA_Paladin_12",
 		"name": "Dragonmaster",
 		"playerClass": "Paladin",
@@ -59983,7 +66159,6 @@ var parseCardsText = {
 			"LOOT_333",
 			"LOOT_313"
 		],
-		"goldenImage": "LOOTA_Paladin_14.gif",
 		"id": "LOOTA_Paladin_14",
 		"name": "Silver Hand",
 		"playerClass": "Paladin",
@@ -60007,7 +66182,6 @@ var parseCardsText = {
 			"KAR_061",
 			"LOOT_500"
 		],
-		"goldenImage": "LOOTA_Paladin_16.gif",
 		"id": "LOOTA_Paladin_16",
 		"name": "Legendary",
 		"playerClass": "Paladin",
@@ -60034,7 +66208,6 @@ var parseCardsText = {
 			"EX1_032",
 			"KAR_061"
 		],
-		"goldenImage": "LOOTA_Paladin_19.gif",
 		"id": "LOOTA_Paladin_19",
 		"name": "Taunt",
 		"playerClass": "Paladin",
@@ -60057,7 +66230,6 @@ var parseCardsText = {
 			"EX1_366",
 			"ICC_096"
 		],
-		"goldenImage": "LOOTA_Paladin_20.gif",
 		"id": "LOOTA_Paladin_20",
 		"name": "Sacred Arms",
 		"playerClass": "Paladin",
@@ -60084,7 +66256,6 @@ var parseCardsText = {
 			"CS2_173",
 			"UNG_011"
 		],
-		"goldenImage": "LOOTA_Paladin_21.gif",
 		"id": "LOOTA_Paladin_21",
 		"name": "Murlocs",
 		"playerClass": "Paladin",
@@ -60113,7 +66284,6 @@ var parseCardsText = {
 			"UNG_843",
 			"UNG_954"
 		],
-		"goldenImage": "LOOTA_Paladin_22.gif",
 		"id": "LOOTA_Paladin_22",
 		"name": "Many Blessings",
 		"playerClass": "Paladin",
@@ -60138,7 +66308,6 @@ var parseCardsText = {
 			"KAR_035",
 			"GVG_008"
 		],
-		"goldenImage": "LOOTA_Priest_01.gif",
 		"id": "LOOTA_Priest_01",
 		"name": "Holy",
 		"playerClass": "Priest",
@@ -60173,7 +66342,6 @@ var parseCardsText = {
 			"LOOT_187",
 			"LOOT_161"
 		],
-		"goldenImage": "LOOTA_Priest_02.gif",
 		"id": "LOOTA_Priest_02",
 		"name": "Last Rites",
 		"playerClass": "Priest",
@@ -60202,7 +66370,6 @@ var parseCardsText = {
 			"LOE_104",
 			"LOOT_353"
 		],
-		"goldenImage": "LOOTA_Priest_03.gif",
 		"id": "LOOTA_Priest_03",
 		"name": "Domination",
 		"playerClass": "Priest",
@@ -60225,7 +66392,6 @@ var parseCardsText = {
 			"UNG_037",
 			"ICC_214"
 		],
-		"goldenImage": "LOOTA_Priest_04.gif",
 		"id": "LOOTA_Priest_04",
 		"name": "Resurrection",
 		"playerClass": "Priest",
@@ -60254,7 +66420,6 @@ var parseCardsText = {
 			"CFM_657",
 			"CFM_807"
 		],
-		"goldenImage": "LOOTA_Priest_05.gif",
 		"id": "LOOTA_Priest_05",
 		"name": "Bag of Tricks",
 		"playerClass": "Priest",
@@ -60281,7 +66446,6 @@ var parseCardsText = {
 			"EX1_591",
 			"FP1_001"
 		],
-		"goldenImage": "LOOTA_Priest_06.gif",
 		"id": "LOOTA_Priest_06",
 		"name": "Shadow",
 		"playerClass": "Priest",
@@ -60313,7 +66477,6 @@ var parseCardsText = {
 			"LOOT_540",
 			"BRM_034"
 		],
-		"goldenImage": "LOOTA_Priest_07.gif",
 		"id": "LOOTA_Priest_07",
 		"name": "Dragon Priest",
 		"playerClass": "Priest",
@@ -60335,7 +66498,6 @@ var parseCardsText = {
 			"LOE_053",
 			"CS2_004"
 		],
-		"goldenImage": "LOOTA_Priest_08.gif",
 		"id": "LOOTA_Priest_08",
 		"name": "Discipline",
 		"playerClass": "Priest",
@@ -60351,7 +66513,6 @@ var parseCardsText = {
 			"CFM_621",
 			"LOE_011"
 		],
-		"goldenImage": "LOOTA_Priest_10.gif",
 		"id": "LOOTA_Priest_10",
 		"name": "Unique",
 		"playerClass": "Priest",
@@ -60375,7 +66536,6 @@ var parseCardsText = {
 			"EX1_298",
 			"UNG_809"
 		],
-		"goldenImage": "LOOTA_Priest_12.gif",
 		"id": "LOOTA_Priest_12",
 		"name": "Elementals",
 		"playerClass": "Priest",
@@ -60398,7 +66558,6 @@ var parseCardsText = {
 			"OG_280",
 			"OG_255"
 		],
-		"goldenImage": "LOOTA_Priest_13.gif",
 		"id": "LOOTA_Priest_13",
 		"name": "Cult of C'Thun",
 		"playerClass": "Priest",
@@ -60421,7 +66580,6 @@ var parseCardsText = {
 			"CS2_004",
 			"ICC_830"
 		],
-		"goldenImage": "LOOTA_Priest_9.gif",
 		"id": "LOOTA_Priest_9",
 		"name": "Combo Caster",
 		"playerClass": "Priest",
@@ -60447,7 +66605,6 @@ var parseCardsText = {
 			"CS2_077",
 			"UNG_060"
 		],
-		"goldenImage": "LOOTA_Rogue_01.gif",
 		"id": "LOOTA_Rogue_01",
 		"name": "Adrenaline Rush",
 		"playerClass": "Rogue",
@@ -60470,7 +66627,6 @@ var parseCardsText = {
 			"UNG_067",
 			"NEW1_004"
 		],
-		"goldenImage": "LOOTA_Rogue_02.gif",
 		"id": "LOOTA_Rogue_02",
 		"name": "Evasive",
 		"playerClass": "Rogue",
@@ -60497,7 +66653,6 @@ var parseCardsText = {
 			"LOOT_389",
 			"ICC_096"
 		],
-		"goldenImage": "LOOTA_Rogue_03.gif",
 		"id": "LOOTA_Rogue_03",
 		"name": "Blademaster",
 		"playerClass": "Rogue",
@@ -60528,7 +66683,6 @@ var parseCardsText = {
 			"LOOT_503",
 			"LOOT_161"
 		],
-		"goldenImage": "LOOTA_Rogue_04.gif",
 		"id": "LOOTA_Rogue_04",
 		"name": "Death Dealer",
 		"playerClass": "Rogue",
@@ -60545,7 +66699,6 @@ var parseCardsText = {
 			"CFM_715",
 			"CFM_902"
 		],
-		"goldenImage": "LOOTA_Rogue_05.gif",
 		"id": "LOOTA_Rogue_05",
 		"name": "Jade Lotus",
 		"playerClass": "Rogue",
@@ -60569,7 +66722,6 @@ var parseCardsText = {
 			"LOOT_211",
 			"EX1_012"
 		],
-		"goldenImage": "LOOTA_Rogue_07.gif",
 		"id": "LOOTA_Rogue_07",
 		"name": "Greed",
 		"playerClass": "Rogue",
@@ -60592,7 +66744,6 @@ var parseCardsText = {
 			"GVG_028",
 			"EX1_100"
 		],
-		"goldenImage": "LOOTA_Rogue_09.gif",
 		"id": "LOOTA_Rogue_09",
 		"name": "Thief",
 		"playerClass": "Rogue",
@@ -60617,7 +66768,6 @@ var parseCardsText = {
 			"UNG_064",
 			"ICC_809"
 		],
-		"goldenImage": "LOOTA_Rogue_10.gif",
 		"id": "LOOTA_Rogue_10",
 		"name": "Assassin",
 		"playerClass": "Rogue",
@@ -60645,7 +66795,6 @@ var parseCardsText = {
 			"CFM_651",
 			"GVG_075"
 		],
-		"goldenImage": "LOOTA_Rogue_11.gif",
 		"id": "LOOTA_Rogue_11",
 		"name": "Outlaws",
 		"playerClass": "Rogue",
@@ -60670,7 +66819,6 @@ var parseCardsText = {
 			"EX1_144",
 			"ICC_827"
 		],
-		"goldenImage": "LOOTA_Rogue_13.gif",
 		"id": "LOOTA_Rogue_13",
 		"name": "Bag of Tricks",
 		"playerClass": "Rogue",
@@ -60693,7 +66841,6 @@ var parseCardsText = {
 			"OG_280",
 			"OG_282"
 		],
-		"goldenImage": "LOOTA_Rogue_15.gif",
 		"id": "LOOTA_Rogue_15",
 		"name": "Cult of C'thun",
 		"playerClass": "Rogue",
@@ -60715,7 +66862,6 @@ var parseCardsText = {
 			"KAR_712",
 			"BRM_007"
 		],
-		"goldenImage": "LOOTA_Rogue_16.gif",
 		"id": "LOOTA_Rogue_16",
 		"name": "Exhaustion",
 		"playerClass": "Rogue",
@@ -60738,7 +66884,6 @@ var parseCardsText = {
 			"EX1_238",
 			"EX1_241"
 		],
-		"goldenImage": "LOOTA_Shaman_01.gif",
 		"id": "LOOTA_Shaman_01",
 		"name": "Destruction",
 		"playerClass": "Shaman",
@@ -60760,7 +66905,6 @@ var parseCardsText = {
 			"ICC_855",
 			"UNG_079"
 		],
-		"goldenImage": "LOOTA_Shaman_02.gif",
 		"id": "LOOTA_Shaman_02",
 		"name": "Frost",
 		"playerClass": "Shaman",
@@ -60783,7 +66927,6 @@ var parseCardsText = {
 			"OG_209",
 			"AT_048"
 		],
-		"goldenImage": "LOOTA_Shaman_03.gif",
 		"id": "LOOTA_Shaman_03",
 		"name": "Restoration",
 		"playerClass": "Shaman",
@@ -60806,7 +66949,6 @@ var parseCardsText = {
 			"LOOT_150",
 			"CFM_697"
 		],
-		"goldenImage": "LOOTA_Shaman_04.gif",
 		"id": "LOOTA_Shaman_04",
 		"name": "Mutations",
 		"playerClass": "Shaman",
@@ -60835,7 +66977,6 @@ var parseCardsText = {
 			"BRM_012",
 			"LOE_077"
 		],
-		"goldenImage": "LOOTA_Shaman_05.gif",
 		"id": "LOOTA_Shaman_05",
 		"name": "Battlecrier",
 		"playerClass": "Shaman",
@@ -60861,7 +67002,6 @@ var parseCardsText = {
 			"EX1_298",
 			"UNG_208"
 		],
-		"goldenImage": "LOOTA_Shaman_06.gif",
 		"id": "LOOTA_Shaman_06",
 		"name": "Elementals",
 		"playerClass": "Shaman",
@@ -60892,7 +67032,6 @@ var parseCardsText = {
 			"CFM_344",
 			"EX1_507"
 		],
-		"goldenImage": "LOOTA_Shaman_07.gif",
 		"id": "LOOTA_Shaman_07",
 		"name": "Murlocs",
 		"playerClass": "Shaman",
@@ -60922,7 +67061,6 @@ var parseCardsText = {
 			"OG_026",
 			"EX1_567"
 		],
-		"goldenImage": "LOOTA_Shaman_08.gif",
 		"id": "LOOTA_Shaman_08",
 		"name": "Overload",
 		"playerClass": "Shaman",
@@ -60946,7 +67084,6 @@ var parseCardsText = {
 			"AT_052",
 			"EX1_565"
 		],
-		"goldenImage": "LOOTA_Shaman_09.gif",
 		"id": "LOOTA_Shaman_09",
 		"name": "Totems",
 		"playerClass": "Shaman",
@@ -60964,7 +67101,6 @@ var parseCardsText = {
 			"CFM_715",
 			"CFM_902"
 		],
-		"goldenImage": "LOOTA_Shaman_11.gif",
 		"id": "LOOTA_Shaman_11",
 		"name": "Jade Lotus",
 		"playerClass": "Shaman",
@@ -60990,7 +67126,6 @@ var parseCardsText = {
 			"ICC_257",
 			"LOOT_161"
 		],
-		"goldenImage": "LOOTA_Shaman_12.gif",
 		"id": "LOOTA_Shaman_12",
 		"name": "Farseer",
 		"playerClass": "Shaman",
@@ -61017,7 +67152,6 @@ var parseCardsText = {
 			"LOE_039",
 			"GVG_037"
 		],
-		"goldenImage": "LOOTA_Shaman_13.gif",
 		"id": "LOOTA_Shaman_13",
 		"name": "Mechanized",
 		"playerClass": "Shaman",
@@ -61041,7 +67175,6 @@ var parseCardsText = {
 			"BRM_005",
 			"GVG_045"
 		],
-		"goldenImage": "LOOTA_Warlock_01.gif",
 		"id": "LOOTA_Warlock_01",
 		"name": "Little Legion",
 		"playerClass": "Warlock",
@@ -61064,7 +67197,6 @@ var parseCardsText = {
 			"OG_321",
 			"OG_280"
 		],
-		"goldenImage": "LOOTA_Warlock_02.gif",
 		"id": "LOOTA_Warlock_02",
 		"name": "Cult of C'thun",
 		"playerClass": "Warlock",
@@ -61080,7 +67212,6 @@ var parseCardsText = {
 			"CFM_621",
 			"CFM_750"
 		],
-		"goldenImage": "LOOTA_Warlock_03.gif",
 		"id": "LOOTA_Warlock_03",
 		"name": "Unique",
 		"playerClass": "Warlock",
@@ -61105,7 +67236,6 @@ var parseCardsText = {
 			"UNG_836",
 			"LOOT_417"
 		],
-		"goldenImage": "LOOTA_Warlock_04.gif",
 		"id": "LOOTA_Warlock_04",
 		"name": "Discard",
 		"playerClass": "Warlock",
@@ -61127,7 +67257,6 @@ var parseCardsText = {
 			"ICC_831",
 			"ICC_905"
 		],
-		"goldenImage": "LOOTA_Warlock_05.gif",
 		"id": "LOOTA_Warlock_05",
 		"name": "Lifesteal",
 		"playerClass": "Warlock",
@@ -61153,7 +67282,6 @@ var parseCardsText = {
 			"UNG_072",
 			"LOOT_383"
 		],
-		"goldenImage": "LOOTA_Warlock_06.gif",
 		"id": "LOOTA_Warlock_06",
 		"name": "Taunt",
 		"playerClass": "Warlock",
@@ -61178,7 +67306,6 @@ var parseCardsText = {
 			"LOOT_375",
 			"LOOT_014"
 		],
-		"goldenImage": "LOOTA_Warlock_07.gif",
 		"id": "LOOTA_Warlock_07",
 		"name": "Swarm",
 		"playerClass": "Warlock",
@@ -61201,7 +67328,6 @@ var parseCardsText = {
 			"ICC_041",
 			"LOOT_417"
 		],
-		"goldenImage": "LOOTA_Warlock_08.gif",
 		"id": "LOOTA_Warlock_08",
 		"name": "Destruction",
 		"playerClass": "Warlock",
@@ -61229,7 +67355,6 @@ var parseCardsText = {
 			"LOOT_161",
 			"EX1_016"
 		],
-		"goldenImage": "LOOTA_Warlock_09.gif",
 		"id": "LOOTA_Warlock_09",
 		"name": "Sacrifice",
 		"playerClass": "Warlock",
@@ -61252,7 +67377,6 @@ var parseCardsText = {
 			"LOOT_013",
 			"LOOT_043"
 		],
-		"goldenImage": "LOOTA_Warlock_10.gif",
 		"id": "LOOTA_Warlock_10",
 		"name": "Blood",
 		"playerClass": "Warlock",
@@ -61276,7 +67400,6 @@ var parseCardsText = {
 			"LOOT_368",
 			"ICC_831"
 		],
-		"goldenImage": "LOOTA_Warlock_11.gif",
 		"id": "LOOTA_Warlock_11",
 		"name": "Dire Demons",
 		"playerClass": "Warlock",
@@ -61299,7 +67422,6 @@ var parseCardsText = {
 			"EX1_093",
 			"EX1_323"
 		],
-		"goldenImage": "LOOTA_Warlock_12.gif",
 		"id": "LOOTA_Warlock_12",
 		"name": "Huge Hand",
 		"playerClass": "Warlock",
@@ -61327,7 +67449,6 @@ var parseCardsText = {
 			"FP1_021",
 			"CS2_104"
 		],
-		"goldenImage": "LOOTA_Warrior_01.gif",
 		"id": "LOOTA_Warrior_01",
 		"name": "Berserker",
 		"playerClass": "Warrior",
@@ -61356,7 +67477,6 @@ var parseCardsText = {
 			"CS2_108",
 			"ICC_834"
 		],
-		"goldenImage": "LOOTA_Warrior_02.gif",
 		"id": "LOOTA_Warrior_02",
 		"name": "Everybody Hurts",
 		"playerClass": "Warrior",
@@ -61379,7 +67499,6 @@ var parseCardsText = {
 			"UNG_099",
 			"AT_125"
 		],
-		"goldenImage": "LOOTA_Warrior_03.gif",
 		"id": "LOOTA_Warrior_03",
 		"name": "Charge!",
 		"playerClass": "Warrior",
@@ -61407,7 +67526,6 @@ var parseCardsText = {
 			"LOOT_118",
 			"ICC_096"
 		],
-		"goldenImage": "LOOTA_Warrior_04.gif",
 		"id": "LOOTA_Warrior_04",
 		"name": "Weapons",
 		"playerClass": "Warrior",
@@ -61435,7 +67553,6 @@ var parseCardsText = {
 			"LOOT_519",
 			"AT_064"
 		],
-		"goldenImage": "LOOTA_Warrior_05.gif",
 		"id": "LOOTA_Warrior_05",
 		"name": "Armor",
 		"playerClass": "Warrior",
@@ -61459,7 +67576,6 @@ var parseCardsText = {
 			"NEW1_024",
 			"AT_070"
 		],
-		"goldenImage": "LOOTA_Warrior_06.gif",
 		"id": "LOOTA_Warrior_06",
 		"name": "Pirates",
 		"playerClass": "Warrior",
@@ -61488,7 +67604,6 @@ var parseCardsText = {
 			"LOOT_137",
 			"UNG_934"
 		],
-		"goldenImage": "LOOTA_Warrior_07.gif",
 		"id": "LOOTA_Warrior_07",
 		"name": "Taunt",
 		"playerClass": "Warrior",
@@ -61510,7 +67625,6 @@ var parseCardsText = {
 			"GVG_052",
 			"CS2_114"
 		],
-		"goldenImage": "LOOTA_Warrior_08.gif",
 		"id": "LOOTA_Warrior_08",
 		"name": "Smash!",
 		"playerClass": "Warrior",
@@ -61530,7 +67644,6 @@ var parseCardsText = {
 			"BRM_028",
 			"CFM_685"
 		],
-		"goldenImage": "LOOTA_Warrior_09.gif",
 		"id": "LOOTA_Warrior_09",
 		"name": "Re-Enforcer",
 		"playerClass": "Warrior",
@@ -61562,7 +67675,6 @@ var parseCardsText = {
 			"ICC_314",
 			"LOE_092"
 		],
-		"goldenImage": "LOOTA_Warrior_10.gif",
 		"id": "LOOTA_Warrior_10",
 		"name": "Legendary",
 		"playerClass": "Warrior",
@@ -61595,7 +67707,6 @@ var parseCardsText = {
 			"LOOT_137",
 			"LOOT_540"
 		],
-		"goldenImage": "LOOTA_Warrior_12.gif",
 		"id": "LOOTA_Warrior_12",
 		"name": "Dragon Heart",
 		"playerClass": "Warrior",
@@ -61617,7 +67728,6 @@ var parseCardsText = {
 			"LOOT_519",
 			"LOOT_521"
 		],
-		"goldenImage": "LOOTA_Warrior_13.gif",
 		"id": "LOOTA_Warrior_13",
 		"name": "Recruiter",
 		"playerClass": "Warrior",
@@ -61738,6 +67848,13 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Emote1_04": "VO_NAX10_01_EMOTE1_04.ogg",
+			"Emote2_05": "VO_NAX10_01_EMOTE2_05.ogg",
+			"Hp_02": "VO_NAX10_01_HP_02.ogg",
+			"Line_03": "VO_NAX10_01_DEATH_LINE_03.ogg",
+			"Start_01": "VO_NAX10_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX10_01.png",
 		"dbfId": 1825,
@@ -61831,6 +67948,13 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
+		"audio": {
+			"Card_03": "VO_NAX11_01_CARD_03.ogg",
+			"Death_05": "VO_NAX11_01_DEATH_05.ogg",
+			"Emote_04": "VO_NAX11_01_EMOTE_04.ogg",
+			"Hp_02": "VO_NAX11_01_HP_02.ogg",
+			"Start_01": "VO_NAX11_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX11_01.png",
 		"dbfId": 1826,
@@ -61941,6 +68065,15 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"audio": {
+			"Card_01": "VO_NAX12_01_CARD_01.ogg",
+			"Death_01": "VO_NAX12_01_DEATH_01.ogg",
+			"Emote_01": "VO_NAX12_01_EMOTE_01.ogg",
+			"Emote_02": "VO_NAX12_01_EMOTE_02.ogg",
+			"Emote_03": "VO_NAX12_01_EMOTE_03.ogg",
+			"Hp_01": "VO_NAX12_01_HP_01.ogg",
+			"Start_01": "VO_NAX12_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX12_01.png",
 		"dbfId": 1827,
@@ -62105,6 +68238,13 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"audio": {
+			"Attack_02": "VO_NAX13_01_HP_Attack_02.ogg",
+			"Emote_04": "VO_NAX13_01_EMOTE_04.ogg",
+			"Hp_02": "VO_NAX13_01_HP_02.ogg",
+			"Line_03": "VO_NAX13_01_DEATH_LINE_03.ogg",
+			"Start_01": "VO_NAX13_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX13_01.png",
 		"dbfId": 1828,
@@ -62212,6 +68352,15 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_01": "VO_NAX14_01_CARD_01.ogg",
+			"Death_01": "VO_NAX14_01_DEATH_01.ogg",
+			"Emote_01": "VO_NAX14_01_EMOTE_01.ogg",
+			"Emote_02": "VO_NAX14_01_EMOTE_02.ogg",
+			"Emote_03": "VO_NAX14_01_EMOTE_03.ogg",
+			"Hp_01": "VO_NAX14_01_HP_01.ogg",
+			"Start_01": "VO_NAX14_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX14_01.png",
 		"dbfId": 1899,
@@ -62289,6 +68438,40 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Adds_12": "VO_NAX15_01_SUMMON_ADDS_12.ogg",
+			"Alt_11": "VO_NAX15_01_PHASE2_ALT_11.ogg",
+			"Alt_16": "VO_NAX15_01_RESPOND_GARROSH_ALT_16.ogg",
+			"Alt_21": "VO_NAX15_01_RESPOND_MALFURION_ALT_21.ogg",
+			"Anduin_24": "VO_NAX15_01_RESPOND_ANDUIN_24.ogg",
+			"Biggles_32": "VO_NAX15_01_BIGGLES_32.ogg",
+			"Garrosh_15": "VO_NAX15_01_RESPOND_GARROSH_15.ogg",
+			"Gloat1_33": "VO_NAX15_01_GLOAT1_33.ogg",
+			"Gloat2_34": "VO_NAX15_01_GLOAT2_34.ogg",
+			"Gloat3_35": "VO_NAX15_01_GLOAT3_35.ogg",
+			"Gloat4_36": "VO_NAX15_01_GLOAT4_36.ogg",
+			"Gloat5_37": "VO_NAX15_01_GLOAT5_37.ogg",
+			"Guldan_22": "VO_NAX15_01_RESPOND_GULDAN_22.ogg",
+			"Hello_26": "VO_NAX15_01_EMOTE_HELLO_26.ogg",
+			"Hp2_05": "VO_NAX15_01_HP2_05.ogg",
+			"Hp3_06": "VO_NAX15_01_HP3_06.ogg",
+			"Hp_07": "VO_NAX15_01_HP_07.ogg",
+			"Hurry_31": "VO_NAX15_01_HURRY_31.ogg",
+			"Jaina_23": "VO_NAX15_01_RESPOND_JAINA_23.ogg",
+			"Line2_09": "VO_NAX15_01_DEATH_LINE2_09.ogg",
+			"Line_08": "VO_NAX15_01_DEATH_LINE_08.ogg",
+			"Oops_29": "VO_NAX15_01_EMOTE_OOPS_29.ogg",
+			"Phase2_10": "VO_NAX15_01_PHASE2_10.ogg",
+			"Rexxar_19": "VO_NAX15_01_RESPOND_REXXAR_19.ogg",
+			"Sorry_28": "VO_NAX15_01_EMOTE_SORRY_28.ogg",
+			"Start_13": "VO_NAX15_01_START_13.ogg",
+			"Thanks_27": "VO_NAX15_01_EMOTE_THANKS_27.ogg",
+			"Thrall_17": "VO_NAX15_01_RESPOND_THRALL_17.ogg",
+			"Threaten_30": "VO_NAX15_01_EMOTE_THREATEN_30.ogg",
+			"Uther_14": "VO_NAX15_01_RESPOND_UTHER_14.ogg",
+			"Valeera_18": "VO_NAX15_01_RESPOND_VALEERA_18.ogg",
+			"Wp_25": "VO_NAX15_01_EMOTE_WP_25.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX15_01.png",
 		"dbfId": 1900,
@@ -62460,6 +68643,13 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_02": "VO_NAX1_01_CARD_02.ogg",
+			"Death_05": "VO_NAX1_01_DEATH_05.ogg",
+			"Emote_04": "VO_NAX1_01_EMOTE_04.ogg",
+			"Hp_03": "VO_NAX1_01_HP_03.ogg",
+			"Start_01": "VO_NAX1_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX1_01.png",
 		"dbfId": 1837,
@@ -62551,6 +68741,14 @@ var parseCardsText = {
 		"type": "Hero_power"
 	},
 	{
+		"audio": {
+			"Card_02": "VO_NAX2_01_CARD_02.ogg",
+			"Custom_03": "VO_NAX2_01_CUSTOM_03.ogg",
+			"Emote_06": "VO_NAX2_01_EMOTE_06.ogg",
+			"Hp_04": "VO_NAX2_01_HP_04.ogg",
+			"Line_05": "VO_NAX2_01_DEATH_LINE_05.ogg",
+			"Start_01": "VO_NAX2_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX2_01.png",
 		"dbfId": 1817,
@@ -62608,6 +68806,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_NAX2_05_Attack_02.ogg",
+			"Death_03": "VO_NAX2_05_Death_03.ogg",
+			"Enterplay_01": "VO_NAX2_05_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX2_05.png",
 		"cost": 3,
@@ -62645,6 +68848,17 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Card_01": "VO_NAX3_01_CARD_01.ogg",
+			"Death_01": "VO_NAX3_01_DEATH_01.ogg",
+			"Emote_01": "VO_NAX3_01_EMOTE_01.ogg",
+			"Emote_02": "VO_NAX3_01_EMOTE_02.ogg",
+			"Emote_03": "VO_NAX3_01_EMOTE_03.ogg",
+			"Emote_04": "VO_NAX3_01_EMOTE_04.ogg",
+			"Emote_05": "VO_NAX3_01_EMOTE_05.ogg",
+			"Hp_01": "VO_NAX3_01_HP_01.ogg",
+			"Start_01": "VO_NAX3_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX3_01.png",
 		"dbfId": 1818,
@@ -62724,6 +68938,13 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Card_03": "VO_NAX4_01_CARD_03.ogg",
+			"Emote_06": "VO_NAX4_01_EMOTE_06.ogg",
+			"Hp_02": "VO_NAX4_01_HP_02.ogg",
+			"Line_04": "VO_NAX4_01_DEATH_LINE_04.ogg",
+			"Start_01": "VO_NAX4_01_START_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "NAX4_01.png",
 		"dbfId": 1819,
@@ -62815,6 +69036,13 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Card_03": "VO_NAX5_01_CARD_03.ogg",
+			"Emote_05": "VO_NAX5_01_EMOTE_05.ogg",
+			"Hp_02": "VO_NAX5_01_HP_02.ogg",
+			"Line_04": "VO_NAX5_01_DEATH_LINE_04.ogg",
+			"Start_01": "VO_NAX5_01_START_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "NAX5_01.png",
 		"dbfId": 1820,
@@ -62881,6 +69109,15 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Attack_03": "VO_NAX6_01_CARD_Attack_03.ogg",
+			"Card_03": "VO_NAX6_01_CARD_03.ogg",
+			"Death_06": "VO_NAX6_01_DEATH_06.ogg",
+			"Emote_05": "VO_NAX6_01_EMOTE_05.ogg",
+			"Hp_02": "VO_NAX6_01_HP_02.ogg",
+			"Play_01": "VO_NAX6_01_START_Play_01.ogg",
+			"Start_01": "VO_NAX6_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX6_01.png",
 		"dbfId": 1821,
@@ -62986,6 +69223,13 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Card_03": "VO_NAX7_01_CARD_03.ogg",
+			"Emote_05": "VO_NAX7_01_EMOTE_05.ogg",
+			"Hp_02": "VO_NAX7_01_HP_02.ogg",
+			"Line_04": "VO_NAX7_01_DEATH_LINE_04.ogg",
+			"Start_01": "VO_NAX7_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX7_01.png",
 		"dbfId": 1822,
@@ -63011,6 +69255,10 @@ var parseCardsText = {
 	},
 	{
 		"attack": 0,
+		"audio": {
+			"Attack_01": "VO_NAX7_02_Attack_01.ogg",
+			"Death_02": "VO_NAX7_02_Death_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX7_02.png",
 		"cost": 2,
@@ -63097,6 +69345,18 @@ var parseCardsText = {
 		"type": "Spell"
 	},
 	{
+		"audio": {
+			"Card_02": "VO_NAX8_01_CARD_02.ogg",
+			"Custom2_04": "VO_NAX8_01_CUSTOM2_04.ogg",
+			"Custom_03": "VO_NAX8_01_CUSTOM_03.ogg",
+			"Emote1_06": "VO_NAX8_01_EMOTE1_06.ogg",
+			"Emote2_07": "VO_NAX8_01_EMOTE2_07.ogg",
+			"Emote3_08": "VO_NAX8_01_EMOTE3_08.ogg",
+			"Emote4_09": "VO_NAX8_01_EMOTE4_09.ogg",
+			"Emote5_10": "VO_NAX8_01_EMOTE5_10.ogg",
+			"Line_05": "VO_NAX8_01_DEATH_LINE_05.ogg",
+			"Start_01": "VO_NAX8_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX8_01.png",
 		"dbfId": 1823,
@@ -63164,6 +69424,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_NAX8_03_Attack_02.ogg",
+			"Death_03": "VO_NAX8_03_Death_03.ogg",
+			"Enterplay_01": "VO_NAX8_03_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX8_03.png",
 		"cost": 1,
@@ -63197,6 +69462,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_NAX8_04_Attack_02.ogg",
+			"Death_03": "VO_NAX8_04_Death_03.ogg",
+			"Enterplay_01": "VO_NAX8_04_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX8_04.png",
 		"cost": 3,
@@ -63230,6 +69500,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_NAX8_05_Attack_02.ogg",
+			"Death_03": "VO_NAX8_05_Death_03.ogg",
+			"Enterplay_01": "VO_NAX8_05_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX8_05.png",
 		"cost": 6,
@@ -63262,6 +69537,13 @@ var parseCardsText = {
 		"type": "Minion"
 	},
 	{
+		"audio": {
+			"Custom_02": "VO_NAX9_01_CUSTOM_02.ogg",
+			"Death_05": "VO_NAX9_01_DEATH_05.ogg",
+			"Emote_04": "VO_NAX9_01_EMOTE_04.ogg",
+			"Line_03": "VO_NAX9_01_DEATH_LINE_03.ogg",
+			"Start_01": "VO_NAX9_01_START_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX9_01.png",
 		"dbfId": 1824,
@@ -63287,6 +69569,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_NAX9_02_Attack_02.ogg",
+			"Custom_01": "VO_NAX9_02_CUSTOM_01.ogg",
+			"Death_03": "VO_NAX9_02_Death_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX9_02.png",
 		"cost": 3,
@@ -63325,6 +69612,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_NAX9_03_Attack_02.ogg",
+			"Custom_01": "VO_NAX9_03_CUSTOM_01.ogg",
+			"Death_03": "VO_NAX9_03_Death_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX9_03.png",
 		"cost": 3,
@@ -63363,6 +69655,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_NAX9_04_Attack_02.ogg",
+			"Custom_01": "VO_NAX9_04_CUSTOM_01.ogg",
+			"Death_03": "VO_NAX9_04_Death_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAX9_04.png",
 		"cost": 3,
@@ -63468,6 +69765,11 @@ var parseCardsText = {
 	},
 	{
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_NAXM_001_Attack_02.ogg",
+			"Death_03": "VO_NAXM_001_Death_03.ogg",
+			"Enterplay_01": "VO_NAXM_001_EnterPlay_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NAXM_001.png",
 		"cost": 4,
@@ -63538,6 +69840,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_NEW1_005_Attack_02.ogg",
+			"Death_03": "VO_NEW1_005_Death_03.ogg",
+			"Play_01": "VO_NEW1_005_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "NEW1_005.png",
 		"collectible": true,
@@ -63671,6 +69978,11 @@ var parseCardsText = {
 	{
 		"artist": "Raymond Swanland",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_NEW1_010_Attack_02.ogg",
+			"Death_03": "VO_NEW1_010_Death_03.ogg",
+			"Play_01": "VO_NEW1_010_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "NEW1_010.png",
 		"collectible": true,
@@ -63698,6 +70010,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_NEW1_011_Attack_02.ogg",
+			"Death_03": "VO_NEW1_011_Death_03.ogg",
+			"Play_01": "VO_NEW1_011_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "NEW1_011.png",
 		"collectible": true,
@@ -63750,6 +70067,11 @@ var parseCardsText = {
 	{
 		"artist": "Ron Spencer",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_NEW1_014_Attack_02.ogg",
+			"Death_03": "VO_NEW1_014_Death_03.ogg",
+			"Play_01": "VO_NEW1_014_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "NEW1_014.png",
 		"collectible": true,
@@ -63786,6 +70108,11 @@ var parseCardsText = {
 	{
 		"artist": "Daren Bader",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_NEW1_016_Attack_02.ogg",
+			"Death_03": "VO_NEW1_016_Death_03.ogg",
+			"Play_01": "VO_NEW1_016_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_016.png",
 		"collectible": true,
@@ -63843,6 +70170,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_NEW1_018_Attack_02.ogg",
+			"Death_03": "VO_NEW1_018_Death_03.ogg",
+			"Play_01": "VO_NEW1_018_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_018.png",
 		"collectible": true,
@@ -63877,6 +70209,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Cavotta",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_NEW1_019_Attack_02.ogg",
+			"Death_03": "VO_NEW1_019_Death_03.ogg",
+			"Play_01": "VO_NEW1_019_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_019.png",
 		"collectible": true,
@@ -63896,6 +70233,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_NEW1_020_Attack_02.ogg",
+			"Death_03": "VO_NEW1_020_Death_03.ogg",
+			"Play_01": "VO_NEW1_020_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_020.png",
 		"collectible": true,
@@ -63915,6 +70257,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 0,
+		"audio": {
+			"Attack_02": "VO_NEW1_021_Attack_02.ogg",
+			"Death_03": "VO_NEW1_021_Death_03.ogg",
+			"Play_01": "VO_NEW1_021_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_021.png",
 		"collectible": true,
@@ -63934,6 +70281,11 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_NEW1_022_Attack_02.ogg",
+			"Death_03": "VO_NEW1_022_Death_03.ogg",
+			"Play_01": "VO_NEW1_022_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_022.png",
 		"collectible": true,
@@ -63981,6 +70333,11 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 5,
+		"audio": {
+			"Attack_02": "VO_NEW1_024_Attack_02.ogg",
+			"Death_03": "VO_NEW1_024_Death_03.ogg",
+			"Play_01": "VO_NEW1_024_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_024.png",
 		"collectible": true,
@@ -64016,6 +70373,11 @@ var parseCardsText = {
 	{
 		"artist": "Randy Gallegos",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_NEW1_025_Attack_02.ogg",
+			"Death_03": "VO_NEW1_025_Death_03.ogg",
+			"Play_01": "VO_NEW1_025_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_025.png",
 		"collectible": true,
@@ -64050,6 +70412,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_NEW1_026_Attack_02.ogg",
+			"Death_03": "VO_NEW1_026_Death_03.ogg",
+			"Play_01": "VO_NEW1_026_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_026.png",
 		"collectible": true,
@@ -64083,6 +70450,11 @@ var parseCardsText = {
 	{
 		"artist": "Ken Steacy",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_NEW1_027_Attack_02.ogg",
+			"Death_03": "VO_NEW1_027_Death_03.ogg",
+			"Play_01": "VO_NEW1_027_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_027.png",
 		"collectible": true,
@@ -64117,6 +70489,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_NEW1_029_Attack_02.ogg",
+			"Death_03": "VO_NEW1_029_Death_03.ogg",
+			"Play_01": "VO_NEW1_029_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_029.png",
 		"collectible": true,
@@ -64152,6 +70529,11 @@ var parseCardsText = {
 	{
 		"artist": "Bernie Kang",
 		"attack": 12,
+		"audio": {
+			"Attack_02": "VO_NEW1_030_Attack_02.ogg",
+			"Death_03": "VO_NEW1_030_Death_03.ogg",
+			"Play_01": "VO_NEW1_030_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_030.png",
 		"collectible": true,
@@ -64314,6 +70696,11 @@ var parseCardsText = {
 	{
 		"artist": "E.M. Gist",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_NEW1_037_Attack_02.ogg",
+			"Death_03": "VO_NEW1_037_Death_03.ogg",
+			"Play_01": "VO_NEW1_037_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_037.png",
 		"collectible": true,
@@ -64344,6 +70731,11 @@ var parseCardsText = {
 	{
 		"artist": "Kev Walker",
 		"attack": 7,
+		"audio": {
+			"Attack_02": "VO_NEW1_038_Attack_02.ogg",
+			"Death_03": "VO_NEW1_038_Death_03.ogg",
+			"Play_01": "VO_NEW1_038_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_038.png",
 		"collectible": true,
@@ -64375,6 +70767,9 @@ var parseCardsText = {
 	{
 		"artist": "Laurel D. Austin",
 		"attack": 4,
+		"audio": {
+			"Death_12": "VO_NEW1_040_Death_12.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "NEW1_040.png",
 		"collectible": true,
@@ -64520,6 +70915,11 @@ var parseCardsText = {
 	{
 		"artist": "E. M. Gist",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_OG_024_Male_Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_024_Male_Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_024_Male_Faceless_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "OG_024.png",
 		"collectible": true,
@@ -64543,6 +70943,11 @@ var parseCardsText = {
 	{
 		"artist": "J. Meyers & Nutchapol",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_026_Male_Qiraji_Attack_01.ogg",
+			"Death_01": "VO_OG_026_Male_Qiraji_Death_01.ogg",
+			"Play_01": "VO_OG_026_Male_Qiraji_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "OG_026.png",
 		"collectible": true,
@@ -64688,6 +71093,11 @@ var parseCardsText = {
 	{
 		"artist": "Samwise",
 		"attack": 10,
+		"audio": {
+			"Attack_01": "VO_OG_042_Male_OldGod_Attack_01.ogg",
+			"Death_01": "VO_OG_042_Male_OldGod_Death_01.ogg",
+			"Play_01": "VO_OG_042_Male_OldGod_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_042.png",
 		"collectible": true,
@@ -64708,6 +71118,12 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_OG_044_Male_Night Elf_Attack_02.ogg",
+			"Death_01": "VO_OG_044_Male_Night Elf_Death_01.ogg",
+			"Play_02": "VO_OG_044_Male_Night Elf_Play_02.ogg",
+			"Tyrande_01": "VO_OG_044_Male_Night Elf_Tyrande_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "OG_044.png",
 		"collectible": true,
@@ -64994,6 +71410,11 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasber",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_OG_070_Male_Troll_Attack_01.ogg",
+			"Death_01": "VO_OG_070_Male_Troll_Death_01.ogg",
+			"Play_01": "VO_OG_070_Male_Troll_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "OG_070.png",
 		"collectible": true,
@@ -65066,6 +71487,11 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_080_Male_Klaxxi_Attack_01.ogg",
+			"Death_01": "VO_OG_080_Male_Klaxxi_Death_01.ogg",
+			"Play_01": "VO_OG_080_Male_Klaxxi_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "OG_080.png",
 		"collectible": true,
@@ -65223,6 +71649,11 @@ var parseCardsText = {
 	{
 		"artist": "Genevieve Tsai & Nutchapol",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_082_Male_Kobold_Attack_01.ogg",
+			"Death_01": "VO_OG_082_Male_Kobold_Death_01.ogg",
+			"Play_01": "VO_OG_082_Male_Kobold_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_082.png",
 		"collectible": true,
@@ -65246,6 +71677,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_083_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_083_Male_Human_Death_01.ogg",
+			"Play_01": "VO_OG_083_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "OG_083.png",
 		"collectible": true,
@@ -65268,6 +71704,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_085_Androgynous _Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_085_Androgynous _Faceless_Death_01.ogg",
+			"Play_02": "VO_OG_085_Androgynous _Faceless_Play_02.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "OG_085.png",
 		"collectible": true,
@@ -65374,6 +71815,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Garner",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_OG_096_Female_Night Elf_Attack_01.ogg",
+			"Death_01": "VO_OG_096_Female_Night Elf_Death_01.ogg",
+			"Play_01": "VO_OG_096_Female_Night Elf_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "OG_096.png",
 		"collectible": true,
@@ -65495,6 +71941,11 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_109_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_109_Female_Human_Death_01.ogg",
+			"Play_01": "VO_OG_109_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "OG_109.png",
 		"collectible": true,
@@ -65518,6 +71969,11 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_OG_113_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_113_Male_Human_Death_01.ogg",
+			"Play_01": "VO_OG_113_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "OG_113.png",
 		"collectible": true,
@@ -65638,6 +72094,12 @@ var parseCardsText = {
 	{
 		"artist": "Kan Liu",
 		"attack": 8,
+		"audio": {
+			"Attack_01": "VO_OG_120_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_OG_120_Male_Elemental_Death_01.ogg",
+			"Death_02": "VO_OG_120_Male_Elemental_Death_02.ogg",
+			"Play_01": "VO_OG_120_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "OG_120.png",
 		"collectible": true,
@@ -65662,6 +72124,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_OG_121_Male_Ogre_Attack_01.ogg",
+			"Death_01": "VO_OG_121_Male_Ogre_Death_01.ogg",
+			"Play_01": "VO_OG_121_Male_Ogre_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "OG_121.png",
 		"collectible": true,
@@ -65751,6 +72218,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_131_Male_Qiraji_Attack_01.ogg",
+			"Death_01": "VO_OG_131_Male_Qiraji_Death_01.ogg",
+			"Play_01": "VO_OG_131_Male_Qiraji_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_131.png",
 		"collectible": true,
@@ -65776,6 +72248,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyson Murphy",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_OG_133_Male_OldGod_Attack_01.ogg",
+			"Death_01": "VO_OG_133_Male_OldGod_Death_01.ogg",
+			"Play_01": "VO_OG_133_Male_OldGod_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_133.png",
 		"collectible": true,
@@ -65802,6 +72279,11 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_OG_134_Male_OldGod_Attack_01.ogg",
+			"Death_01": "VO_OG_134_Male_OldGod_Death_01.ogg",
+			"Play_01": "VO_OG_134_Male_OldGod_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_134.png",
 		"collectible": true,
@@ -65855,6 +72337,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 10,
+		"audio": {
+			"Attack_01": "VO_OG_141_Androgynous _Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_141_Androgynous _Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_141_Androgynous _Faceless_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_141.png",
 		"collectible": true,
@@ -65873,6 +72360,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_OG_142_Male_Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_142_Male_Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_142_Male_Faceless_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_142.png",
 		"collectible": true,
@@ -65891,6 +72383,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_145_Male_Mech_Attack_01.ogg",
+			"Death_01": "VO_OG_145_Male_Mech_Death_01.ogg",
+			"Play_01": "VO_OG_145_Male_Mech_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_145.png",
 		"collectible": true,
@@ -65960,6 +72457,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_150_Male_Troll_Attack_01.ogg",
+			"Death_01": "VO_OG_150_Male_Troll_Death_01.ogg",
+			"Play_01": "VO_OG_150_Male_Troll_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_150.png",
 		"collectible": true,
@@ -66109,6 +72611,11 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_OG_158_Male_Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_158_Male_Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_158_Male_Faceless_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_158.png",
 		"collectible": true,
@@ -66165,6 +72672,11 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_162_Male_Panderan_Attack_01.ogg",
+			"Death_01": "VO_OG_162_Male_Panderan_Death_01.ogg",
+			"Play_01": "VO_OG_162_Male_Panderan_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_162.png",
 		"collectible": true,
@@ -66188,6 +72700,11 @@ var parseCardsText = {
 	{
 		"artist": "A. J. Nazzaro",
 		"attack": 9,
+		"audio": {
+			"Attack_01": "VO_OG_173a_Androgynous _Monster_Attack_01.ogg",
+			"Death_01": "VO_OG_173a_Androgynous _Monster_Death_01.ogg",
+			"Play_01": "VO_OG_173a_Androgynous _Monster_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_173.png",
 		"collectible": true,
@@ -66297,6 +72814,11 @@ var parseCardsText = {
 	{
 		"artist": "Cole Eastburn",
 		"attack": 4,
+		"audio": {
+			"Attack_02": "VO_OG_188_Male_Klaxxi_Attack_02.ogg",
+			"Death_01": "VO_OG_188_Male_Klaxxi_Death_01.ogg",
+			"Play_02": "VO_OG_188_Male_Klaxxi_Play_02.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "OG_188.png",
 		"collectible": true,
@@ -66422,6 +72944,12 @@ var parseCardsText = {
 	{
 		"artist": "Dan Orizio",
 		"attack": 0,
+		"audio": {
+			"Attack_01": "VO_OG_200_Male_BloodElf_Attack_01.ogg",
+			"Death_01": "VO_OG_200_Male_BloodElf_Death_01.ogg",
+			"Play_01": "VO_OG_200_Male_BloodElf_Play_01.ogg",
+			"Trigger_01": "VO_OG_200_Male_BloodElf_Trigger_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_200.png",
 		"collectible": true,
@@ -66452,6 +72980,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_202_Male_Keeper_Attack_01.ogg",
+			"Death_01": "VO_OG_202_Male_Keeper_Death_01.ogg",
+			"Play_01": "VO_OG_202_Male_Keeper_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "OG_202.png",
 		"collectible": true,
@@ -66550,6 +73083,11 @@ var parseCardsText = {
 	{
 		"artist": "Mark Abadier",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_OG_207_Androgynous _Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_207_Androgynous _Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_207_Androgynous _Faceless_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "OG_207.png",
 		"collectible": true,
@@ -66572,6 +73110,11 @@ var parseCardsText = {
 	{
 		"artist": "Wayne Reynolds",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_209_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_OG_209_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_OG_209_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "OG_209.png",
 		"collectible": true,
@@ -66649,6 +73192,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_218_Male_Tauren_Attack_01.ogg",
+			"Death_01": "VO_OG_218_Male_Tauren_Death_01.ogg",
+			"Play_01": "VO_OG_218_Male_Tauren_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "OG_218.png",
 		"collectible": true,
@@ -66686,6 +73234,11 @@ var parseCardsText = {
 	{
 		"artist": "E. Guiton & Nutchapol",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_OG_220_Male_Orc_Attack_01.ogg",
+			"Death_01": "VO_OG_220_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_OG_220_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "OG_220.png",
 		"collectible": true,
@@ -66709,6 +73262,11 @@ var parseCardsText = {
 	{
 		"artist": "Rafael Zanchetin",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_221_Female_Draenai_Attack_01.ogg",
+			"Death_01": "VO_OG_221_Female_Draenai_Death_01.ogg",
+			"Play_01": "VO_OG_221_Female_Draenai_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "OG_221.png",
 		"collectible": true,
@@ -66798,6 +73356,12 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 8,
+		"audio": {
+			"Attack_01": "VO_OG_229_Male_Demon_Attack_01.ogg",
+			"Death_01": "VO_OG_229_Male_Demon_Death_01.ogg",
+			"Play_01": "VO_OG_229_Male_Demon_Play_01.ogg",
+			"Trigger_01": "VO_OG_229_Male_Demon_Trigger_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "OG_229.png",
 		"collectible": true,
@@ -66819,6 +73383,11 @@ var parseCardsText = {
 	{
 		"artist": "Chris Seaman",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_234_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_234_Female_Human_Death_01.ogg",
+			"Play_01": "VO_OG_234_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "OG_234.png",
 		"collectible": true,
@@ -66858,6 +73427,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_OG_241_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_241_Male_Human_Death_01.ogg",
+			"Play_01": "VO_OG_241_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "OG_241.png",
 		"collectible": true,
@@ -66895,6 +73469,11 @@ var parseCardsText = {
 	{
 		"artist": "Trent Kaniuga",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_247_Male_Worgen_Attack_01.ogg",
+			"Death_01": "VO_OG_247_Male_Worgen_Death_01.ogg",
+			"Play_01": "VO_OG_247_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_247.png",
 		"collectible": true,
@@ -66935,6 +73514,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_249_Male_Tauren_Attack_01.ogg",
+			"Death_01": "VO_OG_249_Male_Tauren_Death_01.ogg",
+			"Play_01": "VO_OG_249_Male_Tauren_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_249.png",
 		"collectible": true,
@@ -66973,6 +73557,11 @@ var parseCardsText = {
 	{
 		"artist": "Dan Scott",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_254_Androgynous _Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_254_Androgynous _Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_254_Androgynous _Faceless_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_254.png",
 		"collectible": true,
@@ -67009,6 +73598,11 @@ var parseCardsText = {
 	{
 		"artist": "Benjamin Zhang",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_OG_255_Male_Orc_Attack_01.ogg",
+			"Death_01": "VO_OG_255_Male_Orc_Death_01.ogg",
+			"Play_01": "VO_OG_255_Male_Orc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_255.png",
 		"collectible": true,
@@ -67065,6 +73659,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_267_Female_Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_267_Female_Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_267_Female_Faceless_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "OG_267.png",
 		"collectible": true,
@@ -67144,6 +73743,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_OG_272_Male_Troll_Attack_01.ogg",
+			"Death_01": "VO_OG_272_Male_Troll_Death_01.ogg",
+			"Play_01": "VO_OG_272_Male_Troll_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_272.png",
 		"collectible": true,
@@ -67232,6 +73836,23 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_OG_280_Male_OldGod_Attack_01.ogg",
+			"Death_01": "VO_OG_280_Male_OldGod_Death_01.ogg",
+			"Inplay_01": "VO_OG_280_Male_OldGod_InPlay_01.ogg",
+			"Inplay_02": "VO_OG_280_Male_OldGod_InPlay_02.ogg",
+			"Inplay_03": "VO_OG_280_Male_OldGod_InPlay_03.ogg",
+			"Inplay_04": "VO_OG_280_Male_OldGod_InPlay_04.ogg",
+			"Inplay_05": "VO_OG_280_Male_OldGod_InPlay_05.ogg",
+			"Inplay_06": "VO_OG_280_Male_OldGod_InPlay_06.ogg",
+			"Inplay_07": "VO_OG_280_Male_OldGod_InPlay_07.ogg",
+			"Inplay_08": "VO_OG_280_Male_OldGod_InPlay_08.ogg",
+			"Inplay_09": "VO_OG_280_Male_OldGod_InPlay_09.ogg",
+			"Inplay_10": "VO_OG_280_Male_OldGod_InPlay_10.ogg",
+			"Inplay_11": "VO_OG_280_Male_OldGod_InPlay_11.ogg",
+			"Inplay_12": "VO_OG_280_Male_OldGod_InPlay_12.ogg",
+			"Play_01": "VO_OG_280_Male_OldGod_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_280.png",
 		"collectible": true,
@@ -67255,6 +73876,11 @@ var parseCardsText = {
 	{
 		"artist": "Eva Wilderman",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_281_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_281_Female_Human_Death_01.ogg",
+			"Play_01": "VO_OG_281_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_281.png",
 		"collectible": true,
@@ -67289,6 +73915,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_282_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_282_Male_Human_Death_01.ogg",
+			"Play_01": "VO_OG_282_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "OG_282.png",
 		"collectible": true,
@@ -67326,6 +73957,11 @@ var parseCardsText = {
 	{
 		"artist": "Jesper Esjing",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_283_Female_Undead_Attack_01.ogg",
+			"Death_01": "VO_OG_283_Female_Undead_Death_01.ogg",
+			"Play_01": "VO_OG_283_Female_Undead_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_283.png",
 		"collectible": true,
@@ -67350,6 +73986,11 @@ var parseCardsText = {
 	{
 		"artist": "Eric Braddock",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_OG_284_Female_Orc_Attack_01.ogg",
+			"Death_01": "VO_OG_284_Female_Orc_Death_01.ogg",
+			"Play_01": "VO_OG_284_Female_Orc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_284.png",
 		"collectible": true,
@@ -67385,6 +74026,12 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_286_Male_Gnome_Attack_01.ogg",
+			"Death_01": "VO_OG_286_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_OG_286_Male_Gnome_Play_01.ogg",
+			"Trigger_01": "VO_OG_286_Male_Gnome_Trigger_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_286.png",
 		"collectible": true,
@@ -67407,6 +74054,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_290_Female_Night Elf_Attack_01.ogg",
+			"Death_01": "VO_OG_290_Female_Night Elf_Death_01.ogg",
+			"Play_01": "VO_OG_290_Female_Night Elf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_290.png",
 		"collectible": true,
@@ -67437,6 +74089,11 @@ var parseCardsText = {
 	{
 		"artist": "J. Meyers & A. Bozonnet",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_291_Female_Goblin_Attack_01.ogg",
+			"Death_01": "VO_OG_291_Female_Goblin_Death_01.ogg",
+			"Play_01": "VO_OG_291_Female_Goblin_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "OG_291.png",
 		"collectible": true,
@@ -67470,6 +74127,11 @@ var parseCardsText = {
 	{
 		"artist": "Peter Stapleton",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_292_Male_Worgen_Attack_01.ogg",
+			"Death_01": "VO_OG_292_Male_Worgen_Death_01.ogg",
+			"Play_01": "VO_OG_292_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "OG_292.png",
 		"collectible": true,
@@ -67506,6 +74168,11 @@ var parseCardsText = {
 	{
 		"artist": "Nutchapol Thitinunthakorn",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_OG_293_Male_Arakkoa_Attack_01.ogg",
+			"Death_01": "VO_OG_293_Male_Arakkoa_Death_01.ogg",
+			"Play_01": "VO_OG_293_Male_Arakkoa_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "OG_293.png",
 		"collectible": true,
@@ -67552,6 +74219,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_295_Male_Worgen_Attack_01.ogg",
+			"Death_01": "VO_OG_295_Male_Worgen_Death_01.ogg",
+			"Play_01": "VO_OG_295_Male_Worgen_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_295.png",
 		"collectible": true,
@@ -67574,6 +74246,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_OG_300_Male_Monster_Attack_01.ogg",
+			"Death_01": "VO_OG_300_Male_Monster_Death_01.ogg",
+			"Play_01": "VO_OG_300_Male_Monster_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_300.png",
 		"collectible": true,
@@ -67605,6 +74282,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Konstad",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_OG_301_Female_Dwarf_Attack_01.ogg",
+			"Death_01": "VO_OG_301_Female_Dwarf_Death_01.ogg",
+			"Play_01": "VO_OG_301_Female_Dwarf_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "OG_301.png",
 		"collectible": true,
@@ -67628,6 +74310,11 @@ var parseCardsText = {
 	{
 		"artist": "Dave Allsop",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_OG_302_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_OG_302_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_OG_302_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "OG_302.png",
 		"collectible": true,
@@ -67661,6 +74348,11 @@ var parseCardsText = {
 	{
 		"artist": "J. Meyers & T. Washington",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_303_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_303_Female_Human_Death_01.ogg",
+			"Play_01": "VO_OG_303_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "OG_303.png",
 		"collectible": true,
@@ -67716,6 +74408,11 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 6,
+		"audio": {
+			"Attack_01": "VO_OG_309_Female_Wasp_Attack_01.ogg",
+			"Death_01": "VO_OG_309_Female_Wasp_Death_01.ogg",
+			"Play_01": "VO_OG_309_Female_Wasp_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "OG_309.png",
 		"collectible": true,
@@ -67743,6 +74440,11 @@ var parseCardsText = {
 	{
 		"artist": "Phroi Gardner",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_310_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_310_Female_Human_Death_01.ogg",
+			"Play_01": "VO_OG_310_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "OG_310.png",
 		"collectible": true,
@@ -67796,6 +74498,11 @@ var parseCardsText = {
 	{
 		"artist": "Paul Mafayon",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_OG_312_Male_Qiraji_Attack_01.ogg",
+			"Death_01": "VO_OG_312_Male_Qiraji_Death_01.ogg",
+			"Play_02": "VO_OG_312_Male_Qiraji_Play_02.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "OG_312.png",
 		"collectible": true,
@@ -67830,6 +74537,11 @@ var parseCardsText = {
 	{
 		"artist": "Andrew Hou",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_313_Female_Bear_Attack_01.ogg",
+			"Death_01": "VO_OG_313_Female_Bear_Death_01.ogg",
+			"Play_01": "VO_OG_313_Female_Bear_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "OG_313.png",
 		"collectible": true,
@@ -67892,6 +74604,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_315_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_OG_315_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_OG_315_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "OG_315.png",
 		"collectible": true,
@@ -67926,6 +74643,11 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_OG_316_Male_Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_316_Male_Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_316_Male_Faceless_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "OG_316.png",
 		"collectible": true,
@@ -67960,6 +74682,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 12,
+		"audio": {
+			"Attack_01": "VO_OG_317_Male_Dragon_Attack_01.ogg",
+			"Death_01": "VO_OG_317_Male_Dragon_Death_01.ogg",
+			"Play_01": "VO_OG_317_Male_Dragon_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_317.png",
 		"collectible": true,
@@ -68026,6 +74753,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Sass",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_319_Male_Giant_Attack_01.ogg",
+			"Death_01": "VO_OG_319_Male_Giant_Death_01.ogg",
+			"Play_01": "VO_OG_319_Male_Giant_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_319.png",
 		"cost": 7,
@@ -68080,6 +74812,11 @@ var parseCardsText = {
 	{
 		"artist": "Gonzalo Ordonez",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_321_Male_Dwarf_Attack_01.ogg",
+			"Death_01": "VO_OG_321_Male_Dwarf_Death_01.ogg",
+			"Play_01": "VO_OG_321_Male_Dwarf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_321.png",
 		"collectible": true,
@@ -68114,6 +74851,11 @@ var parseCardsText = {
 	{
 		"artist": "Max Grecke",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_OG_322_Female_Goblin_Attack_02.ogg",
+			"Death_01": "VO_OG_322_Female_Goblin_Death_01.ogg",
+			"Play_01": "VO_OG_322_Female_Goblin_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_322.png",
 		"collectible": true,
@@ -68134,6 +74876,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_323_Male_Gnome_Attack_01.ogg",
+			"Death_01": "VO_OG_323_Male_Gnome_Death_01.ogg",
+			"Play_01": "VO_OG_323_Male_Gnome_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_323.png",
 		"collectible": true,
@@ -68238,6 +74985,11 @@ var parseCardsText = {
 	{
 		"artist": "Jon Neimeister",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_330_Male_Undead_Attack_01.ogg",
+			"Death_01": "VO_OG_330_Male_Undead_Death_01.ogg",
+			"Play_01": "VO_OG_330_Male_Undead_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "OG_330.png",
 		"collectible": true,
@@ -68260,6 +75012,11 @@ var parseCardsText = {
 	{
 		"artist": "Adam Byrne",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_OG_334_Female_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_334_Female_Human_Death_01.ogg",
+			"Play_01": "VO_OG_334_Female_Human_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "OG_334.png",
 		"collectible": true,
@@ -68282,6 +75039,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyler Walpole",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_OG_335_Male_Shade_Attack_01.ogg",
+			"Death_01": "VO_OG_335_Male_Shade_Death_01.ogg",
+			"Play_02": "VO_OG_335_Male_Shade_Play_02.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "OG_335.png",
 		"collectible": true,
@@ -68338,6 +75100,11 @@ var parseCardsText = {
 	{
 		"artist": "Steve Prescott",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_OG_338_Male_Human_Attack_01.ogg",
+			"Death_01": "VO_OG_338_Male_Human_Death_01.ogg",
+			"Play_01": "VO_OG_338_Male_Human_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_338.png",
 		"collectible": true,
@@ -68358,6 +75125,11 @@ var parseCardsText = {
 	{
 		"artist": "Jaemin Kim",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_OG_339_Male_Qiraji_Attack_01.ogg",
+			"Death_01": "VO_OG_339_Male_Qiraji_Death_01.ogg",
+			"Play_02": "VO_OG_339_Male_Qiraji_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_339.png",
 		"collectible": true,
@@ -68392,6 +75164,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_OG_340_Male_Faceless_Attack_01.ogg",
+			"Death_01": "VO_OG_340_Male_Faceless_Death_01.ogg",
+			"Play_01": "VO_OG_340_Male_Faceless_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "OG_340.png",
 		"collectible": true,
@@ -68913,7 +75690,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 2761,
-		"goldenImage": "TB_013.gif",
 		"id": "TB_013",
 		"name": "Player Choice Enchant",
 		"playerClass": "Neutral",
@@ -69209,7 +75985,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 47534,
-		"goldenImage": "TB_BuildaBoss_001.gif",
 		"health": 80,
 		"id": "TB_BuildaBoss_001",
 		"name": "Catacomb Boss",
@@ -69221,12 +75996,29 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL",
 		"cost": 2,
 		"dbfId": 47532,
-		"goldenImage": "TB_BuildaBoss_404p.gif",
 		"id": "TB_BuildaBoss_404p",
 		"name": "Toxic Fumes",
 		"playerClass": "Neutral",
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nDeal 1 damage to all minions.",
+		"type": "Hero_power"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"cost": 2,
+		"dbfId": 51180,
+		"entourage": [
+			"KAR_A10_01",
+			"KAR_A10_03",
+			"KAR_A10_06",
+			"KAR_A10_07",
+			"KAR_A10_10"
+		],
+		"id": "TB_CheaterChess_Black",
+		"name": "Castle",
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"text": "<b>Hero Power</b>\n<b>Discover</b> a chess piece.",
 		"type": "Hero_power"
 	},
 	{
@@ -71090,7 +77882,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 49027,
-		"goldenImage": "TB_KoboldGiftEnch.gif",
 		"id": "TB_KoboldGiftEnch",
 		"name": "Great Father Kobold Enchant",
 		"playerClass": "Neutral",
@@ -71103,7 +77894,6 @@ var parseCardsText = {
 		"cardImage": "TB_KoboldGiftMinion.png",
 		"cost": 0,
 		"dbfId": 48645,
-		"goldenImage": "TB_KoboldGiftMinion.gif",
 		"health": 4,
 		"id": "TB_KoboldGiftMinion",
 		"mechanics": [
@@ -71119,7 +77909,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL",
 		"cost": 0,
 		"dbfId": 49025,
-		"goldenImage": "TB_KoboldGiftSpell.gif",
 		"id": "TB_KoboldGiftSpell",
 		"name": "Great Father Kobold Spell",
 		"playerClass": "Neutral",
@@ -72146,6 +78935,7 @@ var parseCardsText = {
 	{
 		"attack": 0,
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_002.png",
 		"cost": 2,
 		"dbfId": 49570,
 		"health": 2,
@@ -72162,6 +78952,7 @@ var parseCardsText = {
 	{
 		"attack": 1,
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_002t1.png",
 		"cost": 1,
 		"dbfId": 49586,
 		"health": 3,
@@ -72175,6 +78966,7 @@ var parseCardsText = {
 	{
 		"attack": 5,
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_002t2.png",
 		"cost": 3,
 		"dbfId": 49600,
 		"health": 2,
@@ -72186,6 +78978,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003.png",
 		"cost": 1,
 		"dbfId": 49572,
 		"entourage": [
@@ -72217,6 +79010,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003t1.png",
 		"cost": 1,
 		"dbfId": 49625,
 		"id": "TB_Noblegarden_003t1",
@@ -72251,6 +79045,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003t2.png",
 		"cost": 1,
 		"dbfId": 49629,
 		"id": "TB_Noblegarden_003t2",
@@ -72285,6 +79080,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003t3.png",
 		"cost": 1,
 		"dbfId": 49627,
 		"id": "TB_Noblegarden_003t3",
@@ -72319,6 +79115,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003t4.png",
 		"cost": 1,
 		"dbfId": 49630,
 		"id": "TB_Noblegarden_003t4",
@@ -72353,6 +79150,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003t5.png",
 		"cost": 1,
 		"dbfId": 49628,
 		"id": "TB_Noblegarden_003t5",
@@ -72384,6 +79182,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003t6.png",
 		"cost": 1,
 		"dbfId": 49631,
 		"id": "TB_Noblegarden_003t6",
@@ -72418,6 +79217,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003t7.png",
 		"cost": 1,
 		"dbfId": 49626,
 		"id": "TB_Noblegarden_003t7",
@@ -72452,6 +79252,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_003t8.png",
 		"cost": 1,
 		"dbfId": 50530,
 		"id": "TB_Noblegarden_003t8",
@@ -72483,6 +79284,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_004.png",
 		"cost": 3,
 		"dbfId": 49617,
 		"id": "TB_Noblegarden_004",
@@ -72494,6 +79296,7 @@ var parseCardsText = {
 	},
 	{
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_005.png",
 		"cost": 2,
 		"dbfId": 49609,
 		"id": "TB_Noblegarden_005",
@@ -72516,6 +79319,7 @@ var parseCardsText = {
 	{
 		"attack": 3,
 		"cardClass": "NEUTRAL",
+		"cardImage": "TB_Noblegarden_006.png",
 		"cost": 6,
 		"dbfId": 49602,
 		"health": 7,
@@ -74299,6 +81103,40 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"cardClass": "HUNTER",
+		"cost": 6,
+		"dbfId": 50702,
+		"elite": true,
+		"health": 30,
+		"id": "TB_Zombeast_H",
+		"name": "Deathstalker Rexxar",
+		"playerClass": "Hunter",
+		"rarity": "Legendary",
+		"set": "Tb",
+		"text": "[x]<b>Battlecry:</b> Deal 2 damage\nto all enemy minions.",
+		"type": "Hero"
+	},
+	{
+		"cardClass": "HUNTER",
+		"dbfId": 48825,
+		"id": "TB_ZombeastEnch",
+		"name": "Zombeast Enchant",
+		"playerClass": "Hunter",
+		"set": "Tb",
+		"text": "Craft a Zombeast (For free!)",
+		"type": "Enchantment"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"cost": 0,
+		"dbfId": 50762,
+		"id": "TB_ZombeastSpell",
+		"name": "Zombeast Brawl Spell",
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"type": "Spell"
+	},
+	{
 		"cardClass": "NEUTRAL",
 		"cardImage": "TBA01_1.png",
 		"dbfId": 2649,
@@ -74334,6 +81172,15 @@ var parseCardsText = {
 		"set": "Tb",
 		"text": "<b>Hero Power</b>\nAdd a random spell from any class to your hand. It costs (0).",
 		"type": "Hero_power"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 52137,
+		"id": "TBA01_5e",
+		"name": "Magic!",
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"type": "Enchantment"
 	},
 	{
 		"cardClass": "NEUTRAL",
@@ -74461,6 +81308,655 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"attack": 4,
+		"cardClass": "NEUTRAL",
+		"cost": 4,
+		"dbfId": 50256,
+		"elite": true,
+		"health": 4,
+		"id": "TOT_030",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Chromie",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "<b>Battlecry:</b> Shuffle four Historical Epochs \ninto your deck.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"cost": 4,
+		"dbfId": 51158,
+		"id": "TOT_030t1",
+		"mechanics": [
+			"TOPDECK"
+		],
+		"name": "Opening the Dark Portal",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Add two random Legendary minions to your hand. Draw a card.\nCast this when drawn.",
+		"type": "Spell"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"cost": 4,
+		"dbfId": 51163,
+		"id": "TOT_030t2",
+		"mechanics": [
+			"TOPDECK"
+		],
+		"name": "Battle for Mount Hyjal",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Give your minions +2/+2. Draw a card.\nCast this when drawn.",
+		"type": "Spell"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51162,
+		"id": "TOT_030t2e",
+		"name": "Battle Blessing",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "+2/+2.",
+		"type": "Enchantment"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"cost": 4,
+		"dbfId": 51160,
+		"id": "TOT_030t3",
+		"mechanics": [
+			"TOPDECK"
+		],
+		"name": "Escape from Durnholde",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Add two random spells to your hand.\nDraw a card.\nCast this when drawn.",
+		"type": "Spell"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"cost": 4,
+		"dbfId": 51164,
+		"id": "TOT_030t4",
+		"mechanics": [
+			"TOPDECK"
+		],
+		"name": "Culling of Stratholme",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Deal $2 damage to all enemies.\nDraw a card.\nCast this when drawn.",
+		"type": "Spell"
+	},
+	{
+		"attack": 5,
+		"cardClass": "NEUTRAL",
+		"cost": 5,
+		"dbfId": 50823,
+		"health": 5,
+		"id": "TOT_056",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Wildlands Adventurer",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "<b>Battlecry:</b> Add a random card from the Hall of Fame to your hand.",
+		"type": "Minion"
+	},
+	{
+		"attack": 1,
+		"cardClass": "NEUTRAL",
+		"cost": 1,
+		"dbfId": 50969,
+		"health": 1,
+		"id": "TOT_067",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Infinite Murloc",
+		"playerClass": "Neutral",
+		"race": "MURLOC",
+		"set": "Taverns_of_time",
+		"text": "<b>Battlecry:</b> Shuffle an Infinite Murloc into your deck.\n[x]Your future Infinite Murlocs[x]\n get +1/+1.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 50967,
+		"id": "TOT_067e",
+		"name": "Literally Infinite Murlocs",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"type": "Enchantment"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 50982,
+		"id": "TOT_067ee",
+		"name": "Literally Infinite",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Bonus per number played.",
+		"type": "Enchantment"
+	},
+	{
+		"cardClass": "PALADIN",
+		"cost": 1,
+		"dbfId": 50973,
+		"id": "TOT_069",
+		"name": "Blessing of Aeons",
+		"playerClass": "Paladin",
+		"set": "Taverns_of_time",
+		"text": "Give a minion \"At the end of your turn, gain +1/+1.\"",
+		"type": "Spell"
+	},
+	{
+		"cardClass": "PALADIN",
+		"dbfId": 50974,
+		"id": "TOT_069e",
+		"name": "Wise Beyond Years",
+		"playerClass": "Paladin",
+		"set": "Taverns_of_time",
+		"text": "Gains +1/+1 at the end of your turn.",
+		"type": "Enchantment"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51431,
+		"id": "TOT_069ee",
+		"name": "Learned",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "+1/+1",
+		"type": "Enchantment"
+	},
+	{
+		"attack": 5,
+		"cardClass": "WARLOCK",
+		"cost": 7,
+		"dbfId": 51044,
+		"health": 5,
+		"id": "TOT_102",
+		"mechanics": [
+			"BATTLECRY",
+			"DEATHRATTLE"
+		],
+		"name": "Rift Warden",
+		"playerClass": "Warlock",
+		"race": "DRAGON",
+		"set": "Taverns_of_time",
+		"text": "[x]<b>Battlecry:</b> Discard a \nrandom minion.\n <b>Deathrattle:</b> Summon it.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "WARLOCK",
+		"cost": 4,
+		"dbfId": 51042,
+		"id": "TOT_103",
+		"name": "Grasp the Future",
+		"playerClass": "Warlock",
+		"set": "Taverns_of_time",
+		"text": "Draw 2 cards.\nThey cost (2) less.",
+		"type": "Spell"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51043,
+		"id": "TOT_103e",
+		"name": "Taverns Echo",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Destroy card if in hand at the end of turn.",
+		"type": "Enchantment"
+	},
+	{
+		"cardClass": "DRUID",
+		"cost": 3,
+		"dbfId": 51046,
+		"id": "TOT_105",
+		"name": "Flash Forward",
+		"playerClass": "Druid",
+		"set": "Taverns_of_time",
+		"text": "Each player gains two Mana Crystals and draws two cards.",
+		"type": "Spell"
+	},
+	{
+		"attack": 4,
+		"cardClass": "ROGUE",
+		"cost": 4,
+		"dbfId": 51048,
+		"health": 3,
+		"id": "TOT_107",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Thief of Futures",
+		"playerClass": "Rogue",
+		"set": "Taverns_of_time",
+		"text": "<b>Battlecry:</b> Add a copy of the top card of your opponent's deck to your hand.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "ROGUE",
+		"cost": 1,
+		"dbfId": 51049,
+		"id": "TOT_108",
+		"name": "Déjà Vu",
+		"playerClass": "Rogue",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"set": "Taverns_of_time",
+		"text": "<b>Discover</b> a copy of a spell you played this game.",
+		"type": "Spell"
+	},
+	{
+		"attack": 10,
+		"cardClass": "NEUTRAL",
+		"cost": 6,
+		"dbfId": 51050,
+		"health": 10,
+		"id": "TOT_109",
+		"name": "Stasis Dragon",
+		"playerClass": "Neutral",
+		"race": "DRAGON",
+		"set": "Taverns_of_time",
+		"text": "Starts dormant.\nThis awakens with <b>Rush</b> after two turns.",
+		"type": "Minion"
+	},
+	{
+		"attack": 10,
+		"cardClass": "NEUTRAL",
+		"cost": 6,
+		"dbfId": 51149,
+		"health": 10,
+		"hideStats": true,
+		"id": "TOT_109t",
+		"mechanics": [
+			"UNTOUCHABLE"
+		],
+		"name": "Stasis Dragon",
+		"playerClass": "Neutral",
+		"race": "DRAGON",
+		"set": "Taverns_of_time",
+		"text": "",
+		"type": "Minion"
+	},
+	{
+		"attack": 8,
+		"cardClass": "NEUTRAL",
+		"cost": 15,
+		"dbfId": 51067,
+		"health": 8,
+		"id": "TOT_110",
+		"name": "Timebound Giant",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Costs (1) less for each card you've drawn.",
+		"type": "Minion"
+	},
+	{
+		"attack": 2,
+		"cardClass": "NEUTRAL",
+		"cost": 3,
+		"dbfId": 51068,
+		"health": 4,
+		"id": "TOT_111",
+		"name": "Timeline Witness",
+		"playerClass": "Neutral",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"set": "Taverns_of_time",
+		"text": "Instead of drawing your normal card each turn, <b>Discover</b> a card from your deck.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51155,
+		"id": "TOT_111e",
+		"name": "Chronomancing",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"type": "Enchantment"
+	},
+	{
+		"attack": 4,
+		"cardClass": "NEUTRAL",
+		"cost": 4,
+		"dbfId": 51071,
+		"health": 5,
+		"id": "TOT_112",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Possibility Seeker",
+		"playerClass": "Neutral",
+		"race": "DRAGON",
+		"set": "Taverns_of_time",
+		"text": "<b>Battlecry:</b> Shuffle your hand into your deck. Draw that many cards.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51074,
+		"id": "TOT_112e",
+		"name": "Cavern Growth",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Growth happening",
+		"type": "Enchantment"
+	},
+	{
+		"attack": 6,
+		"cardClass": "NEUTRAL",
+		"cost": 5,
+		"dbfId": 51087,
+		"health": 3,
+		"id": "TOT_116",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Timeway Wanderer",
+		"playerClass": "Neutral",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"set": "Taverns_of_time",
+		"text": "<b>Battlecry:</b> <b>Discover</b> a spell. Reduce its cost by (5) then put it on top of your deck.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51088,
+		"id": "TOT_116e",
+		"name": "Clocked!",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"type": "Enchantment"
+	},
+	{
+		"attack": 5,
+		"cardClass": "HUNTER",
+		"cost": 4,
+		"dbfId": 51089,
+		"health": 5,
+		"id": "TOT_117",
+		"name": "Infinite Wolf",
+		"playerClass": "Hunter",
+		"race": "BEAST",
+		"set": "Taverns_of_time",
+		"text": "<b>Rush</b>. After this attacks,\nshuffle it into your deck and give future Infinite Wolves +2/+2.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51193,
+		"id": "TOT_117e",
+		"name": "Rewound",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "+2/+2 for each time Infinite Wolf attacked.",
+		"type": "Enchantment"
+	},
+	{
+		"attack": 3,
+		"cardClass": "SHAMAN",
+		"cost": 4,
+		"dbfId": 51143,
+		"health": 5,
+		"id": "TOT_118",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Stasis Elemental",
+		"playerClass": "Shaman",
+		"race": "ELEMENTAL",
+		"referencedTags": [
+			"FREEZE"
+		],
+		"set": "Taverns_of_time",
+		"text": "<b>Battlecry:</b> <b>Freeze</b> a minion until this leaves the battlefield.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "SHAMAN",
+		"dbfId": 51144,
+		"id": "TOT_118e",
+		"name": "Stasis",
+		"playerClass": "Shaman",
+		"set": "Taverns_of_time",
+		"text": "<b>Frozen</b> until Stasis Elemental leaves the battlefield.",
+		"type": "Enchantment"
+	},
+	{
+		"attack": 1,
+		"cardClass": "PALADIN",
+		"cost": 1,
+		"dbfId": 51014,
+		"health": 1,
+		"id": "TOT_303t",
+		"name": "Wee Whelp",
+		"playerClass": "Paladin",
+		"race": "DRAGON",
+		"set": "Taverns_of_time",
+		"type": "Minion"
+	},
+	{
+		"attack": 1,
+		"cardClass": "MAGE",
+		"cost": 2,
+		"dbfId": 51029,
+		"health": 3,
+		"id": "TOT_308",
+		"name": "Cavern Dreamer",
+		"playerClass": "Mage",
+		"set": "Taverns_of_time",
+		"text": "At the end of your turn, add a random spell that costs (2) or less to your hand.",
+		"type": "Minion"
+	},
+	{
+		"attack": 5,
+		"cardClass": "SHAMAN",
+		"cost": 6,
+		"dbfId": 51070,
+		"health": 7,
+		"id": "TOT_313",
+		"name": "Master of Realities",
+		"playerClass": "Shaman",
+		"set": "Taverns_of_time",
+		"text": "[x]After you summon a minion,\n transform it into a random\n minion that costs (2) more.",
+		"type": "Minion"
+	},
+	{
+		"attack": 5,
+		"cardClass": "WARRIOR",
+		"cost": 6,
+		"dbfId": 51072,
+		"health": 6,
+		"id": "TOT_316",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Draconic Herald",
+		"playerClass": "Warrior",
+		"race": "DRAGON",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"set": "Taverns_of_time",
+		"text": "<b>Battlecry:</b> <b>Discover</b> a minion.\nGive it +3/+3 then put it on top of your deck.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51073,
+		"id": "TOT_316e",
+		"name": "Prophecy's Chosen",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "+3/+3.",
+		"type": "Enchantment"
+	},
+	{
+		"attack": 6,
+		"cardClass": "DRUID",
+		"cost": 6,
+		"dbfId": 51076,
+		"health": 7,
+		"id": "TOT_320",
+		"name": "Harbinger of Catastrophe",
+		"playerClass": "Druid",
+		"race": "DRAGON",
+		"set": "Taverns_of_time",
+		"text": "At the start of your turn, summon the highest-cost minion from each player's deck.",
+		"type": "Minion"
+	},
+	{
+		"attack": 5,
+		"cardClass": "PALADIN",
+		"cost": 5,
+		"dbfId": 51013,
+		"health": 5,
+		"id": "TOT_330",
+		"mechanics": [
+			"TOPDECK"
+		],
+		"name": "Bronze Broodmother",
+		"playerClass": "Paladin",
+		"race": "DRAGON",
+		"set": "Taverns_of_time",
+		"text": "When you draw this, summon a 1/1 Wee Whelp.",
+		"type": "Minion"
+	},
+	{
+		"attack": 6,
+		"cardClass": "NEUTRAL",
+		"cost": 7,
+		"dbfId": 51108,
+		"elite": true,
+		"health": 6,
+		"id": "TOT_332",
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"name": "Murozond",
+		"playerClass": "Neutral",
+		"race": "DRAGON",
+		"set": "Taverns_of_time",
+		"text": "[x]<b>Battlecry:</b> From now on, your\n turns are 15 seconds and\n you draw 2 extra cards.",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51110,
+		"id": "TOT_332e",
+		"name": "Time Warped",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Your turns last 20 seconds. You draw 2 cards each turn.",
+		"type": "Enchantment"
+	},
+	{
+		"attack": 2,
+		"cardClass": "NEUTRAL",
+		"cost": 2,
+		"dbfId": 51127,
+		"health": 2,
+		"id": "TOT_334",
+		"mechanics": [
+			"TOPDECK"
+		],
+		"name": "Temporal Anomaly",
+		"playerClass": "Neutral",
+		"race": "ELEMENTAL",
+		"set": "Taverns_of_time",
+		"text": "When you draw this, add a random spell to your hand <i>(from your class).</i>",
+		"type": "Minion"
+	},
+	{
+		"cardClass": "HUNTER",
+		"cost": 3,
+		"dbfId": 51145,
+		"id": "TOT_340",
+		"name": "Chronoshot",
+		"playerClass": "Hunter",
+		"set": "Taverns_of_time",
+		"text": "Return an enemy minion to your opponent's hand. It costs (2) more.",
+		"type": "Spell"
+	},
+	{
+		"cardClass": "MAGE",
+		"cost": 4,
+		"dbfId": 51146,
+		"id": "TOT_341",
+		"name": "Consider the Past",
+		"playerClass": "Mage",
+		"set": "Taverns_of_time",
+		"text": "Add 3 random spells from the past to your hand.",
+		"type": "Spell"
+	},
+	{
+		"attack": 4,
+		"cardClass": "WARRIOR",
+		"cost": 4,
+		"dbfId": 51147,
+		"durability": 2,
+		"id": "TOT_342",
+		"name": "Fatecleaver",
+		"playerClass": "Warrior",
+		"set": "Taverns_of_time",
+		"text": "[x]After this kills a minion,\ndestroy all copies of it\n<i>(wherever they are).</i>",
+		"type": "Weapon"
+	},
+	{
+		"cardClass": "PRIEST",
+		"cost": 2,
+		"dbfId": 51148,
+		"id": "TOT_343",
+		"name": "Reminisce",
+		"playerClass": "Priest",
+		"set": "Taverns_of_time",
+		"text": "Add two random cards your opponent played this game to your hand.",
+		"type": "Spell"
+	},
+	{
+		"cardClass": "PRIEST",
+		"cost": 1,
+		"dbfId": 51151,
+		"id": "TOT_345",
+		"name": "Ripple in Time",
+		"playerClass": "Priest",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"set": "Taverns_of_time",
+		"text": "<b>Discover</b> a minion. If you play it this turn, it has <b>Echo</b>.",
+		"type": "Spell"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51152,
+		"id": "TOT_345e",
+		"name": "Time Ripple",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"text": "Echo this turn.",
+		"type": "Enchantment"
+	},
+	{
+		"cardClass": "NEUTRAL",
+		"dbfId": 51442,
+		"id": "TOT_345e2",
+		"name": "Time Ripple Player Enchant",
+		"playerClass": "Neutral",
+		"set": "Taverns_of_time",
+		"type": "Enchantment"
+	},
+	{
 		"cardClass": "ROGUE",
 		"cardImage": "TP_Bling_HP2.png",
 		"cost": 2,
@@ -74505,6 +82001,11 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Gonzalo Ordonez",
+		"audio": {
+			"Attack_02": "VO_tt_010a_Attack_02.ogg",
+			"Death_03": "VO_tt_010a_Death_03.ogg",
+			"Play_01": "VO_tt_010a_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "tt_010.png",
 		"collectible": true,
@@ -74796,6 +82297,10 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Death_02": "VO_TU4d_002_Death_02.ogg",
+			"Play_01": "VO_TU4d_002_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "TU4d_002.png",
 		"cost": 1,
@@ -74937,6 +82442,10 @@ var parseCardsText = {
 	},
 	{
 		"attack": 1,
+		"audio": {
+			"Death_02": "VO_TU4f_002_Death_02.ogg",
+			"Play_01": "VO_TU4f_002_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "TU4f_002.png",
 		"cost": 1,
@@ -74952,6 +82461,10 @@ var parseCardsText = {
 	},
 	{
 		"attack": 2,
+		"audio": {
+			"Death_02": "VO_TU4f_003_Death_02.ogg",
+			"Play_01": "VO_TU4f_003_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "TU4f_003.png",
 		"cost": 2,
@@ -75182,6 +82695,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 2,
+		"audio": {
+			"Attack_05": "VO_UNG_011_Female_Murloc_Attack_05.ogg",
+			"Death_01": "VO_UNG_011_Female_Murloc_Death_01.ogg",
+			"Play_01": "VO_UNG_011_Female_Murloc_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "UNG_011.png",
 		"collectible": true,
@@ -75209,6 +82727,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_UNG_015_Male_Tolvir_Attack_01.ogg",
+			"Death_01": "VO_UNG_015_Male_Tolvir_Death_01.ogg",
+			"Play_01": "VO_UNG_015_Male_Tolvir_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "UNG_015.png",
 		"collectible": true,
@@ -75287,6 +82810,11 @@ var parseCardsText = {
 	{
 		"artist": "Eva Widermann",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_UNG_020_Female_Gnome_Attack_01.ogg",
+			"Death_01": "VO_UNG_020_Female_Gnome_Death_01.ogg",
+			"Play_01": "VO_UNG_020_Female_Gnome_Play_01.ogg"
+		},
 		"cardClass": "MAGE",
 		"cardImage": "UNG_020.png",
 		"collectible": true,
@@ -75335,6 +82863,11 @@ var parseCardsText = {
 	{
 		"artist": "Hideaki Takamura",
 		"attack": 2,
+		"audio": {
+			"Attack_02": "VO_UNG_022_Male_Tolvir_Attack_02.ogg",
+			"Death_03": "VO_UNG_022_Male_Tolvir_Death_03.ogg",
+			"Play_01": "VO_UNG_022_Male_Tolvir_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "UNG_022.png",
 		"collectible": true,
@@ -75618,6 +83151,11 @@ var parseCardsText = {
 	{
 		"artist": "Garrett Hanna",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_UNG_037_Female_Tortollan_Attack_01.ogg",
+			"Death_01": "VO_UNG_037_Female_Tortollan_Death_01.ogg",
+			"Play_01": "VO_UNG_037_Female_Tortollan_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "UNG_037.png",
 		"collectible": true,
@@ -75924,7 +83462,7 @@ var parseCardsText = {
 		"name": "Crystal Core",
 		"playerClass": "Rogue",
 		"set": "Ungoro",
-		"text": "For the rest of the game, your minions are 5/5.",
+		"text": "For the rest of the game, your minions are 4/4.",
 		"type": "Spell"
 	},
 	{
@@ -75936,7 +83474,7 @@ var parseCardsText = {
 		"name": "Crystallized",
 		"playerClass": "Neutral",
 		"set": "Ungoro",
-		"text": "Your minions are 5/5.",
+		"text": "Your minions are 4/4.",
 		"type": "Enchantment"
 	},
 	{
@@ -75947,12 +83485,17 @@ var parseCardsText = {
 		"name": "Crystallized",
 		"playerClass": "Neutral",
 		"set": "Ungoro",
-		"text": "5/5.",
+		"text": "4/4.",
 		"type": "Enchantment"
 	},
 	{
 		"artist": "Mike Azevedo",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_UNG_070_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_UNG_070_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_UNG_070_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_070.png",
 		"collectible": true,
@@ -76040,6 +83583,11 @@ var parseCardsText = {
 	{
 		"artist": "Alex Horley Orlandelli",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_UNG_073_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_UNG_073_Male_Murloc_Death_01.ogg",
+			"Play_01": "VO_UNG_073_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_073.png",
 		"collectible": true,
@@ -76098,6 +83646,11 @@ var parseCardsText = {
 	{
 		"artist": "Anton Zemskov",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_UNG_076_Male_Tortollan_Attack_01.ogg",
+			"Death_01": "VO_UNG_076_Male_Tortollan_Death_01.ogg",
+			"Play_01": "VO_UNG_076_Male_Tortollan_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_076.png",
 		"collectible": true,
@@ -76136,6 +83689,11 @@ var parseCardsText = {
 	{
 		"artist": "Jerry Mascho",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_UNG_078_Female_Tortollan_Attack_01.ogg",
+			"Death_01": "VO_UNG_078_Female_Tortollan_Death_01.ogg",
+			"Play_01": "VO_UNG_078_Female_Tortollan_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "UNG_078.png",
 		"collectible": true,
@@ -76158,6 +83716,11 @@ var parseCardsText = {
 	{
 		"artist": "Konstantin Turovec",
 		"attack": 8,
+		"audio": {
+			"Attack_01": "VO_UNG_079_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_UNG_079_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_UNG_079_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_079.png",
 		"collectible": true,
@@ -76335,6 +83898,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_UNG_088_Female_Tortollan_Attack_01.ogg",
+			"Death_01": "VO_UNG_088_Female_Tortollan_Death_01.ogg",
+			"Play_01": "VO_UNG_088_Female_Tortollan_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_088.png",
 		"collectible": true,
@@ -76436,6 +84004,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_UNG_101_Male_Tortollan_Attack_01.ogg",
+			"Death_01": "VO_UNG_101_Male_Tortollan_Death_01.ogg",
+			"Play_01": "VO_UNG_101_Male_Tortollan_Play_01.ogg"
+		},
 		"cardClass": "DRUID",
 		"cardImage": "UNG_101.png",
 		"collectible": true,
@@ -76766,6 +84339,11 @@ var parseCardsText = {
 	{
 		"artist": "Jakub Kasber",
 		"attack": 0,
+		"audio": {
+			"Attack_01": "VO_UNG_201t_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_UNG_201t_Male_Murloc_Death_01.ogg",
+			"Play_01": "VO_UNG_201t_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "UNG_201.png",
 		"collectible": true,
@@ -76802,6 +84380,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_UNG_202_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_UNG_202_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_UNG_202_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "UNG_202.png",
 		"collectible": true,
@@ -76825,7 +84408,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 49414,
-		"goldenImage": "UNG_202e.gif",
 		"id": "UNG_202e",
 		"name": "Fiery",
 		"playerClass": "Neutral",
@@ -76862,6 +84444,11 @@ var parseCardsText = {
 	{
 		"artist": "Rudy Siswanto",
 		"attack": 4,
+		"audio": {
+			"Attack_03": "VO_UNG_208_Male_Tolvir_Attack_03.ogg",
+			"Death_01": "VO_UNG_208_Male_Tolvir_Death_01.ogg",
+			"Play_02": "VO_UNG_208_Male_Tolvir_Play_02.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "UNG_208.png",
 		"collectible": true,
@@ -76908,6 +84495,11 @@ var parseCardsText = {
 	{
 		"artist": "James Ryman",
 		"attack": 7,
+		"audio": {
+			"Attack_01": "VO_UNG_211_Male_Elemental_Attack_01.ogg",
+			"Death_02": "VO_UNG_211_Male_Elemental_Death_02.ogg",
+			"Play_01": "VO_UNG_211_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "UNG_211.png",
 		"collectible": true,
@@ -77249,6 +84841,11 @@ var parseCardsText = {
 	{
 		"artist": "Arthur Gimaldinov",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_UNG_813_Female_Elemental_Attack_01.ogg",
+			"Death_01": "VO_UNG_813_Female_Elemental_Death_01.ogg",
+			"Play_01": "VO_UNG_813_Female_Elemental_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_813.png",
 		"collectible": true,
@@ -77296,6 +84893,11 @@ var parseCardsText = {
 	{
 		"artist": "Zoltan Boros",
 		"attack": 4,
+		"audio": {
+			"Attack_01": "VO_UNG_816_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_UNG_816_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_UNG_816_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_816.png",
 		"collectible": true,
@@ -77339,6 +84941,11 @@ var parseCardsText = {
 	{
 		"artist": "Nicola Saviori",
 		"attack": 1,
+		"audio": {
+			"Attack_02": "VO_UNG_818_Male_Elemental_Attack_02.ogg",
+			"Death_01": "VO_UNG_818_Male_Elemental_Death_01.ogg",
+			"Play_03": "VO_UNG_818_Male_Elemental_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_818.png",
 		"collectible": true,
@@ -77396,7 +85003,6 @@ var parseCardsText = {
 	{
 		"cardClass": "NEUTRAL",
 		"dbfId": 48564,
-		"goldenImage": "UNG_823ed.gif",
 		"id": "UNG_823ed",
 		"name": "Envenomed",
 		"playerClass": "Neutral",
@@ -77481,6 +85087,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_UNG_830_Female_Saurok_Attack_01.ogg",
+			"Death_02": "VO_UNG_830_Female_Saurok_Death_02.ogg",
+			"Play_01": "VO_UNG_830_Female_Saurok_Play_01.ogg"
+		},
 		"cardClass": "WARLOCK",
 		"cardImage": "UNG_830.png",
 		"collectible": true,
@@ -77715,6 +85326,11 @@ var parseCardsText = {
 	{
 		"artist": "Sam Nielson",
 		"attack": 6,
+		"audio": {
+			"Attack_03": "VO_UNG_840_Male_Dwarf_Attack_03.ogg",
+			"Death_02": "VO_UNG_840_Male_Dwarf_Death_02.ogg",
+			"Play_05": "VO_UNG_840_Male_Dwarf_Play_05.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_840.png",
 		"collectible": true,
@@ -77781,6 +85397,11 @@ var parseCardsText = {
 	{
 		"artist": "Tyler West Studio",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_UNG_845_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_UNG_845_Male_Elemental_Death_01.ogg",
+			"Play_01": "VO_UNG_845_Male_Elemental_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_845.png",
 		"collectible": true,
@@ -77874,6 +85495,11 @@ var parseCardsText = {
 	{
 		"artist": "Luke Mancini",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_UNG_851_Female_Night Elf_Attack_01.ogg",
+			"Death_01": "VO_UNG_851_Female_Night Elf_Death_01.ogg",
+			"Play_01": "VO_UNG_851_Female_Night Elf_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_851.png",
 		"collectible": true,
@@ -77955,6 +85581,11 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Daria Tuzova",
+		"audio": {
+			"Attack_01": "VO_UNG_856_Male_Saurok_Attack_01.ogg",
+			"Death_01": "VO_UNG_856_Male_Saurok_Death_01.ogg",
+			"Play_01": "VO_UNG_856_Male_Saurok_Play_01.ogg"
+		},
 		"cardClass": "ROGUE",
 		"cardImage": "UNG_856.png",
 		"collectible": true,
@@ -77976,6 +85607,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_UNG_900_Female_Tortollan_Attack_02.ogg",
+			"Death_01": "VO_UNG_900_Female_Tortollan_Death_01.ogg",
+			"Play_03": "VO_UNG_900_Female_Tortollan_Play_03.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_900.png",
 		"collectible": true,
@@ -77999,6 +85635,11 @@ var parseCardsText = {
 	{
 		"artist": "Tooth",
 		"attack": 5,
+		"audio": {
+			"Attack_01": "VO_UNG_907_Male_Elemental_Attack_01.ogg",
+			"Death_01": "VO_UNG_907_Male_Elemental_Death_01.ogg",
+			"Play_02": "VO_UNG_907_Male_Elemental_Play_02.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_907.png",
 		"collectible": true,
@@ -78076,6 +85717,11 @@ var parseCardsText = {
 	{
 		"artist": "Mike Azevedo",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_UNG_913_Male_Tolvir_Attack_02.ogg",
+			"Death_01": "VO_UNG_913_Male_Tolvir_Death_01.ogg",
+			"Play_01": "VO_UNG_913_Male_Tolvir_Play_01.ogg"
+		},
 		"cardClass": "HUNTER",
 		"cardImage": "UNG_913.png",
 		"collectible": true,
@@ -78402,6 +86048,11 @@ var parseCardsText = {
 	{
 		"artist": "Jomaro Kindred",
 		"attack": 2,
+		"audio": {
+			"Attack_01": "VO_UNG_926_Female_Draenei_Attack_01.ogg",
+			"Death_01": "VO_UNG_926_Female_Draenei_Death_01.ogg",
+			"Play_01": "VO_UNG_926_Female_Draenei_Play_01.ogg"
+		},
 		"cardClass": "WARRIOR",
 		"cardImage": "UNG_926.png",
 		"collectible": true,
@@ -78442,6 +86093,11 @@ var parseCardsText = {
 	{
 		"artist": "Jim Nelson",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_UNG_928_Male_Tortollan_Attack_01.ogg",
+			"Death_01": "VO_UNG_928_Male_Tortollan_Death_01.ogg",
+			"Play_01": "VO_UNG_928_Male_Tortollan_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_928.png",
 		"collectible": true,
@@ -78579,6 +86235,11 @@ var parseCardsText = {
 	{
 		"artist": "Dany Orizio",
 		"attack": 3,
+		"audio": {
+			"Attack_01": "VO_UNG_937_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_UNG_937_Male_Murloc_Death_01.ogg",
+			"Play_01": "VO_UNG_937_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "NEUTRAL",
 		"cardImage": "UNG_937.png",
 		"collectible": true,
@@ -78628,6 +86289,11 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Konstantin Turovec",
+		"audio": {
+			"Attack_01": "VO_UNG_940t8_Female_Titan_Attack_01.ogg",
+			"Death_01": "VO_UNG_940t8_Female_Titan_Death_01.ogg",
+			"Play_01": "VO_UNG_940t8_Female_Titan_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "UNG_940.png",
 		"collectible": true,
@@ -78706,6 +86372,11 @@ var parseCardsText = {
 	},
 	{
 		"artist": "Steve Prescott",
+		"audio": {
+			"Attack_01": "VO_UNG_942t_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_UNG_942t_Male_Murloc_Death_01.ogg",
+			"Play_05": "VO_UNG_942t_Male_Murloc_Play_05.ogg"
+		},
 		"cardClass": "SHAMAN",
 		"cardImage": "UNG_942.png",
 		"collectible": true,
@@ -78840,6 +86511,11 @@ var parseCardsText = {
 	{
 		"artist": "Matt Dixon",
 		"attack": 1,
+		"audio": {
+			"Attack_01": "VO_UNG_953_Male_Murloc_Attack_01.ogg",
+			"Death_01": "VO_UNG_953_Male_Murloc_Death_01.ogg",
+			"Play_01": "VO_UNG_953_Male_Murloc_Play_01.ogg"
+		},
 		"cardClass": "PALADIN",
 		"cardImage": "UNG_953.png",
 		"collectible": true,
@@ -79078,6 +86754,11 @@ var parseCardsText = {
 	{
 		"artist": "Phil Saunders",
 		"attack": 3,
+		"audio": {
+			"Attack_02": "VO_UNG_963_Female_Elemental_Attack_02.ogg",
+			"Death_01": "VO_UNG_963_Female_Elemental_Death_01.ogg",
+			"Play_01": "VO_UNG_963_Female_Elemental_Play_01.ogg"
+		},
 		"cardClass": "PRIEST",
 		"cardImage": "UNG_963.png",
 		"collectible": true,

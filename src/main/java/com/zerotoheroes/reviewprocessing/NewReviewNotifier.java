@@ -33,6 +33,7 @@ public class NewReviewNotifier {
 				snsTopic, 
 				message(publishedReview), 
 				"New published review");
+		log.debug("New review notified");
 	}
 
 	private String message(Review review) {
@@ -57,7 +58,7 @@ public class NewReviewNotifier {
 			deck = deck.substring(1, deck.length() - 1);
             json.put("playerDecklist", deck);
         }
-        log.debug("Publishing new review created message", json.toString());
+        log.debug("Publishing new review created message: " + json.toString());
 
 		return json.toString();
 	}

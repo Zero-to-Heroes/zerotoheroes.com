@@ -92,8 +92,10 @@ public class HSGameParser implements ReplayPlugin {
 			hsMeta.setWinStatus(meta.getResult());
 			hsMeta.setOpponentClass(meta.getOpponentClass());
 			hsMeta.setOpponentName(meta.getOpponentName());
+			hsMeta.setOpponentCardId(meta.getOpponentCardId());
 			hsMeta.setPlayerName(meta.getPlayerName());
 			hsMeta.setPlayerClass(meta.getPlayerClass());
+			hsMeta.setPlayerCardId(meta.getPlayerCardId());
 			hsMeta.setPlayCoin(meta.getPlayCoin());
 			// hsMeta.setGameMode(meta.getGameMode());
 			// hsMeta.setSkillLevel(meta.getSkillLevel());

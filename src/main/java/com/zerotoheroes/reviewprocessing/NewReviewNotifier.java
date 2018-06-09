@@ -43,9 +43,11 @@ public class NewReviewNotifier {
 		json.put("userId", review.getAuthorId());
 		json.put("playerName", metaData.getPlayerName());
 		json.put("playerClass", metaData.getPlayerClass());
+		json.put("playerCardId", metaData.getPlayerCardId());
 		json.put("playerRank", metaData.getSkillLevel());
 		json.put("opponentName", metaData.getOpponentName());
 		json.put("opponentClass", metaData.getOpponentClass());
+		json.put("opponentCardId", metaData.getOpponentCardId());
 		json.put("opponentRank", metaData.getOpponentSkillLevel());
 		json.put("result", metaData.getWinStatus());
 		json.put("coinPlay", metaData.getPlayCoin());

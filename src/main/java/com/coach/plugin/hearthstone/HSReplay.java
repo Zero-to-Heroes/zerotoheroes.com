@@ -117,11 +117,12 @@ public class HSReplay implements ReplayPlugin {
 	}
 
 	private String readZippedReplayFile(Review review) throws Exception {
-		S3Object s3Object = s3utils.readerFromS3(review.getTemporaryKey());
-		ZipInputStream zis = new ZipInputStream(s3Object.getObjectContent());
-		zis.getNextEntry();
-		String xmlReplay = IOUtils.toString(zis, StandardCharsets.UTF_8);
-		zis.close();
+		String xmlReplay;
+		try (S3Object s3Object = s3utils.readerFromS3(review.getTemporaryKey());
+		     ZipInputStream zis = new ZipInputStream(s3Object.getObjectContent())) {
+			zis.getNextEntry();
+			xmlReplay = IOUtils.toString(zis, StandardCharsets.UTF_8);
+		}
 		return xmlReplay;
 	}
 
@@ -133,8 +134,8 @@ public class HSReplay implements ReplayPlugin {
 	public List<String> extractGames(String key, String fileType) throws IOException {
 		log.debug("Extracting games with " + key + ", " + fileType);
 		List<String> games;
-		try (S3Object s3object = s3utils.readerFromS3(key)) {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()));
+		try (S3Object s3object = s3utils.readerFromS3(key);
+		     BufferedReader reader = new BufferedReader(new InputStreamReader(s3object.getObjectContent()))) {
 			games = extractGames(fileType, reader);
 		}
 		return games;

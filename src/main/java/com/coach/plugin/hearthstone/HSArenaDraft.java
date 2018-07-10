@@ -1,5 +1,24 @@
 package com.coach.plugin.hearthstone;
 
+import com.coach.core.notification.SlackNotifier;
+import com.coach.core.storage.S3Utils;
+import com.coach.plugin.ReplayPlugin;
+import com.coach.review.HasText;
+import com.coach.review.Review;
+import com.coach.review.ReviewRepository;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.assertj.core.util.Arrays;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
+
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalTime;
@@ -10,26 +29,6 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.assertj.core.util.Arrays;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
-
-import com.coach.core.storage.S3Utils;
-import com.coach.plugin.ReplayPlugin;
-import com.coach.review.HasText;
-import com.coach.review.Review;
-import com.coach.review.ReviewRepository;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-
 @Slf4j
 @Component
 public class HSArenaDraft implements ReplayPlugin {
@@ -39,6 +38,9 @@ public class HSArenaDraft implements ReplayPlugin {
 
 	@Autowired
 	ReviewRepository repo;
+
+	@Autowired
+	SlackNotifier slackNotifier;
 
 	@Override
 	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
@@ -149,6 +151,10 @@ public class HSArenaDraft implements ReplayPlugin {
 				int pickIndex = 0;
 				LocalTime lastTime = null;
 				for (String line : lines) {
+					if (pickIndex > 30) {
+						// Issue with original draft
+						slackNotifier.sendMessage("Invalid Arena Draft", atFile);
+					}
 					line = line.replaceAll("\\r", "").replaceAll("\\n", "");
 					// log.debug("Parsing line " + line);
 					Matcher matcher = choiceRegex.matcher(line);

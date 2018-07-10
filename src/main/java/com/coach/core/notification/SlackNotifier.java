@@ -1,14 +1,5 @@
 package com.coach.core.notification;
 
-import java.util.Collection;
-
-import org.apache.commons.lang.exception.ExceptionUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.WebRequest;
-
 import com.coach.coaches.CoachInformation;
 import com.coach.core.security.User;
 import com.coach.review.Comment;
@@ -18,11 +9,18 @@ import com.coach.review.UrlInput;
 import com.coach.sequence.Sequence;
 import com.coach.subscription.HasSubscribers;
 import com.coach.subscription.SavedSearchSubscription;
-
 import lombok.extern.slf4j.Slf4j;
 import net.gpedro.integrations.slack.SlackApi;
 import net.gpedro.integrations.slack.SlackAttachment;
 import net.gpedro.integrations.slack.SlackMessage;
+import org.apache.commons.lang.exception.ExceptionUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.WebRequest;
+
+import java.util.Collection;
 
 @Slf4j
 @Component
@@ -417,4 +415,23 @@ public class SlackNotifier {
 		api.call(message);
 	}
 
+    public void sendMessage(String title, String contents) {
+	    if (!"prod".equalsIgnoreCase(environment)) {
+		    return;
+	    }
+
+	    SlackApi api = new SlackApi(
+			    "https://hooks.slack.com/services/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");
+
+	    SlackMessage message = new SlackMessage();
+	    message.setText(title);
+
+	    SlackAttachment attach = new SlackAttachment();
+	    attach.setColor("warning");
+	    attach.setText(contents);
+	    attach.setFallback("placeholder fallback");
+	    message.addAttachments(attach);
+
+	    api.call(message);
+    }
 }

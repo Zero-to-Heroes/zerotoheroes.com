@@ -84,7 +84,7 @@ public class PrerenderConfig {
 				"rogerbot", "linkedinbot", "embedly", "quora link preview", "showyoubo", "outbrain", "pinterest",
 				"pinterest/0.", "developers.google.com/+/web/snippet", "slackbot", "vkShare", "W3C_Validator",
 				"redditbot", "Applebot", "WhatsApp", "flipboard", "tumblr", "bitlybot", "SkypeUriPreview", "nuzzel",
-				"Discordbot");
+				"Discordbot", "googlebot", "bingbot", "yandex");
 		final String crawlerUserAgentsFromConfig = config.get("crawlerUserAgents");
 		if (!StringUtils.isNullOrEmpty(crawlerUserAgentsFromConfig)) {
 			crawlerUserAgents.addAll(Arrays.asList(crawlerUserAgentsFromConfig.trim().split(",")));

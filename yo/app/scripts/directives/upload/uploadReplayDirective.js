@@ -95,20 +95,30 @@ app.directive('uploadReplayDirective', ['FileUploader', 'ReplayUploader', '$log'
 		            var r = new FileReader()
 				    r.onload = function(e) {
 		            	$scope.files.push(fileItem)
-						var contents = e.target.result;
-
-						var replayGames = (contents.match(gameRegex) || []).length || 1;
 						var indexOfLastDot = fileItem._file.name.lastIndexOf('.');
 						var extension = fileItem._file.name.slice(indexOfLastDot + 1);
 
+						// Some text-specific stuff
+						if (['hszip', 'hdtreplay'].indexOf(extension) === -1) {
+							var contents = e.target.result;
+							var replayGames = (contents.match(gameRegex) || []).length || 1;
+				      		fileItem.contents = contents;
+						}
+						replayGames = (replayGames || 1);
 				        $scope.numberOfGames += replayGames;
 				      	console.log('numberOfGames', $scope.numberOfGames);
 				      	fileItem.numberOfGames = replayGames;
-				      	fileItem._file.gameType = $scope.getGameType(contents);
-				      	fileItem.contents = contents;
+				      	fileItem._file.gameType = "game-replay" // $scope.getGameType(contents);
 				      	$scope.$apply();
 				    }
-				    r.readAsText(fileItem._file);
+					var indexOfLastDot = fileItem._file.name.lastIndexOf('.');
+					var extension = fileItem._file.name.slice(indexOfLastDot + 1);
+				    if (['hszip', 'hdtreplay'].indexOf(extension) !== -1) {
+				    	r.readAsArrayBuffer(fileItem._file);
+				    }
+				    else {
+				    	r.readAsText(fileItem._file);
+				    }
 		            $scope.updateTranslationData();
 		        }
 
@@ -132,6 +142,11 @@ app.directive('uploadReplayDirective', ['FileUploader', 'ReplayUploader', '$log'
 					$scope.files.forEach(function(file) {
 						file._file.fileKey = Date.now() + '-' + S(file._file.name).slugify().s;
 						file._file.fileType = $scope.getType(file._file);
+						$log.debug('Considering content type', file._file)
+						if (file._file.fileType == 'hszip') {
+							file._file.contentType = 'binary/octet-stream';
+							$log.debug('Setting content type', file._file)
+						}
 					})
 
 					ReplayUploader.upload($scope.files, $scope.numberOfGames);

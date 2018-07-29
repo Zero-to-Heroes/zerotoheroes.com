@@ -22,7 +22,8 @@ services.factory('ReplayUploader', ['$log', '$analytics', 'ENV', '$http', 'User'
 
 			var filesToUpload = [];
 			files.forEach(function(file) {
-				if (file._file.numberOfGames == 1) {
+				$log.log('considering file', file);
+				if (file.numberOfGames === 1 || file._file.numberOfGames === 1) {
 					filesToUpload.push(file);
 				}
 				else {
@@ -69,7 +70,7 @@ services.factory('ReplayUploader', ['$log', '$analytics', 'ENV', '$http', 'User'
 				Bucket: ENV.createReviewBucket,
 				Key: file._file.fileKey,
 				ACL: 'public-read-write',
-				ContentType: file._file.fileType,
+				ContentType: file._file.contentType ? file._file.contentType : file._file.fileType,
 				Body: file._file,
 				Metadata: {
 					'review-id': file._file.reviewId,
@@ -79,7 +80,7 @@ services.factory('ReplayUploader', ['$log', '$analytics', 'ENV', '$http', 'User'
 				}
 			}
 
-			$log.debug('uploading with params', params)
+			$log.debug('uploading with params', params, file._file, file)
 			var req = s3.makeUnauthenticatedRequest('putObject', params);
 			req.send(function(err, data) {
 				// There Was An Error With Your S3 Config
@@ -113,6 +114,7 @@ services.factory('ReplayUploader', ['$log', '$analytics', 'ENV', '$http', 'User'
 						};
 						splitFile._file.fileType = file._file.fileType;
 						splitFile._file.gameType = file._file.gameType;
+						splitFile._file.contentType = file._file.contentType;
 						splitFile._file.fileKey = file._file.fileKey + '-' + splitFiles.length;
 						console.log('Built file', splitFile, currentText.length);
 						splitFiles.push(splitFile);
@@ -126,6 +128,7 @@ services.factory('ReplayUploader', ['$log', '$analytics', 'ENV', '$http', 'User'
 			};
 			splitFile._file.fileType = file._file.fileType;
 			splitFile._file.gameType = file._file.gameType;
+			splitFile._file.contentType = file._file.contentType;
 			splitFile._file.fileKey = file._file.fileKey + '-' + splitFiles.length;
 			console.log('Built file', splitFile, currentText.length);
 			splitFiles.push(splitFile);

@@ -372,6 +372,13 @@ public class SlackNotifier {
 			exAttach.setFallback("placeholder fallback");
 			message.addAttachments(exAttach);
 
+			SlackAttachment exAttach2 = new SlackAttachment();
+			exAttach2.setColor("danger");
+			exAttach2.setTitle("StackTrace for exception: ");
+			exAttach2.setText(e.getStackTrace().toString());
+			exAttach2.setFallback("placeholder fallback");
+			message.addAttachments(exAttach2);
+
 			for (Object param : params) {
 				SlackAttachment attach = new SlackAttachment();
 				attach.setColor("danger");

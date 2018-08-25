@@ -24,18 +24,18 @@
 		<li ng-class="{active: menuItem == 'reviews' && !upload}" collapse-priority="prio-0"><a href="{{ '/s/' + sport + '/reviews'}}">{{::translations.reviews}}</a></li>
 		<li ng-class="{active: menuItem == 'helpothers' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/helpothers'}}">{{::translations.helpOthers}}</a></li>
 		<li ng-class="{active: menuItem == 'search' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/search'}}">{{::translations.search}}</a></li>
-		<li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{::translations.coaches}}</a></li>
+		<!-- <li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{::translations.coaches}}</a></li> -->
 		<li ng-class="{active: menuItem == 'forum' && !upload}" collapse-priority="prio-4"><a href="https://www.reddit.com/r/zerotoheroes/" target="_blank">{{::translations.forum}}</a></li>
 		<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos/' + (profile.openReviews > 0 ? 'open' : '') }}" class="has-badge">{{::translations.showOwnVideos}}<span class="badge" title="{{::translations.openReviewsBadge}}" ng-if="profile.openReviews > 0"><span class="value">{{::profile.openReviews}}</span></span></a></li>
 
 		<!-- Target element @see data-target above,
-	    can contain markup alreadu ie. <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a> 
+	    can contain markup alreadu ie. <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
 	    & <ul class="dropdown-menu"></ul>
 	    if required elements are missing they will be created -->
 	    <li class="more-menu">
-	    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a> 
+	    	<a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
 	    	<ul class="dropdown-menu">
-	    		
+
 	    		<!-- Not automated / generic, but still works for now -->
 	    		<li class="upload-link" collapse-priority="prio-1">
 					<a href="/s{{sport ? '/' + sport : ''}}/upload" ng-show="useVideo"><span>{{::translations.postVideo}}</span></a>
@@ -45,7 +45,7 @@
 				<li ng-class="{active: menuItem == 'reviews' && !upload}" collapse-priority="prio-0"><a href="{{ '/s/' + sport + '/reviews'}}">{{::translations.reviews}}</a></li>
 				<li ng-class="{active: menuItem == 'helpothers' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/helpothers'}}">{{::translations.helpOthers}}</a></li>
 				<li ng-class="{active: menuItem == 'search' && !upload}" collapse-priority="prio-1"><a href="{{ '/s/' + sport + '/search'}}">{{::translations.search}}</a></li>
-				<li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{::translations.coaches}}</a></li>
+				<!-- <li ng-class="{active: menuItem == 'coaches' && !upload}" collapse-priority="prio-4"><a href="{{ '/s/' + sport + '/coaches'}}">{{::translations.coaches}}</a></li> -->
 				<li ng-class="{active: menuItem == 'forum' && !upload}" collapse-priority="prio-4"><a href="https://www.reddit.com/r/zerotoheroes/" target="_blank">{{::translations.forum}}</a></li>
 				<li ng-class="{active: menuItem == 'myVideos' && !upload}" collapse-priority="prio-3" ng-hide="!User.isLoggedIn()"><a href="{{ '/s/' + sport + '/myVideos/' + (profile.openReviews > 0 ? 'open' : '') }}" class="has-badge">{{::translations.showOwnVideos}}<span class="badge" ng-if="profile.openReviews > 0"><span class="value">{{::profile.openReviews}}</span></span></a></li>
 
@@ -53,7 +53,7 @@
 					<ul zth-name-input show-logout="true" class="nav name-group" active="menuItem == 'profile'"></ul>
 				</li>
 	    	</ul>
-	    </li> 
+	    </li>
 
 		<li class="name-input" collapse-priority="prio-2">
 			<ul zth-name-input show-logout="true" class="nav navbar-nav name-group" active="menuItem == 'profile'"></ul>

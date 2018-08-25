@@ -121,7 +121,7 @@
 			<div class="comments-links">
 				<a class="link-minor link-nodeco link-action" ng-click="unsubscribe()" ng-if=":reviewRefresh:(subscribed() && User.isLoggedIn())" title="{{::translations.unsubscribeReviewTooltip}}">{{::translations.unsubscribeReview}}<span class="glyphicon glyphicon-info-sign"></span></a>
 				<a class="link-minor link-nodeco link-action" ng-click="subscribe()" ng-if=":reviewRefresh:(!subscribed() && User.isLoggedIn())" title="{{::translations.subscribeReviewTooltip}}">{{::translations.subscribeReview}}<span class="glyphicon glyphicon-info-sign"></span></a>
-				<a class="link-minor link-nodeco link-action" ng-click="showProModal()" ng-if=":reviewRefresh:(!!coaches.length && !review.editing)" title="{{::translations.askProTooltip}}">{{::translations.askProButton}}<span class="glyphicon glyphicon-info-sign"></span></a>
+				<!-- <a class="link-minor link-nodeco link-action" ng-click="showProModal()" ng-if=":reviewRefresh:(!!coaches.length && !review.editing)" title="{{::translations.askProTooltip}}">{{::translations.askProButton}}<span class="glyphicon glyphicon-info-sign"></span></a> -->
 				<a class="link-minor link-nodeco link-action" ng-click="closeForComments()" ng-if=":reviewRefresh:(User.isLoggedIn() && User.getName() == review.author && !review.closedDate)" title="{{::translations.closeReviewTooltip}}">{{::translations.closeReviewButton}}<span class="glyphicon glyphicon-info-sign"></span></a>
 				<a class="link-minor link-nodeco link-action" ng-click="reopenForComments()" ng-if=":reviewRefresh:(User.isLoggedIn() && User.getName() == review.author && review.closedDate)" title="{{::translations.reopenReviewTooltip}}">{{::translations.reopenReviewButton}}<span class="glyphicon glyphicon-info-sign"></span></a>
 			</div>

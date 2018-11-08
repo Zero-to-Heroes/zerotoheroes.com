@@ -317,21 +317,16 @@ var parseCardsText = {
 
 	jsonDatabase: [
 	{
+		"playerClass": "Neutral",
 		"cost": 0,
 		"set": "Tb",
-		"health": 0,
-		"dbfId": 52424,
-		"type": "Minion",
-		"playerClass": "Neutral",
 		"attack": 0,
 		"faction": "ALLIANCE",
 		"name": "Golden Legendary",
+		"health": 0,
 		"id": "ART_BOT_Bundle_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
+		"dbfId": 52424,
+		"type": "Minion",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
 	},
@@ -1099,11 +1094,6 @@ var parseCardsText = {
 		"set": "Tgt",
 		"name": "Dreadsteed",
 		"id": "AT_019e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Summon a Dreadsteed at the end of the turn.",
 		"dbfId": 47218,
 		"type": "Enchantment",
@@ -1751,7 +1741,13 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Shared_Physical_Impact_01": [
+				"Shared_Physical_Impact_01.ogg"
+			],
+			"Crush_CustomDeath_Sound_01": [
+				"Crush_CustomDeath_Sound_01.ogg"
+			]
 		},
 		"text": "<b>Casts When Drawn</b>\nSummon a 4/4 Nerubian for your opponent.",
 		"dbfId": 2847,
@@ -2299,7 +2295,7 @@ var parseCardsText = {
 	{
 		"cardImage": "AT_045.png",
 		"collectible": true,
-		"cost": 9,
+		"cost": 10,
 		"set": "Tgt",
 		"artist": "Velvet Engine",
 		"health": 5,
@@ -2366,11 +2362,6 @@ var parseCardsText = {
 		"set": "Tgt",
 		"name": "Aviana's Blessing",
 		"id": "AT_045eee",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1).",
 		"dbfId": 52723,
 		"type": "Enchantment",
@@ -4089,11 +4080,6 @@ var parseCardsText = {
 		"set": "Tgt",
 		"name": "Maiden's Blessing",
 		"id": "AT_085e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1).",
 		"dbfId": 52744,
 		"type": "Enchantment",
@@ -6442,11 +6428,6 @@ var parseCardsText = {
 		"set": "Core",
 		"name": "Deadeye",
 		"id": "BCON_001e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your Hero Power can target minions.",
 		"dbfId": 50134,
 		"type": "Enchantment",
@@ -6616,11 +6597,6 @@ var parseCardsText = {
 		"set": "Core",
 		"name": "Smoke Bombed",
 		"id": "BCON_016e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Stealthed until your next turn.",
 		"dbfId": 50133,
 		"type": "Enchantment",
@@ -8948,7 +8924,7 @@ var parseCardsText = {
 	{
 		"cardImage": "BOT_270.png",
 		"collectible": true,
-		"cost": 5,
+		"cost": 7,
 		"set": "Boomsday",
 		"artist": "Matt Dixon",
 		"health": 1,
@@ -9014,8 +8990,7 @@ var parseCardsText = {
 			]
 		},
 		"text": "<b>Taunt</b>\n<b>Divine Shield</b>",
-		"cardClass": "NEUTRAL",
-		"rarity": "Common"
+		"cardClass": "NEUTRAL"
 	},
 	{
 		"cardImage": "BOT_280.png",
@@ -18066,11 +18041,6 @@ var parseCardsText = {
 		"set": "Brm",
 		"name": "Moira's Presence",
 		"id": "BRMA03_3e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1).",
 		"dbfId": 52747,
 		"type": "Enchantment",
@@ -20989,11 +20959,6 @@ var parseCardsText = {
 		"set": "Brm",
 		"name": "Electron's Power",
 		"id": "BRMA14_7e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (3) less.",
 		"dbfId": 52746,
 		"type": "Enchantment",
@@ -32584,14 +32549,6 @@ var parseCardsText = {
 		"set": "Hero_skins",
 		"name": "Shapeshift",
 		"id": "CS2_017_HS1",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": [],
-			"Lunara_HeroPower_Sound": [
-				"Lunara_HeroPower_Sound.ogg"
-			]
-		},
 		"text": "<b>Hero Power</b>\n+1 Attack this turn.\n+1 Armor.",
 		"dbfId": 50485,
 		"type": "Hero_power",
@@ -33637,6 +33594,46 @@ var parseCardsText = {
 		},
 		"text": "<b>Hero Power</b>\nSummon a Totem of your choice.",
 		"dbfId": 40253,
+		"type": "Hero_power",
+		"cardClass": "SHAMAN"
+	},
+	{
+		"playerClass": "Shaman",
+		"cost": 2,
+		"set": "Hero_skins",
+		"name": "Totemic Call",
+		"id": "CS2_049_H2",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Shaman_TotemicCall_Cast_1": [
+				"Shaman_TotemicCall_Cast_1.ogg"
+			],
+			"attack": [],
+			"Totems_CustomSpawn_1": [
+				"Totems_CustomSpawn_1.ogg"
+			]
+		},
+		"text": "<b>Hero Power</b>\nSummon a random Totem.",
+		"dbfId": 53238,
+		"type": "Hero_power",
+		"entourage": [
+			"CS2_050",
+			"CS2_051",
+			"CS2_052",
+			"NEW1_009"
+		],
+		"cardClass": "SHAMAN",
+		"rarity": "Free"
+	},
+	{
+		"playerClass": "Shaman",
+		"cost": 2,
+		"set": "Hero_skins",
+		"name": "Totemic Slam",
+		"id": "CS2_049_H2_AT_132",
+		"text": "<b>Hero Power</b>\nSummon a Totem of your choice.",
+		"dbfId": 53239,
 		"type": "Hero_power",
 		"cardClass": "SHAMAN"
 	},
@@ -34944,6 +34941,14 @@ var parseCardsText = {
 		"set": "Hero_skins",
 		"name": "Reinforce",
 		"id": "CS2_101_H3",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"SirAnnoyOTron_HeroPower_Sound": [
+				"SirAnnoyOTron_HeroPower_Sound.ogg"
+			]
+		},
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
 		"dbfId": 53188,
 		"type": "Hero_power",
@@ -34956,6 +34961,14 @@ var parseCardsText = {
 		"set": "Hero_skins",
 		"name": "The Silver Hand",
 		"id": "CS2_101_H3_AT_132",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"SirAnnoyOTron_HeroPower_Sound": [
+				"SirAnnoyOTron_HeroPower_Sound.ogg"
+			]
+		},
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
 		"dbfId": 53913,
 		"type": "Hero_power",
@@ -36856,11 +36869,6 @@ var parseCardsText = {
 		"set": "Expert1",
 		"name": "Mercenary's Fee",
 		"id": "CS2_227e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (3) more.",
 		"dbfId": 52771,
 		"type": "Enchantment",
@@ -39564,11 +39572,6 @@ var parseCardsText = {
 		"set": "Expert1",
 		"name": "Pint-Sized Power",
 		"id": "EX1_076e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1) less.",
 		"dbfId": 52756,
 		"type": "Enchantment",
@@ -41763,6 +41766,113 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Expert1",
+		"artist": "Arthur Gimaldinov",
+		"referencedTags": [
+			"FREEZE"
+		],
+		"dbfId": 52255,
+		"type": "Spell",
+		"flavor": "This may appear weak at frost glance, but it's actually a very ice spell.",
+		"playerClass": "Mage",
+		"name": "Icicle",
+		"id": "EX1_179",
+		"audio": {
+			"play": [],
+			"Shared_Frost_Impact_Small_1": [
+				"Shared_Frost_Impact_Small_1.ogg"
+			],
+			"Shared_Frost_PreCast_1": [
+				"Shared_Frost_PreCast_1.ogg"
+			],
+			"death": [],
+			"Shared_Frost_Cast_Small_1": [
+				"Shared_Frost_Cast_Small_1.ogg"
+			],
+			"attack": [],
+			"Shared_Frost_Start_1": [
+				"Shared_Frost_Start_1.ogg"
+			],
+			"Shared_Frost_Fizzle_1": [
+				"Shared_Frost_Fizzle_1.ogg"
+			]
+		},
+		"text": "Deal $2 damage to a minion. If it's <b>Frozen</b>, draw a card.",
+		"cardClass": "MAGE",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Expert1",
+		"artist": "Derk Venneman",
+		"dbfId": 52262,
+		"type": "Spell",
+		"flavor": "Just a compilation of napkins of intellect.",
+		"playerClass": "Mage",
+		"name": "Tome of Intellect",
+		"id": "EX1_180",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"SpawnToHand_BabblingBook_Sound": [
+				"SpawnToHand_BabblingBook_Sound.ogg"
+			]
+		},
+		"text": "Add a random Mage spell to your hand.",
+		"cardClass": "MAGE",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Expert1",
+		"artist": "Arthur Gimaldinov",
+		"dbfId": 52263,
+		"type": "Spell",
+		"flavor": "\"Marco!\"\n\"Polo!\"\n\"Marco!\"\n\"Who dares summon me?!\"",
+		"playerClass": "Warlock",
+		"name": "Call of the Void",
+		"id": "EX1_181",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Warlock_Shadow_Buff_Impact_Sound": [
+				"Warlock_Shadow_Buff_Impact_Sound.ogg"
+			]
+		},
+		"text": "Add a random Demon to your hand.",
+		"cardClass": "WARLOCK",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Expert1",
+		"artist": "L. Lullabi & K. Turovec",
+		"dbfId": 52264,
+		"type": "Spell",
+		"flavor": "The class is always greener on the other side of the board.",
+		"playerClass": "Rogue",
+		"name": "Pilfer",
+		"id": "EX1_182",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Sneaky_Target_Start_01": [
+				"Sneaky_Target_Start_01.ogg"
+			]
+		},
+		"text": "Add a random card to your hand <i>(from your opponent's class)</i>.",
+		"cardClass": "ROGUE",
+		"rarity": "Common"
+	},
+	{
 		"cardImage": "EX1_238.png",
 		"collectible": true,
 		"cost": 1,
@@ -43164,11 +43274,6 @@ var parseCardsText = {
 		"set": "Expert1",
 		"name": "Portal Summoning",
 		"id": "EX1_315e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (2) less, but not less than (1).",
 		"dbfId": 52770,
 		"type": "Enchantment",
@@ -46854,11 +46959,6 @@ var parseCardsText = {
 		"set": "Expert1",
 		"name": "Soulweaving",
 		"id": "EX1_591e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your cards and powers that restore Health now deal damage instead.",
 		"dbfId": 52748,
 		"type": "Enchantment",
@@ -47289,11 +47389,6 @@ var parseCardsText = {
 		"set": "Expert1",
 		"name": "Apprentice's Assitance",
 		"id": "EX1_608e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1) less.",
 		"dbfId": 52759,
 		"type": "Enchantment",
@@ -47588,11 +47683,6 @@ var parseCardsText = {
 		"set": "Expert1",
 		"name": "Mana Drain",
 		"id": "EX1_616e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1) more.",
 		"dbfId": 52755,
 		"type": "Enchantment",
@@ -48232,11 +48322,6 @@ var parseCardsText = {
 		"hideStats": true,
 		"name": "Recharge! Recharge!",
 		"id": "FB_Annoyo_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Replace your deck with a fresh one.",
 		"dbfId": 52699,
 		"type": "Spell",
@@ -48289,11 +48374,6 @@ var parseCardsText = {
 		"hideStats": true,
 		"name": "Maximum Annoying!",
 		"id": "FB_Annoyo_002d",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Each Annoy-o-Tron summoned is +8/+8 more than the last.",
 		"dbfId": 52763,
 		"type": "Spell",
@@ -48307,11 +48387,6 @@ var parseCardsText = {
 		"hideStats": true,
 		"name": "Increase Volume",
 		"id": "FB_Annoyo_003",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your Hero Power now summons two \nAnnoy-o-Trons.",
 		"dbfId": 52764,
 		"type": "Spell",
@@ -48323,11 +48398,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Innkeeper Tools - Build A Brawl",
 		"id": "FB_BuildABrawl001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Play the Brawl as normal or Build a new brawl",
 		"dbfId": 49074,
 		"type": "Enchantment",
@@ -48361,11 +48431,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "By the Power of Ragnaros! Enchant",
 		"id": "FB_BuildABrawl001a_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Each turn reduce the cost of all cards by (1).",
 		"dbfId": 49113,
 		"type": "Enchantment",
@@ -48393,11 +48458,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Randomonium Enchant",
 		"id": "FB_BuildABrawl001b_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Each turn randomize the cost of all cards in your hand.",
 		"dbfId": 49118,
 		"type": "Enchantment",
@@ -48425,11 +48485,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Battle of Tol Barad Enchant",
 		"id": "FB_BuildABrawl001c_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "After a minion is played add a spell of the same mana cost to your hand. \n It costs (0).",
 		"dbfId": 49119,
 		"type": "Enchantment",
@@ -48440,11 +48495,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Innkeeper Tools - Build A Brawl 2",
 		"id": "FB_BuildABrawl002",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Second Tier of Choices for Build A Brawl",
 		"dbfId": 49129,
 		"type": "Enchantment",
@@ -48478,11 +48528,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Great Summoner Enchant",
 		"id": "FB_BuildABrawl002a_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Spells summon minions of the same mana cost.",
 		"dbfId": 49133,
 		"type": "Enchantment",
@@ -48510,11 +48555,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Masked Ball Enchant",
 		"id": "FB_BuildABrawl002b_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "All minions gain <b>Deathrattle:</b> Summon a minion that costs (2) less.",
 		"dbfId": 49134,
 		"type": "Enchantment",
@@ -48542,11 +48582,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Servant of Yogg Saron Enchant",
 		"id": "FB_BuildABrawl002c_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "All minons cast a random spell at a random target when played.",
 		"dbfId": 49135,
 		"type": "Enchantment",
@@ -48557,11 +48592,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Innkeeper Tools - Build A Brawl 3",
 		"id": "FB_BuildABrawl003",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Third Tier of Choices for Build A Brawl",
 		"dbfId": 49136,
 		"type": "Enchantment",
@@ -48594,11 +48624,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Clash of the Minions Enchant",
 		"id": "FB_BuildABrawl003b_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "All minions gain <b>Charge</b> and <b>Taunt</b>.",
 		"dbfId": 49140,
 		"type": "Enchantment",
@@ -48626,11 +48651,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Blood Magic Enchant",
 		"id": "FB_BuildABrawl003c_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "All spells cost health instead of mana",
 		"dbfId": 49142,
 		"type": "Enchantment",
@@ -48698,26 +48718,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Execute",
 		"id": "FB_Champs_CS2_108",
-		"audio": {
-			"play": [],
-			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
-		},
 		"text": "Destroy a damaged enemy minion.",
 		"dbfId": 49274,
 		"type": "Spell",
@@ -48756,43 +48756,17 @@ var parseCardsText = {
 	},
 	{
 		"cardImage": "FB_Champs_CS2_233.png",
+		"playerClass": "Rogue",
 		"cost": 2,
 		"set": "Tb",
+		"name": "Blade Flurry",
 		"mechanics": [
 			"AFFECTED_BY_SPELL_POWER"
 		],
+		"id": "FB_Champs_CS2_233",
+		"text": "Destroy your weapon and deal its damage to all enemies.",
 		"dbfId": 48851,
 		"type": "Spell",
-		"playerClass": "Rogue",
-		"name": "Blade Flurry",
-		"id": "FB_Champs_CS2_233",
-		"audio": {
-			"play": [],
-			"Rogue_BladeFlurry_Impact_1": [
-				"Rogue_BladeFlurry_Impact_1.ogg"
-			],
-			"Rogue_BladeFlurry_Impact_2": [
-				"Rogue_BladeFlurry_Impact_2.ogg"
-			],
-			"WoW_whirlwindshort": [
-				"WoW_whirlwindshort.ogg"
-			],
-			"death": [],
-			"Rogue_BladeFlurry_Impact_5": [
-				"Rogue_BladeFlurry_Impact_5.ogg"
-			],
-			"attack": [],
-			"Rogue_BladeFlurry_Impact_3": [
-				"Rogue_BladeFlurry_Impact_3.ogg"
-			],
-			"Rogue_BladeFlurry_Cast_1": [
-				"Rogue_BladeFlurry_Cast_1.ogg"
-			],
-			"Rogue_BladeFlurry_Impact_4": [
-				"Rogue_BladeFlurry_Impact_4.ogg"
-			]
-		},
-		"text": "Destroy your weapon and deal its damage to all enemies.",
 		"cardClass": "ROGUE",
 		"rarity": "Rare"
 	},
@@ -48958,11 +48932,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Bear Form",
 		"id": "FB_Champs_EX1_165b",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "+2 Health and <b>Taunt</b>.",
 		"dbfId": 49347,
 		"type": "Spell",
@@ -49043,32 +49012,6 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Keeper of the Grove",
 		"id": "FB_Champs_EX1_166",
-		"audio": {
-			"play": [
-				"VO_EX1_166_Play_01.ogg"
-			],
-			"Shared_Arcane_Fizzle_1": [
-				"Shared_Arcane_Fizzle_1.ogg"
-			],
-			"Shared_Arcane_PreCast_1": [
-				"Shared_Arcane_PreCast_1.ogg"
-			],
-			"death": [
-				"VO_EX1_166_Death_03.ogg"
-			],
-			"attack": [
-				"VO_EX1_166_Attack_02.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
-			"Shared_Lunar_Cast_01": [
-				"Shared_Lunar_Cast_01.ogg"
-			],
-			"Shared_Lunar_Impact_01": [
-				"Shared_Lunar_Impact_01.ogg"
-			]
-		},
 		"text": "<b>Choose One -</b> Deal 2 damage; or <b>Silence</b> a minion.",
 		"cardClass": "DRUID",
 		"rarity": "Rare"
@@ -49096,37 +49039,17 @@ var parseCardsText = {
 	},
 	{
 		"cardImage": "FB_Champs_EX1_246.png",
+		"playerClass": "Shaman",
 		"cost": 3,
 		"set": "Tb",
+		"name": "Hex",
 		"referencedTags": [
 			"TAUNT"
 		],
+		"id": "FB_Champs_EX1_246",
+		"text": "Transform a minion into a 0/1 Frog with <b>Taunt</b>.",
 		"dbfId": 49275,
 		"type": "Spell",
-		"playerClass": "Shaman",
-		"name": "Hex",
-		"id": "FB_Champs_EX1_246",
-		"audio": {
-			"play": [],
-			"Shared_Arcane_Fizzle_1": [
-				"Shared_Arcane_Fizzle_1.ogg"
-			],
-			"Shared_Arcane_PreCast_1": [
-				"Shared_Arcane_PreCast_1.ogg"
-			],
-			"death": [],
-			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
-			"SFX_HexFrog_EnterPlay": [
-				"SFX_HexFrog_EnterPlay.ogg"
-			]
-		},
-		"text": "Transform a minion into a 0/1 Frog with <b>Taunt</b>.",
 		"cardClass": "SHAMAN",
 		"rarity": "Free"
 	},
@@ -49431,17 +49354,6 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Druid of the Claw",
 		"id": "FB_Champs_OG_044a",
-		"audio": {
-			"play": [
-				"DruidOfTheClaw_OG_044a_Play.ogg"
-			],
-			"death": [
-				"DruidOfTheClaw_OG_044a_Death.ogg"
-			],
-			"attack": [
-				"DruidOfTheClaw_OG_044a_Attack.ogg"
-			]
-		},
 		"text": "<b>Charge</b>\n<b>Taunt</b>",
 		"cardClass": "DRUID",
 		"rarity": "Common"
@@ -49516,17 +49428,6 @@ var parseCardsText = {
 		"name": "Damaged Golem",
 		"health": 1,
 		"id": "FB_Champs_skele21",
-		"audio": {
-			"play": [
-				"SFX_skele21_EnterPlay.ogg"
-			],
-			"death": [
-				"SFX_skele21_Death.ogg"
-			],
-			"attack": [
-				"SFX_skele21_Attack.ogg"
-			]
-		},
 		"dbfId": 49349,
 		"type": "Minion",
 		"cardClass": "NEUTRAL"
@@ -49536,6 +49437,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Discover Card",
 		"id": "FB_Duelers_Discover",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 47123,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -49545,6 +49451,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Discover Card 1",
 		"id": "FB_Duelers_Discover1",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 54094,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -49554,6 +49465,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Discover Card 2",
 		"id": "FB_Duelers_Discover2",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 54093,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -49592,6 +49508,11 @@ var parseCardsText = {
 		"hideStats": true,
 		"name": "Draw!",
 		"id": "FB_Duelers_Draw",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Both Players gain 10 mana.",
 		"dbfId": 51674,
 		"type": "Spell",
@@ -49615,6 +49536,14 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"id": "FB_Duelers_Endl",
+		"audio": {
+			"play": [],
+			"Corrupt_Impact_Sound_01": [
+				"Corrupt_Impact_Sound_01.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Deal damage randomly between each hero's side, until one dies.",
 		"dbfId": 51864,
 		"type": "Spell",
@@ -49625,6 +49554,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Sudden Death Ench",
 		"id": "FB_Duelers_SuddenDeath",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 53167,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -49634,11 +49568,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Innkeeper Tools - ELO",
 		"id": "FB_ELO001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Reset the brawl or play as normal",
 		"dbfId": 47269,
 		"type": "Enchantment",
@@ -49687,11 +49616,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "ELO Reset Confirmation",
 		"id": "FB_ELO001bench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47272,
 		"type": "Enchantment",
 		"entourage": [
@@ -49739,11 +49663,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Competitive Spirits",
 		"id": "FB_ELO002",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Gain an advantage against your opponent.",
 		"dbfId": 47275,
 		"type": "Enchantment",
@@ -49877,11 +49796,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Spirit of Wisdom",
 		"id": "FB_ELO002b_ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Reduce the Cost of all spells in your deck and hand by (1).",
 		"dbfId": 47507,
 		"type": "Enchantment",
@@ -49971,11 +49885,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Innkeepers Choice All-Star Squad Setup",
 		"id": "FB_IKC_AllStar_Setup_Ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 50206,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -49999,11 +49908,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Innkeepers Choice Setup",
 		"id": "FB_IKC_KeepSetUp_Ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47839,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -50821,11 +50725,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "LK Phase 2 Debug",
 		"id": "FB_LKDebug001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Change boss to phase 2",
 		"dbfId": 46592,
 		"type": "Spell",
@@ -50837,11 +50736,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "LK Phase 3 Debug",
 		"id": "FB_LKDebug002",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Change boss to phase 3",
 		"dbfId": 46593,
 		"type": "Spell",
@@ -50991,11 +50885,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Lich King Modifications Copy",
 		"id": "FB_LKStats002ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 46579,
 		"type": "Enchantment",
 		"entourage": [
@@ -51010,11 +50899,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Saved Card",
 		"id": "FB_Reload_SavedCard",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 52039,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -51296,6 +51180,11 @@ var parseCardsText = {
 		"name": "Infinite Toki",
 		"health": 30,
 		"id": "FB_Toki2",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 50153,
 		"type": "Hero",
 		"entourage": [
@@ -51311,6 +51200,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Join Forces",
 		"id": "FB_Toki2_Hero",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Discover</b> a card from your opponent's hand.",
 		"dbfId": 50155,
 		"type": "Hero_power",
@@ -51326,6 +51220,14 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"id": "FB_Toki_AttackPlayers",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Warlock_Shadow_Buff_Impact_Sound": [
+				"Warlock_Shadow_Buff_Impact_Sound.ogg"
+			]
+		},
 		"text": "Deal Attack damage to each Hero.",
 		"dbfId": 50873,
 		"type": "Spell",
@@ -51345,116 +51247,210 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"playerClass": "Mage",
 		"cost": 1,
 		"set": "Tb",
-		"attack": 0,
-		"name": "Withering Anomaly",
 		"health": 1,
 		"mechanics": [
 			"TAUNT"
 		],
-		"id": "FB_Toki_Boss_aggro",
-		"text": "At the end of each turn, deal damage equal to this minion's Attack to each Hero.",
 		"dbfId": 51993,
 		"type": "Minion",
+		"playerClass": "Mage",
+		"attack": 0,
+		"name": "Withering Anomaly",
+		"id": "FB_Toki_Boss_aggro",
+		"audio": {
+			"play": [
+				"Spirit_Underlay_Play.ogg"
+			],
+			"death": [
+				"Spirit_Underlay_Death.ogg"
+			],
+			"attack": [
+				"Spirit_Underlay_Attack.ogg"
+			]
+		},
+		"text": "At the end of each turn, deal damage equal to this minion's Attack to each Hero.",
 		"cardClass": "MAGE"
 	},
 	{
-		"playerClass": "Mage",
 		"cost": 1,
 		"set": "Tb",
-		"attack": 0,
-		"name": "Budding Anomaly",
 		"health": 1,
 		"mechanics": [
 			"TAUNT"
 		],
-		"id": "FB_Toki_Boss_baby",
-		"text": "At the end of each turn, deal damage equal to this minion's Attack to characters opposite it.",
 		"dbfId": 50183,
 		"type": "Minion",
+		"playerClass": "Mage",
+		"attack": 0,
+		"name": "Budding Anomaly",
+		"id": "FB_Toki_Boss_baby",
+		"audio": {
+			"play": [
+				"RazaTheUnchained_Underlay_Play.ogg",
+				"Spirit_Underlay_Play.ogg"
+			],
+			"death": [
+				"RazaTheUnchained_Underlay_Death.ogg",
+				"Spirit_Underlay_Death.ogg"
+			],
+			"attack": [
+				"RazaTheUnchained_Underlay_Attack.ogg",
+				"Spirit_Underlay_Attack.ogg"
+			]
+		},
+		"text": "At the end of each turn, deal damage equal to this minion's Attack to characters opposite it.",
 		"cardClass": "MAGE"
 	},
 	{
-		"playerClass": "Mage",
 		"cost": 1,
 		"set": "Tb",
-		"attack": 0,
-		"name": "Summoner Anomaly",
 		"health": 1,
 		"mechanics": [
 			"TAUNT"
 		],
-		"id": "FB_Toki_Boss_mental",
-		"text": "At the end of each turn, summon two 2/3 Paradoxes.",
 		"dbfId": 51995,
 		"type": "Minion",
+		"playerClass": "Mage",
+		"attack": 0,
+		"name": "Summoner Anomaly",
+		"id": "FB_Toki_Boss_mental",
+		"audio": {
+			"play": [
+				"Arcanosmith_Play_Underlay.ogg",
+				"Spirit_Underlay_Play.ogg"
+			],
+			"death": [
+				"Arcanosmith_Death_Underlay.ogg",
+				"Spirit_Underlay_Death.ogg"
+			],
+			"attack": [
+				"Arcanosmith_Attack_Underlay.ogg",
+				"Spirit_Underlay_Attack.ogg"
+			]
+		},
+		"text": "At the end of each turn, summon two 2/3 Paradoxes.",
 		"cardClass": "MAGE"
 	},
 	{
-		"playerClass": "Neutral",
 		"cost": 2,
 		"set": "Tb",
-		"attack": 2,
-		"name": "Paradox",
 		"health": 3,
 		"mechanics": [
 			"TAUNT"
 		],
-		"id": "FB_Toki_Boss_Minion1",
-		"text": "Auto attack: Deal 2 damage to characters opposite this one.",
 		"dbfId": 50347,
 		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Paradox",
+		"id": "FB_Toki_Boss_Minion1",
+		"audio": {
+			"play": [
+				"EX1_616_Mana_Wraith_EnterPlay1.ogg",
+				"Spirit_Underlay_Play.ogg"
+			],
+			"death": [
+				"EX1_616_Mana_Wraith_Death2.ogg",
+				"Spirit_Underlay_Death.ogg"
+			],
+			"attack": [
+				"EX1_616_Mana_Wraith_Attack2.ogg",
+				"Spirit_Underlay_Attack.ogg"
+			]
+		},
+		"text": "Auto attack: Deal 2 damage to characters opposite this one.",
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"playerClass": "Mage",
 		"cost": 1,
 		"set": "Tb",
-		"attack": 0,
-		"name": "Deadly Anomaly",
 		"health": 1,
 		"mechanics": [
 			"POISONOUS",
 			"TAUNT"
 		],
-		"id": "FB_Toki_Boss_Poison",
-		"text": "<b>Poisonous.</b> At end of each turn, deal damage equal to this minion's Attack to characters opposite it.",
 		"dbfId": 51992,
 		"type": "Minion",
+		"playerClass": "Mage",
+		"attack": 0,
+		"name": "Deadly Anomaly",
+		"id": "FB_Toki_Boss_Poison",
+		"audio": {
+			"play": [
+				"VerminSensei_Underlay_Play.ogg",
+				"Spirit_Underlay_Play.ogg"
+			],
+			"death": [
+				"Spirit_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VerminSensei_Underlay_Attack.ogg",
+				"Spirit_Underlay_Attack.ogg"
+			]
+		},
+		"text": "<b>Poisonous.</b> At end of each turn, deal damage equal to this minion's Attack to characters opposite it.",
 		"cardClass": "MAGE"
 	},
 	{
-		"playerClass": "Mage",
 		"cost": 1,
 		"set": "Tb",
-		"attack": 0,
-		"name": "Shield Anomaly",
 		"health": 1,
 		"mechanics": [
 			"TAUNT"
 		],
-		"id": "FB_Toki_Boss_Shielded",
-		"text": "At the end of each turn, gain <b>Divine Shield</b>.",
 		"dbfId": 51991,
 		"type": "Minion",
+		"playerClass": "Mage",
+		"attack": 0,
+		"name": "Shield Anomaly",
+		"id": "FB_Toki_Boss_Shielded",
+		"audio": {
+			"play": [
+				"SparkEngine_Underlay_Play.ogg",
+				"Spirit_Underlay_Play.ogg"
+			],
+			"death": [
+				"SparkEngine_Underlay_Death.ogg",
+				"Spirit_Underlay_Death.ogg"
+			],
+			"attack": [
+				"SparkEngine_Underlay_Attack.ogg",
+				"Spirit_Underlay_Attack.ogg"
+			]
+		},
+		"text": "At the end of each turn, gain <b>Divine Shield</b>.",
 		"cardClass": "MAGE"
 	},
 	{
-		"playerClass": "Mage",
 		"cost": 0,
 		"set": "Tb",
-		"attack": 0,
-		"name": "Bow Anomaly",
 		"health": 1,
 		"mechanics": [
 			"TAUNT"
 		],
-		"id": "FB_Toki_Boss_spell",
-		"text": "At the end of each turn, deal damage equal to this minion's Attack to all other minions.",
 		"dbfId": 51994,
 		"type": "Minion",
+		"playerClass": "Mage",
+		"attack": 0,
+		"name": "Bow Anomaly",
+		"id": "FB_Toki_Boss_spell",
+		"audio": {
+			"play": [
+				"Arcane_Arrow_Targeted_Fire_02.ogg",
+				"Spirit_Underlay_Play.ogg"
+			],
+			"death": [
+				"Arcane_Arrow_Targeted_Fire_03.ogg",
+				"Spirit_Underlay_Death.ogg"
+			],
+			"attack": [
+				"Arcane_Arrow_Targeted_Fire_01.ogg",
+				"Spirit_Underlay_Attack.ogg"
+			]
+		},
+		"text": "At the end of each turn, deal damage equal to this minion's Attack to all other minions.",
 		"cardClass": "MAGE"
 	},
 	{
@@ -51471,6 +51467,20 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Anomalous Rex",
 		"id": "FB_Toki_Boss_teen",
+		"audio": {
+			"play": [
+				"BloodBeast_ICCA09_001t1_Play.ogg",
+				"Spirit_Underlay_Play.ogg"
+			],
+			"death": [
+				"BloodBeast_ICCA09_001t1_Death.ogg",
+				"Spirit_Underlay_Death.ogg"
+			],
+			"attack": [
+				"BloodBeast_ICCA09_001t1_Attack.ogg",
+				"Spirit_Underlay_Attack.ogg"
+			]
+		},
 		"text": "Does TWO powers each turn!\n<b>Deathrattle</b>: You win!",
 		"cardClass": "MAGE"
 	},
@@ -51484,6 +51494,11 @@ var parseCardsText = {
 			"DIVINE_SHIELD"
 		],
 		"id": "FB_Toki_BossSpell_01",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Gain <b><b>Divine Shield</b>.</b>\nIf you already have it, then cast Timely Blast.",
 		"dbfId": 52243,
 		"type": "Spell",
@@ -51499,6 +51514,14 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"id": "FB_Toki_do_auto",
+		"audio": {
+			"play": [],
+			"Warlock_SiphonSoul_TargetImpact_1": [
+				"Warlock_SiphonSoul_TargetImpact_1.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Deal damage equal to this minion's Attack to characters opposite it.",
 		"dbfId": 53060,
 		"type": "Spell",
@@ -51510,6 +51533,15 @@ var parseCardsText = {
 		"name": "Toki, Time Tinker",
 		"health": 30,
 		"id": "FB_Toki_Hero",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_900h_Female_Gnome_Death_01.ogg"
+			],
+			"attack": [
+				"VO_GILA_900h_Female_Gnome_Attack_02.ogg"
+			]
+		},
 		"dbfId": 50211,
 		"type": "Hero",
 		"cardClass": "MAGE"
@@ -51521,6 +51553,11 @@ var parseCardsText = {
 		"hideStats": true,
 		"name": "Augment",
 		"id": "FB_Toki_IncreaseHealth",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Give all Anomalies +3 Attack.",
 		"dbfId": 50453,
 		"type": "Spell",
@@ -51531,6 +51568,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Augmented Reality",
 		"id": "FB_Toki_IncreaseHealthEnch",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Attack increased.",
 		"dbfId": 50829,
 		"type": "Enchantment",
@@ -51542,6 +51584,17 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Future Investment",
 		"id": "FB_Toki_ManaPortal",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Arcane_Impact_WithCards_Sound": [
+				"Arcane_Impact_WithCards_Sound.ogg"
+			],
+			"attack": [],
+			"Mage_ArcaneMissiles_Impact_1": [
+				"Mage_ArcaneMissiles_Impact_1.ogg"
+			]
+		},
 		"text": "Cards in your hand, and next game's starting hand, cost (0).",
 		"dbfId": 50325,
 		"type": "Spell",
@@ -51556,6 +51609,17 @@ var parseCardsText = {
 			"ECHO"
 		],
 		"id": "FB_Toki_ManaPortal2",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Arcane_Impact_WithCards_Sound": [
+				"Arcane_Impact_WithCards_Sound.ogg"
+			],
+			"attack": [],
+			"Mage_ArcaneMissiles_Impact_1": [
+				"Mage_ArcaneMissiles_Impact_1.ogg"
+			]
+		},
 		"text": "Your starting hand's cards all cost (0).",
 		"dbfId": 50765,
 		"type": "Spell",
@@ -51576,6 +51640,11 @@ var parseCardsText = {
 		"elite": true,
 		"name": "Defeat the Anomalies",
 		"id": "FB_Toki_Quest",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Quest:</b> Defeat\n8 Anomalies\n<b>Effect:</b>Summon Anomalous Rex.",
 		"cardClass": "WARRIOR",
 		"rarity": "Legendary"
@@ -51588,6 +51657,11 @@ var parseCardsText = {
 			"ENCHANTMENT_INVISIBLE"
 		],
 		"id": "FB_Toki_ReverseTurnEnch",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Costs (0).",
 		"dbfId": 50804,
 		"type": "Enchantment",
@@ -51600,6 +51674,14 @@ var parseCardsText = {
 		"hideStats": true,
 		"name": "Pair of Paradoxes",
 		"id": "FB_Toki_SummonParadoxes",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"EtherealWispy_CustomSpawn_Sound": [
+				"EtherealWispy_CustomSpawn_Sound.ogg"
+			]
+		},
 		"text": "Summon two 2/3 Paradoxes.",
 		"dbfId": 50447,
 		"type": "Spell",
@@ -51611,6 +51693,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Portal to the Future!",
 		"id": "FB_Toki_TimePortal",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Copy a minion. Fill next game's starting hand with it.",
 		"dbfId": 50171,
 		"type": "Spell",
@@ -51622,6 +51709,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Portal FROM the Future!",
 		"id": "FB_Toki_TimePortal_Reload",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Fill your hand with copies of last game's minion.",
 		"dbfId": 50172,
 		"type": "Spell",
@@ -51633,6 +51725,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Arrownado!",
 		"id": "FB_Toki_TimePortalSpell",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Deal damage equal to the Anomaly's Attack to all other minions.",
 		"dbfId": 50801,
 		"type": "Spell",
@@ -52329,11 +52426,6 @@ var parseCardsText = {
 		"set": "Naxx",
 		"name": "Webbed",
 		"id": "FP1_017e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (2) more.",
 		"dbfId": 52757,
 		"type": "Enchantment",
@@ -52878,11 +52970,6 @@ var parseCardsText = {
 		"set": "Naxx",
 		"name": "Rivendare Deathrattle",
 		"id": "FP1_031e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your minions trigger their <b>Deathrattles</b> twice.",
 		"dbfId": 52760,
 		"type": "Enchantment",
@@ -56540,11 +56627,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Voodoo Doll Cursed",
 		"id": "GIL_614e1",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Destroyed when Voodoo Doll is destroyed.",
 		"dbfId": 50350,
 		"type": "Enchantment",
@@ -56698,11 +56780,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Glinda's Call",
 		"id": "GIL_618e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Has <b>Echo</b>.",
 		"dbfId": 52780,
 		"type": "Enchantment",
@@ -58212,11 +58289,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Badsong",
 		"id": "GIL_800e2",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (0).",
 		"dbfId": 48255,
 		"type": "Enchantment",
@@ -59578,11 +59650,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "On the Hunt",
 		"id": "GILA_490",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48436,
 		"type": "Spell",
@@ -59606,11 +59673,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Pack Mentality",
 		"id": "GILA_491",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48437,
 		"type": "Spell",
@@ -59635,11 +59697,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Go for the Throat",
 		"id": "GILA_492",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48438,
 		"type": "Spell",
@@ -59663,11 +59720,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Unwavering",
 		"id": "GILA_493",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48439,
 		"type": "Spell",
@@ -59694,11 +59746,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Divide and Conquer",
 		"id": "GILA_494",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48440,
 		"type": "Spell",
@@ -59724,11 +59771,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Companions",
 		"id": "GILA_495",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48441,
 		"type": "Spell",
@@ -59755,11 +59797,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Exotic Beasts",
 		"id": "GILA_496",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 49146,
 		"type": "Spell",
@@ -59785,11 +59822,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Stomp, Stomp, STOMP",
 		"id": "GILA_497",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 49147,
 		"type": "Spell",
@@ -59814,11 +59846,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Thick Hide",
 		"id": "GILA_498",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 49148,
 		"type": "Spell",
@@ -59844,11 +59871,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Unload",
 		"id": "GILA_499",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 49511,
 		"type": "Spell",
@@ -60422,11 +60444,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "The Professional",
 		"id": "GILA_590",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48008,
 		"type": "Spell",
@@ -60453,11 +60470,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Run n' Gun",
 		"id": "GILA_591",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48011,
 		"type": "Spell",
@@ -60481,11 +60493,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Mercenaries",
 		"id": "GILA_592",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48012,
 		"type": "Spell",
@@ -60514,11 +60521,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Resourceful",
 		"id": "GILA_593",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48112,
 		"type": "Spell",
@@ -60547,11 +60549,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Rapid Fire",
 		"id": "GILA_594",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48119,
 		"type": "Spell",
@@ -60577,11 +60574,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Copycat",
 		"id": "GILA_595",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48118,
 		"type": "Spell",
@@ -60610,11 +60602,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Trapper",
 		"id": "GILA_596",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 48117,
 		"type": "Spell",
@@ -60640,11 +60627,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Arsenal",
 		"id": "GILA_597",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 49144,
 		"type": "Spell",
@@ -60668,11 +60650,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Specialist",
 		"id": "GILA_598",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Add to your deck:\n'{0}'\n'{1}'\n'{2}'",
 		"dbfId": 49145,
 		"type": "Spell",
@@ -60856,11 +60833,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Victorious Rally Player Enchant",
 		"id": "GILA_602e2",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47954,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -60970,11 +60942,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Extra Powder Player Enchant",
 		"id": "GILA_604e2",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47965,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -61051,11 +61018,6 @@ var parseCardsText = {
 			"TRIGGER_VISUAL"
 		],
 		"id": "GILA_607e2",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47985,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -61471,11 +61433,6 @@ var parseCardsText = {
 		"artist": "Slawomir Maniak",
 		"name": "Ambush!",
 		"id": "GILA_810e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Has <b>Charge</b>.",
 		"dbfId": 50777,
 		"type": "Enchantment",
@@ -65139,11 +65096,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Terrified",
 		"id": "GILA_BOSS_58e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (4) less.",
 		"dbfId": 50620,
 		"type": "Enchantment",
@@ -65805,11 +65757,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Berserker",
 		"id": "GILA_Darius_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49298,
 		"type": "Spell",
 		"entourage": [
@@ -65834,11 +65781,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Pirates",
 		"id": "GILA_Darius_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49299,
 		"type": "Spell",
 		"entourage": [
@@ -65864,11 +65806,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Tactical",
 		"id": "GILA_Darius_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49300,
 		"type": "Spell",
 		"entourage": [
@@ -65893,11 +65830,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Attack!",
 		"id": "GILA_Darius_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49301,
 		"type": "Spell",
 		"entourage": [
@@ -65921,11 +65853,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Vanguard",
 		"id": "GILA_Darius_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49302,
 		"type": "Spell",
 		"entourage": [
@@ -65950,11 +65877,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Armory",
 		"id": "GILA_Darius_06",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49303,
 		"type": "Spell",
 		"entourage": [
@@ -65980,11 +65902,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Commander",
 		"id": "GILA_Darius_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49304,
 		"type": "Spell",
 		"entourage": [
@@ -66009,11 +65926,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Legends",
 		"id": "GILA_Darius_08",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49305,
 		"type": "Spell",
 		"entourage": [
@@ -66040,11 +65952,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Strike",
 		"id": "GILA_Darius_09",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49306,
 		"type": "Spell",
 		"entourage": [
@@ -66069,11 +65976,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Warcry",
 		"id": "GILA_Darius_10",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49307,
 		"type": "Spell",
 		"entourage": [
@@ -66129,11 +66031,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Chaos",
 		"id": "GILA_Toki_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49285,
 		"type": "Spell",
 		"entourage": [
@@ -66158,11 +66055,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Wild Magic",
 		"id": "GILA_Toki_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49286,
 		"type": "Spell",
 		"entourage": [
@@ -66185,11 +66077,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Erratic Creatures",
 		"id": "GILA_Toki_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49287,
 		"type": "Spell",
 		"entourage": [
@@ -66216,11 +66103,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Frosty",
 		"id": "GILA_Toki_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49288,
 		"type": "Spell",
 		"entourage": [
@@ -66246,11 +66128,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Legends",
 		"id": "GILA_Toki_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49289,
 		"type": "Spell",
 		"entourage": [
@@ -66274,11 +66151,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Knowledge",
 		"id": "GILA_Toki_06",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49290,
 		"type": "Spell",
 		"entourage": [
@@ -66303,11 +66175,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Elementalist",
 		"id": "GILA_Toki_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49291,
 		"type": "Spell",
 		"entourage": [
@@ -66333,11 +66200,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Magical Friends",
 		"id": "GILA_Toki_08",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49292,
 		"type": "Spell",
 		"entourage": [
@@ -66365,11 +66227,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Lost Secrets",
 		"id": "GILA_Toki_09",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49293,
 		"type": "Spell",
 		"entourage": [
@@ -66396,11 +66253,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "Mechanical",
 		"id": "GILA_Toki_10",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49294,
 		"type": "Spell",
 		"entourage": [
@@ -66427,11 +66279,6 @@ var parseCardsText = {
 		"set": "Gilneas",
 		"name": "BOOM!",
 		"id": "GILA_Toki_11",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 50519,
 		"type": "Spell",
 		"entourage": [
@@ -66642,11 +66489,6 @@ var parseCardsText = {
 		"set": "Gvg",
 		"name": "Warping In",
 		"id": "GVG_006e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1) less.",
 		"dbfId": 52781,
 		"type": "Enchantment",
@@ -68851,7 +68693,16 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Barrel_exp_base": [
+				"Barrel_exp_base.ogg"
+			],
+			"FX_FireballEvent04_SpellImpact_01": [
+				"FX_FireballEvent04_SpellImpact_01.ogg"
+			],
+			"Bomb_Missile_Ball_Sound_01": [
+				"Bomb_Missile_Ball_Sound_01.ogg"
+			]
 		},
 		"text": "<b>Casts When Drawn</b>\nYou take 10 damage.",
 		"cardClass": "WARRIOR"
@@ -71839,6 +71690,27 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"playerClass": "Shaman",
+		"collectible": true,
+		"set": "Hero_skins",
+		"name": "King Rastakhan",
+		"health": 30,
+		"id": "HERO_02b",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_HERO_02b_Male_Troll_Death_02.ogg"
+			],
+			"attack": [
+				"VO_HERO_02b_Male_Troll_Attack_01.ogg"
+			]
+		},
+		"dbfId": 53237,
+		"type": "Hero",
+		"cardClass": "SHAMAN",
+		"rarity": "Free"
+	},
+	{
 		"cardImage": "HERO_03.png",
 		"playerClass": "Rogue",
 		"collectible": true,
@@ -71955,6 +71827,15 @@ var parseCardsText = {
 		"name": "Sir Annoy-O",
 		"health": 30,
 		"id": "HERO_04c",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_AnnoyO_Male_Mech_Death_01.ogg"
+			],
+			"attack": [
+				"VO_AnnoyO_Male_Mech_Attack_01.ogg"
+			]
+		},
 		"dbfId": 53187,
 		"type": "Hero",
 		"cardClass": "PALADIN",
@@ -74061,11 +73942,6 @@ var parseCardsText = {
 		"set": "Icecrown",
 		"name": "Dooooooomed!",
 		"id": "ICC_083e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1) more.",
 		"dbfId": 52778,
 		"type": "Enchantment",
@@ -75290,11 +75166,6 @@ var parseCardsText = {
 		"set": "Icecrown",
 		"name": "Exhumed",
 		"id": "ICC_243e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (2) less.",
 		"dbfId": 52779,
 		"type": "Enchantment",
@@ -76460,11 +76331,6 @@ var parseCardsText = {
 		"set": "Icecrown",
 		"name": "Unravelled",
 		"id": "ICC_706e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (2) more.",
 		"dbfId": 52776,
 		"type": "Enchantment",
@@ -78843,11 +78709,6 @@ var parseCardsText = {
 		"set": "Icecrown",
 		"name": "Frost Magics",
 		"id": "ICC_901e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your end of turn effects trigger twice.",
 		"dbfId": 52777,
 		"type": "Enchantment",
@@ -82784,11 +82645,6 @@ var parseCardsText = {
 		"set": "Kara",
 		"name": "Violet Immunity",
 		"id": "KAR_712e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "<b>Immune</b>.",
 		"dbfId": 52769,
 		"type": "Enchantment",
@@ -84941,11 +84797,6 @@ var parseCardsText = {
 		"set": "Kara",
 		"name": "Protecting the Gallery",
 		"id": "KARA_07_02e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 40967,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -86350,11 +86201,6 @@ var parseCardsText = {
 		"set": "Kara",
 		"name": "Enfeeble",
 		"id": "KARA_13_11e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Health changed to 1.",
 		"dbfId": 40561,
 		"type": "Enchantment",
@@ -87687,11 +87533,6 @@ var parseCardsText = {
 		"set": "Loe",
 		"name": "Seawitching",
 		"id": "LOE_038e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (5).",
 		"dbfId": 52765,
 		"type": "Enchantment",
@@ -88089,11 +87930,6 @@ var parseCardsText = {
 		"set": "Loe",
 		"name": "Bronzebeard Battlecry",
 		"id": "LOE_077e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your <b>Battlecries</b> trigger twice.",
 		"dbfId": 52768,
 		"type": "Enchantment",
@@ -88459,6 +88295,9 @@ var parseCardsText = {
 		"id": "LOE_110t",
 		"audio": {
 			"play": [],
+			"Warlock_SiphonSoul_TargetImpact_1": [
+				"Warlock_SiphonSoul_TargetImpact_1.ogg"
+			],
 			"death": [],
 			"attack": []
 		},
@@ -92244,11 +92083,6 @@ var parseCardsText = {
 		"set": "Loe",
 		"name": "Scarvashed",
 		"id": "LOEA16_21e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1) more.",
 		"dbfId": 52766,
 		"type": "Enchantment",
@@ -92288,11 +92122,6 @@ var parseCardsText = {
 		"set": "Loe",
 		"name": "Heroic Scarvashed",
 		"id": "LOEA16_21He",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (2) more.",
 		"dbfId": 52767,
 		"type": "Enchantment",
@@ -92985,11 +92814,6 @@ var parseCardsText = {
 		"set": "Og",
 		"name": "Shadowy",
 		"id": "LOOT_010e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "1/1.",
 		"dbfId": 46457,
 		"type": "Enchantment",
@@ -98628,11 +98452,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Explosive",
 		"id": "LOOT_440e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "ON FIRE!!!!",
 		"dbfId": 48775,
 		"type": "Enchantment",
@@ -99389,11 +99208,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Darkness Candle Detect",
 		"id": "LOOT_526et",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 48694,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -100965,11 +100779,6 @@ var parseCardsText = {
 			"AURA"
 		],
 		"id": "LOOTA_828e2",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "+1/+1.",
 		"dbfId": 47622,
 		"type": "Enchantment",
@@ -101147,11 +100956,6 @@ var parseCardsText = {
 			"AURA"
 		],
 		"id": "LOOTA_832e2",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47623,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -102004,11 +101808,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "George and Karl Enchantment",
 		"id": "LOOTA_BOSS_15e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47467,
 		"type": "Enchantment",
 		"cardClass": "PALADIN"
@@ -102156,11 +101955,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Rat Race",
 		"id": "LOOTA_BOSS_18p",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Rats.",
 		"dbfId": 45894,
 		"type": "Hero_power",
@@ -104201,11 +103995,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Mana Growth",
 		"id": "LOOTA_Druid_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47444,
 		"type": "Spell",
 		"entourage": [
@@ -104228,11 +104017,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Jungle King",
 		"id": "LOOTA_Druid_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47445,
 		"type": "Spell",
 		"entourage": [
@@ -104259,11 +104043,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Natural Defense",
 		"id": "LOOTA_Druid_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47446,
 		"type": "Spell",
 		"entourage": [
@@ -104287,11 +104066,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Jade Fangs",
 		"id": "LOOTA_Druid_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47447,
 		"type": "Spell",
 		"entourage": [
@@ -104309,11 +104083,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Stampede",
 		"id": "LOOTA_Druid_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47448,
 		"type": "Spell",
 		"entourage": [
@@ -104340,11 +104109,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Jungle Quest",
 		"id": "LOOTA_Druid_06",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47449,
 		"type": "Spell",
 		"entourage": [
@@ -104368,11 +104132,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Cult of C'thun",
 		"id": "LOOTA_Druid_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47450,
 		"type": "Spell",
 		"entourage": [
@@ -104395,11 +104154,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Wise Decisions",
 		"id": "LOOTA_Druid_08",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47451,
 		"type": "Spell",
 		"entourage": [
@@ -104425,11 +104179,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Balance",
 		"id": "LOOTA_Druid_09",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47452,
 		"type": "Spell",
 		"entourage": [
@@ -104451,11 +104200,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Restoration",
 		"id": "LOOTA_Druid_10",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47453,
 		"type": "Spell",
 		"entourage": [
@@ -104478,11 +104222,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Taunt",
 		"id": "LOOTA_Druid_11",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47454,
 		"type": "Spell",
 		"entourage": [
@@ -104508,11 +104247,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Stomp",
 		"id": "LOOTA_Druid_12",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47455,
 		"type": "Spell",
 		"entourage": [
@@ -104538,11 +104272,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Wee Beasts",
 		"id": "LOOTA_Hunter_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47087,
 		"type": "Spell",
 		"entourage": [
@@ -104568,11 +104297,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Big Beasts",
 		"id": "LOOTA_Hunter_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47088,
 		"type": "Spell",
 		"entourage": [
@@ -104596,11 +104320,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Shots",
 		"id": "LOOTA_Hunter_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47089,
 		"type": "Spell",
 		"entourage": [
@@ -104625,11 +104344,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Summoner",
 		"id": "LOOTA_Hunter_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47090,
 		"type": "Spell",
 		"entourage": [
@@ -104655,11 +104369,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Secrets",
 		"id": "LOOTA_Hunter_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47091,
 		"type": "Spell",
 		"entourage": [
@@ -104689,11 +104398,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Beast Training",
 		"id": "LOOTA_Hunter_06",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47092,
 		"type": "Spell",
 		"entourage": [
@@ -104715,11 +104419,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Weapons",
 		"id": "LOOTA_Hunter_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47093,
 		"type": "Spell",
 		"entourage": [
@@ -104743,11 +104442,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Tracker",
 		"id": "LOOTA_Hunter_08",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47094,
 		"type": "Spell",
 		"entourage": [
@@ -104770,11 +104464,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Deathrattle",
 		"id": "LOOTA_Hunter_09",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47095,
 		"type": "Spell",
 		"entourage": [
@@ -104803,11 +104492,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Legendary",
 		"id": "LOOTA_Hunter_10",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47096,
 		"type": "Spell",
 		"entourage": [
@@ -104830,11 +104514,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Defense",
 		"id": "LOOTA_Hunter_11",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47097,
 		"type": "Spell",
 		"entourage": [
@@ -104857,11 +104536,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Smugglers",
 		"id": "LOOTA_Hunter_12",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47578,
 		"type": "Spell",
 		"entourage": [
@@ -104882,11 +104556,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Chaos",
 		"id": "LOOTA_Mage_20",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 46829,
 		"type": "Spell",
 		"entourage": [
@@ -105183,11 +104852,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Unique",
 		"id": "LOOTA_Mage_32",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47560,
 		"type": "Spell",
 		"entourage": [
@@ -105558,11 +105222,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Holy",
 		"id": "LOOTA_Priest_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47367,
 		"type": "Spell",
 		"entourage": [
@@ -105587,11 +105246,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Last Rites",
 		"id": "LOOTA_Priest_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47368,
 		"type": "Spell",
 		"entourage": [
@@ -105626,11 +105280,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Domination",
 		"id": "LOOTA_Priest_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47369,
 		"type": "Spell",
 		"entourage": [
@@ -105659,11 +105308,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Resurrection",
 		"id": "LOOTA_Priest_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47370,
 		"type": "Spell",
 		"entourage": [
@@ -105686,11 +105330,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Bag of Tricks",
 		"id": "LOOTA_Priest_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47372,
 		"type": "Spell",
 		"entourage": [
@@ -105719,11 +105358,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Shadow",
 		"id": "LOOTA_Priest_06",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47374,
 		"type": "Spell",
 		"entourage": [
@@ -105750,11 +105384,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Dragon Priest",
 		"id": "LOOTA_Priest_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47375,
 		"type": "Spell",
 		"entourage": [
@@ -105786,11 +105415,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Discipline",
 		"id": "LOOTA_Priest_08",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47376,
 		"type": "Spell",
 		"entourage": [
@@ -105812,11 +105436,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Unique",
 		"id": "LOOTA_Priest_10",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47378,
 		"type": "Spell",
 		"entourage": [
@@ -105832,11 +105451,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Elementals",
 		"id": "LOOTA_Priest_12",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47380,
 		"type": "Spell",
 		"entourage": [
@@ -105860,11 +105474,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Cult of C'Thun",
 		"id": "LOOTA_Priest_13",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47395,
 		"type": "Spell",
 		"entourage": [
@@ -105887,11 +105496,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Combo Caster",
 		"id": "LOOTA_Priest_9",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47377,
 		"type": "Spell",
 		"entourage": [
@@ -105914,11 +105518,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Adrenaline Rush",
 		"id": "LOOTA_Rogue_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47382,
 		"type": "Spell",
 		"entourage": [
@@ -105944,11 +105543,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Evasive",
 		"id": "LOOTA_Rogue_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47383,
 		"type": "Spell",
 		"entourage": [
@@ -105971,11 +105565,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Blademaster",
 		"id": "LOOTA_Rogue_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47384,
 		"type": "Spell",
 		"entourage": [
@@ -106002,11 +105591,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Death Dealer",
 		"id": "LOOTA_Rogue_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47385,
 		"type": "Spell",
 		"entourage": [
@@ -106037,11 +105621,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Jade Lotus",
 		"id": "LOOTA_Rogue_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47398,
 		"type": "Spell",
 		"entourage": [
@@ -106058,11 +105637,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Greed",
 		"id": "LOOTA_Rogue_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47400,
 		"type": "Spell",
 		"entourage": [
@@ -106086,11 +105660,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Thief",
 		"id": "LOOTA_Rogue_09",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47402,
 		"type": "Spell",
 		"entourage": [
@@ -106113,11 +105682,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Assassin",
 		"id": "LOOTA_Rogue_10",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47403,
 		"type": "Spell",
 		"entourage": [
@@ -106142,11 +105706,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Outlaws",
 		"id": "LOOTA_Rogue_11",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47404,
 		"type": "Spell",
 		"entourage": [
@@ -106174,11 +105733,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Bag of Tricks",
 		"id": "LOOTA_Rogue_13",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47407,
 		"type": "Spell",
 		"entourage": [
@@ -106203,11 +105757,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Cult of C'thun",
 		"id": "LOOTA_Rogue_15",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47580,
 		"type": "Spell",
 		"entourage": [
@@ -106230,11 +105779,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Exhaustion",
 		"id": "LOOTA_Rogue_16",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47581,
 		"type": "Spell",
 		"entourage": [
@@ -106256,11 +105800,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Destruction",
 		"id": "LOOTA_Shaman_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47224,
 		"type": "Spell",
 		"entourage": [
@@ -106283,11 +105822,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Frost",
 		"id": "LOOTA_Shaman_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47225,
 		"type": "Spell",
 		"entourage": [
@@ -106309,11 +105843,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Restoration",
 		"id": "LOOTA_Shaman_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47226,
 		"type": "Spell",
 		"entourage": [
@@ -106336,11 +105865,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Mutations",
 		"id": "LOOTA_Shaman_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47227,
 		"type": "Spell",
 		"entourage": [
@@ -106363,11 +105887,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Battlecrier",
 		"id": "LOOTA_Shaman_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47228,
 		"type": "Spell",
 		"entourage": [
@@ -106396,11 +105915,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Elementals",
 		"id": "LOOTA_Shaman_06",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47229,
 		"type": "Spell",
 		"entourage": [
@@ -106426,11 +105940,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Murlocs",
 		"id": "LOOTA_Shaman_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47230,
 		"type": "Spell",
 		"entourage": [
@@ -106461,11 +105970,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Overload",
 		"id": "LOOTA_Shaman_08",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47231,
 		"type": "Spell",
 		"entourage": [
@@ -106495,11 +105999,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Totems",
 		"id": "LOOTA_Shaman_09",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47232,
 		"type": "Spell",
 		"entourage": [
@@ -106523,11 +106022,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Jade Lotus",
 		"id": "LOOTA_Shaman_11",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47234,
 		"type": "Spell",
 		"entourage": [
@@ -106545,11 +106039,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Farseer",
 		"id": "LOOTA_Shaman_12",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47236,
 		"type": "Spell",
 		"entourage": [
@@ -106575,11 +106064,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Mechanized",
 		"id": "LOOTA_Shaman_13",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47237,
 		"type": "Spell",
 		"entourage": [
@@ -106606,11 +106090,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Little Legion",
 		"id": "LOOTA_Warlock_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47137,
 		"type": "Spell",
 		"entourage": [
@@ -106634,11 +106113,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Cult of C'thun",
 		"id": "LOOTA_Warlock_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47139,
 		"type": "Spell",
 		"entourage": [
@@ -106661,11 +106135,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Unique",
 		"id": "LOOTA_Warlock_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47143,
 		"type": "Spell",
 		"entourage": [
@@ -106681,11 +106150,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Discard",
 		"id": "LOOTA_Warlock_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47144,
 		"type": "Spell",
 		"entourage": [
@@ -106710,11 +106174,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Lifesteal",
 		"id": "LOOTA_Warlock_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47145,
 		"type": "Spell",
 		"entourage": [
@@ -106736,11 +106195,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Taunt",
 		"id": "LOOTA_Warlock_06",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47146,
 		"type": "Spell",
 		"entourage": [
@@ -106766,11 +106220,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Swarm",
 		"id": "LOOTA_Warlock_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47147,
 		"type": "Spell",
 		"entourage": [
@@ -106795,11 +106244,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Destruction",
 		"id": "LOOTA_Warlock_08",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47148,
 		"type": "Spell",
 		"entourage": [
@@ -106822,11 +106266,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Sacrifice",
 		"id": "LOOTA_Warlock_09",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47150,
 		"type": "Spell",
 		"entourage": [
@@ -106854,11 +106293,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Blood",
 		"id": "LOOTA_Warlock_10",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47149,
 		"type": "Spell",
 		"entourage": [
@@ -106881,11 +106315,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Dire Demons",
 		"id": "LOOTA_Warlock_11",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47582,
 		"type": "Spell",
 		"entourage": [
@@ -106909,11 +106338,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Huge Hand",
 		"id": "LOOTA_Warlock_12",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47583,
 		"type": "Spell",
 		"entourage": [
@@ -106936,11 +106360,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Berserker",
 		"id": "LOOTA_Warrior_01",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47279,
 		"type": "Spell",
 		"entourage": [
@@ -106968,11 +106387,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Everybody Hurts",
 		"id": "LOOTA_Warrior_02",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47280,
 		"type": "Spell",
 		"entourage": [
@@ -107001,11 +106415,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Charge!",
 		"id": "LOOTA_Warrior_03",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47334,
 		"type": "Spell",
 		"entourage": [
@@ -107028,11 +106437,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Weapons",
 		"id": "LOOTA_Warrior_04",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47310,
 		"type": "Spell",
 		"entourage": [
@@ -107060,11 +106464,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Armor",
 		"id": "LOOTA_Warrior_05",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47311,
 		"type": "Spell",
 		"entourage": [
@@ -107092,11 +106491,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Pirates",
 		"id": "LOOTA_Warrior_06",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47312,
 		"type": "Spell",
 		"entourage": [
@@ -107120,11 +106514,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Taunt",
 		"id": "LOOTA_Warrior_07",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47313,
 		"type": "Spell",
 		"entourage": [
@@ -107153,11 +106542,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Smash!",
 		"id": "LOOTA_Warrior_08",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47349,
 		"type": "Spell",
 		"entourage": [
@@ -107179,11 +106563,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Re-Enforcer",
 		"id": "LOOTA_Warrior_09",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47318,
 		"type": "Spell",
 		"entourage": [
@@ -107203,11 +106582,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Legendary",
 		"id": "LOOTA_Warrior_10",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 48239,
 		"type": "Spell",
 		"entourage": [
@@ -107239,11 +106613,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Dragon Heart",
 		"id": "LOOTA_Warrior_12",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47325,
 		"type": "Spell",
 		"entourage": [
@@ -107276,11 +106645,6 @@ var parseCardsText = {
 		"set": "Lootapalooza",
 		"name": "Recruiter",
 		"id": "LOOTA_Warrior_13",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47329,
 		"type": "Spell",
 		"entourage": [
@@ -108862,11 +108226,6 @@ var parseCardsText = {
 		"set": "Naxx",
 		"name": "Worship",
 		"id": "NAX2_05e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "+1 Attack.",
 		"dbfId": 52753,
 		"type": "Enchantment",
@@ -108906,11 +108265,6 @@ var parseCardsText = {
 		"set": "Naxx",
 		"name": "Heroic Worship",
 		"id": "NAX2_05He",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "+3 Attack.",
 		"dbfId": 52754,
 		"type": "Enchantment",
@@ -110623,7 +109977,7 @@ var parseCardsText = {
 	{
 		"cardImage": "NEW1_012.png",
 		"collectible": true,
-		"cost": 1,
+		"cost": 2,
 		"set": "Expert1",
 		"artist": "Blizzard Cinematics",
 		"health": 3,
@@ -112267,11 +111621,6 @@ var parseCardsText = {
 		"set": "Ungoro",
 		"name": "Fandral Enchantment",
 		"id": "OG_044e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your <b>Choose One</b> cards and powers have both effects combined.",
 		"dbfId": 52750,
 		"type": "Enchantment",
@@ -112759,11 +112108,6 @@ var parseCardsText = {
 		"set": "Og",
 		"name": "Bloodthistle",
 		"id": "OG_080ae",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (2) less.",
 		"dbfId": 38936,
 		"type": "Enchantment",
@@ -118479,11 +117823,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Tag Team Ice Block",
 		"id": "TagTeamIceBlock",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your hero is <b>Immune</b> this turn.",
 		"dbfId": 46435,
 		"type": "Enchantment",
@@ -118851,11 +118190,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Valeera's Bag Enchant",
 		"id": "TB_100th_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Playing a spell summons a minion of that type.",
 		"dbfId": 45370,
 		"type": "Enchantment",
@@ -119022,11 +118356,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Loves Annoy-o-tron",
 		"id": "TB_BoomAnnoy_001e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "+2/+2.",
 		"dbfId": 42207,
 		"type": "Enchantment",
@@ -119054,11 +118383,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Magic Candle",
 		"id": "TB_BossBattle_KoboldHP",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "<b>Hero Power</b>\nFind a Treasure!",
 		"dbfId": 52524,
 		"type": "Hero_power",
@@ -119223,6 +118547,13 @@ var parseCardsText = {
 		"name": "Azalina Soulthief",
 		"health": 50,
 		"id": "TB_BountyHunt_Azalina",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_55h_Female_NightElf_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"text": "[x]<i>Her children's safety\nis her top priority.\nAt any cost.</i>",
 		"dbfId": 52864,
 		"type": "Hero",
@@ -119234,6 +118565,13 @@ var parseCardsText = {
 		"name": "Blood Witch Gretta",
 		"health": 30,
 		"id": "TB_BountyHunt_BloodWitch",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_30h_Female_Gnome_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"text": "<i>Magic is powerful in her grove… but it comes at a cost.</i>",
 		"dbfId": 52867,
 		"type": "Hero",
@@ -119245,6 +118583,13 @@ var parseCardsText = {
 		"name": "Brushwood Centurion",
 		"health": 60,
 		"id": "TB_BountyHunt_Brushwood",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_41h_Male_NightElf_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"text": "<i>This once-stalwart defender of the woods now sows chaos.</i>",
 		"dbfId": 52859,
 		"type": "Hero",
@@ -119256,6 +118601,13 @@ var parseCardsText = {
 		"name": "Chupacabran",
 		"health": 30,
 		"id": "TB_BountyHunt_Chupacabran",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_35h_Male_Beast_Death.ogg"
+			],
+			"attack": []
+		},
 		"text": "<i>It used to feed on local livestock. Now it hungers for more.</i>",
 		"dbfId": 52860,
 		"type": "Hero",
@@ -119270,6 +118622,29 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Consume",
 		"id": "TB_BountyHunt_Consume",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Shared_Shadow_Start_1": [
+				"Shared_Shadow_Start_1.ogg"
+			],
+			"attack": [],
+			"Shared_FangImpact02GoldDeath_PreCast_1": [
+				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
+			],
+			"Shared_Shadow_PreCast_2": [
+				"Shared_Shadow_PreCast_2.ogg"
+			],
+			"Shared_Shadow_Fizzle_1": [
+				"Shared_Shadow_Fizzle_1.ogg"
+			],
+			"Boss_BloodQueenLanathel_BiteSequence_Cast": [
+				"Boss_BloodQueenLanathel_BiteSequence_Cast.ogg"
+			],
+			"Boss_BloodQueenLanathel_BiteSequence_Teeth_Impact_Sound": [
+				"Boss_BloodQueenLanathel_BiteSequence_Teeth_Impact_Sound.ogg"
+			]
+		},
 		"text": "<b>Hero Power</b>\nDestroy a friendly minion, then draw 3 cards.",
 		"dbfId": 52869,
 		"type": "Hero_power",
@@ -119281,6 +118656,13 @@ var parseCardsText = {
 		"name": "Experiment 3C",
 		"health": 60,
 		"id": "TB_BountyHunt_Experiment3C",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_27h_Male_Construct_Death_02.ogg"
+			],
+			"attack": []
+		},
 		"text": "<i>It's a Murloc! It's a Dragon! It's... everything?</i>",
 		"dbfId": 52868,
 		"type": "Hero",
@@ -119295,6 +118677,14 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Hypnotize",
 		"id": "TB_BountyHunt_Hypnotize",
+		"audio": {
+			"play": [],
+			"Hypnotize_Swirl_Impact_Sound": [
+				"Hypnotize_Swirl_Impact_Sound.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "[x]<b>Hero Power</b>\nEach player shuffles their\nhand into their deck and\ndraws that many cards.",
 		"dbfId": 52863,
 		"type": "Hero_power",
@@ -119306,6 +118696,13 @@ var parseCardsText = {
 		"name": "Shudderwock",
 		"health": 50,
 		"id": "TB_BountyHunt_Shudderwock",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_47h_Male_Monster_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"text": "[x]<i>And 'lo in uffish\nthought he stood, crying\n\"Battle\" in the wood.</i>",
 		"dbfId": 52865,
 		"type": "Hero",
@@ -119317,6 +118714,13 @@ var parseCardsText = {
 		"name": "Wharrgarbl",
 		"health": 30,
 		"id": "TB_BountyHunt_Wharrgarbl",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_37h_Male_Murloc_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"text": "<i>The Witchwood's curse has not been kind to the local Murlocs.</i>",
 		"dbfId": 52858,
 		"type": "Hero",
@@ -119331,6 +118735,13 @@ var parseCardsText = {
 		"name": "Winslow Tobtock",
 		"health": 40,
 		"id": "TB_BountyHunt_Winslow",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_64h_Male_Goblin_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"text": "<i>His tricks will leave you both in a daze.</i>",
 		"dbfId": 52862,
 		"type": "Hero",
@@ -119342,6 +118753,13 @@ var parseCardsText = {
 		"name": "Plaguemaster Rancel",
 		"health": 40,
 		"id": "TB_BountyHunter_Plaguemaster",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_GILA_BOSS_68h_Male_Undead_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"text": "<i>Dying to his touch is terrible. Living is even worse.</i>",
 		"dbfId": 52856,
 		"type": "Hero",
@@ -119404,11 +118822,6 @@ var parseCardsText = {
 		"name": "Catacomb Boss",
 		"health": 80,
 		"id": "TB_BuildaBoss_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 47534,
 		"type": "Hero",
 		"cardClass": "NEUTRAL"
@@ -119419,11 +118832,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Toxic Fumes",
 		"id": "TB_BuildaBoss_404p",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "<b>Hero Power</b>\nDeal 1 damage to all minions.",
 		"dbfId": 47532,
 		"type": "Hero_power",
@@ -119459,6 +118867,14 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Bloodthirst",
 		"id": "TB_Chupacabran_HP",
+		"audio": {
+			"play": [],
+			"Warlock_SiphonSoul_CasterImpact_1": [
+				"Warlock_SiphonSoul_CasterImpact_1.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Hero Power</b>\nGive a friendly minion +1/+1 and <b>Lifesteal</b>.",
 		"dbfId": 53410,
 		"type": "Hero_power",
@@ -119469,6 +118885,14 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Bloodthirsty",
 		"id": "TB_Chupacabran_HP_E",
+		"audio": {
+			"play": [],
+			"Warlock_SiphonSoul_CasterImpact_1": [
+				"Warlock_SiphonSoul_CasterImpact_1.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Increased stats and <b>Lifesteal.</b>",
 		"dbfId": 53411,
 		"type": "Enchantment",
@@ -119770,7 +119194,25 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Rocket_Missile_Small_Sound_04": [
+				"Rocket_Missile_Small_Sound_04.ogg"
+			],
+			"Rocket_Missile_Small_Sound_02": [
+				"Rocket_Missile_Small_Sound_02.ogg"
+			],
+			"Barrel_exp_base": [
+				"Barrel_exp_base.ogg"
+			],
+			"Rocket_Missile_Small_Sound_03": [
+				"Rocket_Missile_Small_Sound_03.ogg"
+			],
+			"Rocket_Missile_Small_Sound_01": [
+				"Rocket_Missile_Small_Sound_01.ogg"
+			],
+			"FX_FireballEvent04_SpellImpact_01": [
+				"FX_FireballEvent04_SpellImpact_01.ogg"
+			]
 		},
 		"text": "Deal Attack damage to up to 3 random targets.",
 		"dbfId": 38284,
@@ -119847,21 +119289,16 @@ var parseCardsText = {
 	},
 	{
 		"cardImage": "TB_CoopHero_001.png",
+		"playerClass": "Neutral",
 		"cost": 2,
 		"set": "Tb",
-		"health": 3,
-		"dbfId": 40242,
-		"type": "Minion",
-		"playerClass": "Neutral",
 		"attack": 2,
 		"name": "Netherspite Infernal",
+		"health": 3,
 		"id": "TB_CoopHero_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "At the end of each turn, deal 1 damage to all enemies.",
+		"dbfId": 40242,
+		"type": "Minion",
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -119871,11 +119308,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Power (Spell)",
 		"id": "TB_CoopHero_002",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Armies!!",
 		"dbfId": 40243,
 		"type": "Spell",
@@ -120672,11 +120104,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "My Deck ID",
 		"id": "TB_DeckRecipe_MyDeckID",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 40427,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -120707,11 +120134,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Discover My Deck Enchant",
 		"id": "TB_DiscoverMyDeck_Enchantment",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 42272,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -121005,6 +120427,39 @@ var parseCardsText = {
 			"attack": []
 		},
 		"text": "Minions to the left have <b>Charge</b>. Minions to the right have <b>Taunt</b>.",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Double Minions Enchant",
+		"id": "TB_DoubleMinions_ench",
+		"dbfId": 53782,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 0,
+		"set": "Tb",
+		"name": "Double Minions Spell",
+		"id": "TB_DoubleMinions_spell",
+		"audio": {
+			"play": [],
+			"EchoingOoze_CustomSpawn_Sound_01": [
+				"EchoingOoze_CustomSpawn_Sound_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"EchoingOoze_Card_Play_Ally_Ooze_Birth_01": [
+				"EchoingOoze_Card_Play_Ally_Ooze_Birth_01.ogg"
+			],
+			"ZereksCloningGallery_AE_Sound": [
+				"ZereksCloningGallery_AE_Sound.ogg"
+			]
+		},
+		"dbfId": 54310,
+		"type": "Spell",
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -121791,11 +121246,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Omegawarp",
 		"id": "TB_FW_Warpere",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (2) less.",
 		"dbfId": 52752,
 		"type": "Enchantment",
@@ -122532,11 +121982,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Create Horseman",
 		"id": "TB_HeadlessHorseman_XXX",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Your hero becomes the Horseman. Cast again to become the 2nd form.",
 		"dbfId": 48240,
 		"type": "Spell",
@@ -122547,11 +121992,6 @@ var parseCardsText = {
 		"set": "Gangs",
 		"name": "Putricide's Potion",
 		"id": "TB_HealthAttackSwap_Ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Attack and Health have been swapped by Putricide",
 		"dbfId": 47214,
 		"type": "Enchantment",
@@ -122647,11 +122087,6 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"id": "TB_KaraPortal_003",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Give can't attack this turn to enemy minions.",
 		"dbfId": 40966,
 		"type": "Enchantment",
@@ -122686,11 +122121,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Great Father Kobold Enchant",
 		"id": "TB_KoboldGiftEnch",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49027,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -123622,11 +123052,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Level Up!",
 		"id": "TB_LevelUp_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Level up all the spells in your hand and deck.",
 		"dbfId": 39852,
 		"type": "Hero_power",
@@ -124017,11 +123442,6 @@ var parseCardsText = {
 		"elite": true,
 		"name": "Journey to the Catacombs",
 		"id": "TB_Marin_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "[x]<b>Quest:</b> 7 minions are played\n by ANY player.\n<b>Reward:</b> Master Chests\n for all!",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
@@ -124266,11 +123686,6 @@ var parseCardsText = {
 		"name": "Blink Fox Enchant",
 		"health": 1,
 		"id": "TB_NewBlinkFox",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 50199,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -125044,11 +124459,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Fate 7 Ench Get a Coin",
 		"id": "TB_PickYourFate7Ench",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 38701,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -125703,23 +125113,18 @@ var parseCardsText = {
 	},
 	{
 		"cardImage": "TB_Presents_001.png",
+		"playerClass": "Neutral",
+		"elite": true,
 		"cost": 0,
 		"set": "Tb",
+		"name": "Present!",
 		"mechanics": [
 			"TOPDECK"
 		],
+		"id": "TB_Presents_001",
+		"text": "When you draw this, <b>Discover</b> a treasure, then draw a card.",
 		"dbfId": 40248,
 		"type": "Spell",
-		"playerClass": "Neutral",
-		"elite": true,
-		"name": "Present!",
-		"id": "TB_Presents_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
-		"text": "When you draw this, <b>Discover</b> a treasure, then draw a card.",
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -125730,11 +125135,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Card Present",
 		"id": "TB_Presents_002",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Draw a card.",
 		"dbfId": 40249,
 		"type": "Spell",
@@ -125748,11 +125148,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Zombie Present",
 		"id": "TB_Presents_003",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Summon a 3/3 Zombie.",
 		"dbfId": 40250,
 		"type": "Spell",
@@ -125822,11 +125217,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Portal Selection",
 		"id": "TB_SC20_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 49778,
 		"type": "Enchantment",
 		"entourage": [
@@ -125985,11 +125375,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "SpellCaster",
 		"id": "TB_Spellwrite_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 42731,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -127425,6 +126810,15 @@ var parseCardsText = {
 	{
 		"playerClass": "Neutral",
 		"set": "Tb",
+		"name": "Two Turns",
+		"id": "TB_TwoTurnsEnchant",
+		"dbfId": 52957,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
 		"attack": 1,
 		"name": "Void Singularity Spell",
 		"health": 1,
@@ -127468,11 +126862,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Yogg Servant Hero Enchant",
 		"id": "TB_YoggServant_Enchant",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 39957,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -127507,11 +126896,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Zombeast Enchant",
 		"id": "TB_ZombeastEnch",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Craft a Zombeast (For free!)",
 		"dbfId": 48825,
 		"type": "Enchantment",
@@ -127600,11 +126984,6 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Magic!",
 		"id": "TBA01_5e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 52137,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -127835,8 +127214,20 @@ var parseCardsText = {
 		"id": "TOT_030t2",
 		"audio": {
 			"play": [],
+			"spell_holy_fizzle_1": [
+				"spell_holy_fizzle_1.ogg"
+			],
 			"death": [],
-			"attack": []
+			"spell_holy_precast_loop_1": [
+				"spell_holy_precast_loop_1.ogg"
+			],
+			"attack": [],
+			"spell_holy_cast_1": [
+				"spell_holy_cast_1.ogg"
+			],
+			"spell_BlessingOfKings_target_1": [
+				"spell_BlessingOfKings_target_1.ogg"
+			]
 		},
 		"text": "<b>Casts When Drawn</b>\nGive your minions +2/+2.",
 		"dbfId": 51163,
@@ -128107,11 +127498,6 @@ var parseCardsText = {
 			"GHOSTLY"
 		],
 		"id": "TOT_103e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Destroy card if in hand at the end of turn.",
 		"dbfId": 51043,
 		"type": "Enchantment",
@@ -130617,11 +130003,6 @@ var parseCardsText = {
 		"set": "Ungoro",
 		"name": "Radiant Elemental",
 		"id": "UNG_034e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1) less.",
 		"dbfId": 52745,
 		"type": "Enchantment",
@@ -131685,11 +131066,6 @@ var parseCardsText = {
 		"set": "Ungoro",
 		"name": "Emerald Hive",
 		"id": "UNG_085e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (2) more.",
 		"dbfId": 52749,
 		"type": "Enchantment",
@@ -132458,11 +131834,6 @@ var parseCardsText = {
 		"set": "Ungoro",
 		"name": "Fiery",
 		"id": "UNG_202e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Costs (1) less.",
 		"dbfId": 49414,
 		"type": "Enchantment",

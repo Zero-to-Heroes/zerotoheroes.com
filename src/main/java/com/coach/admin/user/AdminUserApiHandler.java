@@ -9,10 +9,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.joda.time.DateTime;
@@ -32,7 +30,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.coach.core.security.User;
-import com.coach.notifications.Notification;
 import com.coach.notifications.NotificationDao;
 import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
@@ -154,6 +151,45 @@ public class AdminUserApiHandler {
 		return new ResponseEntity<String>(ret, HttpStatus.OK);
 	}
 
+
+	@RequestMapping(value = "/mailinglist", method = RequestMethod.GET)
+	public @ResponseBody ResponseEntity<String> getMailListEmails() {
+		if ("prod".equalsIgnoreCase(environment)) { 
+			return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); 
+		}
+
+		log.debug("Building mailing list");
+		List<User> users = userRepository.findAll();
+		List<Profile> profiles = profileRepository.findAll();
+
+		List<String> emails = new ArrayList<>();
+		Map<String, Profile> profileMap = new HashMap<>();
+
+		for (Profile profile : profiles) {
+			profileMap.put(profile.getUserId(), profile);
+		}
+
+		for (User user : users) {
+			Profile profile = profileMap.get(user.getId());
+			if (profile != null && profile.getPreferences() != null && profile.getPreferences().isEmailContact()) {
+				emails.add(user.getEmail());
+			}
+		}
+		log.debug("Built mailing list: " + emails.size());
+		
+		List<String> toRemoveEmails = Arrays.asList("neo.slavik@gmail.com", "taylor.conant@gmail.com", "ScoZone74@gmail.com", "bdwitheygames@gmail.com", "germanok21@gmail.com", "mt.arnoldussen@gmail.com", "sillyleetlegirl@gmail.com", "tom.oude.veldhuis@hotmail.com", "vincentan12345@gmail.com", "mk.vogel@hotmail.com", "paul.stanish@gmail.com", "0bruno1@gmail.com", "27marquitos@gmail.com", "heliaxb@gmail.com", "james.deeman@gmail.com", "yjpan2017@yahoo.com", "m_jamc@yahoo.com", "alin.ivan13@gmail.com", "otso.sivonen@gmail.com", "robac@wp.pl", "draagos0@gmail.com", "nicolomagallanes@gmail.com", "apo_96@mail.ru", "glarsson16@gmail.com", "benjaminmason02@gmail.com", "kyty3@bk.ru", "shayneorok@gmail.com", "rgarcilu@gmail.com", "fotis.plaskasovitis@hotmail.com", "dr.leavsey@gmail.com", "lucahagedorn@web.de", "david.g.stam@gmail.com", "rdt_23@yahoo.com", "micheal.b12321@gmail.com", "wearne.michael@gmail.com", "gugge2000@hotmail.com", "zdravko@subakov.com", "andycao.16@gmail.com", "pride829@gmail.com", "noodles4noah@gmail.com", "bora_yuksel_@hotmail.com", "da8vii@gmail.com", "Twinadanz@gmail.com", "milk.kai.cheng@gmail.com", "hus.patryk@gmail.com", "cesnasjustas@gmail.com", "david.j.tiplady@gmail.com", "robert1zamboni@gmail.com", "bvxxvd@gmail.com", "Viktimmy@Hotmail.com", "goldsteinbergstein@gmail.com", "tucker.whitcomb@gmail.com", "kayteawu@gmail.com", "hanjuehae@gmail.com", "rasmus992010@hotmail.com", "Nicod155@gmx.de", "kalibur06@gmail.com", "blackdaylight@hotmail.com", "jmattmurphy1993@gmail.com", "adamski.dominik7@gmail.com", "ariel_f21@yahoo.com", "David.24.2@web.de", "rvbayer1@yahoo.com", "yarianyg@gmail.com", "woodn1994@gmail.com", "franklinzolw@gmail.com", "wsgahr@gmail.com", "duan.mack@gmail.com", "awp.senpai@gmail.com", "postivan@gmail.com", "anthonyrschewe@gmail.com", "fegiotell@gmail.com", "daan.detre@telenet.be", "msrulz4@gmail.com", "jeremy@jeremylim.ca", "itoieto@ya.ru", "murk.murk123@gmail.com", "ajgrimm91@gmail.com", "Caboose009@gmail.com", "polcg@hotmail.es", "dann_bell2006@yahoo.com", "jj177768@yahoo.com", "benni_97@hotmail.de", "jonh.figa@gmail.com", "envix777@gmail.com", "megaregee2@gmail.com", "tom_champer@hotmail.com", "bertoski@gmail.com", "semyon.galtsev@gmail.com", "Dieter.Binnard@hotmail.com", "markmota82@hotmail.com", "giselle_abc_123@yahoo.com", "dychenko.max@gmail.com", "AndrewRonayne@outlook.com", "ahmadturiaki1997@gmail.com", "barker11@hotmail.fr", "alda.cernov@gmail.com", "fares_ghannam@hotmail.com", "walterasilveira@gmail.com", "escartian@gmail.com", "peroyvindvalen@gmail.com", "nn57678@gmail.com", "jw.vanderheiden@gmail.com", "jakchn@gmail.com", "arturtuca06@hotmail.com", "edwardsharp123@yahoo.com", "promwarm@gmail.com", "luk2mila@mail.com", "ninjabugrer21@gmail.com", "kesiddog@gmail.com", "kollyfederic@ymail.com", "estebannprine@gmail.com", "Mythgamplays@gmail.com", "alexandros.kalaitziis@hotmail.com", "kjun017@naver.com", "benfournier58@outlook.com", "kruggunn@sbox.tugraz.at", "Nikolaylesnyhk@gmail.com", "18ianau1999@gmail.com", "tometank@live.de", "jordan.webb@lmu.edu", "roscarraespetru@yahoo.ro", "iferit_@hotmail.com", "aliha-benli-6@hotmail.com.tr", "junazoxsk8@hotmail.com", "joseph9977@nate.com", "testseb@test.com", "giwhtsdc@yahoo.com", "ryud@bk.ru", "merlinoirign@gmx.de", "darks_shadow@mail.ru", "victor60701@gmail.com", "janrosentrete123@gmx.de", "pablo2889728997@gmail.com", "panteli9@hotmail.com", "patryvickt.95@hotmail.com", "deamrcopc@gmail.com", "beerensmchiel@gmail.com", "marton04@citromail.hu", "fahfoasohfsaoohfsaoh@gmail.com", "gabriel.lutz@gmail.com", "johnsbrowns398@yahoo.com", "whamenrespecter299@gmail.com", "timza13579@gmail.com", "Ace_acid@hotmail.com", "teemu.ilmrih@hotmail.com", "emcupeo@yahoo.com", "joshbroos3575@yahoo.com", "lukabelyaev@outlook.com", "cwhwan14@naver.com", "deanogibson5@gmail.com", "gum200208@naver.com", "aqstar6@naver.com", "ecryb4000@hotmail.com", "mendes_pauli@hotmail.com", "oliverparr7@btinternet.com", "h.altinpinar@gxm.de", "nebulablaazemc@gmail.com", "fuentesnuenosvinosguillermo@gmail.com", "jonassskoglund01@gmail.com", "chiplov@nate.com", "davidperezill@hotmail.es", "ricard.colx@gmail.com", "ulysse.maricher@gmail.com", "liianfoot1@hotmail.fr", "danielemendozagmk@gmail.com", "100026@bernrode.nl", "torresbenamin26@gmail.com", "willemvdnieuwnehuijzen@gmail.com", "vcitorfong14@gmail.com", "balundry37@gmail.com", "jazzoon11@gmail.com", "jeffweijei@yahoo.com.sg", "vladiq911111@mail.ru");
+		for (String email : emails) {
+			if (toRemoveEmails.contains(email)) {
+				log.warn("Warn: " + email);
+			}
+		}
+
+		String result = emails.stream().collect(Collectors.joining("\n"));
+		log.info(result);
+
+		return new ResponseEntity<String>(result, HttpStatus.OK);
+	}
+
 	private String toCsv(List<UserInfo> list) {
 		String result = "";
 
@@ -180,70 +216,29 @@ public class AdminUserApiHandler {
 				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
 
 		// TODO: rerun
-		List<String> emails = Arrays.asList("tstenz@uwalumni.com", "silvercomputer123@hotmail.com",
-				"tristan464@gmail.com", "canucksrawesome@hotmail.com", "petrophellis@gmail.com", "pelle5000@gmail.com",
-				"plazmrx@gmail.com");
+		List<String> emails = Arrays.asList("neo.slavik@gmail.com", "taylor.conant@gmail.com", "ScoZone74@gmail.com", "bdwitheygames@gmail.com", "germanok21@gmail.com", "mt.arnoldussen@gmail.com", "sillyleetlegirl@gmail.com", "tom.oude.veldhuis@hotmail.com", "vincentan12345@gmail.com", "mk.vogel@hotmail.com", "paul.stanish@gmail.com", "0bruno1@gmail.com", "27marquitos@gmail.com", "heliaxb@gmail.com", "james.deeman@gmail.com", "yjpan2017@yahoo.com", "m_jamc@yahoo.com", "alin.ivan13@gmail.com", "otso.sivonen@gmail.com", "robac@wp.pl", "draagos0@gmail.com", "nicolomagallanes@gmail.com", "apo_96@mail.ru", "glarsson16@gmail.com", "benjaminmason02@gmail.com", "kyty3@bk.ru", "shayneorok@gmail.com", "rgarcilu@gmail.com", "fotis.plaskasovitis@hotmail.com", "dr.leavsey@gmail.com", "lucahagedorn@web.de", "david.g.stam@gmail.com", "rdt_23@yahoo.com", "micheal.b12321@gmail.com", "wearne.michael@gmail.com", "gugge2000@hotmail.com", "zdravko@subakov.com", "andycao.16@gmail.com", "pride829@gmail.com", "noodles4noah@gmail.com", "bora_yuksel_@hotmail.com", "da8vii@gmail.com", "Twinadanz@gmail.com", "milk.kai.cheng@gmail.com", "hus.patryk@gmail.com", "cesnasjustas@gmail.com", "david.j.tiplady@gmail.com", "robert1zamboni@gmail.com", "bvxxvd@gmail.com", "Viktimmy@Hotmail.com", "goldsteinbergstein@gmail.com", "tucker.whitcomb@gmail.com", "kayteawu@gmail.com", "hanjuehae@gmail.com", "rasmus992010@hotmail.com", "Nicod155@gmx.de", "kalibur06@gmail.com", "blackdaylight@hotmail.com", "jmattmurphy1993@gmail.com", "adamski.dominik7@gmail.com", "ariel_f21@yahoo.com", "David.24.2@web.de", "rvbayer1@yahoo.com", "yarianyg@gmail.com", "woodn1994@gmail.com", "franklinzolw@gmail.com", "wsgahr@gmail.com", "duan.mack@gmail.com", "awp.senpai@gmail.com", "postivan@gmail.com", "anthonyrschewe@gmail.com", "fegiotell@gmail.com", "daan.detre@telenet.be", "msrulz4@gmail.com", "jeremy@jeremylim.ca", "itoieto@ya.ru", "murk.murk123@gmail.com", "ajgrimm91@gmail.com", "Caboose009@gmail.com", "polcg@hotmail.es", "dann_bell2006@yahoo.com", "jj177768@yahoo.com", "benni_97@hotmail.de", "jonh.figa@gmail.com", "envix777@gmail.com", "megaregee2@gmail.com", "tom_champer@hotmail.com", "bertoski@gmail.com", "semyon.galtsev@gmail.com", "Dieter.Binnard@hotmail.com", "markmota82@hotmail.com", "giselle_abc_123@yahoo.com", "dychenko.max@gmail.com", "AndrewRonayne@outlook.com", "ahmadturiaki1997@gmail.com", "barker11@hotmail.fr", "alda.cernov@gmail.com", "fares_ghannam@hotmail.com", "walterasilveira@gmail.com", "escartian@gmail.com", "peroyvindvalen@gmail.com", "nn57678@gmail.com", "jw.vanderheiden@gmail.com", "jakchn@gmail.com", "arturtuca06@hotmail.com", "edwardsharp123@yahoo.com", "promwarm@gmail.com", "luk2mila@mail.com", "ninjabugrer21@gmail.com", "kesiddog@gmail.com", "kollyfederic@ymail.com", "estebannprine@gmail.com", "Mythgamplays@gmail.com", "alexandros.kalaitziis@hotmail.com", "kjun017@naver.com", "benfournier58@outlook.com", "kruggunn@sbox.tugraz.at", "Nikolaylesnyhk@gmail.com", "18ianau1999@gmail.com", "tometank@live.de", "jordan.webb@lmu.edu", "roscarraespetru@yahoo.ro", "iferit_@hotmail.com", "aliha-benli-6@hotmail.com.tr", "junazoxsk8@hotmail.com", "joseph9977@nate.com", "testseb@test.com", "giwhtsdc@yahoo.com", "ryud@bk.ru", "merlinoirign@gmx.de", "darks_shadow@mail.ru", "victor60701@gmail.com", "janrosentrete123@gmx.de", "pablo2889728997@gmail.com", "panteli9@hotmail.com", "patryvickt.95@hotmail.com", "deamrcopc@gmail.com", "beerensmchiel@gmail.com", "marton04@citromail.hu", "fahfoasohfsaoohfsaoh@gmail.com", "gabriel.lutz@gmail.com", "johnsbrowns398@yahoo.com", "whamenrespecter299@gmail.com", "timza13579@gmail.com", "Ace_acid@hotmail.com", "teemu.ilmrih@hotmail.com", "emcupeo@yahoo.com", "joshbroos3575@yahoo.com", "lukabelyaev@outlook.com", "cwhwan14@naver.com", "deanogibson5@gmail.com", "gum200208@naver.com", "aqstar6@naver.com", "ecryb4000@hotmail.com", "mendes_pauli@hotmail.com", "oliverparr7@btinternet.com", "h.altinpinar@gxm.de", "nebulablaazemc@gmail.com", "fuentesnuenosvinosguillermo@gmail.com", "jonassskoglund01@gmail.com", "chiplov@nate.com", "davidperezill@hotmail.es", "ricard.colx@gmail.com", "ulysse.maricher@gmail.com", "liianfoot1@hotmail.fr", "danielemendozagmk@gmail.com", "100026@bernrode.nl", "torresbenamin26@gmail.com", "willemvdnieuwnehuijzen@gmail.com", "vcitorfong14@gmail.com", "balundry37@gmail.com", "jazzoon11@gmail.com", "jeffweijei@yahoo.com.sg", "vladiq911111@mail.ru");
 
 		Criteria crit = where("email").in(emails);
 		Query query = query(crit);
 		Field fields = query.fields();
 		fields.include("id");
 
-		List<String> ids = mongoTemplate.find(query, User.class).stream().map(u -> u.getId())
+		List<String> ids = mongoTemplate.find(query, User.class).stream()
+				.map(u -> u.getId())
 				.collect(Collectors.toList());
 		log.debug("Update IDs " + ids.size());
-		log.debug("" + ids);
-
+		
 		// Update the preference for all these users
 		Criteria uCrit = where("userId").in(ids);
 		Query uQuery = query(uCrit);
-
 		Update update = update("preferences.emailContact", false);
 		WriteResult result = mongoTemplate.updateMulti(uQuery, update, Profile.class);
 
+//		List<String> profileIds = mongoTemplate.find(uQuery, Profile.class).stream()
+//				.map(u -> u.getId())
+//				.collect(Collectors.toList());
+//		log.debug("profileIds IDs " + profileIds.size());
+
 		return new ResponseEntity<String>("updated " + result.getN(), HttpStatus.OK);
-	}
-
-	@RequestMapping(value = "/updateAllUsers", method = RequestMethod.GET)
-	public @ResponseBody ResponseEntity<String> updateAllUsers() {
-
-		if ("prod".equalsIgnoreCase(
-				environment)) { return new ResponseEntity<String>((String) null, HttpStatus.UNAUTHORIZED); }
-
-		log.debug("Retrieving users");
-		List<User> users = userRepository.findAll();
-		log.debug("Retrieving profiles");
-		List<Profile> profiles = profileRepository.findAll();
-
-		log.debug("Building map");
-		Map<String, UserInfo> infos = new HashMap<>();
-		Map<String, Profile> profileMap = new HashMap<>();
-
-		for (Profile profile : profiles) {
-			profileMap.put(profile.getUserId(), profile);
-		}
-
-		log.debug("Clearing existing notifs");
-		notificationDao.clearAll();
-
-		List<Notification> newNotifs = new ArrayList<>();
-		Set<Profile> modifiedProfiles = new HashSet<>();
-
-		for (User user : users) {
-			log.debug("\tProcessing user " + user.getUsername());
-
-			Profile profile = profileMap.get(user.getId());
-			profile.getNotifications().setUnreadNotifs(0);
-
-			modifiedProfiles.add(profile);
-		}
-
-		log.debug("Saving " + newNotifs.size() + " new notifs");
-		notificationDao.save(newNotifs);
-		log.debug("Saving " + modifiedProfiles.size() + " modified profiles");
-		profileRepository.save(modifiedProfiles);
-		log.debug("Job's done!");
-
-		return new ResponseEntity<String>("ok", HttpStatus.OK);
 	}
 }

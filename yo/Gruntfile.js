@@ -509,12 +509,12 @@ module.exports = function (grunt) {
   });
 
 	grunt.registerTask('test', [
-		'clean:server',
-		'replace:defaultI18n',
-		'concurrent:test',
-		'autoprefixer',
-		'connect:test',
-		'karma'
+		// 'clean:server',
+		// 'replace:defaultI18n',
+		// 'concurrent:test',
+		// 'autoprefixer',
+		// 'connect:test',
+		// 'karma'
 	]);
 
 	grunt.registerTask('build', [

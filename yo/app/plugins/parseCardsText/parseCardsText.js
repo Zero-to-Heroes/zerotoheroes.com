@@ -144,20 +144,22 @@ var parseCardsText = {
 		element.textcomplete([{
 			match: /\[\[[a-zA-Z\-\s0-9\.\:\']{3,}$/,
 			search: function (term, callback, match) {
+				// console.log('searching', term, callback, match);
 				var cards = $.map(parseCardsText.jsonDatabase, function(card) {
 					if (!card.name)	return null
 
+					// console.log('card', card);
 					var localizeName = parseCardsText.localizeName(card);
 					var res = S(localizeName.toLowerCase()).latinise().s.indexOf(S(term).latinise().s.substring(2).toLowerCase()) !== -1;
 					// add search on english term
 					res = res || card.name.toLowerCase().indexOf(term.substring(2).toLowerCase()) === 0;
 					// Keep only valid cards
-					res = res && card.cardImage && card.type != 'Enchantment'
+					res = res && card.type != 'Enchantment'
 					// Death Knight shenanigans
 					res = res && (card.set == 'Icecrown' || card.type != 'Hero')
 					res = res && card.set != 'Hero_skins' && card.set != 'Cheat' && card.set != 'Tb'
 					res = res ? card : null
-					// if (debug) console.log('res4', term, localizeName, res);
+					// if (res) console.log('res4', term, localizeName, res);
 					return res;
 				})
 				// Remove duplicates

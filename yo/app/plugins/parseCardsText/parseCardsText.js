@@ -115,17 +115,18 @@ var parseCardsText = {
 	},
 
 	localizeImage: function(card) {
-		var lang;
-		try {
-			lang = window.localStorage.language;
-		}
-		catch (e) {
-			lang = 'en';
-		}
-		if (!lang) return card.cardImage;
-		if (!card[lang]) return card.cardImage;
-		// console.log('localized image', lang + '/' + card.cardImage);
-		return lang + '/' + card.cardImage;
+		return card.id + '.png';
+		// var lang;
+		// try {
+		// 	lang = window.localStorage.language;
+		// }
+		// catch (e) {
+		// 	lang = 'en';
+		// }
+		// if (!lang) return card.cardImage;
+		// if (!card[lang]) return card.cardImage;
+		// // console.log('localized image', lang + '/' + card.cardImage);
+		// return lang + '/' + card.cardImage;
 	},
 
 	localizeKeyword: function(key, lang) {

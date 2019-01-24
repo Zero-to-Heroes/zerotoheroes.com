@@ -252,7 +252,6 @@ public class HSArenaDraft implements ReplayPlugin {
 
 	@NoArgsConstructor
 	@Setter
-
 	private static class Pick {
 		@JsonProperty("Item1")
 		private String Item1;

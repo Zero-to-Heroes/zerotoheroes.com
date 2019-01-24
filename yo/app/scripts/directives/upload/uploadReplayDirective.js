@@ -108,7 +108,7 @@ app.directive('uploadReplayDirective', ['FileUploader', 'ReplayUploader', '$log'
 				        $scope.numberOfGames += replayGames;
 				      	console.log('numberOfGames', $scope.numberOfGames);
 				      	fileItem.numberOfGames = replayGames;
-				      	fileItem._file.gameType = "game-replay" // $scope.getGameType(contents);
+				      	fileItem._file.gameType = $scope.getGameType(contents);
 				      	$scope.$apply();
 				    }
 					var indexOfLastDot = fileItem._file.name.lastIndexOf('.');
@@ -174,14 +174,17 @@ app.directive('uploadReplayDirective', ['FileUploader', 'ReplayUploader', '$log'
 				}
 
 				$scope.getGameType = function(contents) {
-					// arena-drafts
-					if (contents.trim().startsWith('{')) {
-						return 'arena-draft';
+					try {
+						// arena-drafts
+						if (contents.trim().startsWith('{')) {
+							return 'arena-draft';
+						}
+						// arenatracker
+						if (contents.match(/.*Begin draft.*/gm)) {
+							return 'arena-draft';
+						}
 					}
-					// arenatracker
-					if (contents.match(/.*Begin draft.*/gm)) {
-						return 'arena-draft';
-					}
+					catch (e) {}
 					return 'game-replay';
 				}
 			}

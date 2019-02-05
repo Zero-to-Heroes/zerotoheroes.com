@@ -34,7 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class HearthArena implements IntegrationPlugin {
 
-	private static final String URL_PATTERN = "\\[?(?:http:\\/\\/)?(www\\.heartharena\\.com\\/arena-run\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
+	private static final String URL_PATTERN = "\\[?(?:http(?:s):\\/\\/)?(www\\.heartharena\\.com\\/arena-run\\/)([\\d\\-a-zA-Z\\-]+)\\]?";
 	// private static final String URL =
 	// "http://www.heartharena.com/arena-run/";
 

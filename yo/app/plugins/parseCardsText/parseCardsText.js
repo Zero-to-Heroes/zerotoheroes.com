@@ -1624,6 +1624,16 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
+		"playerClass": "Rogue",
+		"set": "Tgt",
+		"name": "Shady Deals Copy",
+		"id": "AT_032e_copy",
+		"text": "+1/+1.",
+		"dbfId": 51452,
+		"type": "Enchantment",
+		"cardClass": "ROGUE"
+	},
+	{
 		"collectible": true,
 		"cost": 3,
 		"set": "Tgt",
@@ -1829,7 +1839,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Tgt",
-		"name": "Living Roots",
+		"name": "Grasping Roots",
 		"id": "AT_037a",
 		"audio": {
 			"play": [],
@@ -1845,7 +1855,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Tgt",
-		"name": "Living Roots",
+		"name": "One, Two, Trees!",
 		"id": "AT_037b",
 		"audio": {
 			"play": [],
@@ -5772,7 +5782,7 @@ var parseCardsText = {
 				"VO_AT_129_ATTACK_03.ogg"
 			]
 		},
-		"text": "Whenever <b>you</b> target this minion with a spell, gain <b>Divine Shield.</b>",
+		"text": "Whenever <b>you</b> target this minion with a spell, gain <b><b>Divine Shield</b>.</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
 	},
@@ -5947,9 +5957,10 @@ var parseCardsText = {
 			"deDE": "<b>Heldenfähigkeit</b>\nVerursacht $3 Schaden.",
 			"jaJP": "<b>ヒーローパワー</b>\n$3ダメージを\n与える。",
 			"plPL": "<b>Moc specjalna</b>\nZadaj $3 pkt. obrażeń.",
-			"esES": "<b>Poder de héroe</b>\nInflige $3 p. de daño.",
+			"esES": "<b>Poder de héroe</b> Inflige $3 p. de daño.",
 			"ruRU": "<b>Сила героя</b>\nНаносит $3 ед. урона.",
 			"esMX": "<b>Poder de héroe</b>\nInflige $3 de daño.",
+			"koKR": "<b>영웅 능력</b>\n피해를 $3 줍니다.",
 			"thTH": "<b>พลังฮีโร่</b> สร้างความเสียหาย $3 แต้ม"
 		},
 		"cost": 2,
@@ -23245,6 +23256,7 @@ var parseCardsText = {
 	{
 		"cost": 2,
 		"set": "Tb",
+		"race": "ELEMENTAL",
 		"health": 3,
 		"mechanics": [
 			"TAUNT"
@@ -23502,7 +23514,7 @@ var parseCardsText = {
 				"CFM_RedManaWyrm_Attack.ogg"
 			]
 		},
-		"text": "Whenever  you cast a spell, gain +2 Attack.",
+		"text": "Whenever you cast a spell, gain +2 Attack.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
 	},
@@ -25042,7 +25054,7 @@ var parseCardsText = {
 		"collectible": true,
 		"collectionText": {
 			"ptBR": "<b>Escolha Um -</b> Evoque um <b>Golem de Jade</b>; ou Coloque 3 cópias deste card no seu deck.",
-			"zhCN": "<b>抉择：</b>召唤一个<b>青玉魔像</b>；或者将该牌的三个复制洗入你的\n牌库。",
+			"zhCN": "<b>抉择：</b>召唤一个<b>青玉魔像</b>；或者将该牌的三张复制洗入你的\n牌库。",
 			"itIT": "<b>Scegli:</b> evoca un <b>Golem di Giada</b> <b>o</b> mette tre copie di questa carta nel tuo mazzo.",
 			"enUS": "<b>Choose One -</b> Summon a <b>Jade Golem</b>; or Shuffle 3 copies of this card into your deck.",
 			"frFR": "<b>Choix des armes :</b> invoque un <b>golem de jade</b> ou place 3 copies de cette carte dans votre deck.",
@@ -25085,7 +25097,7 @@ var parseCardsText = {
 		"cost": 0,
 		"set": "Gangs",
 		"artist": "Matthew O'Connor",
-		"name": "Jade Idol",
+		"name": "Cut from Jade",
 		"referencedTags": [
 			"JADE_GOLEM"
 		],
@@ -25105,7 +25117,7 @@ var parseCardsText = {
 		"cost": 0,
 		"set": "Gangs",
 		"artist": "Matthew O'Connor",
-		"name": "Jade Idol",
+		"name": "Jade Stash",
 		"id": "CFM_602b",
 		"audio": {
 			"play": [],
@@ -27763,7 +27775,7 @@ var parseCardsText = {
 		"health": 4,
 		"targetingArrowText": {
 			"ptBR": "Coloque uma cópia no seu deck.",
-			"zhCN": "将一个复制洗入你的牌库。",
+			"zhCN": "将一张复制洗入你的牌库。",
 			"itIT": "Mette una copia di un tuo servitore nel tuo mazzo.",
 			"enUS": "Shuffle a copy into your deck.",
 			"frFR": "Place une copie dans votre deck.",
@@ -33787,6 +33799,29 @@ var parseCardsText = {
 		},
 		"text": "<b>Hero Power</b>\nRestore #4 Health.",
 		"dbfId": 41918,
+		"type": "Hero_power",
+		"cardClass": "PRIEST"
+	},
+	{
+		"playerClass": "Priest",
+		"cost": 2,
+		"set": "Hero_skins",
+		"name": "Lesser Heal",
+		"id": "CS1h_001_H2",
+		"text": "<b>Hero Power</b>\nRestore #2 Health.",
+		"dbfId": 54817,
+		"type": "Hero_power",
+		"cardClass": "PRIEST",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Priest",
+		"cost": 2,
+		"set": "Hero_skins",
+		"name": "Heal",
+		"id": "CS1h_001_H2_AT_132",
+		"text": "<b>Hero Power</b>\nRestore #4 Health.",
+		"dbfId": 54818,
 		"type": "Hero_power",
 		"cardClass": "PRIEST"
 	},
@@ -41145,6 +41180,3881 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"collectible": true,
+		"collectionText": {
+			"ptBR": " |4(Diabrete, Diabretes) 1/1. <i>(Aprimora a cada turno!)</i>",
+			"zhCN": "个1/1的小鬼。<i>（每回合都会升级！）</i>",
+			"itIT": " Imp 1/1.\n<i>(Si potenzia ogni turno!)</i>",
+			"enUS": " 1/1 |4(Imp, Imps). <i>(Upgrades each turn!)</i>",
+			"frFR": " |4(diablotin,diablotins) 1/1. <i>(S’améliore à chaque tour !)</i>",
+			"zhTW": "個1/1小鬼\n<i>(每回合升級)</i>",
+			"deDE": " Wichtel (1/1). <i>(Wird in jedem Zug aufgewertet!)</i>",
+			"jaJP": "体召喚する。\n<i>（毎ターン   \nアップグレード！）</i>",
+			"plPL": " |4(Chochlika,Chochliki,Chochlików) 1/1. <i>(Ulepsza się w każdej turze!)</i>",
+			"esES": " |4(diablillo,diablillos) 1/1.\n<i>(Mejora cada turno).</i>",
+			"ruRU": " |4(беса,бесов,бесов) 1/1\n<i>(улучшается каждый ход)</i>.",
+			"esMX": " |4(Diablillo, Diablillos) 1/1. <i>(¡Mejora con cada turno!)</i>",
+			"koKR": "마리 소환합니다.\n<i>(내 턴마다 강화됩니다!)</i>",
+			"thTH": " ตัว <i>(อัพเกรดทุกเทิร์น!)</i>"
+		},
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Jim Nelson",
+		"dbfId": 51371,
+		"type": "Spell",
+		"flavor": "\"When your first plan fails... imp-rovise.\"",
+		"playerClass": "Warlock",
+		"name": "Rafaam's Scheme",
+		"id": "DAL_007",
+		"text": "Summon",
+		"cardClass": "WARLOCK",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"collectionText": {
+			"ptBR": " de Armadura. <i>(Aprimora a cada turno!)</i>",
+			"zhCN": "点护甲值。<i>（每回合都会升级！）</i>",
+			"itIT": " Armatura.\n<i>(Si potenzia ogni turno!)</i>",
+			"enUS": " Armor.\n<i>(Upgrades each turn!)</i>",
+			"frFR": " |4(point,points) d’armure. <i>(S’améliore à chaque tour !</i>",
+			"zhTW": "點護甲值\n<i>(每回合升級)</i>",
+			"deDE": " Rüstung.\n<i>(Wird in jedem Zug aufgewertet!)</i>",
+			"jaJP": "獲得する。\n<i>（毎ターン   \nアップグレード！）</i>",
+			"plPL": " pkt. pancerza. <i>(Ulepsza się w każdej turze!)</i>",
+			"esES": " p. de armadura.\n<i>(Mejora cada turno).</i>",
+			"ruRU": " к броне \n[x]<i>(улучшается каждый ход)</i>.",
+			"esMX": " de Armadura. <i>(¡Mejora con cada turno!)</i>",
+			"koKR": " 얻습니다. <i>(내 턴마다 강화됩니다!)</i>",
+			"thTH": " แต้ม <i>(อัพเกรดทุกเทิร์น!)</i>"
+		},
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Konstantin Turovec",
+		"dbfId": 51372,
+		"type": "Spell",
+		"flavor": "“We did it! We blew up the vault!”\n“You mean the vault door?”\n“Oh. The doooor…”",
+		"playerClass": "Warrior",
+		"name": "Dr. Boom's Scheme",
+		"id": "DAL_008",
+		"text": "Gain",
+		"cardClass": "WARRIOR",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"collectionText": {
+			"ptBR": " de dano a todos os lacaios. <i>(Aprimora a cada turno!)</i>",
+			"zhCN": "点伤害。<i>（每回合都会升级！）</i>",
+			"itIT": " |4(danno,danni)\na TUTTI i servitori.\n<i>(Si potenzia ogni turno!)</i>",
+			"enUS": " damage\nto all minions.\n<i>(Upgrades each turn!)</i>",
+			"frFR": " |4(point,points) de dégâts à tous les serviteurs. <i>(S’améliore à chaque tour !)</i>",
+			"zhTW": "點傷害\n<i>(每回合升級)</i>",
+			"deDE": " Schaden zu. <i>(Wird in jedem Zug aufgewertet!)</i>",
+			"jaJP": "ダメージを与える。\n<i>（毎ターン   \nアップグレード！）</i>",
+			"plPL": " pkt. obrażeń wszystkim stronnikom.\n<i>(Ulepsza się w każdej turze!)</i>",
+			"esES": " p. de daño\na todos los esbirros. <i>(Mejora cada turno).</i>",
+			"ruRU": " ед. урона всем существам [x]<i>(улучшается каждый ход)</i>.",
+			"esMX": " de daño a todos los esbirros. <i>(¡Mejora con cada turno!)</i>",
+			"koKR": " 줍니다.\n<i>(내 턴마다 강화됩니다!)</i>",
+			"thTH": " แต้มให้มินเนี่ยนทั้งหมด <i>(อัพเกรดทุกเทิร์น!)</i>"
+		},
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Arthur Gimaldinov",
+		"dbfId": 51373,
+		"type": "Spell",
+		"flavor": "\"All shall suffer!\"\n\"But Hagatha, those are your minions...\"\n\"I said ALL!!!\"",
+		"playerClass": "Shaman",
+		"name": "Hagatha's Scheme",
+		"id": "DAL_009",
+		"text": "Deal $",
+		"cardClass": "SHAMAN",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"collectionText": {
+			"ptBR": " |4(cópia, cópias) dele no seu deck. <i>(Aprimora a cada turno!)</i>",
+			"zhCN": "张复制洗入你的牌库。<i>（每回合都会升级！）</i>",
+			"itIT": " |4(copia,copie)\nnel tuo mazzo.\n<i>(Si potenzia ogni turno!)</i>",
+			"enUS": " |4(copy, copies) of it into your deck.\n<i>(Upgrades each turn!)</i>",
+			"frFR": " |4(copie,copies) dans votre deck. <i>(S’améliore à chaque tour !)</i>",
+			"zhTW": "張它的分身洗入你的牌堆<i>(每回合升級)</i>",
+			"deDE": " |4(Kopie, Kopien) davon in\nEuer Deck. <i>(Wird in jedem\nZug aufgewertet!)</i>",
+			"jaJP": "体を\n自分のデッキに混ぜる。\n<i>（毎ターン   \nアップグレード！）</i>",
+			"plPL": " |4(kopię,kopie,kopii) do twojej talii. <i>(Ulepsza się w każdej turze!)</i>",
+			"esES": " |4(copia,copias)\ndel mismo en tu mazo.\n<i>(Mejora cada turno).</i>",
+			"ruRU": " |4(его копию,его копии,его копий) <i>(улучшается каждый ход)</i>.",
+			"esMX": " |4(copia, copias) de él en tu mazo.\n<i>(¡Mejora con cada turno!)</i>",
+			"koKR": "장 복사하여\n내 덱에 섞어 넣습니다.\n<i>(내 턴마다 강화됩니다!)</i>",
+			"thTH": " ใบเข้า[b]เด็คคุณ <i>(อัพเกรดทุกเทิร์น!)</i>"
+		},
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Konstantin Turovec",
+		"dbfId": 51375,
+		"type": "Spell",
+		"flavor": "\"Many minions equals many treasures for king. Kobold arithmetic!\"",
+		"playerClass": "Rogue",
+		"name": "Togwaggle's Scheme",
+		"id": "DAL_010",
+		"text": "Choose a minion. Shuffle",
+		"cardClass": "ROGUE",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"collectionText": {
+			"ptBR": " até seu próximo turno. <i>(Aprimora a cada turno!)</i>",
+			"zhCN": "点。<i>（每回合都会升级！）</i>",
+			"itIT": " fino\nal tuo turno successivo.\n<i>(Si potenzia ogni turno!)</i>",
+			"enUS": " until your next turn. <i>(Upgrades each turn!)</i>",
+			"frFR": " |4(point,points) jusqu’à votre prochain tour. <i>(S’améliore à chaque tour !)</i>",
+			"zhTW": "點，直到你的下一回合\n<i>(每回合升級)</i>",
+			"deDE": ". <i>(Wird in jedem Zug aufgewertet!)</i>",
+			"jaJP": "減らす。\n<i>（毎ターン   \nアップグレード！）</i>",
+			"plPL": " do twojej następnej tury. <i>(Ulepsza się w każdej turze!)</i>",
+			"esES": " p. el ataque\nde un esbirro enemigo\nhasta tu siguiente turno.\n<i>(Mejora cada turno).</i>",
+			"ruRU": " к атаке до вашего следующего хода <i>(улучшается каждый ход)</i>.",
+			"esMX": " hasta tu próximo turno. <i>(¡Mejora con cada turno!)</i>",
+			"koKR": " 감소시킵니다.\n<i>(내 턴마다 강화됩니다!)</i>",
+			"thTH": " แต้ม\nจนถึงเทิร์นถัดไปของคุณ <i>(อัพเกรดทุกเทิร์น!)</i>"
+		},
+		"cost": 0,
+		"set": "Dalaran",
+		"artist": "J. Axer",
+		"dbfId": 51376,
+		"type": "Spell",
+		"flavor": "\"What's that you're dreaming?\nYou're weak and you're screaming!\nIt must be my scheming...\"",
+		"playerClass": "Priest",
+		"name": "Lazul's Scheme",
+		"id": "DAL_011",
+		"text": "Reduce the Attack of an enemy minion by",
+		"cardClass": "PRIEST",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Lazul's Curse",
+		"id": "DAL_011e",
+		"text": "Reduced Attack.",
+		"dbfId": 53987,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Konstantin Turovec",
+		"health": 2,
+		"targetingArrowText": {
+			"ptBR": "Transforme numa cópia 2/2.",
+			"zhCN": "变形成为2/2的复制。",
+			"itIT": "Si trasforma in una copia 2/2.",
+			"enUS": "Transform into a 2/2 copy.",
+			"frFR": "Se transforme en une copie_2/2.",
+			"zhTW": "變形為一個2/2的分身",
+			"deDE": "Verwandelt sich in eine Kopie (2/2).",
+			"jaJP": "2/2のコピーに変身する。",
+			"plPL": "Przemień w kopię 2/2.",
+			"esES": "Se transforma en una copia 2/2.",
+			"ruRU": "Превратить в копию 2/2.",
+			"esMX": "Se transforma en una copia 2/2.",
+			"koKR": "2/2 하수인으로 변신",
+			"thTH": "เปลี่ยนร่างเป็น[b]ร่างก๊อปปี้ 2/2"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 51567,
+		"type": "Minion",
+		"flavor": "Terrible at shadow puppets: “This is… a tentacle! And this is… two tentacles!”",
+		"playerClass": "Priest",
+		"attack": 2,
+		"name": "Shadowy Figure",
+		"id": "DAL_030",
+		"text": "<b>Battlecry:</b> Transform into a 2/2 copy of a friendly <b>Deathrattle</b> minion.",
+		"cardClass": "PRIEST",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Priest",
+		"set": "Dalaran",
+		"name": "Shade",
+		"id": "DAL_030e",
+		"text": "2/2.",
+		"dbfId": 54190,
+		"type": "Enchantment",
+		"cardClass": "PRIEST"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Zoltan Boros",
+		"health": 6,
+		"mechanics": [
+			"DEATHRATTLE",
+			"TAUNT"
+		],
+		"dbfId": 51714,
+		"type": "Minion",
+		"flavor": "It’s always nice to steal a familiar face.",
+		"playerClass": "Priest",
+		"attack": 2,
+		"name": "Convincing Infiltrator",
+		"id": "DAL_039",
+		"text": "[x]<b><b>Taunt</b></b>\n<b>Deathrattle:</b> Destroy a\n random enemy minion.",
+		"cardClass": "PRIEST",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Paul Mafayon",
+		"health": 7,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 51715,
+		"type": "Minion",
+		"flavor": "The Hench-Clan has a point.",
+		"playerClass": "Priest",
+		"attack": 4,
+		"name": "Hench-Clan Shadequill",
+		"id": "DAL_040",
+		"text": "<b>Deathrattle:</b> Restore 5 Health to the enemy hero.",
+		"cardClass": "PRIEST",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"race": "ELEMENTAL",
+		"artist": "James Ryman",
+		"health": 8,
+		"mechanics": [
+			"LIFESTEAL",
+			"RUSH",
+			"WINDFURY"
+		],
+		"dbfId": 51722,
+		"type": "Minion",
+		"flavor": "The weirdest part is that it doesn't have legs.",
+		"playerClass": "Shaman",
+		"attack": 4,
+		"name": "Walking Fountain",
+		"id": "DAL_047",
+		"text": "<b>Lifesteal</b>, <b>Rush</b>, <b>Windfury</b>",
+		"cardClass": "SHAMAN",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "MURLOC",
+		"artist": "Jim Nelson",
+		"health": 3,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 51724,
+		"type": "Minion",
+		"flavor": "Attracts murlocs… and moths.",
+		"playerClass": "Shaman",
+		"attack": 2,
+		"name": "Underbelly Angler",
+		"id": "DAL_049",
+		"text": "After you play a Murloc, add a random Murloc to your hand.",
+		"cardClass": "SHAMAN",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Matt Dixon",
+		"health": 4,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 51727,
+		"type": "Minion",
+		"flavor": "Fan favorite in the muck morphin' sewer strangers.",
+		"playerClass": "Shaman",
+		"attack": 4,
+		"name": "Muckmorpher",
+		"id": "DAL_052",
+		"text": "[x]<b>Battlecry:</b> Transform into\na 4/4 copy of a different\nminion in your deck.",
+		"cardClass": "SHAMAN",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Muckmorphing",
+		"id": "DAL_052e",
+		"text": "4/4.",
+		"dbfId": 53003,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"artist": "Matt Dixon",
+		"health": 8,
+		"mechanics": [
+			"BATTLECRY",
+			"TAUNT"
+		],
+		"dbfId": 51733,
+		"type": "Minion",
+		"flavor": "Built by goblins, designed by a troll.",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Hecklebot",
+		"id": "DAL_058",
+		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Your opponent summons a minion from their deck.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 10,
+		"set": "Dalaran",
+		"artist": "Daria Tuzova",
+		"dbfId": 51734,
+		"type": "Spell",
+		"flavor": "The first dimensional ripper had a point.\nThe second fell flat.\nThe THIRD one really started to take shape!",
+		"playerClass": "Warrior",
+		"name": "Dimensional Ripper",
+		"id": "DAL_059",
+		"text": "Summon 2 copies of a minion in your deck.",
+		"cardClass": "WARRIOR",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"artist": "A.J. Nazzaro",
+		"health": 3,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 51735,
+		"type": "Minion",
+		"flavor": "They always wind up bombing.",
+		"playerClass": "Warrior",
+		"attack": 3,
+		"name": "Clockwork Goblin",
+		"id": "DAL_060",
+		"text": "[x]<b>Battlecry:</b> Shuffle a Bomb\ninto your opponent's deck.\nWhen drawn, it explodes\nfor 5 damage.",
+		"cardClass": "WARRIOR",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Ivan Fomin",
+		"dbfId": 51737,
+		"type": "Spell",
+		"flavor": "Infinitely preferable to mopping strikes.",
+		"playerClass": "Warrior",
+		"name": "Sweeping Strikes",
+		"id": "DAL_062",
+		"text": "Give a minion \"Also damages minions next to whomever this attacks.\"",
+		"cardClass": "WARRIOR",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Warrior",
+		"set": "Dalaran",
+		"name": "Sweeping Strikes",
+		"id": "DAL_062e",
+		"text": "Damages minions adjacent to defender.",
+		"dbfId": 51748,
+		"type": "Enchantment",
+		"cardClass": "WARRIOR"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Akkapoj T.",
+		"durability": 2,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 51738,
+		"type": "Weapon",
+		"flavor": "Whoso pulleth out this wrench from the toolbox is rightwise king of the lab.",
+		"playerClass": "Warrior",
+		"attack": 3,
+		"name": "Wrenchcalibur",
+		"id": "DAL_063",
+		"text": "After your hero attacks, shuffle a Bomb into your [x]opponent's deck.",
+		"cardClass": "WARRIOR",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "Matt Dixon",
+		"health": 7,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 51739,
+		"type": "Minion",
+		"flavor": "He's gonna fly through the air with the greatest of grease.",
+		"playerClass": "Warrior",
+		"elite": true,
+		"attack": 7,
+		"name": "Blastmaster Boom",
+		"id": "DAL_064",
+		"text": "[x]<b>Battlecry:</b> Summon two 1/1\nBoom Bots for each Bomb\nin your opponent's deck.",
+		"cardClass": "WARRIOR",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Matt Dixon",
+		"referencedTags": [
+			"SILENCE"
+		],
+		"dbfId": 51847,
+		"type": "Spell",
+		"flavor": "It's 3 am. Do you know where your soul is?",
+		"playerClass": "Priest",
+		"name": "Unsleeping Soul",
+		"id": "DAL_065",
+		"text": "<b>Silence</b> a friendly minion, then summon a copy of it.",
+		"cardClass": "PRIEST",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 10,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"artist": "Jerry Mascho",
+		"health": 9,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"RUSH"
+		],
+		"dbfId": 52086,
+		"type": "Minion",
+		"flavor": "“What’s better than reaving? BOOM reaving!”",
+		"playerClass": "Warrior",
+		"elite": true,
+		"attack": 7,
+		"name": "The Boom Reaver",
+		"id": "DAL_070",
+		"text": "<b>Battlecry:</b> Summon a copy of a minion in your deck. Give it <b>Rush</b>.",
+		"cardClass": "WARRIOR",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Warrior",
+		"set": "Dalaran",
+		"name": "Reaving",
+		"id": "DAL_070e",
+		"text": "Has <b>Rush</b>.",
+		"dbfId": 53357,
+		"type": "Enchantment",
+		"cardClass": "WARRIOR"
+	},
+	{
+		"collectible": true,
+		"cost": 0,
+		"set": "Dalaran",
+		"artist": "Andrew Hou",
+		"dbfId": 52148,
+		"type": "Spell",
+		"flavor": "You'll get the transformation you want when murlocs fly.",
+		"playerClass": "Shaman",
+		"name": "Mutate",
+		"id": "DAL_071",
+		"text": "Transform a friendly minion into a random one that costs (1) more.",
+		"cardClass": "SHAMAN",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"race": "MURLOC",
+		"artist": "Anton Zemskov",
+		"health": 2,
+		"targetingArrowText": {
+			"ptBR": "Conceda Venenoso a um Murloc aliado.",
+			"zhCN": "使一个友方鱼人获得剧毒。",
+			"itIT": "Fornisce Veleno a un tuo Murloc.",
+			"enUS": "Give a friendly Murloc Poisonous.",
+			"frFR": "Confère <b>Toxicité</b> à un Murloc allié.",
+			"zhTW": "賦予一個友方魚人\n致命劇毒",
+			"deDE": "Macht einen befreundeten Murloc giftig.",
+			"jaJP": "味方のマーロック1体に猛毒を付与する。",
+			"plPL": "Daj przyjaznemu Murlokowi Truciznę.",
+			"esES": "Otorga Veneno a un múrloc amistoso.",
+			"ruRU": "Ваш выбранный мурлок получает «Яд».",
+			"esMX": "Otorga Venenoso a un Múrloc aliado.",
+			"koKR": "아군 멀록에게 독성 부여",
+			"thTH": "มอบพิษให้[b]เมอร์ล็อค[b]ฝ่ายคุณ[b]หนึ่งตัว"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"POISONOUS"
+		],
+		"dbfId": 52277,
+		"type": "Minion",
+		"flavor": "I'm addicted to him, but I know that he's Toxfin.",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Toxfin",
+		"id": "DAL_077",
+		"text": "<b>Battlecry:</b> Give a friendly Murloc <b>Poisonous</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Toxic Fin",
+		"id": "DAL_077e",
+		"text": "<b>Poisonous</b>",
+		"dbfId": 52297,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Tod Harris",
+		"health": 2,
+		"targetingArrowText": {
+			"ptBR": "Restaure 3 de Vida.",
+			"zhCN": "恢复3点生命值。",
+			"itIT": "Rigenera 3 Salute.",
+			"enUS": "Restore 3 Health.",
+			"frFR": "Rend 3_points de vie.",
+			"zhTW": "恢復3點生命值",
+			"deDE": "Stellt 3 Leben wieder her.",
+			"jaJP": "体力を3回復する。",
+			"plPL": "Przywróć 3 pkt. zdrowia.",
+			"esES": "Restaura 3 p. de salud.",
+			"ruRU": "Восстановить 3 ед. здоровья.",
+			"esMX": "Restaura 3 de Salud.",
+			"koKR": "생명력 3 회복",
+			"thTH": "ฟื้นฟูพลังชีวิต 3_แต้ม"
+		},
+		"mechanics": [
+			"BATTLECRY",
+			"DIVINE_SHIELD"
+		],
+		"dbfId": 52278,
+		"type": "Minion",
+		"flavor": "Some heroes have soft hearts and hard shells.",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Travelling Healer",
+		"id": "DAL_078",
+		"text": "[x]<b>Divine Shield</b>\n<b>Battlecry:</b> Restore #3 Health.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Adam Byrne",
+		"health": 4,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52281,
+		"type": "Minion",
+		"flavor": "The fanciest possible way of distracting enemies with shiny things.",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Spellward Jeweler",
+		"id": "DAL_081",
+		"text": "[x]<b>Battlecry:</b> Your hero can't\nbe targeted by spells or\nHero Powers until your\nnext turn.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Sparkly",
+		"mechanics": [
+			"CANT_BE_TARGETED_BY_SPELLS",
+			"CANT_BE_TARGETED_BY_HERO_POWERS"
+		],
+		"id": "DAL_081e",
+		"text": "Can't be targeted by spells or Hero Powers.",
+		"dbfId": 52298,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "James Ryman",
+		"health": 4,
+		"mechanics": [
+			"DIVINE_SHIELD"
+		],
+		"dbfId": 52285,
+		"type": "Minion",
+		"flavor": "Stops for nothing—except donuts.",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Dalaran Crusader",
+		"id": "DAL_085",
+		"text": "<b>Divine Shield</b>",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "L. Lullabi & K. Turovec",
+		"health": 3,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"SECRET"
+		],
+		"dbfId": 52286,
+		"type": "Minion",
+		"flavor": "She's watching. Always watching.",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Sunreaver Spy",
+		"id": "DAL_086",
+		"text": "<b>Battlecry:</b> If you control a <b>Secret</b>, gain +1/+1.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Stolen Secrets",
+		"id": "DAL_086e",
+		"text": "+1/+1",
+		"dbfId": 53023,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Christopher Hayes",
+		"health": 3,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52287,
+		"type": "Minion",
+		"flavor": "The Hench Clan is an equal opportunity employer, no matter which parts of you came from where.",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Hench-Clan Hag",
+		"id": "DAL_087",
+		"text": "<b>Battlecry:</b> Summon two 1/1 Amalgams with all minion types.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"cost": 1,
+		"set": "Dalaran",
+		"race": "ALL",
+		"artist": "Chris Hayes",
+		"health": 1,
+		"dbfId": 53019,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Amalgam",
+		"id": "DAL_087t",
+		"text": "[x]<i>This is an Elemental, Mech,\nDemon, Murloc, Dragon,\nBeast, Pirate and Totem.</i>",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"artist": "L. Lullabi & K. Turovec",
+		"health": 5,
+		"mechanics": [
+			"DEATHRATTLE",
+			"TAUNT"
+		],
+		"dbfId": 52288,
+		"type": "Minion",
+		"flavor": "Keep it secret. Keep it safeguarded!",
+		"playerClass": "Neutral",
+		"attack": 4,
+		"name": "Safeguard",
+		"id": "DAL_088",
+		"text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 0/5\nVault Safe with <b>Taunt</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"health": 5,
+		"mechanics": [
+			"TAUNT"
+		],
+		"dbfId": 53013,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 0,
+		"name": "Vault Safe",
+		"id": "DAL_088t2",
+		"text": "<b>Taunt</b>",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Ivan Fomin",
+		"health": 2,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"SPELLPOWER"
+		],
+		"dbfId": 52289,
+		"type": "Minion",
+		"flavor": "You're bound to love his work!",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Spellbook Binder",
+		"id": "DAL_089",
+		"text": "<b>Battlecry:</b> If you have <b>Spell Damage</b>, draw a card.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Andrew Hou",
+		"health": 3,
+		"mechanics": [
+			"STEALTH"
+		],
+		"dbfId": 52290,
+		"type": "Minion",
+		"flavor": "He’d be a lot sneakier if he wasn’t trailing 300 yards of power cable…",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Hench-Clan Sneak",
+		"id": "DAL_090",
+		"text": "<b>Stealth</b>",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "ELEMENTAL",
+		"artist": "Wayne Wu",
+		"health": 3,
+		"dbfId": 52292,
+		"type": "Minion",
+		"flavor": "\"Would sir like me to punch something?\"",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Arcane Servant",
+		"id": "DAL_092",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Luke Mancini",
+		"health": 6,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52295,
+		"type": "Minion",
+		"flavor": "If you have to wield a spell and a sword, then neither is performing to expectation.",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Violet Spellsword",
+		"id": "DAL_095",
+		"text": "[x]<b>Battlecry:</b> Gain +1 Attack\nfor each spell in your hand.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Pizzazz",
+		"id": "DAL_095e",
+		"text": "Increased Attack.",
+		"dbfId": 53010,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Evgeniy Dlinnov",
+		"spellDamage": 1,
+		"health": 7,
+		"mechanics": [
+			"SPELLPOWER",
+			"TAUNT"
+		],
+		"dbfId": 52296,
+		"type": "Minion",
+		"flavor": "He's got magic, a shield, and an unwavering obsession with the color purple.",
+		"playerClass": "Neutral",
+		"attack": 4,
+		"name": "Violet Warden",
+		"id": "DAL_096",
+		"text": "<b>Taunt</b>\n<b>Spell Damage +1</b>",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "James Ryman",
+		"referencedTags": [
+			"SECRET"
+		],
+		"dbfId": 51705,
+		"type": "Spell",
+		"flavor": "Desperate times call for disparate secrets.",
+		"playerClass": "Paladin",
+		"name": "Desperate Measures",
+		"id": "DAL_141",
+		"text": "<b>Twinspell</b>\nCast a random Paladin <b>Secret</b>.",
+		"cardClass": "PALADIN",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Paladin",
+		"cost": 1,
+		"set": "Dalaran",
+		"name": "Desperate Measures",
+		"referencedTags": [
+			"SECRET"
+		],
+		"id": "DAL_141ts",
+		"text": "Cast a random Paladin <b>Secret</b>.",
+		"dbfId": 54129,
+		"type": "Spell",
+		"cardClass": "PALADIN",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"race": "DRAGON",
+		"artist": "Alex Horley",
+		"health": 2,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 51757,
+		"type": "Minion",
+		"flavor": "This is why you shouldn’t shoot the messenger.",
+		"playerClass": "Paladin",
+		"attack": 3,
+		"name": "Bronze Herald",
+		"id": "DAL_146",
+		"text": "<b>Deathrattle:</b> Add two 4/4 Dragons to your hand.",
+		"cardClass": "PALADIN",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Paladin",
+		"cost": 4,
+		"set": "Dalaran",
+		"race": "DRAGON",
+		"artist": "Alex Horley",
+		"attack": 4,
+		"name": "Bronze Dragon",
+		"health": 4,
+		"id": "DAL_146t",
+		"dbfId": 51758,
+		"type": "Minion",
+		"cardClass": "PALADIN"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Arthur Bozonnet",
+		"health": 5,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 51761,
+		"type": "Minion",
+		"flavor": "All of his speeches really drag on.",
+		"playerClass": "Paladin",
+		"attack": 3,
+		"name": "Dragon Speaker",
+		"id": "DAL_147",
+		"text": "<b>Battlecry:</b> Give all Dragons in your hand +3/+3.",
+		"cardClass": "PALADIN",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Dragon Shout",
+		"id": "DAL_147e",
+		"text": "+3/+3.",
+		"dbfId": 51762,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "Grace Liu",
+		"health": 2,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 51943,
+		"type": "Minion",
+		"flavor": "You can make a collect CAW!",
+		"playerClass": "Mage",
+		"attack": 3,
+		"name": "Messenger Raven",
+		"id": "DAL_163",
+		"text": "<b>Battlecry:</b> <b>Discover</b> a\nMage minion.",
+		"cardClass": "MAGE",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Slawomir Maniak",
+		"dbfId": 51966,
+		"type": "Spell",
+		"flavor": "It's always darkest just before you find the light switch.",
+		"playerClass": "Warlock",
+		"name": "Darkest Hour",
+		"id": "DAL_173",
+		"text": "Destroy all friendly minions. For each one, summon a random minion from your deck.",
+		"cardClass": "WARLOCK",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Jakub Kasper",
+		"dbfId": 51971,
+		"type": "Spell",
+		"flavor": "If only you’d let it go to voicemail…",
+		"playerClass": "Mage",
+		"name": "Conjurer's Calling",
+		"id": "DAL_177",
+		"text": "<b>Twinspell</b>\nDestroy a minion. Summon 2 minions of the same Cost to replace it.",
+		"cardClass": "MAGE",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Mage",
+		"cost": 3,
+		"set": "Dalaran",
+		"name": "Conjurer's Calling",
+		"id": "DAL_177ts",
+		"text": "Destroy a minion. Summon 2 minions of the same Cost to replace it.",
+		"dbfId": 52637,
+		"type": "Spell",
+		"cardClass": "MAGE",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "Patrik Bjorkstrom",
+		"health": 3,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 51977,
+		"type": "Minion",
+		"flavor": "There's a powerful throat in this frog.",
+		"playerClass": "Mage",
+		"attack": 1,
+		"name": "Magic Dart Frog",
+		"id": "DAL_182",
+		"text": "After you cast a spell, deal 1 damage to a random enemy minion.",
+		"cardClass": "MAGE",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"race": "DEMON",
+		"artist": "Slawomir Maniak",
+		"health": 6,
+		"mechanics": [
+			"TAUNT",
+			"TOPDECK"
+		],
+		"dbfId": 52058,
+		"type": "Minion",
+		"flavor": "She's got a big brood and a big mood.",
+		"playerClass": "Warlock",
+		"attack": 4,
+		"name": "Aranasi Broodmother",
+		"id": "DAL_185",
+		"text": "[x]<b>Taunt</b>\nWhen you draw this, restore\n4 Health to your hero.",
+		"cardClass": "WARLOCK",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"artist": "Vladimir Kafanov",
+		"dbfId": 52819,
+		"type": "Spell",
+		"flavor": "Delicious Forest’s Aid! Made from real forests.",
+		"playerClass": "Druid",
+		"name": "The Forest's Aid",
+		"id": "DAL_256",
+		"text": "<b>Twinspell</b>\nSummon five 2/2 Treants.",
+		"cardClass": "DRUID",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Druid",
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Vladimir Kafanov",
+		"attack": 2,
+		"name": "Treant",
+		"health": 2,
+		"id": "DAL_256t2",
+		"dbfId": 53302,
+		"type": "Minion",
+		"cardClass": "DRUID"
+	},
+	{
+		"playerClass": "Druid",
+		"cost": 8,
+		"set": "Dalaran",
+		"name": "The Forest's Aid",
+		"id": "DAL_256ts",
+		"text": "Summon five 2/2 Treants.",
+		"dbfId": 52821,
+		"type": "Spell",
+		"cardClass": "DRUID",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Arthur Bozonnet",
+		"mechanics": [
+			"CHOOSE_ONE"
+		],
+		"dbfId": 51769,
+		"type": "Spell",
+		"flavor": "Often used as healing crystals, but also good for throwing at people.",
+		"playerClass": "Druid",
+		"name": "Crystal Power",
+		"id": "DAL_350",
+		"text": "<b>Choose One -</b> Deal $2 damage to a minion; or Restore #5 Health.",
+		"cardClass": "DRUID",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Druid",
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Arthur Bozonnet",
+		"name": "Piercing Thorns",
+		"id": "DAL_350a",
+		"text": "Deal $2 damage to a minion.",
+		"dbfId": 51773,
+		"type": "Spell",
+		"cardClass": "DRUID"
+	},
+	{
+		"playerClass": "Druid",
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Arthur Bozonnet",
+		"name": "Healing Blossom",
+		"id": "DAL_350b",
+		"text": "Restore #5 Health.",
+		"dbfId": 51775,
+		"type": "Spell",
+		"cardClass": "DRUID"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Steven Prescott",
+		"dbfId": 51779,
+		"type": "Spell",
+		"flavor": "Arguably the cutest blessing.",
+		"playerClass": "Druid",
+		"name": "Blessing of the Ancients",
+		"id": "DAL_351",
+		"text": "<b>Twinspell</b>\nGive your minions +1/+1.",
+		"cardClass": "DRUID",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Ancient Blessings",
+		"id": "DAL_351e",
+		"text": "+1/+1.",
+		"dbfId": 52820,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Druid",
+		"cost": 3,
+		"set": "Dalaran",
+		"name": "Blessing of the Ancients",
+		"id": "DAL_351ts",
+		"text": "Give your minions +1/+1.",
+		"dbfId": 54128,
+		"type": "Spell",
+		"cardClass": "DRUID",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Arthur Bozonnet",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 51781,
+		"type": "Spell",
+		"flavor": "Experience the draw of the wild!",
+		"playerClass": "Druid",
+		"name": "Crystalsong Portal",
+		"id": "DAL_352",
+		"text": "<b>Discover</b> a Druid minion. If your hand has no minions, keep all 3.",
+		"cardClass": "DRUID",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Steven Prescott",
+		"health": 1,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 51790,
+		"type": "Minion",
+		"flavor": "You’d be nuts to mess with the squirrel squad.",
+		"playerClass": "Druid",
+		"attack": 2,
+		"name": "Acornbearer",
+		"id": "DAL_354",
+		"text": "<b>Deathrattle:</b> Add two 1/1 Squirrels to your hand.",
+		"cardClass": "DRUID",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Druid",
+		"cost": 1,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "Steven Prescott",
+		"attack": 1,
+		"name": "Squirrel",
+		"health": 1,
+		"id": "DAL_354t",
+		"dbfId": 54315,
+		"type": "Minion",
+		"cardClass": "DRUID"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Vladimir Kafanov",
+		"health": 5,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 51791,
+		"type": "Minion",
+		"flavor": "Lifeweaving is all well and good until it's time to cut the thread.",
+		"playerClass": "Druid",
+		"attack": 2,
+		"name": "Lifeweaver",
+		"id": "DAL_355",
+		"text": "Whenever you restore Health, add a random Druid spell to your hand.",
+		"cardClass": "DRUID",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"artist": "Steven Prescott",
+		"health": 8,
+		"mechanics": [
+			"DEATHRATTLE",
+			"TAUNT"
+		],
+		"dbfId": 51795,
+		"type": "Minion",
+		"flavor": "Always feels refreshed after a little dirt nap.",
+		"playerClass": "Druid",
+		"elite": true,
+		"attack": 4,
+		"name": "Lucentbark",
+		"id": "DAL_357",
+		"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Go dormant. Restore 5 Health to awaken this minion.",
+		"cardClass": "DRUID",
+		"rarity": "Legendary"
+	},
+	{
+		"collectionText": {
+			"ptBR": ")</i>",
+			"zhCN": "点！）</i>",
+			"itIT": "!)</i>",
+			"enUS": " left!)</i>",
+			"frFR": " !)</i>",
+			"zhTW": "點)</i>",
+			"deDE": "!)</i>",
+			"jaJP": "！）</i>",
+			"plPL": ")</i>",
+			"esES": ")</i>.",
+			"ruRU": ")</i>.",
+			"esMX": " más!)</i>",
+			"koKR": " 남음!)</i>",
+			"thTH": "!)</i>"
+		},
+		"cost": 11,
+		"set": "Dalaran",
+		"hideStats": true,
+		"health": 1,
+		"mechanics": [
+			"TRIGGER_VISUAL",
+			"UNTOUCHABLE"
+		],
+		"dbfId": 51796,
+		"type": "Minion",
+		"playerClass": "Druid",
+		"attack": 0,
+		"name": "Spirit of Lucentbark",
+		"id": "DAL_357t",
+		"text": "When you restore 5 Health, awaken this minion.\n<i>(",
+		"cardClass": "DRUID"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Akkapoj T.",
+		"dbfId": 51827,
+		"type": "Spell",
+		"flavor": "The terms of service are constantly changing.",
+		"playerClass": "Rogue",
+		"name": "Unidentified Contract",
+		"id": "DAL_366",
+		"text": "Destroy a minion. Gains a bonus effect in your hand.",
+		"entourage": [
+			"DAL_366t1",
+			"DAL_366t2",
+			"DAL_366t3",
+			"DAL_366t4"
+		],
+		"cardClass": "ROGUE",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Rogue",
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Akkapoj T.",
+		"name": "Assassin's Contract",
+		"id": "DAL_366t1",
+		"text": "Destroy a minion. Summon a 1/1 Patient Assassin.",
+		"dbfId": 53241,
+		"type": "Spell",
+		"cardClass": "ROGUE",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Rogue",
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Akkapoj T.",
+		"name": "Recruitment Contract",
+		"id": "DAL_366t2",
+		"text": "Destroy a minion. Add a copy of it to your hand.",
+		"dbfId": 52875,
+		"type": "Spell",
+		"cardClass": "ROGUE",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Rogue",
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Akkapoj T.",
+		"name": "Lucrative Contract",
+		"id": "DAL_366t3",
+		"text": "Destroy a minion. Add 2 Coins to your hand.",
+		"dbfId": 53244,
+		"type": "Spell",
+		"cardClass": "ROGUE",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Rogue",
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Akkapoj T.",
+		"name": "Turncoat Contract",
+		"id": "DAL_366t4",
+		"text": "Destroy a minion. It deals its damage to adjacent minions.",
+		"dbfId": 53246,
+		"type": "Spell",
+		"cardClass": "ROGUE",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Alex Garner",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 52070,
+		"type": "Spell",
+		"flavor": "Obviously it's marked for greatness.",
+		"playerClass": "Hunter",
+		"name": "Marked Shot",
+		"id": "DAL_371",
+		"text": "Deal $4 damage to a minion. <b>Discover</b> a spell.",
+		"cardClass": "HUNTER",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Rafael Zanchetin",
+		"health": 3,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 52072,
+		"type": "Minion",
+		"flavor": "Stop trying to make fletch happen. It's not going to happen.",
+		"playerClass": "Hunter",
+		"attack": 3,
+		"name": "Arcane Fletcher",
+		"id": "DAL_372",
+		"text": "[x]Whenever you play a\n1-Cost minion, draw a\nspell from your deck.",
+		"cardClass": "HUNTER",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "L. Lullabi & K. Turovec",
+		"dbfId": 52076,
+		"type": "Spell",
+		"flavor": "Pew! Pew!",
+		"playerClass": "Hunter",
+		"name": "Rapid Fire",
+		"id": "DAL_373",
+		"text": "<b>Twinspell</b>\nDeal $1 damage.",
+		"cardClass": "HUNTER",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Hunter",
+		"cost": 1,
+		"set": "Dalaran",
+		"name": "Rapid Fire",
+		"id": "DAL_373ts",
+		"text": "Deal $1 damage.",
+		"dbfId": 54143,
+		"type": "Spell",
+		"cardClass": "HUNTER",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"artist": "Zoltan Boros",
+		"health": 4,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52081,
+		"type": "Minion",
+		"flavor": "Reduce, reuse, re-rattle!",
+		"playerClass": "Hunter",
+		"elite": true,
+		"attack": 3,
+		"name": "Oblivitron",
+		"id": "DAL_376",
+		"text": "[x]<b>Deathrattle:</b> Summon a\nMech from your hand and\ntrigger its <b>Deathrattle</b>.",
+		"cardClass": "HUNTER",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Anton Zemskov",
+		"referencedTags": [
+			"DEATHRATTLE",
+			"DISCOVER"
+		],
+		"dbfId": 52082,
+		"type": "Spell",
+		"flavor": "Beware the night of the living pets!",
+		"playerClass": "Hunter",
+		"name": "Nine Lives",
+		"id": "DAL_377",
+		"text": "<b>Discover</b> a friendly <b>Deathrattle</b> minion that died this game. Also trigger its <b>Deathrattle</b>.",
+		"cardClass": "HUNTER",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "L. Lullabi & K. Turovec",
+		"referencedTags": [
+			"RUSH"
+		],
+		"dbfId": 52089,
+		"type": "Spell",
+		"flavor": "The Kirin Tor have always been lax in enforcing leash laws.",
+		"playerClass": "Hunter",
+		"name": "Unleash the Beast",
+		"id": "DAL_378",
+		"text": "<b>Twinspell</b>\nSummon a 5/5 Wyvern with <b>Rush</b>.",
+		"cardClass": "HUNTER",
+		"rarity": "Rare"
+	},
+	{
+		"cost": 5,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "L. Lullabi & K. Turovec",
+		"health": 5,
+		"mechanics": [
+			"RUSH"
+		],
+		"dbfId": 54146,
+		"type": "Minion",
+		"playerClass": "Hunter",
+		"attack": 5,
+		"name": "Wyvern",
+		"id": "DAL_378t1",
+		"text": "<b>Rush</b>",
+		"cardClass": "HUNTER"
+	},
+	{
+		"playerClass": "Hunter",
+		"cost": 6,
+		"set": "Dalaran",
+		"name": "Unleash the Beast",
+		"referencedTags": [
+			"RUSH"
+		],
+		"id": "DAL_378ts",
+		"text": "Summon a 5/5 Wyvern with <b>Rush</b>.",
+		"dbfId": 54145,
+		"type": "Spell",
+		"cardClass": "HUNTER",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "James Ryman",
+		"health": 6,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52091,
+		"type": "Minion",
+		"flavor": "Good things come in threes: Windrunner sisters and arrows of Thori'dal.",
+		"playerClass": "Hunter",
+		"elite": true,
+		"attack": 5,
+		"name": "Vereesa Windrunner",
+		"id": "DAL_379",
+		"text": "<b>Battlecry:</b> Equip Thori'dal, the Stars' Fury.",
+		"cardClass": "HUNTER",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Hunter",
+		"set": "Dalaran",
+		"name": "Stars' Fury",
+		"mechanics": [
+			"TAG_ONE_TURN_EFFECT"
+		],
+		"id": "DAL_379e",
+		"text": "You have <b>Spell Damage +2</b> this turn.",
+		"dbfId": 52093,
+		"type": "Enchantment",
+		"cardClass": "HUNTER"
+	},
+	{
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "James Ryman",
+		"durability": 3,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"referencedTags": [
+			"SPELLPOWER"
+		],
+		"dbfId": 54157,
+		"type": "Weapon",
+		"playerClass": "Hunter",
+		"elite": true,
+		"attack": 2,
+		"name": "Thori'dal, the Stars' Fury",
+		"id": "DAL_379t",
+		"text": "After your hero attacks, gain <b>Spell Damage +2</b> this turn.",
+		"cardClass": "HUNTER"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "Jim Nelson",
+		"health": 1,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 51380,
+		"type": "Minion",
+		"flavor": "Gradually driven to darkness by the promise of unobtainable cheese.",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "EVIL Cable Rat",
+		"id": "DAL_400",
+		"text": "<b>Battlecry:</b> Add a <b>Lackey</b> to your hand.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Tooth",
+		"health": 2,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52109,
+		"type": "Minion",
+		"flavor": "Kobold! There’s a place you can handle\nI said kobold! When you’re short in the candle\nCast a spell with the E! V! I! L!",
+		"playerClass": "Priest",
+		"attack": 2,
+		"name": "EVIL Conscripter",
+		"id": "DAL_413",
+		"text": "<b>Deathrattle:</b> Add a <b>Lackey</b> to your hand.",
+		"cardClass": "PRIEST",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Mike Sass",
+		"health": 5,
+		"mechanics": [
+			"COMBO"
+		],
+		"dbfId": 52111,
+		"type": "Minion",
+		"flavor": "Because there are no G.O.O.D. Miscreants.",
+		"playerClass": "Rogue",
+		"attack": 1,
+		"name": "EVIL Miscreant",
+		"id": "DAL_415",
+		"text": "<b>Combo:</b> Add two random <b>Lackeys</b> to your hand.",
+		"cardClass": "ROGUE",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"race": "PIRATE",
+		"artist": "Anton Zemskov",
+		"health": 3,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 52112,
+		"type": "Minion",
+		"flavor": "She’s more of a rat burglar.",
+		"playerClass": "Rogue",
+		"attack": 4,
+		"name": "Hench-Clan Burglar",
+		"id": "DAL_416",
+		"text": "<b>Battlecry:</b> <b>Discover</b> a spell from another class.",
+		"cardClass": "ROGUE",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "L. Lullabi & K. Turovec",
+		"health": 5,
+		"mechanics": [
+			"BATTLECRY",
+			"MULTIPLY_BUFF_VALUE"
+		],
+		"dbfId": 52114,
+		"type": "Minion",
+		"flavor": "A staunch ally of Rafaam, at least while the shinies keep flowing.",
+		"playerClass": "Rogue",
+		"elite": true,
+		"attack": 5,
+		"name": "Heistbaron Togwaggle",
+		"id": "DAL_417",
+		"text": "<b>Battlecry:</b> If you control a <b>Lackey</b>, choose a fantastic treasure.",
+		"entourage": [
+			"LOOT_998h",
+			"LOOT_998j",
+			"LOOT_998l",
+			"LOOT_998k"
+		],
+		"cardClass": "ROGUE",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "Alex Horley",
+		"health": 8,
+		"mechanics": [
+			"BATTLECRY",
+			"TAUNT"
+		],
+		"dbfId": 52119,
+		"type": "Minion",
+		"flavor": "Minions must wash hands before being LIQUIDATED AND REPLACED BY SOMEONE BETTER.",
+		"playerClass": "Warlock",
+		"elite": true,
+		"attack": 7,
+		"name": "Arch-Villain Rafaam",
+		"id": "DAL_422",
+		"text": "<b><b>Taunt</b>\nBattlecry:</b> Replace your hand and deck with <b>Legendary</b> minions.",
+		"cardClass": "WARLOCK",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "Alex Horley",
+		"health": 5,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52409,
+		"type": "Minion",
+		"flavor": "Rafaam mainly enjoys working with Hagatha because she never laughs at Dr. Boom's jokes.",
+		"playerClass": "Shaman",
+		"elite": true,
+		"attack": 5,
+		"name": "Swampqueen Hagatha",
+		"id": "DAL_431",
+		"text": "[x]<b>Battlecry:</b> Add a 5/5\nHorror to your hand. Teach\nit two Shaman spells.",
+		"entourage": [
+			"DAL_431t"
+		],
+		"cardClass": "SHAMAN",
+		"rarity": "Legendary"
+	},
+	{
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Alex Horley",
+		"health": 5,
+		"targetingArrowText": {
+			"ptBR": "Lance {0}.",
+			"zhCN": "施放{0}。",
+			"itIT": "Lancia {0}.",
+			"enUS": "Cast {0}.",
+			"frFR": "Lance {0}.",
+			"zhTW": "施放{0}",
+			"deDE": "Wirkt {0}.",
+			"jaJP": "{0}を使用する。",
+			"plPL": "Rzuć zaklęcie {0}.",
+			"esES": "Lanza {0}.",
+			"ruRU": "Разыграть «{0}».",
+			"esMX": "Lanza {0}.",
+			"koKR": "{0} 시전",
+			"thTH": "ร่าย '{0}'"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52812,
+		"type": "Minion",
+		"playerClass": "Shaman",
+		"attack": 5,
+		"name": "Drustvar Horror",
+		"id": "DAL_431t",
+		"text": "<b>Battlecry:</b> Cast {0} and {1}.",
+		"cardClass": "SHAMAN"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Jakub Kasper",
+		"dbfId": 52421,
+		"type": "Spell",
+		"flavor": "The swill has eyes!",
+		"playerClass": "Shaman",
+		"name": "Witch's Brew",
+		"id": "DAL_432",
+		"text": "Restore #4 Health. Repeatable this turn.",
+		"cardClass": "SHAMAN",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"race": "MURLOC",
+		"artist": "Rudy Siswanto",
+		"health": 1,
+		"mechanics": [
+			"BATTLECRY",
+			"OVERLOAD"
+		],
+		"dbfId": 52422,
+		"type": "Minion",
+		"overload": 1,
+		"flavor": "You can't stop slurping this delicious sludge!",
+		"playerClass": "Shaman",
+		"attack": 2,
+		"name": "Sludge Slurper",
+		"id": "DAL_433",
+		"text": "<b>Battlecry:</b> Add a <b>Lackey</b> to your hand. <b>Overload:</b> (1)",
+		"cardClass": "SHAMAN",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Jakub Kasper",
+		"health": 6,
+		"referencedTags": [
+			"SPELLPOWER"
+		],
+		"dbfId": 52654,
+		"type": "Minion",
+		"flavor": "Now his watch has ended… until you have Spell Damage.",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Arcane Watcher",
+		"id": "DAL_434",
+		"text": "Can't attack unless you have <b>Spell Damage</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Dave Allsop",
+		"health": 6,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52306,
+		"type": "Minion",
+		"flavor": "Far more effective than the flamboyant saboteur.",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Unseen Saboteur",
+		"id": "DAL_538",
+		"text": "<b>Battlecry:</b> Your opponent casts a random spell from their hand <i>(targets chosen randomly)</i>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Zoltan Boros",
+		"health": 4,
+		"targetingArrowText": {
+			"ptBR": "Cause 4 de dano.",
+			"zhCN": "造成4点伤害。",
+			"itIT": "Infligge 4 danni.",
+			"enUS": "Deal 4 damage.",
+			"frFR": "Inflige 4_points de dégâts.",
+			"zhTW": "造成4點傷害",
+			"deDE": "Verursacht 4 Schaden.",
+			"jaJP": "4ダメージを与える。",
+			"plPL": "Zadaj 4 pkt. obrażeń.",
+			"esES": "Inflige 4 p. de daño.",
+			"ruRU": "Нанести 4 ед. урона.",
+			"esMX": "Inflige 4 de daño.",
+			"koKR": "피해 4",
+			"thTH": "สร้างความเสียหาย_4_แต้ม"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52307,
+		"type": "Minion",
+		"flavor": "What, did you expect the Sunreavers to be coldages?",
+		"playerClass": "Neutral",
+		"attack": 4,
+		"name": "Sunreaver Warmage",
+		"id": "DAL_539",
+		"text": "<b>Battlecry:</b> If you're holding a spell that costs (5) or more, deal 4 damage.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Rafael Zanchetin",
+		"health": 1,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52312,
+		"type": "Minion",
+		"flavor": "Everyone gets two because that’s all she can hold.",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Potion Vendor",
+		"id": "DAL_544",
+		"text": "<b>Battlecry:</b> Restore #2 Health to all friendly characters.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Zoltan Boros",
+		"health": 5,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52413,
+		"type": "Minion",
+		"flavor": "\"Thanks a latte!\"",
+		"playerClass": "Neutral",
+		"elite": true,
+		"attack": 4,
+		"name": "Barista Lynchen",
+		"id": "DAL_546",
+		"text": "<b>Battlecry:</b> Add a copy of each of your other <b>Battlecry</b> minions to your hand.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"race": "ELEMENTAL",
+		"artist": "Luca Zontini",
+		"health": 7,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"referencedTags": [
+			"SPELLPOWER"
+		],
+		"dbfId": 52415,
+		"type": "Minion",
+		"flavor": "This is some bad blood.",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Azerite Elemental",
+		"id": "DAL_548",
+		"text": "At the start of your turn, gain <b>Spell Damage +2</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Arcane Expansion",
+		"id": "DAL_548e",
+		"text": "Increased <b>Spell Damage</b>.",
+		"dbfId": 52427,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "Danny Dai",
+		"health": 5,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 52417,
+		"type": "Minion",
+		"flavor": "It's always accepting of the less successful adventurers.",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Underbelly Ooze",
+		"id": "DAL_550",
+		"text": "After this minion survives damage, summon a copy of it.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Arthur Bozonnet",
+		"health": 6,
+		"mechanics": [
+			"TAUNT"
+		],
+		"dbfId": 52418,
+		"type": "Minion",
+		"flavor": "It'll take a humble offender to defeat him.",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Proud Defender",
+		"id": "DAL_551",
+		"text": "<b>Taunt</b>\nHas +2 Attack while you [x]have no other minions.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 10,
+		"set": "Dalaran",
+		"artist": "Mauricio Herrera",
+		"health": 6,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 52420,
+		"type": "Minion",
+		"flavor": "\"My, my, what big minions I have!\"",
+		"playerClass": "Neutral",
+		"attack": 6,
+		"name": "Big Bad Archmage",
+		"id": "DAL_553",
+		"text": "At the end of your turn, summon a random\n6-Cost minion.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "Sean McNally",
+		"health": 6,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52434,
+		"type": "Minion",
+		"flavor": "His cooking is always very well done.",
+		"playerClass": "Neutral",
+		"elite": true,
+		"attack": 6,
+		"name": "Chef Nomi",
+		"id": "DAL_554",
+		"text": "<b>Battlecry:</b> If your deck is empty, summon six 6/6 Greasefire Elementals.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 6,
+		"set": "Dalaran",
+		"race": "ELEMENTAL",
+		"artist": "Sean McNally",
+		"attack": 6,
+		"name": "Greasefire Elemental",
+		"health": 6,
+		"id": "DAL_554t",
+		"dbfId": 53310,
+		"type": "Minion",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "James Ryman",
+		"health": 6,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 52438,
+		"type": "Minion",
+		"flavor": "He's an archmage, but he might want to brush up on the basics... like aiming.",
+		"playerClass": "Neutral",
+		"elite": true,
+		"attack": 2,
+		"name": "Archmage Vargoth",
+		"id": "DAL_558",
+		"text": "[x]At the end of your turn, cast\na spell you've cast this turn\n<i>(targets are random)</i>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"artist": "Maria Trepalina",
+		"health": 4,
+		"mechanics": [
+			"BATTLECRY",
+			"TAUNT"
+		],
+		"dbfId": 52479,
+		"type": "Minion",
+		"flavor": "We reserve the right to refuse service to any 1/1.",
+		"playerClass": "Neutral",
+		"attack": 4,
+		"name": "Heroic Innkeeper",
+		"id": "DAL_560",
+		"text": "<b>Taunt.</b> <b>Battlecry:</b> Gain +2/+2 for each other friendly minion.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Protect the Brews!",
+		"id": "DAL_560e2",
+		"text": "Increased stats.",
+		"dbfId": 53014,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 10,
+		"set": "Dalaran",
+		"race": "DEMON",
+		"artist": "James Ryman",
+		"health": 8,
+		"dbfId": 52480,
+		"type": "Minion",
+		"flavor": "Jumbo in size! Huge in E.V.I.L.!",
+		"playerClass": "Warlock",
+		"attack": 8,
+		"name": "Jumbo Imp",
+		"id": "DAL_561",
+		"text": "Costs (1) less whenever a friendly Demon dies while this is in your hand.",
+		"cardClass": "WARLOCK",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Imp-onomical",
+		"id": "DAL_561e",
+		"text": "Costs (1) less.",
+		"dbfId": 55877,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Jim Nelson",
+		"health": 2,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52482,
+		"type": "Minion",
+		"flavor": "Eager to please, even if it kills him.",
+		"playerClass": "Warlock",
+		"attack": 2,
+		"name": "Eager Underling",
+		"id": "DAL_563",
+		"text": "<b>Deathrattle:</b> Give two random friendly minions +2/+2.",
+		"cardClass": "WARLOCK",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Power of EVIL",
+		"id": "DAL_563e",
+		"text": "+2/+2.",
+		"dbfId": 56204,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"race": "DEMON",
+		"artist": "Nicola Saviori",
+		"health": 6,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"RUSH"
+		],
+		"dbfId": 52486,
+		"type": "Minion",
+		"flavor": "It’s like an interdimensional game of demon tag.",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Portal Overfiend",
+		"id": "DAL_565",
+		"text": "[x]<b>Battlecry:</b> Shuffle 3 Portals\ninto your deck. When drawn,\nsummon a 2/2 Demon\nwith <b>Rush</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"artist": "Charlene LeScanff",
+		"health": 4,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52487,
+		"type": "Minion",
+		"flavor": "Them’s fightin’ words!",
+		"playerClass": "Neutral",
+		"attack": 6,
+		"name": "Eccentric Scribe",
+		"id": "DAL_566",
+		"text": "<b>Deathrattle:</b> Summon\nfour 1/1 Vengeful Scrolls.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Charlene LeScanff",
+		"attack": 1,
+		"name": "Vengeful Scroll",
+		"health": 1,
+		"id": "DAL_566t",
+		"dbfId": 52827,
+		"type": "Minion",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Vladimir Kafanov",
+		"referencedTags": [
+			"LIFESTEAL"
+		],
+		"dbfId": 52490,
+		"type": "Spell",
+		"flavor": "Some might call this a lightforgery.",
+		"playerClass": "Paladin",
+		"name": "Lightforged Blessing",
+		"id": "DAL_568",
+		"text": "<b>Twinspell</b>\nGive a friendly minion <b>Lifesteal</b>.",
+		"cardClass": "PALADIN",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Paladin",
+		"set": "Dalaran",
+		"name": "Lightforged Blessing",
+		"id": "DAL_568e",
+		"text": "<b>Lifesteal</b>",
+		"dbfId": 55982,
+		"type": "Enchantment",
+		"cardClass": "PALADIN"
+	},
+	{
+		"playerClass": "Paladin",
+		"cost": 2,
+		"set": "Dalaran",
+		"name": "Lightforged Blessing",
+		"referencedTags": [
+			"LIFESTEAL"
+		],
+		"id": "DAL_568ts",
+		"text": "Give a friendly minion <b>Lifesteal</b>.",
+		"dbfId": 54189,
+		"type": "Spell",
+		"cardClass": "PALADIN",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Mauricio Herrera",
+		"mechanics": [
+			"SECRET"
+		],
+		"dbfId": 52494,
+		"type": "Spell",
+		"flavor": "But sometimes concede.",
+		"playerClass": "Paladin",
+		"name": "Never Surrender!",
+		"id": "DAL_570",
+		"text": "<b>Secret:</b> When your opponent casts a spell, give your minions +2 Health.",
+		"cardClass": "PALADIN",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Never Surrender!",
+		"id": "DAL_570e",
+		"text": "+2 Health.",
+		"dbfId": 52495,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Vlad Botos",
+		"durability": 2,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"SECRET"
+		],
+		"dbfId": 52496,
+		"type": "Weapon",
+		"flavor": "It knows every secret you have left.",
+		"playerClass": "Paladin",
+		"attack": 2,
+		"name": "Mysterious Blade",
+		"id": "DAL_571",
+		"text": "<b>Battlecry:</b> If you control a\n<b>Secret</b>, gain +1 Attack.",
+		"cardClass": "PALADIN",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Paladin",
+		"set": "Dalaran",
+		"name": "Mysterious",
+		"id": "DAL_571e",
+		"text": "+1 Attack.",
+		"dbfId": 55876,
+		"type": "Enchantment",
+		"cardClass": "PALADIN"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Luke Mancini",
+		"health": 3,
+		"mechanics": [
+			"AURA",
+			"TRIGGER_VISUAL"
+		],
+		"referencedTags": [
+			"SECRET"
+		],
+		"dbfId": 52500,
+		"type": "Minion",
+		"flavor": "Two people can keep a secret as long as neither of them are Commander Rhyssa.",
+		"playerClass": "Paladin",
+		"elite": true,
+		"attack": 4,
+		"name": "Commander Rhyssa",
+		"id": "DAL_573",
+		"text": "Your <b>Secrets</b> trigger twice.",
+		"cardClass": "PALADIN",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Evgeniy Zagumyenny",
+		"health": 2,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 52502,
+		"type": "Minion",
+		"flavor": "\"What do you call two minions summoned at once? Twinions, haha! Wait... where are you going?\"",
+		"playerClass": "Mage",
+		"elite": true,
+		"attack": 2,
+		"name": "Khadgar",
+		"id": "DAL_575",
+		"text": "Your cards that summon minions summon twice as many.",
+		"cardClass": "MAGE",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Zoltan Boros",
+		"spellDamage": 3,
+		"health": 3,
+		"mechanics": [
+			"AURA",
+			"SPELLPOWER"
+		],
+		"dbfId": 52638,
+		"type": "Minion",
+		"flavor": "The math checks out!",
+		"playerClass": "Mage",
+		"attack": 3,
+		"name": "Kirin Tor Tricaster",
+		"id": "DAL_576",
+		"text": "<b>Spell Damage +3</b>\nYour spells cost (1) more.",
+		"cardClass": "MAGE",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Kirin Tor's Curse",
+		"id": "DAL_576e",
+		"text": "Costs (1) more.",
+		"dbfId": 53937,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Alex Garner",
+		"referencedTags": [
+			"FREEZE"
+		],
+		"dbfId": 52639,
+		"type": "Spell",
+		"flavor": "If you have zero chill, this can help.",
+		"playerClass": "Mage",
+		"name": "Ray of Frost",
+		"id": "DAL_577",
+		"text": "<b>Twinspell</b>\n<b>Freeze</b> a minion.\nIf it's already <b>Frozen</b>,\ndeal $2 damage to it.",
+		"cardClass": "MAGE",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Mage",
+		"cost": 1,
+		"set": "Dalaran",
+		"name": "Ray of Frost",
+		"referencedTags": [
+			"FREEZE"
+		],
+		"id": "DAL_577ts",
+		"text": "<b>Freeze</b> a minion.\nIf it's already <b>Frozen</b>,\ndeal $2 damage to it.",
+		"dbfId": 54193,
+		"type": "Spell",
+		"cardClass": "MAGE",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"artist": "Zoltan Boros",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 52640,
+		"type": "Spell",
+		"flavor": "Mostly used for party tricks, to be honest.",
+		"playerClass": "Mage",
+		"name": "Power of Creation",
+		"id": "DAL_578",
+		"text": "<b>Discover</b> a 6-Cost minion. Summon two copies of it.",
+		"cardClass": "MAGE",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 10,
+		"set": "Dalaran",
+		"race": "DRAGON",
+		"artist": "Arthur Gimaldinov",
+		"health": 12,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52685,
+		"type": "Minion",
+		"flavor": "In another timeline, she was called Yeszari.",
+		"playerClass": "Paladin",
+		"elite": true,
+		"attack": 4,
+		"name": "Nozari",
+		"id": "DAL_581",
+		"text": "<b>Battlecry:</b> Restore both heroes to full Health.",
+		"cardClass": "PALADIN",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"race": "DEMON",
+		"artist": "Nicola Saviori",
+		"health": 2,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"RUSH"
+		],
+		"dbfId": 52707,
+		"type": "Minion",
+		"flavor": "No longer allowed to be “it” when playing demon tag.",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Portal Keeper",
+		"id": "DAL_582",
+		"text": "[x]<b>Battlecry:</b> Shuffle 3 Portals\ninto your deck. When drawn,\nsummon a 2/2 Demon\nwith <b>Rush</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Zoltan Boros",
+		"name": "Felhound Portal",
+		"mechanics": [
+			"TOPDECK"
+		],
+		"referencedTags": [
+			"RUSH"
+		],
+		"id": "DAL_582t",
+		"text": "<b>Casts When Drawn</b>\nSummon a 2/2 Felhound with <b>Rush</b>.",
+		"dbfId": 52709,
+		"type": "Spell",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "DEMON",
+		"artist": "Zoltan Boros",
+		"health": 2,
+		"mechanics": [
+			"RUSH"
+		],
+		"dbfId": 52710,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Felhound",
+		"id": "DAL_582t2",
+		"text": "<b>Rush</b>",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "Cecile He",
+		"health": 1,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52894,
+		"type": "Minion",
+		"flavor": "Plenty of buzz around this card.",
+		"playerClass": "Hunter",
+		"attack": 1,
+		"name": "Shimmerfly",
+		"id": "DAL_587",
+		"text": "<b>Deathrattle:</b> Add a random Hunter spell to your hand.",
+		"entourage": [
+			"NEW1_032",
+			"NEW1_033",
+			"NEW1_034"
+		],
+		"cardClass": "HUNTER",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Jim Nelson",
+		"dbfId": 53099,
+		"type": "Spell",
+		"flavor": "Not sure I’d call it a good party if everyone ends up beside themselves.",
+		"playerClass": "Hunter",
+		"name": "Hunting Party",
+		"id": "DAL_589",
+		"text": "Copy all Beasts in your hand.",
+		"cardClass": "HUNTER",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Hunting Party",
+		"id": "DAL_589e",
+		"text": "+3/+3.",
+		"dbfId": 53100,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"artist": "MAR Studio",
+		"health": 12,
+		"mechanics": [
+			"RUSH",
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 53251,
+		"type": "Minion",
+		"flavor": "When it comes to problem-solving, he always uses his head.",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Batterhead",
+		"id": "DAL_592",
+		"text": "<b>Rush</b>. After this attacks and kills a minion, it may attack again.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Arthur Gimaldinov",
+		"dbfId": 52698,
+		"type": "Spell",
+		"flavor": "It’s coming from inside the deck!",
+		"playerClass": "Warlock",
+		"name": "Plot Twist",
+		"id": "DAL_602",
+		"text": "Shuffle your hand\ninto your deck.\nDraw that many cards.",
+		"cardClass": "WARLOCK",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "ELEMENTAL",
+		"artist": "Ware Li",
+		"health": 2,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52706,
+		"type": "Minion",
+		"flavor": "It'll put a good spin on your spells.",
+		"playerClass": "Mage",
+		"attack": 2,
+		"name": "Mana Cyclone",
+		"id": "DAL_603",
+		"text": "[x]<b>Battlecry:</b> For each spell\nyou've cast this turn, add\na random Mage spell\nto your hand.",
+		"cardClass": "MAGE",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"artist": "Zoltan Boros",
+		"health": 3,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52790,
+		"type": "Minion",
+		"flavor": "It's been programmed to include all the bear necessities.",
+		"playerClass": "Hunter",
+		"attack": 3,
+		"name": "Ursatron",
+		"id": "DAL_604",
+		"text": "<b>Deathrattle:</b> Draw a Mech from your deck.",
+		"cardClass": "HUNTER",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Chris Hayes",
+		"dbfId": 52871,
+		"type": "Spell",
+		"flavor": "Imps don't get mad when you set them on fire. They think it's cozy.",
+		"playerClass": "Warlock",
+		"name": "Impferno",
+		"id": "DAL_605",
+		"text": "Give your Demons +1 Attack. Deal $1 damage to all enemy minions.",
+		"cardClass": "WARLOCK",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Warlock",
+		"cost": 2,
+		"set": "Dalaran",
+		"name": "Imptastic",
+		"id": "DAL_605e",
+		"text": "+1 Attack.",
+		"dbfId": 52874,
+		"type": "Enchantment",
+		"cardClass": "WARLOCK",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Rudy Siswanto",
+		"health": 2,
+		"targetingArrowText": {
+			"ptBR": "Destrua um lacaio aliado.",
+			"zhCN": "消灭一个友方随从。",
+			"itIT": "Distrugge un tuo servitore.",
+			"enUS": "Destroy a friendly minion.",
+			"frFR": "Détruit un serviteur allié.",
+			"zhTW": "摧毀一個友方手下",
+			"deDE": "Vernichtet einen befreundeten Diener.",
+			"jaJP": "味方のミニオン1体を破壊する。",
+			"plPL": "Zniszcz przyjaznego stronnika.",
+			"esES": "Destruye a un esbirro amistoso.",
+			"ruRU": "Уничтожить ваше существо.",
+			"esMX": "Destruye un esbirro aliado.",
+			"koKR": "아군 하수인 처치",
+			"thTH": "ทำลายมินเนี่ยน[b]ฝ่ายคุณหนึ่งตัว"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52872,
+		"type": "Minion",
+		"flavor": "You do not want to be on the business end of this intellect!",
+		"playerClass": "Warlock",
+		"attack": 2,
+		"name": "EVIL Genius",
+		"id": "DAL_606",
+		"text": "<b>Battlecry:</b> Destroy a friendly minion to add 2 random <b>Lackeys</b> to your hand.",
+		"cardClass": "WARLOCK",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"race": "DEMON",
+		"artist": "Nicola Saviori",
+		"health": 7,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"referencedTags": [
+			"RUSH"
+		],
+		"dbfId": 52873,
+		"type": "Minion",
+		"flavor": "Nobody else likes rush hour.",
+		"playerClass": "Warlock",
+		"elite": true,
+		"attack": 5,
+		"name": "Fel Lord Betrug",
+		"id": "DAL_607",
+		"text": "[x]Whenever you draw a\nminion, summon a copy\n with <b>Rush</b> that dies at\nend of turn.",
+		"cardClass": "WARLOCK",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Fleeting Fel",
+		"id": "DAL_607e",
+		"text": "<b>Rush</b>. Dies at end of turn.",
+		"dbfId": 52657,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Ivan Fomin",
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 52991,
+		"type": "Spell",
+		"flavor": "The world is not ready for an illusion of this depth and intricacy!",
+		"playerClass": "Mage",
+		"name": "Magic Trick",
+		"id": "DAL_608",
+		"text": "<b>Discover</b> a spell that costs (3) or less.",
+		"cardClass": "MAGE",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 10,
+		"set": "Dalaran",
+		"race": "DRAGON",
+		"artist": "Chris Rahn",
+		"health": 12,
+		"mechanics": [
+			"AURA",
+			"BATTLECRY",
+			"DISCOVER"
+		],
+		"dbfId": 53002,
+		"type": "Minion",
+		"flavor": "He was once the Aspect of Magic but gave it up to focus on cheap tricks.",
+		"playerClass": "Mage",
+		"elite": true,
+		"attack": 4,
+		"name": "Kalecgos",
+		"id": "DAL_609",
+		"text": "Your first spell each\nturn costs (0).\n<b>Battlecry:</b> <b>Discover</b>\na spell.",
+		"cardClass": "MAGE",
+		"rarity": "Legendary"
+	},
+	{
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Slawomir Maniak",
+		"health": 1,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 53160,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Faceless Lackey",
+		"id": "DAL_613",
+		"text": "<b>Battlecry:</b> Summon a random 2-Cost minion.",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Ivan Fomin",
+		"health": 1,
+		"targetingArrowText": {
+			"ptBR": "Cause 2 de dano.",
+			"zhCN": "造成2点伤害。",
+			"itIT": "Infligge 2 danni.",
+			"enUS": "Deal 2 damage.",
+			"frFR": "Inflige 2_points de dégâts.",
+			"zhTW": "造成2點傷害",
+			"deDE": "Verursacht 2 Schaden.",
+			"jaJP": "2ダメージを与える。",
+			"plPL": "Zadaj 2 pkt. obrażeń.",
+			"esES": "Inflige 2 p. de daño.",
+			"ruRU": "Нанести 2 ед. урона.",
+			"esMX": "Inflige 2 de daño.",
+			"koKR": "피해 2",
+			"thTH": "สร้างความเสียหาย_2_แต้ม"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 53161,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Kobold Lackey",
+		"id": "DAL_614",
+		"text": "<b>Battlecry:</b> Deal 2 damage.",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Jeremy Cranford",
+		"health": 1,
+		"targetingArrowText": {
+			"ptBR": "Transforme um lacaio.",
+			"zhCN": "将一个随从变形。",
+			"itIT": "Trasforma un servitore.",
+			"enUS": "Transform a minion.",
+			"frFR": "Transforme un serviteur.",
+			"zhTW": "變形一個手下",
+			"deDE": "Verwandelt einen Diener.",
+			"jaJP": "ミニオン1体を変身させる。",
+			"plPL": "Przemień stronnika.",
+			"esES": "Transforma a un esbirro.",
+			"ruRU": "Превратить существо.",
+			"esMX": "Transforma a un esbirro.",
+			"koKR": "하수인 변신",
+			"thTH": "เปลี่ยนร่างมินเนี่ยนหนึ่งตัว"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 53162,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Witchy Lackey",
+		"id": "DAL_615",
+		"text": "<b>Battlecry:</b> Transform a friendly minion into one that costs (1) more.",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Jason Kang",
+		"referencedTags": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52468,
+		"type": "Spell",
+		"flavor": "Previously thought nonexistent.",
+		"playerClass": "Shaman",
+		"name": "Soul of the Murloc",
+		"id": "DAL_710",
+		"text": "Give your minions \"<b>Deathrattle:</b> Summon a 1/1 Murloc.\"",
+		"cardClass": "SHAMAN",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Shaman",
+		"set": "Dalaran",
+		"name": "Soul of the Murloc",
+		"id": "DAL_710e",
+		"text": "<b>Deathrattle:</b> Summon a 1/1 Murloc.",
+		"dbfId": 52549,
+		"type": "Enchantment",
+		"cardClass": "SHAMAN"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Arthur Bozonnet",
+		"health": 3,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"RUSH"
+		],
+		"dbfId": 52603,
+		"type": "Minion",
+		"flavor": "She’ll take anything you have—except scruples and a good work ethic.",
+		"playerClass": "Rogue",
+		"attack": 2,
+		"name": "Underbelly Fence",
+		"id": "DAL_714",
+		"text": "[x]<b>Battlecry:</b> If you're holding\na card from another class,\n gain +1/+1 and <b><b>Rush</b>.</b>",
+		"cardClass": "ROGUE",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Street Smarts",
+		"id": "DAL_714e",
+		"text": "+1/+1.",
+		"dbfId": 52646,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Jim Nelson",
+		"dbfId": 52606,
+		"type": "Spell",
+		"flavor": "A vengeful and vicarious vanguard against violent villains or vexed victims.",
+		"playerClass": "Rogue",
+		"name": "Vendetta",
+		"id": "DAL_716",
+		"text": "Deal $4 damage to a minion. Costs (0) if you're holding a card from another class.",
+		"cardClass": "ROGUE",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "Rafael Zanchetin",
+		"health": 6,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 52616,
+		"type": "Minion",
+		"flavor": "\"One for me and one for future me!\"",
+		"playerClass": "Rogue",
+		"elite": true,
+		"attack": 6,
+		"name": "Tak Nozwhisker",
+		"id": "DAL_719",
+		"text": "[x]Whenever you shuffle a\ncard into your deck, add\na copy to your hand.",
+		"cardClass": "ROGUE",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"artist": "Jason Kang",
+		"durability": 2,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52617,
+		"type": "Weapon",
+		"flavor": "Kobolds informally refer to its effect as a deathwaggle.",
+		"playerClass": "Rogue",
+		"attack": 4,
+		"name": "Waggle Pick",
+		"id": "DAL_720",
+		"text": "[x]<b>Deathrattle:</b> Return\na random friendly\nminion to your hand.\nIt costs (2) less.",
+		"cardClass": "ROGUE",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"artist": "Mike Sass",
+		"health": 8,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 52627,
+		"type": "Minion",
+		"flavor": "She always manages to lift your spirits.",
+		"playerClass": "Priest",
+		"elite": true,
+		"attack": 6,
+		"name": "Catrina Muerte",
+		"id": "DAL_721",
+		"text": "[x]At the end of your turn,\nsummon a friendly minion\nthat died this game.",
+		"cardClass": "PRIEST",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 0,
+		"set": "Dalaran",
+		"artist": "J. Axer",
+		"dbfId": 52632,
+		"type": "Spell",
+		"flavor": "Please confirm your age before reading this flavor text.",
+		"playerClass": "Priest",
+		"name": "Forbidden Words",
+		"id": "DAL_723",
+		"text": "[x]Spend all your Mana.\nDestroy a minion with that\nmuch Attack or less.",
+		"cardClass": "PRIEST",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 9,
+		"set": "Dalaran",
+		"artist": "Arthur Bozonnet",
+		"dbfId": 52633,
+		"type": "Spell",
+		"flavor": "One's company, two's a crowd, and three's a “mass” resurrection, apparently.",
+		"playerClass": "Priest",
+		"name": "Mass Resurrection",
+		"id": "DAL_724",
+		"text": "Summon 3 friendly minions that died\nthis game.",
+		"cardClass": "PRIEST",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"race": "MURLOC",
+		"artist": "Alex Horley",
+		"health": 4,
+		"mechanics": [
+			"AURA"
+		],
+		"dbfId": 52636,
+		"type": "Minion",
+		"flavor": "Wanna know how he got those scars? So does he.",
+		"playerClass": "Shaman",
+		"elite": true,
+		"attack": 4,
+		"name": "Scargil",
+		"id": "DAL_726",
+		"text": "Your Murlocs cost (1).",
+		"cardClass": "SHAMAN",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Scargil's Blessing",
+		"id": "DAL_726e",
+		"text": "Costs (1).",
+		"dbfId": 56229,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Eva Widermann",
+		"dbfId": 52660,
+		"type": "Spell",
+		"flavor": "Even the smallest minion can change the outcome of the game.",
+		"playerClass": "Paladin",
+		"name": "Call to Adventure",
+		"id": "DAL_727",
+		"text": "Draw the lowest Cost minion from your deck. Give it +2/+2.",
+		"cardClass": "PALADIN",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Heroic",
+		"id": "DAL_727e",
+		"text": "+2/+2.",
+		"dbfId": 52661,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "L. Lullabi & K. Turovec",
+		"dbfId": 52679,
+		"type": "Spell",
+		"flavor": "Impossible to cast without cackling evilly.",
+		"playerClass": "Rogue",
+		"name": "Daring Escape",
+		"id": "DAL_728",
+		"text": "Return all friendly minions to your hand.",
+		"cardClass": "ROGUE",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "J. Axer",
+		"health": 2,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 52715,
+		"type": "Minion",
+		"flavor": "Of course she knows the future, she’s been looking at your cards the WHOLE TIME!",
+		"playerClass": "Priest",
+		"elite": true,
+		"attack": 3,
+		"name": "Madame Lazul",
+		"id": "DAL_729",
+		"text": "[x]<b>Battlecry:</b> <b>Discover</b> a\ncopy of a card in your\nopponent's hand.",
+		"cardClass": "PRIEST",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Konstantin Turovec",
+		"dbfId": 52742,
+		"type": "Spell",
+		"flavor": "If you don’t fight to the death, it’s Duel Yielding.",
+		"playerClass": "Paladin",
+		"name": "Duel!",
+		"id": "DAL_731",
+		"text": "Summon a minion from each player's deck.\nThey fight!",
+		"cardClass": "PALADIN",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "James Ryman",
+		"health": 3,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 52809,
+		"type": "Minion",
+		"flavor": "Keeps your choices handy.",
+		"playerClass": "Druid",
+		"elite": true,
+		"attack": 2,
+		"name": "Keeper Stalladris",
+		"id": "DAL_732",
+		"text": "After you cast a <b>Choose One</b> spell, add copies of both choices to your hand.",
+		"cardClass": "DRUID",
+		"rarity": "Legendary"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "L. Lullabi & K. Turovec",
+		"referencedTags": [
+			"LIFESTEAL"
+		],
+		"dbfId": 52810,
+		"type": "Spell",
+		"flavor": "They're a nightmare to deal with.",
+		"playerClass": "Druid",
+		"name": "Dreamway Guardians",
+		"id": "DAL_733",
+		"text": "Summon two 1/2 Dryads with <b>Lifesteal</b>.",
+		"cardClass": "DRUID",
+		"rarity": "Rare"
+	},
+	{
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "L. Lullabi & K. Turovec",
+		"health": 2,
+		"mechanics": [
+			"LIFESTEAL"
+		],
+		"dbfId": 52839,
+		"type": "Minion",
+		"playerClass": "Druid",
+		"attack": 1,
+		"name": "Crystal Dryad",
+		"id": "DAL_733t",
+		"text": "<b>Lifesteal</b>",
+		"cardClass": "DRUID"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"artist": "Sean McNally",
+		"health": 3,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"SILENCE"
+		],
+		"dbfId": 52866,
+		"type": "Minion",
+		"flavor": "Don't make her raise her \"shush\"!",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Dalaran Librarian",
+		"id": "DAL_735",
+		"text": "<b>Battlecry:</b> <b>Silence</b>\nadjacent minions.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"artist": "James Ryman",
+		"health": 7,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 52870,
+		"type": "Minion",
+		"flavor": "Your deck is just another organizational challenge to her.",
+		"playerClass": "Neutral",
+		"elite": true,
+		"attack": 7,
+		"name": "Archivist Elysiana",
+		"id": "DAL_736",
+		"text": "<b>Battlecry:</b> <b>Discover</b> 5 cards. Replace your deck with 2 copies of each.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Legendary"
+	},
+	{
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Ivan Fomin",
+		"health": 1,
+		"targetingArrowText": {
+			"ptBR": "Conceda +1 de Ataque e <b>Rapidez</b>.",
+			"zhCN": "获得+1攻击力和<b>突袭</b>。",
+			"itIT": "Fornisce +1 Attacco e <b>Assalto</b>.",
+			"enUS": "Give +1 Attack and <b>Rush</b>.",
+			"frFR": "Donne +1_ATQ et <b>Ruée</b>.",
+			"zhTW": "賦予+1攻擊力和<b>衝刺</b>",
+			"deDE": "Verleiht +1 Angriff und <b>Eifer</b>.",
+			"jaJP": "攻撃力+1と<b>急襲</b>を付与する。",
+			"plPL": "Daj +1 do ataku oraz <b>Zryw</b>.",
+			"esES": "Otorga +1 p. de ataque y <b>Embestir</b>.",
+			"ruRU": "Добавить +1 к атаке и <b>«Натиск»</b>.",
+			"esMX": "Otorga +1 de Ataque y <b>Acometida</b>.",
+			"koKR": "공격력 +1, <b>속공</b>",
+			"thTH": "มอบพลังโจมตี +1 และ <b>จู่โจม</b>"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"RUSH"
+		],
+		"dbfId": 52897,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Goblin Lackey",
+		"id": "DAL_739",
+		"text": "<b>Battlecry:</b> Give a friendly minion +1 Attack and <b>Rush</b>.",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Short Fuse",
+		"id": "DAL_739e",
+		"text": "+1 Attack and <b>Rush</b>.",
+		"dbfId": 52898,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Rafael Zanchetin",
+		"health": 1,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"DISCOVER"
+		],
+		"dbfId": 52900,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Ethereal Lackey",
+		"id": "DAL_741",
+		"text": "<b>Battlecry:</b> <b>Discover</b> a spell.",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"race": "ELEMENTAL",
+		"artist": "Wayne Wu",
+		"health": 6,
+		"mechanics": [
+			"AURA"
+		],
+		"referencedTags": [
+			"WINDFURY"
+		],
+		"dbfId": 52902,
+		"type": "Minion",
+		"flavor": "And your minions with mega-windfury get... dizzy.",
+		"playerClass": "Neutral",
+		"attack": 6,
+		"name": "Whirlwind Tempest",
+		"id": "DAL_742",
+		"text": "Your minions with <b>Windfury</b> have <b>Mega-Windfury</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Warrior",
+		"set": "Dalaran",
+		"name": "Whirling",
+		"id": "DAL_742e",
+		"text": "<b>Mega-Windfury</b>",
+		"dbfId": 52903,
+		"type": "Enchantment",
+		"cardClass": "WARRIOR"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "Matt Dixon",
+		"health": 1,
+		"mechanics": [
+			"DEATHRATTLE",
+			"RUSH"
+		],
+		"dbfId": 52935,
+		"type": "Minion",
+		"flavor": "This is CLEARLY their first rodeo.",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Hench-Clan Hogsteed",
+		"id": "DAL_743",
+		"text": "<b>Rush</b>\n<b>Deathrattle:</b> Summon a 1/1 Murloc.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 1,
+		"set": "Dalaran",
+		"race": "MURLOC",
+		"artist": "Matt Dixon",
+		"attack": 1,
+		"name": "Hench-Clan Squire",
+		"health": 1,
+		"id": "DAL_743t",
+		"dbfId": 53202,
+		"type": "Minion",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Anton Zemskov",
+		"health": 1,
+		"targetingArrowText": {
+			"ptBR": "Copie a Vida de um lacaio aliado.",
+			"zhCN": "复制一个友方随从的生命值。",
+			"itIT": "Copia la Salute di un tuo servitore.",
+			"enUS": "Copy a friendly minion's Health.",
+			"frFR": "Copie les points de vie d’un serviteur allié.",
+			"zhTW": "複製一個友方手下的生命值",
+			"deDE": "Kopiert das Leben eines befreundeten Dieners.",
+			"jaJP": "味方のミニオン1体の体力をコピーする。",
+			"plPL": "Skopiuj zdrowie przyjaznego stronnika.",
+			"esES": "Copia la salud de un esbirro amistoso.",
+			"ruRU": "Копировать здоровье вашего существа.",
+			"esMX": "Copia la Salud de un esbirro aliado.",
+			"koKR": "아군 하수인의 생명력 복사",
+			"thTH": "ก๊อปปี้พลังชีวิต[b]ของมินเนี่ยน[b]ฝ่ายคุณหนึ่งตัว"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52936,
+		"type": "Minion",
+		"flavor": "When you need to rage anonymously.",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Faceless Rager",
+		"id": "DAL_744",
+		"text": "<b>Battlecry:</b> Copy a friendly minion's Health.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Familiar Faces",
+		"id": "DAL_744e",
+		"text": "Copied health.",
+		"dbfId": 52937,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Evgeniy Dlinnov",
+		"health": 4,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52940,
+		"type": "Minion",
+		"flavor": "Your gryphon will be summoned following a brief safety demonstration.",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"faction": "ALLIANCE",
+		"name": "Flight Master",
+		"id": "DAL_747",
+		"text": "<b>Battlecry:</b> Summon a 2/2 Gryphon for each player.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "Evgeniy Dlinnov",
+		"health": 2,
+		"dbfId": 52941,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"faction": "ALLIANCE",
+		"name": "Gryphon",
+		"id": "DAL_747t",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "ELEMENTAL",
+		"artist": "Jakub Kasper",
+		"spellDamage": 1,
+		"health": 6,
+		"mechanics": [
+			"SPELLPOWER"
+		],
+		"dbfId": 52942,
+		"type": "Minion",
+		"flavor": "If it soaks too long, it becomes a reservoir hog.",
+		"playerClass": "Neutral",
+		"attack": 0,
+		"name": "Mana Reservoir",
+		"id": "DAL_748",
+		"text": "<b>Spell Damage +1</b>",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 5,
+		"set": "Dalaran",
+		"artist": "Matt Dixon",
+		"health": 6,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 52943,
+		"type": "Minion",
+		"flavor": "Mwahahaha! You'll never catch him this time!",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Recurring Villain",
+		"id": "DAL_749",
+		"text": "<b>Deathrattle:</b> If this minion has 4 or more Attack, resummon it.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 6,
+		"set": "Dalaran",
+		"race": "DEMON",
+		"artist": "Konstantin Turovec",
+		"health": 4,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52950,
+		"type": "Minion",
+		"flavor": "Does he summon because of his madness, or is he mad from all the summoning?",
+		"playerClass": "Neutral",
+		"attack": 4,
+		"faction": "ALLIANCE",
+		"name": "Mad Summoner",
+		"id": "DAL_751",
+		"text": "[x]<b>Battlecry:</b> Fill each player's\nboard with 1/1 Imps.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 1,
+		"set": "Dalaran",
+		"race": "DEMON",
+		"artist": "Konstantin Turovec",
+		"attack": 1,
+		"name": "Imp",
+		"health": 1,
+		"id": "DAL_751t",
+		"dbfId": 53305,
+		"type": "Minion",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 8,
+		"set": "Dalaran",
+		"artist": "Anton Zemskov",
+		"health": 6,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 52954,
+		"type": "Minion",
+		"flavor": "“I’m a real toy now!”",
+		"playerClass": "Neutral",
+		"elite": true,
+		"attack": 6,
+		"name": "Jepetto Joybuzz",
+		"id": "DAL_752",
+		"text": "<b>Battlecry:</b> Draw 2 minions from your deck. Set their Attack, Health, and Cost to 1.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Toy-sized",
+		"id": "DAL_752e",
+		"text": "Jepetto Joybuzz made this 1/1.",
+		"dbfId": 53177,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "On Sale",
+		"id": "DAL_752e2",
+		"text": "Costs (1).",
+		"dbfId": 53304,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 2,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"artist": "Dave Allsop",
+		"health": 2,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 53104,
+		"type": "Minion",
+		"flavor": "It begs for scraps.",
+		"playerClass": "Warrior",
+		"attack": 2,
+		"name": "Vicious Scraphound",
+		"id": "DAL_759",
+		"text": "Whenever this minion\ndeals damage, gain that much Armor.",
+		"cardClass": "WARRIOR",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 9,
+		"set": "Dalaran",
+		"artist": "Matt Dixon",
+		"health": 9,
+		"mechanics": [
+			"RUSH"
+		],
+		"dbfId": 53024,
+		"type": "Minion",
+		"flavor": "Shovel beats paper and rock!",
+		"playerClass": "Neutral",
+		"attack": 9,
+		"name": "Burly Shovelfist",
+		"id": "DAL_760",
+		"text": "<b>Rush</b>",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 1,
+		"set": "Dalaran",
+		"artist": "Matt Dixon",
+		"dbfId": 53124,
+		"type": "Spell",
+		"flavor": "\"The beatings will continue until MY morale improves.\"",
+		"playerClass": "Warrior",
+		"name": "Improve Morale",
+		"id": "DAL_769",
+		"text": "[x]Deal $1 damage\nto a minion.\nIf it survives, add a\n<b>Lackey</b> to your hand.",
+		"cardClass": "WARRIOR",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"race": "MECHANICAL",
+		"artist": "Jim Nelson",
+		"health": 5,
+		"targetingArrowText": {
+			"ptBR": "Cause 10 de dano.",
+			"zhCN": "造成10点伤害。",
+			"itIT": "Infligge 10 danni.",
+			"enUS": "Deal 10 damage.",
+			"frFR": "Inflige 10_points de dégâts.",
+			"zhTW": "造成10點傷害",
+			"deDE": "Verursacht 10 Schaden.",
+			"jaJP": "10ダメージを与える。",
+			"plPL": "Zadaj 10 pkt. obrażeń.",
+			"esES": "Inflige 10 p. de daño.",
+			"ruRU": "Нанести 10 ед. урона.",
+			"esMX": "Inflige 10 de daño.",
+			"koKR": "피해 10",
+			"thTH": "สร้างความเสียหาย_10_แต้ม"
+		},
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 53138,
+		"type": "Minion",
+		"flavor": "The Alpha Devastator didn’t devastate enough. The Beta Devastator devastated too much. But the Omega was just right!",
+		"playerClass": "Warrior",
+		"attack": 4,
+		"name": "Omega Devastator",
+		"id": "DAL_770",
+		"text": "[x]<b>Battlecry:</b> If you have 10\nMana Crystals, deal 10\ndamage to a minion.",
+		"cardClass": "WARRIOR",
+		"rarity": "Epic"
+	},
+	{
+		"collectible": true,
+		"cost": 4,
+		"set": "Dalaran",
+		"race": "ELEMENTAL",
+		"artist": "Rafael Zanchetin",
+		"health": 6,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 53171,
+		"type": "Minion",
+		"flavor": "His allies call him invaluable.",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Soldier of Fortune",
+		"id": "DAL_771",
+		"text": "Whenever this minion attacks, give your opponent a Coin.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
+		"collectible": true,
+		"cost": 3,
+		"set": "Dalaran",
+		"artist": "Tod Harris",
+		"health": 6,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"referencedTags": [
+			"RUSH"
+		],
+		"dbfId": 53173,
+		"type": "Minion",
+		"flavor": "Its small yet fierce riders are affectionately known as rug rats.",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Magic Carpet",
+		"id": "DAL_773",
+		"text": "After you play a 1-Cost minion, give it +1 Attack and <b>Rush</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Dalaran",
+		"name": "Flying High",
+		"id": "DAL_773e",
+		"text": "+1 Attack and <b>Rush</b>.",
+		"dbfId": 53176,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "Maria Trepalina",
+		"health": 8,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 53218,
+		"type": "Minion",
+		"flavor": "*Taps roof of mammoth* “You can fit so many squirrels in this thing!”",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Exotic Mountseller",
+		"id": "DAL_774",
+		"text": "Whenever you cast a spell, summon a random\n3-Cost Beast.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"cost": 7,
+		"set": "Dalaran",
+		"artist": "Ivan Fomin",
+		"health": 7,
+		"mechanics": [
+			"DEATHRATTLE",
+			"TAUNT"
+		],
+		"dbfId": 53249,
+		"type": "Minion",
+		"flavor": "And you always thought they wore the candles just for fun.",
+		"playerClass": "Neutral",
+		"attack": 3,
+		"name": "Tunnel Blaster",
+		"id": "DAL_775",
+		"text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Deal 3 damage\nto all minions.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"collectible": true,
+		"collectionText": {
+			"ptBR": "<b>Rapidez</b>. <b>Grito de Guerra:</b>\nSe você tiver restaurado \n5 de Vida nesta partida, evoque uma cópia deste lacaio.",
+			"zhCN": "<b>突袭，战吼：</b>在本局对战中，如果你累计恢复了5点生命值，则召唤一个该随从的复制。",
+			"itIT": "[x]<b>Assalto</b>. <b>Grido di Battaglia:</b>\nse hai rigenerato 5 Salute in\nquesta partita, evoca una copia\ndi se stesso.",
+			"enUS": "<b>Rush</b>. <b>Battlecry:</b> If you've restored 5 Health this game, summon a copy of this.",
+			"frFR": "<b>Ruée</b>\n<b>Cri de guerre :</b> si vous avez rendu 5 PV pendant cette partie, invoque une copie de ce serviteur. ",
+			"zhTW": "<b>衝刺</b>。<b>戰吼：</b>若你在本賽局已恢復5點生命值，召喚一個此手下的分身",
+			"deDE": "<b>Eifer</b>. <b>Kampfschrei:</b> Ruft eine Kopie dieses Dieners herbei, wenn Ihr in diesem Spiel 5 Leben wiederher[d]gestellt habt.",
+			"jaJP": "[x]<b>急襲</b>、<b>雄叫び:</b>\nこの対戦で自分が体力を\n5以上回復していた場合\nこのミニオンのコピーを1体\n     召喚する。",
+			"plPL": "<b>Zryw</b>\n<b>Okrzyk bojowy:</b> Jeśli udało ci się przywrócić 5 pkt. zdrowia w tej grze, przyzwij kopię tego stronnika.",
+			"esES": "<b>Embestir</b>\n<b>Grito de batalla:</b> Si has restaurado 5 p. de salud en esta partida, invoca una copia de este esbirro.",
+			"ruRU": "<b>Натиск</b>. <b>Боевой клич:</b> если вы восстановили 5 ед. здоровья в этом матче, призывает копию [x]этого существа.",
+			"esMX": "<b>Acometida</b>\n<b>Grito de batalla:</b> si has restaurado 5 de Salud en esta partida, invoca una copia de esta carta.\n",
+			"koKR": "<b>속공</b>, <b>전투의 함성:</b> 이번 게임에서 생명력을 5 이상 회복했으면, 이 하수인을 복사하여 소환합니다.",
+			"thTH": "<b>จู่โจม</b> <b>คำรามสู้ศึก:</b> ถ้าเกมนี้[b]คุณฟื้นฟูพลังชีวิตไปแล้ว 5 แต้ม เรียกร่างก๊อปปี้ของมัน "
+		},
+		"cost": 5,
+		"set": "Dalaran",
+		"race": "BEAST",
+		"artist": "Patrik Bjorkstrom",
+		"health": 4,
+		"mechanics": [
+			"BATTLECRY",
+			"RUSH"
+		],
+		"dbfId": 53179,
+		"type": "Minion",
+		"flavor": "Arrives alone, but usually leaves with a friend just like him.",
+		"playerClass": "Druid",
+		"attack": 4,
+		"name": "Crystal Stag",
+		"id": "DAL_799",
+		"text": "<b>Rush</b>. <b>Battlecry:</b> If you've restored 5 Health this game, summon a copy of this.@ <i>({0} left!)</i>@ <i>(Ready!)</i>",
+		"cardClass": "DRUID",
+		"rarity": "Epic"
+	},
+	{
 		"cost": 3,
 		"set": "Expert1",
 		"health": 5,
@@ -41381,7 +45291,7 @@ var parseCardsText = {
 		"health": 3,
 		"targetingArrowText": {
 			"ptBR": "Conceda +2/+2 e Provocar a uma Fera.",
-			"zhCN": "使一只野兽获得+2/+2并具有嘲讽。",
+			"zhCN": "使一个野兽获得+2/+2和嘲讽。",
 			"itIT": "Fornisce +2/+2 e <b>Provocazione</b> a una tua Bestia.",
 			"enUS": "Give a Beast +2/+2 and Taunt.",
 			"frFR": "Donne_+2/+2 et Provocation à une Bête.",
@@ -42006,6 +45916,7 @@ var parseCardsText = {
 			"esES": "<b>Poder de héroe</b>\nInflige $2 p. de daño.",
 			"ruRU": "<b>Сила героя</b>\nНаносит $2 ед. урона.",
 			"esMX": "<b>Poder de héroe</b>\nInflige $2 de daño.",
+			"koKR": "<b>영웅 능력</b>\n피해를 $2 줍니다.",
 			"thTH": "<b>พลังฮีโร่</b> สร้างความเสียหาย $2 แต้ม"
 		},
 		"cost": 2,
@@ -42068,6 +45979,7 @@ var parseCardsText = {
 			"esES": "<b>Poder de héroe</b>\nInflige $2 p. de daño.",
 			"ruRU": "<b>Сила героя</b>\nНаносит $2 ед. урона.",
 			"esMX": "<b>Poder de héroe</b>\nInflige $2 de daño.",
+			"koKR": "<b>영웅 능력</b>\n피해를 $2 줍니다.",
 			"thTH": "<b>พลังฮีโร่</b> สร้างความเสียหาย $2 แต้ม"
 		},
 		"cost": 2,
@@ -42112,9 +46024,10 @@ var parseCardsText = {
 			"deDE": "<b>Heldenfähigkeit</b>\nVerursacht $3 Schaden.",
 			"jaJP": "<b>ヒーローパワー</b>\n$3ダメージを\n与える。",
 			"plPL": "<b>Moc specjalna</b>\nZadaj $3 pkt. obrażeń.",
-			"esES": "<b>Poder de héroe</b>\nInflige $3 p. de daño.",
+			"esES": "[x]<b>Poder de héroe</b>\nInflige $3 p. de daño.",
 			"ruRU": "<b>Сила героя</b>\nНаносит $3 ед. урона.",
 			"esMX": "<b>Poder de héroe</b>\nInflige $3 de daño.",
+			"koKR": "<b>영웅 능력</b>\n피해를 $3 줍니다.",
 			"thTH": "<b>พลังฮีโร่</b> สร้างความเสียหาย $3 แต้ม"
 		},
 		"cost": 2,
@@ -43800,7 +47713,7 @@ var parseCardsText = {
 			"zhCN": "集齐所有金色经典和基本鱼人牌后解锁。",
 			"itIT": "Sbloccata ottenendo tutti i Murloc Dorati dei set Base e Avanzato.",
 			"enUS": "Unlocked when you have all the Golden Murlocs from the Expert and Basic Sets.",
-			"frFR": "Débloquée lorsque vous avez tous les murlocs dorés du jeu Expert et du jeu de base.",
+			"frFR": "Débloquée lorsque vous avez tous les Murlocs dorés du jeu Expert et du jeu de base.",
 			"zhTW": "當你獲得全部基本及專家系列的魚人金卡後解鎖。",
 			"deDE": "Wird freigeschaltet, wenn Ihr alle goldenen Murlocs des Basis- und des Klassiksets besitzt.",
 			"jaJP": "基本とクラシックカードの、ゴールデンのマーロックカードを全て所持すると入手。",
@@ -43822,7 +47735,7 @@ var parseCardsText = {
 			"zhCN": "集齐所有经典鱼人牌后解锁。",
 			"itIT": "Sbloccata ottenendo tutti i Murloc del set Classico.",
 			"enUS": "Unlocked when you have all the Murlocs from the Classic Set.",
-			"frFR": "Débloquée lorsque vous avez tous les murlocs du jeu classique.",
+			"frFR": "Débloquée lorsque vous avez tous les Murlocs du jeu classique.",
 			"zhTW": "當你獲得全部經典系列的魚人卡後解鎖。",
 			"deDE": "Wird freigeschaltet, wenn Ihr alle Murlocs des Klassiksets besitzt.",
 			"jaJP": "クラシックのマーロックカードを全て所持すると入手。",
@@ -45338,6 +49251,16 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"playerClass": "Neutral",
+		"set": "Expert1",
+		"name": "Preparation",
+		"id": "EX1_145e",
+		"text": "The next spell you cast this turn costs (3) less.",
+		"dbfId": 56309,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
 		"playerClass": "Rogue",
 		"set": "Expert1",
 		"name": "Preparation",
@@ -45397,7 +49320,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Expert1",
-		"name": "Wrath",
+		"name": "Solar Wrath",
 		"id": "EX1_154a",
 		"audio": {
 			"play": [],
@@ -45413,7 +49336,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Expert1",
-		"name": "Wrath",
+		"name": "Nature's Wrath",
 		"id": "EX1_154b",
 		"audio": {
 			"play": [],
@@ -45473,7 +49396,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Expert1",
-		"name": "Mark of Nature",
+		"name": "Tiger's Fury",
 		"id": "EX1_155a",
 		"audio": {
 			"play": [],
@@ -45504,7 +49427,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Expert1",
-		"name": "Mark of Nature",
+		"name": "Thick Hide",
 		"id": "EX1_155b",
 		"audio": {
 			"play": [],
@@ -45704,7 +49627,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 1,
-		"set": "Expert1",
 		"artist": "Leo Che",
 		"dbfId": 233,
 		"type": "Spell",
@@ -45817,7 +49739,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Expert1",
-		"name": "Nourish",
+		"name": "Rampant Growth",
 		"id": "EX1_164a",
 		"audio": {
 			"play": [],
@@ -45833,7 +49755,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Expert1",
-		"name": "Nourish",
+		"name": "Enrich",
 		"id": "EX1_164b",
 		"audio": {
 			"play": [],
@@ -47895,7 +51817,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 5,
-		"set": "Expert1",
 		"race": "DEMON",
 		"artist": "Lucas Graciano",
 		"health": 7,
@@ -48541,7 +52462,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 3,
-		"set": "Expert1",
 		"artist": "Lucas Graciano",
 		"dbfId": 679,
 		"type": "Spell",
@@ -53825,6 +57745,120 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cost": 9,
+		"set": "Tb",
+		"health": 5,
+		"mechanics": [
+			"AURA"
+		],
+		"dbfId": 55131,
+		"type": "Minion",
+		"playerClass": "Druid",
+		"elite": true,
+		"attack": 5,
+		"name": "Aviana",
+		"id": "FB_Champs_AT_045",
+		"text": "Your minions cost (1).",
+		"cardClass": "DRUID",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Aviana's Blessing",
+		"id": "FB_Champs_AT_045eee",
+		"text": "Costs (1).",
+		"dbfId": 55132,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 5,
+		"set": "Tb",
+		"health": 5,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 55119,
+		"type": "Minion",
+		"playerClass": "Priest",
+		"elite": true,
+		"attack": 5,
+		"name": "Raza the Chained",
+		"id": "FB_Champs_CFM_020",
+		"text": "[x]  <b>Battlecry:</b> If your deck has  \nno duplicates, your Hero\n Power costs (0) this game.",
+		"cardClass": "PRIEST",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Raza Enchant",
+		"id": "FB_Champs_CFM_020e",
+		"text": "Your <b>Hero Power</b> costs (0).",
+		"dbfId": 55120,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 1,
+		"set": "Tb",
+		"race": "PIRATE",
+		"health": 1,
+		"mechanics": [
+			"CHARGE"
+		],
+		"dbfId": 55118,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"elite": true,
+		"attack": 1,
+		"name": "Patches the Pirate",
+		"id": "FB_Champs_CFM_637",
+		"text": "[x]<b>Charge</b>. After you play a Pirate,\nsummon this minion\nfrom your deck.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Druid",
+		"cost": 2,
+		"set": "Tb",
+		"name": "Wild Growth",
+		"id": "FB_Champs_CS2_013",
+		"text": "Gain an empty Mana Crystal.",
+		"dbfId": 55779,
+		"type": "Spell",
+		"cardClass": "DRUID",
+		"rarity": "Free"
+	},
+	{
+		"playerClass": "Rogue",
+		"cost": 1,
+		"set": "Tb",
+		"name": "Cold Blood",
+		"mechanics": [
+			"COMBO"
+		],
+		"id": "FB_Champs_CS2_073",
+		"text": "Give a minion +2 Attack. <b>Combo:</b> +4 Attack instead.",
+		"dbfId": 55785,
+		"type": "Spell",
+		"cardClass": "ROGUE",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Hunter",
+		"cost": 1,
+		"set": "Tb",
+		"name": "Hunter's Mark",
+		"id": "FB_Champs_CS2_084",
+		"text": "Change a minion's Health to 1.",
+		"dbfId": 55788,
+		"type": "Spell",
+		"cardClass": "HUNTER",
+		"rarity": "Free"
+	},
+	{
 		"playerClass": "Warrior",
 		"cost": 2,
 		"set": "Tb",
@@ -54024,6 +58058,21 @@ var parseCardsText = {
 		},
 		"text": "Whenever you cast a spell, draw a card.",
 		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Druid",
+		"cost": 5,
+		"set": "Tb",
+		"name": "Nourish",
+		"mechanics": [
+			"CHOOSE_ONE"
+		],
+		"id": "FB_Champs_EX1_164",
+		"text": "<b>Choose One -</b> Gain 2 Mana Crystals; or Draw 3 cards.",
+		"dbfId": 55780,
+		"type": "Spell",
+		"cardClass": "DRUID",
 		"rarity": "Rare"
 	},
 	{
@@ -54263,6 +58312,25 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cost": 2,
+		"set": "Tb",
+		"race": "TOTEM",
+		"health": 3,
+		"mechanics": [
+			"ADJACENT_BUFF",
+			"AURA"
+		],
+		"dbfId": 55786,
+		"type": "Minion",
+		"playerClass": "Shaman",
+		"attack": 0,
+		"name": "Flametongue Totem",
+		"id": "FB_Champs_EX1_565",
+		"text": "Adjacent minions have +2 Attack.",
+		"cardClass": "SHAMAN",
+		"rarity": "Free"
+	},
+	{
 		"playerClass": "Druid",
 		"cost": 6,
 		"set": "Tb",
@@ -54284,6 +58352,18 @@ var parseCardsText = {
 		"type": "Spell",
 		"cardClass": "DRUID",
 		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Paladin",
+		"cost": 2,
+		"set": "Tb",
+		"name": "Equality",
+		"id": "FB_Champs_EX1_619",
+		"text": "Change the Health of ALL minions to 1.",
+		"dbfId": 55787,
+		"type": "Spell",
+		"cardClass": "PALADIN",
+		"rarity": "Rare"
 	},
 	{
 		"cost": 2,
@@ -54360,6 +58440,72 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"playerClass": "Rogue",
+		"cost": 2,
+		"set": "Tb",
+		"name": "Leeching Poison",
+		"referencedTags": [
+			"LIFESTEAL"
+		],
+		"id": "FB_Champs_ICC_221",
+		"text": "Give your weapon <b>Lifesteal</b>.",
+		"dbfId": 55784,
+		"type": "Spell",
+		"cardClass": "ROGUE",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Rogue",
+		"set": "Tb",
+		"name": "Leeching Poison",
+		"mechanics": [
+			"LIFESTEAL"
+		],
+		"id": "FB_Champs_ICC_221e",
+		"text": "Has <b>Lifesteal</b>.",
+		"dbfId": 55783,
+		"type": "Enchantment",
+		"cardClass": "ROGUE"
+	},
+	{
+		"cost": 4,
+		"set": "Tb",
+		"health": 3,
+		"mechanics": [
+			"BATTLECRY",
+			"TAUNT"
+		],
+		"dbfId": 55782,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 2,
+		"name": "Saronite Chain Gang",
+		"id": "FB_Champs_ICC_466",
+		"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Summon a\ncopy of this minion.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"cost": 7,
+		"set": "Tb",
+		"health": 5,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"referencedTags": [
+			"TAUNT"
+		],
+		"dbfId": 55116,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Bonemare",
+		"id": "FB_Champs_ICC_705",
+		"text": "<b>Battlecry:</b> Give a friendly minion +4/+4 and <b>Taunt</b>.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
+	},
+	{
 		"cost": 1,
 		"set": "Tb",
 		"durability": 3,
@@ -54380,6 +58526,154 @@ var parseCardsText = {
 		"text": "[x]Has +2 Attack while you\nhave <b>Spell Damage</b>.",
 		"cardClass": "SHAMAN",
 		"rarity": "Common"
+	},
+	{
+		"cost": 5,
+		"set": "Tb",
+		"health": 5,
+		"mechanics": [
+			"AURA"
+		],
+		"dbfId": 55124,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Naga Sea Witch",
+		"id": "FB_Champs_LOE_038",
+		"text": "Your cards cost (5).",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Warlock",
+		"cost": 1,
+		"set": "Tb",
+		"faction": "ALLIANCE",
+		"name": "Dark Pact",
+		"id": "FB_Champs_LOOT_017",
+		"text": "Destroy a friendly minion. Restore #8 Health to your hero.",
+		"dbfId": 55125,
+		"type": "Spell",
+		"cardClass": "WARLOCK",
+		"rarity": "Common"
+	},
+	{
+		"playerClass": "Hunter",
+		"cost": 5,
+		"set": "Tb",
+		"name": "Lesser Emerald Spellstone",
+		"id": "FB_Champs_LOOT_080",
+		"text": "Summon two 3/3 Wolves. <i>(Play a <b>Secret</b> to upgrade.)</i>",
+		"dbfId": 55789,
+		"type": "Spell",
+		"cardClass": "HUNTER",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Hunter",
+		"cost": 5,
+		"set": "Tb",
+		"name": "Emerald Spellstone",
+		"id": "FB_Champs_LOOT_080t2",
+		"text": "Summon three 3/3 Wolves. <i>(Play a <b>Secret</b> to upgrade.)</i>",
+		"dbfId": 55791,
+		"type": "Spell",
+		"cardClass": "HUNTER",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Hunter",
+		"cost": 5,
+		"set": "Tb",
+		"name": "Greater Emerald Spellstone",
+		"id": "FB_Champs_LOOT_080t3",
+		"text": "Summon four 3/3 Wolves.",
+		"dbfId": 55790,
+		"type": "Spell",
+		"cardClass": "HUNTER",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Paladin",
+		"cost": 4,
+		"set": "Tb",
+		"name": "Call to Arms",
+		"referencedTags": [
+			"RECRUIT"
+		],
+		"id": "FB_Champs_LOOT_093",
+		"text": "[x]<b>Recruit</b> 3 minions that\n cost (2) or less.",
+		"dbfId": 55130,
+		"type": "Spell",
+		"cardClass": "PALADIN",
+		"rarity": "Epic"
+	},
+	{
+		"cost": 7,
+		"set": "Tb",
+		"race": "BEAST",
+		"health": 5,
+		"dbfId": 55117,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 5,
+		"name": "Corridor Creeper",
+		"id": "FB_Champs_LOOT_149",
+		"text": "Costs (1) less whenever a minion dies while this is in your hand.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
+	},
+	{
+		"cost": 5,
+		"set": "Tb",
+		"health": 2,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"referencedTags": [
+			"RECRUIT"
+		],
+		"dbfId": 55123,
+		"type": "Minion",
+		"playerClass": "Warlock",
+		"attack": 2,
+		"name": "Possessed Lackey",
+		"id": "FB_Champs_LOOT_306",
+		"text": "<b>Deathrattle:</b> <b>Recruit</b> a Demon.",
+		"cardClass": "WARLOCK",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Paladin",
+		"cost": 5,
+		"set": "Tb",
+		"name": "Level Up!",
+		"referencedTags": [
+			"TAUNT"
+		],
+		"id": "FB_Champs_LOOT_333",
+		"text": "Give your Silver Hand Recruits +2/+2 and <b>Taunt</b>.",
+		"dbfId": 55781,
+		"type": "Spell",
+		"cardClass": "PALADIN",
+		"rarity": "Epic"
+	},
+	{
+		"cost": 6,
+		"set": "Tb",
+		"health": 4,
+		"mechanics": [
+			"BATTLECRY"
+		],
+		"dbfId": 55122,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 4,
+		"name": "Spiteful Summoner",
+		"id": "FB_Champs_LOOT_539",
+		"text": "[x]<b>Battlecry:</b> Reveal a spell\nfrom your deck. Summon\n a random minion with\nthe same Cost.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Epic"
 	},
 	{
 		"cost": 7,
@@ -54449,6 +58743,23 @@ var parseCardsText = {
 		"dbfId": 49324,
 		"type": "Spell",
 		"cardClass": "DRUID"
+	},
+	{
+		"cost": 1,
+		"set": "Tb",
+		"health": 3,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"dbfId": 55133,
+		"type": "Minion",
+		"playerClass": "Mage",
+		"attack": 1,
+		"name": "Mana Wyrm",
+		"id": "FB_Champs_NEW1_012",
+		"text": "Whenever you cast a spell, gain +1 Attack.",
+		"cardClass": "MAGE",
+		"rarity": "Common"
 	},
 	{
 		"cost": 2,
@@ -54566,6 +58877,57 @@ var parseCardsText = {
 		"id": "FB_Champs_skele21",
 		"dbfId": 49349,
 		"type": "Minion",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Rogue",
+		"elite": true,
+		"cost": 1,
+		"set": "Tb",
+		"name": "The Caverns Below",
+		"mechanics": [
+			"QUEST"
+		],
+		"id": "FB_Champs_UNG_067",
+		"text": "[x]<b>Quest:</b> Play four minions\nwith the same name.\n<b>Reward:</b> Crystal Core.",
+		"dbfId": 55126,
+		"type": "Spell",
+		"cardClass": "ROGUE",
+		"rarity": "Legendary"
+	},
+	{
+		"playerClass": "Rogue",
+		"elite": true,
+		"cost": 5,
+		"set": "Tb",
+		"name": "Crystal Core",
+		"mechanics": [
+			"RITUAL"
+		],
+		"id": "FB_Champs_UNG_067t1",
+		"text": "For the rest of the game, your minions are 5/5.",
+		"dbfId": 55127,
+		"type": "Spell",
+		"cardClass": "ROGUE"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Crystallized",
+		"id": "FB_Champs_UNG_067t1e",
+		"text": "Your minions are 5/5.",
+		"dbfId": 55128,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Crystallized",
+		"id": "FB_Champs_UNG_067t1e2",
+		"text": "5/5.",
+		"dbfId": 55129,
+		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -57276,6 +61638,28 @@ var parseCardsText = {
 		"dbfId": 50801,
 		"type": "Spell",
 		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Ban Opponent's Card",
+		"id": "FB_TopX_Ban",
+		"dbfId": 54768,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 0,
+		"set": "Tb",
+		"hideStats": true,
+		"name": "The Mystery Card",
+		"id": "FB_TopX_Mystery",
+		"text": "Choose your opponent's hidden fourth card.",
+		"dbfId": 54934,
+		"type": "Spell",
+		"cardClass": "NEUTRAL",
+		"rarity": "Common"
 	},
 	{
 		"howToEarnGolden": {
@@ -60174,7 +64558,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 5,
-		"set": "Gilneas",
 		"race": "BEAST",
 		"artist": "Jerry Mascho",
 		"health": 6,
@@ -61831,7 +66214,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 2,
-		"set": "Gilneas",
 		"race": "BEAST",
 		"artist": "Luca Zontini",
 		"health": 3,
@@ -63892,7 +68274,7 @@ var parseCardsText = {
 		"health": 8,
 		"targetingArrowText": {
 			"ptBR": "Adicione uma cópia 10/10 à sua mão.",
-			"zhCN": "将一个10/10复制置入你的手牌。",
+			"zhCN": "将一张10/10复制置入你的手牌。",
 			"itIT": "Mette nella tua mano una copia 10/10 di un tuo servitore.",
 			"enUS": "Add a 10/10 copy to your hand.",
 			"frFR": "Ajoute une copie_10/10 à votre main.",
@@ -64567,7 +68949,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 6,
-		"set": "Gilneas",
 		"artist": "Alex Horley Orlandelli",
 		"health": 5,
 		"mechanics": [
@@ -65198,7 +69579,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 9,
-		"set": "Gilneas",
 		"race": "BEAST",
 		"artist": "James Ryman",
 		"health": 8,
@@ -65405,7 +69785,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 5,
-		"set": "Gilneas",
 		"race": "BEAST",
 		"artist": "Bill Ruan",
 		"health": 4,
@@ -65458,7 +69837,6 @@ var parseCardsText = {
 	{
 		"collectible": true,
 		"cost": 3,
-		"set": "Gilneas",
 		"race": "BEAST",
 		"artist": "Jakub Kasper",
 		"spellDamage": 1,
@@ -74288,7 +78666,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Gvg",
-		"name": "Dark Wispers",
+		"name": "Call the Guardians",
 		"id": "GVG_041a",
 		"audio": {
 			"play": [],
@@ -74304,7 +78682,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Gvg",
-		"name": "Dark Wispers",
+		"name": "Nature's Defense",
 		"id": "GVG_041b",
 		"audio": {
 			"play": [],
@@ -77325,7 +81703,7 @@ var parseCardsText = {
 				"CleanMechLarge_Attack_Underlay.ogg"
 			]
 		},
-		"text": "<b>Charge</b>\n<b>Mega-Windfury</b> <i>(Can attack four times a turn.)</i>",
+		"text": "<b>Charge</b>\n<b>Mega-Windfury</b>",
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -77635,7 +82013,7 @@ var parseCardsText = {
 		"health": 3,
 		"targetingArrowText": {
 			"ptBR": "Destrua uma Fera.",
-			"zhCN": "消灭一只野兽。",
+			"zhCN": "消灭一个野兽。",
 			"itIT": "Distrugge una Bestia.",
 			"enUS": "Destroy a Beast.",
 			"frFR": "Détruit une Bête.",
@@ -78315,6 +82693,18 @@ var parseCardsText = {
 			]
 		},
 		"dbfId": 41887,
+		"type": "Hero",
+		"cardClass": "PRIEST",
+		"rarity": "Epic"
+	},
+	{
+		"playerClass": "Priest",
+		"collectible": true,
+		"set": "Hero_skins",
+		"name": "Madame Lazul",
+		"health": 30,
+		"id": "HERO_09b",
+		"dbfId": 54816,
 		"type": "Hero",
 		"cardClass": "PRIEST",
 		"rarity": "Epic"
@@ -81549,7 +85939,7 @@ var parseCardsText = {
 			"jaJP": "「断末魔: このミニオンを再度召喚する」を付与する。",
 			"plPL": "Daj opis: „Agonia: Przywróć tego stronnika na pole bitwy”.",
 			"esES": "Otorga «Último aliento: Vuelve a invocar a este esbirro».",
-			"ruRU": "Добавить «Предсмертный хрип: когда это существо умирает, вы заново призываете его».",
+			"ruRU": "Добавить «Предсмертный хрип: вы снова призываете это существо».",
 			"esMX": "Otorga \"Estertor: reinvoca a este esbirro\".",
 			"koKR": "\"죽음의 메아리: 이 하수인을 다시 소환함\" 능력 부여",
 			"thTH": "มอบ \"เสียงสุดท้าย: เรียกมินเนี่ยนตัวนี้อีกครั้ง\""
@@ -82500,7 +86890,7 @@ var parseCardsText = {
 		"health": 5,
 		"targetingArrowText": {
 			"ptBR": "Conceda +4/+4 e Provocar.",
-			"zhCN": "获得+4/+4并具有<b>嘲讽</b>。",
+			"zhCN": "获得+4/+4和嘲讽。",
 			"itIT": "Fornisce +4/+4 e <b>Provocazione</b>.",
 			"enUS": "Give +4/+4 and Taunt.",
 			"frFR": "Donne_+4/+4 et Provocation.",
@@ -83285,10 +87675,10 @@ var parseCardsText = {
 			"jaJP": "<b>挑発</b>、<b>猛毒</b>",
 			"plPL": "<b>Prowokacja</b>, <b>Trucizna</b>",
 			"esES": "<b>Provocar</b>. <b>Veneno</b>.",
-			"ruRU": "<b>Яд</b>\n<b>Провокация</b>",
+			"ruRU": "<b>Яд</b>. <b>Провокация</b>.",
 			"esMX": "<b>Provocación</b>, <b>Venenoso</b>",
 			"koKR": "<b>도발</b>, <b>독성</b>",
-			"thTH": "<b>ยั่วยุ</b>, <b>พิษ</b>"
+			"thTH": "<b>ยั่วยุ</b> <b>พิษ</b>"
 		},
 		"cost": 2,
 		"set": "Ungoro",
@@ -83331,10 +87721,10 @@ var parseCardsText = {
 			"jaJP": "<b>隠れ身</b>、<b>猛毒</b>",
 			"plPL": "<b>Ukrycie</b>, <b>Trucizna</b>",
 			"esES": "<b>Sigilo</b>. <b>Veneno</b>.",
-			"ruRU": "<b>Яд</b>\n<b>Маскировка</b>",
+			"ruRU": "<b>Яд</b>. <b>Маскировка</b>.",
 			"esMX": "<b>Sigilo</b>, <b>Venenoso</b>",
 			"koKR": "<b>은신</b>, <b>독성</b>",
-			"thTH": "<b>ซ่อนตัว</b>, <b>พิษ</b>"
+			"thTH": "<b>ซ่อนตัว</b> <b>พิษ</b>"
 		},
 		"cost": 3,
 		"set": "Ungoro",
@@ -83380,7 +87770,7 @@ var parseCardsText = {
 			"ruRU": "<b>Яд</b>, <b>Божественный щит</b>.",
 			"esMX": "<b>Escudo divino</b>, <b>Venenoso</b>",
 			"koKR": "<b>천상의 보호막</b>, <b>독성</b>",
-			"thTH": "<b>โล่ศักดิ์สิทธิ์</b>, <b>พิษ</b>"
+			"thTH": "<b>โล่ศักดิ์สิทธิ์</b> <b>พิษ</b>"
 		},
 		"cost": 3,
 		"set": "Lootapalooza",
@@ -83426,7 +87816,7 @@ var parseCardsText = {
 			"ruRU": "<b>Эхо</b>, <b>Натиск</b>.",
 			"esMX": "<b>Eco</b>, <b>Acometida</b>",
 			"koKR": "<b>잔상</b>, <b>속공</b>",
-			"thTH": "<b>เสียงสะท้อน</b>, <b>จู่โจม</b>"
+			"thTH": "<b>เสียงสะท้อน</b> <b>จู่โจม</b>"
 		},
 		"cost": 2,
 		"set": "Gilneas",
@@ -83472,7 +87862,7 @@ var parseCardsText = {
 			"ruRU": "<b>Яд</b>, <b>Натиск</b>.",
 			"esMX": "<b>Venenoso</b>, <b>Acometida</b>",
 			"koKR": "<b>독성</b>, <b>속공</b>",
-			"thTH": "<b>พิษ</b>, <b>จู่โจม</b>"
+			"thTH": "<b>พิษ</b> <b>จู่โจม</b>"
 		},
 		"cost": 5,
 		"set": "Gilneas",
@@ -83518,7 +87908,7 @@ var parseCardsText = {
 			"ruRU": "<b>Похищение жизни</b>, <b>Натиск</b>",
 			"esMX": "<b>Robavida</b>, <b>Acometida</b>",
 			"koKR": "<b>생명력 흡수</b>, <b>속공</b>",
-			"thTH": "<b>สูบชีวิต</b>, <b>จู่โจม</b>"
+			"thTH": "<b>สูบชีวิต</b> <b>จู่โจม</b>"
 		},
 		"cost": 2,
 		"set": "Gilneas",
@@ -97375,7 +101765,7 @@ var parseCardsText = {
 		"cost": 0,
 		"set": "Loe",
 		"artist": "A. J. Nazzaro",
-		"name": "Raven Idol",
+		"name": "Break Free",
 		"id": "LOE_115a",
 		"audio": {
 			"play": [],
@@ -97392,7 +101782,7 @@ var parseCardsText = {
 		"cost": 0,
 		"set": "Loe",
 		"artist": "A. J. Nazzaro",
-		"name": "Raven Idol",
+		"name": "Awakened",
 		"id": "LOE_115b",
 		"audio": {
 			"play": [],
@@ -103255,10 +107645,10 @@ var parseCardsText = {
 		"collectible": true,
 		"collectionText": {
 			"ptBR": "Adicione 1 feitiço de Mago aleatório à sua mão. <i>(Jogue 2 Elementais para aprimorar.)</i>",
-			"zhCN": "随机将一张法师的法术牌置入你的手牌。<i>（使用两张元素牌后升级。）</i>",
+			"zhCN": "随机将一张法师法术牌置入你的手牌。<i>（使用两张元素牌后升级。）</i>",
 			"itIT": "Mette nella tua mano una Magia casuale del Mago. <i>(Si potenzia giocando due Elementali)</i>",
 			"enUS": "Add 1 random Mage spell to your hand. <i>(Play 2 Elementals to upgrade.)</i>",
-			"frFR": "Place 1 sort de mage aléatoire dans votre main. <i>(Jouez 2 élémentaires pour l’améliorer.)</i>",
+			"frFR": "Place 1 sort de mage aléatoire dans votre main. <i>(Jouez 2 Élémentaires pour l’améliorer.)</i>",
 			"zhTW": "放1張隨機法師法術到你的手中<i>(打出2個元素後升級)</i>",
 			"deDE": "Erhaltet 1 zufälligen Magierzauber auf die Hand. <i>(Zum Aufwerten 2 Elementare ausspielen.)</i>",
 			"jaJP": "[x]ランダムなメイジの\n呪文カード1枚を\n自分の手札に追加する。\n<i>（エレメンタルを2体\n手札から使用すると\nアップグレード）</i>",
@@ -107842,7 +112232,7 @@ var parseCardsText = {
 		"health": 2,
 		"targetingArrowText": {
 			"ptBR": "Adicione uma cópia Dourada à sua mão.",
-			"zhCN": "将一个金色复制置入你的手牌。",
+			"zhCN": "将一张金色复制置入你的手牌。",
 			"itIT": "Mette una copia Dorata di un tuo servitore nella tua mano.",
 			"enUS": "Add a Golden copy to your hand.",
 			"frFR": "Place une copie dorée dans votre main.",
@@ -109519,7 +113909,7 @@ var parseCardsText = {
 			"death": [],
 			"attack": []
 		},
-		"text": "<b>Poisonous</b>\n<b>Mega-Windfury</b>\n <i>(Can attack four times a turn.)</i>",
+		"text": "<b>Poisonous</b>\n<b>Mega-Windfury</b>",
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -118601,7 +122991,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Expert1",
-		"name": "Starfall",
+		"name": "Stellar Drift",
 		"id": "NEW1_007a",
 		"audio": {
 			"play": [],
@@ -118617,7 +123007,7 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"cost": 0,
 		"set": "Expert1",
-		"name": "Starfall",
+		"name": "Starlord",
 		"id": "NEW1_007b",
 		"audio": {
 			"play": [],
@@ -119020,7 +123410,7 @@ var parseCardsText = {
 			"zhCN": "消灭一个<b>鱼人</b>。",
 			"itIT": "Distrugge un Murloc.",
 			"enUS": "Destroy a Murloc.",
-			"frFR": "Détruit un murloc.",
+			"frFR": "Détruit un Murloc.",
 			"zhTW": "摧毀一個魚人",
 			"deDE": "Vernichtet einen Murloc.",
 			"jaJP": "マーロック1体を破壊する。",
@@ -124676,7 +129066,7 @@ var parseCardsText = {
 		"health": 4,
 		"targetingArrowText": {
 			"ptBR": "Adicione uma cópia 1/1 à sua mão.",
-			"zhCN": "将一个1/1的复制置入你的手牌。",
+			"zhCN": "将一张1/1的复制置入你的手牌。",
 			"itIT": "Mette nella tua mano una copia 1/1 di un tuo servitore.",
 			"enUS": "Add a 1/1 copy to your hand.",
 			"frFR": "Place une copie_1/1 dans votre main.",
@@ -128936,6 +133326,15 @@ var parseCardsText = {
 	{
 		"playerClass": "Neutral",
 		"set": "Tb",
+		"name": "Deathrattle Yog Enchant",
+		"id": "TB_DeathrattleYog_ench",
+		"dbfId": 55324,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
 		"name": "My Deck ID",
 		"id": "TB_DeckRecipe_MyDeckID",
 		"audio": {
@@ -130852,6 +135251,271 @@ var parseCardsText = {
 		"text": "Attack and Health have been swapped by Putricide",
 		"dbfId": 47214,
 		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"set": "Tb",
+		"name": "Boom o'clock!",
+		"id": "TB_Henchmania_BoomEnchantBan",
+		"text": "<b>Deathrattle</b>: Deal 1-2 damage to a random enemy.",
+		"dbfId": 56284,
+		"type": "Enchantment"
+	},
+	{
+		"playerClass": "Warrior",
+		"cost": 1,
+		"set": "Tb",
+		"name": "Undermine",
+		"id": "TB_Henchmania_ChuH",
+		"text": "<b>Hero Power</b>\nShuffle an Explosive into your opponent's deck.",
+		"dbfId": 55873,
+		"type": "Hero_power",
+		"cardClass": "WARRIOR"
+	},
+	{
+		"playerClass": "Warrior",
+		"cost": 1,
+		"set": "Tb",
+		"name": "Improvised Explosive",
+		"mechanics": [
+			"TOPDECK",
+			"ImmuneToSpellpower"
+		],
+		"id": "TB_Henchmania_ChuHt",
+		"text": "<b>Casts When Drawn</b>\nYou take 2 damage.",
+		"dbfId": 55939,
+		"type": "Spell",
+		"cardClass": "WARRIOR"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Henchmania Discover",
+		"id": "TB_Henchmania_Discover",
+		"dbfId": 55310,
+		"type": "Enchantment",
+		"entourage": [
+			"TB_Henchmania_DiscoverA",
+			"TB_Henchmania_DiscoverB",
+			"TB_Henchmania_DiscoverC",
+			"TB_Henchmania_DiscoverD"
+		],
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 0,
+		"set": "Tb",
+		"name": "Work for Hagatha",
+		"id": "TB_Henchmania_DiscoverA",
+		"text": "At the end of your turn transform a random friendly minion into\none that costs (1) more.",
+		"dbfId": 55311,
+		"type": "Spell",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Work for Hagatha Enchantment",
+		"id": "TB_Henchmania_DiscoverAe",
+		"text": "At the end of your turn transform a random friendly minion into\none that costs (1) more.",
+		"dbfId": 55339,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 0,
+		"set": "Tb",
+		"name": "Work for Dr. Boom",
+		"id": "TB_Henchmania_DiscoverB",
+		"text": "Give all friendly minions <b>Deathrattle:</b> Deal 1-2 damage to a random enemy.",
+		"dbfId": 55312,
+		"type": "Spell",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Work for Dr. Boom enchant",
+		"id": "TB_Henchmania_DiscoverBe",
+		"dbfId": 55340,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 0,
+		"set": "Tb",
+		"name": "Work for Togwaggle",
+		"id": "TB_Henchmania_DiscoverC",
+		"text": "After you play a Minion add a Coin to your hand.",
+		"dbfId": 55313,
+		"type": "Spell",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Work for Togwaggle enchant",
+		"id": "TB_Henchmania_DiscoverCe",
+		"dbfId": 55635,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 0,
+		"set": "Tb",
+		"name": "Work for Madame Lazul",
+		"id": "TB_Henchmania_DiscoverD",
+		"text": "After you play a spell, gain a copy of a random card in your opponent's hand.",
+		"dbfId": 55636,
+		"type": "Spell",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "Work for Madame Lazul enchant",
+		"id": "TB_Henchmania_DiscoverDe",
+		"dbfId": 55637,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Paladin",
+		"set": "Tb",
+		"name": "George The Fallen",
+		"health": 30,
+		"id": "TB_Henchmania_George",
+		"dbfId": 55866,
+		"type": "Hero",
+		"cardClass": "PALADIN"
+	},
+	{
+		"playerClass": "Warrior",
+		"set": "Tb",
+		"name": "Mr. Chu",
+		"health": 30,
+		"id": "TB_Henchmania_MrChu",
+		"dbfId": 55867,
+		"type": "Hero",
+		"cardClass": "WARRIOR"
+	},
+	{
+		"playerClass": "Rogue",
+		"set": "Tb",
+		"name": "Myra Rotspring",
+		"health": 30,
+		"id": "TB_Henchmania_Myra",
+		"dbfId": 55904,
+		"type": "Hero",
+		"cardClass": "ROGUE"
+	},
+	{
+		"playerClass": "Rogue",
+		"cost": 2,
+		"set": "Tb",
+		"name": "Necrium Infusion",
+		"id": "TB_Henchmania_MyraH",
+		"text": "<b>Hero Power</b>\nTrigger a random friendly minion's <b>Deathrattle</b>.",
+		"dbfId": 55847,
+		"type": "Hero_power",
+		"cardClass": "ROGUE"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"name": "VO Controller - Not Player Facing",
+		"id": "TB_Henchmania_VOController",
+		"dbfId": 56045,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 4,
+		"set": "Tb",
+		"race": "MECHANICAL",
+		"health": 5,
+		"mechanics": [
+			"DEATHRATTLE"
+		],
+		"dbfId": 55853,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Bloom Bot",
+		"id": "TB_Ignoblegarden1",
+		"text": "<b>Deathrattle:</b> Summon a Legendary minion.\nGive it <b>Rush</b>.",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 3,
+		"set": "Tb",
+		"race": "MECHANICAL",
+		"health": 2,
+		"mechanics": [
+			"DEATHRATTLE",
+			"MODULAR",
+			"TAUNT"
+		],
+		"dbfId": 55885,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Room Bot",
+		"id": "TB_Ignoblegarden2",
+		"text": "<b>Magnetic</b>. <b>Taunt</b>\n<b>Deathrattle:</b>Summon 3 1/1 Boom Bots.",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
+		"race": "MECHANICAL",
+		"name": "Room Bot",
+		"mechanics": [
+			"MODULAR"
+		],
+		"id": "TB_Ignoblegarden2e",
+		"text": "<b>Magnetic</b>. <b>Taunt</b>\n<b>Deathrattle:</b>Summon 3 1/1 Boom Bots.",
+		"dbfId": 55903,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"cost": 5,
+		"set": "Tb",
+		"race": "MECHANICAL",
+		"health": 7,
+		"mechanics": [
+			"BATTLECRY",
+			"DEATHRATTLE"
+		],
+		"dbfId": 55908,
+		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Doom Bot",
+		"id": "TB_Ignoblegarden3",
+		"text": "<b>Battlecry and Deathrattle</b>: Deal 5 damage to ALL minions.",
+		"cardClass": "NEUTRAL",
+		"rarity": "Rare"
+	},
+	{
+		"playerClass": "Neutral",
+		"cost": 2,
+		"set": "Tb",
+		"attack": 0,
+		"name": "Noblegarden Egg",
+		"health": 2,
+		"mechanics": [
+			"TRIGGER_VISUAL"
+		],
+		"id": "TB_IgnoblegardenEgg",
+		"text": "Start of next turn, hatch.",
+		"dbfId": 56055,
+		"type": "Minion",
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -133958,6 +138622,17 @@ var parseCardsText = {
 	},
 	{
 		"playerClass": "Neutral",
+		"cost": 0,
+		"set": "Tb",
+		"name": "Reset Decks",
+		"id": "TB_RandomDeckRecipeResetDecks",
+		"text": "Reset Both Player Decks",
+		"dbfId": 55254,
+		"type": "Spell",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
 		"set": "Tb",
 		"name": "TB_EnchRandomManaCost",
 		"id": "TB_RMC_001",
@@ -135580,6 +140255,15 @@ var parseCardsText = {
 	{
 		"playerClass": "Neutral",
 		"set": "Tb",
+		"name": "Vargoth Enchant",
+		"id": "TB_Vargoth_ench",
+		"dbfId": 55323,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Tb",
 		"attack": 1,
 		"name": "Void Singularity Spell",
 		"health": 1,
@@ -137081,6 +141765,7 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
+		"cardImage": "TRL_010.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -137112,6 +141797,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_012.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -137141,6 +141827,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_015.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -137170,6 +141857,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_020.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -137226,6 +141914,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_057.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -137258,6 +141947,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_058.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -137299,6 +141989,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_059.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -137365,6 +142056,7 @@ var parseCardsText = {
 		"cardClass": "SHAMAN"
 	},
 	{
+		"cardImage": "TRL_060.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -137395,6 +142087,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_065.png",
 		"collectible": true,
 		"cost": 10,
 		"set": "Troll",
@@ -137427,6 +142120,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_065h.png",
 		"playerClass": "Hunter",
 		"cost": 2,
 		"set": "Troll",
@@ -137477,6 +142171,7 @@ var parseCardsText = {
 		"cardClass": "HUNTER"
 	},
 	{
+		"cardImage": "TRL_071.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -137531,6 +142226,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_074.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -137571,6 +142267,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_077.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -137617,6 +142314,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_082.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -137658,6 +142356,7 @@ var parseCardsText = {
 		"cardClass": "SHAMAN"
 	},
 	{
+		"cardImage": "TRL_085.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -137699,6 +142398,7 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
+		"cardImage": "TRL_092.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -137744,6 +142444,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_096.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -137807,6 +142508,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_097.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -137836,6 +142538,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_111.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -137864,6 +142567,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_111e1.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "Headhunter's Hatchet",
@@ -137879,6 +142583,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_119.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -137902,6 +142607,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_119e.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "The Beast Within",
@@ -137917,6 +142623,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_124.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -137943,6 +142650,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_126.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -137980,6 +142688,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_127.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -138009,6 +142718,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_128.png",
 		"collectible": true,
 		"cost": 0,
 		"set": "Troll",
@@ -138035,6 +142745,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_131.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -138097,6 +142808,7 @@ var parseCardsText = {
 		"cardClass": "PRIEST"
 	},
 	{
+		"cardImage": "TRL_151.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -138152,6 +142864,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_156.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -138175,6 +142888,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_157.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -138201,6 +142915,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_223.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -138231,6 +142946,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_232.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -138285,6 +143001,7 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
+		"cardImage": "TRL_240.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -138335,6 +143052,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_241.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -138369,6 +143087,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_243.png",
 		"collectible": true,
 		"cost": 0,
 		"set": "Troll",
@@ -138401,6 +143120,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_243e.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "Pounce",
@@ -138419,6 +143139,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_244.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -138442,6 +143163,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_244e.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "Predatory Instincts",
@@ -138457,6 +143179,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_245.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -138483,6 +143206,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_246.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -138509,6 +143233,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_247.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -138546,6 +143271,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_249.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -138581,6 +143307,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_249e.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "Grim Rally",
@@ -138596,6 +143323,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_251.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -138641,6 +143369,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_252.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -138676,6 +143405,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_253.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -138728,6 +143458,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_254.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -138768,6 +143499,7 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
+		"cardImage": "TRL_254ae.png",
 		"playerClass": "Druid",
 		"set": "Troll",
 		"name": "Mark of the Loa",
@@ -138825,6 +143557,7 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
+		"cardImage": "TRL_255.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -138855,6 +143588,7 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
+		"cardImage": "TRL_257.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -138886,6 +143620,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_258.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -138912,6 +143647,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_259.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -138948,6 +143684,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_260.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -138987,6 +143724,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_300.png",
 		"collectible": true,
 		"cost": 25,
 		"set": "Troll",
@@ -139023,6 +143761,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_302.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -139052,6 +143791,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_302e.png",
 		"playerClass": "Paladin",
 		"set": "Troll",
 		"name": "Time Out!",
@@ -139067,6 +143807,7 @@ var parseCardsText = {
 		"cardClass": "PALADIN"
 	},
 	{
+		"cardImage": "TRL_304.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -139104,6 +143845,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_305.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -139132,6 +143874,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_306.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -139163,6 +143906,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_307.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -139198,6 +143942,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_308.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -139234,6 +143979,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_309.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -139289,6 +144035,7 @@ var parseCardsText = {
 		"cardClass": "PALADIN"
 	},
 	{
+		"cardImage": "TRL_310.png",
 		"collectible": true,
 		"cost": 0,
 		"set": "Troll",
@@ -139315,6 +144062,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_310e.png",
 		"playerClass": "Mage",
 		"set": "Troll",
 		"name": "Elemental Evocation",
@@ -139334,6 +144082,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_311.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -139372,6 +144121,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_312.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -139421,6 +144171,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_313.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -139447,6 +144198,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_315.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -139478,6 +144230,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_316.png",
 		"collectible": true,
 		"collectionText": {
 			"ptBR": "<b>Grito de Guerra:</b> Se seu Poder Heroico causou 8 de dano nesta partida, evoque Ragnaros, o Senhor do Fogo.\n",
@@ -139563,6 +144316,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_317.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -139586,6 +144340,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_318.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -139625,6 +144380,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_319.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -139670,6 +144426,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_321.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -139705,6 +144462,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_323.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -139740,6 +144498,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_324.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -139766,6 +144525,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_325.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -139788,6 +144548,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_326.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -139850,6 +144611,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_327.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -139902,6 +144664,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_328.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -139938,6 +144701,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_329.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -139987,6 +144751,7 @@ var parseCardsText = {
 		"cardClass": "WARRIOR"
 	},
 	{
+		"cardImage": "TRL_339.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -140016,6 +144781,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_341.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -140074,6 +144840,7 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
+		"cardImage": "TRL_343.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -140107,6 +144874,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343at1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -140139,6 +144907,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343at2.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -140163,6 +144932,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343bt1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -140195,6 +144965,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343bt2.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -140219,6 +144990,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343ct1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -140255,10 +145027,15 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343ct2.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
+		"spellDamage": 1,
 		"health": 4,
+		"mechanics": [
+			"SPELLPOWER"
+		],
 		"dbfId": 54601,
 		"type": "Minion",
 		"playerClass": "Druid",
@@ -140276,6 +145053,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343dt1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -140309,6 +145087,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343dt2.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -140334,6 +145113,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_343et1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -140371,6 +145151,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_345.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -140411,6 +145192,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_347.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -140486,6 +145268,7 @@ var parseCardsText = {
 		"cardClass": "HUNTER"
 	},
 	{
+		"cardImage": "TRL_348.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -140557,6 +145340,7 @@ var parseCardsText = {
 		"cardClass": "HUNTER"
 	},
 	{
+		"cardImage": "TRL_349.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -140591,6 +145375,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_351.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -140650,6 +145435,7 @@ var parseCardsText = {
 		"cardClass": "SHAMAN"
 	},
 	{
+		"cardImage": "TRL_352.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -140678,6 +145464,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_360.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -140703,6 +145490,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_362.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -140729,6 +145517,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_363.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -140791,6 +145580,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_390.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -140851,6 +145641,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_400.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -140874,6 +145665,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_405.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -140920,6 +145712,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_406.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -140964,6 +145757,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_407.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141016,6 +145810,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_408.png",
 		"collectible": true,
 		"cost": 12,
 		"set": "Troll",
@@ -141047,6 +145842,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_409.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -141100,6 +145896,7 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
+		"cardImage": "TRL_500.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -141141,6 +145938,7 @@ var parseCardsText = {
 		"cardClass": "PRIEST"
 	},
 	{
+		"cardImage": "TRL_501.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141190,6 +145988,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_502.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -141235,6 +146034,7 @@ var parseCardsText = {
 		"cardClass": "PRIEST"
 	},
 	{
+		"cardImage": "TRL_503.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141291,6 +146091,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_504.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141328,6 +146129,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_505.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -141378,6 +146180,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_506.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -141422,6 +146225,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_507.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141454,6 +146258,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_507t.png",
 		"cost": 1,
 		"set": "Troll",
 		"race": "PIRATE",
@@ -141479,6 +146284,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_508.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -141510,6 +146316,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_509.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -141590,6 +146397,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_512.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141641,6 +146449,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_513.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -141673,6 +146482,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_514.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141726,6 +146536,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_515.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -141757,6 +146568,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_516.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -141788,6 +146600,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_517.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -141837,6 +146650,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_520.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -141869,6 +146683,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_521.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -141897,6 +146712,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_522.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -141944,6 +146760,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_523.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141978,6 +146795,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_524.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -142044,6 +146862,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_525.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -142075,6 +146894,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_526.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -142116,6 +146936,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_527.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142150,6 +146971,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_528.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -142193,6 +147015,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_530.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142222,11 +147045,12 @@ var parseCardsText = {
 				"VO_TRL_530_Male_Troll_Attack_02.ogg"
 			]
 		},
-		"text": "<b>Battlecry:</b> If you control a <b>Secret</b>, play a <b>Secret</b> from your deck.",
+		"text": "<b>Battlecry:</b> If you control a <b>Secret</b>, cast a <b>Secret</b> from your deck.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_531.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -142282,6 +147106,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_532.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -142313,6 +147138,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_533.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -142356,6 +147182,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_535.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -142387,6 +147214,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_537.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -142437,6 +147265,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_541.png",
 		"collectible": true,
 		"cost": 10,
 		"set": "Troll",
@@ -142470,15 +147299,18 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"playerClass": "Neutral",
+		"cardImage": "TRL_541t.png",
 		"cost": 1,
 		"set": "Troll",
 		"artist": "Mauricio Herrera",
-		"name": "Corrupted Blood",
 		"mechanics": [
 			"TOPDECK",
 			"ImmuneToSpellpower"
 		],
+		"dbfId": 50455,
+		"type": "Spell",
+		"playerClass": "Neutral",
+		"name": "Corrupted Blood",
 		"id": "TRL_541t",
 		"audio": {
 			"play": [],
@@ -142489,11 +147321,10 @@ var parseCardsText = {
 			]
 		},
 		"text": "<b>Casts When Drawn</b>\nTake 3 damage. After you draw, shuffle two copies of this into your deck.",
-		"dbfId": 50455,
-		"type": "Spell",
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_542.png",
 		"collectible": true,
 		"cost": 9,
 		"set": "Troll",
@@ -142528,6 +147359,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_543.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -142559,6 +147391,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_545.png",
 		"collectible": true,
 		"collectionText": {
 			"ptBR": "<b>Grito de Guerra:</b> Se você tiver restaurado 10 de Vida nesta partida, receba +4/+4 e <b>Provocar</b>.",
@@ -142630,6 +147463,7 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"cardImage": "TRL_546.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142668,6 +147502,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_550.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -142703,6 +147538,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_551.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142735,6 +147571,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_555.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -142770,6 +147607,7 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"cardImage": "TRL_564.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -142818,6 +147656,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_566.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -142841,6 +147680,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_569.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -142904,6 +147744,7 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
+		"cardImage": "TRL_570.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -142935,6 +147776,7 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
+		"cardImage": "TRL_900.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -142978,6 +147820,7 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
+		"cardImage": "TRL_901.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -144631,6 +149474,16 @@ var parseCardsText = {
 		},
 		"text": "[x]<b>Shrine</b>\nHealing enemies\ndamages them instead.",
 		"cardClass": "PRIEST"
+	},
+	{
+		"playerClass": "Neutral",
+		"set": "Troll",
+		"name": "Bwonsamdi's Covenant",
+		"id": "TRLA_147e",
+		"text": "Healing enemies damages them instead.",
+		"dbfId": 56325,
+		"type": "Enchantment",
+		"cardClass": "NEUTRAL"
 	},
 	{
 		"cost": 0,
@@ -146452,6 +151305,7 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
+		"cardImage": "TRLA_200h.png",
 		"playerClass": "Warrior",
 		"set": "Troll",
 		"artist": "Slawomir Maniak",
@@ -146471,6 +151325,7 @@ var parseCardsText = {
 		"cardClass": "WARRIOR"
 	},
 	{
+		"cardImage": "TRLA_201h.png",
 		"playerClass": "Shaman",
 		"set": "Troll",
 		"artist": "Evgeniy Zagumyenny",
@@ -146490,6 +151345,7 @@ var parseCardsText = {
 		"cardClass": "SHAMAN"
 	},
 	{
+		"cardImage": "TRLA_202h.png",
 		"playerClass": "Rogue",
 		"set": "Troll",
 		"artist": "Matt Dixon",
@@ -146509,6 +151365,7 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
+		"cardImage": "TRLA_203h.png",
 		"playerClass": "Paladin",
 		"set": "Troll",
 		"artist": "James Ryman",
@@ -146528,6 +151385,7 @@ var parseCardsText = {
 		"cardClass": "PALADIN"
 	},
 	{
+		"cardImage": "TRLA_204h.png",
 		"playerClass": "Hunter",
 		"set": "Troll",
 		"artist": "Alex Horley Orlandelli",
@@ -146547,6 +151405,7 @@ var parseCardsText = {
 		"cardClass": "HUNTER"
 	},
 	{
+		"cardImage": "TRLA_205h.png",
 		"playerClass": "Druid",
 		"set": "Troll",
 		"artist": "Zoltan Boros",
@@ -146566,6 +151425,7 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
+		"cardImage": "TRLA_206h.png",
 		"playerClass": "Warlock",
 		"set": "Troll",
 		"artist": "James Ryman",
@@ -146585,6 +151445,7 @@ var parseCardsText = {
 		"cardClass": "WARLOCK"
 	},
 	{
+		"cardImage": "TRLA_207h.png",
 		"playerClass": "Mage",
 		"set": "Troll",
 		"artist": "Mike Sass",
@@ -146604,6 +151465,7 @@ var parseCardsText = {
 		"cardClass": "MAGE"
 	},
 	{
+		"cardImage": "TRLA_208h.png",
 		"playerClass": "Priest",
 		"set": "Troll",
 		"artist": "Alex Horley Ormandelli",
@@ -149633,6 +154495,7 @@ var parseCardsText = {
 		"cardClass": "WARLOCK"
 	},
 	{
+		"cardImage": "TRLA_Warrior_01.png",
 		"playerClass": "Warrior",
 		"cost": 0,
 		"set": "Troll",
@@ -153688,7 +158551,7 @@ var parseCardsText = {
 				"Water_Heal_Impact_Sound.ogg"
 			]
 		},
-		"text": "Restore #12 Health to your hero.",
+		"text": "Restore 12 Health to your hero.",
 		"dbfId": 41334,
 		"type": "Spell",
 		"cardClass": "SHAMAN"

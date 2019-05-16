@@ -354,14 +354,8 @@ var parseCardsText = {
 			"FlameLance_Missile_Sound": [
 				"FlameLance_Missile_Sound.ogg"
 			],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Cast_1": [
 				"Shared_Fire_Cast_1.ogg"
@@ -448,10 +442,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $2 damage to a minion. This spell gets double bonus from <b>Spell Damage</b>.",
 		"cardClass": "MAGE",
@@ -475,9 +466,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -594,9 +582,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_007_ATTACK_02.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a random spell to each player's hand.",
@@ -789,23 +774,8 @@ var parseCardsText = {
 		"id": "AT_013",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Choose a minion. Whenever it attacks, restore 4 Health to\nyour hero.",
 		"cardClass": "PRIEST",
@@ -957,26 +927,11 @@ var parseCardsText = {
 			"play": [
 				"AT_017_TwilightGuardian_Play_1.ogg"
 			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [
 				"AT_017_TwilightGuardian_Death_1.ogg"
 			],
 			"attack": [
 				"AT_017_TwilightGuardian_Attack_1.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1 Attack and <b>Taunt</b>.",
@@ -1599,9 +1554,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_032_ATTACK_02.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you have a Pirate, gain +1/+1.",
@@ -1647,13 +1599,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Add 2 random cards to your hand <i>(from your opponent's class)</i>.",
 		"cardClass": "ROGUE",
@@ -1817,9 +1763,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -1843,8 +1786,20 @@ var parseCardsText = {
 		"id": "AT_037a",
 		"audio": {
 			"play": [],
+			"Shared_Nature_Fizzle_1": [
+				"Shared_Nature_Fizzle_1.ogg"
+			],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			],
+			"Shared_Nature_PreCast_1": [
+				"Shared_Nature_PreCast_1.ogg"
+			],
+			"Shared_NatureImpact02_1": [
+				"Shared_NatureImpact02_1.ogg"
+			]
 		},
 		"text": "Deal $2 damage.",
 		"dbfId": 2789,
@@ -1860,7 +1815,13 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"Shared_Nature_Cast_1": [
+				"Shared_Nature_Cast_1.ogg"
+			],
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			]
 		},
 		"text": "Summon two 1/1 Saplings.",
 		"dbfId": 2791,
@@ -2003,9 +1964,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_040_ATTACK_02.ogg"
-			],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly Beast +3 Health.",
@@ -2099,9 +2057,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_042_ATTACK_01.ogg"
-			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
 			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
@@ -2249,9 +2204,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -2440,16 +2392,10 @@ var parseCardsText = {
 		"id": "AT_048",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -2718,23 +2664,8 @@ var parseCardsText = {
 		"id": "AT_055",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #5 Health.",
 		"cardClass": "PRIEST",
@@ -2756,12 +2687,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -2772,10 +2697,7 @@ var parseCardsText = {
 			"Warlock_Explosion_Impact_01_Sound_01": [
 				"Warlock_Explosion_Impact_01_Sound_01.ogg"
 			],
-			"attack": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $2 damage to a minion and the minions next to it.",
 		"cardClass": "HUNTER",
@@ -3090,12 +3012,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -3469,9 +3385,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_072_ATTACK_03.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Draw 3 cards.\nPut any minions you drew directly into the battlefield.",
@@ -3536,10 +3449,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion\n+3 Attack and <b>Divine Shield</b>.",
 		"cardClass": "PALADIN",
@@ -3666,10 +3576,7 @@ var parseCardsText = {
 				"Holy_Targeted_Loop_01.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, +1 Durability.",
 		"cardClass": "PALADIN",
@@ -3985,9 +3892,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_084_ATTACK_02.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly minion +2 Attack.",
@@ -4390,29 +4294,11 @@ var parseCardsText = {
 			"play": [
 				"VO_AT_094_PLAY_01.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"VO_AT_094_DEATH_03.ogg"
 			],
 			"attack": [
 				"VO_AT_094_ATTACK_02.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 1 damage to a random enemy.",
@@ -4579,9 +4465,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_098_ATTACK_03.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Copy your opponent's Hero Power.",
@@ -4823,9 +4706,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_AT_104_ATTACK_02.ogg",
 				"TurtleMount_Attack_Underlay.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Reveal a minion in each deck. If yours costs more, restore #7 Health to your hero.",
@@ -5090,9 +4970,6 @@ var parseCardsText = {
 			],
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Restore #4 Health to each hero.",
@@ -5225,9 +5102,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_115_ATTACK_02.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> The next time you use your Hero Power, it costs (2) less.",
@@ -5332,9 +5206,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_AT_117_ATTACK_02.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you have a minion with <b>Spell Damage</b>, gain +2/+2.",
@@ -5387,12 +5258,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_AT_118_ATTACK_02.ogg",
 				"ArmoredWarhorse1_Attack_Underlay.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a random Paladin card to your hand.",
@@ -5568,9 +5433,6 @@ var parseCardsText = {
 			],
 			"Sneaky_Attack_Impact_Impaler_Sound": [
 				"Sneaky_Attack_Impact_Impaler_Sound.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you have at least 4 other minions, deal 4 damage.",
@@ -5898,10 +5760,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Druid_Shapeshift_Cast_1": [
-				"Druid_Shapeshift_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\n+2 Attack this turn.\n+2 Armor.",
 		"dbfId": 2737,
@@ -5917,10 +5776,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Lunara_HeroPower_Sound": [
-				"Lunara_HeroPower_Sound.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\n+2 Attack this turn.\n+2 Armor.",
 		"dbfId": 51465,
@@ -5972,12 +5828,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -5985,18 +5835,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -6015,26 +5853,8 @@ var parseCardsText = {
 		"id": "AT_132_MAGE",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
 		"dbfId": 2739,
@@ -6049,14 +5869,8 @@ var parseCardsText = {
 		"id": "AT_132_PALADIN",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
 		"dbfId": 2740,
@@ -6078,13 +5892,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nRestore #4 Health.",
 		"dbfId": 2741,
@@ -6100,10 +5908,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nEquip a 2/2 Weapon.",
 		"dbfId": 2743,
@@ -6319,10 +6124,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGain 4 Armor.",
 		"dbfId": 2745,
@@ -6424,23 +6226,8 @@ var parseCardsText = {
 		"id": "BCON_004",
 		"audio": {
 			"play": [],
-			"Shared_Arcane_Fizzle_1": [
-				"Shared_Arcane_Fizzle_1.ogg"
-			],
-			"Shared_Arcane_PreCast_1": [
-				"Shared_Arcane_PreCast_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
-			"GlassShatter_Underlay_Death": [
-				"GlassShatter_Underlay_Death.ogg"
-			]
+			"attack": []
 		},
 		"text": "Choose a minion. <b>Discover</b> a new minion to transform it into.",
 		"dbfId": 49228,
@@ -6456,16 +6243,10 @@ var parseCardsText = {
 		"id": "BCON_008",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -6536,13 +6317,7 @@ var parseCardsText = {
 			"spell_holy_precast_loop_1": [
 				"spell_holy_precast_loop_1.ogg"
 			],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "[x]Choose a friendly minion.\nGive it to your opponent\nand draw 3 cards.",
 		"dbfId": 49240,
@@ -6559,10 +6334,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_SneakyUntargettedImpactStandard_1": [
-				"Shared_SneakyUntargettedImpactStandard_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion <b>Stealth</b> until your next turn. Draw a card.",
 		"dbfId": 49241,
@@ -7043,10 +6815,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Each player equips a 2/3 Weapon and\ngains 6 Armor.",
 		"cardClass": "WARRIOR",
@@ -7463,13 +7232,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Add 2 random <b>Deathrattle</b> cards to your hand.",
 		"cardClass": "ROGUE",
@@ -7530,10 +7293,7 @@ var parseCardsText = {
 			"LightningSparks_Sound": [
 				"LightningSparks_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Draw a card. Copy it if you played an Elemental last turn.",
 		"cardClass": "SHAMAN",
@@ -7620,10 +7380,7 @@ var parseCardsText = {
 				"Shared_Astral_Boosh_Sound.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Add 2 random minions to your hand.",
 		"cardClass": "MAGE",
@@ -7962,10 +7719,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "[x]Give a minion +2/+2.\nAdd 'More Arms!' to your\nhand that gives +2/+2.",
 		"cardClass": "PRIEST",
@@ -7999,10 +7753,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +2/+2.",
 		"dbfId": 50657,
@@ -8171,9 +7922,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"ShrinkRay_AE_Sound": [
 				"ShrinkRay_AE_Sound.ogg"
 			]
@@ -8428,10 +8176,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGain 7 Armor.\nSwaps each turn.",
 		"dbfId": 49365,
@@ -8874,7 +8619,10 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Card_Hand_Ally_ScaleUp_Impact_WarlockMotes_Sound": [
+				"Card_Hand_Ally_ScaleUp_Impact_WarlockMotes_Sound.ogg"
+			]
 		},
 		"text": "Give the\nleft-most minion in your hand +2/+2.",
 		"cardClass": "WARLOCK",
@@ -9073,9 +8821,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"PogoHopper_BOT_283_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> Gain +2/+2 for\neach other Pogo-Hopper\nyou played this game.",
@@ -9684,9 +9429,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_BOT_413_Female_Human_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> Gain +1 Health\nfor each spell in your hand.",
@@ -10448,15 +10190,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_BOT_447_Female_Blood Elf_Attack_01.ogg"
 			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -10563,12 +10296,6 @@ var parseCardsText = {
 			"Shared_Arcane_Fizzle_1": [
 				"Shared_Arcane_Fizzle_1.ogg"
 			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
 			"Shared_Arcane_PreCast_1": [
 				"Shared_Arcane_PreCast_1.ogg"
 			],
@@ -10577,9 +10304,6 @@ var parseCardsText = {
 				"Shared_Shadow_Cast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Mage_ArcaneMissiles_Impact_1": [
 				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
@@ -10779,10 +10503,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Swap a minion's Attack and Health.",
 		"cardClass": "PRIEST",
@@ -10878,10 +10599,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Choose a friendly minion. Summon a 5/5 copy of it.",
 		"cardClass": "PRIEST",
@@ -11041,9 +10759,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_BOT_533_Female_Elemental_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a random Elemental to your hand.",
@@ -11243,9 +10958,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_BOT_538_Female_Mech_Attack_01.ogg",
 				"SparkEngine_Underlay_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a \n1/1 Spark with <b>Rush</b> to your hand.",
@@ -11542,9 +11254,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_BOT_550_Female_Gnome_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a spell that costs (5) or more, gain +1/+1.",
@@ -12225,12 +11934,6 @@ var parseCardsText = {
 			"Shared_Arcane_Fizzle_1": [
 				"Shared_Arcane_Fizzle_1.ogg"
 			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
 			"Shared_Arcane_PreCast_1": [
 				"Shared_Arcane_PreCast_1.ogg"
 			],
@@ -12242,9 +11945,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_BOT_601_Female_Worgen_Attack_01.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			],
 			"Mage_ArcaneMissiles_Impact_1": [
 				"Mage_ArcaneMissiles_Impact_1.ogg"
@@ -12496,14 +12196,8 @@ var parseCardsText = {
 		"id": "BOT_909",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "[x]Draw two 1-Attack\nminions from your deck.",
 		"cardClass": "PALADIN",
@@ -13182,9 +12876,6 @@ var parseCardsText = {
 			"ArmsDealing_Impact_Sound": [
 				"ArmsDealing_Impact_Sound.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"CosmicProjection_Hand_AE_Sound": [
 				"CosmicProjection_Hand_AE_Sound.ogg"
 			]
@@ -13207,10 +12898,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Arrange your minions by their Health.",
 		"dbfId": 50995,
@@ -13285,9 +12973,6 @@ var parseCardsText = {
 			"attack": [],
 			"KingMukla_BarrelToss_Cast_1": [
 				"KingMukla_BarrelToss_Cast_1.ogg"
-			],
-			"KingMukla_BarrelToss_Impact_1": [
-				"KingMukla_BarrelToss_Impact_1.ogg"
 			]
 		},
 		"text": "Give a minion <b>Poisonous</b>.",
@@ -16116,14 +15801,8 @@ var parseCardsText = {
 		"id": "BRM_001",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Draw 2 cards. Costs (1) less for each minion that died this turn.",
 		"cardClass": "PALADIN",
@@ -16344,9 +16023,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"SFX_BRM_004_Twilight_Whelp_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +2 Health.",
@@ -16656,9 +16332,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_BRM_008_Attack_02.ogg"
 			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Shared_SneakyAttackImpactStandard_1": [
 				"Shared_SneakyAttackImpactStandard_1.ogg"
 			]
@@ -16787,9 +16460,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_BRM_010_Attack_02.ogg"
-			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
 			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
@@ -16937,23 +16607,8 @@ var parseCardsText = {
 		"id": "BRM_011",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $2 damage.\nUnlock your <b>Overloaded</b> Mana Crystals.",
 		"cardClass": "SHAMAN",
@@ -17448,26 +17103,11 @@ var parseCardsText = {
 			"play": [
 				"BRM_018_DragonConsort_EnterPlay_1.ogg"
 			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [
 				"BRM_018_DragonConsort_Death_1.ogg"
 			],
 			"attack": [
 				"BRM_018_DragonConsort_Attack_1.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> The next Dragon you play costs (2) less.",
@@ -18029,14 +17669,8 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Cast_1": [
 				"Shared_Fire_Cast_1.ogg"
@@ -18060,14 +17694,8 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Cast_1": [
 				"Shared_Fire_Cast_1.ogg"
@@ -18303,9 +17931,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_BRM_030_Attack_20.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Arcane_Impact_Nefarian_Sound": [
 				"Arcane_Impact_Nefarian_Sound.ogg"
 			]
@@ -18327,12 +17952,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -18958,9 +18577,6 @@ var parseCardsText = {
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
 			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
 			"Shared_Fire_Impact_Large": [
 				"Shared_Fire_Impact_Large.ogg"
 			],
@@ -19234,23 +18850,8 @@ var parseCardsText = {
 		"id": "BRMA05_2",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDeal 5 damage to the enemy hero if they have any unspent Mana.",
 		"dbfId": 2329,
@@ -19265,23 +18866,8 @@ var parseCardsText = {
 		"id": "BRMA05_2H",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDeal 10 damage to the enemy hero if they have any unspent Mana.",
 		"dbfId": 2445,
@@ -19556,12 +19142,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Crush_CustomDeath_Sound_01": [
 				"Crush_CustomDeath_Sound_01.ogg"
 			]
@@ -19581,12 +19161,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Crush_CustomDeath_Sound_01": [
 				"Crush_CustomDeath_Sound_01.ogg"
 			]
@@ -19606,12 +19180,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Crush_CustomDeath_Sound_01": [
 				"Crush_CustomDeath_Sound_01.ogg"
 			]
@@ -19634,12 +19202,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Crush_CustomDeath_Sound_01": [
 				"Crush_CustomDeath_Sound_01.ogg"
 			]
@@ -19662,12 +19224,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -19758,12 +19314,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Crush_CustomDeath_Sound_01": [
 				"Crush_CustomDeath_Sound_01.ogg"
 			]
@@ -20202,9 +19752,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Rogue_Assassinate_Impact_1": [
 				"Rogue_Assassinate_Impact_1.ogg"
 			]
@@ -20266,13 +19813,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one.",
 		"dbfId": 2356,
@@ -20315,13 +19856,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one.",
 		"dbfId": 2475,
@@ -20872,9 +20407,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -21091,10 +20623,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 		"dbfId": 2381,
@@ -21113,10 +20642,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 		"dbfId": 31095,
@@ -21138,10 +20664,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand.",
 		"dbfId": 2467,
@@ -21181,29 +20704,11 @@ var parseCardsText = {
 			"play": [
 				"BRMA13_5_SonOfTheFlame_EnterPlay_1.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"BRMA13_5_SonOfTheFlame_Death_1.ogg"
 			],
 			"attack": [
 				"BRMA13_5_SonOfTheFlame_Attack_1.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 6 damage.",
@@ -21279,14 +20784,8 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Cast_1": [
 				"Shared_Fire_Cast_1.ogg"
@@ -22227,12 +21726,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -22533,14 +22026,8 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Cast_1": [
 				"Shared_Fire_Cast_1.ogg"
@@ -22567,14 +22054,8 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Cast_1": [
 				"Shared_Fire_Cast_1.ogg"
@@ -22718,12 +22199,9 @@ var parseCardsText = {
 		"id": "BRMC_85",
 		"audio": {
 			"play": [
-				"TU4e_003_Play_NagaMyrmidon.ogg",
 				"Pegasus_Stinger_Elemental_Villain.ogg"
 			],
-			"death": [
-				"TU4e_003_Death_NagaMyrmidon.ogg"
-			],
+			"death": [],
 			"attack": [
 				"TU4e_003_Attack_NagaMyrmidon.ogg"
 			],
@@ -22925,29 +22403,11 @@ var parseCardsText = {
 			"play": [
 				"BRMA13_5_SonOfTheFlame_EnterPlay_1.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"BRMA13_5_SonOfTheFlame_Death_1.ogg"
 			],
 			"attack": [
 				"BRMA13_5_SonOfTheFlame_Attack_1.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 6 damage.",
@@ -22977,9 +22437,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"BRMC_92_Coren_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "Always wins Brawls.\n <b>Battlecry:</b> Add a Brawl to your hand.",
@@ -23406,9 +22863,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_CFM_025_Male_Mech_Attack_01.ogg",
 				"CleanMechSmall_Attack_Underlay.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "Whenever this attacks a minion and survives, draw a card.",
@@ -23573,9 +23027,6 @@ var parseCardsText = {
 				"VO_CFM_061_Male_Jinyu_Play_01.ogg",
 				"JinyuWaterspeaker_Underlay_Play.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"VO_CFM_061_Male_Jinyu_Death_01.ogg"
 			],
@@ -23614,26 +23065,11 @@ var parseCardsText = {
 			"play": [
 				"VO_CFM_062_Male_Human_Play_01.ogg"
 			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [
 				"VO_CFM_062_Male_Human_Death_01.ogg"
 			],
 			"attack": [
 				"VO_CFM_062_Male_Human_Attack_01.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Give adjacent\n minions <b>Divine Shield</b>.",
@@ -24701,12 +24137,6 @@ var parseCardsText = {
 				"CFM_ClumsyKodo_Attack.ogg",
 				"ArmoredKodoNoVox_Attack_Underlay.ogg"
 			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -25104,8 +24534,17 @@ var parseCardsText = {
 		"id": "CFM_602a",
 		"audio": {
 			"play": [],
+			"JadeGolem_CustomSummon_Lvl2_Sound": [
+				"JadeGolem_CustomSummon_Lvl2_Sound.ogg"
+			],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"JadeGolem_CustomSummon_Lvl3_Sound": [
+				"JadeGolem_CustomSummon_Lvl3_Sound.ogg"
+			],
+			"JadeGolem_CustomSummon_Lvl1_Sound": [
+				"JadeGolem_CustomSummon_Lvl1_Sound.ogg"
+			]
 		},
 		"text": "Summon a{1} {0} <b>Jade Golem</b>.",
 		"dbfId": 41409,
@@ -25206,9 +24645,6 @@ var parseCardsText = {
 			],
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "Restore #12 Health to a friendly character.",
@@ -25445,9 +24881,6 @@ var parseCardsText = {
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
 			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			],
 			"BloodPotion_ImpactRed_Sound": [
 				"BloodPotion_ImpactRed_Sound.ogg"
 			]
@@ -25649,9 +25082,6 @@ var parseCardsText = {
 				"VO_CFM_619_Female_BloodElf_Attack_01.ogg",
 				"Potion_Underlay_Attack.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_FX_Kabal_Sound": [
 				"SpawnToHand_FX_Kabal_Sound.ogg"
 			]
@@ -25831,12 +25261,8 @@ var parseCardsText = {
 		"name": "Sheep",
 		"id": "CFM_621_m5",
 		"audio": {
-			"play": [
-				"SFX_CS2_tk1_EnterPlay.ogg"
-			],
-			"death": [
-				"SFX_CS2_tk1_Death.ogg"
-			],
+			"play": [],
+			"death": [],
 			"attack": [
 				"SFX_CS2_tk1_Attack.ogg"
 			]
@@ -26034,23 +25460,8 @@ var parseCardsText = {
 		"id": "CFM_621t16",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $5 damage.",
 		"dbfId": 41605,
@@ -26067,10 +25478,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 7 Armor.",
 		"dbfId": 41606,
@@ -26138,23 +25546,8 @@ var parseCardsText = {
 		"id": "CFM_621t2",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $3 damage.",
 		"dbfId": 41590,
@@ -26208,9 +25601,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -26229,9 +25619,6 @@ var parseCardsText = {
 		"id": "CFM_621t22",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"death": [],
 			"attack": []
 		},
@@ -26251,9 +25638,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_DemonPortal_Sound": [
 				"SpawnToHand_DemonPortal_Sound.ogg"
 			]
@@ -26276,10 +25660,7 @@ var parseCardsText = {
 				"Shared_Rage_InnerRage_Impact_1.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your minions +4 Health.",
 		"dbfId": 41620,
@@ -26306,9 +25687,6 @@ var parseCardsText = {
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
 			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
 			"Shared_Fire_Impact_Large": [
 				"Shared_Fire_Impact_Large.ogg"
 			],
@@ -26331,10 +25709,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 10 Armor.",
 		"dbfId": 41622,
@@ -26401,9 +25776,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -26423,10 +25795,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 4 Armor.",
 		"dbfId": 41589,
@@ -26442,9 +25811,6 @@ var parseCardsText = {
 		"id": "CFM_621t30",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"death": [],
 			"attack": []
 		},
@@ -26464,9 +25830,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_DemonPortal_Sound": [
 				"SpawnToHand_DemonPortal_Sound.ogg"
 			]
@@ -26489,10 +25852,7 @@ var parseCardsText = {
 				"Shared_Rage_InnerRage_Impact_1.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your minions +6 Health.",
 		"dbfId": 41628,
@@ -26653,10 +26013,7 @@ var parseCardsText = {
 				"Shared_Rage_InnerRage_Impact_1.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your minions +2 Health.",
 		"dbfId": 41586,
@@ -26672,9 +26029,6 @@ var parseCardsText = {
 		"id": "CFM_621t8",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"death": [],
 			"attack": []
 		},
@@ -26694,9 +26048,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_DemonPortal_Sound": [
 				"SpawnToHand_DemonPortal_Sound.ogg"
 			]
@@ -26735,9 +26086,6 @@ var parseCardsText = {
 			"attack": [],
 			"Arcane_Impact_06_Sound_03": [
 				"Arcane_Impact_06_Sound_03.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			],
 			"Arcane_Idle_03_Sound_Loop": [
 				"Arcane_Idle_03_Sound_Loop.ogg"
@@ -26829,14 +26177,8 @@ var parseCardsText = {
 		"id": "CFM_630",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 1 Mana Crystal this turn only.",
 		"cardClass": "ROGUE",
@@ -27180,12 +26522,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -27194,18 +26530,6 @@ var parseCardsText = {
 			],
 			"death": [
 				"VO_CFM_647_Male_Murloc_Death_01.ogg"
-			],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
 			],
 			"attack": [
 				"VO_CFM_647_Male_Murloc_Attack_01.ogg"
@@ -27658,9 +26982,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_CFM_657_Male_Arakkoa_Attack_01.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> <b>Silence</b> a minion.",
@@ -27758,9 +27079,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_CFM_659_Female_Gnome_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Restore #2 Health.",
@@ -28526,13 +27844,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_KnifeThrow_Impact_1": [
-				"Shared_KnifeThrow_Impact_1.ogg"
-			],
-			"attack": [],
-			"Shared_KnifeThrow_Cast_1": [
-				"Shared_KnifeThrow_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $2 damage.\n<b>Combo:</b> Summon a{1} {0} <b>Jade Golem</b>.",
 		"cardClass": "ROGUE",
@@ -29814,10 +29126,7 @@ var parseCardsText = {
 			"Splash_Impact_Sound": [
 				"Splash_Impact_Sound.ogg"
 			],
-			"attack": [],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $3 damage to all damaged minions.",
 		"cardClass": "WARRIOR",
@@ -30904,9 +30213,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_CFM_855_Male_Human_Attack_01.ogg",
 				"DefiasCleaner_Underlay_Attack.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> <b>Silence</b> a minion with <b>Deathrattle</b>.",
@@ -33433,17 +32739,6 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Goldshire Footman",
 		"id": "CS1_042",
-		"audio": {
-			"play": [
-				"VO_CS1_042_Play_01.ogg"
-			],
-			"death": [
-				"VO_CS1_042_Death_03.ogg"
-			],
-			"attack": [
-				"VO_CS1_042_Attack_02.ogg"
-			]
-		},
 		"text": "<b>Taunt</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -33465,17 +32760,6 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Fen Creeper",
 		"id": "CS1_069",
-		"audio": {
-			"play": [
-				"SFX_CS1_069_EnterPlay.ogg"
-			],
-			"death": [
-				"SFX_CS1_069_Death.ogg"
-			],
-			"attack": [
-				"SFX_CS1_069_Attack.ogg"
-			]
-		},
 		"text": "<b>Taunt</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -33615,23 +32899,8 @@ var parseCardsText = {
 		"id": "CS1_129",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Change a minion's Attack to be equal to its Health.",
 		"cardClass": "PRIEST",
@@ -33711,9 +32980,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_Holy_projectile_1": [
 				"spell_Holy_projectile_1.ogg"
 			]
@@ -33737,13 +33003,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nRestore #2 Health.",
 		"dbfId": 479,
@@ -33766,9 +33026,6 @@ var parseCardsText = {
 			],
 			"Tyrande_PriestHeroPower_Start": [
 				"Tyrande_PriestHeroPower_Start.ogg"
-			],
-			"Tyrande_PriestHeroPower_Impact": [
-				"Tyrande_PriestHeroPower_Impact.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nRestore #2 Health.",
@@ -33792,9 +33049,6 @@ var parseCardsText = {
 			],
 			"Tyrande_PriestHeroPower_Start": [
 				"Tyrande_PriestHeroPower_Start.ogg"
-			],
-			"Tyrande_PriestHeroPower_Impact": [
-				"Tyrande_PriestHeroPower_Impact.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nRestore #4 Health.",
@@ -33808,6 +33062,20 @@ var parseCardsText = {
 		"set": "Hero_skins",
 		"name": "Lesser Heal",
 		"id": "CS1h_001_H2",
+		"audio": {
+			"play": [],
+			"MadameLazul_HeroPower_Cast": [
+				"MadameLazul_HeroPower_Cast.ogg"
+			],
+			"MadameLazul_HeroPower_Impact": [
+				"MadameLazul_HeroPower_Impact.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"MadameLazul_HeroPower_Idle_Loop": [
+				"MadameLazul_HeroPower_Idle_Loop.ogg"
+			]
+		},
 		"text": "<b>Hero Power</b>\nRestore #2 Health.",
 		"dbfId": 54817,
 		"type": "Hero_power",
@@ -33820,6 +33088,20 @@ var parseCardsText = {
 		"set": "Hero_skins",
 		"name": "Heal",
 		"id": "CS1h_001_H2_AT_132",
+		"audio": {
+			"play": [],
+			"MadameLazul_HeroPower_Cast": [
+				"MadameLazul_HeroPower_Cast.ogg"
+			],
+			"MadameLazul_HeroPower_Impact": [
+				"MadameLazul_HeroPower_Impact.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"MadameLazul_HeroPower_Idle_Loop": [
+				"MadameLazul_HeroPower_Idle_Loop.ogg"
+			]
+		},
 		"text": "<b>Hero Power</b>\nRestore #4 Health.",
 		"dbfId": 54818,
 		"type": "Hero_power",
@@ -33925,23 +33207,8 @@ var parseCardsText = {
 		"id": "CS2_004",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +2 Health.\nDraw a card.",
 		"cardClass": "PRIEST",
@@ -34008,10 +33275,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your hero +2 Attack this turn. Gain 2 Armor.",
 		"cardClass": "DRUID",
@@ -34080,16 +33344,10 @@ var parseCardsText = {
 		"id": "CS2_007",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -34215,9 +33473,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -34386,9 +33641,6 @@ var parseCardsText = {
 				"Shared_ClawSlash_Impact_2.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			]
@@ -34486,10 +33738,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Druid_Shapeshift_Cast_1": [
-				"Druid_Shapeshift_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\n+1 Attack this turn.\n+1 Armor.",
 		"dbfId": 1123,
@@ -34570,26 +33819,6 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Polymorph",
 		"id": "CS2_022",
-		"audio": {
-			"play": [],
-			"Shared_Arcane_Fizzle_1": [
-				"Shared_Arcane_Fizzle_1.ogg"
-			],
-			"Shared_Arcane_PreCast_1": [
-				"Shared_Arcane_PreCast_1.ogg"
-			],
-			"death": [],
-			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
-			"GlassShatter_Underlay_Death": [
-				"GlassShatter_Underlay_Death.ogg"
-			]
-		},
 		"text": "Transform a minion\ninto a 1/1 Sheep.",
 		"cardClass": "MAGE",
 		"rarity": "Free"
@@ -34656,14 +33885,6 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Arcane Intellect",
 		"id": "CS2_023",
-		"audio": {
-			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
-			"death": [],
-			"attack": []
-		},
 		"text": "Draw 2 cards.",
 		"cardClass": "MAGE",
 		"rarity": "Free"
@@ -34781,17 +34002,6 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Arcane Explosion",
 		"id": "CS2_025",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": [],
-			"Mage_ArcaneExplosion_AE_1": [
-				"Mage_ArcaneExplosion_AE_1.ogg"
-			],
-			"Arcane_AE_Explosion_Toki_Sound": [
-				"Arcane_AE_Explosion_Toki_Sound.ogg"
-			]
-		},
 		"text": "Deal $1 damage to all enemy minions.",
 		"cardClass": "MAGE",
 		"rarity": "Free"
@@ -34999,26 +34209,6 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Fireball",
 		"id": "CS2_029",
-		"audio": {
-			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
-			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
-		},
 		"text": "Deal $6 damage.",
 		"cardClass": "MAGE",
 		"rarity": "Free"
@@ -35208,29 +34398,6 @@ var parseCardsText = {
 			"thTH": "สร้างความเสียหาย_1_แต้ม"
 		},
 		"id": "CS2_034",
-		"audio": {
-			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
-			"death": [],
-			"attack": [],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
-		},
 		"text": "<b>Hero Power</b>\nDeal $1 damage.",
 		"dbfId": 807,
 		"type": "Hero_power",
@@ -35261,9 +34428,6 @@ var parseCardsText = {
 		"id": "CS2_034_H1",
 		"audio": {
 			"play": [],
-			"Medivh_Fireblast_Start_Sound_01": [
-				"Medivh_Fireblast_Start_Sound_01.ogg"
-			],
 			"death": [],
 			"attack": [],
 			"Medivh_Fireblast_Fizzle_Sound_01": [
@@ -35293,9 +34457,6 @@ var parseCardsText = {
 		"id": "CS2_034_H1_AT_132",
 		"audio": {
 			"play": [],
-			"Medivh_Fireblast_Start_Sound_01": [
-				"Medivh_Fireblast_Start_Sound_01.ogg"
-			],
 			"death": [],
 			"attack": [],
 			"Medivh_Fireblast_Fizzle_Sound_01": [
@@ -35343,40 +34504,22 @@ var parseCardsText = {
 			"Shared_Arcane_Fizzle_1": [
 				"Shared_Arcane_Fizzle_1.ogg"
 			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
-			"death": [],
-			"Shared_Shadow_Cast_1": [
-				"Shared_Shadow_Cast_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			],
 			"Khadgar_Fireblast_Idle_Sound_01": [
 				"Khadgar_Fireblast_Idle_Sound_01.ogg"
 			],
 			"Shared_Arcane_PreCast_1": [
 				"Shared_Arcane_PreCast_1.ogg"
 			],
+			"death": [],
+			"Shared_Shadow_Cast_1": [
+				"Shared_Shadow_Cast_1.ogg"
+			],
 			"attack": [],
-			"Khadgar_Fireblast_Start_Sound_01": [
-				"Khadgar_Fireblast_Start_Sound_01.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Khadgar_Fireblast_Fizzle_Sound_01": [
 				"Khadgar_Fireblast_Fizzle_Sound_01.ogg"
 			],
-			"Khadgar_Fireblast_Impact_Sound_01": [
-				"Khadgar_Fireblast_Impact_Sound_01.ogg"
-			],
-			"Khadgar_Fireblast_Cast_Sound_01": [
-				"Khadgar_Fireblast_Cast_Sound_01.ogg"
+			"Mage_ArcaneMissiles_Impact_1": [
+				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nDeal $1 damage.",
@@ -35396,40 +34539,22 @@ var parseCardsText = {
 			"Shared_Arcane_Fizzle_1": [
 				"Shared_Arcane_Fizzle_1.ogg"
 			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
-			"death": [],
-			"Shared_Shadow_Cast_1": [
-				"Shared_Shadow_Cast_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			],
 			"Khadgar_Fireblast_Idle_Sound_01": [
 				"Khadgar_Fireblast_Idle_Sound_01.ogg"
 			],
 			"Shared_Arcane_PreCast_1": [
 				"Shared_Arcane_PreCast_1.ogg"
 			],
+			"death": [],
+			"Shared_Shadow_Cast_1": [
+				"Shared_Shadow_Cast_1.ogg"
+			],
 			"attack": [],
-			"Khadgar_Fireblast_Start_Sound_01": [
-				"Khadgar_Fireblast_Start_Sound_01.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Khadgar_Fireblast_Fizzle_Sound_01": [
 				"Khadgar_Fireblast_Fizzle_Sound_01.ogg"
 			],
-			"Khadgar_Fireblast_Impact_Sound_01": [
-				"Khadgar_Fireblast_Impact_Sound_01.ogg"
-			],
-			"Khadgar_Fireblast_Cast_Sound_01": [
-				"Khadgar_Fireblast_Cast_Sound_01.ogg"
+			"Mage_ArcaneMissiles_Impact_1": [
+				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
@@ -35523,16 +34648,10 @@ var parseCardsText = {
 		"id": "CS2_038",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -35611,16 +34730,10 @@ var parseCardsText = {
 		"id": "CS2_039",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -35684,9 +34797,6 @@ var parseCardsText = {
 		"id": "CS2_041",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
@@ -35793,29 +34903,11 @@ var parseCardsText = {
 			"play": [
 				"CS2_042_Play_FireElemental.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"CS2_042_Death_FireElemental.ogg"
 			],
 			"attack": [
 				"CS2_042_Attack_FireElemental.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 3 damage.",
@@ -35874,9 +34966,6 @@ var parseCardsText = {
 				"Shared_Rage_InnerRage_Impact_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -35995,13 +35084,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shaman_TotemicCall_Cast_1": [
-				"Shaman_TotemicCall_Cast_1.ogg"
-			],
-			"attack": [],
-			"Totems_CustomSpawn_1": [
-				"Totems_CustomSpawn_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon a random Totem.",
 		"dbfId": 687,
@@ -36024,16 +35107,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shaman_TotemicCall_Cast_1": [
-				"Shaman_TotemicCall_Cast_1.ogg"
-			],
-			"MorglHPCast": [
-				"MorglHPCast.ogg"
-			],
-			"attack": [],
-			"Totems_CustomSpawn_1": [
-				"Totems_CustomSpawn_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon a random Totem.",
 		"dbfId": 40247,
@@ -36072,13 +35146,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shaman_TotemicCall_Cast_1": [
-				"Shaman_TotemicCall_Cast_1.ogg"
-			],
-			"attack": [],
-			"Totems_CustomSpawn_1": [
-				"Totems_CustomSpawn_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon a random Totem.",
 		"dbfId": 53238,
@@ -36802,9 +35870,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Shared_SneakyAttackImpactStandard_1": [
 				"Shared_SneakyAttackImpactStandard_1.ogg"
 			]
@@ -36839,9 +35904,6 @@ var parseCardsText = {
 			],
 			"Shared_Rage_Fizzle_1": [
 				"Shared_Rage_Fizzle_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "Give a minion +2 Attack. <b>Combo:</b> +4 Attack instead.",
@@ -37004,9 +36066,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Shared_SneakyAttackImpactStandard_1": [
 				"Shared_SneakyAttackImpactStandard_1.ogg"
 			]
@@ -37065,9 +36124,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Rogue_Assassinate_Impact_1": [
 				"Rogue_Assassinate_Impact_1.ogg"
 			]
@@ -37229,10 +36285,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nEquip a 1/2 Dagger.",
 		"dbfId": 730,
@@ -37401,9 +36454,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_BlessingOfMight_target_1": [
 				"spell_BlessingOfMight_target_1.ogg"
 			]
@@ -37479,26 +36529,11 @@ var parseCardsText = {
 			"play": [
 				"VO_CS2_088_Play_01.ogg"
 			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [
 				"VO_CS2_088_Death_03.ogg"
 			],
 			"attack": [
 				"VO_CS2_088_Attack_02.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Restore #6 Health to your hero.",
@@ -37550,23 +36585,8 @@ var parseCardsText = {
 		"id": "CS2_089",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #6 Health.",
 		"cardClass": "PALADIN",
@@ -37678,9 +36698,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_BlessingOfKings_target_1": [
 				"spell_BlessingOfKings_target_1.ogg"
 			]
@@ -37757,9 +36774,6 @@ var parseCardsText = {
 			"Shared_Physical_Impact_01": [
 				"Shared_Physical_Impact_01.ogg"
 			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			],
 			"spell_Consecration_impact_1": [
 				"spell_Consecration_impact_1.ogg"
 			]
@@ -37824,9 +36838,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"spell_Holy_projectile_1": [
 				"spell_Holy_projectile_1.ogg"
 			]
@@ -37900,14 +36911,8 @@ var parseCardsText = {
 		"id": "CS2_101",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
 		"dbfId": 472,
@@ -37923,20 +36928,11 @@ var parseCardsText = {
 		"id": "CS2_101_H1",
 		"audio": {
 			"play": [],
-			"Liadrin_HeroPower_Summon": [
-				"Liadrin_HeroPower_Summon.ogg"
-			],
 			"Holy_Targeted_Loop_01": [
 				"Holy_Targeted_Loop_01.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
 		"dbfId": 2832,
@@ -37952,20 +36948,11 @@ var parseCardsText = {
 		"id": "CS2_101_H1_AT_132",
 		"audio": {
 			"play": [],
-			"Liadrin_HeroPower_Summon": [
-				"Liadrin_HeroPower_Summon.ogg"
-			],
 			"Holy_Targeted_Loop_01": [
 				"Holy_Targeted_Loop_01.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
 		"dbfId": 40178,
@@ -37981,9 +36968,6 @@ var parseCardsText = {
 		"id": "CS2_101_H2",
 		"audio": {
 			"play": [],
-			"SilverHandArthas_CustomSpawn_Sound": [
-				"SilverHandArthas_CustomSpawn_Sound.ogg"
-			],
 			"Holy_Targeted_Loop_01": [
 				"Holy_Targeted_Loop_01.ogg"
 			],
@@ -38007,9 +36991,6 @@ var parseCardsText = {
 		"id": "CS2_101_H2_AT_132",
 		"audio": {
 			"play": [],
-			"SilverHandArthas_CustomSpawn_Sound": [
-				"SilverHandArthas_CustomSpawn_Sound.ogg"
-			],
 			"Holy_Targeted_Loop_01": [
 				"Holy_Targeted_Loop_01.ogg"
 			],
@@ -38034,10 +37015,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"SirAnnoyOTron_HeroPower_Sound": [
-				"SirAnnoyOTron_HeroPower_Sound.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit.",
 		"dbfId": 53188,
@@ -38054,10 +37032,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"SirAnnoyOTron_HeroPower_Sound": [
-				"SirAnnoyOTron_HeroPower_Sound.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nSummon two 1/1 Recruits.",
 		"dbfId": 53913,
@@ -38098,10 +37073,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGain 2 Armor.",
 		"dbfId": 725,
@@ -38118,10 +37090,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Magni_HeroPower_HammerImpact_Sound_01": [
-				"Magni_HeroPower_HammerImpact_Sound_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGain 2 Armor.",
 		"dbfId": 2830,
@@ -38138,10 +37107,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Magni_HeroPower_HammerImpact_Sound_01": [
-				"Magni_HeroPower_HammerImpact_Sound_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGain 4 Armor.",
 		"dbfId": 30374,
@@ -38449,22 +37415,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
+			"attack": []
 		},
 		"text": "Destroy a damaged enemy minion.",
 		"cardClass": "WARRIOR",
@@ -38569,22 +37520,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
+			"attack": []
 		},
 		"text": "[x]Deal $2 damage to\ntwo random enemy\nminions.",
 		"cardClass": "WARRIOR",
@@ -38626,20 +37562,11 @@ var parseCardsText = {
 			"play": [
 				"VO_CS2_117_Play_01.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"VO_CS2_117_Death_03.ogg"
 			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [
 				"VO_CS2_117_Attack_02.ogg"
-			],
-			"Shaman_Windfury_Impact": [
-				"Shaman_Windfury_Impact.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Restore #3 Health.",
@@ -38676,17 +37603,6 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Magma Rager",
 		"id": "CS2_118",
-		"audio": {
-			"play": [
-				"SFX_CS2_118_EnterPlay.ogg"
-			],
-			"death": [
-				"SFX_CS2_118_Death.ogg"
-			],
-			"attack": [
-				"SFX_CS2_118_Attack.ogg"
-			]
-		},
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
 	},
@@ -38720,17 +37636,6 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Oasis Snapjaw",
 		"id": "CS2_119",
-		"audio": {
-			"play": [
-				"CS2_119_Oasis_Snapjaw_EnterPlay2.ogg"
-			],
-			"death": [
-				"CS2_119_Oasis_Snapjaw_Death2.ogg"
-			],
-			"attack": [
-				"CS2_119_Oasis_Snapjaw_Attack1.ogg"
-			]
-		},
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
 	},
@@ -38764,17 +37669,6 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "River Crocolisk",
 		"id": "CS2_120",
-		"audio": {
-			"play": [
-				"SFX_CS2_120_EnterPlay.ogg"
-			],
-			"death": [
-				"SFX_CS2_120_Death.ogg"
-			],
-			"attack": [
-				"SFX_CS2_120_Attack.ogg"
-			]
-		},
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
 	},
@@ -38810,17 +37704,6 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Frostwolf Grunt",
 		"id": "CS2_121",
-		"audio": {
-			"play": [
-				"VO_CS2_121_Play_01.ogg"
-			],
-			"death": [
-				"VO_CS2_121_Death_03.ogg"
-			],
-			"attack": [
-				"VO_CS2_121_Attack_02.ogg"
-			]
-		},
 		"text": "<b>Taunt</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -38857,17 +37740,6 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Raid Leader",
 		"id": "CS2_122",
-		"audio": {
-			"play": [
-				"VO_CS2_122_Play_01.ogg"
-			],
-			"death": [
-				"VO_CS2_122_Death_03.ogg"
-			],
-			"attack": [
-				"VO_CS2_122_Attack_02.ogg"
-			]
-		},
 		"text": "Your other minions have +1 Attack.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -38877,11 +37749,6 @@ var parseCardsText = {
 		"set": "Core",
 		"name": "Enhanced",
 		"id": "CS2_122e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Raid Leader is granting this minion +1 Attack.",
 		"dbfId": 1402,
 		"type": "Enchantment",
@@ -38920,20 +37787,6 @@ var parseCardsText = {
 		"faction": "HORDE",
 		"name": "Wolfrider",
 		"id": "CS2_124",
-		"audio": {
-			"play": [
-				"VO_CS2_124_Play_01.ogg",
-				"SFX_CS2_124_Wolf_EnterPlay_00.ogg"
-			],
-			"death": [
-				"VO_CS2_124_Death_03.ogg",
-				"SFX_CS2_124_Wolf_Death_00.ogg"
-			],
-			"attack": [
-				"VO_CS2_124_Attack_02.ogg",
-				"SFX_CS2_124_Wolf_Attack_00.ogg"
-			]
-		},
 		"text": "<b>Charge</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -39020,17 +37873,6 @@ var parseCardsText = {
 		"faction": "HORDE",
 		"name": "Silverback Patriarch",
 		"id": "CS2_127",
-		"audio": {
-			"play": [
-				"CS2_127_Silverback_Patriarch_EnterPlay1.ogg"
-			],
-			"death": [
-				"CS2_127_Silverback_Patriarch_Death1.ogg"
-			],
-			"attack": [
-				"CS2_127_Silverback_Patriarch_Attack3.ogg"
-			]
-		},
 		"text": "<b>Taunt</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -39136,23 +37978,11 @@ var parseCardsText = {
 			"play": [
 				"VO_CS2_141_Play_01.ogg"
 			],
-			"Tutorial_Rifle_Cock_01": [
-				"Tutorial_Rifle_Cock_01.ogg"
-			],
 			"death": [
 				"VO_CS2_141_Death_03.ogg"
 			],
 			"attack": [
 				"VO_CS2_141_Attack_02.ogg"
-			],
-			"FX_FireballEvent04_SpellCancel_01": [
-				"FX_FireballEvent04_SpellCancel_01.ogg"
-			],
-			"Tutorial_Rifle_Fire_01": [
-				"Tutorial_Rifle_Fire_01.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 1 damage.",
@@ -39274,17 +38104,6 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Gnomish Inventor",
 		"id": "CS2_147",
-		"audio": {
-			"play": [
-				"VO_CS2_147_Play_01.ogg"
-			],
-			"death": [
-				"VO_CS2_147_Death_03.ogg"
-			],
-			"attack": [
-				"VO_CS2_147_Attack_02.ogg"
-			]
-		},
 		"text": "<b>Battlecry:</b> Draw a card.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -39342,23 +38161,11 @@ var parseCardsText = {
 			"play": [
 				"VO_CS2_150_Play_01.ogg"
 			],
-			"Tutorial_Rifle_Cock_01": [
-				"Tutorial_Rifle_Cock_01.ogg"
-			],
 			"death": [
 				"VO_CS2_150_Death_03.ogg"
 			],
 			"attack": [
 				"VO_CS2_150_Attack_02.ogg"
-			],
-			"FX_FireballEvent04_SpellCancel_01": [
-				"FX_FireballEvent04_SpellCancel_01.ogg"
-			],
-			"Tutorial_Rifle_Fire_01": [
-				"Tutorial_Rifle_Fire_01.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 2 damage.",
@@ -39581,17 +38388,6 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Murloc Raider",
 		"id": "CS2_168",
-		"audio": {
-			"play": [
-				"CS2_168_Murloc_Raider_EnterPlay1.ogg"
-			],
-			"death": [
-				"CS2_168_Murloc_Raider_Death2.ogg"
-			],
-			"attack": [
-				"CS2_168_Murloc_Raider_Attack1.ogg"
-			]
-		},
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
 	},
@@ -39664,17 +38460,6 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Stonetusk Boar",
 		"id": "CS2_171",
-		"audio": {
-			"play": [
-				"SFX_CS2_171_EnterPlay.ogg"
-			],
-			"death": [
-				"SFX_CS2_171_Death.ogg"
-			],
-			"attack": [
-				"SFX_CS2_171_Attack.ogg"
-			]
-		},
 		"text": "<b>Charge</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -39710,17 +38495,6 @@ var parseCardsText = {
 		"faction": "HORDE",
 		"name": "Bloodfen Raptor",
 		"id": "CS2_172",
-		"audio": {
-			"play": [
-				"CS2_172_StranglethornRaptor_EnterPlay.ogg"
-			],
-			"death": [
-				"CS2_172_StranglethornRaptor_Death.ogg"
-			],
-			"attack": [
-				"CS2_172_StranglethornRaptor_Attack.ogg"
-			]
-		},
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
 	},
@@ -39805,17 +38579,6 @@ var parseCardsText = {
 		"faction": "HORDE",
 		"name": "Sen'jin Shieldmasta",
 		"id": "CS2_179",
-		"audio": {
-			"play": [
-				"VO_CS2_179_Play_01.ogg"
-			],
-			"death": [
-				"VO_CS2_179_Death_03.ogg"
-			],
-			"attack": [
-				"VO_CS2_179_Attack_02.ogg"
-			]
-		},
 		"text": "<b>Taunt</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -40135,12 +38898,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -40149,18 +38906,6 @@ var parseCardsText = {
 			],
 			"death": [
 				"VO_CS2_189_Death_03.ogg"
-			],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
 			],
 			"attack": [
 				"VO_CS2_189_Attack_02.ogg"
@@ -40206,17 +38951,6 @@ var parseCardsText = {
 		"faction": "HORDE",
 		"name": "Razorfen Hunter",
 		"id": "CS2_196",
-		"audio": {
-			"play": [
-				"VO_CS2_196_Play_01.ogg"
-			],
-			"death": [
-				"VO_CS2_196_Death_03.ogg"
-			],
-			"attack": [
-				"VO_CS2_196_Attack_02.ogg"
-			]
-		},
 		"text": "<b>Battlecry:</b> Summon a 1/1 Boar.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -40298,17 +39032,6 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Boulderfist Ogre",
 		"id": "CS2_200",
-		"audio": {
-			"play": [
-				"VO_CS2_200_Play_01.ogg"
-			],
-			"death": [
-				"VO_CS2_200_Death_03.ogg"
-			],
-			"attack": [
-				"VO_CS2_200_Attack_02.ogg"
-			]
-		},
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
 	},
@@ -40414,9 +39137,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"SFX_CS2_203_Attack.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> <b>Silence</b> a minion.",
@@ -40456,17 +39176,6 @@ var parseCardsText = {
 		"faction": "HORDE",
 		"name": "Reckless Rocketeer",
 		"id": "CS2_213",
-		"audio": {
-			"play": [
-				"VO_CS2_213_Play_01.ogg"
-			],
-			"death": [
-				"VO_CS2_213_Death_03.ogg"
-			],
-			"attack": [
-				"VO_CS2_213_Attack_02.ogg"
-			]
-		},
 		"text": "<b>Charge</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -41000,23 +39709,8 @@ var parseCardsText = {
 		"id": "CS2_236",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Double a minion's Health.",
 		"cardClass": "PRIEST",
@@ -41102,27 +39796,16 @@ var parseCardsText = {
 		"rarity": "Free"
 	},
 	{
+		"playerClass": "Neutral",
 		"cost": 1,
 		"set": "Core",
 		"race": "BEAST",
-		"health": 1,
-		"dbfId": 298,
-		"type": "Minion",
-		"playerClass": "Neutral",
 		"attack": 1,
 		"name": "Boar",
+		"health": 1,
 		"id": "CS2_boar",
-		"audio": {
-			"play": [
-				"SFX_CS2_boar_EnterPlay.ogg"
-			],
-			"death": [
-				"SFX_CS2_boar_Death.ogg"
-			],
-			"attack": [
-				"SFX_CS2_boar_Attack.ogg"
-			]
-		},
+		"dbfId": 298,
+		"type": "Minion",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
 	},
@@ -41155,27 +39838,16 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
+		"playerClass": "Neutral",
 		"cost": 1,
 		"set": "Core",
 		"race": "BEAST",
-		"health": 1,
-		"dbfId": 796,
-		"type": "Minion",
-		"playerClass": "Neutral",
 		"attack": 1,
 		"name": "Sheep",
+		"health": 1,
 		"id": "CS2_tk1",
-		"audio": {
-			"play": [
-				"SFX_CS2_tk1_EnterPlay.ogg"
-			],
-			"death": [
-				"SFX_CS2_tk1_Death.ogg"
-			],
-			"attack": [
-				"SFX_CS2_tk1_Attack.ogg"
-			]
-		},
+		"dbfId": 796,
+		"type": "Minion",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
 	},
@@ -41206,6 +39878,11 @@ var parseCardsText = {
 		"playerClass": "Warlock",
 		"name": "Rafaam's Scheme",
 		"id": "DAL_007",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Summon",
 		"cardClass": "WARLOCK",
 		"rarity": "Common"
@@ -41237,6 +39914,11 @@ var parseCardsText = {
 		"playerClass": "Warrior",
 		"name": "Dr. Boom's Scheme",
 		"id": "DAL_008",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Gain",
 		"cardClass": "WARRIOR",
 		"rarity": "Common"
@@ -41268,6 +39950,14 @@ var parseCardsText = {
 		"playerClass": "Shaman",
 		"name": "Hagatha's Scheme",
 		"id": "DAL_009",
+		"audio": {
+			"play": [],
+			"Hagatha_FullboardAE": [
+				"Hagatha_FullboardAE.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Deal $",
 		"cardClass": "SHAMAN",
 		"rarity": "Rare"
@@ -41299,6 +39989,11 @@ var parseCardsText = {
 		"playerClass": "Rogue",
 		"name": "Togwaggle's Scheme",
 		"id": "DAL_010",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Choose a minion. Shuffle",
 		"cardClass": "ROGUE",
 		"rarity": "Rare"
@@ -41330,6 +40025,23 @@ var parseCardsText = {
 		"playerClass": "Priest",
 		"name": "Lazul's Scheme",
 		"id": "DAL_011",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Shared_Shadow_Start_1": [
+				"Shared_Shadow_Start_1.ogg"
+			],
+			"attack": [],
+			"Shared_Shadow_PreCast_1": [
+				"Shared_Shadow_PreCast_1.ogg"
+			],
+			"Shared_Shadow_Fizzle_1": [
+				"Shared_Shadow_Fizzle_1.ogg"
+			],
+			"Unholy_Impact_Humility_Sound": [
+				"Unholy_Impact_Humility_Sound.ogg"
+			]
+		},
 		"text": "Reduce the Attack of an enemy minion by",
 		"cardClass": "PRIEST",
 		"rarity": "Epic"
@@ -41379,6 +40091,20 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Shadowy Figure",
 		"id": "DAL_030",
+		"audio": {
+			"play": [
+				"VO_DAL_030_Male_Faceless_Play_02.ogg"
+			],
+			"death": [
+				"VO_DAL_030_Male_Faceless_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_030_Male_Faceless_Attack_01.ogg"
+			],
+			"Evolve_Impact_Sound": [
+				"Evolve_Impact_Sound.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Transform into a 2/2 copy of a friendly <b>Deathrattle</b> minion.",
 		"cardClass": "PRIEST",
 		"rarity": "Epic"
@@ -41410,6 +40136,17 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Convincing Infiltrator",
 		"id": "DAL_039",
+		"audio": {
+			"play": [
+				"VO_DAL_039_Male_Faceless_Play_02.ogg"
+			],
+			"death": [
+				"VO_DAL_039_Male_Faceless_Death_02.ogg"
+			],
+			"attack": [
+				"VO_DAL_039_Male_Faceless_Attack_01.ogg"
+			]
+		},
 		"text": "[x]<b><b>Taunt</b></b>\n<b>Deathrattle:</b> Destroy a\n random enemy minion.",
 		"cardClass": "PRIEST",
 		"rarity": "Rare"
@@ -41430,6 +40167,20 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Hench-Clan Shadequill",
 		"id": "DAL_040",
+		"audio": {
+			"play": [
+				"VO_DAL_040_Male_Quillboar_Play_01.ogg",
+				"Staff_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_040_Male_Quillboar_Death_01.ogg",
+				"Staff_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_040_Male_Quillboar_Attack_03.ogg",
+				"Staff_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Restore 5 Health to the enemy hero.",
 		"cardClass": "PRIEST",
 		"rarity": "Common"
@@ -41453,6 +40204,17 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Walking Fountain",
 		"id": "DAL_047",
+		"audio": {
+			"play": [
+				"DAL_047_WalkingFountain_Play.ogg"
+			],
+			"death": [
+				"DAL_047_WalkingFountain_Death.ogg"
+			],
+			"attack": [
+				"DAL_047_WalkingFountain_Attack.ogg"
+			]
+		},
 		"text": "<b>Lifesteal</b>, <b>Rush</b>, <b>Windfury</b>",
 		"cardClass": "SHAMAN",
 		"rarity": "Common"
@@ -41474,6 +40236,20 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Underbelly Angler",
 		"id": "DAL_049",
+		"audio": {
+			"play": [
+				"VO_DAL_049_Female_Murloc_Play_01.ogg",
+				"UnderbellyAngler_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_049_Female_Murloc_Death_02.ogg",
+				"UnderbellyAngler_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_049_Female_Murloc_Attack_01.ogg",
+				"UnderbellyAngler_Underlay_Attack.ogg"
+			]
+		},
 		"text": "After you play a Murloc, add a random Murloc to your hand.",
 		"cardClass": "SHAMAN",
 		"rarity": "Rare"
@@ -41494,6 +40270,21 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Muckmorpher",
 		"id": "DAL_052",
+		"audio": {
+			"play": [
+				"VO_DAL_052_Male_Shudderwock_Play_03.ogg",
+				"MuckMorpher_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_052_Male_Shudderwock_Death_01.ogg"
+			],
+			"Polymorph_SwampMuck_Impact_Sound": [
+				"Polymorph_SwampMuck_Impact_Sound.ogg"
+			],
+			"attack": [
+				"VO_DAL_052_Male_Shudderwock_Attack_02.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Transform into\na 4/4 copy of a different\nminion in your deck.",
 		"cardClass": "SHAMAN",
 		"rarity": "Epic"
@@ -41526,6 +40317,20 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Hecklebot",
 		"id": "DAL_058",
+		"audio": {
+			"play": [
+				"VO_DAL_058_Male_Mech_Play_01.ogg",
+				"ClunkyMechSmall_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_058_Male_Mech_Death_02.ogg",
+				"ClunkyMechSmall_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_058_Male_Mech_Attack_01.ogg",
+				"ClunkyMechSmall_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Your opponent summons a minion from their deck.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -41541,6 +40346,20 @@ var parseCardsText = {
 		"playerClass": "Warrior",
 		"name": "Dimensional Ripper",
 		"id": "DAL_059",
+		"audio": {
+			"play": [],
+			"death": [],
+			"LadyinWhite_Deck_AE": [
+				"LadyinWhite_Deck_AE.ogg"
+			],
+			"attack": [],
+			"Arcane_Teleporter_DeckAE_Sound": [
+				"Arcane_Teleporter_DeckAE_Sound.ogg"
+			],
+			"Arcane_Teleporter_CustomSpawn_Sound": [
+				"Arcane_Teleporter_CustomSpawn_Sound.ogg"
+			]
+		},
 		"text": "Summon 2 copies of a minion in your deck.",
 		"cardClass": "WARRIOR",
 		"rarity": "Rare"
@@ -41562,6 +40381,23 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Clockwork Goblin",
 		"id": "DAL_060",
+		"audio": {
+			"play": [
+				"VO_DAL_060_Male_Mech_Play_02.ogg",
+				"CleanMechSmall_Play_Underlay.ogg"
+			],
+			"spell_Redemption_target_1": [
+				"spell_Redemption_target_1.ogg"
+			],
+			"death": [
+				"VO_DAL_060_Male_Mech_Death_01.ogg",
+				"CleanMechSmall_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_060_Male_Mech_Attack_01.ogg",
+				"CleanMechSmall_Attack_Underlay.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Shuffle a Bomb\ninto your opponent's deck.\nWhen drawn, it explodes\nfor 5 damage.",
 		"cardClass": "WARRIOR",
 		"rarity": "Rare"
@@ -41577,6 +40413,14 @@ var parseCardsText = {
 		"playerClass": "Warrior",
 		"name": "Sweeping Strikes",
 		"id": "DAL_062",
+		"audio": {
+			"play": [],
+			"Shared_Rage_InnerRage_Impact_1": [
+				"Shared_Rage_InnerRage_Impact_1.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Give a minion \"Also damages minions next to whomever this attacks.\"",
 		"cardClass": "WARRIOR",
 		"rarity": "Rare"
@@ -41586,6 +40430,11 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "Sweeping Strikes",
 		"id": "DAL_062e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Damages minions adjacent to defender.",
 		"dbfId": 51748,
 		"type": "Enchantment",
@@ -41607,6 +40456,11 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Wrenchcalibur",
 		"id": "DAL_063",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "After your hero attacks, shuffle a Bomb into your [x]opponent's deck.",
 		"cardClass": "WARRIOR",
 		"rarity": "Epic"
@@ -41628,6 +40482,23 @@ var parseCardsText = {
 		"attack": 7,
 		"name": "Blastmaster Boom",
 		"id": "DAL_064",
+		"audio": {
+			"play": [
+				"VO_DAL_064_Male_Goblin_Play_01.ogg",
+				"BM_Boom_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_064_Male_Goblin_Death_01.ogg",
+				"BlastmasterBoom_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_064_Male_Goblin_Attack_02.ogg",
+				"BlastmasterBoom_Underlay_Attack.ogg"
+			],
+			"BoomBot_CustomSpawn_Sound_01": [
+				"BoomBot_CustomSpawn_Sound_01.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Summon two 1/1\nBoom Bots for each Bomb\nin your opponent's deck.",
 		"cardClass": "WARRIOR",
 		"rarity": "Legendary"
@@ -41646,6 +40517,17 @@ var parseCardsText = {
 		"playerClass": "Priest",
 		"name": "Unsleeping Soul",
 		"id": "DAL_065",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"FX_MinionSummon_Drop": [
+				"FX_MinionSummon_Drop.ogg"
+			],
+			"Warlock_Shadow_Buff_Impact_Sound": [
+				"Warlock_Shadow_Buff_Impact_Sound.ogg"
+			]
+		},
 		"text": "<b>Silence</b> a friendly minion, then summon a copy of it.",
 		"cardClass": "PRIEST",
 		"rarity": "Common"
@@ -41671,6 +40553,26 @@ var parseCardsText = {
 		"attack": 7,
 		"name": "The Boom Reaver",
 		"id": "DAL_070",
+		"audio": {
+			"play": [
+				"VO_DAL_070_Male_Mech_Play_02.ogg",
+				"BoomReaver_Play_Stinger.ogg"
+			],
+			"TheBoomReaver_CustomSpawn_Start_Impact": [
+				"TheBoomReaver_CustomSpawn_Start_Impact.ogg"
+			],
+			"death": [
+				"VO_DAL_070_Male_Mech_Death_01.ogg",
+				"CleanMechLarge_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_070_Male_Mech_Attack_01.ogg",
+				"CleanMechLarge_Attack_Underlay.ogg"
+			],
+			"TheBoomReaver_CustomSpawn_Start": [
+				"TheBoomReaver_CustomSpawn_Start.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Summon a copy of a minion in your deck. Give it <b>Rush</b>.",
 		"cardClass": "WARRIOR",
 		"rarity": "Legendary"
@@ -41696,6 +40598,14 @@ var parseCardsText = {
 		"playerClass": "Shaman",
 		"name": "Mutate",
 		"id": "DAL_071",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"DKThrall_HeroPower_Impact_Sound": [
+				"DKThrall_HeroPower_Impact_Sound.ogg"
+			]
+		},
 		"text": "Transform a friendly minion into a random one that costs (1) more.",
 		"cardClass": "SHAMAN",
 		"rarity": "Common"
@@ -41736,6 +40646,23 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Toxfin",
 		"id": "DAL_077",
+		"audio": {
+			"play": [
+				"VO_DAL_077_Female_Murloc_Play_01.ogg",
+				"Toxfin_Underlay_Play.ogg"
+			],
+			"Poison_Spit_Impact_Sound": [
+				"Poison_Spit_Impact_Sound.ogg"
+			],
+			"death": [
+				"VO_DAL_077_Female_Murloc_Death_03.ogg",
+				"Toxfin_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_077_Female_Murloc_Attack_02.ogg",
+				"Toxfin_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Give a friendly Murloc <b>Poisonous</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -41745,6 +40672,11 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "Toxic Fin",
 		"id": "DAL_077e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Poisonous</b>",
 		"dbfId": 52297,
 		"type": "Enchantment",
@@ -41783,6 +40715,22 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Travelling Healer",
 		"id": "DAL_078",
+		"audio": {
+			"play": [
+				"VO_DAL_078_Female_Tortollan_Play_02.ogg",
+				"TravellingHealer_Underlay_Play.ogg"
+			],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [
+				"VO_DAL_078_Female_Tortollan_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_078_Female_Tortollan_Attack_03.ogg",
+				"TravellingHealer_Underlay_Attack.ogg"
+			]
+		},
 		"text": "[x]<b>Divine Shield</b>\n<b>Battlecry:</b> Restore #3 Health.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -41803,6 +40751,20 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Spellward Jeweler",
 		"id": "DAL_081",
+		"audio": {
+			"play": [
+				"VO_DAL_081_Female_Gnome_Play_04.ogg"
+			],
+			"death": [
+				"VO_DAL_081_Female_Gnome_Death_01.ogg"
+			],
+			"Arcane_Impact_WithCards_Sound": [
+				"Arcane_Impact_WithCards_Sound.ogg"
+			],
+			"attack": [
+				"VO_DAL_081_Female_Gnome_Attack_02.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Your hero can't\nbe targeted by spells or\nHero Powers until your\nnext turn.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -41816,6 +40778,11 @@ var parseCardsText = {
 			"CANT_BE_TARGETED_BY_HERO_POWERS"
 		],
 		"id": "DAL_081e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Can't be targeted by spells or Hero Powers.",
 		"dbfId": 52298,
 		"type": "Enchantment",
@@ -41837,6 +40804,19 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Dalaran Crusader",
 		"id": "DAL_085",
+		"audio": {
+			"play": [
+				"1H_SwordFine_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_085_Female_Human_Death_01.ogg",
+				"1H_SwordFine_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_085_Female_Human_Attack_01.ogg",
+				"1H_SwordFine_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Divine Shield</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -41860,6 +40840,24 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Sunreaver Spy",
 		"id": "DAL_086",
+		"audio": {
+			"play": [
+				"VO_DAL_086_Female_BloodElf_Play_01.ogg",
+				"KabalCrystalRunner_Underlay_Play.ogg",
+				"Coin_Underlay_Death.ogg"
+			],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [
+				"VO_DAL_086_Female_BloodElf_Death_01.ogg",
+				"KabalCrystalRunner_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_086_Female_BloodElf_Attack_01.ogg",
+				"KabalCrystalRunner_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> If you control a <b>Secret</b>, gain +1/+1.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -41869,6 +40867,11 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "Stolen Secrets",
 		"id": "DAL_086e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "+1/+1",
 		"dbfId": 53023,
 		"type": "Enchantment",
@@ -41890,6 +40893,20 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Hench-Clan Hag",
 		"id": "DAL_087",
+		"audio": {
+			"play": [
+				"VO_DAL_087_Female_Harpy_Play_01.ogg",
+				"WingedMount1_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_087_Female_Harpy_Death_01.ogg",
+				"WingedMount1_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_087_Female_Harpy_Attack_02.ogg",
+				"WingedMount1_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Summon two 1/1 Amalgams with all minion types.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -41906,6 +40923,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Amalgam",
 		"id": "DAL_087t",
+		"audio": {
+			"play": [
+				"VO_GILSLUSH_012_Male_Construct_Play.ogg"
+			],
+			"death": [
+				"VO_GILSLUSH_012_Male_Construct_Death.ogg"
+			],
+			"attack": [
+				"VO_GILSLUSH_012_Male_Construct_Attack.ogg"
+			]
+		},
 		"text": "[x]<i>This is an Elemental, Mech,\nDemon, Murloc, Dragon,\nBeast, Pirate and Totem.</i>",
 		"cardClass": "NEUTRAL"
 	},
@@ -41927,6 +40955,17 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Safeguard",
 		"id": "DAL_088",
+		"audio": {
+			"play": [
+				"VO_DAL_088_Male_Mech_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_088_Male_Mech_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_088_Male_Mech_Attack_01.ogg"
+			]
+		},
 		"text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 0/5\nVault Safe with <b>Taunt</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -41945,6 +40984,20 @@ var parseCardsText = {
 		"attack": 0,
 		"name": "Vault Safe",
 		"id": "DAL_088t2",
+		"audio": {
+			"play": [
+				"VO_DAL_088t2_Male_Mech_Play_02.ogg",
+				"CleanMechSmall_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_088t2_Male_Mech_Death_01.ogg",
+				"CleanMechSmall_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_088t2_Male_Mech_Attack_01.ogg",
+				"CleanMechSmall_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Taunt</b>",
 		"cardClass": "NEUTRAL"
 	},
@@ -41967,6 +41020,17 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Spellbook Binder",
 		"id": "DAL_089",
+		"audio": {
+			"play": [
+				"VO_DAL_089_Male_Gnome_Play_03.ogg"
+			],
+			"death": [
+				"VO_DAL_089_Male_Gnome_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_089_Male_Gnome_Attack_02.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> If you have <b>Spell Damage</b>, draw a card.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -41987,6 +41051,17 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Hench-Clan Sneak",
 		"id": "DAL_090",
+		"audio": {
+			"play": [
+				"VO_DAL_090_Male_Quillboar_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_090_Male_Quillboar_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_090_Male_Quillboar_Attack_01.ogg"
+			]
+		},
 		"text": "<b>Stealth</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -42005,6 +41080,17 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Arcane Servant",
 		"id": "DAL_092",
+		"audio": {
+			"play": [
+				"ArcaneServant_DAL_092_Play.ogg"
+			],
+			"death": [
+				"ArcaneServant_DAL_092_Death.ogg"
+			],
+			"attack": [
+				"ArcaneServant_DAL_092_Attack.ogg"
+			]
+		},
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
 	},
@@ -42024,6 +41110,23 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Violet Spellsword",
 		"id": "DAL_095",
+		"audio": {
+			"play": [
+				"VO_DAL_095_Female_Human_Play_01.ogg",
+				"1H_SwordMagical_Underlay_Play.ogg"
+			],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [
+				"VO_DAL_095_Female_Human_Death_01.ogg",
+				"1H_SwordMagical_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_095_Female_Human_Attack_01.ogg",
+				"1H_SwordMagical_Underlay_Attack.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Gain +1 Attack\nfor each spell in your hand.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -42056,6 +41159,23 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Violet Warden",
 		"id": "DAL_096",
+		"audio": {
+			"play": [
+				"VO_DAL_096_Male_Human_Play_01.ogg",
+				"ArcaneMagic_Play_Underlay.ogg",
+				"Shield1_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_096_Male_Human_Death_01.ogg",
+				"ArcaneMagic_Death_Underlay.ogg",
+				"Shield1_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_096_Male_Human_Attack_01.ogg",
+				"ArcaneMagic_Attack_Underlay.ogg",
+				"Shield1_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Taunt</b>\n<b>Spell Damage +1</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -42074,6 +41194,11 @@ var parseCardsText = {
 		"playerClass": "Paladin",
 		"name": "Desperate Measures",
 		"id": "DAL_141",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Twinspell</b>\nCast a random Paladin <b>Secret</b>.",
 		"cardClass": "PALADIN",
 		"rarity": "Rare"
@@ -42087,6 +41212,11 @@ var parseCardsText = {
 			"SECRET"
 		],
 		"id": "DAL_141ts",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Cast a random Paladin <b>Secret</b>.",
 		"dbfId": 54129,
 		"type": "Spell",
@@ -42110,22 +41240,44 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Bronze Herald",
 		"id": "DAL_146",
+		"audio": {
+			"play": [
+				"DAL_146_BronzeHerald_Play.ogg"
+			],
+			"death": [
+				"DAL_146_BronzeHerald_Death.ogg"
+			],
+			"attack": [
+				"DAL_146_BronzeHerald_Attack.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Add two 4/4 Dragons to your hand.",
 		"cardClass": "PALADIN",
 		"rarity": "Common"
 	},
 	{
-		"playerClass": "Paladin",
 		"cost": 4,
 		"set": "Dalaran",
 		"race": "DRAGON",
 		"artist": "Alex Horley",
-		"attack": 4,
-		"name": "Bronze Dragon",
 		"health": 4,
-		"id": "DAL_146t",
 		"dbfId": 51758,
 		"type": "Minion",
+		"playerClass": "Paladin",
+		"attack": 4,
+		"name": "Bronze Dragon",
+		"id": "DAL_146t",
+		"audio": {
+			"play": [
+				"DAL_146t_BronzeDragon_Play.ogg"
+			],
+			"death": [
+				"DAL_146t_BronzeDragon_Death.ogg"
+			],
+			"attack": [
+				"DAL_146t_BronzeDragon_Attack.ogg"
+			]
+		},
 		"cardClass": "PALADIN"
 	},
 	{
@@ -42144,6 +41296,23 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Dragon Speaker",
 		"id": "DAL_147",
+		"audio": {
+			"play": [
+				"VO_DAL_147_Male_Human_Play_02.ogg",
+				"HolyMagic_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_147_Male_Human_Death_01.ogg",
+				"HolyMagic_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_147_Male_Human_Attack_02.ogg",
+				"HolyMagic_Attack_Underlay.ogg"
+			],
+			"ArmsDealing_Impact_Sound": [
+				"ArmsDealing_Impact_Sound.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Give all Dragons in your hand +3/+3.",
 		"cardClass": "PALADIN",
 		"rarity": "Epic"
@@ -42178,6 +41347,17 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Messenger Raven",
 		"id": "DAL_163",
+		"audio": {
+			"play": [
+				"DAL_163_MessengerRaven_Play.ogg"
+			],
+			"death": [
+				"DAL_163_MessengerRaven_Death.ogg"
+			],
+			"attack": [
+				"DAL_163_MessengerRaven_Attack.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> <b>Discover</b> a\nMage minion.",
 		"cardClass": "MAGE",
 		"rarity": "Common"
@@ -42193,6 +41373,17 @@ var parseCardsText = {
 		"playerClass": "Warlock",
 		"name": "Darkest Hour",
 		"id": "DAL_173",
+		"audio": {
+			"play": [],
+			"DarkestHour_CustomDeath_Sound": [
+				"DarkestHour_CustomDeath_Sound.ogg"
+			],
+			"death": [],
+			"DarkestHour_AE_Sound": [
+				"DarkestHour_AE_Sound.ogg"
+			],
+			"attack": []
+		},
 		"text": "Destroy all friendly minions. For each one, summon a random minion from your deck.",
 		"cardClass": "WARLOCK",
 		"rarity": "Epic"
@@ -42208,6 +41399,17 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Conjurer's Calling",
 		"id": "DAL_177",
+		"audio": {
+			"play": [],
+			"ConjourersCalling_Impact_Sound": [
+				"ConjourersCalling_Impact_Sound.ogg"
+			],
+			"Card_Play_HeroPower_SpellPower_Sound": [
+				"Card_Play_HeroPower_SpellPower_Sound.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Twinspell</b>\nDestroy a minion. Summon 2 minions of the same Cost to replace it.",
 		"cardClass": "MAGE",
 		"rarity": "Rare"
@@ -42218,6 +41420,17 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "Conjurer's Calling",
 		"id": "DAL_177ts",
+		"audio": {
+			"play": [],
+			"ConjourersCalling_Impact_Sound": [
+				"ConjourersCalling_Impact_Sound.ogg"
+			],
+			"Card_Play_HeroPower_SpellPower_Sound": [
+				"Card_Play_HeroPower_SpellPower_Sound.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Destroy a minion. Summon 2 minions of the same Cost to replace it.",
 		"dbfId": 52637,
 		"type": "Spell",
@@ -42241,6 +41454,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Magic Dart Frog",
 		"id": "DAL_182",
+		"audio": {
+			"play": [
+				"DAL_182_MagicDartFrog_Play.ogg"
+			],
+			"death": [
+				"DAL_182_MagicDartFrog_Death.ogg"
+			],
+			"attack": [
+				"DAL_182_MagicDartFrog_Attack.ogg"
+			]
+		},
 		"text": "After you cast a spell, deal 1 damage to a random enemy minion.",
 		"cardClass": "MAGE",
 		"rarity": "Common"
@@ -42263,6 +41487,20 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Aranasi Broodmother",
 		"id": "DAL_185",
+		"audio": {
+			"play": [
+				"VO_DAL_185_Female_Aranasi_Play_02.ogg",
+				"ShadowMagic_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_185_Female_Aranasi_Death_02.ogg",
+				"ShadowMagic_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_185_Female_Aranasi_Attack_01.ogg",
+				"ShadowMagic_Attack_Underlay.ogg"
+			]
+		},
 		"text": "[x]<b>Taunt</b>\nWhen you draw this, restore\n4 Health to your hero.",
 		"cardClass": "WARLOCK",
 		"rarity": "Common"
@@ -42278,6 +41516,14 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"name": "The Forest's Aid",
 		"id": "DAL_256",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Treant_CustomSpawn_1": [
+				"Treant_CustomSpawn_1.ogg"
+			]
+		},
 		"text": "<b>Twinspell</b>\nSummon five 2/2 Treants.",
 		"cardClass": "DRUID",
 		"rarity": "Rare"
@@ -42291,6 +41537,17 @@ var parseCardsText = {
 		"name": "Treant",
 		"health": 2,
 		"id": "DAL_256t2",
+		"audio": {
+			"play": [
+				"DAL_256t2_Treant_Play.ogg"
+			],
+			"death": [
+				"DAL_256t2_Treant_Death.ogg"
+			],
+			"attack": [
+				"DAL_256t2_Treant_Attack.ogg"
+			]
+		},
 		"dbfId": 53302,
 		"type": "Minion",
 		"cardClass": "DRUID"
@@ -42301,6 +41558,14 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "The Forest's Aid",
 		"id": "DAL_256ts",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Treant_CustomSpawn_1": [
+				"Treant_CustomSpawn_1.ogg"
+			]
+		},
 		"text": "Summon five 2/2 Treants.",
 		"dbfId": 52821,
 		"type": "Spell",
@@ -42321,6 +41586,17 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"name": "Crystal Power",
 		"id": "DAL_350",
+		"audio": {
+			"play": [],
+			"Arrow_Targeted_Impact_01": [
+				"Arrow_Targeted_Impact_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Nature_Impact_Leaves_01_Sound": [
+				"Nature_Impact_Leaves_01_Sound.ogg"
+			]
+		},
 		"text": "<b>Choose One -</b> Deal $2 damage to a minion; or Restore #5 Health.",
 		"cardClass": "DRUID",
 		"rarity": "Common"
@@ -42332,6 +41608,17 @@ var parseCardsText = {
 		"artist": "Arthur Bozonnet",
 		"name": "Piercing Thorns",
 		"id": "DAL_350a",
+		"audio": {
+			"play": [],
+			"Arrow_Targeted_Impact_01": [
+				"Arrow_Targeted_Impact_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Nature_Impact_Leaves_01_Sound": [
+				"Nature_Impact_Leaves_01_Sound.ogg"
+			]
+		},
 		"text": "Deal $2 damage to a minion.",
 		"dbfId": 51773,
 		"type": "Spell",
@@ -42344,6 +41631,23 @@ var parseCardsText = {
 		"artist": "Arthur Bozonnet",
 		"name": "Healing Blossom",
 		"id": "DAL_350b",
+		"audio": {
+			"play": [],
+			"Shared_Nature_Fizzle_1": [
+				"Shared_Nature_Fizzle_1.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			],
+			"Shared_Nature_PreCast_1": [
+				"Shared_Nature_PreCast_1.ogg"
+			],
+			"Shaman_Windfury_Impact": [
+				"Shaman_Windfury_Impact.ogg"
+			]
+		},
 		"text": "Restore #5 Health.",
 		"dbfId": 51775,
 		"type": "Spell",
@@ -42360,6 +41664,14 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"name": "Blessing of the Ancients",
 		"id": "DAL_351",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Nature_Green_Buff_Impact": [
+				"Nature_Green_Buff_Impact.ogg"
+			]
+		},
 		"text": "<b>Twinspell</b>\nGive your minions +1/+1.",
 		"cardClass": "DRUID",
 		"rarity": "Common"
@@ -42369,6 +41681,11 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "Ancient Blessings",
 		"id": "DAL_351e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "+1/+1.",
 		"dbfId": 52820,
 		"type": "Enchantment",
@@ -42380,6 +41697,14 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "Blessing of the Ancients",
 		"id": "DAL_351ts",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Nature_Green_Buff_Impact": [
+				"Nature_Green_Buff_Impact.ogg"
+			]
+		},
 		"text": "Give your minions +1/+1.",
 		"dbfId": 54128,
 		"type": "Spell",
@@ -42400,6 +41725,14 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"name": "Crystalsong Portal",
 		"id": "DAL_352",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Nature_Target_Cast_01": [
+				"Nature_Target_Cast_01.ogg"
+			]
+		},
 		"text": "<b>Discover</b> a Druid minion. If your hand has no minions, keep all 3.",
 		"cardClass": "DRUID",
 		"rarity": "Epic"
@@ -42420,22 +41753,44 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Acornbearer",
 		"id": "DAL_354",
+		"audio": {
+			"play": [
+				"VO_DAL_354_Female_Troll_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_354_Female_Troll_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_354_Female_Troll_Attack_02.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Add two 1/1 Squirrels to your hand.",
 		"cardClass": "DRUID",
 		"rarity": "Common"
 	},
 	{
-		"playerClass": "Druid",
 		"cost": 1,
 		"set": "Dalaran",
 		"race": "BEAST",
 		"artist": "Steven Prescott",
-		"attack": 1,
-		"name": "Squirrel",
 		"health": 1,
-		"id": "DAL_354t",
 		"dbfId": 54315,
 		"type": "Minion",
+		"playerClass": "Druid",
+		"attack": 1,
+		"name": "Squirrel",
+		"id": "DAL_354t",
+		"audio": {
+			"play": [
+				"DAL_354t_Squirrel_Play.ogg"
+			],
+			"death": [
+				"DAL_354t_Squirrel_Death.ogg"
+			],
+			"attack": [
+				"DAL_354t_Squirrel_Attack.ogg"
+			]
+		},
 		"cardClass": "DRUID"
 	},
 	{
@@ -42454,6 +41809,17 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Lifeweaver",
 		"id": "DAL_355",
+		"audio": {
+			"play": [
+				"VO_DAL_355_Female_Night Elf_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_355_Female_Night Elf_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_355_Female_Night Elf_Attack_01.ogg"
+			]
+		},
 		"text": "Whenever you restore Health, add a random Druid spell to your hand.",
 		"cardClass": "DRUID",
 		"rarity": "Rare"
@@ -42476,6 +41842,19 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Lucentbark",
 		"id": "DAL_357",
+		"audio": {
+			"play": [
+				"VO_DAL_357_Male_Ancient_Play_01.ogg",
+				"Lucentbark_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_357_Male_Ancient_Trigger-Resurrected_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_357_Male_Ancient_Attack_01.ogg",
+				"LucentBark_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Taunt</b>\n<b>Deathrattle:</b> Go dormant. Restore 5 Health to awaken this minion.",
 		"cardClass": "DRUID",
 		"rarity": "Legendary"
@@ -42511,6 +41890,11 @@ var parseCardsText = {
 		"attack": 0,
 		"name": "Spirit of Lucentbark",
 		"id": "DAL_357t",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "When you restore 5 Health, awaken this minion.\n<i>(",
 		"cardClass": "DRUID"
 	},
@@ -42525,6 +41909,17 @@ var parseCardsText = {
 		"playerClass": "Rogue",
 		"name": "Unidentified Contract",
 		"id": "DAL_366",
+		"audio": {
+			"play": [],
+			"Sneaky_Target_Loop_01": [
+				"Sneaky_Target_Loop_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Rogue_Assassinate_Impact_1": [
+				"Rogue_Assassinate_Impact_1.ogg"
+			]
+		},
 		"text": "Destroy a minion. Gains a bonus effect in your hand.",
 		"entourage": [
 			"DAL_366t1",
@@ -42542,6 +41937,17 @@ var parseCardsText = {
 		"artist": "Akkapoj T.",
 		"name": "Assassin's Contract",
 		"id": "DAL_366t1",
+		"audio": {
+			"play": [],
+			"Sneaky_Target_Loop_01": [
+				"Sneaky_Target_Loop_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Rogue_Assassinate_Impact_1": [
+				"Rogue_Assassinate_Impact_1.ogg"
+			]
+		},
 		"text": "Destroy a minion. Summon a 1/1 Patient Assassin.",
 		"dbfId": 53241,
 		"type": "Spell",
@@ -42555,6 +41961,17 @@ var parseCardsText = {
 		"artist": "Akkapoj T.",
 		"name": "Recruitment Contract",
 		"id": "DAL_366t2",
+		"audio": {
+			"play": [],
+			"Sneaky_Target_Loop_01": [
+				"Sneaky_Target_Loop_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Rogue_Assassinate_Impact_1": [
+				"Rogue_Assassinate_Impact_1.ogg"
+			]
+		},
 		"text": "Destroy a minion. Add a copy of it to your hand.",
 		"dbfId": 52875,
 		"type": "Spell",
@@ -42568,6 +41985,17 @@ var parseCardsText = {
 		"artist": "Akkapoj T.",
 		"name": "Lucrative Contract",
 		"id": "DAL_366t3",
+		"audio": {
+			"play": [],
+			"Sneaky_Target_Loop_01": [
+				"Sneaky_Target_Loop_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Rogue_Assassinate_Impact_1": [
+				"Rogue_Assassinate_Impact_1.ogg"
+			]
+		},
 		"text": "Destroy a minion. Add 2 Coins to your hand.",
 		"dbfId": 53244,
 		"type": "Spell",
@@ -42581,6 +42009,17 @@ var parseCardsText = {
 		"artist": "Akkapoj T.",
 		"name": "Turncoat Contract",
 		"id": "DAL_366t4",
+		"audio": {
+			"play": [],
+			"Sneaky_Target_Loop_01": [
+				"Sneaky_Target_Loop_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Rogue_Assassinate_Impact_1": [
+				"Rogue_Assassinate_Impact_1.ogg"
+			]
+		},
 		"text": "Destroy a minion. It deals its damage to adjacent minions.",
 		"dbfId": 53246,
 		"type": "Spell",
@@ -42601,6 +42040,23 @@ var parseCardsText = {
 		"playerClass": "Hunter",
 		"name": "Marked Shot",
 		"id": "DAL_371",
+		"audio": {
+			"play": [],
+			"Arrow_Targeted_Impact_01": [
+				"Arrow_Targeted_Impact_01.ogg"
+			],
+			"Arrow_Targeted_Impact_03": [
+				"Arrow_Targeted_Impact_03.ogg"
+			],
+			"Arrow_Targeted_Impact_02": [
+				"Arrow_Targeted_Impact_02.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Arrow_Targeted_Fire_01": [
+				"Arrow_Targeted_Fire_01.ogg"
+			]
+		},
 		"text": "Deal $4 damage to a minion. <b>Discover</b> a spell.",
 		"cardClass": "HUNTER",
 		"rarity": "Common"
@@ -42621,6 +42077,20 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Arcane Fletcher",
 		"id": "DAL_372",
+		"audio": {
+			"play": [
+				"VO_DAL_372_Female_Human_Play_01.ogg",
+				"ArcaneFletcher_Bow_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_372_Female_Human_Death_01.ogg",
+				"Bow_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_372_Female_Human_Attack_01.ogg",
+				"ArcaneFletcher_Underlay_Attack.ogg"
+			]
+		},
 		"text": "[x]Whenever you play a\n1-Cost minion, draw a\nspell from your deck.",
 		"cardClass": "HUNTER",
 		"rarity": "Epic"
@@ -42636,6 +42106,23 @@ var parseCardsText = {
 		"playerClass": "Hunter",
 		"name": "Rapid Fire",
 		"id": "DAL_373",
+		"audio": {
+			"play": [],
+			"Arrow_Targeted_Impact_01": [
+				"Arrow_Targeted_Impact_01.ogg"
+			],
+			"Arrow_Targeted_Impact_03": [
+				"Arrow_Targeted_Impact_03.ogg"
+			],
+			"Arrow_Targeted_Impact_02": [
+				"Arrow_Targeted_Impact_02.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Arrow_Targeted_Fire_01": [
+				"Arrow_Targeted_Fire_01.ogg"
+			]
+		},
 		"text": "<b>Twinspell</b>\nDeal $1 damage.",
 		"cardClass": "HUNTER",
 		"rarity": "Common"
@@ -42646,6 +42133,23 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "Rapid Fire",
 		"id": "DAL_373ts",
+		"audio": {
+			"play": [],
+			"Arrow_Targeted_Impact_01": [
+				"Arrow_Targeted_Impact_01.ogg"
+			],
+			"Arrow_Targeted_Impact_03": [
+				"Arrow_Targeted_Impact_03.ogg"
+			],
+			"Arrow_Targeted_Impact_02": [
+				"Arrow_Targeted_Impact_02.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Arrow_Targeted_Fire_01": [
+				"Arrow_Targeted_Fire_01.ogg"
+			]
+		},
 		"text": "Deal $1 damage.",
 		"dbfId": 54143,
 		"type": "Spell",
@@ -42670,6 +42174,20 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Oblivitron",
 		"id": "DAL_376",
+		"audio": {
+			"play": [
+				"VO_DAL_376_Male_Mech_Play_01.ogg",
+				"Oblivitron_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_376_Male_Mech_Death_01.ogg",
+				"SFX_GVG_079_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_376_Male_Mech_Attack_01.ogg",
+				"SFX_GVG_079_Attack.ogg"
+			]
+		},
 		"text": "[x]<b>Deathrattle:</b> Summon a\nMech from your hand and\ntrigger its <b>Deathrattle</b>.",
 		"cardClass": "HUNTER",
 		"rarity": "Legendary"
@@ -42689,6 +42207,11 @@ var parseCardsText = {
 		"playerClass": "Hunter",
 		"name": "Nine Lives",
 		"id": "DAL_377",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Discover</b> a friendly <b>Deathrattle</b> minion that died this game. Also trigger its <b>Deathrattle</b>.",
 		"cardClass": "HUNTER",
 		"rarity": "Epic"
@@ -42707,6 +42230,23 @@ var parseCardsText = {
 		"playerClass": "Hunter",
 		"name": "Unleash the Beast",
 		"id": "DAL_378",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"OnyxiaWhelps_CustomSpawn_1": [
+				"OnyxiaWhelps_CustomSpawn_1.ogg"
+			],
+			"OnyxiaWhelp_CustomSpawn_FlameBurst_3": [
+				"OnyxiaWhelp_CustomSpawn_FlameBurst_3.ogg"
+			],
+			"OnyxiaWhelp_CustomSpawn_FlameBurst_2": [
+				"OnyxiaWhelp_CustomSpawn_FlameBurst_2.ogg"
+			],
+			"OnyxiaWhelp_CustomSpawn_FlameBurst_1": [
+				"OnyxiaWhelp_CustomSpawn_FlameBurst_1.ogg"
+			]
+		},
 		"text": "<b>Twinspell</b>\nSummon a 5/5 Wyvern with <b>Rush</b>.",
 		"cardClass": "HUNTER",
 		"rarity": "Rare"
@@ -42726,6 +42266,20 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Wyvern",
 		"id": "DAL_378t1",
+		"audio": {
+			"play": [
+				"DAL_378d_Wyvern_Play.ogg",
+				"WingFlapMedium_Underlay_Play.ogg"
+			],
+			"death": [
+				"DAL_378d_Wyvern_Death.ogg",
+				"WingFlapMedium_Underlay_Death.ogg"
+			],
+			"attack": [
+				"DAL_378d_Wyvern_Attack.ogg",
+				"WingFlapMedium_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Rush</b>",
 		"cardClass": "HUNTER"
 	},
@@ -42738,6 +42292,23 @@ var parseCardsText = {
 			"RUSH"
 		],
 		"id": "DAL_378ts",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"OnyxiaWhelps_CustomSpawn_1": [
+				"OnyxiaWhelps_CustomSpawn_1.ogg"
+			],
+			"OnyxiaWhelp_CustomSpawn_FlameBurst_3": [
+				"OnyxiaWhelp_CustomSpawn_FlameBurst_3.ogg"
+			],
+			"OnyxiaWhelp_CustomSpawn_FlameBurst_2": [
+				"OnyxiaWhelp_CustomSpawn_FlameBurst_2.ogg"
+			],
+			"OnyxiaWhelp_CustomSpawn_FlameBurst_1": [
+				"OnyxiaWhelp_CustomSpawn_FlameBurst_1.ogg"
+			]
+		},
 		"text": "Summon a 5/5 Wyvern with <b>Rush</b>.",
 		"dbfId": 54145,
 		"type": "Spell",
@@ -42761,6 +42332,26 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Vereesa Windrunner",
 		"id": "DAL_379",
+		"audio": {
+			"play": [
+				"VO_DAL_379_Female_HighElf_Play_01.ogg",
+				"Vereesa_Play_Stinger.ogg"
+			],
+			"Thori'dal_Missile_sound": [
+				"Thori'dal_Missile_sound.ogg"
+			],
+			"death": [
+				"VO_DAL_379_Female_HighElf_Death_01.ogg",
+				"Bow_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_379_Female_HighElf_Attack_01.ogg",
+				"ArcaneFletcher_Underlay_Attack.ogg"
+			],
+			"Thori'dal_Impact_Sound": [
+				"Thori'dal_Impact_Sound.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Equip Thori'dal, the Stars' Fury.",
 		"cardClass": "HUNTER",
 		"rarity": "Legendary"
@@ -42773,6 +42364,11 @@ var parseCardsText = {
 			"TAG_ONE_TURN_EFFECT"
 		],
 		"id": "DAL_379e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "You have <b>Spell Damage +2</b> this turn.",
 		"dbfId": 52093,
 		"type": "Enchantment",
@@ -42796,6 +42392,11 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Thori'dal, the Stars' Fury",
 		"id": "DAL_379t",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "After your hero attacks, gain <b>Spell Damage +2</b> this turn.",
 		"cardClass": "HUNTER"
 	},
@@ -42816,6 +42417,20 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "EVIL Cable Rat",
 		"id": "DAL_400",
+		"audio": {
+			"play": [
+				"EVILCableRat_DAL_400_Play.ogg"
+			],
+			"death": [
+				"EVILCableRat_DAL_400_Death.ogg"
+			],
+			"attack": [
+				"EVILCableRat_DAL_400_Attack.ogg"
+			],
+			"SpawnToHand_EVILLeague_Lackey": [
+				"SpawnToHand_EVILLeague_Lackey.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Add a <b>Lackey</b> to your hand.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -42836,6 +42451,17 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "EVIL Conscripter",
 		"id": "DAL_413",
+		"audio": {
+			"play": [
+				"VO_DAL_413_Male_Qiraji_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_413_Male_Qiraji_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_413_Male_Qiraji_Attack_01.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Add a <b>Lackey</b> to your hand.",
 		"cardClass": "PRIEST",
 		"rarity": "Common"
@@ -42856,6 +42482,20 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "EVIL Miscreant",
 		"id": "DAL_415",
+		"audio": {
+			"play": [
+				"VO_DAL_415_Male_Kobold_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_415_Male_Kobold_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_415_Male_Kobold_Attack_01.ogg"
+			],
+			"SpawnToHand_EVILLeague_Lackey": [
+				"SpawnToHand_EVILLeague_Lackey.ogg"
+			]
+		},
 		"text": "<b>Combo:</b> Add two random <b>Lackeys</b> to your hand.",
 		"cardClass": "ROGUE",
 		"rarity": "Common"
@@ -42880,6 +42520,21 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Hench-Clan Burglar",
 		"id": "DAL_416",
+		"audio": {
+			"play": [
+				"VO_DAL_416_Female_Kobold_Play_01.ogg",
+				"CoinBag_Underlay_Play_1.ogg",
+				"CoinBag_Underlay_Play_2.ogg"
+			],
+			"death": [
+				"VO_DAL_416_Female_Kobold_Death_01.ogg",
+				"CoinBag_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_416_Female_Kobold_Attack_01.ogg",
+				"CoinBag_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> <b>Discover</b> a spell from another class.",
 		"cardClass": "ROGUE",
 		"rarity": "Common"
@@ -42902,6 +42557,18 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Heistbaron Togwaggle",
 		"id": "DAL_417",
+		"audio": {
+			"play": [
+				"VO_DAL_417_Male_Kobold_Play_01.ogg",
+				"HB_Togwaggle_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_417_Male_Kobold_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_417_Male_Kobold_Attack_02.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> If you control a <b>Lackey</b>, choose a fantastic treasure.",
 		"entourage": [
 			"LOOT_998h",
@@ -42930,6 +42597,21 @@ var parseCardsText = {
 		"attack": 7,
 		"name": "Arch-Villain Rafaam",
 		"id": "DAL_422",
+		"audio": {
+			"play": [
+				"VO_DAL_422_Male_Ethereal_Play_02.ogg",
+				"AV_Rafaam_Play_Stinger.ogg"
+			],
+			"ArchVillianRafaam_Battlecry_AE": [
+				"ArchVillianRafaam_Battlecry_AE.ogg"
+			],
+			"death": [
+				"VO_DAL_422_Male_Ethereal_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_422_Male_Ethereal_Attack_01.ogg"
+			]
+		},
 		"text": "<b><b>Taunt</b>\nBattlecry:</b> Replace your hand and deck with <b>Legendary</b> minions.",
 		"cardClass": "WARLOCK",
 		"rarity": "Legendary"
@@ -42951,6 +42633,21 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Swampqueen Hagatha",
 		"id": "DAL_431",
+		"audio": {
+			"play": [
+				"VO_DAL_431_Female_Orc_Play_01.ogg",
+				"SQ_Hagatha_Play_Stinger.ogg"
+			],
+			"Poison_Idle_Sound": [
+				"Poison_Idle_Sound.ogg"
+			],
+			"death": [
+				"VO_DAL_431_Female_Orc_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_431_Female_Orc_Attack_03.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Add a 5/5\nHorror to your hand. Teach\nit two Shaman spells.",
 		"entourage": [
 			"DAL_431t"
@@ -42988,6 +42685,17 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Drustvar Horror",
 		"id": "DAL_431t",
+		"audio": {
+			"play": [
+				"DAL_431t_Hexfiend_Play.ogg"
+			],
+			"death": [
+				"DAL_431t_Hexfiend_Death.ogg"
+			],
+			"attack": [
+				"DAL_431t_Hexfiend_Attack.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Cast {0} and {1}.",
 		"cardClass": "SHAMAN"
 	},
@@ -43002,6 +42710,11 @@ var parseCardsText = {
 		"playerClass": "Shaman",
 		"name": "Witch's Brew",
 		"id": "DAL_432",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Restore #4 Health. Repeatable this turn.",
 		"cardClass": "SHAMAN",
 		"rarity": "Epic"
@@ -43025,6 +42738,23 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Sludge Slurper",
 		"id": "DAL_433",
+		"audio": {
+			"play": [
+				"VO_DAL_433_Male_Murloc_Play_01.ogg",
+				"SludgeSlurper_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_433_Male_Murloc_Death_01.ogg",
+				"SludgeSlurper_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_433_Male_Murloc_Attack_01.ogg",
+				"SludgeSlurper_Underlay_Attack.ogg"
+			],
+			"SpawnToHand_EVILLeague_Lackey": [
+				"SpawnToHand_EVILLeague_Lackey.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Add a <b>Lackey</b> to your hand. <b>Overload:</b> (1)",
 		"cardClass": "SHAMAN",
 		"rarity": "Rare"
@@ -43045,6 +42775,17 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Arcane Watcher",
 		"id": "DAL_434",
+		"audio": {
+			"play": [
+				"DAL_434_ArcaneWatcher_Play.ogg"
+			],
+			"death": [
+				"DAL_434_ArcaneWatcher_Death.ogg"
+			],
+			"attack": [
+				"DAL_434_ArcaneWatcher_Attack.ogg"
+			]
+		},
 		"text": "Can't attack unless you have <b>Spell Damage</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -43065,6 +42806,20 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Unseen Saboteur",
 		"id": "DAL_538",
+		"audio": {
+			"play": [
+				"VO_DAL_538_Male_Undead_Play_01.ogg",
+				"Dagger_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_538_Male_Undead_Death_01.ogg",
+				"Dagger_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_538_Male_Undead_Attack_01.ogg",
+				"Dagger_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Your opponent casts a random spell from their hand <i>(targets chosen randomly)</i>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -43101,6 +42856,20 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Sunreaver Warmage",
 		"id": "DAL_539",
+		"audio": {
+			"play": [
+				"VO_DAL_539_Female_BloodElf_Play_01.ogg",
+				"2H_EpicStaff_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_539_Female_BloodElf_Death_01.ogg",
+				"2H_EpicStaff_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_539_Female_BloodElf_Attack_01.ogg",
+				"2H_EpicStaff_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> If you're holding a spell that costs (5) or more, deal 4 damage.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -43121,6 +42890,29 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Potion Vendor",
 		"id": "DAL_544",
+		"audio": {
+			"play": [
+				"VO_DAL_544_Female_Gnome_Play_01.ogg",
+				"Potion_Underlay_Play_03.ogg"
+			],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [
+				"VO_DAL_544_Female_Gnome_Death_01.ogg",
+				"Potion_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_544_Female_Gnome_Attack_01.ogg",
+				"Potion_Underlay_Attack.ogg"
+			],
+			"GlassShatter_Underlay_Death": [
+				"GlassShatter_Underlay_Death.ogg"
+			],
+			"Shared_Physical_Cast": [
+				"Shared_Physical_Cast.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Restore #2 Health to all friendly characters.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -43142,6 +42934,23 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Barista Lynchen",
 		"id": "DAL_546",
+		"audio": {
+			"play": [
+				"VO_DAL_546_Female_Human_Play_04.ogg",
+				"Lynchen_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_546_Female_Human_Death_01.ogg",
+				"FriendlyBartender_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_546_Female_Human_Attack_03.ogg",
+				"FriendlyBartender_Underlay_Attack.ogg"
+			],
+			"BaristaLynchen_SpawnToHand_Splash_Impact": [
+				"BaristaLynchen_SpawnToHand_Splash_Impact.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Add a copy of each of your other <b>Battlecry</b> minions to your hand.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
@@ -43166,6 +42975,17 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Azerite Elemental",
 		"id": "DAL_548",
+		"audio": {
+			"play": [
+				"DAL_548_AzeriteElemental_Play.ogg"
+			],
+			"death": [
+				"DAL_548_AzeriteElemental_Death.ogg"
+			],
+			"attack": [
+				"DAL_548_AzeriteElemental_Attack.ogg"
+			]
+		},
 		"text": "At the start of your turn, gain <b>Spell Damage +2</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -43196,6 +43016,17 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Underbelly Ooze",
 		"id": "DAL_550",
+		"audio": {
+			"play": [
+				"UnderbellyOoze_DAL_550_Play.ogg"
+			],
+			"death": [
+				"UnderbellyOoze_DAL_550_Death.ogg"
+			],
+			"attack": [
+				"UnderbellyOoze_DAL_550_Attack.ogg"
+			]
+		},
 		"text": "After this minion survives damage, summon a copy of it.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -43216,6 +43047,23 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Proud Defender",
 		"id": "DAL_551",
+		"audio": {
+			"play": [
+				"VO_DAL_551_Male_Draenei_Play_01.ogg",
+				"1H_SwordThick_Underlay_Play.ogg",
+				"ShieldMetalThick_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_551_Male_Draenei_Death_01.ogg",
+				"1H_SwordThick_Underlay_Death.ogg",
+				"ShieldMetalThick_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_551_Male_Draenei_Attack_01.ogg",
+				"1H_SwordThick_Underlay_Attack.ogg",
+				"ShieldMetalThick_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Taunt</b>\nHas +2 Attack while you [x]have no other minions.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -43236,6 +43084,20 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Big Bad Archmage",
 		"id": "DAL_553",
+		"audio": {
+			"play": [
+				"VO_DAL_553_Male_Worgen_Play_01.ogg",
+				"Flamecaller_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_553_Male_Worgen_Death_01.ogg",
+				"Flamecaller_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_553_Male_Worgen_Attack_03.ogg",
+				"Flamecaller_Attack_Underlay.ogg"
+			]
+		},
 		"text": "At the end of your turn, summon a random\n6-Cost minion.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -43257,22 +43119,48 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Chef Nomi",
 		"id": "DAL_554",
+		"audio": {
+			"play": [
+				"VO_DAL_554_Male_Pandaren_Play_01.ogg",
+				"Nomi_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_554_Male_Pandaren_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_554_Male_Pandaren_Attack_01.ogg"
+			],
+			"ChefNomi_Battlecry_Sound": [
+				"ChefNomi_Battlecry_Sound.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> If your deck is empty, summon six 6/6 Greasefire Elementals.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
 	},
 	{
-		"playerClass": "Neutral",
 		"cost": 6,
 		"set": "Dalaran",
 		"race": "ELEMENTAL",
 		"artist": "Sean McNally",
-		"attack": 6,
-		"name": "Greasefire Elemental",
 		"health": 6,
-		"id": "DAL_554t",
 		"dbfId": 53310,
 		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 6,
+		"name": "Greasefire Elemental",
+		"id": "DAL_554t",
+		"audio": {
+			"play": [
+				"GreasefireElemental_DAL_554t_Play.ogg"
+			],
+			"death": [
+				"GreasefireElemental_DAL_554t_Death.ogg"
+			],
+			"attack": [
+				"GreasefireElemental_DAL_554t_Attack.ogg"
+			]
+		},
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -43292,6 +43180,20 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Archmage Vargoth",
 		"id": "DAL_558",
+		"audio": {
+			"play": [
+				"VO_DAL_558_Male_Human_Play_01.ogg",
+				"Vargoth_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_558_Male_Human_Death_01.ogg",
+				"ArcaneMagic_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_558_Male_Human_Attack_02.ogg",
+				"ArcaneMagic_Attack_Underlay.ogg"
+			]
+		},
 		"text": "[x]At the end of your turn, cast\na spell you've cast this turn\n<i>(targets are random)</i>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
@@ -43313,6 +43215,23 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Heroic Innkeeper",
 		"id": "DAL_560",
+		"audio": {
+			"play": [
+				"VO_DAL_560_Female_HighElf_Play_01.ogg",
+				"Katana_Underlay_Play.ogg"
+			],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [
+				"VO_DAL_560_Female_HighElf_Death_01.ogg",
+				"Romulo_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_560_Female_HighElf_Attack_01.ogg",
+				"Romulo_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Taunt.</b> <b>Battlecry:</b> Gain +2/+2 for each other friendly minion.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -43341,6 +43260,17 @@ var parseCardsText = {
 		"attack": 8,
 		"name": "Jumbo Imp",
 		"id": "DAL_561",
+		"audio": {
+			"play": [
+				"VO_DAL_561_Male_Imp_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_561_Male_Imp_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_561_Male_Imp_Attack_01.ogg"
+			]
+		},
 		"text": "Costs (1) less whenever a friendly Demon dies while this is in your hand.",
 		"cardClass": "WARLOCK",
 		"rarity": "Epic"
@@ -43371,6 +43301,20 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Eager Underling",
 		"id": "DAL_563",
+		"audio": {
+			"play": [
+				"VO_DAL_563_Male_Gnome_Play_01.ogg",
+				"ShadowMagic_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_563_Male_Gnome_Death_01.ogg",
+				"ShadowMagic_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_563_Male_Gnome_Attack_01.ogg",
+				"ShadowMagic_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Give two random friendly minions +2/+2.",
 		"cardClass": "WARLOCK",
 		"rarity": "Rare"
@@ -43380,6 +43324,11 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "Power of EVIL",
 		"id": "DAL_563e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "+2/+2.",
 		"dbfId": 56204,
 		"type": "Enchantment",
@@ -43405,6 +43354,21 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Portal Overfiend",
 		"id": "DAL_565",
+		"audio": {
+			"play": [
+				"VO_DAL_565_Male_Doomguard_Play_01.ogg",
+				"PortalOverfiend_Underlay_Play.ogg"
+			],
+			"spell_Redemption_target_1": [
+				"spell_Redemption_target_1.ogg"
+			],
+			"death": [
+				"VO_DAL_565_Male_Doomguard_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_565_Male_Doomguard_Attack_01.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Shuffle 3 Portals\ninto your deck. When drawn,\nsummon a 2/2 Demon\nwith <b>Rush</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -43425,6 +43389,20 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Eccentric Scribe",
 		"id": "DAL_566",
+		"audio": {
+			"play": [
+				"VO_DAL_566_Male_Gnome_Play_01.ogg",
+				"Parchment_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_566_Male_Gnome_Death_01.ogg",
+				"Parchment_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_566_Male_Gnome_Attack_01.ogg",
+				"Parchment_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Summon\nfour 1/1 Vengeful Scrolls.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -43438,6 +43416,17 @@ var parseCardsText = {
 		"name": "Vengeful Scroll",
 		"health": 1,
 		"id": "DAL_566t",
+		"audio": {
+			"play": [
+				"DAL_566t_VengefulScrolls_Play.ogg"
+			],
+			"death": [
+				"DAL_566t_VengefulScrolls_Death.ogg"
+			],
+			"attack": [
+				"DAL_566t_VengefulScrolls_Attack.ogg"
+			]
+		},
 		"dbfId": 52827,
 		"type": "Minion",
 		"cardClass": "NEUTRAL"
@@ -43456,6 +43445,14 @@ var parseCardsText = {
 		"playerClass": "Paladin",
 		"name": "Lightforged Blessing",
 		"id": "DAL_568",
+		"audio": {
+			"play": [],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Twinspell</b>\nGive a friendly minion <b>Lifesteal</b>.",
 		"cardClass": "PALADIN",
 		"rarity": "Common"
@@ -43479,6 +43476,14 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"id": "DAL_568ts",
+		"audio": {
+			"play": [],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Give a friendly minion <b>Lifesteal</b>.",
 		"dbfId": 54189,
 		"type": "Spell",
@@ -43499,6 +43504,11 @@ var parseCardsText = {
 		"playerClass": "Paladin",
 		"name": "Never Surrender!",
 		"id": "DAL_570",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Secret:</b> When your opponent casts a spell, give your minions +2 Health.",
 		"cardClass": "PALADIN",
 		"rarity": "Common"
@@ -43532,6 +43542,14 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Mysterious Blade",
 		"id": "DAL_571",
+		"audio": {
+			"play": [],
+			"Holy_Targeted_Loop_01": [
+				"Holy_Targeted_Loop_01.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Battlecry:</b> If you control a\n<b>Secret</b>, gain +1 Attack.",
 		"cardClass": "PALADIN",
 		"rarity": "Rare"
@@ -43567,6 +43585,21 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Commander Rhyssa",
 		"id": "DAL_573",
+		"audio": {
+			"play": [
+				"VO_DAL_573_Female_Gnome_Play_01.ogg",
+				"Rhyssa_Play_Stinger.ogg",
+				"Mechanohorse_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_573_Female_Gnome_Death_01.ogg",
+				"Mechanohorse_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_573_Female_Gnome_Attack_01.ogg",
+				"Mechanohorse_Attack_Underlay.ogg"
+			]
+		},
 		"text": "Your <b>Secrets</b> trigger twice.",
 		"cardClass": "PALADIN",
 		"rarity": "Legendary"
@@ -43588,6 +43621,18 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Khadgar",
 		"id": "DAL_575",
+		"audio": {
+			"play": [
+				"VO_DAL_575_Male_Human_Play_01.ogg",
+				"Khadgar_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_575_Male_Human_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_575_Male_Human_Attack_02.ogg"
+			]
+		},
 		"text": "Your cards that summon minions summon twice as many.",
 		"cardClass": "MAGE",
 		"rarity": "Legendary"
@@ -43610,6 +43655,17 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Kirin Tor Tricaster",
 		"id": "DAL_576",
+		"audio": {
+			"play": [
+				"VO_DAL_576_Female_Draenei_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_576_Female_Draenei_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_576_Female_Draenei_Attack_02.ogg"
+			]
+		},
 		"text": "<b>Spell Damage +3</b>\nYour spells cost (1) more.",
 		"cardClass": "MAGE",
 		"rarity": "Rare"
@@ -43638,6 +43694,26 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Ray of Frost",
 		"id": "DAL_577",
+		"audio": {
+			"play": [],
+			"Shared_Frost_Impact_Small_1": [
+				"Shared_Frost_Impact_Small_1.ogg"
+			],
+			"Shared_Frost_PreCast_1": [
+				"Shared_Frost_PreCast_1.ogg"
+			],
+			"death": [],
+			"Shared_Frost_Cast_Small_1": [
+				"Shared_Frost_Cast_Small_1.ogg"
+			],
+			"attack": [],
+			"Shared_Frost_Start_1": [
+				"Shared_Frost_Start_1.ogg"
+			],
+			"Shared_Frost_Fizzle_1": [
+				"Shared_Frost_Fizzle_1.ogg"
+			]
+		},
 		"text": "<b>Twinspell</b>\n<b>Freeze</b> a minion.\nIf it's already <b>Frozen</b>,\ndeal $2 damage to it.",
 		"cardClass": "MAGE",
 		"rarity": "Common"
@@ -43651,6 +43727,26 @@ var parseCardsText = {
 			"FREEZE"
 		],
 		"id": "DAL_577ts",
+		"audio": {
+			"play": [],
+			"Shared_Frost_Impact_Small_1": [
+				"Shared_Frost_Impact_Small_1.ogg"
+			],
+			"Shared_Frost_PreCast_1": [
+				"Shared_Frost_PreCast_1.ogg"
+			],
+			"death": [],
+			"Shared_Frost_Cast_Small_1": [
+				"Shared_Frost_Cast_Small_1.ogg"
+			],
+			"attack": [],
+			"Shared_Frost_Start_1": [
+				"Shared_Frost_Start_1.ogg"
+			],
+			"Shared_Frost_Fizzle_1": [
+				"Shared_Frost_Fizzle_1.ogg"
+			]
+		},
 		"text": "<b>Freeze</b> a minion.\nIf it's already <b>Frozen</b>,\ndeal $2 damage to it.",
 		"dbfId": 54193,
 		"type": "Spell",
@@ -43671,6 +43767,23 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Power of Creation",
 		"id": "DAL_578",
+		"audio": {
+			"play": [],
+			"PowerOfCreation_Impact_Sound": [
+				"PowerOfCreation_Impact_Sound.ogg"
+			],
+			"FelLordBetrug_CustomSummon_Impact": [
+				"FelLordBetrug_CustomSummon_Impact.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"FinkleEinhorn_CustomSpawn_1": [
+				"FinkleEinhorn_CustomSpawn_1.ogg"
+			],
+			"WobblingRunts_CustomSpawn_Sound": [
+				"WobblingRunts_CustomSpawn_Sound.ogg"
+			]
+		},
 		"text": "<b>Discover</b> a 6-Cost minion. Summon two copies of it.",
 		"cardClass": "MAGE",
 		"rarity": "Epic"
@@ -43693,6 +43806,23 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Nozari",
 		"id": "DAL_581",
+		"audio": {
+			"play": [
+				"VO_DAL_581_Female_Dragon_Play_01.ogg",
+				"Nozari_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_581_Female_Dragon_Death_01.ogg",
+				"DragonWingFlap_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_581_Female_Dragon_Attack_02.ogg",
+				"DragonWingFlap_Underlay_Attack.ogg"
+			],
+			"Nozari_BattleCry_Sound": [
+				"Nozari_BattleCry_Sound.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Restore both heroes to full Health.",
 		"cardClass": "PALADIN",
 		"rarity": "Legendary"
@@ -43717,26 +43847,46 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Portal Keeper",
 		"id": "DAL_582",
+		"audio": {
+			"play": [
+				"VO_DAL_582_Male_Dreadlord_Play_01.ogg",
+				"PortalOverfiend_Underlay_Play.ogg"
+			],
+			"spell_Redemption_target_1": [
+				"spell_Redemption_target_1.ogg"
+			],
+			"death": [
+				"VO_DAL_582_Male_Dreadlord_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_582_Male_Dreadlord_Attack_01.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Shuffle 3 Portals\ninto your deck. When drawn,\nsummon a 2/2 Demon\nwith <b>Rush</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
 	},
 	{
-		"playerClass": "Neutral",
 		"cost": 2,
 		"set": "Dalaran",
 		"artist": "Zoltan Boros",
-		"name": "Felhound Portal",
 		"mechanics": [
 			"TOPDECK"
 		],
 		"referencedTags": [
 			"RUSH"
 		],
-		"id": "DAL_582t",
-		"text": "<b>Casts When Drawn</b>\nSummon a 2/2 Felhound with <b>Rush</b>.",
 		"dbfId": 52709,
 		"type": "Spell",
+		"playerClass": "Neutral",
+		"name": "Felhound Portal",
+		"id": "DAL_582t",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
+		"text": "<b>Casts When Drawn</b>\nSummon a 2/2 Felhound with <b>Rush</b>.",
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -43754,6 +43904,17 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Felhound",
 		"id": "DAL_582t2",
+		"audio": {
+			"play": [
+				"Felhound_DAL_582t2_Play.ogg"
+			],
+			"death": [
+				"Felhound_DAL_582t2_Death.ogg"
+			],
+			"attack": [
+				"Felhound_DAL_582t2_Attack.ogg"
+			]
+		},
 		"text": "<b>Rush</b>",
 		"cardClass": "NEUTRAL"
 	},
@@ -43774,6 +43935,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Shimmerfly",
 		"id": "DAL_587",
+		"audio": {
+			"play": [
+				"DAL_587_Shimmerfly_Play.ogg"
+			],
+			"death": [
+				"DAL_587_Shimmerfly_Death.ogg"
+			],
+			"attack": [
+				"DAL_587_Shimmerfly_Attack.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Add a random Hunter spell to your hand.",
 		"entourage": [
 			"NEW1_032",
@@ -43794,6 +43966,14 @@ var parseCardsText = {
 		"playerClass": "Hunter",
 		"name": "Hunting Party",
 		"id": "DAL_589",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Card_Hand_Ally_SummonIn_Marin_TolinsGoblet_Sound": [
+				"Card_Hand_Ally_SummonIn_Marin_TolinsGoblet_Sound.ogg"
+			]
+		},
 		"text": "Copy all Beasts in your hand.",
 		"cardClass": "HUNTER",
 		"rarity": "Rare"
@@ -43825,6 +44005,17 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Batterhead",
 		"id": "DAL_592",
+		"audio": {
+			"play": [
+				"VO_DAL_592_Male_Ogre_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_592_Male_Ogre_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_592_Male_Ogre_Attack_02.ogg"
+			]
+		},
 		"text": "<b>Rush</b>. After this attacks and kills a minion, it may attack again.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -43840,6 +44031,14 @@ var parseCardsText = {
 		"playerClass": "Warlock",
 		"name": "Plot Twist",
 		"id": "DAL_602",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"PlotTwist_DeckAndHand_AE": [
+				"PlotTwist_DeckAndHand_AE.ogg"
+			]
+		},
 		"text": "Shuffle your hand\ninto your deck.\nDraw that many cards.",
 		"cardClass": "WARLOCK",
 		"rarity": "Rare"
@@ -43861,6 +44060,20 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Mana Cyclone",
 		"id": "DAL_603",
+		"audio": {
+			"play": [
+				"DAL_603_ManaCyclone_Play.ogg"
+			],
+			"death": [
+				"DAL_603_ManaCyclone_Death.ogg"
+			],
+			"Arcane_Impact_WithCards_Sound": [
+				"Arcane_Impact_WithCards_Sound.ogg"
+			],
+			"attack": [
+				"DAL_603_ManaCyclone_Attack.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> For each spell\nyou've cast this turn, add\na random Mage spell\nto your hand.",
 		"cardClass": "MAGE",
 		"rarity": "Epic"
@@ -43882,6 +44095,17 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Ursatron",
 		"id": "DAL_604",
+		"audio": {
+			"play": [
+				"DAL_604_Ursatron_Play.ogg"
+			],
+			"death": [
+				"DAL_604_Ursatron_Death.ogg"
+			],
+			"attack": [
+				"DAL_604_Ursatron_Attack.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Draw a Mech from your deck.",
 		"cardClass": "HUNTER",
 		"rarity": "Common"
@@ -43897,6 +44121,17 @@ var parseCardsText = {
 		"playerClass": "Warlock",
 		"name": "Impferno",
 		"id": "DAL_605",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Shared_Shadow_Start_1": [
+				"Shared_Shadow_Start_1.ogg"
+			],
+			"attack": [],
+			"Shared_Shadow_PreCast_2": [
+				"Shared_Shadow_PreCast_2.ogg"
+			]
+		},
 		"text": "Give your Demons +1 Attack. Deal $1 damage to all enemy minions.",
 		"cardClass": "WARLOCK",
 		"rarity": "Rare"
@@ -43945,6 +44180,29 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "EVIL Genius",
 		"id": "DAL_606",
+		"audio": {
+			"play": [
+				"VO_DAL_606_Female_Nerubian_Play_01.ogg",
+				"Nerubian_Underlay_Play.ogg"
+			],
+			"Warlock_SiphonSoul_TargetImpact_1": [
+				"Warlock_SiphonSoul_TargetImpact_1.ogg"
+			],
+			"Warlock_Darkbomb_Missile_Sound_01": [
+				"Warlock_Darkbomb_Missile_Sound_01.ogg"
+			],
+			"death": [
+				"VO_DAL_606_Female_Nerubian_Death_01.ogg",
+				"Nerubian_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_606_Female_Nerubian_Attack_01.ogg",
+				"Nerubian_Underlay_Attack.ogg"
+			],
+			"FX_FireballEvent04_SpellImpact_01": [
+				"FX_FireballEvent04_SpellImpact_01.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Destroy a friendly minion to add 2 random <b>Lackeys</b> to your hand.",
 		"cardClass": "WARLOCK",
 		"rarity": "Common"
@@ -43970,6 +44228,21 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Fel Lord Betrug",
 		"id": "DAL_607",
+		"audio": {
+			"play": [
+				"VO_DAL_607_Male_Felguard_Play_01.ogg",
+				"Betrug_Play_Stinger.ogg",
+				"2H_Axe_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_607_Male_Felguard_Death_01.ogg",
+				"2H_Axe_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_607_Male_Felguard_Attack_01.ogg",
+				"2H_Axe_Underlay_Attack.ogg"
+			]
+		},
 		"text": "[x]Whenever you draw a\nminion, summon a copy\n with <b>Rush</b> that dies at\nend of turn.",
 		"cardClass": "WARLOCK",
 		"rarity": "Legendary"
@@ -43998,6 +44271,11 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Magic Trick",
 		"id": "DAL_608",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Discover</b> a spell that costs (3) or less.",
 		"cardClass": "MAGE",
 		"rarity": "Rare"
@@ -44022,6 +44300,20 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Kalecgos",
 		"id": "DAL_609",
+		"audio": {
+			"play": [
+				"VO_DAL_609_Male_Dragon_Play_01.ogg",
+				"Kalecgos_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_609_Male_Dragon_Death_01.ogg",
+				"DragonWingFlap_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_609_Male_Dragon_Attack_01.ogg",
+				"DragonWingFlap_Underlay_Attack.ogg"
+			]
+		},
 		"text": "Your first spell each\nturn costs (0).\n<b>Battlecry:</b> <b>Discover</b>\na spell.",
 		"cardClass": "MAGE",
 		"rarity": "Legendary"
@@ -44040,6 +44332,23 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Faceless Lackey",
 		"id": "DAL_613",
+		"audio": {
+			"play": [
+				"VO_DAL_613_Male_Faceless_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_613_Male_Faceless_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_613_Male_Faceless_Attack_01.ogg"
+			],
+			"FX_MinionSummon_Drop": [
+				"FX_MinionSummon_Drop.ogg"
+			],
+			"Warlock_Shadow_Buff_Impact_Sound": [
+				"Warlock_Shadow_Buff_Impact_Sound.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Summon a random 2-Cost minion.",
 		"cardClass": "NEUTRAL"
 	},
@@ -44073,6 +44382,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Kobold Lackey",
 		"id": "DAL_614",
+		"audio": {
+			"play": [
+				"VO_DAL_614_Female_Kobold_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_614_Female_Kobold_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_614_Female_Kobold_Attack_01.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Deal 2 damage.",
 		"cardClass": "NEUTRAL"
 	},
@@ -44106,6 +44426,20 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Witchy Lackey",
 		"id": "DAL_615",
+		"audio": {
+			"play": [
+				"VO_DAL_615_Female_Undead_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_615_Female_Undead_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_615_Female_Undead_Attack_01.ogg"
+			],
+			"DKThrall_HeroPower_Impact_Sound": [
+				"DKThrall_HeroPower_Impact_Sound.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Transform a friendly minion into one that costs (1) more.",
 		"cardClass": "NEUTRAL"
 	},
@@ -44123,6 +44457,23 @@ var parseCardsText = {
 		"playerClass": "Shaman",
 		"name": "Soul of the Murloc",
 		"id": "DAL_710",
+		"audio": {
+			"play": [],
+			"Shared_Nature_Fizzle_1": [
+				"Shared_Nature_Fizzle_1.ogg"
+			],
+			"death": [],
+			"Nature_Spirit_Impact_Sound": [
+				"Nature_Spirit_Impact_Sound.ogg"
+			],
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			],
+			"Shared_Nature_PreCast_1": [
+				"Shared_Nature_PreCast_1.ogg"
+			]
+		},
 		"text": "Give your minions \"<b>Deathrattle:</b> Summon a 1/1 Murloc.\"",
 		"cardClass": "SHAMAN",
 		"rarity": "Common"
@@ -44156,6 +44507,20 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Underbelly Fence",
 		"id": "DAL_714",
+		"audio": {
+			"play": [
+				"VO_DAL_714_Female_Human_Play_01.ogg"
+			],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [
+				"VO_DAL_714_Female_Human_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_714_Female_Human_Attack_01.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> If you're holding\na card from another class,\n gain +1/+1 and <b><b>Rush</b>.</b>",
 		"cardClass": "ROGUE",
 		"rarity": "Rare"
@@ -44181,6 +44546,20 @@ var parseCardsText = {
 		"playerClass": "Rogue",
 		"name": "Vendetta",
 		"id": "DAL_716",
+		"audio": {
+			"play": [],
+			"Sneaky_Target_Loop_01": [
+				"Sneaky_Target_Loop_01.ogg"
+			],
+			"death": [],
+			"Rogue_Eviscerate_Impact_1": [
+				"Rogue_Eviscerate_Impact_1.ogg"
+			],
+			"attack": [],
+			"Rogue_Eviscerate_Cast_1": [
+				"Rogue_Eviscerate_Cast_1.ogg"
+			]
+		},
 		"text": "Deal $4 damage to a minion. Costs (0) if you're holding a card from another class.",
 		"cardClass": "ROGUE",
 		"rarity": "Rare"
@@ -44202,6 +44581,18 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Tak Nozwhisker",
 		"id": "DAL_719",
+		"audio": {
+			"play": [
+				"VO_DAL_719_Male_Kobold_Play_01.ogg",
+				"Nozwhisker_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_719_Male_Kobold_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_719_Male_Kobold_Attack_01.ogg"
+			]
+		},
 		"text": "[x]Whenever you shuffle a\ncard into your deck, add\na copy to your hand.",
 		"cardClass": "ROGUE",
 		"rarity": "Legendary"
@@ -44222,6 +44613,11 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Waggle Pick",
 		"id": "DAL_720",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "[x]<b>Deathrattle:</b> Return\na random friendly\nminion to your hand.\nIt costs (2) less.",
 		"cardClass": "ROGUE",
 		"rarity": "Epic"
@@ -44243,6 +44639,18 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Catrina Muerte",
 		"id": "DAL_721",
+		"audio": {
+			"play": [
+				"VO_DAL_721_Female_Undead_Play_03.ogg",
+				"Muerte_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_721_Female_Undead_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_721_Female_Undead_Attack_01.ogg"
+			]
+		},
 		"text": "[x]At the end of your turn,\nsummon a friendly minion\nthat died this game.",
 		"cardClass": "PRIEST",
 		"rarity": "Legendary"
@@ -44258,6 +44666,26 @@ var parseCardsText = {
 		"playerClass": "Priest",
 		"name": "Forbidden Words",
 		"id": "DAL_723",
+		"audio": {
+			"play": [],
+			"Priest_ShadowWordPain_Impact_1": [
+				"Priest_ShadowWordPain_Impact_1.ogg"
+			],
+			"death": [],
+			"Shared_Shadow_Start_1": [
+				"Shared_Shadow_Start_1.ogg"
+			],
+			"Shared_Shadow_Cast_1": [
+				"Shared_Shadow_Cast_1.ogg"
+			],
+			"attack": [],
+			"Shared_Shadow_PreCast_1": [
+				"Shared_Shadow_PreCast_1.ogg"
+			],
+			"Shared_Shadow_Fizzle_1": [
+				"Shared_Shadow_Fizzle_1.ogg"
+			]
+		},
 		"text": "[x]Spend all your Mana.\nDestroy a minion with that\nmuch Attack or less.",
 		"cardClass": "PRIEST",
 		"rarity": "Rare"
@@ -44273,6 +44701,14 @@ var parseCardsText = {
 		"playerClass": "Priest",
 		"name": "Mass Resurrection",
 		"id": "DAL_724",
+		"audio": {
+			"play": [],
+			"spell_Redemption_target_1": [
+				"spell_Redemption_target_1.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Summon 3 friendly minions that died\nthis game.",
 		"cardClass": "PRIEST",
 		"rarity": "Rare"
@@ -44295,6 +44731,18 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Scargil",
 		"id": "DAL_726",
+		"audio": {
+			"play": [
+				"VO_DAL_726_Male_Murloc_Play_01.ogg",
+				"Scargil_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_726_Male_Murloc_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_726_Male_Murloc_Attack_01.ogg"
+			]
+		},
 		"text": "Your Murlocs cost (1).",
 		"cardClass": "SHAMAN",
 		"rarity": "Legendary"
@@ -44320,6 +44768,14 @@ var parseCardsText = {
 		"playerClass": "Paladin",
 		"name": "Call to Adventure",
 		"id": "DAL_727",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"ArmsDealing_Impact_Sound": [
+				"ArmsDealing_Impact_Sound.ogg"
+			]
+		},
 		"text": "Draw the lowest Cost minion from your deck. Give it +2/+2.",
 		"cardClass": "PALADIN",
 		"rarity": "Rare"
@@ -44345,6 +44801,17 @@ var parseCardsText = {
 		"playerClass": "Rogue",
 		"name": "Daring Escape",
 		"id": "DAL_728",
+		"audio": {
+			"play": [],
+			"Sneaky_Target_Loop_01": [
+				"Sneaky_Target_Loop_01.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Shared_SneakyUntargettedImpactStandard_1": [
+				"Shared_SneakyUntargettedImpactStandard_1.ogg"
+			]
+		},
 		"text": "Return all friendly minions to your hand.",
 		"cardClass": "ROGUE",
 		"rarity": "Common"
@@ -44369,6 +44836,20 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Madame Lazul",
 		"id": "DAL_729",
+		"audio": {
+			"play": [
+				"VO_DAL_729_Female_Troll_Play_02.ogg",
+				"Lazul_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_729_Female_Troll_Death_01.ogg",
+				"ShadowMagic_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_729_Female_Troll_Attack_01.ogg",
+				"ShadowMagic_Attack_Underlay.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> <b>Discover</b> a\ncopy of a card in your\nopponent's hand.",
 		"cardClass": "PRIEST",
 		"rarity": "Legendary"
@@ -44384,6 +44865,17 @@ var parseCardsText = {
 		"playerClass": "Paladin",
 		"name": "Duel!",
 		"id": "DAL_731",
+		"audio": {
+			"play": [],
+			"Duel_AE_Appear": [
+				"Duel_AE_Appear.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Duel_AE_Disappear": [
+				"Duel_AE_Disappear.ogg"
+			]
+		},
 		"text": "Summon a minion from each player's deck.\nThey fight!",
 		"cardClass": "PALADIN",
 		"rarity": "Epic"
@@ -44405,6 +44897,18 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Keeper Stalladris",
 		"id": "DAL_732",
+		"audio": {
+			"play": [
+				"VO_DAL_732_Male_Driad_Play_01.ogg",
+				"Stalladris_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_732_Male_Driad_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_732_Male_Driad_Attack_01.ogg"
+			]
+		},
 		"text": "After you cast a <b>Choose One</b> spell, add copies of both choices to your hand.",
 		"cardClass": "DRUID",
 		"rarity": "Legendary"
@@ -44423,6 +44927,14 @@ var parseCardsText = {
 		"playerClass": "Druid",
 		"name": "Dreamway Guardians",
 		"id": "DAL_733",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Treant_CustomSpawn_1": [
+				"Treant_CustomSpawn_1.ogg"
+			]
+		},
 		"text": "Summon two 1/2 Dryads with <b>Lifesteal</b>.",
 		"cardClass": "DRUID",
 		"rarity": "Rare"
@@ -44441,6 +44953,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Crystal Dryad",
 		"id": "DAL_733t",
+		"audio": {
+			"play": [
+				"VO_DAL_733t_Female_Crystal Dryad_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_733t_Female_Crystal Dryad_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_733t_Female_Crystal Dryad_Attack_01.ogg"
+			]
+		},
 		"text": "<b>Lifesteal</b>",
 		"cardClass": "DRUID"
 	},
@@ -44463,6 +44986,29 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Dalaran Librarian",
 		"id": "DAL_735",
+		"audio": {
+			"play": [
+				"VO_DAL_735_Female_Orc_Play_02.ogg"
+			],
+			"Shared_Arcane_Fizzle_1": [
+				"Shared_Arcane_Fizzle_1.ogg"
+			],
+			"Shared_Arcane_PreCast_1": [
+				"Shared_Arcane_PreCast_1.ogg"
+			],
+			"death": [
+				"VO_DAL_735_Female_Orc_Death_01.ogg"
+			],
+			"silence_target_1": [
+				"silence_target_1.ogg"
+			],
+			"Arcane_Impact_03_Bookwyrm_Sound": [
+				"Arcane_Impact_03_Bookwyrm_Sound.ogg"
+			],
+			"attack": [
+				"VO_DAL_735_Female_Orc_Attack_01.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> <b>Silence</b>\nadjacent minions.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -44487,6 +45033,20 @@ var parseCardsText = {
 		"attack": 7,
 		"name": "Archivist Elysiana",
 		"id": "DAL_736",
+		"audio": {
+			"play": [
+				"VO_DAL_736_Female_HighElf_Play_01.ogg",
+				"Elysiana_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_736_Female_HighElf_Death_01.ogg",
+				"GoblinBlastMage_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_736_Female_HighElf_Attack_01.ogg",
+				"GoblinBlastMage_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> <b>Discover</b> 5 cards. Replace your deck with 2 copies of each.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
@@ -44524,6 +45084,23 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Goblin Lackey",
 		"id": "DAL_739",
+		"audio": {
+			"play": [
+				"VO_DAL_739_Female_Goblin_Play_02.ogg",
+				"Cogmaster_Play_Underlay.ogg"
+			],
+			"Shared_Rage_InnerRage_Impact_1": [
+				"Shared_Rage_InnerRage_Impact_1.ogg"
+			],
+			"death": [
+				"VO_DAL_739_Female_Goblin_Death_01.ogg",
+				"Cogmaster_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_739_Female_Goblin_Attack_01.ogg",
+				"Cogmaster_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Give a friendly minion +1 Attack and <b>Rush</b>.",
 		"cardClass": "NEUTRAL"
 	},
@@ -44554,6 +45131,20 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Ethereal Lackey",
 		"id": "DAL_741",
+		"audio": {
+			"play": [
+				"VO_DAL_741_Male_Ethereal_Play_01.ogg",
+				"ShadowMagic_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_741_Male_Ethereal_Death_01.ogg",
+				"ShadowMagic_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_741_Male_Ethereal_Attack_01.ogg",
+				"ShadowMagic_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> <b>Discover</b> a spell.",
 		"cardClass": "NEUTRAL"
 	},
@@ -44577,6 +45168,17 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Whirlwind Tempest",
 		"id": "DAL_742",
+		"audio": {
+			"play": [
+				"WhirlwindTempest_DAL_742_Play.ogg"
+			],
+			"death": [
+				"WhirlwindTempest_DAL_742_Death.ogg"
+			],
+			"attack": [
+				"WhirlwindTempest_DAL_742_Attack.ogg"
+			]
+		},
 		"text": "Your minions with <b>Windfury</b> have <b>Mega-Windfury</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -44609,22 +45211,44 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Hench-Clan Hogsteed",
 		"id": "DAL_743",
+		"audio": {
+			"play": [
+				"DAL_743_Hench-ClanHogsteed_Play.ogg"
+			],
+			"death": [
+				"DAL_743_Hench-ClanHogsteed_Death.ogg"
+			],
+			"attack": [
+				"DAL_743_Hench-ClanHogsteed_Attack.ogg"
+			]
+		},
 		"text": "<b>Rush</b>\n<b>Deathrattle:</b> Summon a 1/1 Murloc.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
 	},
 	{
-		"playerClass": "Neutral",
 		"cost": 1,
 		"set": "Dalaran",
 		"race": "MURLOC",
 		"artist": "Matt Dixon",
-		"attack": 1,
-		"name": "Hench-Clan Squire",
 		"health": 1,
-		"id": "DAL_743t",
 		"dbfId": 53202,
 		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Hench-Clan Squire",
+		"id": "DAL_743t",
+		"audio": {
+			"play": [
+				"VO_DAL_743t_Male_Murloc_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_743t_Male_Murloc_Death_02.ogg"
+			],
+			"attack": [
+				"VO_DAL_743t_Male_Murloc_Attack_01.ogg"
+			]
+		},
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -44659,6 +45283,20 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Faceless Rager",
 		"id": "DAL_744",
+		"audio": {
+			"play": [
+				"VO_DAL_744_Male_Faceless_Play_01.ogg"
+			],
+			"Shadowbuff_Impact_Sound": [
+				"Shadowbuff_Impact_Sound.ogg"
+			],
+			"death": [
+				"VO_DAL_744_Male_Faceless_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_744_Male_Faceless_Attack_01.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Copy a friendly minion's Health.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -44690,6 +45328,20 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Flight Master",
 		"id": "DAL_747",
+		"audio": {
+			"play": [
+				"VO_DAL_747_Male_BloodElf_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_747_Male_BloodElf_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_747_Male_BloodElf_Attack_01.ogg"
+			],
+			"Shared_CustomSpawn_MinionFlyIn_01": [
+				"Shared_CustomSpawn_MinionFlyIn_01.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Summon a 2/2 Gryphon for each player.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -44707,6 +45359,20 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Gryphon",
 		"id": "DAL_747t",
+		"audio": {
+			"play": [
+				"DAL_747t_Gryphon_Play.ogg",
+				"WingFlapMedium_Underlay_Play.ogg"
+			],
+			"death": [
+				"DAL_747t_Gryphon_Death.ogg",
+				"WingFlapMedium_Underlay_Death.ogg"
+			],
+			"attack": [
+				"DAL_747t_Gryphon_Attack.ogg",
+				"WingFlapMedium_Underlay_Attack.ogg"
+			]
+		},
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -44727,6 +45393,17 @@ var parseCardsText = {
 		"attack": 0,
 		"name": "Mana Reservoir",
 		"id": "DAL_748",
+		"audio": {
+			"play": [
+				"ManaResevoir_DAL_748_Play.ogg"
+			],
+			"death": [
+				"ManaResevoir_DAL_748_Death.ogg"
+			],
+			"attack": [
+				"ManaResevoir_DAL_748_Attack.ogg"
+			]
+		},
 		"text": "<b>Spell Damage +1</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -44747,6 +45424,17 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Recurring Villain",
 		"id": "DAL_749",
+		"audio": {
+			"play": [
+				"VO_DAL_749_Male_Kobold_Play_01.ogg"
+			],
+			"death": [
+				"VO_DAL_749_Male_Kobold_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_749_Male_Kobold_Attack_01.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> If this minion has 4 or more Attack, resummon it.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -44769,22 +45457,53 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Mad Summoner",
 		"id": "DAL_751",
+		"audio": {
+			"play": [
+				"VO_DAL_751_Male_Satyr_Play_01.ogg",
+				"ShadowMagic_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_DAL_751_Male_Satyr_Death_01.ogg",
+				"ShadowMagic_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_DAL_751_Male_Satyr_Attack_01.ogg",
+				"ShadowMagic_Attack_Underlay.ogg"
+			],
+			"Portal_TargetHero_Sound": [
+				"Portal_TargetHero_Sound.ogg"
+			],
+			"FlameOfAzzinoth_CustomSpawn_1": [
+				"FlameOfAzzinoth_CustomSpawn_1.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Fill each player's\nboard with 1/1 Imps.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
 	},
 	{
-		"playerClass": "Neutral",
 		"cost": 1,
 		"set": "Dalaran",
 		"race": "DEMON",
 		"artist": "Konstantin Turovec",
-		"attack": 1,
-		"name": "Imp",
 		"health": 1,
-		"id": "DAL_751t",
 		"dbfId": 53305,
 		"type": "Minion",
+		"playerClass": "Neutral",
+		"attack": 1,
+		"name": "Imp",
+		"id": "DAL_751t",
+		"audio": {
+			"play": [
+				"Imp_DAL_751t_Play.ogg"
+			],
+			"death": [
+				"Imp_DAL_751t_Death.ogg"
+			],
+			"attack": [
+				"Imp_DAL_751t_Attack.ogg"
+			]
+		},
 		"cardClass": "NEUTRAL"
 	},
 	{
@@ -44804,6 +45523,18 @@ var parseCardsText = {
 		"attack": 6,
 		"name": "Jepetto Joybuzz",
 		"id": "DAL_752",
+		"audio": {
+			"play": [
+				"VO_DAL_752_Male_Gnome_Play_01.ogg",
+				"Joybuzz_Play_Stinger.ogg"
+			],
+			"death": [
+				"VO_DAL_752_Male_Gnome_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_752_Male_Gnome_Attack_02.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Draw 2 minions from your deck. Set their Attack, Health, and Cost to 1.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
@@ -44823,6 +45554,11 @@ var parseCardsText = {
 		"set": "Dalaran",
 		"name": "On Sale",
 		"id": "DAL_752e2",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Costs (1).",
 		"dbfId": 53304,
 		"type": "Enchantment",
@@ -44845,6 +45581,17 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Vicious Scraphound",
 		"id": "DAL_759",
+		"audio": {
+			"play": [
+				"ViciousScraphound_DAL_759_Play.ogg"
+			],
+			"death": [
+				"ViciousScraphound_DAL_759_Death.ogg"
+			],
+			"attack": [
+				"ViciousScraphound_DAL_759_Attack.ogg"
+			]
+		},
 		"text": "Whenever this minion\ndeals damage, gain that much Armor.",
 		"cardClass": "WARRIOR",
 		"rarity": "Common"
@@ -44865,6 +45612,20 @@ var parseCardsText = {
 		"attack": 9,
 		"name": "Burly Shovelfist",
 		"id": "DAL_760",
+		"audio": {
+			"play": [
+				"VO_DAL_760_Male_Trogg_Play_01.ogg",
+				"BurlyShovelFist_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_760_Male_Trogg_Death_01.ogg",
+				"BurlyShovelFist_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_760_Male_Trogg_Attack_01.ogg",
+				"BurlyShovelFist_Underlay_Attack.ogg"
+			]
+		},
 		"text": "<b>Rush</b>",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -44880,6 +45641,35 @@ var parseCardsText = {
 		"playerClass": "Warrior",
 		"name": "Improve Morale",
 		"id": "DAL_769",
+		"audio": {
+			"play": [],
+			"Lightning_Targeted_Whoosh_01": [
+				"Lightning_Targeted_Whoosh_01.ogg"
+			],
+			"Lightning_Targeted_Whoosh_02": [
+				"Lightning_Targeted_Whoosh_02.ogg"
+			],
+			"Lightning_Targeted_Whoosh_03": [
+				"Lightning_Targeted_Whoosh_03.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Shared_Lightning_Fizzle_1": [
+				"Shared_Lightning_Fizzle_1.ogg"
+			],
+			"Shared_Lightning_PreCast_1": [
+				"Shared_Lightning_PreCast_1.ogg"
+			],
+			"Lightning_Targeted_Impact_01": [
+				"Lightning_Targeted_Impact_01.ogg"
+			],
+			"Shared_Lightning_Start_1": [
+				"Shared_Lightning_Start_1.ogg"
+			],
+			"Lightning_Targeted_Impact_02": [
+				"Lightning_Targeted_Impact_02.ogg"
+			]
+		},
 		"text": "[x]Deal $1 damage\nto a minion.\nIf it survives, add a\n<b>Lackey</b> to your hand.",
 		"cardClass": "WARRIOR",
 		"rarity": "Common"
@@ -44917,6 +45707,35 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Omega Devastator",
 		"id": "DAL_770",
+		"audio": {
+			"play": [
+				"VO_BOT_296_Male_Goblin_Play_01.ogg",
+				"CleanMechLarge_Play_Underlay.ogg"
+			],
+			"DrBoom_ZapCannon_Idle_Loop_Sound": [
+				"DrBoom_ZapCannon_Idle_Loop_Sound.ogg"
+			],
+			"death": [
+				"VO_BOT_296_Male_Goblin_Death_01.ogg",
+				"CleanMechLarge_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_BOT_296_Male_Goblin_Attack_01.ogg",
+				"CleanMechLarge_Attack_Underlay.ogg"
+			],
+			"DrBoom_ZapCannon_Impact_Sound": [
+				"DrBoom_ZapCannon_Impact_Sound.ogg"
+			],
+			"DrBoom_ZapCannon_Idle_Start_Sound": [
+				"DrBoom_ZapCannon_Idle_Start_Sound.ogg"
+			],
+			"DrBoom_ZapCannon_Missile_Launch_Sound": [
+				"DrBoom_ZapCannon_Missile_Launch_Sound.ogg"
+			],
+			"DrBoom_ZapCannon_Idle_Fizzle_Sound": [
+				"DrBoom_ZapCannon_Idle_Fizzle_Sound.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> If you have 10\nMana Crystals, deal 10\ndamage to a minion.",
 		"cardClass": "WARRIOR",
 		"rarity": "Epic"
@@ -44938,6 +45757,17 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Soldier of Fortune",
 		"id": "DAL_771",
+		"audio": {
+			"play": [
+				"SoldierOfFortune_DAL_771_Play.ogg"
+			],
+			"death": [
+				"SoldierOfFortune_DAL_771_Death.ogg"
+			],
+			"attack": [
+				"SoldierOfFortune_DAL_771_Attack.ogg"
+			]
+		},
 		"text": "Whenever this minion attacks, give your opponent a Coin.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -44961,6 +45791,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Magic Carpet",
 		"id": "DAL_773",
+		"audio": {
+			"play": [
+				"DAL_773_MagicCarpet_Play.ogg"
+			],
+			"death": [
+				"DAL_773_MagicCarpet_Death.ogg"
+			],
+			"attack": [
+				"DAL_773_MagicCarpet_Attack.ogg"
+			]
+		},
 		"text": "After you play a 1-Cost minion, give it +1 Attack and <b>Rush</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -44991,6 +45832,20 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Exotic Mountseller",
 		"id": "DAL_774",
+		"audio": {
+			"play": [
+				"VO_DAL_774_Female_Human_Play_01.ogg",
+				"1H_Staff_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_774_Female_Human_Death_01.ogg",
+				"1H_Staff_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_DAL_774_Female_Human_Attack_01.ogg",
+				"1H_Staff_Underlay_Attack.ogg"
+			]
+		},
 		"text": "Whenever you cast a spell, summon a random\n3-Cost Beast.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -45012,6 +45867,19 @@ var parseCardsText = {
 		"attack": 3,
 		"name": "Tunnel Blaster",
 		"id": "DAL_775",
+		"audio": {
+			"play": [
+				"VO_DAL_775_Male_Kobold_Play_01.ogg",
+				"TunnelBlaster_Underlay_Play.ogg"
+			],
+			"death": [
+				"VO_DAL_775_Male_Kobold_Death_01.ogg"
+			],
+			"attack": [
+				"VO_DAL_775_Male_Kobold_Attack_02.ogg",
+				"TunnelBlaster_Underlay_Attack.ogg"
+			]
+		},
 		"text": "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Deal 3 damage\nto all minions.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -45050,6 +45918,20 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Crystal Stag",
 		"id": "DAL_799",
+		"audio": {
+			"play": [
+				"DAL_799_CrystalStag_Play.ogg"
+			],
+			"death": [
+				"DAL_799_CrystalStag_Death.ogg"
+			],
+			"attack": [
+				"DAL_799_CrystalStag_Attack.ogg"
+			],
+			"Shared_CustomSpawn_MinionFlyIn_01": [
+				"Shared_CustomSpawn_MinionFlyIn_01.ogg"
+			]
+		},
 		"text": "<b>Rush</b>. <b>Battlecry:</b> If you've restored 5 Health this game, summon a copy of this.@ <i>({0} left!)</i>@ <i>(Ready!)</i>",
 		"cardClass": "DRUID",
 		"rarity": "Epic"
@@ -45136,16 +46018,10 @@ var parseCardsText = {
 		"id": "DREAM_04",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -45243,26 +46119,6 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Darkscale Healer",
 		"id": "DS1_055",
-		"audio": {
-			"play": [
-				"VO_DS1_055_Play_01.ogg"
-			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
-			"death": [
-				"VO_DS1_055_Death_03.ogg"
-			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
-			"attack": [
-				"VO_DS1_055_Attack_02.ogg"
-			],
-			"Shaman_Windfury_Impact": [
-				"Shaman_Windfury_Impact.ogg"
-			]
-		},
 		"text": "<b>Battlecry:</b> Restore #2 Health to all friendly characters.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -45338,14 +46194,8 @@ var parseCardsText = {
 			"play": [
 				"VO_DS1_070_Play_01.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"VO_DS1_070_Death_03.ogg"
-			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
 			],
 			"attack": [
 				"VO_DS1_070_Attack_02.ogg"
@@ -45582,12 +46432,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -45595,18 +46439,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -45717,56 +46549,6 @@ var parseCardsText = {
 		"playerClass": "Hunter",
 		"name": "Arcane Shot",
 		"id": "DS1_185",
-		"audio": {
-			"play": [],
-			"Shared_Arcane_Fizzle_1": [
-				"Shared_Arcane_Fizzle_1.ogg"
-			],
-			"Arcane_Arrow_Targeted_Impact_02": [
-				"Arcane_Arrow_Targeted_Impact_02.ogg"
-			],
-			"Arcane_Arrow_Targeted_Impact_01": [
-				"Arcane_Arrow_Targeted_Impact_01.ogg"
-			],
-			"death": [],
-			"Arcane_Arrow_Targeted_Impact_03": [
-				"Arcane_Arrow_Targeted_Impact_03.ogg"
-			],
-			"Arcane_Arrow_Targeted_Fire_02": [
-				"Arcane_Arrow_Targeted_Fire_02.ogg"
-			],
-			"Arcane_Arrow_Targeted_Explosion_03": [
-				"Arcane_Arrow_Targeted_Explosion_03.ogg"
-			],
-			"Arcane_Arrow_Targeted_Fire_01": [
-				"Arcane_Arrow_Targeted_Fire_01.ogg"
-			],
-			"Arcane_Arrow_Targeted_Explosion_02": [
-				"Arcane_Arrow_Targeted_Explosion_02.ogg"
-			],
-			"Arcane_Arrow_Targeted_Explosion_01": [
-				"Arcane_Arrow_Targeted_Explosion_01.ogg"
-			],
-			"Arcane_Arrow_Targeted_Fire_03": [
-				"Arcane_Arrow_Targeted_Fire_03.ogg"
-			],
-			"Shared_Arcane_PreCast_1": [
-				"Shared_Arcane_PreCast_1.ogg"
-			],
-			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
-			"Arcane_Arrow_Targeted_Build_02": [
-				"Arcane_Arrow_Targeted_Build_02.ogg"
-			],
-			"Arcane_Arrow_Targeted_Build_01": [
-				"Arcane_Arrow_Targeted_Build_01.ogg"
-			],
-			"Arcane_Arrow_Targeted_Build_03": [
-				"Arcane_Arrow_Targeted_Build_03.ogg"
-			]
-		},
 		"text": "Deal $2 damage.",
 		"cardClass": "HUNTER",
 		"rarity": "Free"
@@ -45928,12 +46710,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -45941,18 +46717,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -45988,22 +46752,10 @@ var parseCardsText = {
 		"id": "DS1h_292_H1",
 		"audio": {
 			"play": [],
-			"Arrow_Impact_Alleria_Sound_01": [
-				"Arrow_Impact_Alleria_Sound_01.ogg"
-			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
-			"Arrow_Impact_Alleria_LeadIn_Sound_01": [
-				"Arrow_Impact_Alleria_LeadIn_Sound_01.ogg"
-			],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
-			],
-			"Arrow_Missile_Alleria": [
-				"Arrow_Missile_Alleria.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
@@ -46036,22 +46788,10 @@ var parseCardsText = {
 		"id": "DS1h_292_H1_AT_132",
 		"audio": {
 			"play": [],
-			"Arrow_Impact_Alleria_Sound_01": [
-				"Arrow_Impact_Alleria_Sound_01.ogg"
-			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
-			"Arrow_Impact_Alleria_LeadIn_Sound_01": [
-				"Arrow_Impact_Alleria_LeadIn_Sound_01.ogg"
-			],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
-			],
-			"Arrow_Missile_Alleria": [
-				"Arrow_Missile_Alleria.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nDeal $3 damage to the enemy hero.",
@@ -46160,9 +46900,6 @@ var parseCardsText = {
 			],
 			"Rogue_Eviscerate_Cast_1": [
 				"Rogue_Eviscerate_Cast_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Destroy an enemy minion with <b>Taunt</b>.",
@@ -46251,23 +46988,11 @@ var parseCardsText = {
 			"play": [
 				"VO_EX1_005_Play_01.ogg"
 			],
-			"Tutorial_Rifle_Cock_01": [
-				"Tutorial_Rifle_Cock_01.ogg"
-			],
 			"death": [
 				"VO_EX1_005_Death_03.ogg"
 			],
 			"attack": [
 				"VO_EX1_005_Attack_02.ogg"
-			],
-			"FX_FireballEvent04_SpellCancel_01": [
-				"FX_FireballEvent04_SpellCancel_01.ogg"
-			],
-			"Tutorial_Rifle_Fire_01": [
-				"Tutorial_Rifle_Fire_01.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Destroy a minion with 7 or more Attack.",
@@ -46500,32 +47225,6 @@ var parseCardsText = {
 		"faction": "HORDE",
 		"name": "Voodoo Doctor",
 		"id": "EX1_011",
-		"audio": {
-			"play": [
-				"VO_EX1_011_Play_01.ogg"
-			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
-			"death": [
-				"VO_EX1_011_Death_03.ogg"
-			],
-			"attack": [
-				"VO_EX1_011_Attack_02.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
-		},
 		"text": "<b>Battlecry:</b> Restore #2 Health.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -46607,23 +47306,8 @@ var parseCardsText = {
 		"id": "EX1_014t",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +1/+1.",
 		"dbfId": 1694,
@@ -46678,17 +47362,6 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Novice Engineer",
 		"id": "EX1_015",
-		"audio": {
-			"play": [
-				"VO_EX1_015_Play_01.ogg"
-			],
-			"death": [
-				"VO_EX1_015_Death_03.ogg"
-			],
-			"attack": [
-				"VO_EX1_015_Attack_02.ogg"
-			]
-		},
 		"text": "<b>Battlecry:</b> Draw a card.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -46811,26 +47484,11 @@ var parseCardsText = {
 			"play": [
 				"VO_EX1_019_Play_01.ogg"
 			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [
 				"VO_EX1_019_Death_03.ogg"
 			],
 			"attack": [
 				"VO_EX1_019_Attack_02.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly minion +1/+1.",
@@ -47402,9 +48060,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_EX1_048_Attack_02.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> <b>Silence</b> a minion.",
@@ -48045,9 +48700,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_EX1_083_Attack_02.ogg"
 			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -48188,9 +48840,6 @@ var parseCardsText = {
 		"audio": {
 			"play": [
 				"EX1_089_Arcane_Golem_EnterPlay2.ogg"
-			],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
 			],
 			"death": [
 				"EX1_089_Arcane_Golem_Death4.ogg"
@@ -48480,20 +49129,11 @@ var parseCardsText = {
 			"play": [
 				"EX1_103_Coldlight_Seer_EnterPlay1.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"EX1_103_Coldlight_Seer_Death2.ogg"
 			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [
 				"EX1_103_Coldlight_Seer_Attack2.ogg"
-			],
-			"Shaman_Windfury_Impact": [
-				"Shaman_Windfury_Impact.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give your other Murlocs +2 Health.",
@@ -48743,9 +49383,6 @@ var parseCardsText = {
 			"attack": [],
 			"Rogue_Eviscerate_Cast_1": [
 				"Rogue_Eviscerate_Cast_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "Deal $2 damage. <b>Combo:</b> Deal $4 damage instead.",
@@ -48770,9 +49407,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Physical_Targeted_Impact_01": [
 				"Physical_Targeted_Impact_01.ogg"
 			]
@@ -48801,10 +49435,7 @@ var parseCardsText = {
 				"Sneaky_Target_Loop_01.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your minions <b>Stealth</b> until your next turn.",
 		"cardClass": "ROGUE",
@@ -49123,9 +49754,6 @@ var parseCardsText = {
 			"Sneaky_Target_Damage_01": [
 				"Sneaky_Target_Damage_01.ogg"
 			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Sneaky_Target_Damage_03": [
 				"Sneaky_Target_Damage_03.ogg"
 			],
@@ -49177,22 +49805,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $2 damage to the enemy hero. <b>Combo:</b> Return this to your hand next turn.",
 		"cardClass": "ROGUE",
@@ -49218,9 +49831,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shared_SneakyUntargettedImpactStandard_1": [
 				"Shared_SneakyUntargettedImpactStandard_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "Return a friendly minion to your hand. It costs (2) less.",
@@ -49298,9 +49908,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -49324,8 +49931,20 @@ var parseCardsText = {
 		"id": "EX1_154a",
 		"audio": {
 			"play": [],
+			"Shared_Nature_Fizzle_1": [
+				"Shared_Nature_Fizzle_1.ogg"
+			],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			],
+			"Shared_Nature_PreCast_1": [
+				"Shared_Nature_PreCast_1.ogg"
+			],
+			"Shared_NatureImpact02_1": [
+				"Shared_NatureImpact02_1.ogg"
+			]
 		},
 		"text": "Deal $3 damage to a minion.",
 		"dbfId": 253,
@@ -49340,8 +49959,20 @@ var parseCardsText = {
 		"id": "EX1_154b",
 		"audio": {
 			"play": [],
+			"Shared_Nature_Fizzle_1": [
+				"Shared_Nature_Fizzle_1.ogg"
+			],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			],
+			"Shared_Nature_PreCast_1": [
+				"Shared_Nature_PreCast_1.ogg"
+			],
+			"Shared_NatureImpact02_1": [
+				"Shared_NatureImpact02_1.ogg"
+			]
 		},
 		"text": "Deal $1 damage to a minion. Draw a card.",
 		"dbfId": 137,
@@ -49367,16 +49998,10 @@ var parseCardsText = {
 		"id": "EX1_155",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -49400,8 +50025,20 @@ var parseCardsText = {
 		"id": "EX1_155a",
 		"audio": {
 			"play": [],
+			"Shared_Nature_Fizzle_1": [
+				"Shared_Nature_Fizzle_1.ogg"
+			],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			],
+			"Shared_Nature_PreCast_1": [
+				"Shared_Nature_PreCast_1.ogg"
+			],
+			"Shaman_Windfury_Impact": [
+				"Shaman_Windfury_Impact.ogg"
+			]
 		},
 		"text": "+4 Attack.",
 		"dbfId": 468,
@@ -49431,8 +50068,20 @@ var parseCardsText = {
 		"id": "EX1_155b",
 		"audio": {
 			"play": [],
+			"Shared_Nature_Fizzle_1": [
+				"Shared_Nature_Fizzle_1.ogg"
+			],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			],
+			"Shared_Nature_PreCast_1": [
+				"Shared_Nature_PreCast_1.ogg"
+			],
+			"Shaman_Windfury_Impact": [
+				"Shaman_Windfury_Impact.ogg"
+			]
 		},
 		"text": "+4 Health and <b>Taunt</b>.",
 		"dbfId": 690,
@@ -49470,9 +50119,6 @@ var parseCardsText = {
 		"id": "EX1_158",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [],
 			"Shared_Nature_Cast_1": [
 				"Shared_Nature_Cast_1.ogg"
@@ -49562,7 +50208,10 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Shared_PawUntargeted02_PreCast": [
+				"Shared_PawUntargeted02_PreCast.ogg"
+			]
 		},
 		"text": "Summon a 3/2 Panther.",
 		"dbfId": 60,
@@ -49577,6 +50226,9 @@ var parseCardsText = {
 		"id": "EX1_160b",
 		"audio": {
 			"play": [],
+			"Shared_Rage_InnerRage_Impact_1": [
+				"Shared_Rage_InnerRage_Impact_1.ogg"
+			],
 			"death": [],
 			"attack": []
 		},
@@ -49640,9 +50292,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -49744,7 +50393,13 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"Shared_Nature_Cast_1": [
+				"Shared_Nature_Cast_1.ogg"
+			],
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			]
 		},
 		"text": "Gain 2 Mana Crystals.",
 		"dbfId": 451,
@@ -49760,7 +50415,13 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"Shared_Nature_Cast_1": [
+				"Shared_Nature_Cast_1.ogg"
+			],
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			]
 		},
 		"text": "Draw 3 cards.",
 		"dbfId": 325,
@@ -49796,9 +50457,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_EX1_165_Attack_02.ogg"
-			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
 			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
@@ -49940,9 +50598,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_EX1_166_Attack_02.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			],
 			"Shared_Lunar_Cast_01": [
 				"Shared_Lunar_Cast_01.ogg"
@@ -50296,9 +50951,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_BabblingBook_Sound": [
 				"SpawnToHand_BabblingBook_Sound.ogg"
 			]
@@ -50322,9 +50974,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Warlock_Shadow_Buff_Impact_Sound": [
 				"Warlock_Shadow_Buff_Impact_Sound.ogg"
 			]
@@ -50347,13 +50996,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Add a random card to your hand <i>(from your opponent's class)</i>.",
 		"cardClass": "ROGUE",
@@ -50424,23 +51067,8 @@ var parseCardsText = {
 		"id": "EX1_241",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $5 damage. <b>Overload:</b> (2)",
 		"cardClass": "SHAMAN",
@@ -50653,12 +51281,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"SFX_HexFrog_EnterPlay": [
 				"SFX_HexFrog_EnterPlay.ogg"
 			]
@@ -51076,32 +51698,6 @@ var parseCardsText = {
 		"playerClass": "Mage",
 		"name": "Arcane Missiles",
 		"id": "EX1_277",
-		"audio": {
-			"play": [],
-			"Shared_Arcane_Fizzle_1": [
-				"Shared_Arcane_Fizzle_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
-			"Shared_Arcane_PreCast_1": [
-				"Shared_Arcane_PreCast_1.ogg"
-			],
-			"death": [],
-			"Shared_Shadow_Cast_1": [
-				"Shared_Shadow_Cast_1.ogg"
-			],
-			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
-		},
 		"text": "Deal $3 damage randomly split among all enemies.",
 		"cardClass": "MAGE",
 		"rarity": "Free"
@@ -51159,9 +51755,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Shared_SneakyAttackImpactStandard_1": [
 				"Shared_SneakyAttackImpactStandard_1.ogg"
 			]
@@ -51190,9 +51783,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Impact_Large": [
 				"Shared_Fire_Impact_Large.ogg"
@@ -51762,9 +52352,6 @@ var parseCardsText = {
 				"Shared_Shadow_Start_1.ogg"
 			],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Shadow_PreCast_2": [
 				"Shared_Shadow_PreCast_2.ogg"
 			],
@@ -51899,23 +52486,8 @@ var parseCardsText = {
 			"death": [
 				"VO_EX1_313_Death_03.ogg"
 			],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
 			"attack": [
 				"VO_EX1_313_Attack_02.ogg"
-			],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 5 damage to your hero.",
@@ -52094,29 +52666,11 @@ var parseCardsText = {
 			"play": [
 				"VO_EX1_319_Play_01.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"VO_EX1_319_Death_03.ogg"
 			],
 			"attack": [
 				"VO_EX1_319_Attack_02.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 3 damage to your hero.",
@@ -52263,10 +52817,7 @@ var parseCardsText = {
 			"Arcane_Impact_03_Bookwyrm_Sound": [
 				"Arcane_Impact_03_Bookwyrm_Sound.ogg"
 			],
-			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Silence</b> a minion.",
 		"cardClass": "PRIEST",
@@ -52471,14 +53022,8 @@ var parseCardsText = {
 		"id": "EX1_349",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Draw cards until you have as many in hand as your opponent.",
 		"cardClass": "PALADIN",
@@ -52535,9 +53080,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_LayOnHands_target_1": [
 				"spell_LayOnHands_target_1.ogg"
 			]
@@ -52569,9 +53111,6 @@ var parseCardsText = {
 			"attack": [],
 			"spell_BlessedChampion_target_1": [
 				"spell_BlessedChampion_target_1.ogg"
-			],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
 			]
 		},
 		"text": "Double a minion's Attack.",
@@ -52646,9 +53185,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_Humility_target_1": [
 				"spell_Humility_target_1.ogg"
 			]
@@ -52711,26 +53247,11 @@ var parseCardsText = {
 			"play": [
 				"VO_EX1_362_Play_01.ogg"
 			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [
 				"VO_EX1_362_Death_03.ogg"
 			],
 			"attack": [
 				"VO_EX1_362_Attack_02.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly minion <b>Divine Shield</b>.",
@@ -52760,10 +53281,7 @@ var parseCardsText = {
 			"spell_BlessingOfWisdom_target_1": [
 				"spell_BlessingOfWisdom_target_1.ogg"
 			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Choose a minion. Whenever it attacks, draw a card.",
 		"cardClass": "PALADIN",
@@ -52844,9 +53362,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_Holy_projectile_1": [
 				"spell_Holy_projectile_1.ogg"
 			]
@@ -52943,23 +53458,8 @@ var parseCardsText = {
 		"id": "EX1_371",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion <b>Divine Shield</b>.",
 		"cardClass": "PALADIN",
@@ -53224,12 +53724,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -53648,12 +54142,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -53737,22 +54225,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal 1 damage to a minion for each Armor you have.",
 		"cardClass": "WARRIOR",
@@ -54356,12 +54829,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -54370,9 +54837,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
 			"Arrow_Explosive_Shot_Explode_01": [
 				"Arrow_Explosive_Shot_Explode_01.ogg"
 			],
@@ -54484,10 +54948,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $3 damage. If you control a Beast, deal\n$5 damage instead.",
 		"cardClass": "HUNTER",
@@ -54759,9 +55220,6 @@ var parseCardsText = {
 			"attack": [
 				"HarrisonJ_EX1_558_whip_attack.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"spell_Humility_target_1": [
 				"spell_Humility_target_1.ogg"
 			]
@@ -55013,9 +55471,6 @@ var parseCardsText = {
 			"attack": [
 				"WoW_EX1_564_FacelessManipulator_Attack.ogg"
 			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -55145,10 +55600,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your hero +4 Attack this turn. Gain 4 Armor.",
 		"cardClass": "DRUID",
@@ -55442,12 +55894,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			]
@@ -55511,9 +55957,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shared_SneakyUntargettedImpactStandard_1": [
 				"Shared_SneakyUntargettedImpactStandard_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "Return an enemy minion to your opponent's hand.",
@@ -55588,17 +56031,11 @@ var parseCardsText = {
 			"play": [
 				"VO_EX1_583_Play_01.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [
 				"VO_EX1_583_Death_03.ogg"
-			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
 			],
 			"attack": [
 				"VO_EX1_583_Attack_02.ogg"
@@ -55639,9 +56076,6 @@ var parseCardsText = {
 		"audio": {
 			"play": [
 				"VO_EX1_584_Play_01.ogg"
-			],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
 			],
 			"death": [
 				"VO_EX1_584_Death_03.ogg"
@@ -55771,17 +56205,11 @@ var parseCardsText = {
 			"play": [
 				"VO_EX1_587_Play_01.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"Shared_Nature_Fizzle_1": [
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [
 				"VO_EX1_587_Death_03.ogg"
-			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
 			],
 			"attack": [
 				"VO_EX1_587_Attack_02.ogg"
@@ -55828,9 +56256,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_EX1_590_Attack_02.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> All minions lose <b>Divine Shield</b>. Gain +3/+3 for each Shield lost.",
@@ -55928,23 +56353,6 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Nightblade",
 		"id": "EX1_593",
-		"audio": {
-			"play": [
-				"VO_EX1_593_Play_01.ogg"
-			],
-			"death": [
-				"VO_EX1_593_Death_03.ogg"
-			],
-			"Shared_KnifeThrow_Impact_1": [
-				"Shared_KnifeThrow_Impact_1.ogg"
-			],
-			"attack": [
-				"VO_EX1_593_Attack_02.ogg"
-			],
-			"Shared_KnifeThrow_Cast_1": [
-				"Shared_KnifeThrow_Cast_1.ogg"
-			]
-		},
 		"text": "<b>Battlecry: </b>Deal 3 damage to the enemy hero.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Free"
@@ -56148,23 +56556,8 @@ var parseCardsText = {
 			"death": [
 				"VO_EX1_603_Death_03.ogg"
 			],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
 			"attack": [
 				"VO_EX1_603_Attack_02.ogg"
-			],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 1 damage to a minion and give it +2 Attack.",
@@ -56278,10 +56671,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 5 Armor.\nDraw a card.",
 		"cardClass": "WARRIOR",
@@ -56684,12 +57074,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -56697,18 +57081,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -56741,10 +57113,7 @@ var parseCardsText = {
 			"spell_holy_precast_loop_1": [
 				"spell_holy_precast_loop_1.ogg"
 			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Change the Health of ALL minions to 1.",
 		"cardClass": "PALADIN",
@@ -56817,10 +57186,7 @@ var parseCardsText = {
 			"CircleOfHealing_cast": [
 				"CircleOfHealing_cast.ogg"
 			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #4 Health to ALL minions.",
 		"cardClass": "PRIEST",
@@ -56929,26 +57295,11 @@ var parseCardsText = {
 			"play": [
 				"EX1_623_Temple_Enforcer_EnterPlay_1.ogg"
 			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [
 				"EX1_623_Temple_Enforcer_Death_4.ogg"
 			],
 			"attack": [
 				"EX1_623_Temple_Enforcer_Attack_2.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly minion +3 Health.",
@@ -57758,6 +58109,18 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Aviana",
 		"id": "FB_Champs_AT_045",
+		"audio": {
+			"play": [
+				"VO_AT_045_PLAY_01.ogg",
+				"Hyjal_Play_Stinger_2.ogg"
+			],
+			"death": [
+				"VO_AT_045_DEATH_03.ogg"
+			],
+			"attack": [
+				"VO_AT_045_ATTACK_02.ogg"
+			]
+		},
 		"text": "Your minions cost (1).",
 		"cardClass": "DRUID",
 		"rarity": "Legendary"
@@ -57767,6 +58130,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Aviana's Blessing",
 		"id": "FB_Champs_AT_045eee",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Costs (1).",
 		"dbfId": 55132,
 		"type": "Enchantment",
@@ -57786,6 +58154,24 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Raza the Chained",
 		"id": "FB_Champs_CFM_020",
+		"audio": {
+			"play": [
+				"VO_CFM_020_Male_Ethereal_Play_01.ogg",
+				"RazaTheUnchained_Underlay_Play.ogg",
+				"Cursed_Play_Stinger_2.ogg"
+			],
+			"death": [
+				"VO_CFM_020_Male_Ethereal_Death_01.ogg",
+				"RazaTheUnchained_Underlay_Death.ogg"
+			],
+			"attack": [
+				"VO_CFM_020_Male_Ethereal_Attack_01.ogg",
+				"RazaTheUnchained_Underlay_Attack.ogg"
+			],
+			"Raza_HeroPower_Impact_Sound": [
+				"Raza_HeroPower_Impact_Sound.ogg"
+			]
+		},
 		"text": "[x]  <b>Battlecry:</b> If your deck has  \nno duplicates, your Hero\n Power costs (0) this game.",
 		"cardClass": "PRIEST",
 		"rarity": "Legendary"
@@ -57795,6 +58181,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Raza Enchant",
 		"id": "FB_Champs_CFM_020e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Your <b>Hero Power</b> costs (0).",
 		"dbfId": 55120,
 		"type": "Enchantment",
@@ -57815,6 +58206,21 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Patches the Pirate",
 		"id": "FB_Champs_CFM_637",
+		"audio": {
+			"play": [
+				"VO_CFM_637_Male_Beholder_Attack_01.ogg",
+				"Pirate_Play_Stinger_2.ogg",
+				"FloatingWatcher_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_CFM_637_Male_Beholder_Death_01.ogg",
+				"FloatingWatcher_Death_Underlay.ogg"
+			],
+			"attack": [
+				"VO_CFM_637_Male_Beholder_Attack_02.ogg",
+				"FloatingWatcher_Attack_Underlay.ogg"
+			]
+		},
 		"text": "[x]<b>Charge</b>. After you play a Pirate,\nsummon this minion\nfrom your deck.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Legendary"
@@ -57825,6 +58231,17 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Wild Growth",
 		"id": "FB_Champs_CS2_013",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Shared_Nature_Cast_1": [
+				"Shared_Nature_Cast_1.ogg"
+			],
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			]
+		},
 		"text": "Gain an empty Mana Crystal.",
 		"dbfId": 55779,
 		"type": "Spell",
@@ -57840,6 +58257,20 @@ var parseCardsText = {
 			"COMBO"
 		],
 		"id": "FB_Champs_CS2_073",
+		"audio": {
+			"play": [],
+			"Shared_Rage_PreCast_1": [
+				"Shared_Rage_PreCast_1.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Shared_Rage_Start_1": [
+				"Shared_Rage_Start_1.ogg"
+			],
+			"Shared_Rage_Fizzle_1": [
+				"Shared_Rage_Fizzle_1.ogg"
+			]
+		},
 		"text": "Give a minion +2 Attack. <b>Combo:</b> +4 Attack instead.",
 		"dbfId": 55785,
 		"type": "Spell",
@@ -57852,6 +58283,14 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Hunter's Mark",
 		"id": "FB_Champs_CS2_084",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Hunters_Mark_cast": [
+				"Hunters_Mark_cast.ogg"
+			]
+		},
 		"text": "Change a minion's Health to 1.",
 		"dbfId": 55788,
 		"type": "Spell",
@@ -57882,6 +58321,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Execute",
 		"id": "FB_Champs_CS2_108",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Destroy a damaged enemy minion.",
 		"dbfId": 49274,
 		"type": "Spell",
@@ -57942,6 +58386,32 @@ var parseCardsText = {
 			"AFFECTED_BY_SPELL_POWER"
 		],
 		"id": "FB_Champs_CS2_233",
+		"audio": {
+			"play": [],
+			"Rogue_BladeFlurry_Impact_1": [
+				"Rogue_BladeFlurry_Impact_1.ogg"
+			],
+			"Rogue_BladeFlurry_Impact_2": [
+				"Rogue_BladeFlurry_Impact_2.ogg"
+			],
+			"WoW_whirlwindshort": [
+				"WoW_whirlwindshort.ogg"
+			],
+			"death": [],
+			"Rogue_BladeFlurry_Impact_5": [
+				"Rogue_BladeFlurry_Impact_5.ogg"
+			],
+			"attack": [],
+			"Rogue_BladeFlurry_Impact_3": [
+				"Rogue_BladeFlurry_Impact_3.ogg"
+			],
+			"Rogue_BladeFlurry_Cast_1": [
+				"Rogue_BladeFlurry_Cast_1.ogg"
+			],
+			"Rogue_BladeFlurry_Impact_4": [
+				"Rogue_BladeFlurry_Impact_4.ogg"
+			]
+		},
 		"text": "Destroy your weapon and deal its damage to all enemies.",
 		"dbfId": 48851,
 		"type": "Spell",
@@ -57981,23 +58451,11 @@ var parseCardsText = {
 			"play": [
 				"VO_EX1_005_Play_01.ogg"
 			],
-			"Tutorial_Rifle_Cock_01": [
-				"Tutorial_Rifle_Cock_01.ogg"
-			],
 			"death": [
 				"VO_EX1_005_Death_03.ogg"
 			],
 			"attack": [
 				"VO_EX1_005_Attack_02.ogg"
-			],
-			"FX_FireballEvent04_SpellCancel_01": [
-				"FX_FireballEvent04_SpellCancel_01.ogg"
-			],
-			"Tutorial_Rifle_Fire_01": [
-				"Tutorial_Rifle_Fire_01.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Destroy a minion with 7 or more Attack.",
@@ -58069,6 +58527,17 @@ var parseCardsText = {
 			"CHOOSE_ONE"
 		],
 		"id": "FB_Champs_EX1_164",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Shared_Nature_Cast_1": [
+				"Shared_Nature_Cast_1.ogg"
+			],
+			"attack": [],
+			"Nature_Target_Start_01": [
+				"Nature_Target_Start_01.ogg"
+			]
+		},
 		"text": "<b>Choose One -</b> Gain 2 Mana Crystals; or Draw 3 cards.",
 		"dbfId": 55780,
 		"type": "Spell",
@@ -58102,9 +58571,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_EX1_165_Attack_02.ogg"
 			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -58135,6 +58601,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Bear Form",
 		"id": "FB_Champs_EX1_165b",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "+2 Health and <b>Taunt</b>.",
 		"dbfId": 49347,
 		"type": "Spell",
@@ -58212,6 +58683,29 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Keeper of the Grove",
 		"id": "FB_Champs_EX1_166",
+		"audio": {
+			"play": [
+				"VO_EX1_166_Play_01.ogg"
+			],
+			"Shared_Arcane_Fizzle_1": [
+				"Shared_Arcane_Fizzle_1.ogg"
+			],
+			"Shared_Arcane_PreCast_1": [
+				"Shared_Arcane_PreCast_1.ogg"
+			],
+			"death": [
+				"VO_EX1_166_Death_03.ogg"
+			],
+			"attack": [
+				"VO_EX1_166_Attack_02.ogg"
+			],
+			"Shared_Lunar_Cast_01": [
+				"Shared_Lunar_Cast_01.ogg"
+			],
+			"Shared_Lunar_Impact_01": [
+				"Shared_Lunar_Impact_01.ogg"
+			]
+		},
 		"text": "<b>Choose One -</b> Deal 2 damage; or <b>Silence</b> a minion.",
 		"cardClass": "DRUID",
 		"rarity": "Rare"
@@ -58245,6 +58739,20 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"id": "FB_Champs_EX1_246",
+		"audio": {
+			"play": [],
+			"Shared_Arcane_Fizzle_1": [
+				"Shared_Arcane_Fizzle_1.ogg"
+			],
+			"Shared_Arcane_PreCast_1": [
+				"Shared_Arcane_PreCast_1.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"SFX_HexFrog_EnterPlay": [
+				"SFX_HexFrog_EnterPlay.ogg"
+			]
+		},
 		"text": "Transform a minion into a 0/1 Frog with <b>Taunt</b>.",
 		"dbfId": 49275,
 		"type": "Spell",
@@ -58264,9 +58772,6 @@ var parseCardsText = {
 				"Shared_Shadow_Start_1.ogg"
 			],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Shadow_PreCast_2": [
 				"Shared_Shadow_PreCast_2.ogg"
 			],
@@ -58326,6 +58831,17 @@ var parseCardsText = {
 		"attack": 0,
 		"name": "Flametongue Totem",
 		"id": "FB_Champs_EX1_565",
+		"audio": {
+			"play": [
+				"EX1_565_Play_FlametongueTotem.ogg"
+			],
+			"death": [
+				"EX1_565_Death_FlameTongueTotem.ogg"
+			],
+			"attack": [
+				"SFX_EX1_565_Attack_00.ogg"
+			]
+		},
 		"text": "Adjacent minions have +2 Attack.",
 		"cardClass": "SHAMAN",
 		"rarity": "Free"
@@ -58359,6 +58875,20 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Equality",
 		"id": "FB_Champs_EX1_619",
+		"audio": {
+			"play": [],
+			"spell_holy_fizzle_1": [
+				"spell_holy_fizzle_1.ogg"
+			],
+			"spell_Equality_target_1": [
+				"spell_Equality_target_1.ogg"
+			],
+			"death": [],
+			"spell_holy_precast_loop_1": [
+				"spell_holy_precast_loop_1.ogg"
+			],
+			"attack": []
+		},
 		"text": "Change the Health of ALL minions to 1.",
 		"dbfId": 55787,
 		"type": "Spell",
@@ -58448,6 +58978,17 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"id": "FB_Champs_ICC_221",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Rogue_DeadlyPoison_Impact_1": [
+				"Rogue_DeadlyPoison_Impact_1.ogg"
+			],
+			"Shared_Physical_Cast": [
+				"Shared_Physical_Cast.ogg"
+			]
+		},
 		"text": "Give your weapon <b>Lifesteal</b>.",
 		"dbfId": 55784,
 		"type": "Spell",
@@ -58462,6 +59003,11 @@ var parseCardsText = {
 			"LIFESTEAL"
 		],
 		"id": "FB_Champs_ICC_221e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Has <b>Lifesteal</b>.",
 		"dbfId": 55783,
 		"type": "Enchantment",
@@ -58481,6 +59027,18 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Saronite Chain Gang",
 		"id": "FB_Champs_ICC_466",
+		"audio": {
+			"play": [
+				"VO_ICC_466_Male_Draenei_Play_01.ogg",
+				"ChainGang_Play_Underlay.ogg"
+			],
+			"death": [
+				"VO_ICC_466_Male_Draenei_Death_01.ogg"
+			],
+			"attack": [
+				"VO_ICC_466_Male_Draenei_Attack_01.ogg"
+			]
+		},
 		"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> Summon a\ncopy of this minion.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -58501,6 +59059,23 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Bonemare",
 		"id": "FB_Champs_ICC_705",
+		"audio": {
+			"play": [
+				"ICC_705_Bonemare_Play.ogg",
+				"ArmoredWarhorseNoVox_Play_Underlay.ogg"
+			],
+			"DK_Blue_Buff_Impact_Sound": [
+				"DK_Blue_Buff_Impact_Sound.ogg"
+			],
+			"death": [
+				"ICC_705_Bonemare_Death.ogg",
+				"ArmoredWarhorseNoVox_Death_Underlay.ogg"
+			],
+			"attack": [
+				"ICC_705_Bonemare_Attack.ogg",
+				"ArmoredWarhorseNoVox_Attack_Underlay.ogg"
+			]
+		},
 		"text": "<b>Battlecry:</b> Give a friendly minion +4/+4 and <b>Taunt</b>.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -58540,6 +59115,17 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Naga Sea Witch",
 		"id": "FB_Champs_LOE_038",
+		"audio": {
+			"play": [
+				"VO_LOE_038_Play_01.ogg"
+			],
+			"death": [
+				"VO_LOE_038_Death_03.ogg"
+			],
+			"attack": [
+				"VO_LOE_038_Attack_02.ogg"
+			]
+		},
 		"text": "Your cards cost (5).",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -58551,6 +59137,32 @@ var parseCardsText = {
 		"faction": "ALLIANCE",
 		"name": "Dark Pact",
 		"id": "FB_Champs_LOOT_017",
+		"audio": {
+			"play": [],
+			"Warlock_SiphonSoul_CasterImpact_1": [
+				"Warlock_SiphonSoul_CasterImpact_1.ogg"
+			],
+			"death": [],
+			"Shared_Shadow_Start_1": [
+				"Shared_Shadow_Start_1.ogg"
+			],
+			"Shared_Shadow_Cast_1": [
+				"Shared_Shadow_Cast_1.ogg"
+			],
+			"attack": [],
+			"Shared_WarlockBaneOfDoom_Impact_1": [
+				"Shared_WarlockBaneOfDoom_Impact_1.ogg"
+			],
+			"Shared_Shadow_PreCast_2": [
+				"Shared_Shadow_PreCast_2.ogg"
+			],
+			"GlassShatter_Underlay_Death": [
+				"GlassShatter_Underlay_Death.ogg"
+			],
+			"Shared_Shadow_Fizzle_1": [
+				"Shared_Shadow_Fizzle_1.ogg"
+			]
+		},
 		"text": "Destroy a friendly minion. Restore #8 Health to your hero.",
 		"dbfId": 55125,
 		"type": "Spell",
@@ -58563,6 +59175,14 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Lesser Emerald Spellstone",
 		"id": "FB_Champs_LOOT_080",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Shared_PawUntargeted02_PreCast": [
+				"Shared_PawUntargeted02_PreCast.ogg"
+			]
+		},
 		"text": "Summon two 3/3 Wolves. <i>(Play a <b>Secret</b> to upgrade.)</i>",
 		"dbfId": 55789,
 		"type": "Spell",
@@ -58575,6 +59195,14 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Emerald Spellstone",
 		"id": "FB_Champs_LOOT_080t2",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Shared_PawUntargeted02_PreCast": [
+				"Shared_PawUntargeted02_PreCast.ogg"
+			]
+		},
 		"text": "Summon three 3/3 Wolves. <i>(Play a <b>Secret</b> to upgrade.)</i>",
 		"dbfId": 55791,
 		"type": "Spell",
@@ -58587,6 +59215,14 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Greater Emerald Spellstone",
 		"id": "FB_Champs_LOOT_080t3",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Shared_PawUntargeted02_PreCast": [
+				"Shared_PawUntargeted02_PreCast.ogg"
+			]
+		},
 		"text": "Summon four 3/3 Wolves.",
 		"dbfId": 55790,
 		"type": "Spell",
@@ -58602,6 +59238,14 @@ var parseCardsText = {
 			"RECRUIT"
 		],
 		"id": "FB_Champs_LOOT_093",
+		"audio": {
+			"play": [],
+			"death": [],
+			"Recruit_Deck_AE_Sound": [
+				"Recruit_Deck_AE_Sound.ogg"
+			],
+			"attack": []
+		},
 		"text": "[x]<b>Recruit</b> 3 minions that\n cost (2) or less.",
 		"dbfId": 55130,
 		"type": "Spell",
@@ -58619,6 +59263,17 @@ var parseCardsText = {
 		"attack": 5,
 		"name": "Corridor Creeper",
 		"id": "FB_Champs_LOOT_149",
+		"audio": {
+			"play": [
+				"LOOT_149_CorridorCreeper_Play.ogg"
+			],
+			"death": [
+				"LOOT_149_CorridorCreeper_Death.ogg"
+			],
+			"attack": [
+				"LOOT_149_CorridorCreeper_Attack.ogg"
+			]
+		},
 		"text": "Costs (1) less whenever a minion dies while this is in your hand.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -58639,6 +59294,17 @@ var parseCardsText = {
 		"attack": 2,
 		"name": "Possessed Lackey",
 		"id": "FB_Champs_LOOT_306",
+		"audio": {
+			"play": [
+				"VO_LOOT_306a_Male_Gnome_Play_04.ogg"
+			],
+			"death": [
+				"VO_LOOT_306a_Male_Gnome_Death_01.ogg"
+			],
+			"attack": [
+				"VO_LOOT_306a_Male_Gnome_Attack_01.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> <b>Recruit</b> a Demon.",
 		"cardClass": "WARLOCK",
 		"rarity": "Rare"
@@ -58652,6 +59318,14 @@ var parseCardsText = {
 			"TAUNT"
 		],
 		"id": "FB_Champs_LOOT_333",
+		"audio": {
+			"play": [],
+			"Holy_Targeted_Healing_Potion_FX_Impact": [
+				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
+			],
+			"death": [],
+			"attack": []
+		},
 		"text": "Give your Silver Hand Recruits +2/+2 and <b>Taunt</b>.",
 		"dbfId": 55781,
 		"type": "Spell",
@@ -58671,6 +59345,17 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Spiteful Summoner",
 		"id": "FB_Champs_LOOT_539",
+		"audio": {
+			"play": [
+				"VO_LOOT_539_Female_Troll_Play_01.ogg"
+			],
+			"death": [
+				"VO_LOOT_539_Female_Troll_Death_01.ogg"
+			],
+			"attack": [
+				"VO_LOOT_539_Female_Troll_Attack_01.ogg"
+			]
+		},
 		"text": "[x]<b>Battlecry:</b> Reveal a spell\nfrom your deck. Summon\n a random minion with\nthe same Cost.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Epic"
@@ -58692,20 +59377,11 @@ var parseCardsText = {
 			"play": [
 				"NEW1_008_AncientOfLore_EnterPlay.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"NEW1_008_AncientOfLore_Death.ogg"
 			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [
 				"NEW1_008_AncientOfLore_Attack.ogg"
-			],
-			"Shaman_Windfury_Impact": [
-				"Shaman_Windfury_Impact.ogg"
 			]
 		},
 		"text": "<b>Choose One -</b> Draw 2 cards; or Restore #5 Health.",
@@ -58757,6 +59433,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Mana Wyrm",
 		"id": "FB_Champs_NEW1_012",
+		"audio": {
+			"play": [
+				"NEW1_012_Mana_Wyrm_EnterPlay1.ogg"
+			],
+			"death": [
+				"NEW1_012_Mana_Wyrm_Death3.ogg"
+			],
+			"attack": [
+				"NEW1_012_Mana_Wyrm_Attack2.ogg"
+			]
+		},
 		"text": "Whenever you cast a spell, gain +1 Attack.",
 		"cardClass": "MAGE",
 		"rarity": "Common"
@@ -58803,6 +59490,17 @@ var parseCardsText = {
 		"attack": 4,
 		"name": "Druid of the Claw",
 		"id": "FB_Champs_OG_044a",
+		"audio": {
+			"play": [
+				"DruidOfTheClaw_OG_044a_Play.ogg"
+			],
+			"death": [
+				"DruidOfTheClaw_OG_044a_Death.ogg"
+			],
+			"attack": [
+				"DruidOfTheClaw_OG_044a_Attack.ogg"
+			]
+		},
 		"text": "<b>Charge</b>\n<b>Taunt</b>",
 		"cardClass": "DRUID",
 		"rarity": "Common"
@@ -58875,23 +59573,39 @@ var parseCardsText = {
 		"name": "Damaged Golem",
 		"health": 1,
 		"id": "FB_Champs_skele21",
+		"audio": {
+			"play": [
+				"SFX_skele21_EnterPlay.ogg"
+			],
+			"death": [
+				"SFX_skele21_Death.ogg"
+			],
+			"attack": [
+				"SFX_skele21_Attack.ogg"
+			]
+		},
 		"dbfId": 49349,
 		"type": "Minion",
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"playerClass": "Rogue",
-		"elite": true,
 		"cost": 1,
 		"set": "Tb",
-		"name": "The Caverns Below",
 		"mechanics": [
 			"QUEST"
 		],
-		"id": "FB_Champs_UNG_067",
-		"text": "[x]<b>Quest:</b> Play four minions\nwith the same name.\n<b>Reward:</b> Crystal Core.",
 		"dbfId": 55126,
 		"type": "Spell",
+		"playerClass": "Rogue",
+		"elite": true,
+		"name": "The Caverns Below",
+		"id": "FB_Champs_UNG_067",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
+		"text": "[x]<b>Quest:</b> Play four minions\nwith the same name.\n<b>Reward:</b> Crystal Core.",
 		"cardClass": "ROGUE",
 		"rarity": "Legendary"
 	},
@@ -58905,6 +59619,14 @@ var parseCardsText = {
 			"RITUAL"
 		],
 		"id": "FB_Champs_UNG_067t1",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"ForgottenLegion_AE_Sound": [
+				"ForgottenLegion_AE_Sound.ogg"
+			]
+		},
 		"text": "For the rest of the game, your minions are 5/5.",
 		"dbfId": 55127,
 		"type": "Spell",
@@ -58915,6 +59637,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Crystallized",
 		"id": "FB_Champs_UNG_067t1e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Your minions are 5/5.",
 		"dbfId": 55128,
 		"type": "Enchantment",
@@ -58925,6 +59652,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Crystallized",
 		"id": "FB_Champs_UNG_067t1e2",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "5/5.",
 		"dbfId": 55129,
 		"type": "Enchantment",
@@ -58977,6 +59709,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Discover Card 3",
 		"id": "FB_Duelers_Discover3",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 54096,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -58986,6 +59723,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Discover Card 4",
 		"id": "FB_Duelers_Discover4",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 54097,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -58995,6 +59737,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Discover Card 5",
 		"id": "FB_Duelers_Discover5",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 54098,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -61494,10 +62241,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Cards in your hand, and next game's starting hand, cost (0).",
 		"dbfId": 50325,
@@ -61519,10 +62263,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Your starting hand's cards all cost (0).",
 		"dbfId": 50765,
@@ -61644,6 +62385,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Ban Opponent's Card",
 		"id": "FB_TopX_Ban",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 54768,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -61655,6 +62401,11 @@ var parseCardsText = {
 		"hideStats": true,
 		"name": "The Mystery Card",
 		"id": "FB_TopX_Mystery",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Choose your opponent's hidden fourth card.",
 		"dbfId": 54934,
 		"type": "Spell",
@@ -63379,9 +64130,6 @@ var parseCardsText = {
 				"Nature_Impact_03_Rebirth_Sound_01.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -63917,14 +64665,8 @@ var parseCardsText = {
 		"id": "GAME_005",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 1 Mana Crystal this turn only.",
 		"dbfId": 1746,
@@ -64431,15 +65173,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_GIL_124_Male_Giant_Attack_02.ogg"
 			],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			]
@@ -64735,9 +65468,6 @@ var parseCardsText = {
 		"id": "GIL_145",
 		"audio": {
 			"play": [],
-			"Liadrin_HeroPower_Summon": [
-				"Liadrin_HeroPower_Summon.ogg"
-			],
 			"death": [],
 			"spell_Holy_target_spare": [
 				"spell_Holy_target_spare.ogg"
@@ -64950,9 +65680,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_GIL_188_Female_NightElf_Attack_01.ogg"
-			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
 			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
@@ -65535,12 +66262,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_GIL_212_Male_Goblin_Attack_01.ogg",
 				"WingFlapMedium_Underlay_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> Add two\nrandom 1-Cost minions\nto your hand.",
@@ -65574,9 +66295,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_GIL_213_Female_Gnoll_Attack_01.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Nature_Impact_Leaves_01_Sound": [
 				"Nature_Impact_Leaves_01_Sound.ogg"
 			]
@@ -65605,6 +66323,9 @@ var parseCardsText = {
 		"audio": {
 			"play": [
 				"VO_GIL_504_Female_Orc_Play_02.ogg"
+			],
+			"Hagatha_FullboardAE": [
+				"Hagatha_FullboardAE.ogg"
 			],
 			"death": [
 				"VO_GIL_504_Female_Orc_Death_01.ogg"
@@ -65669,9 +66390,6 @@ var parseCardsText = {
 			],
 			"Sneaky_Target_Damage_01": [
 				"Sneaky_Target_Damage_01.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			],
 			"Sneaky_Target_Damage_03": [
 				"Sneaky_Target_Damage_03.ogg"
@@ -65975,12 +66693,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -66026,9 +66738,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_GIL_526_Male_Skeleton_Attack_02.ogg",
 				"SwordHeavy_Underlay_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1 Attack and <b>Taunt</b>.",
@@ -66312,9 +67021,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_GIL_531_Female_Human_Attack_02.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Add a random Shaman spell to your hand.",
@@ -66540,9 +67246,6 @@ var parseCardsText = {
 		"id": "GIL_548",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"death": [],
 			"attack": []
 		},
@@ -66580,9 +67283,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_GIL_549_Female_Gnome_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> Add a random\n<b>Legendary</b> minion from\nthe past to your hand.",
@@ -67271,9 +67971,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"GIL_601_Scaleworm_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1 Attack and <b>Rush</b>.",
@@ -67906,9 +68603,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"CathedralGargoyle_GIL_635_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, gain <b>Taunt</b> and <b>Divine Shield</b>.",
@@ -67929,10 +68623,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Draw a card.\nGain 1 Armor for each card in your hand.",
 		"cardClass": "DRUID",
@@ -68310,9 +69001,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_GIL_658_Female_Ancient_Attack_02.ogg",
 				"Sword1_Attack_Underlay.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> Choose a friendly\nminion. Add a 10/10 copy to\nyour hand that costs (10).",
@@ -68357,10 +69045,7 @@ var parseCardsText = {
 			"CircleOfHealing_cast": [
 				"CircleOfHealing_cast.ogg"
 			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #6 Health to all friendly characters.",
 		"cardClass": "PRIEST",
@@ -68381,9 +69066,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Nature_Impact_Leaves_01_Sound": [
 				"Nature_Impact_Leaves_01_Sound.ogg"
 			]
@@ -68601,9 +69283,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_GIL_677_Male_Monster_Attack_03.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			],
 			"FaceCollector_SpawnToHand_Sound": [
 				"FaceCollector_SpawnToHand_Sound.ogg"
@@ -68899,9 +69578,6 @@ var parseCardsText = {
 			"Sneaky_Target_Damage_01": [
 				"Sneaky_Target_Damage_01.ogg"
 			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Sneaky_Target_Damage_03": [
 				"Sneaky_Target_Damage_03.ogg"
 			],
@@ -69081,13 +69757,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Echo</b>\nAdd a random card to your hand <i>(from your opponent's class).</i>",
 		"cardClass": "ROGUE",
@@ -69636,12 +70306,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_GIL_827_Male_Beast_Attack_05.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a random card to your hand <i>(from your opponent's class).</i>",
@@ -69749,9 +70413,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"GIL_835_SinisterSquashling_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Echo</b>\n<b>Battlecry:</b> Restore #2 Health.",
@@ -69810,9 +70471,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"GIL_837_GlitterMoth_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If your deck has only odd-Cost cards, double the Health of your other minions.",
@@ -69864,9 +70522,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"GIL_838_BlackCat_Attack.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Spell Damage +1</b>\n <b>Battlecry:</b> If your deck has only odd-Cost cards, draw a card.",
@@ -70080,9 +70735,6 @@ var parseCardsText = {
 		"id": "GILA_400p",
 		"audio": {
 			"play": [],
-			"FX_MinionSummonMedium_Drop": [
-				"FX_MinionSummonMedium_Drop.ogg"
-			],
 			"DogWhistle_CustomSpawn_Whistle_Sound": [
 				"DogWhistle_CustomSpawn_Whistle_Sound.ogg"
 			],
@@ -70201,9 +70853,6 @@ var parseCardsText = {
 		"audio": {
 			"play": [
 				"Bubba_GILA_410_Play.ogg"
-			],
-			"FX_MinionSummonMedium_Drop": [
-				"FX_MinionSummonMedium_Drop.ogg"
 			],
 			"death": [
 				"Bubba_GILA_410_Death.ogg"
@@ -70356,13 +71005,7 @@ var parseCardsText = {
 		"id": "GILA_414",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Shared_PawUntargeted02_PreCast": [
 				"Shared_PawUntargeted02_PreCast.ogg"
@@ -70784,9 +71427,6 @@ var parseCardsText = {
 			"attack": [],
 			"TessGreymane_Scavenge_Impact": [
 				"TessGreymane_Scavenge_Impact.ogg"
-			],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Hero Power</b>\n<b>Discover</b> a class spell\nthat has been played\nthis game.",
@@ -70966,10 +71606,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\nAt the end of your turn, restore 2 Health to all friendly characters.",
 		"cardClass": "NEUTRAL"
@@ -71007,10 +71644,7 @@ var parseCardsText = {
 			"CircleOfHealing_cast": [
 				"CircleOfHealing_cast.ogg"
 			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore all friendly minions to full Health. They can attack again this turn.",
 		"dbfId": 48494,
@@ -71149,10 +71783,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\nCards that didn't start in your deck cost (1) less.",
 		"cardClass": "NEUTRAL"
@@ -71637,9 +72268,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			],
 			"Barrel_exp_base": [
 				"Barrel_exp_base.ogg"
 			],
@@ -71699,9 +72327,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"RicochetShot_FX_Start": [
 				"RicochetShot_FX_Start.ogg"
 			]
@@ -71752,10 +72377,7 @@ var parseCardsText = {
 				"Improved_CannonPowder_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "[x]Your Cannons do 2\nextra damage this turn.",
 		"dbfId": 47966,
@@ -71795,10 +72417,7 @@ var parseCardsText = {
 				"Improved_CannonPowder_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\nYour Cannons do\n1 extra damage.",
 		"cardClass": "NEUTRAL"
@@ -72105,9 +72724,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_GILA_803_Male_Worgen_Attack_02.ogg"
 			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Rogue_Assassinate_Impact_1": [
 				"Rogue_Assassinate_Impact_1.ogg"
 			]
@@ -72255,10 +72871,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_SneakyUntargettedImpactStandard_1": [
-				"Shared_SneakyUntargettedImpactStandard_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Put 2 random minions from your hand into the battlefield and give them <b>Charge</b>.",
 		"dbfId": 48368,
@@ -72349,10 +72962,7 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\nYour minions cost\n(1) less.",
 		"cardClass": "NEUTRAL"
@@ -72431,9 +73041,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Marin_CustomSummon_Sound": [
 				"Marin_CustomSummon_Sound.ogg"
 			]
@@ -72457,9 +73064,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Marin_CustomSummon_Sound": [
 				"Marin_CustomSummon_Sound.ogg"
 			]
@@ -72483,9 +73087,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Marin_CustomSummon_Sound": [
 				"Marin_CustomSummon_Sound.ogg"
 			]
@@ -72670,22 +73271,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
+			"attack": []
 		},
 		"text": "Destroy a random enemy minion. Upgrade this and shuffle it into your deck.",
 		"dbfId": 48400,
@@ -72702,22 +73288,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
+			"attack": []
 		},
 		"text": "Destroy 2 random enemy minions. Upgrade this and shuffle it into your deck.",
 		"dbfId": 48401,
@@ -72737,22 +73308,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Silence</b> and destroy all enemy minions.",
 		"dbfId": 48402,
@@ -72776,9 +73332,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_BlessingOfKings_target_1": [
 				"spell_BlessingOfKings_target_1.ogg"
 			]
@@ -73197,13 +73750,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Draw a card and add 2 extra copies of it to your hand. They cost (0).",
 		"dbfId": 48398,
@@ -73368,7 +73915,10 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Card_Hand_Ally_SummonIn_Marin_TolinsGoblet_Sound": [
+				"Card_Hand_Ally_SummonIn_Marin_TolinsGoblet_Sound.ogg"
+			]
 		},
 		"text": "Add a random spell from each class to your hand.",
 		"dbfId": 48615,
@@ -73608,6 +74158,9 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
+			"ArmsDealing_Impact_Sound": [
+				"ArmsDealing_Impact_Sound.ogg"
+			],
 			"GutturalHowl_HeroPower_Sound": [
 				"GutturalHowl_HeroPower_Sound.ogg"
 			]
@@ -73661,10 +74214,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Druid_Shapeshift_Cast_1": [
-				"Druid_Shapeshift_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\n Gain +2 Attack this turn.",
 		"dbfId": 48057,
@@ -73704,9 +74254,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Shared_SneakyAttackImpactStandard_1": [
 				"Shared_SneakyAttackImpactStandard_1.ogg"
 			]
@@ -73749,9 +74296,6 @@ var parseCardsText = {
 			"Chuck_MinionToss_Impact": [
 				"Chuck_MinionToss_Impact.ogg"
 			],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
 			"Shared_CustomSpawn_MinionFlyIn_01": [
 				"Shared_CustomSpawn_MinionFlyIn_01.ogg"
 			]
@@ -73775,12 +74319,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -73866,7 +74404,9 @@ var parseCardsText = {
 		"id": "GILA_BOSS_25h",
 		"audio": {
 			"play": [],
-			"death": [],
+			"death": [
+				"VO_GILA_BOSS_25h_Male_Dwarf_Death_01.ogg"
+			],
 			"attack": []
 		},
 		"text": "<i>Watch your step, this traitor is an expert trapper.</i>",
@@ -74495,9 +75035,6 @@ var parseCardsText = {
 			"DevourSoul_Cast_Sound": [
 				"DevourSoul_Cast_Sound.ogg"
 			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
 			"DevourSoul_Missile_Sound": [
 				"DevourSoul_Missile_Sound.ogg"
 			],
@@ -74703,9 +75240,6 @@ var parseCardsText = {
 			"Nature_Spirit_Impact_Sound": [
 				"Nature_Spirit_Impact_Sound.ogg"
 			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -74835,10 +75369,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nChoose a minion. Add a 2/2 copy to your hand that costs (2).",
 		"dbfId": 48595,
@@ -74931,12 +75462,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -75033,12 +75558,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -75046,18 +75565,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -75440,12 +75947,6 @@ var parseCardsText = {
 			"DeathAndTaxes_Impact_Sound": [
 				"DeathAndTaxes_Impact_Sound.ogg"
 			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			]
@@ -75527,10 +76028,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_SneakyUntargettedImpactStandard_1": [
-				"Shared_SneakyUntargettedImpactStandard_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGive a friendly minion <b>Stealth</b> until your next turn.",
 		"dbfId": 48873,
@@ -75744,7 +76242,9 @@ var parseCardsText = {
 		"id": "GILA_BOSS_57h",
 		"audio": {
 			"play": [],
-			"death": [],
+			"death": [
+				"VO_GILA_BOSS_57h_Male_Undead_Death_01.ogg"
+			],
 			"attack": []
 		},
 		"text": "<i>There's a reason you should burn the dead.</i>",
@@ -76072,15 +76572,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			]
@@ -76099,7 +76590,9 @@ var parseCardsText = {
 		"id": "GILA_BOSS_63h",
 		"audio": {
 			"play": [],
-			"death": [],
+			"death": [
+				"VO_GILA_BOSS_63h_Female_Harpy_Death_01.ogg"
+			],
 			"attack": []
 		},
 		"text": "<i>Even your own magic can be twisted by these woods.</i>",
@@ -77095,9 +77588,6 @@ var parseCardsText = {
 				"VO_GVG_004_Attack_02.ogg",
 				"GoblinBlastMage_Attack_Underlay.ogg"
 			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			],
 			"AvengingWrath_cast": [
 				"AvengingWrath_cast.ogg"
 			]
@@ -77307,23 +77797,8 @@ var parseCardsText = {
 		"id": "GVG_010",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +2/+4 and <b>Spell Damage +1</b>.",
 		"cardClass": "PRIEST",
@@ -77380,12 +77855,6 @@ var parseCardsText = {
 			"play": [
 				"VO_GVG_011_Play_01.ogg"
 			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
 			"death": [
 				"VO_GVG_011_Death_04.ogg"
 			],
@@ -77434,23 +77903,8 @@ var parseCardsText = {
 		"id": "GVG_012",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #3 Health. If the target is still damaged, summon a Lightwarden.",
 		"cardClass": "PRIEST",
@@ -78099,14 +78553,8 @@ var parseCardsText = {
 		"id": "GVG_028t",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 1 Mana Crystal this turn only.\n<i>(Won't trigger Gallywix.)</i>",
 		"dbfId": 2277,
@@ -78670,8 +79118,14 @@ var parseCardsText = {
 		"id": "GVG_041a",
 		"audio": {
 			"play": [],
+			"Warlock_SiphonSoul_CasterImpact_1": [
+				"Warlock_SiphonSoul_CasterImpact_1.ogg"
+			],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"DarkWispers_Taunt_cast": [
+				"DarkWispers_Taunt_cast.ogg"
+			]
 		},
 		"text": "+5/+5 and <b>Taunt</b>.",
 		"dbfId": 2176,
@@ -78687,7 +79141,10 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"DarkWispers_Summon_cast": [
+				"DarkWispers_Summon_cast.ogg"
+			]
 		},
 		"text": "Summon 5 Wisps.",
 		"dbfId": 2177,
@@ -78741,9 +79198,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_GVG_042_Attack_02.ogg",
 				"Neptulon_Attack_Underlay.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add 4 random Murlocs to your hand. <b>Overload:</b> (3)",
@@ -79156,12 +79610,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Crush_CustomDeath_Sound_01": [
 				"Crush_CustomDeath_Sound_01.ogg"
 			]
@@ -79375,23 +79823,8 @@ var parseCardsText = {
 		"id": "GVG_057",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #4 Health to your hero and gain +2 Attack this turn.",
 		"cardClass": "PALADIN",
@@ -79421,9 +79854,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_Holy_projectile_1": [
 				"spell_Holy_projectile_1.ogg"
 			]
@@ -80033,12 +80463,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -80046,18 +80470,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -80316,9 +80728,6 @@ var parseCardsText = {
 				"VO_GVG_080_Attack_02.ogg",
 				"DruidOfTheFang_Attack_Underlay.ogg"
 			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -80490,9 +80899,6 @@ var parseCardsText = {
 			],
 			"Holy_Heal_Cast_01": [
 				"Holy_Heal_Cast_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			],
 			"Shared_Shadow_Fizzle_1": [
 				"Shared_Shadow_Fizzle_1.ogg"
@@ -81010,26 +81416,11 @@ var parseCardsText = {
 			"play": [
 				"VO_GVG_097_Play_01.ogg"
 			],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [
 				"VO_GVG_097_Death_03.ogg"
 			],
 			"attack": [
 				"VO_GVG_097_Attack_02.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Taunt</b>\n<b>Battlecry:</b> Gain +1/+1 for each enemy <b>Deathrattle</b> minion.",
@@ -81238,9 +81629,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_GVG_102_Attack_02.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you have a Mech, gain +1/+1 and add a <b>Spare Part</b> to your hand.",
@@ -81513,26 +81901,11 @@ var parseCardsText = {
 			"play": [
 				"VO_GVG_108_Play_01.ogg"
 			],
-			"Shared_Arcane_Fizzle_1": [
-				"Shared_Arcane_Fizzle_1.ogg"
-			],
-			"Shared_Arcane_PreCast_1": [
-				"Shared_Arcane_PreCast_1.ogg"
-			],
 			"death": [
 				"VO_GVG_108_Death_03.ogg"
 			],
 			"attack": [
 				"VO_GVG_108_Attack_02.ogg"
-			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
-			"GlassShatter_Underlay_Death": [
-				"GlassShatter_Underlay_Death.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Transform a friendly minion into a random minion with the same Cost.",
@@ -81841,9 +82214,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_GVG_115_Attack_02.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry and Deathrattle:</b> Add a <b>Spare Part</b> card to your hand.",
@@ -82043,23 +82413,11 @@ var parseCardsText = {
 				"VO_GVG_120_Play_01.ogg",
 				"Pegasus_Stinger_Beast_Villain.ogg"
 			],
-			"Tutorial_Rifle_Cock_01": [
-				"Tutorial_Rifle_Cock_01.ogg"
-			],
 			"death": [
 				"VO_GVG_120_Death_03.ogg"
 			],
 			"attack": [
 				"VO_GVG_120_Attack_02.ogg"
-			],
-			"FX_FireballEvent04_SpellCancel_01": [
-				"FX_FireballEvent04_SpellCancel_01.ogg"
-			],
-			"Tutorial_Rifle_Fire_01": [
-				"Tutorial_Rifle_Fire_01.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Destroy a Beast.",
@@ -82599,15 +82957,6 @@ var parseCardsText = {
 		"name": "Jaina Proudmoore",
 		"health": 30,
 		"id": "HERO_08",
-		"audio": {
-			"play": [],
-			"death": [
-				"VO_HERO_08_Death_72.ogg"
-			],
-			"attack": [
-				"VO_HERO_08_Attack_71.ogg"
-			]
-		},
 		"dbfId": 637,
 		"type": "Hero",
 		"cardClass": "MAGE",
@@ -82704,6 +83053,15 @@ var parseCardsText = {
 		"name": "Madame Lazul",
 		"health": 30,
 		"id": "HERO_09b",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_HERO_09b_Female_Troll_Death_01.ogg"
+			],
+			"attack": [
+				"VO_HERO_09b_Female_Troll_Attack_03.ogg"
+			]
+		},
 		"dbfId": 54816,
 		"type": "Hero",
 		"cardClass": "PRIEST",
@@ -82860,9 +83218,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_KAR_061i_Female_Ghost_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Gain stats equal to your weapon's.",
@@ -83000,9 +83355,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"ICC_023_SnowFlipper_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"cardClass": "NEUTRAL",
@@ -83188,9 +83540,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_ICC_028_Female_ValKyr_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give adjacent minions +2 Health.",
@@ -83724,9 +84073,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_ICC_051_Female_NightElf_Attack_02.ogg"
 			],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -84244,9 +84590,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"ICC_068_IceWalker_Attack.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "Your Hero Power also <b><b>Freeze</b>s</b> the target.",
@@ -84281,12 +84624,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_ICC_080_Female_BloodElf_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a 'Mirror Image' spell to your hand.",
@@ -84579,15 +84916,9 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
 			],
 			"Shared_Nature_PreCast_1": [
 				"Shared_Nature_PreCast_1.ogg"
@@ -84816,9 +85147,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_ICC_411_Female_NightElf_Attack_02.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly minion +1 Attack.",
@@ -84887,9 +85215,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_ICC_093_Male_Tuskar_Attack_01.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly minion <b>Spell Damage +1</b>.",
@@ -85004,9 +85329,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_ICC_096_Male_Giant_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Discard all weapons from your hand and gain their stats.",
@@ -85103,9 +85425,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_ICC_098_Female_Geist_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			],
 			"Shared_Physical_Impact_01": [
 				"Shared_Physical_Impact_01.ogg"
@@ -85833,10 +86152,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion \"<b>Deathrattle:</b> Return this to life with 1 Health.\"",
 		"cardClass": "PALADIN",
@@ -86244,12 +86560,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Ice_Impact2_Sound": [
 				"Ice_Impact2_Sound.ogg"
 			],
@@ -88783,9 +89093,6 @@ var parseCardsText = {
 			"attack": [],
 			"ArmsDealing_Impact_Sound": [
 				"ArmsDealing_Impact_Sound.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
 			]
 		},
 		"text": "Gain 10 Armor. Reduce the Cost of minions in your opponent's hand by (2).",
@@ -89672,12 +89979,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_ICC_910_Female_Banshee_Attack_01.ogg",
 				"Pillager_Play_Underlay.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
 			],
 			"Ice_Impact2_Sound": [
 				"Ice_Impact2_Sound.ogg"
@@ -91032,9 +91333,6 @@ var parseCardsText = {
 			"Boss_LichKing_Ice_Barrier_Sound": [
 				"Boss_LichKing_Ice_Barrier_Sound.ogg"
 			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			]
@@ -91096,10 +91394,7 @@ var parseCardsText = {
 			"silence_target_1": [
 				"silence_target_1.ogg"
 			],
-			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Your opponent can't emote.",
 		"dbfId": 45655,
@@ -91655,9 +91950,6 @@ var parseCardsText = {
 				"VO_KAR_009_Male_Book_Attack_01.ogg",
 				"BabblingBook_Attack_Underlay.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_BabblingBook_Sound": [
 				"SpawnToHand_BabblingBook_Sound.ogg"
 			]
@@ -91868,23 +92160,8 @@ var parseCardsText = {
 		"id": "KAR_013",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Silence</b> a friendly minion. Draw a card.",
 		"cardClass": "PRIEST",
@@ -92457,9 +92734,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_KAR_033_Male_Dragon_Attack_01.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, destroy an enemy minion with 3 or less Attack.",
@@ -92675,9 +92949,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"KAR_037_RavenWatcher_Attack_01.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you control a <b>Secret</b>, gain +1/+1\nand <b>Taunt</b>.",
@@ -92953,9 +93224,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"KAR_A10_05_WhiteKnight_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> <b>Discover</b> a spell.\nRestore Health to your hero\nequal to its Cost.",
@@ -93295,12 +93563,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_KAR_070_a_Male_Human_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a random card to your hand <i>(from your opponent's class).</i>",
@@ -93485,9 +93747,6 @@ var parseCardsText = {
 		"id": "KAR_075",
 		"audio": {
 			"play": [],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [],
 			"attack": [],
 			"Portal_Moonglade_Core_Sound": [
@@ -93621,9 +93880,6 @@ var parseCardsText = {
 				"Portal_Silvermoon_CustomSpawn_Sound.ogg"
 			],
 			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Portal_Silvermoon_Core_Sound": [
 				"Portal_Silvermoon_Core_Sound.ogg"
 			],
@@ -93769,9 +94025,6 @@ var parseCardsText = {
 			],
 			"Portal_Ironforge_Core_Sound": [
 				"Portal_Ironforge_Core_Sound.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
 			]
 		},
 		"text": "Gain 4 Armor.\nSummon a random\n4-Cost minion.",
@@ -93850,9 +94103,6 @@ var parseCardsText = {
 				"VO_KAR_092_Male_Human_Play_07.ogg",
 				"Monkey_Play_Underlay.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"VO_KAR_092_Male_Human_Death_01.ogg",
 				"Monkey_Death_Underlay.ogg"
@@ -93860,21 +94110,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_KAR_092_Male_Human_Attack_01.ogg",
 				"Monkey_Attack_Underlay.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you control a <b>Secret</b>, deal 3 damage.",
@@ -94026,9 +94261,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"KAR_095_Zoobot-201_Attack_01.ogg"
-			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
 			],
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
@@ -94547,9 +94779,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_KAR_702_Male_Goblin_Attack_01.ogg",
 				"Magician_Attack_Underlay.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a random friendly Beast, Dragon, and Murloc +2/+2.",
@@ -95903,10 +96132,7 @@ var parseCardsText = {
 				"ChessBlackKing_Cheat_HeroPower_Impact_Sound.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDestroy the left-most enemy minion.",
 		"dbfId": 39801,
@@ -96198,10 +96424,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDraw 3 cards.",
 		"dbfId": 39756,
@@ -96220,10 +96443,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDraw 3 cards.",
 		"dbfId": 40081,
@@ -96372,10 +96592,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 10 Armor.",
 		"dbfId": 39764,
@@ -96826,10 +97043,7 @@ var parseCardsText = {
 				"Holy_Targeted_Loop_01.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nIf you don't have Romulo, summon him.",
 		"entourage": [
@@ -97201,9 +97415,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shaman_Bloodlust_PreCast": [
 				"Shaman_Bloodlust_PreCast.ogg"
-			],
-			"Druid_Shapeshift_Cast_1": [
-				"Druid_Shapeshift_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nGive your hero +3 Attack this turn.",
@@ -97261,9 +97472,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shaman_Bloodlust_PreCast": [
 				"Shaman_Bloodlust_PreCast.ogg"
-			],
-			"Druid_Shapeshift_Cast_1": [
-				"Druid_Shapeshift_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nGive your hero +8 Attack this turn.",
@@ -98102,12 +98310,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Crush_CustomDeath_Sound_01": [
 				"Crush_CustomDeath_Sound_01.ogg"
 			]
@@ -98630,23 +98832,8 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"add_card_to_hand_2": [
-				"add_card_to_hand_2.ogg"
-			],
-			"add_card_to_hand_3": [
-				"add_card_to_hand_3.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"SpawnToDeck_CardOverDeck_Arcane": [
 				"SpawnToDeck_CardOverDeck_Arcane.ogg"
@@ -98668,23 +98855,8 @@ var parseCardsText = {
 		"id": "LOE_002t",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $6 damage.",
 		"dbfId": 2997,
@@ -98754,9 +98926,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_LOE_003_Attack_02.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry: Discover</b> a spell.",
@@ -98876,10 +99045,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your opponent a 'Cursed!' card.\nWhile they hold it, they take 2 damage on their turn.",
 		"cardClass": "WARLOCK",
@@ -99679,6 +99845,9 @@ var parseCardsText = {
 			],
 			"Legendary_Deck_Orange_AE_DeckBeam_Sound": [
 				"Legendary_Deck_Orange_AE_DeckBeam_Sound.ogg"
+			],
+			"FX_MinionSummon_Cast": [
+				"FX_MinionSummon_Cast.ogg"
 			],
 			"Legendary_Deck_Orange_AE_BreathDeck_Sound": [
 				"Legendary_Deck_Orange_AE_BreathDeck_Sound.ogg"
@@ -101330,10 +101499,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Choose an enemy minion.\nShuffle it into your deck.",
 		"cardClass": "PRIEST",
@@ -101745,9 +101911,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -102223,9 +102386,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Arcane_Impact_Nefarian_Sound": [
 				"Arcane_Impact_Nefarian_Sound.ogg"
 			]
@@ -102248,9 +102408,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Arcane_Impact_Nefarian_Sound": [
 				"Arcane_Impact_Nefarian_Sound.ogg"
 			]
@@ -102329,13 +102486,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 2 Wishes.",
 		"dbfId": 14285,
@@ -102849,23 +103000,8 @@ var parseCardsText = {
 		"id": "LOEA04_29a",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore 10 Health to your hero.",
 		"dbfId": 25089,
@@ -102880,9 +103016,6 @@ var parseCardsText = {
 		"id": "LOEA04_29b",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"death": [],
 			"attack": []
 		},
@@ -103267,12 +103400,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -103301,12 +103428,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -104156,12 +104277,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -104170,18 +104285,6 @@ var parseCardsText = {
 			],
 			"death": [
 				"VO_LOEA09_6_Death_05.ogg"
-			],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
 			],
 			"attack": [
 				"VO_LOEA09_6_Attack_02.ogg"
@@ -104213,12 +104316,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -104227,18 +104324,6 @@ var parseCardsText = {
 			],
 			"death": [
 				"VO_LOEA09_6_Death_05.ogg"
-			],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
 			],
 			"attack": [
 				"VO_LOEA09_6_Attack_02.ogg"
@@ -104715,9 +104800,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Arcane_Impact_Nefarian_Sound": [
 				"Arcane_Impact_Nefarian_Sound.ogg"
 			]
@@ -104740,9 +104822,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Arcane_Impact_Nefarian_Sound": [
 				"Arcane_Impact_Nefarian_Sound.ogg"
 			]
@@ -104989,9 +105068,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_PolymorphHex_Impact": [
-				"Shared_PolymorphHex_Impact.ogg"
-			],
 			"GlassShatter_Underlay_Death": [
 				"GlassShatter_Underlay_Death.ogg"
 			]
@@ -105013,13 +105089,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $10 damage randomly split among ALL characters.",
 		"dbfId": 25401,
@@ -105053,9 +105123,6 @@ var parseCardsText = {
 		"id": "LOEA16_13",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"death": [],
 			"attack": []
 		},
@@ -105076,13 +105143,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Put a random spell into each player's hand.  Yours costs (0).",
 		"dbfId": 25394,
@@ -105114,10 +105175,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Find an artifact.",
 		"dbfId": 35040,
@@ -105145,10 +105203,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Find an artifact.",
 		"dbfId": 38713,
@@ -105991,10 +106046,7 @@ var parseCardsText = {
 			"CircleOfHealing_cast": [
 				"CircleOfHealing_cast.ogg"
 			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #10 Health to ALL characters.",
 		"dbfId": 25397,
@@ -106053,9 +106105,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shared_Physical_Impact_01": [
 				"Shared_Physical_Impact_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			],
 			"spell_Consecration_impact_1": [
 				"spell_Consecration_impact_1.ogg"
@@ -106210,29 +106259,11 @@ var parseCardsText = {
 			"play": [
 				"VO_LOOT_014_Male_Kobold_Play_03.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"VO_LOOT_014_Male_Kobold_Death_01.ogg"
 			],
 			"attack": [
 				"VO_LOOT_014_Male_Kobold_Attack_01.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Draw a card. Deal 2 damage to your hero.",
@@ -106637,9 +106668,6 @@ var parseCardsText = {
 			"attack": [],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
 			]
 		},
 		"text": "Give a minion +3 Health. Gain 3 Armor.",
@@ -106726,9 +106754,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -106757,9 +106782,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -106790,9 +106812,6 @@ var parseCardsText = {
 				"Shared_Nature_Fizzle_1.ogg"
 			],
 			"death": [],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [],
 			"Nature_Target_Start_01": [
 				"Nature_Target_Start_01.ogg"
@@ -106881,10 +106900,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 6 Armor.",
 		"dbfId": 43298,
@@ -106998,14 +107014,8 @@ var parseCardsText = {
 			"death": [
 				"VO_LOOT_062_Male_Kobold_Death_01.ogg"
 			],
-			"Shaman_TotemicCall_Cast_1": [
-				"Shaman_TotemicCall_Cast_1.ogg"
-			],
 			"attack": [
 				"VO_LOOT_062_Male_Kobold_Attack_01.ogg"
-			],
-			"Totems_CustomSpawn_1": [
-				"Totems_CustomSpawn_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Choose a basic Totem. Summon it.",
@@ -107177,12 +107187,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -107190,18 +107194,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -107376,10 +107368,7 @@ var parseCardsText = {
 				"Weapon_Rhokdelar_SpawnToHand.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Battlecry:</b> If your deck has no minions, fill your hand with Hunter spells.",
 		"cardClass": "HUNTER",
@@ -107408,9 +107397,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "Give a minion <b>Divine Shield</b>.\nDraw a card.",
@@ -107674,13 +107660,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Add 1 random Mage spell to your hand. @<i>(Play 2 Elementals to upgrade.)</i>",
 		"cardClass": "MAGE",
@@ -107699,13 +107679,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Add 2 random Mage spells to your hand.",
 		"dbfId": 43412,
@@ -107726,13 +107700,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Add 3 random Mage spells to your hand.",
 		"dbfId": 43411,
@@ -107891,9 +107859,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"LOOT_111_RavenousCaveCrab_Attack.ogg"
-			],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Destroy a minion with 1 or less Attack.",
@@ -107959,6 +107924,9 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_LOOT_118_Male_Dragon_Attack_01.ogg"
+			],
+			"ArmsDealing_Impact_Sound": [
+				"ArmsDealing_Impact_Sound.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Reduce the Cost of a random weapon in your hand by (2).",
@@ -108054,9 +108022,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_LOOT_124_Male_Human_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you control no other minions, gain <b>Taunt</b> and <b>Divine Shield</b>.",
@@ -108569,9 +108534,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_LOOT_152_Female_Orc_Attack_01.ogg",
 				"Boisterous_Bard_Attack_Strum_Underlay.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give your other minions +1 Health.",
@@ -109578,10 +109540,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +2/+2. Gains a bonus effect in your hand.",
 		"entourage": [
@@ -109682,9 +109641,6 @@ var parseCardsText = {
 			],
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			],
 			"Potion_Kabal_Underlay_Attack": [
 				"Potion_Kabal_Underlay_Attack.ogg"
@@ -109806,9 +109762,6 @@ var parseCardsText = {
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
 			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			],
 			"Potion_Kabal_Underlay_Attack": [
 				"Potion_Kabal_Underlay_Attack.ogg"
 			],
@@ -109852,10 +109805,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 5 Armor.\nGains a bonus effect in your hand.",
 		"entourage": [
@@ -109877,10 +109827,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 5 Armor.\nGain 10 more Armor.",
 		"dbfId": 45770,
@@ -109902,15 +109849,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -109937,10 +109875,7 @@ var parseCardsText = {
 				"Armor_Golem_CustomSpawn_Sound.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 5 Armor.\nSummon a 5/5 Golem.",
 		"dbfId": 45773,
@@ -109982,10 +109917,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 5 Armor.\nEquip a 5/2 weapon.",
 		"dbfId": 45774,
@@ -110118,10 +110050,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Battlecry:</b> Give your minions +1 Attack.",
 		"cardClass": "PALADIN",
@@ -110202,20 +110131,11 @@ var parseCardsText = {
 			"play": [
 				"VO_LOOT_291_Male_Kobold_Play_02.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"VO_LOOT_291_Male_Kobold_Death_01.ogg"
 			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [
 				"VO_LOOT_291_Male_Kobold_Attack_02.ogg"
-			],
-			"Shaman_Windfury_Impact": [
-				"Shaman_Windfury_Impact.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Restore #4 Health.",
@@ -110276,10 +110196,7 @@ var parseCardsText = {
 			"Recruit_Deck_AE_Sound": [
 				"Recruit_Deck_AE_Sound.ogg"
 			],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 6 Armor.\n<b>Recruit</b> a minion that costs (4) or less.",
 		"cardClass": "DRUID",
@@ -110437,10 +110354,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your Silver Hand Recruits +2/+2 and <b>Taunt</b>.",
 		"cardClass": "PALADIN",
@@ -110527,12 +110441,6 @@ var parseCardsText = {
 			"Shared_Arcane_Fizzle_1": [
 				"Shared_Arcane_Fizzle_1.ogg"
 			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
 			"Shared_Arcane_PreCast_1": [
 				"Shared_Arcane_PreCast_1.ogg"
 			],
@@ -110544,9 +110452,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_LOOT_347_Male_Kobold_Attack_01.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			],
 			"Mage_ArcaneMissiles_Impact_1": [
 				"Mage_ArcaneMissiles_Impact_1.ogg"
@@ -110892,9 +110797,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_LOOT_367_Male_Kobold_Attack_02.ogg",
 				"AlleyArmorsmith_Underlay_Attack.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> For each enemy minion, gain 2 Armor.",
@@ -111147,20 +111049,11 @@ var parseCardsText = {
 			"play": [
 				"FungalEnchanter_LOOT_388_Play.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"FungalEnchanter_LOOT_388_Death.ogg"
 			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [
 				"FungalEnchanter_LOOT_388_Attack.ogg"
-			],
-			"Shaman_Windfury_Impact": [
-				"Shaman_Windfury_Impact.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Restore #2 Health to all friendly characters.",
@@ -111192,9 +111085,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_LOOT_389_Male_Kobold_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Return one of your destroyed weapons to your hand.",
@@ -111930,9 +111820,6 @@ var parseCardsText = {
 			"Sneaky_Target_Damage_01": [
 				"Sneaky_Target_Damage_01.ogg"
 			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Sneaky_Target_Damage_03": [
 				"Sneaky_Target_Damage_03.ogg"
 			],
@@ -111975,9 +111862,6 @@ var parseCardsText = {
 			"Sneaky_Target_Damage_01": [
 				"Sneaky_Target_Damage_01.ogg"
 			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Sneaky_Target_Damage_03": [
 				"Sneaky_Target_Damage_03.ogg"
 			],
@@ -112014,9 +111898,6 @@ var parseCardsText = {
 			],
 			"Sneaky_Target_Damage_01": [
 				"Sneaky_Target_Damage_01.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			],
 			"Sneaky_Target_Damage_03": [
 				"Sneaky_Target_Damage_03.ogg"
@@ -112270,9 +112151,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_LOOT_516_Female_Medusa_Attack_03.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Choose a friendly minion. Add a Golden copy of it to your hand.",
@@ -112370,9 +112248,6 @@ var parseCardsText = {
 			],
 			"AlAkir_CustomSummon_1": [
 				"AlAkir_CustomSummon_1.ogg"
-			],
-			"shaman_windshear_01": [
-				"shaman_windshear_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you control all 4 basic Totems, summon Al'Akir the Windlord.",
@@ -112868,9 +112743,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_LOOT_537_Male_Elemental_Attack_01.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding any cards that didn't start in your deck, reduce their Cost by (2).",
@@ -113097,6 +112969,9 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
+			"Card_Hand_Ally_SummonIn_Marin_TolinsGoblet_Sound": [
+				"Card_Hand_Ally_SummonIn_Marin_TolinsGoblet_Sound.ogg"
+			],
 			"ExploreUnGoro_Deck_AE_Sound": [
 				"ExploreUnGoro_Deck_AE_Sound.ogg"
 			],
@@ -113125,9 +113000,6 @@ var parseCardsText = {
 			"attack": [],
 			"Marin_ZarogsCrown_CustomSummon_Random_Sound": [
 				"Marin_ZarogsCrown_CustomSummon_Random_Sound.ogg"
-			],
-			"FX_MinionSummon_Drop": [
-				"FX_MinionSummon_Drop.ogg"
 			],
 			"Portal_Astral_Legendary_CustomSpawn_Sound": [
 				"Portal_Astral_Legendary_CustomSpawn_Sound.ogg"
@@ -113430,9 +113302,6 @@ var parseCardsText = {
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
 			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			],
 			"Potion_Kabal_Underlay_Attack": [
 				"Potion_Kabal_Underlay_Attack.ogg"
 			],
@@ -113458,9 +113327,6 @@ var parseCardsText = {
 		"id": "LOOTA_801",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"death": [],
 			"attack": []
 		},
@@ -113526,10 +113392,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\nYour minions that\ncost (5) or more\ncost (5).",
 		"cardClass": "NEUTRAL"
@@ -113654,10 +113517,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Your minions cost (0) this turn.",
 		"dbfId": 46416,
@@ -113691,6 +113551,9 @@ var parseCardsText = {
 		"id": "LOOTA_813",
 		"audio": {
 			"play": [],
+			"PowerOfCreation_Impact_Sound": [
+				"PowerOfCreation_Impact_Sound.ogg"
+			],
 			"death": [],
 			"attack": [],
 			"FinkleEinhorn_CustomSpawn_1": [
@@ -113971,10 +113834,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\nYour spells cost (1) less.",
 		"cardClass": "NEUTRAL"
@@ -114016,10 +113876,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\n<b>Spell Damage +3</b>",
 		"cardClass": "NEUTRAL"
@@ -114087,14 +113944,8 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Cast_1": [
 				"Shared_Fire_Cast_1.ogg"
@@ -114258,10 +114109,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\nEnemy minions cost (1) more.",
 		"cardClass": "NEUTRAL"
@@ -114300,10 +114148,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive</b>\nYour minions have permanent <b>Stealth</b>.",
 		"cardClass": "NEUTRAL"
@@ -114360,9 +114205,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_BabblingBook_Sound": [
 				"SpawnToHand_BabblingBook_Sound.ogg"
 			]
@@ -114422,10 +114264,7 @@ var parseCardsText = {
 			"GadgetzanAuctioneer_card_spawn_coins": [
 				"GadgetzanAuctioneer_card_spawn_coins.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Fill your hand with Coins.",
 		"dbfId": 47037,
@@ -114594,10 +114433,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +3/+3.",
 		"dbfId": 47046,
@@ -115042,9 +114878,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shaman_Bloodlust_PreCast": [
 				"Shaman_Bloodlust_PreCast.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nDeal 1 damage to a friendly minion and give it +2 Attack.",
@@ -115076,7 +114909,9 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_12h",
 		"audio": {
 			"play": [],
-			"death": [],
+			"death": [
+				"VO_LOOTA_BOSS_12h_Male_Kobold_Death2_01.ogg"
+			],
 			"attack": []
 		},
 		"text": "<i>This kobold pirate's favorite move is chaaaarrrge!</i>",
@@ -115143,9 +114978,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shared_SneakyUntargettedImpactStandard_1": [
 				"Shared_SneakyUntargettedImpactStandard_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nReturn a friendly minion to your hand.",
@@ -115197,10 +115029,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGive all your minions <b>Divine Shield</b>.",
 		"dbfId": 46170,
@@ -115287,9 +115116,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [
-				"VO_HERO_08_Death_72.ogg"
-			]
+			"attack": []
 		},
 		"text": "<i>The bane of every young adventurer.</i>",
 		"dbfId": 47366,
@@ -115464,10 +115291,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDestroy the minion with the highest Attack.",
 		"dbfId": 46242,
@@ -115578,10 +115402,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nReduce the Cost of cards in your hand by (1).",
 		"dbfId": 46342,
@@ -116065,9 +115886,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shaman_Bloodlust_PreCast": [
 				"Shaman_Bloodlust_PreCast.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
 			]
 		},
 		"text": "<b>Hero Power</b>\nDeal 1 damage to a friendly minion and give it +5 Attack.",
@@ -116084,7 +115902,9 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_31h",
 		"audio": {
 			"play": [],
-			"death": [],
+			"death": [
+				"VO_LOOTA_BOSS_12h_Male_Kobold_Death2_01.ogg"
+			],
 			"attack": []
 		},
 		"text": "<i>This kobold pirate's favorite move is chaaaarrrge!</i>",
@@ -116233,10 +116053,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nPut a 'Counterspell' <b>Secret</b> into the battlefield.",
 		"dbfId": 46358,
@@ -116310,13 +116127,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nAdd 'Arcane Missiles' to your hand.",
 		"dbfId": 46368,
@@ -116332,7 +116143,9 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_38h",
 		"audio": {
 			"play": [],
-			"death": [],
+			"death": [
+				"VO_LOOTA_BOSS_38h_Male_Kobold_Death_01.ogg"
+			],
 			"attack": []
 		},
 		"text": "<i>He wants to be a troll. He cries for battle and rattles for death.</i>",
@@ -116385,9 +116198,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Physical_Targeted_Impact_01": [
 				"Physical_Targeted_Impact_01.ogg"
 			]
@@ -116422,12 +116232,6 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_40p",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
 			"death": [],
 			"Poultryizer_PolymorphAttack_Cast_1": [
 				"Poultryizer_PolymorphAttack_Cast_1.ogg"
@@ -116525,10 +116329,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGain 3 Armor.",
 		"dbfId": 47304,
@@ -116596,26 +116397,8 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_44p",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDeal 2 damage.",
 		"dbfId": 47308,
@@ -116650,14 +116433,8 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_45p",
 		"audio": {
 			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGain 1 Mana Crystal this turn only.",
 		"dbfId": 47315,
@@ -116742,26 +116519,8 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_47p",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Passive Hero Power</b>\nAfter a minion is played, deal 2 damage to it.",
 		"dbfId": 47321,
@@ -116941,13 +116700,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nCraft a custom Mushroom Potion.",
 		"dbfId": 47360,
@@ -116983,7 +116736,9 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_51h",
 		"audio": {
 			"play": [],
-			"death": [],
+			"death": [
+				"VO_LOOTA_BOSS_51h_Male_Dwarf_Death_01.ogg"
+			],
 			"attack": []
 		},
 		"text": "<i>His tunes are catchy. Just ask your minions.</i>",
@@ -117230,26 +116985,8 @@ var parseCardsText = {
 		"id": "LOOTA_BOSS_99t",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $4 damage to a random enemy.",
 		"dbfId": 48824,
@@ -120193,12 +119930,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -120224,12 +119955,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -120440,10 +120165,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"KingMukla_Stomp_Cast_1": [
-				"KingMukla_Stomp_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nChange the Health of all minions to 1.",
 		"dbfId": 1891,
@@ -120477,10 +120199,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"KingMukla_Stomp_Cast_1": [
-				"KingMukla_Stomp_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nChange the Health of enemy minions to 1.",
 		"dbfId": 2141,
@@ -120496,10 +120215,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"KingMukla_Stomp_Cast_1": [
-				"KingMukla_Stomp_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nChange the Health of enemy minions to 1.",
 		"dbfId": 31347,
@@ -120515,10 +120231,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"KingMukla_Stomp_Cast_1": [
-				"KingMukla_Stomp_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Change the Health of enemy minions to 1.",
 		"dbfId": 35297,
@@ -121352,13 +121065,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nFire a missile for each card in your opponent's hand.",
 		"dbfId": 1840,
@@ -121377,13 +121084,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nFire a missile for each card in your opponent's hand.",
 		"dbfId": 2105,
@@ -122051,12 +121752,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -122082,12 +121777,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -122996,7 +122685,13 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Shared_Lunar_Cast_01": [
+				"Shared_Lunar_Cast_01.ogg"
+			],
+			"Shared_Lunar_Impact_01": [
+				"Shared_Lunar_Impact_01.ogg"
+			]
 		},
 		"text": "Deal $2 damage to all enemy minions.",
 		"dbfId": 1161,
@@ -123012,7 +122707,13 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Shared_Lunar_Cast_01": [
+				"Shared_Lunar_Cast_01.ogg"
+			],
+			"Shared_Lunar_Impact_01": [
+				"Shared_Lunar_Impact_01.ogg"
+			]
 		},
 		"text": "Deal $5 damage to a minion.",
 		"dbfId": 928,
@@ -123039,20 +122740,11 @@ var parseCardsText = {
 			"play": [
 				"NEW1_008_AncientOfLore_EnterPlay.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"NEW1_008_AncientOfLore_Death.ogg"
 			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [
 				"NEW1_008_AncientOfLore_Attack.ogg"
-			],
-			"Shaman_Windfury_Impact": [
-				"Shaman_Windfury_Impact.ogg"
 			]
 		},
 		"text": "<b>Choose One -</b> Draw a card; or Restore #5 Health.",
@@ -123310,9 +123002,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_NEW1_014_Attack_02.ogg"
-			],
-			"Shared_SneakyUntargettedImpactStandard_1": [
-				"Shared_SneakyUntargettedImpactStandard_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly minion <b>Stealth</b> until your next turn.",
@@ -123440,9 +123129,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"NEW1_017_Hungry_Crab_Attack1.ogg"
-			],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Destroy a Murloc and gain +2/+2.",
@@ -123742,14 +123428,8 @@ var parseCardsText = {
 			"death": [
 				"VO_NEW1_025_Death_03.ogg"
 			],
-			"Shared_KnifeThrow_Impact_1": [
-				"Shared_KnifeThrow_Impact_1.ogg"
-			],
 			"attack": [
 				"VO_NEW1_025_Attack_02.ogg"
-			],
-			"Shared_KnifeThrow_Cast_1": [
-				"Shared_KnifeThrow_Cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> Remove\n1 Durability from your\nopponent's weapon.",
@@ -123902,9 +123582,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_NEW1_029_Attack_02.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Enemy spells cost (0) next turn.",
@@ -124383,15 +124060,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"KotoBeastYes1.ogg"
-			],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
 			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
@@ -124993,10 +124661,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your hero +4 Attack this turn.",
 		"dbfId": 38332,
@@ -125014,8 +124679,8 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
+			"Shared_PawUntargeted02_PreCast": [
+				"Shared_PawUntargeted02_PreCast.ogg"
 			]
 		},
 		"text": "Gain 8 Armor.",
@@ -125164,12 +124829,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -125177,18 +124836,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -125317,13 +124964,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "Draw a card. Add 2 extra copies of it to your hand.",
 		"cardClass": "ROGUE",
@@ -125360,9 +125001,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_OG_080_Male_Klaxxi_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry and Deathrattle:</b> Add a random Toxin card to your hand.",
@@ -125705,23 +125343,8 @@ var parseCardsText = {
 		"id": "OG_086",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Spend all your Mana. Deal that much damage to a minion.",
 		"cardClass": "MAGE",
@@ -125782,9 +125405,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Arcane_Impact_Nefarian_Sound": [
 				"Arcane_Impact_Nefarian_Sound.ogg"
 			]
@@ -125860,9 +125480,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_OG_096_Female_Night Elf_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If your C'Thun  has at least 10 Attack, restore #10 Health to your hero.",
@@ -126346,9 +125963,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"OG_122_Mukla_TotV_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add 2 Bananas to your hand.",
@@ -127212,9 +126826,6 @@ var parseCardsText = {
 			"attack": [],
 			"Rogue_Eviscerate_Cast_1": [
 				"Rogue_Eviscerate_Cast_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "Deal $5 damage to an undamaged character.",
@@ -127285,9 +126896,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_OG_188_Male_Klaxxi_Attack_02.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If your C'Thun has at least 10 Attack, gain +5 Health.",
@@ -127421,23 +127029,8 @@ var parseCardsText = {
 		"id": "OG_198",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Spend all your Mana. Restore twice that much Health.",
 		"cardClass": "PALADIN",
@@ -127947,10 +127540,7 @@ var parseCardsText = {
 				"Holy_Targeted_Loop_01.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Battlecry:</b> Give +1/+1 to your minions with <b>Divine Shield</b>.",
 		"cardClass": "PALADIN",
@@ -127984,23 +127574,8 @@ var parseCardsText = {
 		"id": "OG_223",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +1/+2.",
 		"cardClass": "PALADIN",
@@ -128102,9 +127677,6 @@ var parseCardsText = {
 			],
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Restore #5 Health.",
@@ -128867,9 +128439,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_OG_282_Male_Human_Attack_01.ogg"
 			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
-			],
 			"Rogue_Assassinate_Impact_1": [
 				"Rogue_Assassinate_Impact_1.ogg"
 			]
@@ -129099,12 +128668,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_OG_291_Female_Goblin_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Choose a friendly minion. Add a 1/1 copy to your hand that costs (1).",
@@ -129266,9 +128829,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_OG_295_Male_Worgen_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> For each enemy minion, restore #2 Health to your hero.",
@@ -130620,9 +130180,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shared_SneakyUntargettedImpactStandard_1": [
 				"Shared_SneakyUntargettedImpactStandard_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "Return a friendly minion to your hand.",
@@ -130692,9 +130249,6 @@ var parseCardsText = {
 			"attack": [],
 			"Shared_SneakyUntargettedImpactStandard_1": [
 				"Shared_SneakyUntargettedImpactStandard_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "Give a friendly minion <b>Stealth</b> until your next turn.",
@@ -130769,12 +130323,6 @@ var parseCardsText = {
 			"Shared_Arcane_Fizzle_1": [
 				"Shared_Arcane_Fizzle_1.ogg"
 			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
 			"Shared_Arcane_PreCast_1": [
 				"Shared_Arcane_PreCast_1.ogg"
 			],
@@ -130783,9 +130331,6 @@ var parseCardsText = {
 				"Poultryizer_PolymorphAttack_Cast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Mage_ArcaneMissiles_Impact_1": [
 				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
@@ -130808,12 +130353,6 @@ var parseCardsText = {
 			"Shared_Arcane_Fizzle_1": [
 				"Shared_Arcane_Fizzle_1.ogg"
 			],
-			"Mage_ArcaneMissiles_Impact_2": [
-				"Mage_ArcaneMissiles_Impact_2.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_3": [
-				"Mage_ArcaneMissiles_Impact_3.ogg"
-			],
 			"Shared_Arcane_PreCast_1": [
 				"Shared_Arcane_PreCast_1.ogg"
 			],
@@ -130822,9 +130361,6 @@ var parseCardsText = {
 				"Poultryizer_PolymorphAttack_Cast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Mage_ArcaneMissiles_Impact_1": [
 				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
@@ -130934,9 +130470,6 @@ var parseCardsText = {
 			"attack": [
 				"SFX_PRO_001_Attack.ogg"
 			],
-			"fx_guitar_metalriffs_05": [
-				"fx_guitar_metalriffs_05.ogg"
-			],
 			"ETC_StageEntrance_Cast_1": [
 				"ETC_StageEntrance_Cast_1.ogg"
 			]
@@ -131014,9 +130547,6 @@ var parseCardsText = {
 				"ETC_Play_Stinger_Rogues_Fizzle.ogg"
 			],
 			"death": [],
-			"Shared_KnifeThrow_Impact_1": [
-				"Shared_KnifeThrow_Impact_1.ogg"
-			],
 			"attack": []
 		},
 		"text": "Deal $4 damage. Draw a card.",
@@ -131193,23 +130723,8 @@ var parseCardsText = {
 		"id": "TB_006",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +2/+2.",
 		"dbfId": 2656,
@@ -131239,23 +130754,8 @@ var parseCardsText = {
 		"id": "TB_007",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Swap a minion's Attack and Health.",
 		"dbfId": 2658,
@@ -131809,9 +131309,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_FX_Kabal_Sound": [
 				"SpawnToHand_FX_Kabal_Sound.ogg"
 			]
@@ -132081,13 +131578,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one.",
 		"dbfId": 42473,
@@ -132953,9 +132444,6 @@ var parseCardsText = {
 		"id": "TB_Coopv3_102a",
 		"audio": {
 			"play": [],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"death": [],
 			"attack": []
 		},
@@ -132973,23 +132461,8 @@ var parseCardsText = {
 		"id": "TB_Coopv3_102b",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore 8 Health to each hero.",
 		"dbfId": 40385,
@@ -133328,6 +132801,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Deathrattle Yog Enchant",
 		"id": "TB_DeathrattleYog_ench",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 55324,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -133746,26 +133224,8 @@ var parseCardsText = {
 		"id": "TB_FactionWar_Boss_Rag_0",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDeal $3 damage to random enemy, for now...",
 		"dbfId": 39009,
@@ -133831,10 +133291,7 @@ var parseCardsText = {
 			"spell_holy_precast_loop_1": [
 				"spell_holy_precast_loop_1.ogg"
 			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give your minions +2/+2.",
 		"dbfId": 51530,
@@ -134993,22 +134450,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nDeal 2 damage randomly split among all enemies.",
 		"dbfId": 46914,
@@ -135267,6 +134709,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Undermine",
 		"id": "TB_Henchmania_ChuH",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Hero Power</b>\nShuffle an Explosive into your opponent's deck.",
 		"dbfId": 55873,
 		"type": "Hero_power",
@@ -135282,6 +134729,20 @@ var parseCardsText = {
 			"ImmuneToSpellpower"
 		],
 		"id": "TB_Henchmania_ChuHt",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": [],
+			"Barrel_exp_base": [
+				"Barrel_exp_base.ogg"
+			],
+			"FX_FireballEvent04_SpellImpact_01": [
+				"FX_FireballEvent04_SpellImpact_01.ogg"
+			],
+			"Bomb_Missile_Ball_Sound_01": [
+				"Bomb_Missile_Ball_Sound_01.ogg"
+			]
+		},
 		"text": "<b>Casts When Drawn</b>\nYou take 2 damage.",
 		"dbfId": 55939,
 		"type": "Spell",
@@ -135292,6 +134753,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Henchmania Discover",
 		"id": "TB_Henchmania_Discover",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 55310,
 		"type": "Enchantment",
 		"entourage": [
@@ -135308,6 +134774,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Work for Hagatha",
 		"id": "TB_Henchmania_DiscoverA",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "At the end of your turn transform a random friendly minion into\none that costs (1) more.",
 		"dbfId": 55311,
 		"type": "Spell",
@@ -135318,6 +134789,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Work for Hagatha Enchantment",
 		"id": "TB_Henchmania_DiscoverAe",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "At the end of your turn transform a random friendly minion into\none that costs (1) more.",
 		"dbfId": 55339,
 		"type": "Enchantment",
@@ -135329,6 +134805,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Work for Dr. Boom",
 		"id": "TB_Henchmania_DiscoverB",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Give all friendly minions <b>Deathrattle:</b> Deal 1-2 damage to a random enemy.",
 		"dbfId": 55312,
 		"type": "Spell",
@@ -135339,6 +134820,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Work for Dr. Boom enchant",
 		"id": "TB_Henchmania_DiscoverBe",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 55340,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -135349,6 +134835,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Work for Togwaggle",
 		"id": "TB_Henchmania_DiscoverC",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "After you play a Minion add a Coin to your hand.",
 		"dbfId": 55313,
 		"type": "Spell",
@@ -135359,6 +134850,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Work for Togwaggle enchant",
 		"id": "TB_Henchmania_DiscoverCe",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 55635,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -135369,6 +134865,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Work for Madame Lazul",
 		"id": "TB_Henchmania_DiscoverD",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "After you play a spell, gain a copy of a random card in your opponent's hand.",
 		"dbfId": 55636,
 		"type": "Spell",
@@ -135379,6 +134880,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Work for Madame Lazul enchant",
 		"id": "TB_Henchmania_DiscoverDe",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 55637,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -135389,6 +134895,13 @@ var parseCardsText = {
 		"name": "George The Fallen",
 		"health": 30,
 		"id": "TB_Henchmania_George",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_DALA_George_Male_Human_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"dbfId": 55866,
 		"type": "Hero",
 		"cardClass": "PALADIN"
@@ -135399,6 +134912,13 @@ var parseCardsText = {
 		"name": "Mr. Chu",
 		"health": 30,
 		"id": "TB_Henchmania_MrChu",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_DALA_Chu_Male_Pandaren_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"dbfId": 55867,
 		"type": "Hero",
 		"cardClass": "WARRIOR"
@@ -135409,6 +134929,13 @@ var parseCardsText = {
 		"name": "Myra Rotspring",
 		"health": 30,
 		"id": "TB_Henchmania_Myra",
+		"audio": {
+			"play": [],
+			"death": [
+				"VO_BOT_243_Female_Undead_Death_01.ogg"
+			],
+			"attack": []
+		},
 		"dbfId": 55904,
 		"type": "Hero",
 		"cardClass": "ROGUE"
@@ -135419,6 +134946,26 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Necrium Infusion",
 		"id": "TB_Henchmania_MyraH",
+		"audio": {
+			"play": [],
+			"Potion_Kabal_Underlay_Death": [
+				"Potion_Kabal_Underlay_Death.ogg"
+			],
+			"death": [],
+			"attack": [],
+			"Shared_Glass_Impact_Sound": [
+				"Shared_Glass_Impact_Sound.ogg"
+			],
+			"Shared_Physical_Cast": [
+				"Shared_Physical_Cast.ogg"
+			],
+			"Potion_Kabal_Underlay_Attack": [
+				"Potion_Kabal_Underlay_Attack.ogg"
+			],
+			"ShaysBell": [
+				"ShaysBell.ogg"
+			]
+		},
 		"text": "<b>Hero Power</b>\nTrigger a random friendly minion's <b>Deathrattle</b>.",
 		"dbfId": 55847,
 		"type": "Hero_power",
@@ -135429,6 +134976,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "VO Controller - Not Player Facing",
 		"id": "TB_Henchmania_VOController",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 56045,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -135447,6 +134999,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Bloom Bot",
 		"id": "TB_Ignoblegarden1",
+		"audio": {
+			"play": [
+				"GVG_110t_BoomBot_EnterPlay.ogg"
+			],
+			"death": [
+				"GVG_110t_BoomBot_Death.ogg"
+			],
+			"attack": [
+				"GVG_110t_BoomBot_Attack.ogg"
+			]
+		},
 		"text": "<b>Deathrattle:</b> Summon a Legendary minion.\nGive it <b>Rush</b>.",
 		"cardClass": "NEUTRAL"
 	},
@@ -135466,6 +135029,20 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Room Bot",
 		"id": "TB_Ignoblegarden2",
+		"audio": {
+			"play": [
+				"GVG_110t_BoomBot_EnterPlay.ogg"
+			],
+			"death": [
+				"GVG_110t_BoomBot_Death.ogg"
+			],
+			"attack": [
+				"GVG_110t_BoomBot_Attack.ogg"
+			],
+			"magnetic_play": [
+				"magnetic_play.ogg"
+			]
+		},
 		"text": "<b>Magnetic</b>. <b>Taunt</b>\n<b>Deathrattle:</b>Summon 3 1/1 Boom Bots.",
 		"cardClass": "NEUTRAL"
 	},
@@ -135478,6 +135055,11 @@ var parseCardsText = {
 			"MODULAR"
 		],
 		"id": "TB_Ignoblegarden2e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "<b>Magnetic</b>. <b>Taunt</b>\n<b>Deathrattle:</b>Summon 3 1/1 Boom Bots.",
 		"dbfId": 55903,
 		"type": "Enchantment",
@@ -135498,6 +135080,17 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Doom Bot",
 		"id": "TB_Ignoblegarden3",
+		"audio": {
+			"play": [
+				"GVG_110t_BoomBot_EnterPlay.ogg"
+			],
+			"death": [
+				"GVG_110t_BoomBot_Death.ogg"
+			],
+			"attack": [
+				"GVG_110t_BoomBot_Attack.ogg"
+			]
+		},
 		"text": "<b>Battlecry and Deathrattle</b>: Deal 5 damage to ALL minions.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Rare"
@@ -135894,12 +135487,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_EX1_097_Attack_02.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
 			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
@@ -136573,9 +136160,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Arcane_Impact_Nefarian_Sound": [
 				"Arcane_Impact_Nefarian_Sound.ogg"
 			]
@@ -136601,12 +136185,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -136634,10 +136212,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore 4 Health to each hero.",
 		"dbfId": 42941,
@@ -136722,12 +136297,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -137823,9 +137392,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
 			]
@@ -140257,6 +139823,11 @@ var parseCardsText = {
 		"set": "Tb",
 		"name": "Vargoth Enchant",
 		"id": "TB_Vargoth_ench",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"dbfId": 55323,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
@@ -140419,10 +139990,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Hero Power</b>\nAdd a random spell from any class to your hand. It costs (0).",
 		"dbfId": 2653,
@@ -140666,9 +140234,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"spell_BlessingOfKings_target_1": [
 				"spell_BlessingOfKings_target_1.ogg"
 			]
@@ -140705,7 +140270,10 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Spellstone_Upgrade_Impact_Rogue_Sound": [
+				"Spellstone_Upgrade_Impact_Rogue_Sound.ogg"
+			]
 		},
 		"text": "<b>Casts When Drawn</b>\nAdd two random spells to your hand.",
 		"dbfId": 51160,
@@ -140826,23 +140394,8 @@ var parseCardsText = {
 		"id": "TOT_069",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion \"At the end of your turn, gain +1/+1.\"",
 		"dbfId": 50973,
@@ -141007,12 +140560,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TP9_a028_Male_Orc_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a copy of the top card of your opponent's deck to your hand.",
@@ -141620,9 +141167,6 @@ var parseCardsText = {
 			"Shared_Arcane_Fizzle_1": [
 				"Shared_Arcane_Fizzle_1.ogg"
 			],
-			"Mage_ArcaneIntellect_Cast_1": [
-				"Mage_ArcaneIntellect_Cast_1.ogg"
-			],
 			"Shared_Arcane_PreCast_1": [
 				"Shared_Arcane_PreCast_1.ogg"
 			],
@@ -141630,10 +141174,7 @@ var parseCardsText = {
 			"Shared_Shadow_Cast_1": [
 				"Shared_Shadow_Cast_1.ogg"
 			],
-			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Return an enemy minion to your opponent's hand. It costs (2) more.",
 		"dbfId": 51145,
@@ -141689,10 +141230,7 @@ var parseCardsText = {
 				"Card_Play_HeroPower_SpellPower_Sound.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Add two random cards your opponent played this game to your hand.",
 		"dbfId": 51148,
@@ -141765,7 +141303,6 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
-		"cardImage": "TRL_010.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -141797,7 +141334,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_012.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -141827,7 +141363,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_015.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -141857,7 +141392,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_020.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -141914,7 +141448,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_057.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -141947,7 +141480,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_058.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -141989,7 +141521,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_059.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142056,7 +141587,6 @@ var parseCardsText = {
 		"cardClass": "SHAMAN"
 	},
 	{
-		"cardImage": "TRL_060.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142087,7 +141617,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_065.png",
 		"collectible": true,
 		"cost": 10,
 		"set": "Troll",
@@ -142120,7 +141649,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_065h.png",
 		"playerClass": "Hunter",
 		"cost": 2,
 		"set": "Troll",
@@ -142132,12 +141660,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -142148,22 +141670,10 @@ var parseCardsText = {
 			"Zuljin_HeroPower_Axe_Impact_Sound": [
 				"Zuljin_HeroPower_Axe_Impact_Sound.ogg"
 			],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
+			"attack": [],
 			"Zuljin_HeroPower_Axe_Missle_Sound": [
 				"Zuljin_HeroPower_Axe_Missle_Sound.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
-			"attack": []
+			]
 		},
 		"text": "<b>Hero Power</b>\nDeal $2 damage.",
 		"dbfId": 50579,
@@ -142171,7 +141681,6 @@ var parseCardsText = {
 		"cardClass": "HUNTER"
 	},
 	{
-		"cardImage": "TRL_071.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -142201,9 +141710,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_071_Male_Hozen_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Rush</b>\n<b>Battlecry:</b> Gain +1/+1\nfor each other Pirate\nyou control.",
@@ -142226,7 +141732,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_074.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -142267,7 +141772,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_077.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -142314,7 +141818,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_082.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -142356,7 +141859,6 @@ var parseCardsText = {
 		"cardClass": "SHAMAN"
 	},
 	{
-		"cardImage": "TRL_085.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142398,7 +141900,6 @@ var parseCardsText = {
 		"type": "Enchantment"
 	},
 	{
-		"cardImage": "TRL_092.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -142444,7 +141945,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_096.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -142508,7 +142008,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_097.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -142526,9 +142025,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Card_Transition_Out": [
 				"Card_Transition_Out.ogg"
 			]
@@ -142538,7 +142034,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_111.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -142567,7 +142062,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_111e1.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "Headhunter's Hatchet",
@@ -142583,7 +142077,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_119.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -142607,7 +142100,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_119e.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "The Beast Within",
@@ -142623,7 +142115,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_124.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142650,7 +142141,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_126.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -142688,7 +142178,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_127.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -142718,7 +142207,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_128.png",
 		"collectible": true,
 		"cost": 0,
 		"set": "Troll",
@@ -142735,17 +142223,13 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #3 Health.",
 		"cardClass": "PRIEST",
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_131.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -142808,7 +142292,6 @@ var parseCardsText = {
 		"cardClass": "PRIEST"
 	},
 	{
-		"cardImage": "TRL_151.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -142864,7 +142347,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_156.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -142888,7 +142370,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_157.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -142905,17 +142386,13 @@ var parseCardsText = {
 			"Splash_Impact_Sound": [
 				"Splash_Impact_Sound.ogg"
 			],
-			"attack": [],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			]
+			"attack": []
 		},
 		"text": "Destroy an undamaged minion.",
 		"cardClass": "ROGUE",
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_223.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -142946,7 +142423,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_232.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -143001,7 +142477,6 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
-		"cardImage": "TRL_240.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -143042,9 +142517,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_240_Female_Troll_Attack_02.ogg"
-			],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal damage to an enemy minion equal to your hero's Attack.",
@@ -143052,7 +142524,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_241.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -143087,7 +142558,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_243.png",
 		"collectible": true,
 		"cost": 0,
 		"set": "Troll",
@@ -143120,7 +142590,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_243e.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "Pounce",
@@ -143139,7 +142608,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_244.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -143163,7 +142631,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_244e.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "Predatory Instincts",
@@ -143179,7 +142646,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_245.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -143206,7 +142672,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_246.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -143233,7 +142698,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_247.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -143259,9 +142723,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_TRL_247_Female_Troll_Attack_01.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Warlock_Shadow_Buff_Impact_Sound": [
 				"Warlock_Shadow_Buff_Impact_Sound.ogg"
 			]
@@ -143271,7 +142732,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_249.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -143307,7 +142767,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_249e.png",
 		"playerClass": "Neutral",
 		"set": "Troll",
 		"name": "Grim Rally",
@@ -143323,7 +142782,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_251.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -143369,7 +142827,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_252.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -143405,7 +142862,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_253.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -143458,7 +142914,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_254.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -143491,7 +142946,10 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [],
+			"Nature_Green_Buff_Impact": [
+				"Nature_Green_Buff_Impact.ogg"
+			]
 		},
 		"text": "Give a minion +2/+4 and <b>Taunt</b>.",
 		"dbfId": 49995,
@@ -143499,7 +142957,6 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
-		"cardImage": "TRL_254ae.png",
 		"playerClass": "Druid",
 		"set": "Troll",
 		"name": "Mark of the Loa",
@@ -143557,7 +143014,6 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
-		"cardImage": "TRL_255.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -143582,13 +143038,17 @@ var parseCardsText = {
 		"set": "Troll",
 		"name": "Stampede!",
 		"id": "TRL_255e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Has <b>Rush</b>.",
 		"dbfId": 54782,
 		"type": "Enchantment",
 		"cardClass": "DRUID"
 	},
 	{
-		"cardImage": "TRL_257.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -143620,7 +143080,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_258.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -143647,7 +143106,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_259.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -143684,7 +143142,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_260.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -143724,7 +143181,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_300.png",
 		"collectible": true,
 		"cost": 25,
 		"set": "Troll",
@@ -143761,7 +143217,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_302.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -143781,17 +143236,13 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Your hero is <b>Immune</b> until your next turn.",
 		"cardClass": "PALADIN",
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_302e.png",
 		"playerClass": "Paladin",
 		"set": "Troll",
 		"name": "Time Out!",
@@ -143807,7 +143258,6 @@ var parseCardsText = {
 		"cardClass": "PALADIN"
 	},
 	{
-		"cardImage": "TRL_304.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -143845,7 +143295,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_305.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -143874,7 +143323,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_306.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -143906,7 +143354,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_307.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -143919,30 +143366,14 @@ var parseCardsText = {
 		"id": "TRL_307",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore #4 Health.\nDraw a card.",
 		"cardClass": "PALADIN",
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_308.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -143979,7 +143410,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_309.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -144035,7 +143465,6 @@ var parseCardsText = {
 		"cardClass": "PALADIN"
 	},
 	{
-		"cardImage": "TRL_310.png",
 		"collectible": true,
 		"cost": 0,
 		"set": "Troll",
@@ -144052,17 +143481,13 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "The next Elemental you play this turn costs (2) less.",
 		"cardClass": "MAGE",
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_310e.png",
 		"playerClass": "Mage",
 		"set": "Troll",
 		"name": "Elemental Evocation",
@@ -144082,7 +143507,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_311.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -144108,12 +143532,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"Arcanosaur_TRL_311_Attack.ogg"
-			],
-			"Mage_ArcaneExplosion_AE_1": [
-				"Mage_ArcaneExplosion_AE_1.ogg"
-			],
-			"Arcane_AE_Explosion_Toki_Sound": [
-				"Arcane_AE_Explosion_Toki_Sound.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you played an Elemental last turn, deal 3 damage to all other minions.",
@@ -144121,7 +143539,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_312.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -144171,7 +143588,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_313.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -144188,17 +143604,13 @@ var parseCardsText = {
 				"ChessBlackKing_Cheat_HeroPower_Impact_Sound.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "[x]Deal $4 damage to a\nminion. Costs (1) if you\nplayed an Elemental\nlast turn.",
 		"cardClass": "MAGE",
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_315.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -144230,7 +143642,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_316.png",
 		"collectible": true,
 		"collectionText": {
 			"ptBR": "<b>Grito de Guerra:</b> Se seu Poder Heroico causou 8 de dano nesta partida, evoque Ragnaros, o Senhor do Fogo.\n",
@@ -144316,7 +143727,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_317.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -144340,7 +143750,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_318.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -144370,9 +143779,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_318_Male_Troll_Attack_04.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry</b>: Add a copy of your opening hand to your hand <i>(except this card)</i>.",
@@ -144380,7 +143786,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_319.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -144426,7 +143831,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_321.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -144444,12 +143848,6 @@ var parseCardsText = {
 				"Shared_Physical_PreCast.ogg"
 			],
 			"attack": [],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			],
@@ -144462,7 +143860,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_323.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -144488,9 +143885,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"EmberscaleDrake_TRL_323_Attack.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, gain 5 Armor.",
@@ -144498,7 +143892,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_324.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -144525,7 +143918,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_325.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -144548,7 +143940,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_326.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -144587,23 +143978,8 @@ var parseCardsText = {
 			"death": [
 				"VO_TRL_326_Female_Troll_Death_01.ogg"
 			],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
 			"attack": [
 				"VO_TRL_326_Female_Troll_Attack_01.ogg"
-			],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you're holding a Dragon, destroy a damaged enemy minion.",
@@ -144611,7 +143987,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_327.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -144664,7 +144039,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_328.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -144701,7 +144075,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_329.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -144751,7 +144124,6 @@ var parseCardsText = {
 		"cardClass": "WARRIOR"
 	},
 	{
-		"cardImage": "TRL_339.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -144771,17 +144143,13 @@ var parseCardsText = {
 				"Argent_Gruntling_Horn.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"Druid_Shapeshift_Cast_1": [
-				"Druid_Shapeshift_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Discover</b> a minion in your deck.\nIf all 3 are Beasts,\ndraw them all.",
 		"cardClass": "HUNTER",
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_341.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -144840,7 +144208,6 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
-		"cardImage": "TRL_343.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -144874,7 +144241,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343at1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -144907,7 +144273,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343at2.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -144923,16 +144288,22 @@ var parseCardsText = {
 		"name": "Wardruid Loti",
 		"id": "TRL_343at2",
 		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
+			"play": [
+				"TRL_343at1_Anklyodon_Play.ogg",
+				"Loti_Secondary_Play_Stinger.ogg"
+			],
+			"death": [
+				"TRL_343at1_Anklyodon_Death.ogg"
+			],
+			"attack": [
+				"TRL_343at1_Anklyodon_Attack.ogg"
+			]
 		},
 		"text": "<b>Taunt</b>",
 		"cardClass": "DRUID",
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343bt1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -144965,7 +144336,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343bt2.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -144981,16 +144351,22 @@ var parseCardsText = {
 		"name": "Wardruid Loti",
 		"id": "TRL_343bt2",
 		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
+			"play": [
+				"Sabretusk_TRL_343bt1_Play.ogg",
+				"Loti_Secondary_Play_Stinger.ogg"
+			],
+			"death": [
+				"Sabretusk_TRL_343bt1_Death.ogg"
+			],
+			"attack": [
+				"Sabretusk_TRL_343bt1_Attack.ogg"
+			]
 		},
 		"text": "<b>Rush</b>",
 		"cardClass": "DRUID",
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343ct1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -145027,7 +144403,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343ct2.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -145044,16 +144419,25 @@ var parseCardsText = {
 		"name": "Wardruid Loti",
 		"id": "TRL_343ct2",
 		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
+			"play": [
+				"TRL_343ct1_Pterrordax_Play.ogg",
+				"WingFlapMedium_Underlay_Play.ogg",
+				"Loti_Secondary_Play_Stinger.ogg"
+			],
+			"death": [
+				"TRL_343ct1_Pterrordax_Death.ogg",
+				"WingFlapMedium_Underlay_Death.ogg"
+			],
+			"attack": [
+				"TRL_343ct1_Pterrordax_Attack.ogg",
+				"WingFlapMedium_Underlay_Attack.ogg"
+			]
 		},
 		"text": "<b>Spell Damage +1</b>",
 		"cardClass": "DRUID",
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343dt1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -145087,7 +144471,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343dt2.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -145104,16 +144487,22 @@ var parseCardsText = {
 		"name": "Wardruid Loti",
 		"id": "TRL_343dt2",
 		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
+			"play": [
+				"TRL_343dt1_Ravasaur_Play.ogg",
+				"Loti_Secondary_Play_Stinger.ogg"
+			],
+			"death": [
+				"TRL_343dt1_Ravasaur_Death.ogg"
+			],
+			"attack": [
+				"TRL_343dt1_Ravasaur_Attack.ogg"
+			]
 		},
 		"text": "<b>Poisonous</b>, <b>Stealth</b>",
 		"cardClass": "DRUID",
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_343et1.png",
 		"cost": 3,
 		"set": "Troll",
 		"race": "BEAST",
@@ -145151,7 +144540,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_345.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -145180,9 +144568,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_TRL_345_Male_Frog_Attack_01.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Kragwa_SpawnToHand_Sound": [
 				"Kragwa_SpawnToHand_Sound.ogg"
 			]
@@ -145192,7 +144577,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_347.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -145208,12 +144592,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -145221,18 +144599,6 @@ var parseCardsText = {
 				"Arrow_Targeted_Impact_02.ogg"
 			],
 			"death": [],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
 			"attack": [],
 			"Arrow_Targeted_Fire_01": [
 				"Arrow_Targeted_Fire_01.ogg"
@@ -145268,7 +144634,6 @@ var parseCardsText = {
 		"cardClass": "HUNTER"
 	},
 	{
-		"cardImage": "TRL_348.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -145290,17 +144655,11 @@ var parseCardsText = {
 			"play": [
 				"Springpaw_TRL_348_Play.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"Springpaw_TRL_348_Death.ogg"
 			],
 			"attack": [
 				"Springpaw_TRL_348_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			],
 			"Shared_PawUntargeted02_PreCast": [
 				"Shared_PawUntargeted02_PreCast.ogg"
@@ -145340,7 +144699,6 @@ var parseCardsText = {
 		"cardClass": "HUNTER"
 	},
 	{
-		"cardImage": "TRL_349.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -145375,7 +144733,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_351.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -145435,7 +144792,6 @@ var parseCardsText = {
 		"cardClass": "SHAMAN"
 	},
 	{
-		"cardImage": "TRL_352.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -145464,7 +144820,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_360.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -145490,7 +144845,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_362.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -145505,9 +144859,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"SpawnToHand_FireSparks_Boosh_Sound": [
 				"SpawnToHand_FireSparks_Boosh_Sound.ogg"
 			]
@@ -145517,7 +144868,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_363.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -145580,7 +144930,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_390.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -145641,7 +144990,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_400.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -145665,7 +145013,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_405.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -145712,7 +145059,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_406.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -145757,7 +145103,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_407.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -145810,7 +145155,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_408.png",
 		"collectible": true,
 		"cost": 12,
 		"set": "Troll",
@@ -145842,7 +145186,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_409.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -145896,7 +145239,6 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
-		"cardImage": "TRL_500.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -145938,7 +145280,6 @@ var parseCardsText = {
 		"cardClass": "PRIEST"
 	},
 	{
-		"cardImage": "TRL_501.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -145988,7 +145329,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_502.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -146034,7 +145374,6 @@ var parseCardsText = {
 		"cardClass": "PRIEST"
 	},
 	{
-		"cardImage": "TRL_503.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -146091,7 +145430,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_504.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -146119,9 +145457,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_504_Female_Goblin_Attack_03.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give your opponent a Coin.",
@@ -146129,7 +145464,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_505.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -146180,7 +145514,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_506.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -146225,7 +145558,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_507.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -146258,7 +145590,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_507t.png",
 		"cost": 1,
 		"set": "Troll",
 		"race": "PIRATE",
@@ -146284,7 +145615,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_508.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -146316,7 +145646,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_509.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -146341,9 +145670,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"TRL_509_BananaBuffoon_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add 2 Bananas to your hand.",
@@ -146358,23 +145684,8 @@ var parseCardsText = {
 		"id": "TRL_509t",
 		"audio": {
 			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
 			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +1/+1.",
 		"dbfId": 53215,
@@ -146397,7 +145708,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_512.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -146439,9 +145749,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_512_Female_Gnome_Attack_05.ogg"
-			],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
 			]
 		},
 		"text": "<b>Lifesteal</b>\n<b>Battlecry:</b> Deal 1 damage.",
@@ -146449,7 +145756,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_513.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -146482,7 +145788,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_514.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -146511,9 +145816,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_514_Male_Gnome_Attack_03.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Taunt</b>\n<b>Battlecry:</b> If your opponent\nhas 2 or more minions,\ngain +1 Attack.",
@@ -146536,7 +145838,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_515.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -146568,7 +145869,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_516.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -146600,7 +145900,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_517.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -146650,7 +145949,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_520.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -146683,7 +145981,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_521.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -146712,7 +146009,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_522.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -146748,11 +146044,32 @@ var parseCardsText = {
 			"play": [
 				"VO_TRL_522_Female_Troll_Play_01.ogg"
 			],
+			"Lightning_Targeted_Whoosh_01": [
+				"Lightning_Targeted_Whoosh_01.ogg"
+			],
+			"Lightning_Targeted_Whoosh_02": [
+				"Lightning_Targeted_Whoosh_02.ogg"
+			],
+			"Lightning_Targeted_Whoosh_03": [
+				"Lightning_Targeted_Whoosh_03.ogg"
+			],
 			"death": [
 				"VO_TRL_522_Female_Troll_Death_01.ogg"
 			],
 			"attack": [
 				"VO_TRL_522_Female_Troll_Attack_02.ogg"
+			],
+			"Shared_Lightning_Fizzle_1": [
+				"Shared_Lightning_Fizzle_1.ogg"
+			],
+			"Shaman_EarthShock_Impact": [
+				"Shaman_EarthShock_Impact.ogg"
+			],
+			"Shared_Lightning_PreCast_1": [
+				"Shared_Lightning_PreCast_1.ogg"
+			],
+			"Shared_Lightning_Start_1": [
+				"Shared_Lightning_Start_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you played 2 spells this turn, deal 2 damage.",
@@ -146760,7 +146077,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_523.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -146795,7 +146111,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_524.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -146852,9 +146167,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_524_Female_Draenei_Attack_01.ogg"
-			],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> <b>Silence</b> an enemy minion with <b>Taunt</b>.",
@@ -146862,7 +146174,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_525.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -146894,7 +146205,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_526.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -146936,7 +146246,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_527.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -146971,7 +146280,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_528.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -147015,7 +146323,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_530.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -147050,7 +146357,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_531.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -147106,7 +146412,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_532.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -147138,7 +146443,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_533.png",
 		"collectible": true,
 		"cost": 4,
 		"set": "Troll",
@@ -147172,9 +146476,6 @@ var parseCardsText = {
 			],
 			"Shared_Physical_Cast": [
 				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you control a <b>Frozen</b> minion, gain 8 Armor.",
@@ -147182,7 +146483,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_535.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -147214,7 +146514,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_537.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -147265,7 +146564,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_541.png",
 		"collectible": true,
 		"cost": 10,
 		"set": "Troll",
@@ -147299,18 +146597,15 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_541t.png",
+		"playerClass": "Neutral",
 		"cost": 1,
 		"set": "Troll",
 		"artist": "Mauricio Herrera",
+		"name": "Corrupted Blood",
 		"mechanics": [
 			"TOPDECK",
 			"ImmuneToSpellpower"
 		],
-		"dbfId": 50455,
-		"type": "Spell",
-		"playerClass": "Neutral",
-		"name": "Corrupted Blood",
 		"id": "TRL_541t",
 		"audio": {
 			"play": [],
@@ -147321,10 +146616,11 @@ var parseCardsText = {
 			]
 		},
 		"text": "<b>Casts When Drawn</b>\nTake 3 damage. After you draw, shuffle two copies of this into your deck.",
+		"dbfId": 50455,
+		"type": "Spell",
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_542.png",
 		"collectible": true,
 		"cost": 9,
 		"set": "Troll",
@@ -147359,7 +146655,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_543.png",
 		"collectible": true,
 		"cost": 1,
 		"set": "Troll",
@@ -147391,7 +146686,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_545.png",
 		"collectible": true,
 		"collectionText": {
 			"ptBR": "<b>Grito de Guerra:</b> Se você tiver restaurado 10 de Vida nesta partida, receba +4/+4 e <b>Provocar</b>.",
@@ -147438,9 +146732,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_545_Male_Troll_Attack_02.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> If you've restored\n10 Health this game, gain\n+4/+4 and <b>Taunt</b>.@ <i>({0} left!)</i>@ <i>(Ready!)</i>",
@@ -147463,7 +146754,6 @@ var parseCardsText = {
 		"cardClass": "NEUTRAL"
 	},
 	{
-		"cardImage": "TRL_546.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -147502,7 +146792,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_550.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -147538,7 +146827,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_551.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -147571,7 +146859,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_555.png",
 		"collectible": true,
 		"cost": 8,
 		"set": "Troll",
@@ -147607,7 +146894,6 @@ var parseCardsText = {
 		"rarity": "Common"
 	},
 	{
-		"cardImage": "TRL_564.png",
 		"collectible": true,
 		"cost": 6,
 		"set": "Troll",
@@ -147656,7 +146942,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_566.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -147680,7 +146965,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_569.png",
 		"collectible": true,
 		"cost": 7,
 		"set": "Troll",
@@ -147717,26 +147001,11 @@ var parseCardsText = {
 			"play": [
 				"Blazewing_TRL_569_Play.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"Blazewing_TRL_569_Death.ogg"
 			],
 			"attack": [
 				"Blazewing_TRL_569_Attack.ogg"
-			],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> If you're holding\na Dragon, deal 7 damage\nto an enemy minion.",
@@ -147744,7 +147013,6 @@ var parseCardsText = {
 		"rarity": "Epic"
 	},
 	{
-		"cardImage": "TRL_570.png",
 		"collectible": true,
 		"cost": 2,
 		"set": "Troll",
@@ -147776,7 +147044,6 @@ var parseCardsText = {
 		"rarity": "Rare"
 	},
 	{
-		"cardImage": "TRL_900.png",
 		"collectible": true,
 		"cost": 5,
 		"set": "Troll",
@@ -147807,12 +147074,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRL_900_Male_Lynx_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Druid_Shapeshift_Cast_1": [
-				"Druid_Shapeshift_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Fill your hand with 1/1 Lynxes that have <b>Rush</b>.",
@@ -147820,7 +147081,6 @@ var parseCardsText = {
 		"rarity": "Legendary"
 	},
 	{
-		"cardImage": "TRL_901.png",
 		"collectible": true,
 		"cost": 3,
 		"set": "Troll",
@@ -147895,12 +147155,6 @@ var parseCardsText = {
 			"Arrow_Targeted_Impact_01": [
 				"Arrow_Targeted_Impact_01.ogg"
 			],
-			"Arrow_Targeted_Build_02": [
-				"Arrow_Targeted_Build_02.ogg"
-			],
-			"Arrow_Targeted_Build_03": [
-				"Arrow_Targeted_Build_03.ogg"
-			],
 			"Arrow_Targeted_Impact_03": [
 				"Arrow_Targeted_Impact_03.ogg"
 			],
@@ -147911,22 +147165,10 @@ var parseCardsText = {
 			"Zuljin_HeroPower_Axe_Impact_Sound": [
 				"Zuljin_HeroPower_Axe_Impact_Sound.ogg"
 			],
-			"Arrow_Targeted_Build_01": [
-				"Arrow_Targeted_Build_01.ogg"
-			],
+			"attack": [],
 			"Zuljin_HeroPower_Axe_Missle_Sound": [
 				"Zuljin_HeroPower_Axe_Missle_Sound.ogg"
-			],
-			"Arrow_Targeted_Explode_03": [
-				"Arrow_Targeted_Explode_03.ogg"
-			],
-			"Arrow_Targeted_Explode_02": [
-				"Arrow_Targeted_Explode_02.ogg"
-			],
-			"Arrow_Targeted_Explode_01": [
-				"Arrow_Targeted_Explode_01.ogg"
-			],
-			"attack": []
+			]
 		},
 		"text": "<b>Hero Power</b>\nDeal $2 damage to the enemy hero.",
 		"dbfId": 53943,
@@ -148560,6 +147802,11 @@ var parseCardsText = {
 		"set": "Troll",
 		"name": "Gonk's Bond",
 		"id": "TRLA_116e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Increased Attack.",
 		"dbfId": 54788,
 		"type": "Enchantment",
@@ -148953,12 +148200,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_TRLA_130_Male_Golem_Attack_02.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
 			]
 		},
 		"text": "<b>Taunt</b>\n<b>Battlecry</b>: Fill your hand with Arcane Missiles.",
@@ -149274,15 +148515,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_TRLA_140_Male_Troll_Attack_01.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"add_card_to_hand_2": [
-				"add_card_to_hand_2.ogg"
-			],
-			"add_card_to_hand_3": [
-				"add_card_to_hand_3.ogg"
-			],
 			"SpawnToDeck_CardOverDeck_Arcane": [
 				"SpawnToDeck_CardOverDeck_Arcane.ogg"
 			]
@@ -149480,6 +148712,11 @@ var parseCardsText = {
 		"set": "Troll",
 		"name": "Bwonsamdi's Covenant",
 		"id": "TRLA_147e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Healing enemies damages them instead.",
 		"dbfId": 56325,
 		"type": "Enchantment",
@@ -150197,6 +149434,11 @@ var parseCardsText = {
 		"set": "Troll",
 		"name": "Panther's Lead",
 		"id": "TRLA_164e",
+		"audio": {
+			"play": [],
+			"death": [],
+			"attack": []
+		},
 		"text": "Has <b>Rush</b>.",
 		"dbfId": 54029,
 		"type": "Enchantment",
@@ -150226,15 +149468,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"Lynx_TRL_348t_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
-			"add_card_to_hand_2": [
-				"add_card_to_hand_2.ogg"
-			],
-			"add_card_to_hand_3": [
-				"add_card_to_hand_3.ogg"
 			],
 			"SpawnToDeck_CardOverDeck_Arcane": [
 				"SpawnToDeck_CardOverDeck_Arcane.ogg"
@@ -150713,18 +149946,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_TRLA_177_Male_Troll_Attack_01.ogg"
 			],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			],
 			"Shared_Physical_Fizzle": [
 				"Shared_Physical_Fizzle.ogg"
 			]
@@ -150985,9 +150206,6 @@ var parseCardsText = {
 			"attack": [
 				"VO_TRLA_184_Female_Troll_Attack_01.ogg"
 			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Card_Transition_Out": [
 				"Card_Transition_Out.ogg"
 			]
@@ -151175,9 +150393,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"JeweledMacaw_UNG_912_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "[x]<b>Combo:</b> Add a copy of\neach card you've played\nthis turn to your hand.",
@@ -151305,7 +150520,6 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
-		"cardImage": "TRLA_200h.png",
 		"playerClass": "Warrior",
 		"set": "Troll",
 		"artist": "Slawomir Maniak",
@@ -151325,7 +150539,6 @@ var parseCardsText = {
 		"cardClass": "WARRIOR"
 	},
 	{
-		"cardImage": "TRLA_201h.png",
 		"playerClass": "Shaman",
 		"set": "Troll",
 		"artist": "Evgeniy Zagumyenny",
@@ -151345,7 +150558,6 @@ var parseCardsText = {
 		"cardClass": "SHAMAN"
 	},
 	{
-		"cardImage": "TRLA_202h.png",
 		"playerClass": "Rogue",
 		"set": "Troll",
 		"artist": "Matt Dixon",
@@ -151353,11 +150565,11 @@ var parseCardsText = {
 		"health": 10,
 		"id": "TRLA_202h",
 		"audio": {
-			"play": [
-				"VO_TRLA_202h_Female_Troll_Attack_01.ogg"
-			],
+			"play": [],
 			"death": [],
-			"attack": []
+			"attack": [
+				"VO_TRLA_202h_Female_Troll_Attack_01.ogg"
+			]
 		},
 		"text": "<i>Those who say her cheating goes over[d]board soon follow suit.</i>",
 		"dbfId": 53224,
@@ -151365,7 +150577,6 @@ var parseCardsText = {
 		"cardClass": "ROGUE"
 	},
 	{
-		"cardImage": "TRLA_203h.png",
 		"playerClass": "Paladin",
 		"set": "Troll",
 		"artist": "James Ryman",
@@ -151385,7 +150596,6 @@ var parseCardsText = {
 		"cardClass": "PALADIN"
 	},
 	{
-		"cardImage": "TRLA_204h.png",
 		"playerClass": "Hunter",
 		"set": "Troll",
 		"artist": "Alex Horley Orlandelli",
@@ -151405,7 +150615,6 @@ var parseCardsText = {
 		"cardClass": "HUNTER"
 	},
 	{
-		"cardImage": "TRLA_205h.png",
 		"playerClass": "Druid",
 		"set": "Troll",
 		"artist": "Zoltan Boros",
@@ -151425,7 +150634,6 @@ var parseCardsText = {
 		"cardClass": "DRUID"
 	},
 	{
-		"cardImage": "TRLA_206h.png",
 		"playerClass": "Warlock",
 		"set": "Troll",
 		"artist": "James Ryman",
@@ -151445,7 +150653,6 @@ var parseCardsText = {
 		"cardClass": "WARLOCK"
 	},
 	{
-		"cardImage": "TRLA_207h.png",
 		"playerClass": "Mage",
 		"set": "Troll",
 		"artist": "Mike Sass",
@@ -151465,7 +150672,6 @@ var parseCardsText = {
 		"cardClass": "MAGE"
 	},
 	{
-		"cardImage": "TRLA_208h.png",
 		"playerClass": "Priest",
 		"set": "Troll",
 		"artist": "Alex Horley Ormandelli",
@@ -151705,9 +150911,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -151715,9 +150918,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -151789,9 +150989,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -151799,9 +150996,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -151869,9 +151063,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -151879,9 +151070,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -151960,9 +151148,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -151970,9 +151155,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -152017,9 +151199,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -152027,9 +151206,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -152095,9 +151271,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -152105,9 +151278,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -152192,9 +151362,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -152202,9 +151369,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -152289,9 +151453,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -152299,9 +151460,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -152386,9 +151544,6 @@ var parseCardsText = {
 			"Shadowy_Deck_AE_Sound": [
 				"Shadowy_Deck_AE_Sound.ogg"
 			],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
 			"Shared_Shadow_PreCastHigh_1": [
 				"Shared_Shadow_PreCastHigh_1.ogg"
 			],
@@ -152396,9 +151551,6 @@ var parseCardsText = {
 				"Shared_Arcane_PreCast_1.ogg"
 			],
 			"attack": [],
-			"Shared_Arcane_Start_1": [
-				"Shared_Arcane_Start_1.ogg"
-			],
 			"Nature_Green_Buff_Impact": [
 				"Nature_Green_Buff_Impact.ogg"
 			],
@@ -154495,7 +153647,6 @@ var parseCardsText = {
 		"cardClass": "WARLOCK"
 	},
 	{
-		"cardImage": "TRLA_Warrior_01.png",
 		"playerClass": "Warrior",
 		"cost": 0,
 		"set": "Troll",
@@ -154872,11 +154023,6 @@ var parseCardsText = {
 		"name": "Hogger",
 		"health": 10,
 		"id": "TU4a_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 1301,
 		"type": "Hero",
 		"cardClass": "NEUTRAL",
@@ -154890,17 +154036,6 @@ var parseCardsText = {
 		"name": "Riverpaw Gnoll",
 		"health": 1,
 		"id": "TU4a_002",
-		"audio": {
-			"play": [
-				"GnollReady1.ogg"
-			],
-			"death": [
-				"WoW_TU4a_003_Gnoll_Death.ogg"
-			],
-			"attack": [
-				"GnollReady1.ogg"
-			]
-		},
 		"dbfId": 1321,
 		"type": "Minion",
 		"cardClass": "NEUTRAL",
@@ -154914,15 +154049,6 @@ var parseCardsText = {
 		"name": "Gnoll",
 		"health": 1,
 		"id": "TU4a_003",
-		"audio": {
-			"play": [
-				"GnollReady1.ogg"
-			],
-			"death": [
-				"WoW_TU4a_003_Gnoll_Death.ogg"
-			],
-			"attack": []
-		},
 		"dbfId": 1322,
 		"type": "Minion",
 		"cardClass": "NEUTRAL",
@@ -154934,26 +154060,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Hogger SMASH!",
 		"id": "TU4a_004",
-		"audio": {
-			"play": [],
-			"death": [],
-			"Shared_Physical_PreCast": [
-				"Shared_Physical_PreCast.ogg"
-			],
-			"attack": [],
-			"Shared_Physical_Impact_01": [
-				"Shared_Physical_Impact_01.ogg"
-			],
-			"Shared_Physical_Start_NoVox": [
-				"Shared_Physical_Start_NoVox.ogg"
-			],
-			"Shared_Physical_Cast": [
-				"Shared_Physical_Cast.ogg"
-			],
-			"Shared_Physical_Fizzle": [
-				"Shared_Physical_Fizzle.ogg"
-			]
-		},
 		"text": "Deal 4 damage.",
 		"dbfId": 1323,
 		"type": "Spell",
@@ -154968,15 +154074,6 @@ var parseCardsText = {
 		"name": "Massive Gnoll",
 		"health": 2,
 		"id": "TU4a_005",
-		"audio": {
-			"play": [
-				"GnollPissed2.ogg"
-			],
-			"death": [
-				"WoW_TU4a_003_Gnoll_Death.ogg"
-			],
-			"attack": []
-		},
 		"dbfId": 1324,
 		"type": "Minion",
 		"cardClass": "NEUTRAL",
@@ -154988,15 +154085,6 @@ var parseCardsText = {
 		"name": "Jaina Proudmoore",
 		"health": 30,
 		"id": "TU4a_006",
-		"audio": {
-			"play": [],
-			"death": [
-				"VO_HERO_08_Death_72.ogg"
-			],
-			"attack": [
-				"VO_HERO_08_Attack_71.ogg"
-			]
-		},
 		"dbfId": 1325,
 		"type": "Hero",
 		"cardClass": "MAGE",
@@ -155008,11 +154096,6 @@ var parseCardsText = {
 		"name": "Millhouse Manastorm",
 		"health": 20,
 		"id": "TU4b_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 1382,
 		"type": "Hero",
 		"cardClass": "MAGE",
@@ -155024,11 +154107,6 @@ var parseCardsText = {
 		"name": "King Mukla",
 		"health": 26,
 		"id": "TU4c_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 1481,
 		"type": "Hero",
 		"cardClass": "NEUTRAL",
@@ -155040,17 +154118,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Barrel Toss",
 		"id": "TU4c_002",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": [],
-			"KingMukla_BarrelToss_Cast_1": [
-				"KingMukla_BarrelToss_Cast_1.ogg"
-			],
-			"KingMukla_BarrelToss_Impact_1": [
-				"KingMukla_BarrelToss_Impact_1.ogg"
-			]
-		},
 		"text": "Deal 2 damage.",
 		"dbfId": 784,
 		"type": "Spell",
@@ -155085,14 +154152,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Stomp",
 		"id": "TU4c_004",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": [],
-			"KingMukla_Stomp_Cast_1": [
-				"KingMukla_Stomp_Cast_1.ogg"
-			]
-		},
 		"text": "Deal 2 damage to all enemies.",
 		"dbfId": 988,
 		"type": "Spell",
@@ -155124,26 +154183,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Bananas",
 		"id": "TU4c_006",
-		"audio": {
-			"play": [],
-			"spell_holy_fizzle_1": [
-				"spell_holy_fizzle_1.ogg"
-			],
-			"Holy_Targeted_Healing_Potion_FX_Impact": [
-				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
-			],
-			"death": [],
-			"spell_holy_precast_loop_1": [
-				"spell_holy_precast_loop_1.ogg"
-			],
-			"attack": [],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
-		},
 		"text": "Give a friendly minion +1/+1. <i>(+1 Attack/+1 Health)</i>",
 		"dbfId": 317,
 		"type": "Spell",
@@ -155155,36 +154194,22 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Bananas",
 		"id": "TU4c_006e",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "This minion has +1/+1. <i>(+1 Attack/+1 Health)</i>",
 		"dbfId": 1502,
 		"type": "Enchantment",
 		"cardClass": "NEUTRAL"
 	},
 	{
+		"playerClass": "Neutral",
 		"cost": 6,
 		"set": "Missions",
-		"health": 10,
-		"dbfId": 1501,
-		"type": "Minion",
-		"playerClass": "Neutral",
 		"attack": 10,
 		"name": "Mukla's Big Brother",
+		"health": 10,
 		"id": "TU4c_007",
-		"audio": {
-			"play": [
-				"VO_TUTORIAL_03_BRO_01_01.ogg"
-			],
-			"death": [
-				"VO_TUTORIAL_03_BRO_02_02.ogg"
-			],
-			"attack": []
-		},
 		"text": "So strong! And only 6 Mana?!",
+		"dbfId": 1501,
+		"type": "Minion",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
 	},
@@ -155197,10 +154222,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Restore 8 Health.",
 		"dbfId": 1541,
@@ -155232,11 +154254,6 @@ var parseCardsText = {
 		"name": "Hemet Nesingwary",
 		"health": 20,
 		"id": "TU4d_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 1602,
 		"type": "Hero",
 		"cardClass": "HUNTER",
@@ -155250,17 +154267,6 @@ var parseCardsText = {
 		"name": "Crazed Hunter",
 		"health": 1,
 		"id": "TU4d_002",
-		"audio": {
-			"play": [
-				"VO_TU4d_002_Play_01.ogg"
-			],
-			"death": [
-				"VO_TU4d_002_Death_02.ogg"
-			],
-			"attack": [
-				"VO_TU4d_002_Play_01.ogg"
-			]
-		},
 		"dbfId": 1603,
 		"type": "Minion",
 		"cardClass": "NEUTRAL",
@@ -155272,23 +154278,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Shotgun Blast",
 		"id": "TU4d_003",
-		"audio": {
-			"play": [],
-			"Tutorial_Rifle_Cock_01": [
-				"Tutorial_Rifle_Cock_01.ogg"
-			],
-			"death": [],
-			"attack": [],
-			"FX_FireballEvent04_SpellCancel_01": [
-				"FX_FireballEvent04_SpellCancel_01.ogg"
-			],
-			"Tutorial_Rifle_Fire_01": [
-				"Tutorial_Rifle_Fire_01.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			]
-		},
 		"text": "<b>Hero Power</b>\nDeal 1 damage.",
 		"dbfId": 1683,
 		"type": "Hero_power",
@@ -155301,11 +154290,6 @@ var parseCardsText = {
 		"name": "Illidan Stormrage",
 		"health": 30,
 		"id": "TU4e_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 1636,
 		"type": "Hero",
 		"cardClass": "HUNTER"
@@ -155316,11 +154300,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Flames of Azzinoth",
 		"id": "TU4e_002",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "<b>Hero Power</b>\nSummon two 2/1 minions.",
 		"dbfId": 1637,
 		"type": "Hero_power",
@@ -155334,44 +154313,22 @@ var parseCardsText = {
 		"name": "Flame of Azzinoth",
 		"health": 1,
 		"id": "TU4e_002t",
-		"audio": {
-			"play": [
-				"TU4e_002t_Flame_of_Azzinoth_Play.ogg"
-			],
-			"death": [
-				"TU4e_002t_Flame_of_Azzinoth_Death.ogg"
-			],
-			"attack": [
-				"TU4e_002t_Flame_of_Azzinoth_Attack.ogg"
-			]
-		},
 		"dbfId": 1643,
 		"type": "Minion",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
 	},
 	{
+		"playerClass": "Neutral",
 		"cost": 1,
 		"set": "Missions",
-		"health": 1,
-		"dbfId": 1638,
-		"type": "Minion",
-		"playerClass": "Neutral",
 		"attack": 1,
 		"name": "Naga Myrmidon",
+		"health": 1,
 		"id": "TU4e_003",
-		"audio": {
-			"play": [
-				"TU4e_003_Play_NagaMyrmidon.ogg"
-			],
-			"death": [
-				"TU4e_003_Death_NagaMyrmidon.ogg"
-			],
-			"attack": [
-				"TU4e_003_Attack_NagaMyrmidon.ogg"
-			]
-		},
 		"text": "<b></b>",
+		"dbfId": 1638,
+		"type": "Minion",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
 	},
@@ -155383,11 +154340,6 @@ var parseCardsText = {
 		"durability": 2,
 		"name": "Warglaive of Azzinoth",
 		"id": "TU4e_004",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 1639,
 		"type": "Weapon",
 		"cardClass": "NEUTRAL",
@@ -155399,17 +154351,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Flame Burst",
 		"id": "TU4e_005",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": [],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
-		},
 		"text": "Shoot 5 missiles at random enemies for $1 damage each.",
 		"dbfId": 1640,
 		"type": "Spell",
@@ -155424,11 +154365,6 @@ var parseCardsText = {
 		"durability": 2,
 		"name": "Dual Warglaives",
 		"id": "TU4e_007",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 1642,
 		"type": "Weapon",
 		"cardClass": "NEUTRAL",
@@ -155440,11 +154376,6 @@ var parseCardsText = {
 		"name": "Lorewalker Cho",
 		"health": 25,
 		"id": "TU4f_001",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"dbfId": 1667,
 		"type": "Hero",
 		"cardClass": "NEUTRAL"
@@ -155457,15 +154388,6 @@ var parseCardsText = {
 		"name": "Pandaren Scout",
 		"health": 1,
 		"id": "TU4f_002",
-		"audio": {
-			"play": [
-				"VO_TU4f_002_Play_01.ogg"
-			],
-			"death": [
-				"VO_TU4f_002_Death_02.ogg"
-			],
-			"attack": []
-		},
 		"dbfId": 1669,
 		"type": "Minion",
 		"cardClass": "NEUTRAL",
@@ -155479,15 +154401,6 @@ var parseCardsText = {
 		"name": "Shado-Pan Monk",
 		"health": 2,
 		"id": "TU4f_003",
-		"audio": {
-			"play": [
-				"VO_TU4f_003_Play_01.ogg"
-			],
-			"death": [
-				"VO_TU4f_003_Death_02.ogg"
-			],
-			"attack": []
-		},
 		"dbfId": 1671,
 		"type": "Minion",
 		"cardClass": "NEUTRAL",
@@ -155499,17 +154412,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Legacy of the Emperor",
 		"id": "TU4f_004",
-		"audio": {
-			"play": [],
-			"Holy_Targeted_Loop_01": [
-				"Holy_Targeted_Loop_01.ogg"
-			],
-			"death": [],
-			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			]
-		},
 		"text": "Give your minions +2/+2. <i>(+2 Attack/+2 Health)</i>",
 		"dbfId": 1672,
 		"type": "Spell",
@@ -155521,11 +154423,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Legacy of the Emperor",
 		"id": "TU4f_004o",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Has +2/+2. <i>(+2 Attack/+2 Health)</i>",
 		"dbfId": 1676,
 		"type": "Enchantment",
@@ -155555,11 +154452,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Transcendence",
 		"id": "TU4f_006",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Until you kill Cho's minions, he can't be attacked.",
 		"dbfId": 1674,
 		"type": "Spell",
@@ -155571,11 +154463,6 @@ var parseCardsText = {
 		"set": "Missions",
 		"name": "Transcendence",
 		"id": "TU4f_006o",
-		"audio": {
-			"play": [],
-			"death": [],
-			"attack": []
-		},
 		"text": "Until you kill Cho's minions, he can't be attacked.",
 		"dbfId": 1678,
 		"type": "Enchantment",
@@ -155594,15 +154481,6 @@ var parseCardsText = {
 		"attack": 1,
 		"name": "Crazy Monkey",
 		"id": "TU4f_007",
-		"audio": {
-			"play": [
-				"MONKEY_ENTER_PLAY_02.ogg"
-			],
-			"death": [
-				"MONKEY_DEATH_03.ogg"
-			],
-			"attack": []
-		},
 		"text": "<b>Battlecry:</b> Throw Bananas.",
 		"cardClass": "NEUTRAL",
 		"rarity": "Common"
@@ -155882,26 +154760,8 @@ var parseCardsText = {
 		"id": "UNG_018",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $2 damage.\nAdd a 1/2 Elemental to your hand.",
 		"cardClass": "MAGE",
@@ -156004,9 +154864,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"UNG_021_SteamSurger_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			],
 			"Card_Transition_Out": [
 				"Card_Transition_Out.ogg"
@@ -156344,12 +155201,6 @@ var parseCardsText = {
 				"spell_holy_precast_loop_1.ogg"
 			],
 			"attack": [],
-			"Holy_Targeted_Start_01": [
-				"Holy_Targeted_Start_01.ogg"
-			],
-			"spell_holy_cast_1": [
-				"spell_holy_cast_1.ogg"
-			],
 			"Holy_Heal_Cast_01": [
 				"Holy_Heal_Cast_01.ogg"
 			]
@@ -156562,9 +155413,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"UNG_047_RavenousPterrordax_Attack.ogg"
-			],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Destroy a friendly minion to <b>Adapt</b> twice.",
@@ -156618,9 +155466,6 @@ var parseCardsText = {
 			"play": [],
 			"death": [],
 			"attack": [],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
-			],
 			"Nature_Impact_Leaves_01_Sound": [
 				"Nature_Impact_Leaves_01_Sound.ogg"
 			]
@@ -156643,9 +155488,6 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_KnifeThrow_Cast_1": [
-				"Shared_KnifeThrow_Cast_1.ogg"
-			],
 			"Nature_Impact_Leaves_01_Sound": [
 				"Nature_Impact_Leaves_01_Sound.ogg"
 			]
@@ -156680,9 +155522,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"UNG_058_RazorpetalLasher_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			],
 			"Nature_Impact_Leaves_01_Sound": [
 				"Nature_Impact_Leaves_01_Sound.ogg"
@@ -156831,9 +155670,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VilespineSlayer_UNG_064_Attack.ogg"
-			],
-			"Sneaky_Target_Start_01": [
-				"Sneaky_Target_Start_01.ogg"
 			],
 			"Nature_Impact_Assasinate_Sound": [
 				"Nature_Impact_Assasinate_Sound.ogg"
@@ -157011,9 +155847,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_UNG_208_Male_Tolvir_Attack_03.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "[x]<b>Battlecry:</b> If you played an\nElemental last turn, gain\n <b>Taunt</b> and <b>Divine Shield</b>.",
@@ -157148,9 +155981,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_UNG_073_Male_Murloc_Attack_01.ogg"
-			],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Give a friendly Murloc +1/+1.",
@@ -157292,9 +156122,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_UNG_078_Female_Tortollan_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			],
 			"Nature_Impact_Leaves_01_Sound": [
 				"Nature_Impact_Leaves_01_Sound.ogg"
@@ -157470,29 +156297,11 @@ var parseCardsText = {
 			"play": [
 				"FireplumePhoenix_UNG084_Play.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"FireplumePhoenix_UNG084_Death.ogg"
 			],
 			"attack": [
 				"FireplumePhoenix_UNG084_Attack.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Impact_Small": [
-				"Shared_Fire_Impact_Small.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"FX_FireballEvent04_SpellImpact_01": [
-				"FX_FireballEvent04_SpellImpact_01.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Deal 2 damage.",
@@ -158568,23 +157377,8 @@ var parseCardsText = {
 		"id": "UNG_211c",
 		"audio": {
 			"play": [],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [],
-			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal 6 damage to the enemy hero.",
 		"dbfId": 41335,
@@ -158704,15 +157498,9 @@ var parseCardsText = {
 				"UNG_801_NestingRoc_Play.ogg",
 				"WingFlapMedium_Underlay_Play.ogg"
 			],
-			"Shaman_AncestralHealing_Impact": [
-				"Shaman_AncestralHealing_Impact.ogg"
-			],
 			"death": [
 				"UNG_801_NestingRoc_Death.ogg",
 				"WingFlapMedium_Underlay_Death.ogg"
-			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
 			],
 			"attack": [
 				"UNG_801_NestingRoc_Attack.ogg",
@@ -158916,9 +157704,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"UNG_809_GiantFirefly_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			],
 			"Card_Transition_Out": [
 				"Card_Transition_Out.ogg"
@@ -159510,10 +158295,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_FangImpact02GoldDeath_PreCast_1": [
-				"Shared_FangImpact02GoldDeath_PreCast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Deal $3 damage to a minion. Summon three 1/1 Pterrordaxes.",
 		"cardClass": "WARLOCK",
@@ -159866,26 +158648,11 @@ var parseCardsText = {
 			"play": [
 				"VO_UNG_907_Male_Elemental_Play_02.ogg"
 			],
-			"Shared_Fire_Fizzle_1": [
-				"Shared_Fire_Fizzle_1.ogg"
-			],
 			"death": [
 				"VO_UNG_907_Male_Elemental_Death_01.ogg"
 			],
 			"attack": [
 				"VO_UNG_907_Male_Elemental_Attack_01.ogg"
-			],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
-			"Shared_Fire_Precast_1": [
-				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
-			],
-			"Shared_Fire_Cast_1": [
-				"Shared_Fire_Cast_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> If you played an Elemental last turn, deal 5 damage.",
@@ -160216,9 +158983,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"JeweledMacaw_UNG_912_Attack.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Add a random Beast to your hand.",
@@ -160643,10 +159407,7 @@ var parseCardsText = {
 		"audio": {
 			"play": [],
 			"death": [],
-			"attack": [],
-			"Shared_Generic_Cast_1": [
-				"Shared_Generic_Cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Gain 5 Armor.",
 		"cardClass": "WARRIOR",
@@ -160927,14 +159688,8 @@ var parseCardsText = {
 			],
 			"death": [],
 			"attack": [],
-			"Shared_Fire_Impact": [
-				"Shared_Fire_Impact.ogg"
-			],
 			"Shared_Fire_Precast_1": [
 				"Shared_Fire_Precast_1.ogg"
-			],
-			"Shared_Fire_Start_1": [
-				"Shared_Fire_Start_1.ogg"
 			],
 			"Shared_Fire_Cast_1": [
 				"Shared_Fire_Cast_1.ogg"
@@ -161090,9 +159845,6 @@ var parseCardsText = {
 			"death": [
 				"VO_UNG_940t8_Female_Titan_Death_01.ogg"
 			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
-			],
 			"attack": [
 				"VO_UNG_940t8_Female_Titan_Attack_01.ogg"
 			],
@@ -161123,10 +159875,7 @@ var parseCardsText = {
 			"Arcane_Impact_WithCards_Sound": [
 				"Arcane_Impact_WithCards_Sound.ogg"
 			],
-			"attack": [],
-			"Mage_ArcaneMissiles_Impact_1": [
-				"Mage_ArcaneMissiles_Impact_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "<b>Discover</b> a spell. Reduce its Cost by (2).",
 		"cardClass": "MAGE",
@@ -161202,9 +159951,6 @@ var parseCardsText = {
 			],
 			"attack": [
 				"VO_UNG_942t_Male_Murloc_Attack_01.ogg"
-			],
-			"add_card_to_hand_1": [
-				"add_card_to_hand_1.ogg"
 			]
 		},
 		"text": "<b>Battlecry:</b> Fill your hand with random Murlocs.",
@@ -161318,10 +160064,7 @@ var parseCardsText = {
 				"Holy_Targeted_Healing_Potion_FX_Impact.ogg"
 			],
 			"death": [],
-			"attack": [],
-			"spell_HolyLight_cast_1": [
-				"spell_HolyLight_cast_1.ogg"
-			]
+			"attack": []
 		},
 		"text": "Give a minion +2/+6 and <b>Taunt</b>. When it dies, summon a Stegodon.",
 		"cardClass": "PALADIN",
@@ -161495,9 +160238,6 @@ var parseCardsText = {
 			"death": [],
 			"Nature_Spirit_Impact_Sound": [
 				"Nature_Spirit_Impact_Sound.ogg"
-			],
-			"Shared_Nature_Cast_1": [
-				"Shared_Nature_Cast_1.ogg"
 			],
 			"attack": [],
 			"Nature_Target_Start_01": [

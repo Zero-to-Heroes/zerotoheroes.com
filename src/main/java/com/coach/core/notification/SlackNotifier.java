@@ -38,7 +38,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -56,7 +56,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackMessage message = new SlackMessage();
 		message.setText(
@@ -69,7 +69,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -89,7 +89,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -107,7 +107,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -127,7 +127,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -147,7 +147,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -166,7 +166,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -185,7 +185,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -203,7 +203,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -222,7 +222,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -240,7 +240,7 @@ public class SlackNotifier {
 		if (!"prod".equalsIgnoreCase(environment)) { return; }
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -308,7 +308,7 @@ public class SlackNotifier {
 		}
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");
@@ -329,7 +329,7 @@ public class SlackNotifier {
 		}
 
 		SlackApi api = new SlackApi(
-				"https://hooks.slack.com/services/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");
+				"https://hooks.slack.com/services/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");
 
 		SlackAttachment attach = new SlackAttachment();
 		attach.setColor("good");

@@ -1,5 +1,23 @@
 package com.coach.plugin.hearthstone.integrations;
 
+import com.amazonaws.event.ProgressEventType;
+import com.amazonaws.event.ProgressListener;
+import com.coach.core.storage.S3Utils;
+import com.coach.plugin.IntegrationPlugin;
+import com.coach.review.HasText;
+import com.coach.review.Review;
+import com.coach.review.ReviewRepository;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,26 +31,6 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.amazonaws.event.ProgressEventType;
-import com.amazonaws.event.ProgressListener;
-import com.coach.core.storage.S3Utils;
-import com.coach.plugin.IntegrationPlugin;
-import com.coach.review.HasText;
-import com.coach.review.Review;
-import com.coach.review.ReviewRepository;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Slf4j
 public class ArenaDrafts implements IntegrationPlugin {
@@ -85,6 +83,7 @@ public class ArenaDrafts implements IntegrationPlugin {
 				review.setMediaType("arena-draft");
 				review.setReviewType("arena-draft");
 				review.setTranscodingDone(true);
+				review.setPublished(true);
 				repo.save(review);
 				log.debug("review saved " + review);
 			}

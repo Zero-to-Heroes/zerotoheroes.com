@@ -41,6 +41,8 @@ public class NewReviewNotifier {
 		JSONObject json = new JSONObject();
 		json.put("reviewId", review.getId());
 		json.put("userId", review.getAuthorId());
+		// So that we have a way to identify and query the reviews created by third-party apps
+		json.put("uploaderToken", review.getUploaderApplicationKey() + "-" + review.getUploaderToken());
 		json.put("playerName", metaData.getPlayerName());
 		json.put("playerClass", metaData.getPlayerClass());
 		json.put("playerCardId", metaData.getPlayerCardId());

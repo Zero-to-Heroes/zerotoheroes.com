@@ -46,19 +46,23 @@ public class NewReviewNotifier {
 		json.put("playerName", metaData.getPlayerName());
 		json.put("playerClass", metaData.getPlayerClass());
 		json.put("playerCardId", metaData.getPlayerCardId());
-		json.put("playerRank", metaData.getSkillLevel());
+		json.put("playerRank", metaData.getPlayerRank());
 		json.put("opponentName", metaData.getOpponentName());
 		json.put("opponentClass", metaData.getOpponentClass());
 		json.put("opponentCardId", metaData.getOpponentCardId());
-		json.put("opponentRank", metaData.getOpponentSkillLevel());
+		json.put("opponentRank", metaData.getOpponentRank());
 		json.put("result", metaData.getWinStatus());
 		json.put("coinPlay", metaData.getPlayCoin());
 		json.put("gameMode", metaData.getGameMode());
 		json.put("gameFormat", metaData.getGameFormat());
+		json.put("buildNumber", metaData.getBuildNumber());
+		json.put("scenarioId", metaData.getScenarioId());
+		json.put("playerDecklist", metaData.getDeckstring());
+		json.put("playerDeckName", metaData.getDeckName());
 		json.put("creationDate", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(review.getCreationDate()));
 
 		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");
-		if (!StringUtils.isEmpty(deck) && deck.length() > 3) {
+		if (metaData.getDeckstring() == null && !StringUtils.isEmpty(deck) && deck.length() > 3) {
 			deck = deck.substring(1, deck.length() - 1);
             json.put("playerDecklist", deck);
         }

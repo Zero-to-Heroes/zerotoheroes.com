@@ -28,6 +28,12 @@ public class HearthstoneMetaData extends MetaData {
 	private String playerClass, opponentClass;
 	private String playerCardId, opponentCardId;
 	private String playerDecklist, opponentDecklist;
+	private String deckstring;
+	private String deckName;
+	private String playerRank;
+	private String opponentRank;
+	private String scenarioId;
+	private String buildNumber;
 
 	@Indexed
 	private int durationInSeconds;

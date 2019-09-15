@@ -97,6 +97,13 @@ public class ReviewS3Listener {
 		review.setFileType(metadata.getUserMetaDataOf("file-type"));
 		review.setText(metadata.getUserMetaDataOf("review-text"));
 		review.setMediaType(metadata.getUserMetaDataOf("game-type"));
+		HearthstoneMetaData hsMetaData = (HearthstoneMetaData) review.getMetaData();
+		hsMetaData.setDeckstring(metadata.getUserMetaDataOf("deckstring"));
+		hsMetaData.setDeckName(metadata.getUserMetaDataOf("deck-name"));
+		hsMetaData.setScenarioId(metadata.getUserMetaDataOf("scenario-id"));
+		hsMetaData.setBuildNumber(metadata.getUserMetaDataOf("build-number"));
+		hsMetaData.setPlayerRank(metadata.getUserMetaDataOf("player-rank"));
+		hsMetaData.setOpponentRank(metadata.getUserMetaDataOf("opponent-rank"));
 		review.setPublished(true);
 		review.setPublicationDate(new Date());
 		review.setVisibility("restricted");
@@ -125,6 +132,7 @@ public class ReviewS3Listener {
 		ParticipantDetails participantDetails = review.getParticipantDetails();
 		
 		if ("TavernBrawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))
+				|| "tavern-brawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))
 				|| "Brawl".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 			participantDetails.setSkillLevel(Arrays.asList(new Tag("tavernbrawl")));
 			hsMetaData.setGameMode("tavern-brawl");
@@ -143,22 +151,21 @@ public class ReviewS3Listener {
 				participantDetails.setSkillLevel(Arrays.asList(new Tag("friendly")));
 				hsMetaData.setGameMode("friendly");
 			}
-			else if ("Dungeon-run".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-				hsMetaData.setGameMode("dungeon-run");
-			}
 			else {
-				Integer rank = StringUtils.isEmpty(metadata.getUserMetaDataOf("game-rank"))
+				Integer rank = StringUtils.isEmpty(metadata.getUserMetaDataOf("player-rank"))
+								|| "legend".equals(metadata.getUserMetaDataOf("player-rank"))
 						? null 
-						: Integer.valueOf(metadata.getUserMetaDataOf("game-rank"));
-				Integer legendRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("game-legend-rank")) 
+						: Integer.valueOf(metadata.getUserMetaDataOf("player-rank"));
+				Integer legendRank = "legend".equals(metadata.getUserMetaDataOf("player-rank"))
+						? 0
+						: null;
+				Integer opponentRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("opponent-rank"))
+								|| "legend".equals(metadata.getUserMetaDataOf("opponent-rank"))
 						? null 
-						: 0;
-				Integer opponentRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("opponent-game-rank"))
-						? null 
-						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-game-rank"));
-				Integer opponentLegendRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("opponent-game-legend-rank"))
-						? null 
-						: 0;
+						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-rank"));
+				Integer opponentLegendRank = "legend".equals(metadata.getUserMetaDataOf("opponent-rank"))
+						? 0
+						: null;
 				
 				if ("Ranked".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 					hsMetaData.setGameMode("ranked");

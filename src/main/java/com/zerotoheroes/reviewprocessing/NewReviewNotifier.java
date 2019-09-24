@@ -59,6 +59,7 @@ public class NewReviewNotifier {
 		json.put("scenarioId", metaData.getScenarioId());
 		json.put("playerDecklist", metaData.getDeckstring());
 		json.put("playerDeckName", metaData.getDeckName());
+		json.put("replayKey", review.getKey()); // Not used for stats
 		json.put("creationDate", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(review.getCreationDate()));
 
 		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");

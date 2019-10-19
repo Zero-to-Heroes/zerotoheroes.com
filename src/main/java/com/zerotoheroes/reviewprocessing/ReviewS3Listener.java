@@ -98,12 +98,12 @@ public class ReviewS3Listener {
 		review.setText(metadata.getUserMetaDataOf("review-text"));
 		review.setMediaType(metadata.getUserMetaDataOf("game-type"));
 		HearthstoneMetaData hsMetaData = (HearthstoneMetaData) review.getMetaData();
-		hsMetaData.setDeckstring(metadata.getUserMetaDataOf("deckstring"));
-		hsMetaData.setDeckName(metadata.getUserMetaDataOf("deck-name"));
-		hsMetaData.setScenarioId(metadata.getUserMetaDataOf("scenario-id"));
-		hsMetaData.setBuildNumber(metadata.getUserMetaDataOf("build-number"));
-		hsMetaData.setPlayerRank(metadata.getUserMetaDataOf("player-rank"));
-		hsMetaData.setOpponentRank(metadata.getUserMetaDataOf("opponent-rank"));
+		hsMetaData.setDeckstring(undefinedAsNull(metadata.getUserMetaDataOf("deckstring")));
+		hsMetaData.setDeckName(undefinedAsNull(metadata.getUserMetaDataOf("deck-name")));
+		hsMetaData.setScenarioId(undefinedAsNull(metadata.getUserMetaDataOf("scenario-id")));
+		hsMetaData.setBuildNumber(undefinedAsNull(metadata.getUserMetaDataOf("build-number")));
+		hsMetaData.setPlayerRank(undefinedAsNull(metadata.getUserMetaDataOf("player-rank")));
+		hsMetaData.setOpponentRank(undefinedAsNull(metadata.getUserMetaDataOf("opponent-rank")));
 		review.setPublished(true);
 		review.setPublicationDate(new Date());
 		review.setVisibility("restricted");
@@ -124,6 +124,10 @@ public class ReviewS3Listener {
 		// Manual acknowledgement to keep the message in the queue until the process is done and no exceptions 
 		// were raised
 		acknowledgment.acknowledge().get();
+	}
+
+	private String undefinedAsNull(String str) {
+		return "undefined".equals(str) ? null : str;
 	}
 
 	private void parseGameModeAndRank(ObjectMetadata metadata, Review review) {
@@ -218,7 +222,7 @@ public class ReviewS3Listener {
 	}
 
 	private void parseDeck(ObjectMetadata metadata, Review review) {
-		String deckstring = metadata.getUserMetaDataOf("deckstring");
+		String deckstring = undefinedAsNull(metadata.getUserMetaDataOf("deckstring"));
 		if (!StringUtils.isEmpty(deckstring)) {
 			Map<String, String> deckPluginData = review.getPluginData("hearthstone", "parseDecks");
 			deckPluginData.put("reviewDeck", "[" + deckstring + "]");

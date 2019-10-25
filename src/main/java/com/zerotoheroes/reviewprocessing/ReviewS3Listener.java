@@ -68,6 +68,7 @@ public class ReviewS3Listener {
 			metadata = s3.getObjectMetadata(bucketName, key);
 			reviewId = metadata.getUserMetaDataOf("review-id");
 			log.debug("Received message to process reviewId " + reviewId);
+			log.debug("metadat is " + metadata);
 		}
 		catch (AmazonClientException e) {
 			String errorMessage = String.format("Could not retrieve metadata from s3 from bucket %s and key %s", bucketName, key);
@@ -109,8 +110,11 @@ public class ReviewS3Listener {
 		review.setVisibility("restricted");
 		review.setClaimableAccount(true);
 
+		log.debug("preparing to parse game mode and rank");
 		parseGameModeAndRank(metadata, review);
+		log.debug("preparing to parse deck");
 		parseDeck(metadata, review);
+		log.debug("deck parsed");
 
 		// FIXME: hack to easily reuse existing methods
 		String outputKey = review.buildKey(key, "hearthstone/replay");
@@ -160,14 +164,16 @@ public class ReviewS3Listener {
 								|| metadata.getUserMetaDataOf("player-rank").contains("legend")
 						? null 
 						: Integer.valueOf(metadata.getUserMetaDataOf("player-rank"));
-				Integer legendRank = metadata.getUserMetaDataOf("player-rank").contains("legend")
+				Integer legendRank = !StringUtils.isEmpty(metadata.getUserMetaDataOf("player-rank"))
+								&& metadata.getUserMetaDataOf("player-rank").contains("legend")
 						? Integer.parseInt(metadata.getUserMetaDataOf("player-rank").split("-")[1])
 						: null;
 				Integer opponentRank = StringUtils.isEmpty(metadata.getUserMetaDataOf("opponent-rank"))
 								|| metadata.getUserMetaDataOf("opponent-rank").contains("legend")
 						? null 
 						: Integer.valueOf(metadata.getUserMetaDataOf("opponent-rank"));
-				Integer opponentLegendRank =metadata.getUserMetaDataOf("opponent-rank").contains("legend")
+				Integer opponentLegendRank = !StringUtils.isEmpty(metadata.getUserMetaDataOf("opponent-rank"))
+								&& metadata.getUserMetaDataOf("opponent-rank").contains("legend")
 						? Integer.parseInt(metadata.getUserMetaDataOf("opponent-rank").split("-")[1])
 						: null;
 				
@@ -183,7 +189,7 @@ public class ReviewS3Listener {
 						}
 						else if (legendRank != null) {
 							participantDetails.setSkillLevel(Arrays.asList(new Tag("Legend")));
-							hsMetaData.setSkillLevel(rank != null ? -legendRank.floatValue() : null);
+							hsMetaData.setSkillLevel(-legendRank.floatValue());
 							hsMetaData.setOpponentSkillLevel(opponentLegendRank != null ? -opponentLegendRank.floatValue() : null);
 						}
 					}

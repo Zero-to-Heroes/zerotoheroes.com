@@ -69,6 +69,10 @@ public class HSGameParser implements ReplayPlugin {
 			review.setInvalidGame(false);
 			log.debug("Adding meta data to " + review.getId() + " - " + review.getTitle());
 			String replay = getReplay(review);
+			if (replay == null) {
+				log.error("Processing empty replay, returning");
+				return;
+			}
 			// log.debug("temp replay is ");
 			HearthstoneReplay game = new ReplayConverter()
 					.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));

@@ -131,7 +131,7 @@ public class HSGameParser implements ReplayPlugin {
 			review.setLastMetaDataParsingDate(new Date());
 		}
 		catch (Exception e) {
-			log.error("Could not add metata to review " + review, e);
+			log.warn("Could not add metata to review " + review, e);
 			review.setInvalidGame(true);
 			review.setLastMetaDataParsingDate(new Date());
 			throw e;

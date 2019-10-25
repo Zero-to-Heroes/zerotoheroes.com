@@ -131,7 +131,7 @@ public class ReviewS3Listener {
 	}
 
 	private String undefinedAsNull(String str) {
-		return "undefined".equals(str) ? null : str;
+		return "undefined".equals(str) || StringUtils.isEmpty(str) ? null : str;
 	}
 
 	private void parseGameModeAndRank(ObjectMetadata metadata, Review review) {

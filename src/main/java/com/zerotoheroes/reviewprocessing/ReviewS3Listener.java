@@ -159,6 +159,10 @@ public class ReviewS3Listener {
 				participantDetails.setSkillLevel(Arrays.asList(new Tag("friendly")));
 				hsMetaData.setGameMode("friendly");
 			}
+			else if ("Battlegrounds".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))
+                    || "tournament".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				hsMetaData.setGameMode("battlegrounds");
+			}
 			else {
 				Integer rank = StringUtils.isEmpty(metadata.getUserMetaDataOf("player-rank"))
 								|| metadata.getUserMetaDataOf("player-rank").contains("legend")

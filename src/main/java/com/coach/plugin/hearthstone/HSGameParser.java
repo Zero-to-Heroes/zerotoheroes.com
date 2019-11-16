@@ -78,22 +78,24 @@ public class HSGameParser implements ReplayPlugin {
 					.replayFromXml(new ByteArrayInputStream(replay.getBytes(StandardCharsets.UTF_8)));
 			// log.debug("game is ");
 
-			GameMetaData meta = gameParser.getGameParser().getMetaData(game);
+			MetaData metaData = review.getMetaData();
+			if (!(metaData instanceof HearthstoneMetaData)) {
+				metaData = new HearthstoneMetaData();
+				review.setMetaData(metaData);
+			}
+
+			GameMetaData meta = gameParser.getGameParser().getMetaData(game, ((HearthstoneMetaData) metaData).getGameMode());
 			log.info("built meta data " + meta);
 			review.getParticipantDetails().setPlayerName(meta.getPlayerName());
 			review.getParticipantDetails().setOpponentName(meta.getOpponentName());
 			review.getParticipantDetails().setPlayerCategory(meta.getPlayerClass());
 			review.getParticipantDetails().setOpponentCategory(meta.getOpponentClass());
 
-			MetaData metaData = review.getMetaData();
-			if (!(metaData instanceof HearthstoneMetaData)) {
-				metaData = new HearthstoneMetaData();
-				review.setMetaData(metaData);
-			}
 			HearthstoneMetaData hsMeta = (HearthstoneMetaData) metaData;
 			hsMeta.setDurationInSeconds(meta.getDurationInSeconds());
 			hsMeta.setNumberOfTurns(meta.getNumberOfTurns());
 			hsMeta.setWinStatus(meta.getResult());
+			hsMeta.setAdditionalResult(meta.getAdditionalResult());
 			hsMeta.setOpponentClass(meta.getOpponentClass());
 			hsMeta.setOpponentName(meta.getOpponentName());
 			hsMeta.setOpponentCardId(meta.getOpponentCardId());

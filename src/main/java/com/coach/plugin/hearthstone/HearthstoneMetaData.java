@@ -42,6 +42,8 @@ public class HearthstoneMetaData extends MetaData {
 	@Indexed
 	private String winStatus;
 	@Indexed
+	private String additionalResult;
+	@Indexed
 	private String gameMode, gameFormat;
 	@Indexed
 	private String playCoin;

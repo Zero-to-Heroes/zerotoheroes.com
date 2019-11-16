@@ -52,6 +52,7 @@ public class NewReviewNotifier {
 		json.put("opponentCardId", metaData.getOpponentCardId());
 		json.put("opponentRank", metaData.getOpponentRank());
 		json.put("result", metaData.getWinStatus());
+		json.put("additionalResult", metaData.getAdditionalResult());
 		json.put("coinPlay", metaData.getPlayCoin());
 		json.put("gameMode", metaData.getGameMode());
 		json.put("gameFormat", metaData.getGameFormat());

@@ -13,3 +13,4 @@ yo/bower_components
 /*.1
 /yo/app/scripts/services/defaultI18n.js
 /.idea
+**/*.ignore

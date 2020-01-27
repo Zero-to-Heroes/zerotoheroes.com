@@ -1,21 +1,16 @@
 package com.coach.core;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-
-import org.springframework.boot.context.embedded.FilterRegistrationBean;
+import io.sentry.jul.SentryHandler;
+import io.sentry.spring.SentryServletContextInitializer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.embedded.ServletContextInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.coach.core.prerender.PreRenderSEOFilter;
-
-import io.sentry.jul.SentryHandler;
-import io.sentry.spring.SentryServletContextInitializer;
-import lombok.extern.slf4j.Slf4j;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 //@Component
 @Slf4j
@@ -35,24 +30,6 @@ public class WebConfigInitializer implements ServletContextInitializer {
 		sentryHandler.setLevel(Level.WARNING);
 		Logger.getLogger("").addHandler(sentryHandler);
 		log.debug("SentryHandler configured");
-	}
-
-	@Bean
-	public FilterRegistrationBean preRenderSEOFilterRegistration() {
-		FilterRegistrationBean registration = new FilterRegistrationBean();
-		registration.setFilter(preRenderSEOFilter());
-		registration.addUrlPatterns("/*");
-		registration.addInitParameter("prerenderToken", "Pyd6EO6IRaMKowTwFGCQ");
-		// registration.addInitParameter("prerenderServiceUrl",
-		// "http://localhost:3000");
-		// registration.addInitParameter("crawlerUserAgents", "YahooSeeker");
-		registration.setName("prerender");
-		return registration;
-	}
-
-	@Bean(name = "prerender")
-	public PreRenderSEOFilter preRenderSEOFilter() {
-		return new PreRenderSEOFilter();
 	}
 
 	@Bean

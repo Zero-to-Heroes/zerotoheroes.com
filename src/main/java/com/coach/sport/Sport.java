@@ -1,22 +1,19 @@
 package com.coach.sport;
 
+import com.coach.activities.Activity;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.amazonaws.util.StringUtils;
-import com.coach.activities.Activity;
-import com.coach.subscription.HasSubscribers;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
 @Getter
 @Setter
 @ToString
-public class Sport implements HasSubscribers {
+public class Sport {
 
 	private static final int MAX_ACTIVITIES_IN_MEMORY = 15;
 
@@ -33,22 +30,22 @@ public class Sport implements HasSubscribers {
 		return subscribers;
 	}
 
-	@Override
-	public void addSubscriber(String subscriberId) {
-		if (StringUtils.isNullOrEmpty(subscriberId)) { return; }
-		getSubscribers().add(subscriberId);
-	}
+//	@Override
+//	public void addSubscriber(String subscriberId) {
+//		if (StringUtils.isNullOrEmpty(subscriberId)) { return; }
+//		getSubscribers().add(subscriberId);
+//	}
 
-	@Override
+//	@Override
 	public String getTitle() {
 		return id;
 	}
 
-	@Override
-	public void removeSubscriber(String subscriberId) {
-		if (StringUtils.isNullOrEmpty(subscriberId)) { return; }
-		getSubscribers().remove(subscriberId);
-	}
+//	@Override
+//	public void removeSubscriber(String subscriberId) {
+//		if (StringUtils.isNullOrEmpty(subscriberId)) { return; }
+//		getSubscribers().remove(subscriberId);
+//	}
 
 	// public void addActivity(Activity activity) {
 	// while (activities.size() > MAX_ACTIVITIES_IN_MEMORY - 1) {

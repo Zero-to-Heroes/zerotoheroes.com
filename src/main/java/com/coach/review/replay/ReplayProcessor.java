@@ -1,17 +1,14 @@
 package com.coach.review.replay;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
-import org.springframework.stereotype.Component;
-
-import com.coach.core.notification.SlackNotifier;
 import com.coach.plugin.Plugin;
 import com.coach.plugin.ReplayPlugin;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.sport.SportManager;
-
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
@@ -23,14 +20,14 @@ public class ReplayProcessor {
 	@Autowired
 	AutowireCapableBeanFactory beanFactory;
 
-	@Autowired
-	SlackNotifier slackNotifier;
+//	@Autowired
+//	SlackNotifier slackNotifier;
 
 	@Autowired
 	ReviewRepository repo;
 
 	public boolean processReplayFile(final Review review, String phase) {
-		com.coach.sport.Sport sportEntity = sportManager.findById(review.getSport().getKey());
+		com.coach.sport.Sport sportEntity = sportManager.findById("hearthstone");
 		boolean updated = false;
 		for (String pluginClass : sportEntity.getPlugins()) {
 			try {
@@ -57,7 +54,7 @@ public class ReplayProcessor {
 			}
 			catch (Exception e) {
 				log.error("Incorrect plugin execution " + pluginClass, e);
-				slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
+//				slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
 			}
 		}
 		return updated;

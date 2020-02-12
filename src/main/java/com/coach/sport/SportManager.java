@@ -1,13 +1,12 @@
 package com.coach.sport;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.amazonaws.util.StringUtils;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class SportManager {
@@ -33,9 +32,9 @@ public class SportManager {
 		if (sport.getSubscribers() == null || sport.getSubscribers().isEmpty()) {
 
 			List<Review> all = reviewRepo.findBySport(sportId);
-			for (Review review : all) {
-				sport.addSubscriber(review.getAuthorId());
-			}
+//			for (Review review : all) {
+//				sport.addSubscriber(review.getAuthorId());
+//			}
 			sportRepo.save(sport);
 		}
 		return sport;

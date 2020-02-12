@@ -6,11 +6,9 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.event.S3EventNotification;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.util.json.Jackson;
-import com.coach.core.notification.SlackNotifier;
 import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.ParticipantDetails;
 import com.coach.review.Review;
-import com.coach.review.Review.Sport;
 import com.coach.review.ReviewApiHandler;
 import com.coach.review.ReviewService;
 import com.coach.tag.Tag;
@@ -25,8 +23,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
-import java.util.Date;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/endpoint/reviewS3listener")
@@ -46,9 +42,9 @@ public class ReviewS3Listener {
 
 	@Autowired
 	private AmazonS3 s3;
-
-	@Autowired
-	private SlackNotifier slackNotifier;
+//
+//	@Autowired
+//	private SlackNotifier slackNotifier;
 
 	// https://github.com/spring-cloud/spring-cloud-aws/issues/100
 	// FIXME: properly handle exceptions - resend the failed uploads to a
@@ -91,12 +87,12 @@ public class ReviewS3Listener {
 		}
 		log.debug("review " + reviewId + " not yet processed, continuing");
 
-		review.setSport(Sport.HearthStone);
+//		review.setSport(Sport.HearthStone);
 		review.setUploaderApplicationKey(metadata.getUserMetaDataOf("application-key"));
 		review.setUploaderToken(metadata.getUserMetaDataOf("user-key"));
 		review.setAuthorId(metadata.getUserMetaDataOf("user-id"));
 		review.setFileType(metadata.getUserMetaDataOf("file-type"));
-		review.setText(metadata.getUserMetaDataOf("review-text"));
+//		review.setText(metadata.getUserMetaDataOf("review-text"));
 		review.setMediaType(metadata.getUserMetaDataOf("game-type"));
 		HearthstoneMetaData hsMetaData = (HearthstoneMetaData) review.getMetaData();
 		hsMetaData.setDeckstring(undefinedAsNull(metadata.getUserMetaDataOf("deckstring")));
@@ -106,15 +102,15 @@ public class ReviewS3Listener {
 		hsMetaData.setPlayerRank(undefinedAsNull(metadata.getUserMetaDataOf("player-rank")));
 		hsMetaData.setOpponentRank(undefinedAsNull(metadata.getUserMetaDataOf("opponent-rank")));
 		review.setPublished(true);
-		review.setPublicationDate(new Date());
-		review.setVisibility("restricted");
+//		review.setPublicationDate(new Date());
+//		review.setVisibility("restricted");
 		review.setClaimableAccount(true);
 
 		log.debug("preparing to parse game mode and rank");
 		parseGameModeAndRank(metadata, review);
-		log.debug("preparing to parse deck");
-		parseDeck(metadata, review);
-		log.debug("deck parsed");
+//		log.debug("preparing to parse deck");
+//		parseDeck(metadata, review);
+//		log.debug("deck parsed");
 
 		// FIXME: hack to easily reuse existing methods
 		String outputKey = review.buildKey(key, "hearthstone/replay");
@@ -203,7 +199,7 @@ public class ReviewS3Listener {
 					}
 					catch (Exception e) {
 					    log.error("Could not parse ranked metadata", e);
-						slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
+//						slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
 					}
 				}
 			}
@@ -219,11 +215,11 @@ public class ReviewS3Listener {
 		log.debug("Updated meta data: " + hsMetaData);
 	}
 
-	private void parseDeck(ObjectMetadata metadata, Review review) {
-		String deckstring = undefinedAsNull(metadata.getUserMetaDataOf("deckstring"));
-		if (!StringUtils.isEmpty(deckstring)) {
-			Map<String, String> deckPluginData = review.getPluginData("hearthstone", "parseDecks");
-			deckPluginData.put("reviewDeck", "[" + deckstring + "]");
-		}
-	}
+//	private void parseDeck(ObjectMetadata metadata, Review review) {
+//		String deckstring = undefinedAsNull(metadata.getUserMetaDataOf("deckstring"));
+//		if (!StringUtils.isEmpty(deckstring)) {
+//			Map<String, String> deckPluginData = review.getPluginData("hearthstone", "parseDecks");
+//			deckPluginData.put("reviewDeck", "[" + deckstring + "]");
+//		}
+//	}
 }

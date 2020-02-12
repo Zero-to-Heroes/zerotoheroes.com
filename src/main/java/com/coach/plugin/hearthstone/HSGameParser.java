@@ -2,7 +2,6 @@ package com.coach.plugin.hearthstone;
 
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
-import com.coach.review.HasText;
 import com.coach.review.MetaData;
 import com.coach.review.Review;
 import com.zerotoheroes.hsgameconverter.ReplayConverter;
@@ -18,9 +17,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @Component
@@ -32,10 +29,10 @@ public class HSGameParser implements ReplayPlugin {
 	@Autowired
 	GameParserProvider gameParser;
 
-	@Override
-	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
-		return textHolder.getText();
-	}
+//	@Override
+//	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) throws Exception {
+//		return textHolder.getText();
+//	}
 
 	@Override
 	public String getName() {
@@ -66,7 +63,7 @@ public class HSGameParser implements ReplayPlugin {
 		}
 
 		try {
-			review.setInvalidGame(false);
+//			review.setInvalidGame(false);
 			log.debug("Adding meta data to " + review.getId() + " - " + review.getTitle());
 			String replay = getReplay(review);
 			if (replay == null) {
@@ -118,24 +115,24 @@ public class HSGameParser implements ReplayPlugin {
 				review.setTitle(title);
 			}
 			
-			if ("game-replay".equals(review.getReviewType()) 
-				&& StringUtils.isEmpty(((HearthstoneMetaData)review.getMetaData()).getPlayerName())
-				&& StringUtils.isEmpty(((HearthstoneMetaData)review.getMetaData()).getPlayerClass())) {
-				review.setInvalidGame(true);;
-			}
+//			if ("game-replay".equals(review.getReviewType())
+//				&& StringUtils.isEmpty(((HearthstoneMetaData)review.getMetaData()).getPlayerName())
+//				&& StringUtils.isEmpty(((HearthstoneMetaData)review.getMetaData()).getPlayerClass())) {
+//				review.setInvalidGame(true);;
+//			}
 
-			review.setLastMetaDataParsingDate(new Date());
+//			review.setLastMetaDataParsingDate(new Date());
 			log.debug("done adding meta " + hsMeta);
 		}
 		catch (InvalidGameReplayException e) {
 			log.info("Invalid game " + e.getMessage() + ". Key is " + review.getKey());
-			review.setInvalidGame(true);
-			review.setLastMetaDataParsingDate(new Date());
+//			review.setInvalidGame(true);
+//			review.setLastMetaDataParsingDate(new Date());
 		}
 		catch (Exception e) {
 			log.warn("Could not add metata to review " + review, e);
-			review.setInvalidGame(true);
-			review.setLastMetaDataParsingDate(new Date());
+//			review.setInvalidGame(true);
+//			review.setLastMetaDataParsingDate(new Date());
 			throw e;
 		}
 	}

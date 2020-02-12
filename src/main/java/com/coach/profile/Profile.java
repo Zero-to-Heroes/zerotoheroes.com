@@ -1,20 +1,17 @@
 package com.coach.profile;
 
-import java.util.Date;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import com.coach.preferences.Preferences;
 import com.coach.profile.profileinfo.ProfileInfo;
 import com.coach.review.Review.Sport;
-import com.coach.subscription.Subscriptions;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
 
 // Should have done this from the start, but distinguishing now
 // between the User (security) and the Profile (business data)
@@ -32,7 +29,7 @@ public class Profile {
 
 	private Notifications notifications = new Notifications();
 	private Preferences preferences = new Preferences();
-	private Subscriptions subscriptions = new Subscriptions();
+//	private Subscriptions subscriptions = new Subscriptions();
 	// private Rankings rankings = new Rankings();
 	private ProfileInfo profileInfo = new ProfileInfo();
 	private ActivitiesStats activitiesStats = new ActivitiesStats();

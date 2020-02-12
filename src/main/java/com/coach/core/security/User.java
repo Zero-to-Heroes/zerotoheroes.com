@@ -1,27 +1,22 @@
 package com.coach.core.security;
 
-import java.util.Date;
-import java.util.EnumSet;
-import java.util.HashSet;
-import java.util.Set;
-
+import com.coach.profile.Superpowers;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.coach.coaches.CoachInformation;
-import com.coach.profile.Superpowers;
-import com.coach.reputation.UserReputation;
-import com.coach.review.Review.Sport;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import java.util.Date;
+import java.util.EnumSet;
+import java.util.HashSet;
+import java.util.Set;
 
 @SuppressWarnings("serial")
 @Getter
@@ -65,12 +60,12 @@ public class User implements UserDetails {
 	private int reputation;
 	private String frame;
 	private String preferredLanguage;
-	private UserReputation explodedReputation;
+//	private UserReputation explodedReputation;
 	// private Stats stats = new Stats();
 	private boolean canEdit;
 	private boolean betaTester;
 
-	private CoachInformation coachInformation;
+//	private CoachInformation coachInformation;
 	private Superpowers powers = new Superpowers();
 
 	@Override
@@ -148,21 +143,21 @@ public class User implements UserDetails {
 		return accountEnabled;
 	}
 
-	public int modifyReputation(Sport sport, int amount) {
-		reputation += amount;
-		if (explodedReputation == null) {
-			explodedReputation = new UserReputation();
-		}
-		explodedReputation.modifyReputation(sport, amount);
-		return amount;
-	}
-
-	public int getReputation(Sport sport) {
-		if (explodedReputation == null) {
-			explodedReputation = new UserReputation();
-		}
-		return explodedReputation.getReputation(sport);
-	}
+//	public int modifyReputation(Sport sport, int amount) {
+//		reputation += amount;
+//		if (explodedReputation == null) {
+//			explodedReputation = new UserReputation();
+//		}
+//		explodedReputation.modifyReputation(sport, amount);
+//		return amount;
+//	}
+//
+//	public int getReputation(Sport sport) {
+//		if (explodedReputation == null) {
+//			explodedReputation = new UserReputation();
+//		}
+//		return explodedReputation.getReputation(sport);
+//	}
 
 	// public Stats getStats() {
 	// if (stats == null) {

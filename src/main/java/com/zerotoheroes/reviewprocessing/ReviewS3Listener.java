@@ -163,6 +163,10 @@ public class ReviewS3Listener {
                     || "tournament".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
 				hsMetaData.setGameMode("battlegrounds");
 			}
+			else if ("Arena".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
+				hsMetaData.setGameMode("arena");
+				hsMetaData.setPlayerRank(metadata.getUserMetaDataOf("player-rank"));;
+			}
 			else {
 				Integer rank = StringUtils.isEmpty(metadata.getUserMetaDataOf("player-rank"))
 								|| metadata.getUserMetaDataOf("player-rank").contains("legend")
@@ -199,22 +203,6 @@ public class ReviewS3Listener {
 					}
 					catch (Exception e) {
 					    log.error("Could not parse ranked metadata", e);
-						slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
-					}
-				}
-				else if ("Arena".equalsIgnoreCase(metadata.getUserMetaDataOf("game-mode"))) {
-					hsMetaData.setGameMode("arena");
-					// TODO: later on, extract that on a sports-specific class parser
-					try {
-						if (rank != null) {
-							Tag rankTag = new Tag("arena" + rank + "wins");
-							participantDetails.setSkillLevel(Arrays.asList(rankTag));
-							hsMetaData.setSkillLevel(rank.floatValue());
-							hsMetaData.setOpponentSkillLevel(rank.floatValue());
-						}
-					}
-					catch (Exception e) {
-                        log.error("Could not parse arena metadata", e);
 						slackNotifier.notifyError(e, "Error while setting game rank " + metadata);
 					}
 				}

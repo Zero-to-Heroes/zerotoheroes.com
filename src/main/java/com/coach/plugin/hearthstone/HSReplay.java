@@ -1,10 +1,8 @@
 package com.coach.plugin.hearthstone;
 
 import com.amazonaws.services.s3.model.S3Object;
-import com.coach.core.notification.SlackNotifier;
 import com.coach.core.storage.S3Utils;
 import com.coach.plugin.ReplayPlugin;
-import com.coach.review.HasText;
 import com.coach.review.Review;
 import com.zerotoheroes.hsgameconverter.ReplayConverter;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +18,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import java.util.zip.ZipInputStream;
 
@@ -34,13 +31,13 @@ public class HSReplay implements ReplayPlugin {
 	@Autowired
 	private HSGameParser hsParser;
 
-	@Autowired
-	private SlackNotifier slackNotifier;
+//	@Autowired
+//	private SlackNotifier slackNotifier;
 
-	@Override
-	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) {
-		return textHolder.getText();
-	}
+//	@Override
+//	public String execute(String currentUser, Map<String, String> pluginData, HasText textHolder) {
+//		return textHolder.getText();
+//	}
 
 	@Override
 	public String getName() {
@@ -105,13 +102,13 @@ public class HSReplay implements ReplayPlugin {
 		}
 		catch (Exception e) {
 			log.error("Could not parse metadata for review " + review, e);
-			slackNotifier.notifyError(e, "Could not parse metadata", review);
+//			slackNotifier.notifyError(e, "Could not parse metadata", review);
 		}
 		s3utils.putToS3(xml, review.getKey(), "text/xml");
 
 		log.debug("Review updated with proper key " + review);
 		// review.setTemporaryKey(null);
-		review.setTranscodingDone(true);
+//		review.setTranscodingDone(true);
 		review.setTemporaryReplay(null);
 		return true;
 	}

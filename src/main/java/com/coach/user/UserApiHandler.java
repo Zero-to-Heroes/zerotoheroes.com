@@ -1,9 +1,9 @@
 package com.coach.user;
 
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.UUID;
-
+import com.amazonaws.util.StringUtils;
+import com.coach.core.security.User;
+import com.coach.core.security.UserRole;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,14 +16,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.amazonaws.util.StringUtils;
-import com.coach.coaches.CoachInformation;
-import com.coach.core.notification.SlackNotifier;
-import com.coach.core.security.User;
-import com.coach.core.security.UserRole;
-import com.coach.review.EmailNotifier;
-
-import lombok.extern.slf4j.Slf4j;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.UUID;
 
 @RestController
 @RequestMapping(value = "/api/users")
@@ -33,11 +28,11 @@ public class UserApiHandler {
 	@Autowired
 	UserRepository userRepository;
 
-	@Autowired
-	EmailNotifier emailNotifier;
-
-	@Autowired
-	SlackNotifier slackNotifier;
+//	@Autowired
+//	EmailNotifier emailNotifier;
+//
+//	@Autowired
+//	SlackNotifier slackNotifier;
 
 	@Autowired
 	ResetPasswordRepository resetPasswordRepository;
@@ -84,17 +79,17 @@ public class UserApiHandler {
 			user = userRepository.findByUsername(identifier);
 		}
 
-		if (user != null && user.getCoachInformation() != null) {
-			CoachInformation coachInformation = user.getCoachInformation();
-			if (coachInformation.getName() == null) {
-				coachInformation.setName(user.getUsername());
-			}
-			if (coachInformation.getEmail() == null) {
-				coachInformation.setEmail(user.getEmail());
-			}
-			coachInformation.setUsername(user.getUsername());
-			coachInformation.setId(user.getId());
-		}
+//		if (user != null && user.getCoachInformation() != null) {
+//			CoachInformation coachInformation = user.getCoachInformation();
+//			if (coachInformation.getName() == null) {
+//				coachInformation.setName(user.getUsername());
+//			}
+//			if (coachInformation.getEmail() == null) {
+//				coachInformation.setEmail(user.getEmail());
+//			}
+//			coachInformation.setUsername(user.getUsername());
+//			coachInformation.setId(user.getId());
+//		}
 		// log.debug("Loaded user " + user);
 
 		return new ResponseEntity<User>(user, HttpStatus.OK);
@@ -159,7 +154,7 @@ public class UserApiHandler {
 
 		// emailNotifier.notifyNewUser(user);
 //		slackNotifier.notifyNewUser(user);
-		emailNotifier.notifyNewUser(user);
+//		emailNotifier.notifyNewUser(user);
 
 		return new ResponseEntity<String>(HttpStatus.OK);
 	}
@@ -190,9 +185,9 @@ public class UserApiHandler {
 		if (userInput.getPreferredLanguage() != null) {
 			user.setPreferredLanguage(userInput.getPreferredLanguage());
 		}
-		if (userInput.getCoachInformation() != null) {
-			user.setCoachInformation(userInput.getCoachInformation());
-		}
+//		if (userInput.getCoachInformation() != null) {
+//			user.setCoachInformation(userInput.getCoachInformation());
+//		}
 
 		userRepository.save(user);
 		log.debug("Updated user: " + user);
@@ -232,8 +227,8 @@ public class UserApiHandler {
 
 		// Build the link to send
 		String url = String.format("http://www.zerotoheroes.com/s/hearthstone/resetpassword?id=%s", uniqueId);
-		emailNotifier.sendResetPasswordLink(user, url);
-		slackNotifier.notifyResetPassword(user);
+//		emailNotifier.sendResetPasswordLink(user, url);
+//		slackNotifier.notifyResetPassword(user);
 
 		return new ResponseEntity<String>((String) null, HttpStatus.OK);
 	}

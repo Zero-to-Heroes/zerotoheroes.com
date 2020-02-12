@@ -1,16 +1,14 @@
 package com.zerotoheroes.reviewprocessing;
 
+import com.amazonaws.services.sns.AmazonSNS;
+import com.coach.plugin.hearthstone.HearthstoneMetaData;
+import com.coach.review.Review;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.core.NotificationMessagingTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
-
-import com.amazonaws.services.sns.AmazonSNS;
-import com.coach.plugin.hearthstone.HearthstoneMetaData;
-import com.coach.review.Review;
 
 import java.text.SimpleDateFormat;
 
@@ -63,11 +61,11 @@ public class NewReviewNotifier {
 		json.put("replayKey", review.getKey()); // Not used for stats
 		json.put("creationDate", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(review.getCreationDate()));
 
-		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");
-		if (metaData.getDeckstring() == null && !StringUtils.isEmpty(deck) && deck.length() > 3) {
-			deck = deck.substring(1, deck.length() - 1);
-            json.put("playerDecklist", deck);
-        }
+//		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");
+//		if (metaData.getDeckstring() == null && !StringUtils.isEmpty(deck) && deck.length() > 3) {
+//			deck = deck.substring(1, deck.length() - 1);
+//            json.put("playerDecklist", deck);
+//        }
         log.debug("Publishing new review created message: " + json.toString());
 
 		return json.toString();

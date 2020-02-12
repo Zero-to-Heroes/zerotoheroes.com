@@ -1,29 +1,16 @@
 package com.coach.review;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import com.coach.core.notification.ExecutorProvider;
-import com.coach.core.notification.SlackNotifier;
-import com.coach.core.security.User;
 import com.coach.plugin.hearthstone.HearthstoneMetaData;
-import com.coach.profile.Profile;
 import com.coach.profile.ProfileRepository;
-import com.coach.reputation.ReputationAction;
-import com.coach.review.journal.CommentJournal;
 import com.coach.review.journal.CommentJournalRepository;
-import com.coach.review.journal.ReputationJournal;
 import com.coach.review.journal.ReputationJournalRepository;
-import com.coach.review.journal.ReviewJournal;
 import com.coach.review.journal.ReviewJournalRepository;
 import com.coach.user.UserRepository;
-
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
@@ -37,9 +24,9 @@ public class ReviewService {
 
 	@Autowired
 	ProfileRepository profileRepo;
-
-	@Autowired
-	SlackNotifier slackNotifier;
+//
+//	@Autowired
+//	SlackNotifier slackNotifier;
 
 	@Autowired
 	ReviewJournalRepository reviewJournalRepo;
@@ -65,9 +52,9 @@ public class ReviewService {
 		@Override
 		public void run() {
 			try {
-				review.updateFullTextSearch();
-				review.updateCommentsCount();
-				denormalizeReputations(review);
+//				review.updateFullTextSearch();
+//				review.updateCommentsCount();
+//				denormalizeReputations(review);
 				if (review.getMetaData() == null) {
 					review.setMetaData(new HearthstoneMetaData());
 				}
@@ -87,55 +74,6 @@ public class ReviewService {
 					throw e;
 				}
 			}
-		}
-	}
-
-	protected void denormalizeReputations(Review review) {
-		review.buildAllAuthors();
-		Iterable<String> userIds = review.getAllAuthorIds();
-		Iterable<User> users = userRepo.findAll(userIds);
-
-		Map<String, User> userMap = new HashMap<>();
-		for (User user : users) {
-			userMap.put(user.getId(), user);
-		}
-
-		Iterable<Profile> profiles = profileRepo.findAllByUserId(userIds);
-		Map<String, Profile> profileMap = new HashMap<>();
-		for (Profile profile : profiles) {
-			profileMap.put(profile.getUserId(), profile);
-		}
-		review.normalizeUsers(userMap, profileMap);
-		try {
-			review.highlightNoticeableVotes(userMap, profileMap);
-		}
-		catch (Exception e) {
-			log.error("Could not highlight votes", e);
-			slackNotifier.notifyError(e, "Could not highlight votes", review);
-		}
-	}
-
-	public void triggerReviewCreationJobs(Review review) {
-		String identifier = review.getAuthorId() != null ? review.getAuthorId() : review.getAuthor();
-		ReviewJournal journal = new ReviewJournal(review.getId(), identifier, review.getSport().getKey().toLowerCase(),
-				review.getCreationDate());
-		reviewJournalRepo.save(journal);
-	}
-
-	public void triggerCommentCreationJobs(Review review, Comment comment) {
-		String identifier = comment.getAuthorId() != null ? comment.getAuthorId() : comment.getAuthor();
-		CommentJournal journal = new CommentJournal(review.getId(), identifier,
-				review.getSport().getKey().toLowerCase(), comment.getCreationDate());
-		commentJournalRepo.save(journal);
-
-	}
-
-	public void triggerReputationChangeJobs(Review review, HasReputation item, int changeValue,
-			ReputationAction reason) {
-		if (item.getAuthorId() != null && review.getSport() != null) {
-			ReputationJournal journal = new ReputationJournal(review.getId(), item.getId(), item.getAuthorId(),
-					review.getSport().getKey().toLowerCase(), new Date(), changeValue, reason.toString().toLowerCase());
-			reputationJournalRepo.save(journal);
 		}
 	}
 

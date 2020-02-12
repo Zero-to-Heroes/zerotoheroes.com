@@ -1,17 +1,15 @@
 package com.coach.profile.profileinfo;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.springframework.data.annotation.Transient;
-
 import com.coach.core.security.User;
 import com.coach.review.Review.Sport;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.annotation.Transient;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -53,7 +51,7 @@ public class ProfileInfo {
 		dailyPlays = fetchDailyPlays(sport);
 		dailyComments = fetchDailyComments(sport);
 		dailyReputationChanges = fetchDailyReputationChanges(sport);
-		reputation = user.getReputation(sport);
+//		reputation = user.getReputation(sport);
 	}
 
 	private Map<Long, Integer> fetchDailyPlays(Sport sport) {

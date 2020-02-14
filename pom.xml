@@ -390,6 +390,8 @@
 		        <configuration>
 		          	<npmInstallArgs>install --quiet</npmInstallArgs>
 		          	<bowerInstallArgs>install --quiet</bowerInstallArgs>
+					<yeomanProjectDirectory>yo</yeomanProjectDirectory>
+					<skipTests>true</skipTests>
 		        </configuration>
 				<executions>
 					<execution>

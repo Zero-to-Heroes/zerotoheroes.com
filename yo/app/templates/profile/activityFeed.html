@@ -1,9 +1,0 @@
-<div class="activity-feed">
-	<div class="alert alert-warning status-message" ng-if="::updateStatus == 'forbidden'">
-		<span>{{::translations.restrictedAccess}}</span>
-	</div>
-
-	<ul class="activities" ng-if="::isOwnProfile()">
-		<li ng-repeat="activity in ::feed"><activity activity="::activity"></activity></li>
-	</ul>
-</div>

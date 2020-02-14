@@ -1,115 +1,2744 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <title>
+      Zero to Heroes discontinued - Get Firestone
+    </title>
 
-<!doctype html>
-<html ng-app="app">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-		<meta name="google-site-verification" content="TMNhNHnK1oArt4LxpT4ulhFjzq6D4lenz-nNZIoBgWs" />
-		<base href="/">
-		<title ng-bind="viewTitle + ' - Zero to Heroes'"></title>
-		<meta view-head name="description" content="{{pageDescription ? pageDescription : 'A video review platform to share your passion and improve your skills. Record yourself playing. Get the feedback you need. Progress and help others'}}" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="robots" content="index,follow" />
-		<meta name="fragment" content="!">
-		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		<link rel="shortcut icon" type="image/png" href="/images/favicon.png?v=3">
-		<!-- build:css(.) styles/vendor.css -->
-		<!-- <link rel="stylesheet" href="styles/components/angularstrap.css" />
-		<link rel="stylesheet" href="styles/components/angularstrap2.css" />-->
-		<link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.css">
-		<link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.bootstrap.css">
-		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-		<link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
-		<link rel="stylesheet" href="bower_components/angular-rangeslider/angular.rangeSlider.css">
-		<link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.min.css">
-		<link rel="stylesheet" href="bower_components/cal-heatmap/cal-heatmap.css" />
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<!-- reset css provided by angular normalize.less -->
+    <!-- This site is optimized with the Yoast SEO plugin v13.0 - https://yoast.com/wordpress/plugins/seo/ -->
+    <meta
+      name="description"
+      content="Track your decks and your collection, spot new and exciting cards, and complete custom achievements in Hearthstone."
+    />
+    <meta
+      name="robots"
+      content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://go.overwolf.com/firestone-app/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Firestone for Hearthstone - Card tracking and custom Achievements | An Overwolf App"
+    />
+    <meta
+      property="og:description"
+      content="Track your decks and your collection, spot new and exciting cards, and complete custom achievements in Hearthstone."
+    />
+    <meta property="og:url" content="https://go.overwolf.com/firestone-app/" />
+    <meta
+      property="og:image"
+      content="https://go.overwolf.com/wp-content/uploads/2019/12/Page-Thumbnail-Generic.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://go.overwolf.com/wp-content/uploads/2019/12/Page-Thumbnail-Generic.jpg"
+    />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="720" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:description"
+      content="Track your decks and your collection, spot new and exciting cards, and complete custom achievements in Hearthstone."
+    />
+    <meta
+      name="twitter:title"
+      content="Firestone for Hearthstone - Card tracking and custom Achievements | An Overwolf App"
+    />
+    <meta
+      name="twitter:image"
+      content="https://go.overwolf.com/wp-content/uploads/2019/12/Page-Thumbnail-Generic.jpg"
+    />
+    <script
+      type="application/ld+json"
+      class="yoast-schema-graph yoast-schema-graph--main"
+    >
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://go.overwolf.com/#website",
+            "url": "https://go.overwolf.com/",
+            "name": "",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://go.overwolf.com/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://go.overwolf.com/firestone-app/#primaryimage",
+            "url": "https://go.overwolf.com/wp-content/uploads/2019/12/Page-Thumbnail-Generic.jpg",
+            "width": 1080,
+            "height": 720
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://go.overwolf.com/firestone-app/#webpage",
+            "url": "https://go.overwolf.com/firestone-app/",
+            "inLanguage": "en-US",
+            "name": "Firestone for Hearthstone - Card tracking and custom Achievements | An Overwolf App",
+            "isPartOf": { "@id": "https://go.overwolf.com/#website" },
+            "primaryImageOfPage": {
+              "@id": "https://go.overwolf.com/firestone-app/#primaryimage"
+            },
+            "datePublished": "2019-10-03T10:55:08+00:00",
+            "dateModified": "2020-02-04T12:54:39+00:00",
+            "description": "Track your decks and your collection, spot new and exciting cards, and complete custom achievements in Hearthstone."
+          }
+        ]
+      }
+    </script>
+    <!-- / Yoast SEO plugin. -->
 
-		<link rel="stylesheet" href="styles/components/buttons.css">
-		<link rel="stylesheet" href="styles/components/drawing.css">
-		<link rel="stylesheet" href="styles/components/external-player.css">
-		<link rel="stylesheet" href="styles/components/help.css">
-		<link rel="stylesheet" href="styles/components/languages.css">
-		<link rel="stylesheet" href="styles/components/markdown.css">
-		<link rel="stylesheet" href="styles/components/modal.css">
-		<link rel="stylesheet" href="styles/components/progress-bar.css" />
-		<link rel="stylesheet" href="styles/components/participants-details.css" />
-		<link rel="stylesheet" href="styles/components/review-list-item.css" />
-		<link rel="stylesheet" href="styles/components/review-visibility.css" />
-		<link rel="stylesheet" href="styles/components/sport-navigation.css" />
-		<link rel="stylesheet" href="styles/components/tables.css" />
-		<link rel="stylesheet" href="styles/components/tags.css">
-		<link rel="stylesheet" href="styles/components/toolbar.css" />
-		<link rel="stylesheet" href="styles/components/user-notifications.css" />
+    <link rel="dns-prefetch" href="//s.w.org" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title=" &raquo; Feed"
+      href="https://go.overwolf.com/feed/"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title=" &raquo; Comments Feed"
+      href="https://go.overwolf.com/comments/feed/"
+    />
+    <script type="text/javascript">
+      window._wpemojiSettings = {
+        baseUrl: "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/",
+        ext: ".png",
+        svgUrl: "https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/",
+        svgExt: ".svg",
+        source: {
+          concatemoji:
+            "https:\/\/go.overwolf.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3.2"
+        }
+      };
+      !(function(e, a, t) {
+        var r,
+          n,
+          o,
+          i,
+          p = a.createElement("canvas"),
+          s = p.getContext && p.getContext("2d");
+        function c(e, t) {
+          var a = String.fromCharCode;
+          s.clearRect(0, 0, p.width, p.height),
+            s.fillText(a.apply(this, e), 0, 0);
+          var r = p.toDataURL();
+          return (
+            s.clearRect(0, 0, p.width, p.height),
+            s.fillText(a.apply(this, t), 0, 0),
+            r === p.toDataURL()
+          );
+        }
+        function l(e) {
+          if (!s || !s.fillText) return !1;
+          switch (((s.textBaseline = "top"), (s.font = "600 32px Arial"), e)) {
+            case "flag":
+              return (
+                !c(
+                  [127987, 65039, 8205, 9895, 65039],
+                  [127987, 65039, 8203, 9895, 65039]
+                ) &&
+                !c(
+                  [55356, 56826, 55356, 56819],
+                  [55356, 56826, 8203, 55356, 56819]
+                ) &&
+                  !c(
+                    [
+                      55356,
+                      57332,
+                      56128,
+                      56423,
+                      56128,
+                      56418,
+                      56128,
+                      56421,
+                      56128,
+                      56430,
+                      56128,
+                      56423,
+                      56128,
+                      56447
+                    ],
+                    [
+                      55356,
+                      57332,
+                      8203,
+                      56128,
+                      56423,
+                      8203,
+                      56128,
+                      56418,
+                      8203,
+                      56128,
+                      56421,
+                      8203,
+                      56128,
+                      56430,
+                      8203,
+                      56128,
+                      56423,
+                      8203,
+                      56128,
+                      56447
+                    ]
+                  )
+              );
+            case "emoji":
+              return !c(
+                [
+                  55357,
+                  56424,
+                  55356,
+                  57342,
+                  8205,
+                  55358,
+                  56605,
+                  8205,
+                  55357,
+                  56424,
+                  55356,
+                  57340
+                ],
+                [
+                  55357,
+                  56424,
+                  55356,
+                  57342,
+                  8203,
+                  55358,
+                  56605,
+                  8203,
+                  55357,
+                  56424,
+                  55356,
+                  57340
+                ]
+              );
+          }
+          return !1;
+        }
+        function d(e) {
+          var t = a.createElement("script");
+          (t.src = e),
+            (t.defer = t.type = "text/javascript"),
+            a.getElementsByTagName("head")[0].appendChild(t);
+        }
+        for (
+          i = Array("flag", "emoji"),
+            t.supports = { everything: !0, everythingExceptFlag: !0 },
+            o = 0;
+          o < i.length;
+          o++
+        )
+          (t.supports[i[o]] = l(i[o])),
+            (t.supports.everything = t.supports.everything && t.supports[i[o]]),
+            "flag" !== i[o] &&
+              (t.supports.everythingExceptFlag =
+                t.supports.everythingExceptFlag && t.supports[i[o]]);
+        (t.supports.everythingExceptFlag =
+          t.supports.everythingExceptFlag && !t.supports.flag),
+          (t.DOMReady = !1),
+          (t.readyCallback = function() {
+            t.DOMReady = !0;
+          }),
+          t.supports.everything ||
+            ((n = function() {
+              t.readyCallback();
+            }),
+            a.addEventListener
+              ? (a.addEventListener("DOMContentLoaded", n, !1),
+                e.addEventListener("load", n, !1))
+              : (e.attachEvent("onload", n),
+                a.attachEvent("onreadystatechange", function() {
+                  "complete" === a.readyState && t.readyCallback();
+                })),
+            (r = t.source || {}).concatemoji
+              ? d(r.concatemoji)
+              : r.wpemoji && r.twemoji && (d(r.twemoji), d(r.wpemoji)));
+      })(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+      img.wp-smiley,
+      img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 0.07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://go.overwolf.com/wp-includes/css/dist/block-library/style.min.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-hello-theme-style-css"
+      href="https://go.overwolf.com/wp-content/themes/elementor-hello-theme-master/style.css?ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-icons-css"
+      href="https://go.overwolf.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.5.0"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-animations-css"
+      href="https://go.overwolf.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.8.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-frontend-css"
+      href="https://go.overwolf.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.8.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-pro-css"
+      href="https://go.overwolf.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=2.8.3"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="font-awesome-5-all-css"
+      href="https://go.overwolf.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=2.8.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="font-awesome-4-shim-css"
+      href="https://go.overwolf.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=2.8.5"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-global-css"
+      href="https://go.overwolf.com/wp-content/uploads/elementor/css/global.css?ver=1580310522"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-post-4021-css"
+      href="https://go.overwolf.com/wp-content/uploads/elementor/css/post-4021.css?ver=1580828034"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-post-384-css"
+      href="https://go.overwolf.com/wp-content/uploads/elementor/css/post-384.css?ver=1580197677"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="google-fonts-1-css"
+      href="https://fonts.googleapis.com/css?family=Lato%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;ver=5.3.2"
+      type="text/css"
+      media="all"
+    />
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=2.8.5"
+    ></script>
+    <link rel="https://api.w.org/" href="https://go.overwolf.com/wp-json/" />
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="https://go.overwolf.com/xmlrpc.php?rsd"
+    />
+    <link
+      rel="wlwmanifest"
+      type="application/wlwmanifest+xml"
+      href="https://go.overwolf.com/wp-includes/wlwmanifest.xml"
+    />
+    <meta name="generator" content="WordPress 5.3.2" />
+    <link rel="shortlink" href="https://go.overwolf.com/?p=4021" />
+    <link
+      rel="alternate"
+      type="application/json+oembed"
+      href="https://go.overwolf.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgo.overwolf.com%2Ffirestone-app%2F"
+    />
+    <link
+      rel="alternate"
+      type="text/xml+oembed"
+      href="https://go.overwolf.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fgo.overwolf.com%2Ffirestone-app%2F&#038;format=xml"
+    />
+    <!-- Anti-flicker snippet (recommended)  -->
+    <style>
+      .async-hide {
+        opacity: 0 !important;
+      }
+    </style>
+    <script>
+      (function(a, s, y, n, c, h, i, d, e) {
+        s.className += " " + y;
+        h.start = 1 * new Date();
+        h.end = i = function() {
+          s.className = s.className.replace(RegExp(" ?" + y), "");
+        };
+        (a[n] = a[n] || []).hide = h;
+        setTimeout(function() {
+          i();
+          h.end = null;
+        }, c);
+        h.timeout = c;
+      })(window, document.documentElement, "async-hide", "dataLayer", 4000, {
+        "GTM-TS442DH": true
+      });
+    </script>
+    <!-- Modified Analytics tracking code with Optimize plugin -->
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function() {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
 
-        <link rel="stylesheet" href="styles/landing/animate.css" type="text/css">
-        <link rel="stylesheet" href="styles/landing/owl.carousel.css" type="text/css">
-        <link rel="stylesheet" href="styles/landing/owl.theme.css" type="text/css">
-        <link rel="stylesheet" href="styles/landing/style.css" type="text/css">
+      ga("create", "UA-136318442-1", "auto");
+      ga("require", "GTM-TS442DH");
+      ga("send", "pageview");
+    </script>
 
-		<link rel="stylesheet" href="styles/modules/home/help-others.css" />
-		<link rel="stylesheet" href="styles/modules/home/home-choice.css" />
-		<link rel="stylesheet" href="styles/modules/home/watch-and-learn.css" />
+    <!-- Global site tag (gtag.js) - Google Ads: 807668235 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-807668235"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "AW-807668235", { optimize_id: "GTM-TS442DH" });
+    </script>
 
-		<link rel="stylesheet" href="styles/modules/upload/from-url.css" />
-		<link rel="stylesheet" href="styles/modules/upload/multi-upload.css" />
-		<link rel="stylesheet" href="styles/modules/upload/upload-choice.css" />
-		<link rel="stylesheet" href="styles/modules/upload/upload.css" />
-		<link rel="stylesheet" href="styles/modules/upload/video-review-upload.css" />
-		<link rel="stylesheet" href="styles/modules/upload/video-upload.css" />
+    <!-- Global site tag (gtag.js) - Google Ads: 812885804 -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-812885804"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-		<link rel="stylesheet" href="styles/modules/announcements.css" />
-		<link rel="stylesheet" href="styles/modules/choose-pro-popup.css" />
-		<link rel="stylesheet" href="styles/modules/comment.css" />
-		<link rel="stylesheet" href="styles/modules/header.css" />
-		<link rel="stylesheet" href="styles/modules/name.css" />
-		<link rel="stylesheet" href="styles/modules/page-choices.css" />
-		<link rel="stylesheet" href="styles/modules/reputation.css" />
-		<link rel="stylesheet" href="styles/modules/sequence.css" />
-		<link rel="stylesheet" href="styles/modules/user-management.css" />
-		<link rel="stylesheet" href="styles/modules/welcome-page.css" />
+      gtag("config", "AW-812885804");
+    </script>
 
-		<link rel="stylesheet" href="styles/coach-page.css" />
-		<link rel="stylesheet" href="styles/home-page.css" />
-		<link rel="stylesheet" href="styles/landing.css" />
-		<link rel="stylesheet" href="styles/listing.css" />
-		<link rel="stylesheet" href="styles/main.css" />
-		<link rel="stylesheet" href="styles/navigation.css" />
-		<link rel="stylesheet" href="styles/profile.css" />
-		<link rel="stylesheet" href="styles/review.css" />
-		<link rel="stylesheet" href="styles/search-page.css" />
-		<link rel="stylesheet" href="styles/video.css" />
-		<link rel="stylesheet" href="styles/videogular.css" />
-		<link rel="stylesheet" href="styles/videogular-override.css" />
+    <!-- Event snippet for clicks -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function() {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-807668235/FJCWCKW4xYsBEIuUkIED",
+          event_callback: callback
+        });
+        return false;
+      }
+    </script>
 
-		<link rel="stylesheet" href="styles/media-queries/multi-upload.css" />
-		<link rel="stylesheet" href="styles/media-queries/navigation.css" />
-		<link rel="stylesheet" href="styles/media-queries/page-choices.css" />
-		<link rel="stylesheet" href="styles/media-queries/review-listing.css" />
-		<link rel="stylesheet" href="styles/media-queries/search-panel.css" />
+    <!-- Event snippet for FC Downloads conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function() {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-812885804/jbiNCP_ckIUBEKzOzoMD",
+          event_callback: callback
+        });
+        return false;
+      }
+    </script>
 
-		<link rel="stylesheet" href="styles/less/application.css">
-		<!-- endbuild -->
+    <!-- Event snippet for FC Downloads conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function() {
+          if (typeof url != "undefined") {
+            window.location = url;
+          }
+        };
+        gtag("event", "conversion", {
+          send_to: "AW-807668235/3es8CM66-6EBEIuUkIED",
+          event_callback: callback
+        });
+        return false;
+      }
+    </script>
 
-		<link rel="stylesheet" href="plugins/manastorm/manastorm.css">
-		<link rel="stylesheet" href="plugins/parseCardsText/parseCardsText.css">
-		<link rel="stylesheet" href="plugins/parseDecks/parseDecks.css">
-		<link rel="stylesheet" href="plugins/windrunner/windrunner.css">
+    <!-- Install Successful Script GDN --!>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (window.location.href.indexOf("https://go.overwolf.com/install-successful") > -1) {
+      gtag('event', 'conversion', {'send_to': 'AW-812885804/rffeCMzyoKcBEKzOzoMD'});
+      fbq('track', 'StartTrial');
+    }
+  });
+</script>
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!-- Install Successful Script YT --!>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (window.location.href.indexOf("https://go.overwolf.com/install-successful") > -1) {
+      gtag('event', 'conversion', {'send_to': 'AW-807668235/8QFnCI-czYcBEIuUkIED'});
+      fbq('track', 'StartTrial');
+    }
+  });
+</script>
 
-		<!-- Video.js -->
-		<script type="text/javascript">
-		  document.createElement('video');document.createElement('audio');document.createElement('track');
-		</script>
-	</head>
-	<body>
-		zerotoheroes.com is being discontinued, and features will progressively migrate to the Firestone application (from www.firestoneapp.com).
+<!-- Mobile Thank you Page--!>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (window.location.href.indexOf("https://go.overwolf.com/mobile-thank-you-page/") > -1) {
+      gtag('event', 'conversion', {'send_to': 'AW-812885804/CZ69COfXmIUBEKzOzoMD'});
+    }
+  });
+</script>
 
-		The website doesn't see much use anymore, and maintaining it limits my ability to develop and upgrade better features in the app.
-		My goal is to have the app take over everything the website was doing, and provide some key capabilities (like the replays) as
-		standalone web endpoints, but break the monolithic zerotoheroes appoach.
-	</body>
+<!-- Dev Thank You Page --!>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (window.location.href.indexOf("https://go.overwolf.com/dev-thank-you-page/") > -1) {
+      gtag('event', 'conversion', {'send_to': 'AW-807668235/Dt2DCOzgiqcBEIuUkIED'});
+      fbq('track', 'StartTrial');
+    }
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (window.location.href.indexOf("https://go.overwolf.com/?elementor_library=developers-sign-up-2") > -1) {
+       gtag('event', 'conversion', {'send_to': 'AW-807668235/Dt2DCOzgiqcBEIuUkIED'});
+      fbq('track', 'StartTrial');
+    }
+  });
+</script>
+
+<!-- Hotjar Tracking Code for https://go.overwolf.com --!>
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1452962,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<meta name="google-site-verification" content="-lXbmB8j5CUvzwLohhWUcQQGAB4P0cQsJcBuO6jYq24" />
+<!-- Facebook Pixel Code -->
+    <script type="text/javascript">
+      !(function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+    </script>
+    <!-- End Facebook Pixel Code -->
+    <script type="text/javascript">
+      fbq("init", "1407571389367545", [], {
+        agent: "wordpress-5.3.2-1.8.0"
+      });
+    </script>
+    <script type="text/javascript">
+      fbq("track", "PageView", []);
+    </script>
+    <!-- Facebook Pixel Code -->
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        alt="fbpx"
+        src="https://www.facebook.com/tr?id=1407571389367545&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <link
+      rel="icon"
+      href="https://go.overwolf.com/wp-content/uploads/2019/03/cropped-favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="https://go.overwolf.com/wp-content/uploads/2019/03/cropped-favicon-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="https://go.overwolf.com/wp-content/uploads/2019/03/cropped-favicon-180x180.png"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="https://go.overwolf.com/wp-content/uploads/2019/03/cropped-favicon-270x270.png"
+    />
+    <style type="text/css" id="wp-custom-css">
+      #site-header {
+        display: none !important;
+      }
+      #scripts {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body
+    class="page-template-default page page-id-4021 elementor-default elementor-page elementor-page-4021"
+  >
+    <header id="site-header" class="site-header" role="banner">
+      <div id="logo"></div>
+
+      <p class="site-title">
+        <a href="https://go.overwolf.com/" title="Home" rel="home"></a>
+      </p>
+
+      <nav id="top-menu" role="navigation">
+        <div class="menu">
+          <ul>
+            <li class="page_item page-item-3102">
+              <a href="https://go.overwolf.com/usaf-ar-r6s/"
+                >AIR FORCE SPECIAL OPS CHALLENGE</a
+              >
+            </li>
+            <li class="page_item page-item-3191">
+              <a href="https://go.overwolf.com/usaf-ar-r6s-1/"
+                >AIR FORCE SPECIAL OPS CHALLENGE</a
+              >
+            </li>
+            <li class="page_item page-item-3199">
+              <a href="https://go.overwolf.com/usaf-ar-r6s-2/"
+                >AIR FORCE SPECIAL OPS CHALLENGE</a
+              >
+            </li>
+            <li class="page_item page-item-3213">
+              <a href="https://go.overwolf.com/usaf-ar-r6s-3/"
+                >AIR FORCE SPECIAL OPS CHALLENGE</a
+              >
+            </li>
+            <li class="page_item page-item-3222">
+              <a href="https://go.overwolf.com/usaf-ar-r6s-4/"
+                >AIR FORCE SPECIAL OPS CHALLENGE</a
+              >
+            </li>
+            <li class="page_item page-item-942">
+              <a href="https://go.overwolf.com/ar-community-showdown/"
+                >AR-Community-Showdown</a
+              >
+            </li>
+            <li class="page_item page-item-944">
+              <a href="https://go.overwolf.com/ar-community-showdown-gi/"
+                >AR-Community-Showdown-Gaming-Influencers</a
+              >
+            </li>
+            <li class="page_item page-item-624">
+              <a href="https://go.overwolf.com/ar-community-showdown-ng/"
+                >AR-Community-Showdown-Non-Gaming</a
+              >
+            </li>
+            <li class="page_item page-item-911">
+              <a href="https://go.overwolf.com/ar-community-showdown-streamers/"
+                >AR-Community-Showdown-Streamers</a
+              >
+            </li>
+            <li class="page_item page-item-875">
+              <a href="https://go.overwolf.com/ar-community-showdown-yt/"
+                >AR-Community-Showdown-YT</a
+              >
+            </li>
+            <li class="page_item page-item-3097">
+              <a href="https://go.overwolf.com/dev-thank-you-page/"
+                >Developer Thank You Page</a
+              >
+            </li>
+            <li class="page_item page-item-2333">
+              <a href="https://go.overwolf.com/developers-for-overwolf/"
+                >Developers For Overwolf</a
+              >
+            </li>
+            <li class="page_item page-item-1891">
+              <a href="https://go.overwolf.com/dotaplus/">DotaPlus</a>
+            </li>
+            <li class="page_item page-item-2043">
+              <a href="https://go.overwolf.com/dotaplus-admiralbulldog/"
+                >DotaPlus &#8211; AdmiralBulldog</a
+              >
+            </li>
+            <li class="page_item page-item-3084">
+              <a href="https://go.overwolf.com/dotaplus-gorgc/"
+                >DotaPlus &#8211; Gorgc</a
+              >
+            </li>
+            <li class="page_item page-item-3937">
+              <a href="https://go.overwolf.com/dotaplus-app/">DotaPlus App</a>
+            </li>
+            <li class="page_item page-item-5951">
+              <a href="https://go.overwolf.com/dotaplus-dota-wtf/"
+                >DotaPlus with Dota WTF</a
+              >
+            </li>
+            <li class="page_item page-item-4202">
+              <a href="https://go.overwolf.com/dotaplus-khezu/"
+                >DotaPlus-Khezu</a
+              >
+            </li>
+            <li class="page_item page-item-2807">
+              <a href="https://go.overwolf.com/dotaplus-mason/"
+                >DotaPlus-Mason</a
+              >
+            </li>
+            <li class="page_item page-item-4179">
+              <a href="https://go.overwolf.com/dotaplus-monkeys_forever/"
+                >DotaPlus-Monkeys_Forever</a
+              >
+            </li>
+            <li class="page_item page-item-1227">
+              <a href="https://go.overwolf.com/drpepperchallenge/"
+                >Dr Pepper Challenge</a
+              >
+            </li>
+            <li class="page_item page-item-3681">
+              <a href="https://go.overwolf.com/drpepperchallenge-elite500/"
+                >Dr Pepper Challenge Elite500</a
+              >
+            </li>
+            <li class="page_item page-item-3675">
+              <a href="https://go.overwolf.com/drpepperchallenge-kami-khazix/"
+                >Dr Pepper Challenge Kami_KhaZix</a
+              >
+            </li>
+            <li class="page_item page-item-3664">
+              <a href="https://go.overwolf.com/drpepperchallenge-nickitaylor/"
+                >Dr Pepper Challenge NickiTaylor</a
+              >
+            </li>
+            <li class="page_item page-item-3656">
+              <a href="https://go.overwolf.com/drpepperchallenge-vaporadark/"
+                >Dr Pepper Challenge VaporaDark</a
+              >
+            </li>
+            <li class="page_item page-item-3698">
+              <a href="https://go.overwolf.com/drpepperchallenge-yourprincess/"
+                >Dr Pepper Challenge YourPrincess</a
+              >
+            </li>
+            <li class="page_item page-item-1675">
+              <a href="https://go.overwolf.com/dual-screen-a-b/"
+                >Dual Screen A/B</a
+              >
+            </li>
+            <li class="page_item page-item-4865">
+              <a href="https://go.overwolf.com/egear-overwolf-app/"
+                >eGear &#8211; PPC &#8211; Generic</a
+              >
+            </li>
+            <li class="page_item page-item-1387">
+              <a href="https://go.overwolf.com/facecheck-bfb/">Facecheck</a>
+            </li>
+            <li class="page_item page-item-2033">
+              <a href="https://go.overwolf.com/facecheck-bunnyfufuu/"
+                >Facecheck &#8211; BunnyFuFuu</a
+              >
+            </li>
+            <li class="page_item page-item-5749">
+              <a href="https://go.overwolf.com/facecheck-llstylish/"
+                >Facecheck &#8211; LLStylish</a
+              >
+            </li>
+            <li class="page_item page-item-2905">
+              <a href="https://go.overwolf.com/facecheck-pankylol/"
+                >Facecheck &#8211; Pankylol</a
+              >
+            </li>
+            <li class="page_item page-item-5339">
+              <a href="https://go.overwolf.com/facecheck-tfblade/"
+                >Facecheck &#8211; tfblade</a
+              >
+            </li>
+            <li class="page_item page-item-6087">
+              <a href="https://go.overwolf.com/facecheck-theglacierr/"
+                >Facecheck &#8211; TheGlacierr</a
+              >
+            </li>
+            <li class="page_item page-item-5045">
+              <a href="https://go.overwolf.com/facecheck-virkayu/"
+                >Facecheck &#8211; Virkayu</a
+              >
+            </li>
+            <li class="page_item page-item-3071">
+              <a href="https://go.overwolf.com/facecheck-zedxsmurf/"
+                >Facecheck &#8211; Zedxsmurf</a
+              >
+            </li>
+            <li class="page_item page-item-3868">
+              <a href="https://go.overwolf.com/facecheck-app/">Facecheck App</a>
+            </li>
+            <li class="page_item page-item-3636">
+              <a
+                href="https://go.overwolf.com/facecheck-bunny-fufuu-ppc-facebook/"
+                >Facecheck Bunny Fufuu PPC Facebook</a
+              >
+            </li>
+            <li class="page_item page-item-3516">
+              <a href="https://go.overwolf.com/facecheck-bunny-fufuu-ppc-v4/"
+                >Facecheck-Bunny-Fufuu-V4</a
+              >
+            </li>
+            <li class="page_item page-item-4596">
+              <a href="https://go.overwolf.com/facecheck-elite500/"
+                >Facecheck-Elite500</a
+              >
+            </li>
+            <li class="page_item page-item-4622">
+              <a href="https://go.overwolf.com/facecheck-forgottenproject/"
+                >Facecheck-ForgottenProject</a
+              >
+            </li>
+            <li class="page_item page-item-4531">
+              <a href="https://go.overwolf.com/facecheck-pantsaredragon/"
+                >Facecheck-PantsAreDragon</a
+              >
+            </li>
+            <li class="page_item page-item-3738">
+              <a href="https://go.overwolf.com/facecheck-v5/">Facecheck-v5</a>
+            </li>
+            <li class="page_item page-item-4655">
+              <a href="https://go.overwolf.com/facecheck-xfsnsaber/"
+                >Facecheck-xFSN Saber</a
+              >
+            </li>
+            <li class="page_item page-item-4639">
+              <a href="https://go.overwolf.com/facecheck-xpetu/"
+                >Facecheck-xPetu</a
+              >
+            </li>
+            <li class="page_item page-item-4021 current_page_item">
+              <a
+                href="https://go.overwolf.com/firestone-app/"
+                aria-current="page"
+                >Firestone App</a
+              >
+            </li>
+            <li class="page_item page-item-3298">
+              <a href="https://go.overwolf.com/firestone-asmodaitv/"
+                >Firestone-AsmodaiTV</a
+              >
+            </li>
+            <li class="page_item page-item-3707">
+              <a href="https://go.overwolf.com/firestone-kripp/"
+                >Firestone-Kripp</a
+              >
+            </li>
+            <li class="page_item page-item-3264">
+              <a href="https://go.overwolf.com/firestone-thijs/"
+                >Firestone-Thijs</a
+              >
+            </li>
+            <li class="page_item page-item-1151">
+              <a href="https://go.overwolf.com/fortplayer/">Fortplayer</a>
+            </li>
+            <li class="page_item page-item-1767">
+              <a href="https://go.overwolf.com/fortplayer-randumb/"
+                >Fortplayer &#8211; Randumb</a
+              >
+            </li>
+            <li class="page_item page-item-5828">
+              <a href="https://go.overwolf.com/fortplayer-with-daily-fortnite/"
+                >Fortplayer with Daily Fortnite</a
+              >
+            </li>
+            <li class="page_item page-item-5783">
+              <a href="https://go.overwolf.com/fortplayer-fortnite-spark/"
+                >Fortplayer with Fortnite Spark</a
+              >
+            </li>
+            <li class="page_item page-item-3225">
+              <a href="https://go.overwolf.com/fortplayer-devs/"
+                >Fortplayer-Devs</a
+              >
+            </li>
+            <li class="page_item page-item-1739">
+              <a href="https://go.overwolf.com/fortplayer-exalted/"
+                >Fortplayer-Exalted</a
+              >
+            </li>
+            <li class="page_item page-item-1805">
+              <a href="https://go.overwolf.com/game-summary-apex-lifeline/"
+                >Game Summary &#8211; Apex &#8211; Lifeline</a
+              >
+            </li>
+            <li class="page_item page-item-4145">
+              <a href="https://go.overwolf.com/game-summary-fortnite/"
+                >Game Summary &#8211; Fortnite</a
+              >
+            </li>
+            <li class="page_item page-item-1099">
+              <a href="https://go.overwolf.com/game-summary-splitgate/"
+                >Game Summary Splitgate</a
+              >
+            </li>
+            <li class="page_item page-item-450">
+              <a href="https://go.overwolf.com/game-summary-apex/"
+                >Game-Summary-Apex</a
+              >
+            </li>
+            <li class="page_item page-item-2551">
+              <a href="https://go.overwolf.com/heartharena-kripp/"
+                >HearthArena &#8211; Kripp</a
+              >
+            </li>
+            <li class="page_item page-item-1841">
+              <a href="https://go.overwolf.com/install-successful/"
+                >Install Successful</a
+              >
+            </li>
+            <li class="page_item page-item-3416">
+              <a
+                href="https://go.overwolf.com/jackpot-rising-splitgate-tournament/"
+                >Jackpot Rising &#8211; Splitgate Tournament</a
+              >
+            </li>
+            <li class="page_item page-item-5845">
+              <a href="https://go.overwolf.com/lor-deck-tracker/"
+                >Legends of Runterra Deck Tracker</a
+              >
+            </li>
+            <li class="page_item page-item-4349">
+              <a href="https://go.overwolf.com/logitechg/">Logitech G</a>
+            </li>
+            <li class="page_item page-item-1776">
+              <a href="https://go.overwolf.com/lolwiz-zeyzal/"
+                >LoLwiz &#8211; Zeyzal</a
+              >
+            </li>
+            <li class="page_item page-item-6112">
+              <a href="https://go.overwolf.com/mobile-test/">Mobile Test</a>
+            </li>
+            <li class="page_item page-item-3831">
+              <a href="https://go.overwolf.com/mobile-thank-you-page/"
+                >Mobile Thank You Page</a
+              >
+            </li>
+            <li class="page_item page-item-1507">
+              <a href="https://go.overwolf.com/overwolf-dual-screen-a/"
+                >Overwolf Dual Screen-A</a
+              >
+            </li>
+            <li class="page_item page-item-2495">
+              <a href="https://go.overwolf.com/asus/"
+                >Overwolf Dual Screen-Asus</a
+              >
+            </li>
+            <li class="page_item page-item-1626">
+              <a href="https://go.overwolf.com/overwolf-dual-screen-b/"
+                >Overwolf Dual Screen-B</a
+              >
+            </li>
+            <li class="page_item page-item-5184">
+              <a href="https://go.overwolf.com/tab-challenge/"
+                >Overwolf&#8217;s Tab Challenge</a
+              >
+            </li>
+            <li class="page_item page-item-5269">
+              <a href="https://go.overwolf.com/tab-challenge-faq/"
+                >Overwolf&#8217;s Tab Challenge FAQ</a
+              >
+            </li>
+            <li class="page_item page-item-5271">
+              <a href="https://go.overwolf.com/tab-challenge-rules/"
+                >Overwolf&#8217;s Tab Challenge Rules</a
+              >
+            </li>
+            <li class="page_item page-item-492">
+              <a href="https://go.overwolf.com/playwire-guideline/"
+                >playwire-guideline</a
+              >
+            </li>
+            <li class="page_item page-item-3372">
+              <a href="https://go.overwolf.com/porofessor/">Porofessor</a>
+            </li>
+            <li class="page_item page-item-3895">
+              <a href="https://go.overwolf.com/porofessor-app/"
+                >Porofessor App</a
+              >
+            </li>
+            <li class="page_item page-item-2524">
+              <a href="https://go.overwolf.com/porofessor-for-tft/"
+                >Porofessor for TFT</a
+              >
+            </li>
+            <li class="page_item page-item-4941">
+              <a href="https://go.overwolf.com/porofessor-ppc/"
+                >Porofessor PPC</a
+              >
+            </li>
+            <li class="page_item page-item-6000">
+              <a href="https://go.overwolf.com/porofessor-ppc-v2/"
+                >Porofessor PPC &#8211; V2</a
+              >
+            </li>
+            <li class="page_item page-item-5130">
+              <a href="https://go.overwolf.com/porofessor-foggedftw/"
+                >Porofessor with Foggedftw</a
+              >
+            </li>
+            <li class="page_item page-item-4915">
+              <a href="https://go.overwolf.com/porofessor-rtb-ppc/"
+                >Porofessor-RTB-PPC</a
+              >
+            </li>
+            <li class="page_item page-item-3350">
+              <a href="https://go.overwolf.com/porofessor-shiphtur/"
+                >Porofessor-Shiphtur</a
+              >
+            </li>
+            <li class="page_item page-item-3360">
+              <a href="https://go.overwolf.com/porofessor-sirhcez/"
+                >Porofessor-Sirhcez</a
+              >
+            </li>
+            <li class="page_item page-item-3307">
+              <a href="https://go.overwolf.com/porofessor-tobias-fate/"
+                >Porofessor-Tobias Fate</a
+              >
+            </li>
+            <li class="page_item page-item-1954">
+              <a href="https://go.overwolf.com/pubgplayer/">PUBGplayer</a>
+            </li>
+            <li class="page_item page-item-3089">
+              <a href="https://go.overwolf.com/rainbow6tracker-pengu/"
+                >Rainbow 6 Tracker &#8211; Pengu</a
+              >
+            </li>
+            <li class="page_item page-item-3732">
+              <a href="https://go.overwolf.com/rainbowsixtracker/"
+                >Rainbow Six Tracker</a
+              >
+            </li>
+            <li class="page_item page-item-2061">
+              <a href="https://go.overwolf.com/rainbowsixtracker-king-george/"
+                >Rainbow Six Tracker &#8211; King George</a
+              >
+            </li>
+            <li class="page_item page-item-3644">
+              <a
+                href="https://go.overwolf.com/rainbow-six-tracker-king-george-ppc-facebook/"
+                >Rainbow Six Tracker &#8211; King George &#8211; PPC &#8211;
+                Facebook</a
+              >
+            </li>
+            <li class="page_item page-item-3914">
+              <a href="https://go.overwolf.com/rainbow-six-tracker-app/"
+                >Rainbow Six Tracker App</a
+              >
+            </li>
+            <li class="page_item page-item-1861">
+              <a href="https://go.overwolf.com/rainbowsixtracker-kg-b-2/"
+                >Rainbow Six Tracker with King George</a
+              >
+            </li>
+            <li class="page_item page-item-5693">
+              <a href="https://go.overwolf.com/rdr2-map-lp/">RDR2 Map</a>
+            </li>
+            <li class="page_item page-item-1032">
+              <a href="https://go.overwolf.com/splitgate-ow/"
+                >Splitgate on Overwolf</a
+              >
+            </li>
+            <li class="page_item page-item-1987">
+              <a href="https://go.overwolf.com/tftactics/">TFTactics</a>
+            </li>
+            <li class="page_item page-item-2273">
+              <a href="https://go.overwolf.com/tftactics-bunnyfufuu/"
+                >TFTactics &#8211; Bunnyfufuu</a
+              >
+            </li>
+            <li class="page_item page-item-3261">
+              <a href="https://go.overwolf.com/tftactics-aceofspades/"
+                >TFTactics &#8211; Aceofspades</a
+              >
+            </li>
+            <li class="page_item page-item-3238">
+              <a href="https://go.overwolf.com/tftactics-darkhydra/"
+                >TFTactics &#8211; DarkHydra</a
+              >
+            </li>
+            <li class="page_item page-item-2285">
+              <a href="https://go.overwolf.com/tftactics-diashen/"
+                >TFTactics &#8211; Diashen</a
+              >
+            </li>
+            <li class="page_item page-item-3077">
+              <a href="https://go.overwolf.com/tftactics-dogdog/"
+                >TFTactics &#8211; DogDog</a
+              >
+            </li>
+            <li class="page_item page-item-2307">
+              <a href="https://go.overwolf.com/tftactics-itshafu/"
+                >TFTactics &#8211; itsHafu</a
+              >
+            </li>
+            <li class="page_item page-item-2299">
+              <a href="https://go.overwolf.com/tftactics-redox/"
+                >TFTactics &#8211; Redox</a
+              >
+            </li>
+            <li class="page_item page-item-3249">
+              <a href="https://go.overwolf.com/tftactics-wicked/"
+                >TFTactics &#8211; Wickd</a
+              >
+            </li>
+            <li class="page_item page-item-3967">
+              <a href="https://go.overwolf.com/tftactics-app/">TFTactics App</a>
+            </li>
+            <li class="page_item page-item-2795">
+              <a href="https://go.overwolf.com/tftactics-diashen-ppc/"
+                >TFTactics-Diashen-PPC</a
+              >
+            </li>
+            <li class="page_item page-item-4673">
+              <a href="https://go.overwolf.com/tftactics-jschritte/"
+                >TFTactics-Jschritte</a
+              >
+            </li>
+            <li class="page_item page-item-1122">
+              <a href="https://go.overwolf.com/witchermods/">Witcher Mods</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      id="main"
+      class="site-main post-4021 page type-page status-publish has-post-thumbnail hentry"
+      role="main"
+    >
+      <header class="page-header">
+        <h1 class="entry-title">Firestone App</h1>
+      </header>
+
+      <div class="page-content">
+        <div
+          data-elementor-type="wp-post"
+          data-elementor-id="4021"
+          class="elementor elementor-4021"
+          data-elementor-settings="[]"
+        >
+          <div class="elementor-inner">
+            <div class="elementor-section-wrap">
+              <section
+                class="elementor-element elementor-element-47499a35 elementor-section-height-min-height elementor-section-content-middle elementor-section-items-top elementor-section-full_width elementor-section-height-default elementor-section elementor-top-section"
+                data-id="47499a35"
+                data-element_type="section"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div class="elementor-container elementor-column-gap-no">
+                  <div class="elementor-row">
+                    <main
+                      class="elementor-element elementor-element-6c6a836 elementor-column elementor-col-100 elementor-top-column"
+                      data-id="6c6a836"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap  elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <section
+                            class="elementor-element elementor-element-e9417f5 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+                            data-id="e9417f5"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-default"
+                            >
+                              <div class="elementor-row">
+                                <div
+                                  class="elementor-element elementor-element-b65f425 elementor-column elementor-col-50 elementor-inner-column"
+                                  data-id="b65f425"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap  elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-2957537e elementor-widget elementor-widget-image"
+                                        data-id="2957537e"
+                                        data-element_type="widget"
+                                        data-widget_type="image.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div class="elementor-image">
+                                            <img
+                                              src="https://go.overwolf.com/wp-content/uploads/2019/08/logo-lockup-1.svg"
+                                              class="attachment-full size-full"
+                                              alt="Firestone logo"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="elementor-element elementor-element-adb761e elementor-hidden-tablet elementor-hidden-phone elementor-column elementor-col-50 elementor-inner-column"
+                                  data-id="adb761e"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap  elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-6b8a40a4 track-bt elementor-align-right elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-button"
+                                        data-id="6b8a40a4"
+                                        data-element_type="widget"
+                                        id="nav-bt"
+                                        onClick="ga( &#039;send&#039;, &#039;event&#039;, &#039;button&#039;, &#039;click&#039;, &#039;dl-Firestone-app-desktop&#039; );"
+                                        data-widget_type="button.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div class="elementor-button-wrapper">
+                                            <a
+                                              href="#elementor-action%3Aaction%3Dpopup%3Aopen%20settings%3DeyJpZCI6IjQwMzMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D"
+                                              class="elementor-button-link elementor-button elementor-size-sm"
+                                              role="button"
+                                              id="cta_nav"
+                                            >
+                                              <span
+                                                class="elementor-button-content-wrapper"
+                                              >
+                                                <span
+                                                  class="elementor-button-text"
+                                                  >Download Firestone</span
+                                                >
+                                              </span>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <section
+                            class="elementor-element elementor-element-b5cb4de elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+                            data-id="b5cb4de"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-default"
+                            >
+                              <div class="elementor-row">
+                                <div
+                                  class="elementor-element elementor-element-db1626e elementor-column elementor-col-100 elementor-inner-column"
+                                  data-id="db1626e"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap  elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-c72b64a elementor-widget elementor-widget-heading"
+                                        data-id="c72b64a"
+                                        data-element_type="widget"
+                                        data-widget_type="heading.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div
+                                            class="elementor-heading-title elementor-size-default"
+                                          >
+                                            Zero to Heroes is being discontinued
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="elementor-element elementor-element-2f524ead elementor-widget elementor-widget-heading"
+                                        data-id="2f524ead"
+                                        data-element_type="widget"
+                                        data-widget_type="heading.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div
+                                            class="elementor-heading-title elementor-size-default"
+                                          >
+                                            Get Firestone
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="elementor-element elementor-element-5f547558 elementor-widget elementor-widget-spacer"
+                                        data-id="5f547558"
+                                        data-element_type="widget"
+                                        data-widget_type="spacer.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div class="elementor-spacer">
+                                            <div
+                                              class="elementor-spacer-inner"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="elementor-element elementor-element-c4084db elementor-widget elementor-widget-text-editor"
+                                        data-id="c4084db"
+                                        data-element_type="widget"
+                                        data-widget_type="text-editor.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div
+                                            class="elementor-text-editor elementor-clearfix"
+                                          >
+                                            <p>
+                                              Recently updated with new
+                                              expansion cards!
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="elementor-element elementor-element-b7d9072 elementor-widget elementor-widget-spacer"
+                                        data-id="b7d9072"
+                                        data-element_type="widget"
+                                        data-widget_type="spacer.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div class="elementor-spacer">
+                                            <div
+                                              class="elementor-spacer-inner"
+                                            ></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="elementor-element elementor-element-40af7da5 elementor-align-center elementor-hidden-phone track-bt elementor-widget elementor-widget-button"
+                                        data-id="40af7da5"
+                                        data-element_type="widget"
+                                        id="top-bt"
+                                        onClick="ga( &#039;send&#039;, &#039;event&#039;, &#039;button&#039;, &#039;click&#039;, &#039;dl-Firestone-app-desktop&#039; );"
+                                        data-widget_type="button.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div class="elementor-button-wrapper">
+                                            <a
+                                              href="#elementor-action%3Aaction%3Dpopup%3Aopen%20settings%3DeyJpZCI6IjQwMzMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D"
+                                              class="elementor-button-link elementor-button elementor-size-sm"
+                                              role="button"
+                                              id="top-button"
+                                            >
+                                              <span
+                                                class="elementor-button-content-wrapper"
+                                              >
+                                                <span
+                                                  class="elementor-button-text"
+                                                  >Download Firestone</span
+                                                >
+                                              </span>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="elementor-element elementor-element-e59237f elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-heading"
+                                        data-id="e59237f"
+                                        data-element_type="widget"
+                                        data-widget_type="heading.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <h3
+                                            class="elementor-heading-title elementor-size-default"
+                                          >
+                                            View this page on desktop to
+                                            download app
+                                          </h3>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="elementor-element elementor-element-7375811 elementor-align-center track-bt elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-button"
+                                        data-id="7375811"
+                                        data-element_type="widget"
+                                        onClick="ga( &#039;send&#039;, &#039;event&#039;, &#039;button&#039;, &#039;click&#039;, &#039;dl-Firestone-App-Mobile&#039; );"
+                                        data-widget_type="button.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div class="elementor-button-wrapper">
+                                            <a
+                                              href="#elementor-action%3Aaction%3Dpopup%3Aopen%20settings%3DeyJpZCI6IjQwNDEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D"
+                                              class="elementor-button-link elementor-button elementor-size-sm"
+                                              role="button"
+                                              id="top-mobile-button"
+                                            >
+                                              <span
+                                                class="elementor-button-content-wrapper"
+                                              >
+                                                <span
+                                                  class="elementor-button-text"
+                                                  >Get Firestone</span
+                                                >
+                                              </span>
+                                            </a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="elementor-element elementor-element-d3976ab elementor-widget elementor-widget-heading"
+                                        data-id="d3976ab"
+                                        data-element_type="widget"
+                                        data-widget_type="heading.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <h5
+                                            class="elementor-heading-title elementor-size-default"
+                                          >
+                                            <a
+                                              href="https://medium.com/overwolf-developers/how-overwolf-keeps-users-safe-from-bans-10f6a4657869"
+                                              target="_blank"
+                                              >Compliant with Blizzard's ToS
+                                            </a>
+                                          </h5>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          <div
+                            class="elementor-element elementor-element-3a12998 elementor-widget__width-inherit elementor-absolute elementor-invisible elementor-widget elementor-widget-image"
+                            data-id="3a12998"
+                            data-element_type="widget"
+                            data-settings='{"_animation":"none","_animation_delay":2,"_position":"absolute"}'
+                            data-widget_type="image.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="elementor-image">
+                                <img
+                                  src="https://go.overwolf.com/wp-content/uploads/2019/07/Arrow.svg"
+                                  class="attachment-full size-full"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </main>
+                  </div>
+                </div>
+              </section>
+              <section
+                class="elementor-element elementor-element-f7a6a13 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
+                data-id="f7a6a13"
+                data-element_type="section"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div class="elementor-container elementor-column-gap-default">
+                  <div class="elementor-row">
+                    <div
+                      class="elementor-element elementor-element-4c4d19c elementor-column elementor-col-33 elementor-top-column"
+                      data-id="4c4d19c"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap  elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <div
+                            class="elementor-element elementor-element-642e5fd elementor-widget elementor-widget-image"
+                            data-id="642e5fd"
+                            data-element_type="widget"
+                            data-widget_type="image.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="elementor-image">
+                                <a
+                                  data-elementor-open-lightbox="yes"
+                                  href="https://go.overwolf.com/wp-content/uploads/2019/12/Feat-1-Replays.png"
+                                >
+                                  <img
+                                    src="https://go.overwolf.com/wp-content/uploads/elementor/thumbs/Feat-1-Replays-ohx3zpfx9ol69yhymlgcdj2b0i54f7h7brpar4bocg.png"
+                                    title="Feat 1 Replays"
+                                    alt="Feat 1 Replays"
+                                  />
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-5ebd52c elementor-widget elementor-widget-heading"
+                            data-id="5ebd52c"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                <!--(figmeta)eyJmaWxlS2V5IjoiMldPU1N6eHN3eE5yOENiUXVMb3lNZCIsInBhc3RlSUQiOi0xLCJkYXRhVHlwZSI6InNjZW5lIn0K(/figmeta)--><!--(figma)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(/figma)-->Review
+                                &amp; Share Replays
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-596c910 elementor-widget elementor-widget-text-editor"
+                            data-id="596c910"
+                            data-element_type="widget"
+                            data-widget_type="text-editor.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div
+                                class="elementor-text-editor elementor-clearfix"
+                              >
+                                <p>
+                                  Firestone automatically creates highlight
+                                  clips during your match, and you can study
+                                  them to improve or share them easily with
+                                  fellow players anywhere.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="elementor-element elementor-element-85b7fb4 elementor-column elementor-col-33 elementor-top-column"
+                      data-id="85b7fb4"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap  elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <div
+                            class="elementor-element elementor-element-7904b71 elementor-widget elementor-widget-image"
+                            data-id="7904b71"
+                            data-element_type="widget"
+                            data-widget_type="image.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="elementor-image">
+                                <a
+                                  data-elementor-open-lightbox="yes"
+                                  href="https://go.overwolf.com/wp-content/uploads/2019/12/Feat-2-img-1.png"
+                                >
+                                  <img
+                                    src="https://go.overwolf.com/wp-content/uploads/elementor/thumbs/Feat-2-img-1-ohx3zqdrgimglkglh3uyy0trlw0hmwkxnwcs8eaa68.png"
+                                    title="Feat 2 img"
+                                    alt="Feat 2 img"
+                                  />
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-a9623ca elementor-widget elementor-widget-heading"
+                            data-id="a9623ca"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                Achievements
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-ecbecc7 elementor-widget elementor-widget-text-editor"
+                            data-id="ecbecc7"
+                            data-element_type="widget"
+                            data-widget_type="text-editor.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div
+                                class="elementor-text-editor elementor-clearfix"
+                              >
+                                <p>
+                                  Always wanted achievements in Hearthstone? We
+                                  got you! Complete achievements and prove your
+                                  strength with short video clips showcasing
+                                  your performance.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="elementor-element elementor-element-4ad6e8f elementor-column elementor-col-33 elementor-top-column"
+                      data-id="4ad6e8f"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap  elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <div
+                            class="elementor-element elementor-element-b8c8e05 elementor-widget elementor-widget-image"
+                            data-id="b8c8e05"
+                            data-element_type="widget"
+                            data-widget_type="image.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="elementor-image">
+                                <a
+                                  data-elementor-open-lightbox="yes"
+                                  href="https://go.overwolf.com/wp-content/uploads/2019/12/Feat-3-img-1.png"
+                                >
+                                  <img
+                                    src="https://go.overwolf.com/wp-content/uploads/elementor/thumbs/Feat-3-img-1-ohx3zrblncnqx6f8bm9liil879vuuloo0109po8w00.png"
+                                    title="Feat 3 img"
+                                    alt="Feat 3 img"
+                                  />
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-924a70c elementor-widget elementor-widget-heading"
+                            data-id="924a70c"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                Deck Tracker
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-27499c1 elementor-widget elementor-widget-text-editor"
+                            data-id="27499c1"
+                            data-element_type="widget"
+                            data-widget_type="text-editor.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div
+                                class="elementor-text-editor elementor-clearfix"
+                              >
+                                <p>
+                                  In-game tracker showing what&#8217;s left in
+                                  your deck. The deck tracker also lists where
+                                  your other cards have gone, including the
+                                  Graveyard or the Discard pile.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section
+                class="elementor-element elementor-element-cb9d12b elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section"
+                data-id="cb9d12b"
+                data-element_type="section"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div class="elementor-container elementor-column-gap-default">
+                  <div class="elementor-row">
+                    <div
+                      class="elementor-element elementor-element-763fba9 elementor-column elementor-col-100 elementor-top-column"
+                      data-id="763fba9"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap  elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <div
+                            class="elementor-element elementor-element-5dc10bc elementor-widget elementor-widget-heading"
+                            data-id="5dc10bc"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h1
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                Unlock Firestone in 3 Steps
+                              </h1>
+                            </div>
+                          </div>
+                          <section
+                            class="elementor-element elementor-element-a53bc11 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section"
+                            data-id="a53bc11"
+                            data-element_type="section"
+                          >
+                            <div
+                              class="elementor-container elementor-column-gap-default"
+                            >
+                              <div class="elementor-row">
+                                <div
+                                  class="elementor-element elementor-element-c31fb47 elementor-column elementor-col-33 elementor-inner-column"
+                                  data-id="c31fb47"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap  elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-be8645b elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                                        data-id="be8645b"
+                                        data-element_type="widget"
+                                        data-widget_type="image-box.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div
+                                            class="elementor-image-box-wrapper"
+                                          >
+                                            <figure
+                                              class="elementor-image-box-img"
+                                            >
+                                              <img
+                                                src="https://go.overwolf.com/wp-content/uploads/2019/07/dl-icon-1.svg"
+                                                class="elementor-animation-grow attachment-full size-full"
+                                                alt=""
+                                              />
+                                            </figure>
+                                            <div
+                                              class="elementor-image-box-content"
+                                            >
+                                              <h2
+                                                class="elementor-image-box-title"
+                                              >
+                                                Download Firestone
+                                              </h2>
+                                              <p
+                                                class="elementor-image-box-description"
+                                              >
+                                                You can get it securely for
+                                                free<br />using the button below
+                                              </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="elementor-element elementor-element-8ed0cfe elementor-column elementor-col-33 elementor-inner-column"
+                                  data-id="8ed0cfe"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap  elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-99945f5 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                                        data-id="99945f5"
+                                        data-element_type="widget"
+                                        data-widget_type="image-box.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div
+                                            class="elementor-image-box-wrapper"
+                                          >
+                                            <figure
+                                              class="elementor-image-box-img"
+                                            >
+                                              <img
+                                                src="https://go.overwolf.com/wp-content/uploads/2019/07/Install-1.svg"
+                                                class="elementor-animation-grow attachment-full size-full"
+                                                alt=""
+                                              />
+                                            </figure>
+                                            <div
+                                              class="elementor-image-box-content"
+                                            >
+                                              <h2
+                                                class="elementor-image-box-title"
+                                              >
+                                                Install the App
+                                              </h2>
+                                              <p
+                                                class="elementor-image-box-description"
+                                              >
+                                                A short installation will
+                                                enable<br />
+                                                Firestone on your machine
+                                              </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="elementor-element elementor-element-bafb915 elementor-column elementor-col-33 elementor-inner-column"
+                                  data-id="bafb915"
+                                  data-element_type="column"
+                                >
+                                  <div
+                                    class="elementor-column-wrap  elementor-element-populated"
+                                  >
+                                    <div class="elementor-widget-wrap">
+                                      <div
+                                        class="elementor-element elementor-element-782eceb elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                                        data-id="782eceb"
+                                        data-element_type="widget"
+                                        data-widget_type="image-box.default"
+                                      >
+                                        <div class="elementor-widget-container">
+                                          <div
+                                            class="elementor-image-box-wrapper"
+                                          >
+                                            <figure
+                                              class="elementor-image-box-img"
+                                            >
+                                              <img
+                                                src="https://go.overwolf.com/wp-content/uploads/2019/08/Hearthstone-card.svg"
+                                                class="elementor-animation-grow attachment-full size-full"
+                                                alt="Hearthstone card icon"
+                                              />
+                                            </figure>
+                                            <div
+                                              class="elementor-image-box-content"
+                                            >
+                                              <h2
+                                                class="elementor-image-box-title"
+                                              >
+                                                Start Your Match
+                                              </h2>
+                                              <p
+                                                class="elementor-image-box-description"
+                                              >
+                                                Firestone automatically launches
+                                                <br />when you start a match
+                                              </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section
+                class="elementor-element elementor-element-3199b6ab elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section"
+                data-id="3199b6ab"
+                data-element_type="section"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div class="elementor-container elementor-column-gap-no">
+                  <div class="elementor-row">
+                    <div
+                      class="elementor-element elementor-element-75c6bbb6 elementor-column elementor-col-100 elementor-top-column"
+                      data-id="75c6bbb6"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap  elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <div
+                            class="elementor-element elementor-element-3831891c elementor-widget elementor-widget-heading"
+                            data-id="3831891c"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h1
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                Evolve your Hearthstone experience
+                              </h1>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-7fa90e16 elementor-widget elementor-widget-spacer"
+                            data-id="7fa90e16"
+                            data-element_type="widget"
+                            data-widget_type="spacer.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="elementor-spacer">
+                                <div class="elementor-spacer-inner"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-31d6bc elementor-align-center elementor-hidden-phone track-bt elementor-widget elementor-widget-button"
+                            data-id="31d6bc"
+                            data-element_type="widget"
+                            id="bot-bt"
+                            onClick="ga( &#039;send&#039;, &#039;event&#039;, &#039;button&#039;, &#039;click&#039;, &#039;dl-Firestone-app-desktop&#039; );"
+                            data-widget_type="button.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="elementor-button-wrapper">
+                                <a
+                                  href="#elementor-action%3Aaction%3Dpopup%3Aopen%20settings%3DeyJpZCI6IjQwMzMiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D"
+                                  class="elementor-button-link elementor-button elementor-size-sm"
+                                  role="button"
+                                  id="bot-button"
+                                >
+                                  <span
+                                    class="elementor-button-content-wrapper"
+                                  >
+                                    <span class="elementor-button-text"
+                                      >Download Firestone</span
+                                    >
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-3a7b1ce elementor-align-center track-bt elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-phone elementor-widget elementor-widget-button"
+                            data-id="3a7b1ce"
+                            data-element_type="widget"
+                            onClick="ga( &#039;send&#039;, &#039;event&#039;, &#039;button&#039;, &#039;click&#039;, &#039;dl-Firestone-App-Mobile&#039; );"
+                            data-widget_type="button.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <div class="elementor-button-wrapper">
+                                <a
+                                  href="#elementor-action%3Aaction%3Dpopup%3Aopen%20settings%3DeyJpZCI6IjQwNDEiLCJ0b2dnbGUiOmZhbHNlfQ%3D%3D"
+                                  class="elementor-button-link elementor-button elementor-size-sm"
+                                  role="button"
+                                  id="Bot-mobile-button"
+                                >
+                                  <span
+                                    class="elementor-button-content-wrapper"
+                                  >
+                                    <span class="elementor-button-text"
+                                      >Get Firestone</span
+                                    >
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            class="elementor-element elementor-element-36c1913 elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-heading"
+                            data-id="36c1913"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h3
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                View this page on desktop to download app
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section
+                class="elementor-element elementor-element-e9e2c6f elementor-section-full_width elementor-section-content-middle elementor-section-height-min-height elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section"
+                data-id="e9e2c6f"
+                data-element_type="section"
+                data-settings='{"background_background":"classic"}'
+              >
+                <div class="elementor-container elementor-column-gap-no">
+                  <div class="elementor-row">
+                    <div
+                      class="elementor-element elementor-element-4070394 elementor-column elementor-col-100 elementor-top-column"
+                      data-id="4070394"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap  elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <div
+                            class="elementor-element elementor-element-8b842e4 elementor-widget elementor-widget-heading"
+                            data-id="8b842e4"
+                            data-element_type="widget"
+                            data-widget_type="heading.default"
+                          >
+                            <div class="elementor-widget-container">
+                              <h5
+                                class="elementor-heading-title elementor-size-default"
+                              >
+                                Built on Overwolf | Game developers' ToS
+                                approved
+                              </h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <div
+                class="elementor-element elementor-element-351be4fb elementor-section-full_width elementor-section-content-middle scripts elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section"
+                data-id="351be4fb"
+                data-element_type="section"
+                id="scripts"
+              >
+                <div class="elementor-container elementor-column-gap-no">
+                  <div class="elementor-row">
+                    <div
+                      class="elementor-element elementor-element-4844d876 elementor-column elementor-col-100 elementor-top-column"
+                      data-id="4844d876"
+                      data-element_type="column"
+                    >
+                      <div
+                        class="elementor-column-wrap  elementor-element-populated"
+                      >
+                        <div class="elementor-widget-wrap">
+                          <div
+                            class="elementor-element elementor-element-39e4bc59 elementor-widget elementor-widget-html"
+                            data-id="39e4bc59"
+                            data-element_type="widget"
+                            data-widget_type="html.default"
+                          >
+                            <div class="elementor-widget-container">
+                              /**Auto Download**/
+                              <script>
+                                document
+                                  .getElementById("cta_nav")
+                                  .addEventListener("click", function() {
+                                    gtag_report_conversion();
+                                    window.location.href = owGenerateDownloadUrl(
+                                      3848,
+                                      "lnknbakkpommmjjdnelmfbjjdbocfpnpbkijjnob"
+                                    );
+                                    fbq("track", "AddToCart");
+                                  });
+
+                                document
+                                  .getElementById("top-button")
+                                  .addEventListener("click", function() {
+                                    gtag_report_conversion();
+                                    window.location.href = owGenerateDownloadUrl(
+                                      3848,
+                                      "lnknbakkpommmjjdnelmfbjjdbocfpnpbkijjnob"
+                                    );
+                                    fbq("track", "AddToCart");
+                                  });
+
+                                document
+                                  .getElementById("bot-button")
+                                  .addEventListener("click", function() {
+                                    gtag_report_conversion();
+                                    window.location.href = owGenerateDownloadUrl(
+                                      3848,
+                                      "lnknbakkpommmjjdnelmfbjjdbocfpnpbkijjnob"
+                                    );
+                                    fbq("track", "AddToCart");
+                                  });
+
+                                //window.setTimeout(, 2000);
+                              </script>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="post-tags"></div>
+      </div>
+
+      <section id="comments" class="comments-area"></section>
+      <!-- .comments-area -->
+    </main>
+
+    <footer id="site-footer" class="site-footer" role="contentinfo"></footer>
+
+    <script
+      src="https://www.overwolf.com/system/modules/com.overwolf.store/resources/cookiebar.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://content.overwolf.com/dct/dct.js"></script>
+    <script>
+      function owGenerateDownloadUrl(partnerId, extensionId) {
+        if (!OW) {
+          return true;
+        }
+
+        try {
+          let info = {
+            PartnerId: partnerId
+          };
+
+          if (extensionId) {
+            info.ExtensionId = extensionId;
+          }
+
+          let url = OW.downloadCampaignTracking.getDownloadUrlForCampaign(info);
+          return url;
+        } catch (e) {
+          console.error(e);
+        }
+
+        // fallback
+        return "";
+      }
+    </script>
+    <div
+      data-elementor-type="popup"
+      data-elementor-id="4033"
+      class="elementor elementor-4033 elementor-location-popup"
+      data-elementor-settings='{"timing":[]}'
+    >
+      <div class="elementor-inner">
+        <div class="elementor-section-wrap">
+          <section
+            class="elementor-element elementor-element-74d3ba94 elementor-section-full_width elementor-section-content-top elementor-section-height-min-height elementor-section-items-top elementor-section-height-default elementor-section elementor-top-section"
+            data-id="74d3ba94"
+            data-element_type="section"
+            data-settings='{"background_background":"classic"}'
+          >
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-row">
+                <div
+                  class="elementor-element elementor-element-4db61dc0 elementor-column elementor-col-100 elementor-top-column"
+                  data-id="4db61dc0"
+                  data-element_type="column"
+                  data-settings='{"background_background":"classic"}'
+                >
+                  <div
+                    class="elementor-column-wrap  elementor-element-populated"
+                  >
+                    <div class="elementor-widget-wrap">
+                      <div
+                        class="elementor-element elementor-element-20832edd elementor-widget elementor-widget-heading"
+                        data-id="20832edd"
+                        data-element_type="widget"
+                        data-widget_type="heading.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <span
+                            class="elementor-heading-title elementor-size-default"
+                          >
+                            install Firestone & play Like a Pro!
+                          </span>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-9e883af elementor-widget elementor-widget-text-editor"
+                        data-id="9e883af"
+                        data-element_type="widget"
+                        data-widget_type="text-editor.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-text-editor elementor-clearfix">
+                            <h4>
+                              <!--(figmeta)eyJmaWxlS2V5IjoiZWMxcVROTnUxVVhsVUp2Z2VhVk5XakRxIiwicGFzdGVJRCI6LTEsImRhdGFUeXBlIjoic2NlbmUifQo=(/figmeta)--><!--(figma)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(/figma)-->Your
+                              app download should start right away&#8230; If it
+                              doesn’t,
+                              <a
+                                href="http://download.overwolf.com/install/Download?&amp;PartnerId=3848"
+                                target="_blank"
+                                rel="noopener"
+                                >click here</a
+                              >.
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="elementor-element elementor-element-a044f82 elementor-section-full_width elementor-section-height-min-height elementor-section-content-middle elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section"
+            data-id="a044f82"
+            data-element_type="section"
+            data-settings='{"background_background":"classic"}'
+          >
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-row">
+                <div
+                  class="elementor-element elementor-element-44a860b0 elementor-column elementor-col-100 elementor-top-column"
+                  data-id="44a860b0"
+                  data-element_type="column"
+                >
+                  <div
+                    class="elementor-column-wrap  elementor-element-populated"
+                  >
+                    <div class="elementor-widget-wrap">
+                      <div
+                        class="elementor-element elementor-element-446c6428 elementor-widget elementor-widget-text-editor"
+                        data-id="446c6428"
+                        data-element_type="widget"
+                        data-widget_type="text-editor.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-text-editor elementor-clearfix">
+                            <h4>
+                              Firestone is built on Overwolf, which is
+                              <a
+                                href="https://medium.com/overwolf-developers/how-overwolf-keeps-users-safe-from-bans-10f6a4657869"
+                                target="_blank"
+                                rel="noopener"
+                                >Blizzard ToS compliant</a
+                              >.
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div
+      data-elementor-type="popup"
+      data-elementor-id="4041"
+      class="elementor elementor-4041 elementor-location-popup"
+      data-elementor-settings='{"timing":[]}'
+    >
+      <div class="elementor-inner">
+        <div class="elementor-section-wrap">
+          <section
+            class="elementor-element elementor-element-7225c016 elementor-section-full_width elementor-section-content-top elementor-section-height-min-height elementor-section-items-top elementor-section-height-default elementor-section elementor-top-section"
+            data-id="7225c016"
+            data-element_type="section"
+            data-settings='{"background_background":"classic"}'
+          >
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-row">
+                <div
+                  class="elementor-element elementor-element-5aff9015 elementor-column elementor-col-100 elementor-top-column"
+                  data-id="5aff9015"
+                  data-element_type="column"
+                  data-settings='{"background_background":"classic"}'
+                >
+                  <div
+                    class="elementor-column-wrap  elementor-element-populated"
+                  >
+                    <div class="elementor-widget-wrap">
+                      <div
+                        class="elementor-element elementor-element-7288bcae elementor-widget elementor-widget-heading"
+                        data-id="7288bcae"
+                        data-element_type="widget"
+                        data-widget_type="heading.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <span
+                            class="elementor-heading-title elementor-size-default"
+                            >Let’s set up a reminder!</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-721e6bd2 elementor-widget elementor-widget-text-editor"
+                        data-id="721e6bd2"
+                        data-element_type="widget"
+                        data-widget_type="text-editor.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-text-editor elementor-clearfix">
+                            <p>
+                              A download reminder will be sent to your email so
+                              you can get Firestone on your PC
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-6234a788 elementor-mobile-button-align-center elementor-button-align-stretch elementor-widget elementor-widget-form"
+                        data-id="6234a788"
+                        data-element_type="widget"
+                        data-widget_type="form.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <form
+                            class="elementor-form"
+                            method="post"
+                            id="R6-Tracker-King-George-Mobile"
+                            name="R6 Tracker mobile reminder"
+                          >
+                            <input type="hidden" name="post_id" value="4041" />
+                            <input
+                              type="hidden"
+                              name="form_id"
+                              value="6234a788"
+                            />
+
+                            <div
+                              class="elementor-form-fields-wrapper elementor-labels-"
+                            >
+                              <div
+                                class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-sm-75 elementor-field-required"
+                              >
+                                <label
+                                  for="form-field-email"
+                                  class="elementor-field-label elementor-screen-only"
+                                  >Email</label
+                                ><input
+                                  size="1"
+                                  type="email"
+                                  name="form_fields[email]"
+                                  id="form-field-email"
+                                  class="elementor-field elementor-size-sm  elementor-field-textual"
+                                  placeholder="Email"
+                                  required="required"
+                                  aria-required="true"
+                                />
+                              </div>
+                              <div
+                                class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100"
+                              >
+                                <button
+                                  type="submit"
+                                  class="elementor-button elementor-size-sm"
+                                  id="email-send"
+                                >
+                                  <span>
+                                    <span class=" elementor-button-icon">
+                                    </span>
+                                    <span class="elementor-button-text"
+                                      >Send</span
+                                    >
+                                  </span>
+                                </button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="elementor-element elementor-element-4f3eb69e elementor-section-full_width elementor-section-height-min-height elementor-section-content-middle elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section"
+            data-id="4f3eb69e"
+            data-element_type="section"
+            data-settings='{"background_background":"classic"}'
+          >
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-row">
+                <div
+                  class="elementor-element elementor-element-701b965a elementor-column elementor-col-100 elementor-top-column"
+                  data-id="701b965a"
+                  data-element_type="column"
+                >
+                  <div
+                    class="elementor-column-wrap  elementor-element-populated"
+                  >
+                    <div class="elementor-widget-wrap">
+                      <div
+                        class="elementor-element elementor-element-31019da3 elementor-widget elementor-widget-text-editor"
+                        data-id="31019da3"
+                        data-element_type="widget"
+                        data-widget_type="text-editor.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-text-editor elementor-clearfix">
+                            <h4>
+                              Built on Overwolf.
+                              <a
+                                href="https://medium.com/overwolf-developers/how-overwolf-keeps-users-safe-from-bans-10f6a4657869"
+                                target="_blank"
+                                rel="noopener"
+                                >Blizzard compliant</a
+                              >.
+                            </h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div
+      data-elementor-type="popup"
+      data-elementor-id="384"
+      class="elementor elementor-384 elementor-location-popup"
+      data-elementor-settings='{"triggers":[],"timing":[]}'
+    >
+      <div class="elementor-inner">
+        <div class="elementor-section-wrap">
+          <section
+            class="elementor-element elementor-element-26cbb51 elementor-section-full_width elementor-section-height-min-height elementor-section-items-top elementor-section-content-top elementor-section-height-default elementor-section elementor-top-section"
+            data-id="26cbb51"
+            data-element_type="section"
+          >
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-row">
+                <div
+                  class="elementor-element elementor-element-9b71388 elementor-column elementor-col-100 elementor-top-column"
+                  data-id="9b71388"
+                  data-element_type="column"
+                >
+                  <div
+                    class="elementor-column-wrap  elementor-element-populated"
+                  >
+                    <div class="elementor-widget-wrap">
+                      <div
+                        class="elementor-element elementor-element-aa27782 elementor-widget elementor-widget-heading"
+                        data-id="aa27782"
+                        data-element_type="widget"
+                        data-widget_type="heading.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <p
+                            class="elementor-heading-title elementor-size-default"
+                          >
+                            Your app download should start right away...
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-aaea7f3 elementor-widget elementor-widget-spacer"
+                        data-id="aaea7f3"
+                        data-element_type="widget"
+                        data-widget_type="spacer.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-spacer">
+                            <div class="elementor-spacer-inner"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-c0804bf elementor-widget elementor-widget-text-editor"
+                        data-id="c0804bf"
+                        data-element_type="widget"
+                        data-widget_type="text-editor.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-text-editor elementor-clearfix">
+                            <p>
+                              <!--(figmeta)eyJmaWxlS2V5IjoiTWRyeXdwNGRxc3BvRGJkRXlSbWFwMSIsInBhc3RlSUQiOi0xLCJkYXRhVHlwZSI6InNjZW5lIn0K(/figmeta)--><!--(figma)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(/figma)-->
+                            </p>
+                            <p>
+                              <!--(figmeta)eyJmaWxlS2V5IjoiTWRyeXdwNGRxc3BvRGJkRXlSbWFwMSIsInBhc3RlSUQiOi0xLCJkYXRhVHlwZSI6InNjZW5lIn0K(/figmeta)--><!--(figma)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(/figma)-->
+                              The installer should download momentarily If it
+                              doesn’t,<br /><a
+                                href="http://download.overwolf.com/install/Download?&amp;PartnerId=3713"
+                                target="_blank"
+                                rel="noopener"
+                                >download here</a
+                              >
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-1741292 elementor-widget elementor-widget-image"
+                        data-id="1741292"
+                        data-element_type="widget"
+                        data-widget_type="image.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-image">
+                            <img
+                              width="175"
+                              height="97"
+                              src="https://go.overwolf.com/wp-content/uploads/2019/03/chest.png"
+                              class="attachment-full size-full"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-99dafcc elementor-widget elementor-widget-spacer"
+                        data-id="99dafcc"
+                        data-element_type="widget"
+                        data-widget_type="spacer.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-spacer">
+                            <div class="elementor-spacer-inner"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="elementor-element elementor-element-5370852 elementor-widget elementor-widget-heading"
+                        data-id="5370852"
+                        data-element_type="widget"
+                        data-widget_type="heading.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <h5
+                            class="elementor-heading-title elementor-size-default"
+                          >
+                            Already got Overwolf? Your chosen app will be added
+                            to your Overwolf client
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="elementor-element elementor-element-6d4c966 elementor-section-full_width elementor-section-height-min-height elementor-section-content-middle elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section"
+            data-id="6d4c966"
+            data-element_type="section"
+            data-settings='{"background_background":"classic"}'
+          >
+            <div class="elementor-container elementor-column-gap-no">
+              <div class="elementor-row">
+                <div
+                  class="elementor-element elementor-element-49cae37 elementor-column elementor-col-100 elementor-top-column"
+                  data-id="49cae37"
+                  data-element_type="column"
+                >
+                  <div
+                    class="elementor-column-wrap  elementor-element-populated"
+                  >
+                    <div class="elementor-widget-wrap">
+                      <div
+                        class="elementor-element elementor-element-417e376 elementor-position-left elementor-vertical-align-top elementor-widget elementor-widget-image-box"
+                        data-id="417e376"
+                        data-element_type="widget"
+                        data-widget_type="image-box.default"
+                      >
+                        <div class="elementor-widget-container">
+                          <div class="elementor-image-box-wrapper">
+                            <figure class="elementor-image-box-img">
+                              <img
+                                src="https://go.overwolf.com/wp-content/uploads/elementor/thumbs/OW-Logo-White-1-o4v6coju3t79nxohuh13zy7h7kc561xvyn0o5h5364.png"
+                                title="OW-Logo-White"
+                                alt="OW-Logo-White"
+                              />
+                            </figure>
+                            <div class="elementor-image-box-content">
+                              <h4 class="elementor-image-box-title">
+                                Overwolf is an epic apps platform for PC games.
+                                It’s easy, free and used by millions of gamers
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <link
+      rel="stylesheet"
+      id="elementor-post-4033-css"
+      href="https://go.overwolf.com/wp-content/uploads/elementor/css/post-4033.css?ver=1580199184"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="elementor-post-4041-css"
+      href="https://go.overwolf.com/wp-content/uploads/elementor/css/post-4041.css?ver=1580199184"
+      type="text/css"
+      media="all"
+    />
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-includes/js/wp-embed.min.js?ver=5.3.2"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=2.8.5"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=2.8.3"
+    ></script>
+    <script type="text/javascript">
+      var ElementorProFrontendConfig = {
+        ajaxurl: "https:\/\/go.overwolf.com\/wp-admin\/admin-ajax.php",
+        nonce: "37d10174a1",
+        shareButtonsNetworks: {
+          facebook: { title: "Facebook", has_counter: true },
+          twitter: { title: "Twitter" },
+          google: { title: "Google+", has_counter: true },
+          linkedin: { title: "LinkedIn", has_counter: true },
+          pinterest: { title: "Pinterest", has_counter: true },
+          reddit: { title: "Reddit", has_counter: true },
+          vk: { title: "VK", has_counter: true },
+          odnoklassniki: { title: "OK", has_counter: true },
+          tumblr: { title: "Tumblr" },
+          delicious: { title: "Delicious" },
+          digg: { title: "Digg" },
+          skype: { title: "Skype" },
+          stumbleupon: { title: "StumbleUpon", has_counter: true },
+          telegram: { title: "Telegram" },
+          pocket: { title: "Pocket", has_counter: true },
+          xing: { title: "XING", has_counter: true },
+          whatsapp: { title: "WhatsApp" },
+          email: { title: "Email" },
+          print: { title: "Print" }
+        },
+        facebook_sdk: { lang: "en_US", app_id: "" }
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=2.8.3"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-includes/js/jquery/ui/position.min.js?ver=1.11.4"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.7.3"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=4.4.6"
+    ></script>
+    <script type="text/javascript">
+      var elementorFrontendConfig = {
+        environmentMode: { edit: false, wpPreview: false },
+        is_rtl: false,
+        breakpoints: { xs: 0, sm: 480, md: 768, lg: 1025, xl: 1440, xxl: 1600 },
+        version: "2.8.5",
+        urls: {
+          assets:
+            "https:\/\/go.overwolf.com\/wp-content\/plugins\/elementor\/assets\/"
+        },
+        settings: {
+          page: [],
+          general: { elementor_global_image_lightbox: "yes" },
+          editorPreferences: []
+        },
+        post: { id: 4021, title: "Firestone App", excerpt: "" }
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="https://go.overwolf.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=2.8.5"
+    ></script>
+  </body>
 </html>

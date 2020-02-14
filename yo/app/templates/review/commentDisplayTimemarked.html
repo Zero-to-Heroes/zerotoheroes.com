@@ -1,6 +1,0 @@
-<div ng-repeat="turn in :turnRefresh:fullCommentTurns track by turn.turn" ng-class=":turnRefresh:{'inactive': (turn.turn != getCurrentTurn() && turn.turn != mediaPlayer.getTurnLabel(getCurrentTurn())), 'turn-active': (turn.turn == getCurrentTurn() || turn.turn == mediaPlayer.getTurnLabel(getCurrentTurn())) }">
-
-	<h2 class="turn-label" compilecontent content="::turn.label"></h2>
-
-	<comment ng-repeat="comment in turn.comments track by comment.id" class="top-level" review="::review" comment="::comment" comment-index="::$index" media-player="::mediaPlayer" plugins="::plugins" config="::config" sport="::sport"></comment> 
-</div>

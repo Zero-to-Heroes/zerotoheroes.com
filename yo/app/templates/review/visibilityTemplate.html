@@ -1,7 +1,0 @@
-<ul tabindex="-1" class="select dropdown-menu ng-scope am-fade bottom-left" ng-show="$isVisible()" role="select">
-	<li role="presentation" ng-repeat="match in $matches" ng-class="{active: $isActive($index)}">
-		<a style="cursor: default;" role="menuitem" tabindex="-1" ng-click="$select($index, $event)">
-			<span ng-bind-html="match.label" class="ng-binding" title="{{ 'global.review.visibility.' + match.label.toLowerCase() + 'Tooltip' | translate }}"></span>
-		</a>
-	</li>
-</ul>

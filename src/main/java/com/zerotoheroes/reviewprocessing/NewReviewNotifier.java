@@ -60,6 +60,7 @@ public class NewReviewNotifier {
 		json.put("playerDeckName", metaData.getDeckName());
 		json.put("replayKey", review.getKey()); // Not used for stats
 		json.put("creationDate", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(review.getCreationDate()));
+		json.put("application", review.getUploaderApplicationKey());
 
 //		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");
 //		if (metaData.getDeckstring() == null && !StringUtils.isEmpty(deck) && deck.length() > 3) {

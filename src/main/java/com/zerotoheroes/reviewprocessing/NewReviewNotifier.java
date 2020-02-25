@@ -37,29 +37,29 @@ public class NewReviewNotifier {
 	private String message(Review review) {
 		HearthstoneMetaData metaData = (HearthstoneMetaData) review.getMetaData();
 		JSONObject json = new JSONObject();
-		json.put("reviewId", review.getId());
+			json.put("reviewId", review.getUploaderToken());
 		json.put("userId", review.getAuthorId());
 		// So that we have a way to identify and query the reviews created by third-party apps
 		json.put("uploaderToken", review.getUploaderApplicationKey() + "-" + review.getUploaderToken());
-		json.put("playerName", metaData.getPlayerName());
-		json.put("playerClass", metaData.getPlayerClass());
-		json.put("playerCardId", metaData.getPlayerCardId());
-		json.put("playerRank", metaData.getPlayerRank());
+			json.put("playerName", metaData.getPlayerName());
+			json.put("playerClass", metaData.getPlayerClass());
+			json.put("playerCardId", metaData.getPlayerCardId());
+			json.put("playerRank", metaData.getPlayerRank());
 		json.put("opponentName", metaData.getOpponentName());
 		json.put("opponentClass", metaData.getOpponentClass());
 		json.put("opponentCardId", metaData.getOpponentCardId());
 		json.put("opponentRank", metaData.getOpponentRank());
-		json.put("result", metaData.getWinStatus());
-		json.put("additionalResult", metaData.getAdditionalResult());
-		json.put("coinPlay", metaData.getPlayCoin());
-		json.put("gameMode", metaData.getGameMode());
-		json.put("gameFormat", metaData.getGameFormat());
-		json.put("buildNumber", metaData.getBuildNumber());
-		json.put("scenarioId", metaData.getScenarioId());
-		json.put("playerDecklist", metaData.getDeckstring());
-		json.put("playerDeckName", metaData.getDeckName());
+			json.put("result", metaData.getWinStatus());
+			json.put("additionalResult", metaData.getAdditionalResult());
+			json.put("coinPlay", metaData.getPlayCoin());
+			json.put("gameMode", metaData.getGameMode());
+			json.put("gameFormat", metaData.getGameFormat());
+			json.put("buildNumber", metaData.getBuildNumber());
+			json.put("scenarioId", metaData.getScenarioId());
+			json.put("playerDecklist", metaData.getDeckstring());
+			json.put("playerDeckName", metaData.getDeckName());
 		json.put("replayKey", review.getKey()); // Not used for stats
-		json.put("creationDate", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(review.getCreationDate()));
+			json.put("creationDate", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(review.getCreationDate()));
 		json.put("application", review.getUploaderApplicationKey());
 
 //		String deck = review.getPluginData("hearthstone", "parseDecks").get("reviewDeck");

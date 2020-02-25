@@ -1,7 +1,7 @@
 package com.coach.review.replay;
 
-import com.coach.plugin.Plugin;
 import com.coach.plugin.ReplayPlugin;
+import com.coach.plugin.hearthstone.HSReplay;
 import com.coach.review.Review;
 import com.coach.review.ReviewRepository;
 import com.coach.sport.SportManager;
@@ -26,36 +26,20 @@ public class ReplayProcessor {
 	@Autowired
 	ReviewRepository repo;
 
-	public boolean processReplayFile(final Review review, String phase) {
+	public boolean processReplayFile(final Review review, String phase) throws Exception {
 		com.coach.sport.Sport sportEntity = sportManager.findById("hearthstone");
 		boolean updated = false;
-		for (String pluginClass : sportEntity.getPlugins()) {
-			try {
-				Plugin plugin = (Plugin) Class.forName(pluginClass).newInstance();
+		ReplayPlugin replayPlugin = new HSReplay();
+		beanFactory.autowireBean(replayPlugin);
+		boolean isCorrectType = replayPlugin.getMediaTypes().contains(review.getMediaType());
+		boolean isCorrectPhase =
+				replayPlugin.getPhase().equals("all")
+				|| replayPlugin.getPhase().equals(phase);
 
-				if (plugin instanceof ReplayPlugin) {
-					beanFactory.autowireBean(plugin);
-					ReplayPlugin replayPlugin = (ReplayPlugin) plugin;
-					// Keep backward compatibility for when there was no
-					// media type attached to a review
-					// log.debug("Trying to apply player plugin " + plugin);
-					boolean isCorrectType = replayPlugin.getMediaTypes().contains(review.getMediaType());
-
-					boolean isCorrectPhase =
-							replayPlugin.getPhase().equals("all")
-							|| replayPlugin.getPhase().equals(phase);
-
-					if (isCorrectType && isCorrectPhase) {
-						log.debug("Applying plugin " + plugin);
-						updated |= replayPlugin.transformReplayFile(review);
-						log.debug("Plugin applied");
-					}
-				}
-			}
-			catch (Exception e) {
-				log.error("Incorrect plugin execution " + pluginClass, e.getMessage());
-//				slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
-			}
+		if (isCorrectType && isCorrectPhase) {
+			log.debug("Applying plugin " + replayPlugin);
+			updated |= replayPlugin.transformReplayFile(review);
+			log.debug("Plugin applied");
 		}
 		return updated;
 	}

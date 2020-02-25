@@ -26,7 +26,7 @@ public class ReplayProcessor {
 	@Autowired
 	ReviewRepository repo;
 
-	public boolean processReplayFile(final Review review, String phase) throws Exception {
+	public boolean processReplayFile(final Review review, String phase) {
 		com.coach.sport.Sport sportEntity = sportManager.findById("hearthstone");
 		boolean updated = false;
 		ReplayPlugin replayPlugin = new HSReplay();
@@ -38,7 +38,11 @@ public class ReplayProcessor {
 
 		if (isCorrectType && isCorrectPhase) {
 			log.debug("Applying plugin " + replayPlugin);
-			updated |= replayPlugin.transformReplayFile(review);
+			try {
+				updated |= replayPlugin.transformReplayFile(review);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			log.debug("Plugin applied");
 		}
 		return updated;

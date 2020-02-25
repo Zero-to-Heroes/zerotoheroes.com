@@ -64,7 +64,7 @@ public class HSGameParser implements ReplayPlugin {
 
 		try {
 //			review.setInvalidGame(false);
-			log.debug("Adding meta data to " + review.getId() + " - " + review.getTitle());
+			log.debug("Adding meta data to " + review.getId());
 			String replay = getReplay(review);
 			if (replay == null) {
 				log.error("Processing empty replay, returning");

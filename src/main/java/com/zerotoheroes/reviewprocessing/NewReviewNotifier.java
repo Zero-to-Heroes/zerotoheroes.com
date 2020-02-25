@@ -37,8 +37,8 @@ public class NewReviewNotifier {
 	private String message(Review review) {
 		HearthstoneMetaData metaData = (HearthstoneMetaData) review.getMetaData();
 		JSONObject json = new JSONObject();
-			json.put("reviewId", review.getUploaderToken());
-		json.put("userId", review.getAuthorId());
+		json.put("reviewId", review.getId());
+		json.put("userId", review.getUploaderToken());
 		// So that we have a way to identify and query the reviews created by third-party apps
 		json.put("uploaderToken", "overwolf"
 				+ "-" + review.getUploaderToken());

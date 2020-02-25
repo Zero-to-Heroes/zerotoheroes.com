@@ -53,7 +53,7 @@ public class ReplayProcessor {
 				}
 			}
 			catch (Exception e) {
-				log.error("Incorrect plugin execution " + pluginClass, e);
+				log.error("Incorrect plugin execution " + pluginClass, e.getMessage());
 //				slackNotifier.notifyError(e, "Exception during plugin execution", pluginClass, review);
 			}
 		}

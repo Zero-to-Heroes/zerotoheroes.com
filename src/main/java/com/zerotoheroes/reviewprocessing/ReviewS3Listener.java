@@ -64,6 +64,7 @@ public class ReviewS3Listener {
 			metadata = s3.getObjectMetadata(bucketName, key);
 			// Myu own reviews are processed by the typescript lambda from now on
 			if ("OW_2c40f5f0-4b1c-476a-98c0-d6ac63508d4b".equalsIgnoreCase(metadata.getUserMetaDataOf("user-id"))) {
+				log.warn("Will not process review for me", "OW_2c40f5f0-4b1c-476a-98c0-d6ac63508d4b");
 				return;
 			}
 			reviewId = metadata.getUserMetaDataOf("review-id");

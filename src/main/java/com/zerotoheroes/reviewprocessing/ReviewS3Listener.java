@@ -62,6 +62,10 @@ public class ReviewS3Listener {
 		ObjectMetadata metadata = null;
 		try {
 			metadata = s3.getObjectMetadata(bucketName, key);
+			// Myu own reviews are processed by the typescript lambda from now on
+			if ("OW_2c40f5f0-4b1c-476a-98c0-d6ac63508d4b".equalsIgnoreCase(metadata.getUserMetaDataOf("user-id"))) {
+				return;
+			}
 			reviewId = metadata.getUserMetaDataOf("review-id");
 			log.debug("Received message to process reviewId " + reviewId);
 			log.debug("metadat is " + metadata);

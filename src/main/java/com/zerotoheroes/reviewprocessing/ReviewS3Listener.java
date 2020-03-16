@@ -16,8 +16,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.aws.messaging.listener.Acknowledgment;
-import org.springframework.cloud.aws.messaging.listener.SqsMessageDeletionPolicy;
-import org.springframework.cloud.aws.messaging.listener.annotation.SqsListener;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -42,14 +40,8 @@ public class ReviewS3Listener {
 
 	@Autowired
 	private AmazonS3 s3;
-//
-//	@Autowired
-//	private SlackNotifier slackNotifier;
 
-	// https://github.com/spring-cloud/spring-cloud-aws/issues/100
-	// FIXME: properly handle exceptions - resend the failed uploads to a
-	// specific queue, so that they could be reprocessed later on?
-	@SqsListener(value = "${replay.uploaded.queue.name}", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
+//	@SqsListener(value = "${replay.uploaded.queue.name}", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
 	public void queueListener(String message, Acknowledgment acknowledgment) throws Exception {
 		String messageAsString = Jackson.jsonNodeOf(message).get("Message").toString().replaceAll("\\\\\"", "\"");
 		S3EventNotification s3event = S3EventNotification

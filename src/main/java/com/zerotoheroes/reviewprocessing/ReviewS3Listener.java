@@ -1,11 +1,8 @@
 
 package com.zerotoheroes.reviewprocessing;
 
-import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.event.S3EventNotification;
 import com.amazonaws.services.s3.model.ObjectMetadata;
-import com.amazonaws.util.json.Jackson;
 import com.coach.plugin.hearthstone.HearthstoneMetaData;
 import com.coach.review.ParticipantDetails;
 import com.coach.review.Review;
@@ -43,85 +40,85 @@ public class ReviewS3Listener {
 
 //	@SqsListener(value = "${replay.uploaded.queue.name}", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
 	public void queueListener(String message, Acknowledgment acknowledgment) throws Exception {
-		String messageAsString = Jackson.jsonNodeOf(message).get("Message").toString().replaceAll("\\\\\"", "\"");
-		S3EventNotification s3event = S3EventNotification
-				.parseJson(messageAsString.substring(1, messageAsString.length() - 1));
-		S3EventNotification.S3Entity s3Entity = s3event.getRecords().get(0).getS3();
-
-		String bucketName = s3Entity.getBucket().getName();
-		String key = s3Entity.getObject().getKey();
-		String reviewId = null;
-		ObjectMetadata metadata = null;
-		try {
-			metadata = s3.getObjectMetadata(bucketName, key);
-			// Myu own reviews are processed by the typescript lambda from now on
-			if ("OW_2c40f5f0-4b1c-476a-98c0-d6ac63508d4b".equalsIgnoreCase(metadata.getUserMetaDataOf("user-id"))) {
-				log.warn("Will not process review for me", "OW_2c40f5f0-4b1c-476a-98c0-d6ac63508d4b");
-				acknowledgment.acknowledge().get();
-				return;
-			}
-			reviewId = metadata.getUserMetaDataOf("review-id");
-			log.debug("Received message to process reviewId " + reviewId);
-			log.debug("metadat is " + metadata);
-		}
-		catch (AmazonClientException e) {
-			String errorMessage = String.format("Could not retrieve metadata from s3 from bucket %s and key %s", bucketName, key);
-			log.error(errorMessage);
-			acknowledgment.acknowledge().get();
-			throw new ProcessingException(errorMessage, e);
-		}
-
-		Review review = reviewService.loadReview(reviewId);
-		if (review == null) {
-			log.debug("Review shell with id " + reviewId + " doesn't exist, aborting");
-			acknowledgment.acknowledge().get();
-			return;
-		}
-
-		// The message can be received several times
-		if (review.isPublished()) { 
-			acknowledgment.acknowledge().get();
-			return; 
-		}
-		log.debug("review " + reviewId + " not yet processed, continuing");
-
-//		review.setSport(Sport.HearthStone);
-		review.setUploaderApplicationKey(metadata.getUserMetaDataOf("application-key"));
-		review.setUploaderToken(metadata.getUserMetaDataOf("user-key"));
-		review.setAuthorId(metadata.getUserMetaDataOf("user-id"));
-		review.setFileType(metadata.getUserMetaDataOf("file-type"));
-//		review.setText(metadata.getUserMetaDataOf("review-text"));
-		review.setMediaType(metadata.getUserMetaDataOf("game-type"));
-		HearthstoneMetaData hsMetaData = (HearthstoneMetaData) review.getMetaData();
-		hsMetaData.setDeckstring(undefinedAsNull(metadata.getUserMetaDataOf("deckstring")));
-		hsMetaData.setDeckName(undefinedAsNull(metadata.getUserMetaDataOf("deck-name")));
-		hsMetaData.setScenarioId(undefinedAsNull(metadata.getUserMetaDataOf("scenario-id")));
-		hsMetaData.setBuildNumber(undefinedAsNull(metadata.getUserMetaDataOf("build-number")));
-		hsMetaData.setPlayerRank(undefinedAsNull(metadata.getUserMetaDataOf("player-rank")));
-		hsMetaData.setOpponentRank(undefinedAsNull(metadata.getUserMetaDataOf("opponent-rank")));
-		review.setPublished(true);
-//		review.setPublicationDate(new Date());
-//		review.setVisibility("restricted");
-		review.setClaimableAccount(true);
-
-		log.debug("preparing to parse game mode and rank");
-		parseGameModeAndRank(metadata, review);
-//		log.debug("preparing to parse deck");
-//		parseDeck(metadata, review);
-//		log.debug("deck parsed");
-
-		// FIXME: hack to easily reuse existing methods
-		String outputKey = review.buildKey(key, "hearthstone/replay");
-		log.debug("Copying to temporary key " + outputKey);
-		s3.copyObject(bucketName, key, inputBucket, outputKey);
-		review.setTemporaryKey(outputKey);
-
-		log.debug("Done, creating review " + review);
-		reviewApiHandler.createReview(review);
-		
-		// Manual acknowledgement to keep the message in the queue until the process is done and no exceptions 
-		// were raised
-		acknowledgment.acknowledge().get();
+//		String messageAsString = Jackson.jsonNodeOf(message).get("Message").toString().replaceAll("\\\\\"", "\"");
+//		S3EventNotification s3event = S3EventNotification
+//				.parseJson(messageAsString.substring(1, messageAsString.length() - 1));
+//		S3EventNotification.S3Entity s3Entity = s3event.getRecords().get(0).getS3();
+//
+//		String bucketName = s3Entity.getBucket().getName();
+//		String key = s3Entity.getObject().getKey();
+//		String reviewId = null;
+//		ObjectMetadata metadata = null;
+//		try {
+//			metadata = s3.getObjectMetadata(bucketName, key);
+//			// Myu own reviews are processed by the typescript lambda from now on
+//			if ("OW_2c40f5f0-4b1c-476a-98c0-d6ac63508d4b".equalsIgnoreCase(metadata.getUserMetaDataOf("user-id"))) {
+//				log.warn("Will not process review for me", "OW_2c40f5f0-4b1c-476a-98c0-d6ac63508d4b");
+//				acknowledgment.acknowledge().get();
+//				return;
+//			}
+//			reviewId = metadata.getUserMetaDataOf("review-id");
+//			log.debug("Received message to process reviewId " + reviewId);
+//			log.debug("metadat is " + metadata);
+//		}
+//		catch (AmazonClientException e) {
+//			String errorMessage = String.format("Could not retrieve metadata from s3 from bucket %s and key %s", bucketName, key);
+//			log.error(errorMessage);
+//			acknowledgment.acknowledge().get();
+//			throw new ProcessingException(errorMessage, e);
+//		}
+//
+//		Review review = reviewService.loadReview(reviewId);
+//		if (review == null) {
+//			log.debug("Review shell with id " + reviewId + " doesn't exist, aborting");
+//			acknowledgment.acknowledge().get();
+//			return;
+//		}
+//
+//		// The message can be received several times
+//		if (review.isPublished()) {
+//			acknowledgment.acknowledge().get();
+//			return;
+//		}
+//		log.debug("review " + reviewId + " not yet processed, continuing");
+//
+////		review.setSport(Sport.HearthStone);
+//		review.setUploaderApplicationKey(metadata.getUserMetaDataOf("application-key"));
+//		review.setUploaderToken(metadata.getUserMetaDataOf("user-key"));
+//		review.setAuthorId(metadata.getUserMetaDataOf("user-id"));
+//		review.setFileType(metadata.getUserMetaDataOf("file-type"));
+////		review.setText(metadata.getUserMetaDataOf("review-text"));
+//		review.setMediaType(metadata.getUserMetaDataOf("game-type"));
+//		HearthstoneMetaData hsMetaData = (HearthstoneMetaData) review.getMetaData();
+//		hsMetaData.setDeckstring(undefinedAsNull(metadata.getUserMetaDataOf("deckstring")));
+//		hsMetaData.setDeckName(undefinedAsNull(metadata.getUserMetaDataOf("deck-name")));
+//		hsMetaData.setScenarioId(undefinedAsNull(metadata.getUserMetaDataOf("scenario-id")));
+//		hsMetaData.setBuildNumber(undefinedAsNull(metadata.getUserMetaDataOf("build-number")));
+//		hsMetaData.setPlayerRank(undefinedAsNull(metadata.getUserMetaDataOf("player-rank")));
+//		hsMetaData.setOpponentRank(undefinedAsNull(metadata.getUserMetaDataOf("opponent-rank")));
+//		review.setPublished(true);
+////		review.setPublicationDate(new Date());
+////		review.setVisibility("restricted");
+//		review.setClaimableAccount(true);
+//
+//		log.debug("preparing to parse game mode and rank");
+//		parseGameModeAndRank(metadata, review);
+////		log.debug("preparing to parse deck");
+////		parseDeck(metadata, review);
+////		log.debug("deck parsed");
+//
+//		// FIXME: hack to easily reuse existing methods
+//		String outputKey = review.buildKey(key, "hearthstone/replay");
+//		log.debug("Copying to temporary key " + outputKey);
+//		s3.copyObject(bucketName, key, inputBucket, outputKey);
+//		review.setTemporaryKey(outputKey);
+//
+//		log.debug("Done, creating review " + review);
+//		reviewApiHandler.createReview(review);
+//
+//		// Manual acknowledgement to keep the message in the queue until the process is done and no exceptions
+//		// were raised
+//		acknowledgment.acknowledge().get();
 	}
 
 	private String undefinedAsNull(String str) {

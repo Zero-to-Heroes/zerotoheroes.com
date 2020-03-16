@@ -27,11 +27,11 @@ public class NewReviewNotifier {
 	}
 
 	public void notifyNewPublishedReview(Review publishedReview) {
-		this.notificationMessagingTemplate.sendNotification(
-				snsTopic, 
-				message(publishedReview), 
-				"New published review");
-		log.debug("New review notified");
+//		this.notificationMessagingTemplate.sendNotification(
+//				snsTopic,
+//				message(publishedReview),
+//				"New published review");
+//		log.debug("New review notified");
 	}
 
 	private String message(Review review) {
